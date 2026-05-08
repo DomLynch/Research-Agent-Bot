@@ -107,6 +107,27 @@ def test_validation_contract_meta_prose_blocks_journal_surface():
     assert report.issues[0].code == "placeholder_prose"
 
 
+def test_llm_meta_slogans_block_journal_surface():
+    paper = (
+        "## Methods\n\n"
+        "The load-bearing principle is LLM proposes, code disposes, "
+        "with no LLM authorship.\n"
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert report.issues[0].code == "placeholder_prose"
+
+
+def test_appendix_meta_language_does_not_block_body_surface():
+    paper = (
+        _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+        + "\n\n## Data and Code Availability\n\n"
+        "The audit appendix can describe that LLM proposes, code disposes.\n"
+    )
+    report = evaluate_journal_surface(paper)
+    assert report.passed
+
+
 def test_missing_cross_domain_blocks_journal_surface():
     paper = _paper(
         "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",

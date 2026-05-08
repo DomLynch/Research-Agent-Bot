@@ -749,7 +749,7 @@ def render_all_tables(
         return ""
     pointer = (
         "## Structured Evidence Tables\n\n"
-        "*The following tables present the deterministic evidence "
+        "*The following tables present the structured evidence "
         "summary referenced throughout this paper. Numbers live in "
         "the tables; prose references them. Tables 1-3 follow the "
         "Researka v1 schema (included studies, per-study endpoint "

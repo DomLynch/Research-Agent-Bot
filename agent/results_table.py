@@ -609,8 +609,7 @@ def _render_md(rows: Iterable[EvidenceRow], *, topic: str) -> str:
     title = (
         f"## Quantitative Evidence Index — {topic}\n\n"
         f"_Top {len(rows_list)} high-confidence numeric claims from the "
-        f"corpus, deterministically extracted from quant_claims.json. "
-        f"Every row traces to a corpus-bound claim — no LLM authorship._\n\n"
+        f"corpus. Every row traces to a corpus-bound claim and a registered citation._\n\n"
     )
     header = (
         "| Study | Endpoint | Arm | Value | Type | Statistic |\n"

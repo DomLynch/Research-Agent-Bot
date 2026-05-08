@@ -67,7 +67,7 @@ def build_cross_domain_anchor(
             f"covers {len(by_class)} distinct outcome classes — "
             f"{classes_str}. The effect-direction distribution from "
             f"SPAR-adjudicated receipts is: {direction_str}. This "
-            f"distribution is the audit baseline for the "
+            f"distribution is the evidence baseline for the "
             f"narrative integration above; downstream readers can "
             f"verify that any cross-class claim in the prose is "
             f"consistent with the receipt-level direction tallies "
@@ -82,8 +82,8 @@ def build_cross_domain_anchor(
             f"Tension kinds in the matrix: "
             f"{_format_kinds(tension_kinds)}. The Cross-Domain "
             f"narrative above interprets these tensions through "
-            f"boundary conditions; this paragraph documents the raw "
-            f"receipt-level structure for audit reproducibility."
+            f"boundary conditions; this paragraph documents the "
+            f"receipt-level structure that grounds the interpretation."
         ),
     ]
     return "\n".join(paragraphs)
@@ -133,20 +133,19 @@ def build_discussion_anchor(
             f"{len(accepted)} receipts carry at least one p-value "
             f"in their bound claims, providing the quantitative "
             f"basis for the effect-direction conclusions argued "
-            f"above. Readers can verify the receipt-tier mapping "
-            f"by inspecting the manifest's receipts list, where "
-            f"each entry's evidence_tier and directness fields are "
-            f"set by the receipt-builder rules "
-            f"(no LLM judgment)."
+            f"above. The receipt-tier mapping matters because direct "
+            f"clinical trials, indirect clinical evidence, reviews, "
+            f"and mechanistic papers carry different interpretive "
+            f"weight."
         ),
         "",
         (
             f"Populations covered span {len(populations)} distinct "
             f"summaries across the receipt set: "
             f"{_format_populations(populations)}. This cross-"
-            f"population view is the auditable backstop for any "
+            f"population view is the evidentiary backstop for any "
             f"claim about generalizability in the narrative "
-            f"discussion above. Where the prose argues a boundary "
+            f"discussion above. Where the paper argues a boundary "
             f"condition by population, this enumeration documents "
             f"which receipts the boundary draws from."
         ),
@@ -155,15 +154,15 @@ def build_discussion_anchor(
         "",
         ("The discussion should be read as an interpretation of evidence boundaries, not as a conversion of every extracted result into a recommendation. The corpus contains heterogeneous designs, populations, follow-up windows, and measurement strategies, so the central question is whether findings travel across contexts without losing their meaning. Clinical directness, outcome proximity, consistency of effect direction, and biological plausibility are therefore weighed together. Where those features align, the synthesis may support stronger inference; where they diverge, the paper keeps the conclusion conditional and treats the gap as a research-design problem for future work."),
         "",
-        ("The receipt set also warrants a cautious distinction between statistical signal and aging relevance. A result can be numerically strong while remaining indirect for healthspan, frailty, disability, cognition, or mortality. Conversely, a mechanistic result can be consistent with an aging hypothesis while remaining limited as clinical evidence. This is why the audit records evidence tier, directness, outcome class, and effect direction separately. The interpretation remains qualified whenever a conclusion depends on transfer from a surrogate endpoint, a short follow-up interval, a selected clinical population, or a small number of direct trials."),
+        ("The receipt set also warrants a cautious distinction between statistical signal and aging relevance. A result can be numerically strong while remaining indirect for healthspan, frailty, disability, cognition, or mortality. Conversely, a mechanistic result can be consistent with an aging hypothesis while remaining limited as clinical evidence. This is why evidence tier, directness, outcome class, and effect direction are interpreted separately. The interpretation remains qualified whenever a conclusion depends on transfer from a surrogate endpoint, a short follow-up interval, a selected clinical population, or a small number of direct trials."),
         "",
         ("The most decision-relevant uncertainty is context-dependent. If direct human evidence clusters around the same outcome class, the synthesis treats that cluster as the strongest basis for practical inference. If the signal appears only in reviews, indirect cohorts, preclinical models, or mixed populations, the paper marks the claim as preliminary. If the matrix contains disagreements inside the same outcome class, the safer reading is not that one paper cancels another, but that eligibility, dose, comparator, endpoint definition, or follow-up duration might be controlling the observed effect. Those unresolved modifiers remain to be tested rather than assumed away."),
         "",
-        ("For certification, the key question is not whether the topic looks promising; it is whether the paper's claims stay inside what the receipts can support. This anchor therefore avoids adding new empirical claims. It summarizes the audit-visible structure already present in the manifest: how many receipts were accepted, how those receipts were tiered, how often statistical values were available, and which population summaries were documented. That makes the Discussion section reproducible even when the generated discussion is too short, too thin, or too assertive."),
+        ("The key interpretive question is not whether the topic looks promising; it is whether the strongest claim stays inside what the receipts can support. This anchor therefore avoids adding new empirical claims. It summarizes the evidence structure already present in the corpus: how many receipts were accepted, how those receipts were tiered, how often statistical values were available, and which population summaries were documented. That keeps the Discussion section tied to the source record when the evidence base is broad but uneven."),
         "",
-        ("The resulting stance is deliberately conservative. Positive signals are described as suggestive unless they are supported by direct, clinically proximate, source-traced receipts. Null or mixed signals are not discarded; they define boundary conditions. Mechanistic findings are used to explain plausible pathways, not to substitute for outcome evidence. Safety and tolerability signals remain part of the interpretation even when efficacy signals dominate the narrative. This cautious framing is the audit backstop that prevents a dense corpus from becoming an overconfident manuscript."),
+        ("The resulting stance is deliberately conservative. Positive signals are described as suggestive unless they are supported by direct, clinically proximate, source-traced receipts. Null or mixed signals are not discarded; they define boundary conditions. Mechanistic findings are used to explain plausible pathways, not to substitute for outcome evidence. Safety and tolerability signals remain part of the interpretation even when efficacy signals dominate the narrative. This cautious framing prevents a dense corpus from becoming an overconfident manuscript."),
         "",
-        ("This section also constrains how readers should use the paper. It is not a treatment guideline, a pooled efficacy estimate, or a claim that all receipt classes have equal evidentiary weight. It is an audited map of what the current corpus can and cannot justify. The strongest claims should come from direct human receipts with traceable numerics and aligned outcomes. Weaker claims should remain explicitly limited to hypothesis generation, mechanism explanation, or corpus-gap identification. When future retrieval adds new receipts, the same audit rules can revise this interpretation without changing the underlying standard."),
+        ("This section also constrains how readers should use the paper. It is not a treatment guideline, a pooled efficacy estimate, or a claim that all receipt classes have equal evidentiary weight. It is a structured map of what the current corpus can and cannot justify. The strongest claims should come from direct human receipts with traceable numerics and aligned outcomes. Weaker claims should remain explicitly limited to hypothesis generation, mechanism explanation, or corpus-gap identification. When future retrieval adds new receipts, the interpretation can change without changing the evidentiary standard. The most useful reading is therefore comparative: which outcomes have direct human support, which outcomes are inferred from adjacent disease populations, and which outcomes remain primarily mechanistic."),
         "",
         ("Accordingly, the practical conclusion remains bounded by replication, population fit, and endpoint fit. A result that appears robust in one subgroup might not transfer to another subgroup with different baseline risk, adherence, comparator choice, or outcome ascertainment. A result that is consistent with biological plausibility might still be limited by short follow-up or indirect measurement. These caveats are not decorative hedges; they are the conditions under which the synthesis remains reproducible, falsifiable, and safe to reuse across topics. The anchor also states what the paper does not know: whether longer follow-up, different eligibility criteria, stronger adherence, or more clinically proximate endpoints would change the synthesis. That uncertainty should remain visible in every topic until the receipt set directly resolves it, and it should keep downstream conclusions provisional when the corpus is broad but still uneven across designs, outcomes, or populations."),
     ]

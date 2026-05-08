@@ -302,7 +302,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "direct human evidence."
             ),
             (
-                f"The deterministic thesis is: {thesis} This thesis is treated "
+                f"The thesis is: {thesis} This thesis is treated "
                 "as an organizing claim, not as a substitute for the receipt "
                 "table, because the source record includes supportive, null, "
                 "and adverse signals across different outcome classes."

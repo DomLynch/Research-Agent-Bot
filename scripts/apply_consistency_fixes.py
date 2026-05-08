@@ -55,6 +55,12 @@ _ROLE_REPAIR_ARTIFACT_SENT_RE = re.compile(
     r"[ \t]*(?:\n+)?",
     re.IGNORECASE,
 )
+_EFFECT_ESTIMATE_ARTIFACT_SENT_RE = re.compile(
+    r"(?m)(?:^|(?<=[.!?])\s*)"
+    r"[A-Z][A-Za-z'`.\-]+(?:\s+\d{4}[a-z]?)?\s+reported\s+an\s+"
+    r"effect\s+estimate\s+of\s+[^.!?\n]+[.!?][ \t]*(?:\n+)?",
+    re.IGNORECASE,
+)
 _PIPELINE_META_LINE_RE = re.compile(
     r"(?m)^[^\n]*\b(?:Explicit-absence audit-trail block|"
     r"earlier drafts inherited Methods boilerplate)\b[^\n]*(?:\n|$)"
@@ -64,7 +70,8 @@ _PUBLIC_PLACEHOLDER_PARAGRAPH_RE = re.compile(
     r"(?=[^\n]*\b(?:this\s+synthesis\s+aims\s+to\s+contribute\s+to\s+"
     r"the\s+field\s+by|this\s+paper\s+evaluates\s+the\s+topic\s+"
     r"through\s+accepted\s+receipts|the\s+evidence\s+base\s+is\s+"
-    r"limited\s+to\s+accepted\s+receipts)\b)"
+    r"limited\s+to\s+accepted\s+receipts|deterministic\s+evidence\s+"
+    r"summary|deterministic\s+synthesis\s+summary)\b)"
     r"[^\n]*(?:\n\n|$)"
 )
 _ET_AL_PAREN_CITE_RE = re.compile(
@@ -114,6 +121,70 @@ def _strip_consecutive_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:
     cleaned = "".join(out)
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     return cleaned, n
+
+
+def _strip_fuzzy_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:
+    """Remove later body paragraphs that substantially repeat earlier
+    body paragraphs. This catches LLM stutter across sections while
+    preserving tables, appendices, Methods, and short recurring caveats."""
+    blocks = re.split(r"(^##\s+.+?$)", paper_md, flags=re.MULTILINE)
+    out: list[str] = []
+    seen: list[set[str]] = []
+    current_heading = ""
+    n = 0
+    skip_sections = {
+        "Methods", "References", "Publication Appendix",
+        "Data and Code Availability", "Researka Submitter Block",
+    }
+    for block in blocks:
+        heading = re.match(r"^##\s+(.+?)\s*$", block)
+        if heading:
+            current_heading = heading.group(1).strip()
+            out.append(block)
+            continue
+        if current_heading in skip_sections:
+            out.append(block)
+            continue
+        kept: list[str] = []
+        for para in block.split("\n\n"):
+            stripped = para.strip()
+            tokens = _paragraph_token_set(stripped)
+            is_prose = (
+                len(stripped.split()) >= 25
+                and tokens
+                and not stripped.startswith(("#", "|", "-", "`", "*"))
+                and "\n|" not in para
+            )
+            if is_prose and any(
+                _jaccard(tokens, prior) >= 0.82 for prior in seen
+            ):
+                n += 1
+                continue
+            kept.append(para)
+            if is_prose:
+                seen.append(tokens)
+        out.append("\n\n".join(kept))
+    if not n:
+        return paper_md, 0
+    cleaned = "".join(out)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned, n
+
+
+def _paragraph_token_set(text: str) -> set[str]:
+    words = re.findall(r"\b[a-z][a-z0-9]{2,}\b", text.lower())
+    stop = {
+        "the", "and", "that", "this", "with", "from", "into", "for",
+        "are", "but", "not", "can", "has", "have", "was", "were",
+        "across", "receipt", "receipts", "evidence", "synthesis",
+    }
+    return {w for w in words if w not in stop}
+
+
+def _jaccard(a: set[str], b: set[str]) -> float:
+    if not a or not b:
+        return 0.0
+    return len(a & b) / len(a | b)
 
 
 def _strip_duplicate_long_sentences(paper_md: str) -> tuple[str, int]:
@@ -259,6 +330,68 @@ def _strip_public_placeholder_paragraphs(paper_md: str) -> tuple[str, int]:
         return paper_md, 0
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     return cleaned.strip() + "\n", n
+
+
+def _normalize_public_meta_phrases(paper_md: str) -> tuple[str, int]:
+    replacements = (
+        (
+            re.compile(
+                r"the load-bearing principle is \*\*LLM proposes, "
+                r"code disposes\*\* — no claim, citation, evidence tier, "
+                r"or thesis is author-LLM-invented\.",
+                re.IGNORECASE,
+            ),
+            (
+                "citations, evidence tiers, numeric claims, and thesis "
+                "selection are constrained by the run registry and audit "
+                "record."
+            ),
+        ),
+        (
+            re.compile(
+                r"Every row traces to a corpus-bound claim — no LLM "
+                r"authorship\.",
+                re.IGNORECASE,
+            ),
+            "Every row traces to a corpus-bound claim and a registered citation.",
+        ),
+        (
+            re.compile(r"deterministic evidence summary", re.IGNORECASE),
+            "structured evidence summary",
+        ),
+        (
+            re.compile(r"deterministic synthesis summary", re.IGNORECASE),
+            "structured synthesis summary",
+        ),
+        (
+            re.compile(r"The deterministic thesis is:", re.IGNORECASE),
+            "The thesis is:",
+        ),
+        (
+            re.compile(r"\s*\(no LLM judgment\)", re.IGNORECASE),
+            "",
+        ),
+    )
+    out = paper_md
+    n_total = 0
+    for pattern, replacement in replacements:
+        out, n = pattern.subn(replacement, out)
+        n_total += n
+    if not n_total:
+        return paper_md, 0
+    out = re.sub(r" {2,}", " ", out)
+    return out, n_total
+
+
+def _strip_effect_estimate_artifact_sentences(
+    paper_md: str,
+) -> tuple[str, int]:
+    cleaned, n = _EFFECT_ESTIMATE_ARTIFACT_SENT_RE.subn("", paper_md)
+    if not n:
+        return paper_md, 0
+    cleaned = re.sub(r"\s+([,.;:])", r"\1", cleaned)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned, n
 
 
 def _citation_key(author: str, year: str) -> str:
@@ -512,6 +645,31 @@ def apply_fixes(
             ),
         })
 
+    new_md, n_meta_phrase = _normalize_public_meta_phrases(new_md)
+    if n_meta_phrase:
+        log.append({
+            "fix_type": "public_meta_phrase_normalization",
+            "n_changes": n_meta_phrase,
+            "description": (
+                "rewrote audit/compiler meta phrases into neutral "
+                "journal-facing manuscript prose"
+            ),
+        })
+
+    new_md, n_effect_artifact = _strip_effect_estimate_artifact_sentences(
+        new_md,
+    )
+    if n_effect_artifact:
+        log.append({
+            "fix_type": "effect_estimate_artifact_sentence_strip",
+            "n_changes": n_effect_artifact,
+            "description": (
+                "stripped generic 'reported an effect estimate of ...' "
+                "sentences that are repair artifacts rather than "
+                "publishable source-context prose"
+            ),
+        })
+
     new_md, n_pvalue_norm = _normalize_public_p_values(new_md)
     if n_pvalue_norm:
         log.append({
@@ -567,6 +725,17 @@ def apply_fixes(
             "description": (
                 "removed consecutive duplicate prose paragraphs produced "
                 "by section backstops or repair loops"
+            ),
+        })
+
+    new_md, n_fuzzy_dup_paragraphs = _strip_fuzzy_duplicate_paragraphs(new_md)
+    if n_fuzzy_dup_paragraphs:
+        log.append({
+            "fix_type": "fuzzy_duplicate_paragraph",
+            "n_changes": n_fuzzy_dup_paragraphs,
+            "description": (
+                "removed later body paragraphs with high token overlap "
+                "against earlier body paragraphs"
             ),
         })
 

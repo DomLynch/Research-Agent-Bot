@@ -20,15 +20,9 @@ class SurfaceReport:
 _DASHES = {"", "-", "—", "–", "none", "n/a", "na"}
 _BAD_ENDPOINTS = {"unknown", "background", "effect", "n/a", "none", "?"}
 _PLACEHOLDER_PATTERNS = (
-    "this paper evaluates the topic through accepted receipts",
-    "the background is limited to corpus-supported context",
-    "this synthesis aims to contribute to the field by",
-    "the evidence base is limited to accepted receipts",
-    "the conclusion is limited to claims that survive receipt qualification",
-    "section generation cannot satisfy the validation contract",
-    "generated section cannot satisfy the validation contract",
-    "deterministic evidence summary",
-    "deterministic synthesis summary",
+    "this paper evaluates the topic through accepted receipts", "the background is limited to corpus-supported context", "this synthesis aims to contribute to the field by",
+    "the evidence base is limited to accepted receipts", "the conclusion is limited to claims that survive receipt qualification", "section generation cannot satisfy the validation contract",
+    "generated section cannot satisfy the validation contract", "deterministic evidence summary", "deterministic synthesis summary", "llm proposes, code disposes", "no llm authorship",
 )
 _REQUIRED_SECTIONS = {
     "Abstract": 150,
@@ -41,22 +35,29 @@ _REQUIRED_SECTIONS = {
     "Limitations": 250,
     "Conclusion": 250,
 }
+_APPENDIX_CUTOFF_RE = re.compile(r"^##\s+(?:Publication Appendix|Researka Submitter Block|Data and Code Availability|Search Provenance|AI Disclosure|Accountability)\b", flags=re.M)
 
 
 def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
     issues: list[SurfaceIssue] = []
-    low = paper_md.lower()
+    body_md = _journal_body(paper_md)
+    low = body_md.lower()
     for pat in _PLACEHOLDER_PATTERNS:
         if pat in low:
             issues.append(SurfaceIssue("placeholder_prose", pat))
-    for msg in _section_issue_messages(paper_md):
+    for msg in _section_issue_messages(body_md):
         issues.append(SurfaceIssue("structure_surface", msg))
-    for msg in _qei_shape_issue_messages(paper_md):
+    for msg in _qei_shape_issue_messages(body_md):
         issues.append(SurfaceIssue("qei_surface", msg))
-    for row in _extract_qei_rows(paper_md):
+    for row in _extract_qei_rows(body_md):
         for msg in qei_row_issue_messages(row):
             issues.append(SurfaceIssue("qei_surface", msg))
     return SurfaceReport(passed=not issues, issues=tuple(issues))
+
+
+def _journal_body(paper_md: str) -> str:
+    m = _APPENDIX_CUTOFF_RE.search(paper_md)
+    return paper_md[:m.start()] if m else paper_md
 
 
 def is_publishable_qei_row(row: Any) -> bool:

@@ -290,6 +290,81 @@ def test_apply_fixes_strips_public_placeholder_paragraph() -> None:
     )
 
 
+def test_apply_fixes_strips_effect_estimate_artifact_sentence() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Results\n\n"
+        "The longevity evidence remains indirect. Ryan 2024 reported an "
+        "effect estimate of 30 kg/m. The surrounding interpretation remains.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "reported an effect estimate" not in out
+    assert "The longevity evidence remains indirect" in out
+    assert "The surrounding interpretation remains" in out
+    assert any(
+        item["fix_type"] == "effect_estimate_artifact_sentence_strip"
+        for item in log
+    )
+
+
+def test_apply_fixes_normalizes_public_meta_phrases() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Methods\n\n"
+        "The load-bearing principle is **LLM proposes, code disposes** — "
+        "no claim, citation, evidence tier, or thesis is author-LLM-invented.\n\n"
+        "## Quantitative Evidence Index\n\n"
+        "_Every row traces to a corpus-bound claim — no LLM authorship._\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "LLM proposes" not in out
+    assert "no LLM authorship" not in out
+    assert "run registry" in out
+    assert "registered citation" in out
+    assert any(
+        item["fix_type"] == "public_meta_phrase_normalization"
+        for item in log
+    )
+
+
+def test_apply_fixes_strips_fuzzy_duplicate_body_paragraph() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    first = (
+        "The clinical evidence should be interpreted through population, "
+        "endpoint, duration, and comparator boundaries because the accepted "
+        "receipt set contains heterogeneous designs and outcome definitions. "
+        "This paragraph states a specific interpretive boundary for the paper."
+    )
+    second = (
+        "The clinical evidence should be interpreted through population, "
+        "endpoint, duration, and comparator boundaries because the accepted "
+        "receipt set includes heterogeneous designs and outcome definitions. "
+        "This paragraph states a specific interpretive boundary for the paper."
+    )
+    paper = (
+        f"## Background\n\n{first}\n\n"
+        f"## Limitations\n\n{second}\n\n"
+        "A separate limitations paragraph remains visible.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert first in out
+    assert second not in out
+    assert "A separate limitations paragraph remains visible" in out
+    assert any(
+        item["fix_type"] == "fuzzy_duplicate_paragraph"
+        for item in log
+    )
+
+
 def test_apply_fixes_strips_unreferenced_et_al_parenthetical() -> None:
     import sys as _sys
     from pathlib import Path as _Path
