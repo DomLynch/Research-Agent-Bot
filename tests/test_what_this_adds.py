@@ -185,3 +185,32 @@ def test_section_filters_to_accepted_receipts_only() -> None:
     )
     assert "1 accepted receipt" in md
     assert "Rejected 2020" not in md
+
+
+def test_section_includes_research_contribution_layer() -> None:
+    receipts = [
+        _r("Direct 2024", outcome="cardiometabolic", directness="direct"),
+        _r("Indirect 2023", outcome="cognitive", directness="indirect",
+           tier="B2"),
+    ]
+    md = build_what_this_adds_section(
+        receipts, _matrix(receipts), _thesis(), topic="metformin",
+    )
+    assert "### Boundary-Condition Matrix" in md
+    assert "### Evidence-Gap Priority" in md
+    assert "### Next-Study Design Recommendation" in md
+    assert "| cognitive | 0 | 1 |" in md
+    assert "direct clinical gap" in md
+
+
+def test_next_study_design_targets_highest_priority_gap() -> None:
+    receipts = [
+        _r("Direct Cardio", outcome="cardiometabolic", directness="direct"),
+        _r("Indirect Frailty", outcome="frailty", directness="indirect",
+           tier="B2"),
+    ]
+    md = build_what_this_adds_section(
+        receipts, _matrix(receipts), _thesis(), topic="caloric restriction",
+    )
+    assert "target the **frailty** evidence gap" in md
+    assert "pre-register the primary endpoint" in md

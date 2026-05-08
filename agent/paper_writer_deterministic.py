@@ -294,6 +294,89 @@ def _load_bearing_tension(matrix: TensionMatrix) -> Any | None:
     return max(pairs, key=lambda t: getattr(t, "severity", 0) or 0)
 
 
+_OUTCOME_IMPORTANCE = {
+    "longevity": 5, "frailty": 4, "muscle_function": 4,
+    "cardiometabolic": 4, "cognitive": 4, "safety": 4,
+    "immune": 3, "oncology": 3, "ophthalmologic": 3,
+    "mechanism": 2, "other": 1,
+}
+
+
+def _outcome_rows(
+    receipts: Sequence[ReceiptSummary], matrix: TensionMatrix | None,
+) -> list[tuple[int, str, int, int, str, str]]:
+    pairs = list(getattr(matrix, "non_orthogonal", lambda: [])()) if matrix else []
+    rows: list[tuple[int, str, int, int, str, str]] = []
+    for oc in sorted(_outcome_class_set(receipts)):
+        rs = [r for r in receipts if r.outcome_class == oc]
+        direct = sum(1 for r in rs if (r.directness or "").lower() == "direct")
+        indirect = len(rs) - direct
+        directions = ", ".join(sorted({
+            (r.effect_direction or "unclear").replace("_", " ") for r in rs
+        }))
+        conflict = max(
+            (getattr(t, "severity", 0) or 0 for t in pairs
+             if getattr(t, "outcome_class", "") == oc),
+            default=0,
+        )
+        gap = "direct clinical gap" if direct == 0 else "replication gap"
+        if conflict >= 4:
+            gap = "conflict-resolution gap"
+        priority = (
+            _OUTCOME_IMPORTANCE.get(oc, 1)
+            * (3 if direct == 0 else 1)
+            * (2 if conflict >= 3 else 1)
+        )
+        rows.append((priority, oc, direct, indirect, directions, gap))
+    return sorted(rows, key=lambda row: (-row[0], row[1]))
+
+
+def _append_research_contribution_layer(
+    lines: list[str], receipts: Sequence[ReceiptSummary],
+    matrix: TensionMatrix | None, topic: str,
+) -> None:
+    rows = _outcome_rows(receipts, matrix)
+    if not rows:
+        return
+    lines += [
+        "",
+        "### Boundary-Condition Matrix",
+        "",
+        "| Outcome class | Direct receipts | Indirect / mechanism receipts | Direction profile | Interpretation boundary |",
+        "|---|---:|---:|---|---|",
+    ]
+    for _, oc, direct, indirect, directions, gap in rows:
+        lines.append(
+            f"| {oc} | {direct} | {indirect} | {directions or 'unclear'} | {gap} |"
+        )
+    top = rows[:5]
+    lines += [
+        "",
+        "### Evidence-Gap Priority",
+        "",
+        "| Priority | Gap | Rationale |",
+        "|---|---|---|",
+    ]
+    for i, (_, oc, direct, indirect, directions, gap) in enumerate(top, 1):
+        rationale = (
+            f"{direct} direct and {indirect} indirect receipt(s); "
+            f"direction profile: {directions or 'unclear'}"
+        )
+        lines.append(f"| P{i} | {oc}: {gap} | {rationale} |")
+    target = top[0][1]
+    lines += [
+        "",
+        "### Next-Study Design Recommendation",
+        "",
+        f"The next high-yield study for {topic} should target the "
+        f"**{target}** evidence gap, pre-register the primary endpoint, "
+        "separate clinical from mechanistic endpoints, preserve safety "
+        "and adherence capture, and include an analysis plan that can "
+        "falsify the current boundary-condition claim rather than only "
+        "confirming a favorable direction.",
+    ]
+
+
 def build_what_this_adds_section(
     receipts: Sequence[ReceiptSummary],
     matrix: TensionMatrix | None,
@@ -408,5 +491,6 @@ def build_what_this_adds_section(
             "away in narrative summary."
         )
     lines.append("")
+    _append_research_contribution_layer(lines, accepted, matrix, cap)
 
     return "\n".join(lines).rstrip() + "\n"
