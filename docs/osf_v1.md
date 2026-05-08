@@ -5,15 +5,16 @@ The OSF publisher is PAT-only. Live mode reads `OSF_PAT` from the environment an
 Default operation is safe:
 
 ```bash
-python scripts/osf_publish.py --run-dir runs/<run> --dry-run
+python scripts/osf_publish.py --run-dir runs/<run>
 ```
 
 Dry-run writes `bundle_snapshot.json` and `osf_publish_plan.json`. Per-file `file_url` values stay `null` until live upload.
 
-Live mode reads the token from the process environment:
+Live mode requires both an explicit CLI flag and an explicit environment gate.
+It reads the PAT from the process environment:
 
 ```bash
-python scripts/osf_publish.py --run-dir runs/<run>
+OSF_PUBLISH_LIVE=1 python scripts/osf_publish.py --run-dir runs/<run> --live
 ```
 
 If `osf_publish_result.json` already exists, the publisher skips the run. Use `--force` only when intentionally replacing a prior result. Generated publisher artifacts are excluded from the uploaded snapshot.
@@ -22,10 +23,11 @@ Cron scaffold:
 
 ```bash
 python scripts/osf_publish_cron.py --runs-dir runs
-python scripts/osf_publish_cron.py --runs-dir runs --live
+OSF_PUBLISH_LIVE=1 python scripts/osf_publish_cron.py --runs-dir runs --live
 ```
 
-The cron path uses the same idempotency rule and PAT-only live path.
+The cron path uses the same idempotency rule and PAT-only live path. OAuth is
+deferred to V2.
 
 Public reader manifest:
 

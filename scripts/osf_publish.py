@@ -24,12 +24,18 @@ DEFAULT_OSF_API = "https://api.osf.io/v2"
 PLAN_NAME = "osf_publish_plan.json"
 RESULT_NAME = "osf_publish_result.json"
 TRANSIENT_STATUSES = {429, 500, 502, 503, 504}
+LIVE_ENV = "OSF_PUBLISH_LIVE"
 PUBLISH_GENERATED_NAMES = {
     SNAPSHOT_NAME,
     PLAN_NAME,
     RESULT_NAME,
     "researka_reader_manifest.json",
 }
+
+
+def _idempotency_key(run_dir: Path, aggregate_sha256: str) -> str:
+    material = f"{run_dir.resolve().name}:{aggregate_sha256}"
+    return hashlib.sha256(material.encode()).hexdigest()
 
 
 def build_publish_snapshot(run_dir: Path) -> dict:
@@ -81,6 +87,7 @@ def build_plan(
         "schema": "researka.osf_publish_plan.v1",
         "mode": "dry-run",
         "run_id": run_dir.resolve().name,
+        "idempotency_key": _idempotency_key(run_dir, snapshot["aggregate_sha256"]),
         "osf_api": base_url.rstrip("/"),
         "file_count": snapshot["file_count"],
         "total_size": snapshot["total_size"],
@@ -128,6 +135,10 @@ def _safe_error(exc: Exception) -> str:
     if isinstance(exc, httpx.HTTPError):
         return exc.__class__.__name__
     return exc.__class__.__name__
+
+
+def _live_enabled() -> bool:
+    return os.environ.get(LIVE_ENV, "").strip().lower() in {"1", "true", "yes", "on"}
 
 
 def _request_with_retry(
@@ -221,6 +232,7 @@ def publish_live(
     owns_client = client is None
     http = client or httpx.Client(timeout=30.0)
     title = f"Researka bundle: {run_dir.resolve().name}"
+    idempotency_key = _idempotency_key(run_dir, snapshot["aggregate_sha256"])
     payload = {
         "data": {
             "type": "nodes",
@@ -230,7 +242,8 @@ def publish_live(
                 "public": False,
                 "description": (
                     "Researka bundle envelope. File manifest aggregate "
-                    f"sha256={snapshot['aggregate_sha256']}."
+                    f"sha256={snapshot['aggregate_sha256']}. "
+                    f"idempotency_key={idempotency_key}."
                 ),
             },
         },
@@ -244,7 +257,7 @@ def publish_live(
             http,
             "POST",
             f"{base_url.rstrip('/')}/nodes/",
-            headers=_auth_headers(token),
+            headers={**_auth_headers(token), "Idempotency-Key": idempotency_key},
             json=payload,
         )
         data = response.json().get("data", {})
@@ -270,6 +283,7 @@ def publish_live(
         return {
             "schema": "researka.osf_publish_result.v1",
             "run_id": run_dir.resolve().name,
+            "idempotency_key": idempotency_key,
             "node_id": node_id,
             "osf_node_id": node_id,
             "url": url,
@@ -315,6 +329,8 @@ def run(
     plan_path = write_plan(run_dir, plan)
     if dry_run:
         return {"snapshot": snapshot_path, "plan": plan_path, "result": None}
+    if not _live_enabled():
+        raise RuntimeError(f"{LIVE_ENV}=1 is required for live OSF publish")
     token = os.environ.get("OSF_PAT")
     if not token:
         raise RuntimeError("OSF_PAT is required for live OSF publish")
@@ -337,6 +353,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--run-dir", required=True, help="Run or bundle directory")
     parser.add_argument("--dry-run", action="store_true", help="Write local plan only")
     parser.add_argument(
+        "--live",
+        action="store_true",
+        help=f"Publish live; also requires {LIVE_ENV}=1 and OSF_PAT.",
+    )
+    parser.add_argument(
         "--snapshot-only",
         action="store_true",
         help="Write bundle_snapshot.json only",
@@ -346,11 +367,14 @@ def main(argv: list[str] | None = None) -> int:
     try:
         paths = run(
             Path(args.run_dir),
-            dry_run=args.dry_run,
+            dry_run=not args.live or args.dry_run,
             snapshot_only=args.snapshot_only,
             force=args.force,
         )
-    except (OSError, RuntimeError, httpx.HTTPError) as exc:
+    except httpx.HTTPError as exc:
+        print(f"osf publish failed: {_safe_error(exc)}", file=sys.stderr)
+        return 2
+    except (OSError, RuntimeError) as exc:
         print(f"osf publish failed: {exc}", file=sys.stderr)
         return 2
     for label, path in paths.items():

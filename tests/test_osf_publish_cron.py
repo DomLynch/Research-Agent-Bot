@@ -65,6 +65,7 @@ def test_cron_live_missing_pat_fails_closed_via_delegated_path(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.delenv("OSF_PAT", raising=False)
+    monkeypatch.setenv(osf_publish.LIVE_ENV, "1")
     run_dir = tmp_path / "run-a"
     run_dir.mkdir()
     (run_dir / "paper.md").write_text("public", encoding="utf-8")
@@ -78,6 +79,7 @@ def test_cron_main_live_missing_pat_returns_nonzero(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.delenv("OSF_PAT", raising=False)
+    monkeypatch.setenv(osf_publish.LIVE_ENV, "1")
     run_dir = tmp_path / "run-a"
     run_dir.mkdir()
     (run_dir / "paper.md").write_text("public", encoding="utf-8")

@@ -41,7 +41,7 @@ def test_dry_run_ignores_pat_and_excludes_generated_artifacts(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    monkeypatch.setenv("OSF_PAT", "test-secret-token")
+    monkeypatch.setenv("OSF_PAT", "dummy")
     (tmp_path / "paper.md").write_text("public", encoding="utf-8")
     (tmp_path / osf.RESULT_NAME).write_text("{}", encoding="utf-8")
     (tmp_path / "researka_reader_manifest.json").write_text("{}", encoding="utf-8")
@@ -53,7 +53,7 @@ def test_dry_run_ignores_pat_and_excludes_generated_artifacts(
     assert [item["path"] for item in snapshot["files"]] == ["paper.md"]
     assert [item["path"] for item in plan["planned_files"]] == ["paper.md"]
     serialized = json.dumps({"snapshot": snapshot, "plan": plan})
-    assert "test-secret-token" not in serialized
+    assert "dummy" not in serialized
     assert osf.RESULT_NAME not in serialized
     assert "researka_reader_manifest.json" not in serialized
 
@@ -72,11 +72,12 @@ def test_plan_and_header_helpers_do_not_store_pat(tmp_path: Path) -> None:
     assert plan["osf_api"] == "https://api.test/v2"
     assert plan["aggregate_sha"] == "a" * 64
     assert plan["aggregate_sha256"] == "a" * 64
+    assert len(plan["idempotency_key"]) == 64
     assert plan["planned_files"][0]["file_url"] is None
-    assert osf._auth_headers("test-secret-token")["Authorization"] == (
-        "Bearer test-secret-token"
+    assert osf._auth_headers("dummy")["Authorization"] == (
+        "Bearer dummy"
     )
-    assert "test-secret-token" not in plan_path.read_text(encoding="utf-8")
+    assert "dummy" not in plan_path.read_text(encoding="utf-8")
 
 
 def test_snapshot_only_does_not_write_plan(tmp_path: Path) -> None:
@@ -102,6 +103,7 @@ def test_live_mode_fails_closed_without_pat(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.delenv("OSF_PAT", raising=False)
+    monkeypatch.setenv(osf.LIVE_ENV, "1")
     (tmp_path / "paper.md").write_text("public", encoding="utf-8")
     with pytest.raises(RuntimeError, match="OSF_PAT"):
         osf.run(tmp_path, dry_run=False, snapshot_only=False)
@@ -128,6 +130,7 @@ def test_publish_live_uses_bearer_pat_but_never_returns_it(
                 201,
                 json={"data": {"links": {"html": "https://osf.io/abc123/files/paper/"}}},
             )
+        captured["idempotency"] = request.headers.get("idempotency-key")
         return httpx.Response(
             201,
             json={
@@ -142,11 +145,12 @@ def test_publish_live_uses_bearer_pat_but_never_returns_it(
     result = osf.publish_live(
         tmp_path,
         snapshot,
-        token="test-secret-token",
+        token="dummy",
         client=client,
         base_url="https://api.test/v2",
     )
-    assert captured["auth"] == "Bearer test-secret-token"
+    assert captured["auth"] == "Bearer dummy"
+    assert len(captured["idempotency"]) == 64
     assert result["node_id"] == "abc123"
     assert result["osf_node_id"] == "abc123"
     assert result["url"] == "https://osf.io/abc123/"
@@ -156,14 +160,15 @@ def test_publish_live_uses_bearer_pat_but_never_returns_it(
     ]
     assert result["errors"] == []
     assert captured["uploads"] == 1
-    assert "test-secret-token" not in json.dumps(result)
+    assert "dummy" not in json.dumps(result)
 
 
 def test_live_run_writes_result_with_mock_transport(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    monkeypatch.setenv("OSF_PAT", "test-secret-token")
+    monkeypatch.setenv("OSF_PAT", "dummy")
+    monkeypatch.setenv(osf.LIVE_ENV, "1")
     (tmp_path / "paper.md").write_text("public", encoding="utf-8")
     seen_paths = []
 
@@ -189,12 +194,13 @@ def test_live_run_writes_result_with_mock_transport(
     result = json.loads((tmp_path / "osf_publish_result.json").read_text())
     assert paths["result"] == tmp_path / "osf_publish_result.json"
     assert result["url"] == "https://osf.io/abc123/"
+    assert len(result["idempotency_key"]) == 64
     assert result["planned_files"][0]["path"] == "paper.md"
     assert len(seen_paths) == 1
     assert "bundle_snapshot.json" not in seen_paths[0]
     assert "osf_publish_plan.json" not in seen_paths[0]
     assert "osf_publish_result.json" not in seen_paths[0]
-    assert "test-secret-token" not in json.dumps(result)
+    assert "dummy" not in json.dumps(result)
 
 
 def test_run_skips_existing_result_unless_forced(
@@ -221,7 +227,7 @@ def test_upload_file_retries_transient_without_leaking_token(tmp_path: Path) -> 
     def handler(request: httpx.Request) -> httpx.Response:
         calls.append(request)
         if len(calls) == 1:
-            return httpx.Response(429, json={"detail": "slow down test-secret-token"})
+            return httpx.Response(429, json={"detail": "slow down dummy"})
         return httpx.Response(
             201,
             json={"data": {"links": {"html": "https://osf.io/file/"}}},
@@ -233,7 +239,7 @@ def test_upload_file_retries_transient_without_leaking_token(tmp_path: Path) -> 
         node_id="abc123",
         run_dir=tmp_path,
         rel_path="paper.md",
-        token="test-secret-token",
+        token="dummy",
         files_url="https://files.test/v1",
     )
     assert len(calls) == 2
@@ -251,7 +257,7 @@ def test_live_result_errors_do_not_include_token(tmp_path: Path) -> None:
 
     def handler(request: httpx.Request) -> httpx.Response:
         if request.method == "PUT":
-            return httpx.Response(500, json={"detail": "test-secret-token"})
+            return httpx.Response(500, json={"detail": "dummy"})
         return httpx.Response(
             201,
             json={"data": {"id": "abc123", "links": {"html": "https://osf.io/abc123/"}}},
@@ -261,13 +267,13 @@ def test_live_result_errors_do_not_include_token(tmp_path: Path) -> None:
     result = osf.publish_live(
         tmp_path,
         snapshot,
-        token="test-secret-token",
+        token="dummy",
         client=client,
         base_url="https://api.test/v2",
         files_url="https://files.test/v1",
     )
     assert result["errors"] == ["paper.md: HTTP 500"]
-    assert "test-secret-token" not in json.dumps(result)
+    assert "dummy" not in json.dumps(result)
 
 
 def test_main_dry_run_writes_plan_without_pat(
@@ -276,5 +282,73 @@ def test_main_dry_run_writes_plan_without_pat(
 ) -> None:
     monkeypatch.delenv("OSF_PAT", raising=False)
     (tmp_path / "paper.md").write_text("public", encoding="utf-8")
-    assert osf.main(["--run-dir", str(tmp_path), "--dry-run"]) == 0
+    assert osf.main(["--run-dir", str(tmp_path)]) == 0
     assert (tmp_path / osf.PLAN_NAME).exists()
+
+
+def test_live_mode_requires_env_gate_before_pat(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv("OSF_PAT", "dummy")
+    monkeypatch.delenv(osf.LIVE_ENV, raising=False)
+    (tmp_path / "paper.md").write_text("public", encoding="utf-8")
+    with pytest.raises(RuntimeError, match=osf.LIVE_ENV):
+        osf.run(tmp_path, dry_run=False, snapshot_only=False)
+    assert not (tmp_path / osf.RESULT_NAME).exists()
+
+
+def test_live_auth_failure_writes_no_result(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv("OSF_PAT", "dummy")
+    monkeypatch.setenv(osf.LIVE_ENV, "1")
+    (tmp_path / "paper.md").write_text("public", encoding="utf-8")
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(401, json={"detail": "dummy"})
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    with pytest.raises(httpx.HTTPStatusError):
+        osf.run(tmp_path, dry_run=False, snapshot_only=False, client=client)
+    assert not (tmp_path / osf.RESULT_NAME).exists()
+
+
+def test_live_network_failure_writes_no_result(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv("OSF_PAT", "dummy")
+    monkeypatch.setenv(osf.LIVE_ENV, "1")
+    (tmp_path / "paper.md").write_text("public", encoding="utf-8")
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        raise httpx.ConnectError("network down", request=request)
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    with pytest.raises(httpx.ConnectError):
+        osf.run(tmp_path, dry_run=False, snapshot_only=False, client=client)
+    assert not (tmp_path / osf.RESULT_NAME).exists()
+
+
+def test_main_live_http_error_prints_safe_class_not_body(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    monkeypatch.setenv("OSF_PAT", "dummy")
+    monkeypatch.setenv(osf.LIVE_ENV, "1")
+    (tmp_path / "paper.md").write_text("public", encoding="utf-8")
+
+    def fail_publish(*args, **kwargs):
+        request = httpx.Request("POST", "https://api.test/v2/nodes/")
+        response = httpx.Response(401, json={"detail": "dummy"}, request=request)
+        raise httpx.HTTPStatusError("dummy leaked body", request=request, response=response)
+
+    monkeypatch.setattr(osf, "publish_live", fail_publish)
+
+    assert osf.main(["--run-dir", str(tmp_path), "--live"]) == 2
+    err = capsys.readouterr().err
+    assert "HTTP 401" in err
+    assert "dummy" not in err
