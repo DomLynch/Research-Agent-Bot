@@ -320,6 +320,7 @@ def test_splice_inserts_before_references() -> None:
     )
     appendix = "## Search Provenance and Selection\n\nbody\n"
     out = appx.splice_appendix_before_references(paper, appendix)
+    assert "## Publication Appendix" in out
     sp_pos = out.find("## Search Provenance")
     ref_pos = out.find("## References")
     assert sp_pos >= 0 and ref_pos >= 0
@@ -327,7 +328,7 @@ def test_splice_inserts_before_references() -> None:
 
 
 def test_splice_is_idempotent() -> None:
-    """If the appendix is already present, splicing is a no-op."""
+    """Bare historical appendix is wrapped once, then stable."""
     paper = (
         "## Conclusion\n\nFoo.\n\n"
         "## Search Provenance and Selection\n\nold body\n\n"
@@ -335,7 +336,9 @@ def test_splice_is_idempotent() -> None:
     )
     appendix = "## Search Provenance and Selection\n\nNEW body\n"
     out = appx.splice_appendix_before_references(paper, appendix)
-    assert out == paper
+    assert out.count("## Publication Appendix") == 1
+    assert "old body" in out and "NEW body" not in out
+    assert appx.splice_appendix_before_references(out, appendix) == out
 
 
 def test_splice_appends_when_no_references_section() -> None:
@@ -343,5 +346,6 @@ def test_splice_appends_when_no_references_section() -> None:
     paper = "## Conclusion\n\nFoo.\n"
     appendix = "## Search Provenance and Selection\n\nbody\n"
     out = appx.splice_appendix_before_references(paper, appendix)
+    assert "## Publication Appendix" in out
     assert "## Search Provenance" in out
     assert out.startswith("## Conclusion")

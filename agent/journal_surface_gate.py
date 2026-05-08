@@ -24,18 +24,13 @@ _PLACEHOLDER_PATTERNS = (
     "the evidence base is limited to accepted receipts", "the conclusion is limited to claims that survive receipt qualification", "section generation cannot satisfy the validation contract",
     "generated section cannot satisfy the validation contract", "deterministic evidence summary", "deterministic synthesis summary", "llm proposes, code disposes", "no llm authorship",
 )
-_REQUIRED_SECTIONS = {
-    "Abstract": 150,
-    "Introduction": 400,
-    "Background": 300,
-    "Methods": 300,
-    "Results": 500,
-    "Cross-Domain Synthesis": 850,
-    "Discussion": 800,
-    "Limitations": 250,
-    "Conclusion": 250,
-}
-_APPENDIX_CUTOFF_RE = re.compile(r"^##\s+(?:Publication Appendix|Researka Submitter Block|Data and Code Availability|Search Provenance|AI Disclosure|Accountability)\b", flags=re.M)
+_META_PATTERNS = (
+    "this synthesis was produced by", "submission `synthesis-", "final-layer reviewer",
+    "patches are auto-applied", "rejected-evidence quarantine did not run",
+    "full grok review", "run manifest", "bundle contains", "certification record",
+)
+_REQUIRED_SECTIONS = {"Abstract": 150, "Introduction": 400, "Background": 300, "Methods": 300, "Results": 500, "Cross-Domain Synthesis": 850, "Discussion": 800, "Limitations": 250, "Conclusion": 250}
+_APPENDIX_CUTOFF_RE = re.compile(r"^##\s+(?:Publication Appendix|Researka Submitter Block|Data and Code Availability|Search Provenance|AI(?:-Use)? Disclosure|Accountability|References)\b", flags=re.M)
 
 
 def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
@@ -45,6 +40,11 @@ def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
     for pat in _PLACEHOLDER_PATTERNS:
         if pat in low:
             issues.append(SurfaceIssue("placeholder_prose", pat))
+    for pat in _META_PATTERNS:
+        if pat in low:
+            issues.append(SurfaceIssue("template_meta", pat))
+    for msg in _duplicate_paragraph_issue_messages(body_md):
+        issues.append(SurfaceIssue("duplicate_paragraph", msg))
     for msg in _section_issue_messages(body_md):
         issues.append(SurfaceIssue("structure_surface", msg))
     for msg in _qei_shape_issue_messages(body_md):
@@ -89,11 +89,7 @@ def qei_row_issue_messages(row: dict[str, str]) -> tuple[str, ...]:
 
 
 def _extract_qei_rows(paper_md: str) -> Iterable[dict[str, str]]:
-    m = re.search(
-        r"^## Quantitative Evidence Index\b.*?\n(.*?)(?=^## |\Z)",
-        paper_md,
-        flags=re.M | re.S,
-    )
+    m = re.search(r"^## Quantitative Evidence Index\b.*?\n(.*?)(?=^## |\Z)", paper_md, flags=re.M | re.S)
     if not m:
         return ()
     rows: list[dict[str, str]] = []
@@ -104,20 +100,12 @@ def _extract_qei_rows(paper_md: str) -> Iterable[dict[str, str]]:
         if cells[:6] == ["Study", "Endpoint", "Arm", "Value", "Type", "Statistic"]:
             continue
         if len(cells) >= 6:
-            rows.append({
-                "study_label": cells[0], "endpoint": cells[1],
-                "arm": cells[2], "value": cells[3],
-                "unit_or_type": cells[4], "statistic": cells[5],
-            })
+            rows.append({"study_label": cells[0], "endpoint": cells[1], "arm": cells[2], "value": cells[3], "unit_or_type": cells[4], "statistic": cells[5]})
     return tuple(rows)
 
 
 def _qei_shape_issue_messages(paper_md: str) -> tuple[str, ...]:
-    m = re.search(
-        r"^## Quantitative Evidence Index\b.*?\n(.*?)(?=^## |\Z)",
-        paper_md,
-        flags=re.M | re.S,
-    )
+    m = re.search(r"^## Quantitative Evidence Index\b.*?\n(.*?)(?=^## |\Z)", paper_md, flags=re.M | re.S)
     if not m:
         return ()
     issues: list[str] = []
@@ -146,26 +134,37 @@ def _section_issue_messages(paper_md: str) -> tuple[str, ...]:
     return tuple(issues)
 
 
+def _duplicate_paragraph_issue_messages(paper_md: str) -> tuple[str, ...]:
+    paras = []
+    for para in re.split(r"\n\s*\n", paper_md):
+        text = para.strip()
+        if not text or text.startswith(("#", "|", "_Cited:")):
+            continue
+        tokens = re.findall(r"[a-z0-9]+", text.lower())
+        real_tokens = {t for t in tokens if not re.fullmatch(r"word\d+", t)}
+        if len(tokens) >= 30 and len(real_tokens) >= 20:
+            paras.append((len(paras) + 1, set(tokens)))
+    issues: list[str] = []
+    for idx, left in enumerate(paras):
+        for right in paras[idx + 1:]:
+            overlap = len(left[1] & right[1]) / max(1, len(left[1] | right[1]))
+            if overlap >= 0.9:
+                issues.append(
+                    f"duplicate paragraphs {left[0]},{right[0]} token_overlap={overlap:.2f}"
+                )
+    return tuple(issues)
+
+
 def _section_body(paper_md: str, heading: str) -> str | None:
-    m = re.search(
-        rf"^##\s+{re.escape(heading)}\b.*?\n(.*?)(?=^##\s+|\Z)",
-        paper_md,
-        flags=re.M | re.S,
-    )
+    m = re.search(rf"^##\s+{re.escape(heading)}\b.*?\n(.*?)(?=^##\s+|\Z)", paper_md, flags=re.M | re.S)
     return m.group(1) if m else None
 
 
 def _row_to_dict(row: Any) -> dict[str, str]:
     if isinstance(row, dict):
         return {str(k): str(v) for k, v in row.items()}
-    return {
-        "study_label": str(getattr(row, "study_label", "")),
-        "endpoint": str(getattr(row, "endpoint", "")),
-        "arm": str(getattr(row, "arm", "")),
-        "value": str(getattr(row, "value", "")),
-        "unit_or_type": str(getattr(row, "unit_or_type", "")),
-        "statistic": str(getattr(row, "statistic", "")),
-    }
+    keys = ("study_label", "endpoint", "arm", "value", "unit_or_type", "statistic")
+    return {key: str(getattr(row, key, "")) for key in keys}
 
 
 def _malformed_study_id(study: str) -> bool:
@@ -179,11 +178,7 @@ def _endpoint_class(endpoint: str) -> str:
         ("event", ("mortality", "survival", "death", "incident")),
         ("pressure", ("blood pressure", "systolic", "diastolic")),
         ("bmi", ("body mass index", "bmi")),
-        ("biomarker", (
-            "glucose", "hba1c", "cholesterol", "ldl", "hdl",
-            "triglyceride", "insulin", "crp", "biomarker",
-            "inflammation",
-        )),
+        ("biomarker", ("glucose", "hba1c", "cholesterol", "ldl", "hdl", "triglyceride", "insulin", "crp", "biomarker", "inflammation")),
         ("renal", ("egfr", "kidney", "renal", "glomerular")),
         ("speed", ("walk speed", "gait speed", "walking speed")),
         ("mass", ("body weight", "lean mass", "fat mass", "muscle mass")),
@@ -251,12 +246,3 @@ _ALLOWED_UNIT_CLASSES = {
     "strength": _COMMON | {"mass"},
     "scale": _COMMON,
 }
-
-
-__all__ = [
-    "SurfaceIssue",
-    "SurfaceReport",
-    "evaluate_journal_surface",
-    "is_publishable_qei_row",
-    "qei_row_issue_messages",
-]

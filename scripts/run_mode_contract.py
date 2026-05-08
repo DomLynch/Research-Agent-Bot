@@ -136,6 +136,15 @@ _BLOCKED_METHODS_PHRASES: tuple[str, ...] = (
     "inter-rater agreement",
     "intercoder reliability",
     "Cohen's kappa",
+    # Public journal surface must not expose operational provenance.
+    "this synthesis was produced by",
+    "submission `synthesis-",
+    "final-layer reviewer",
+    "patches are auto-applied",
+    "rejected-evidence quarantine did not run",
+    "grok",
+    "LLM proposes, code disposes",
+    "no LLM authorship",
 )
 
 
@@ -183,76 +192,28 @@ def validate_contract(c: RunModeContract) -> list[str]:
 
 def render_methods(c: RunModeContract) -> str:
     """Deterministic Methods section. Pure function over the contract;
-    output is bounded so it cannot contain blocked phrases.
-
-    Output structure: short narrative naming what ran + an ordered
-    list of pipeline stages + a CONDITIONAL "did NOT run" disclosure
-    block (only emitted when at least one stage did NOT run)."""
-    stages_md = "\n".join(
-        f"{i}. {stage}." for i, stage in enumerate(c.deterministic_stages, 1)
-    )
-
-    not_run_lines: list[str] = []
-    if not c.spar_adjudication_ran:
-        not_run_lines.append(
-            "- SPAR (multi-judge panel adjudication) did NOT run on this corpus."
-        )
-    if not c.multi_receipt_clusters_ran:
-        not_run_lines.append(
-            "- Multi-receipt cluster aggregation did NOT run."
-        )
-    if not c.llm_fact_extraction_ran:
-        not_run_lines.append(
-            "- LLM fact extraction (extraction-time fact proposing) did NOT "
-            "run; claims came from deterministic regex extraction over per-"
-            "paper source documents."
-        )
-    if not c.rejected_evidence_quarantine_ran:
-        not_run_lines.append(
-            "- Rejected-evidence quarantine did NOT run (no SPAR rejections "
-            "to quarantine)."
-        )
-
-    # Conditionally include the disclosure section ONLY when there's
-    # something to disclose. A future run with all flags True will
-    # silently omit the section instead of leaving a header dangling.
-    not_run_section = ""
-    if not_run_lines:
-        not_run_section = (
-            "### What did NOT run\n\n"
-            "Explicit-absence audit-trail block — earlier drafts inherited "
-            "Methods boilerplate describing pipeline stages that were not "
-            "actually executed.\n\n"
-            + "\n".join(not_run_lines)
-            + "\n\n"
-        )
-
+    output is bounded so it cannot contain blocked phrases."""
     return (
         f"## Methods\n\n"
-        f"This synthesis was produced by the **{c.run_mode}** pipeline "
-        f"on the *{c.topic}* corpus (submission `{c.submission_id}`). "
-        f"All claims trace to one of {c.n_papers_in_corpus} curated source "
-        f"papers and {c.n_high_confidence_claims_used_by_writer} "
-        f"high-confidence bound claims used by the writer. Citations, "
-        f"evidence tiers, numeric claims, and thesis selection are constrained "
-        f"by the run registry and audit record.\n\n"
-        f"### LLM roles\n\n"
-        f"- **Writer:** `{c.writer_model}` produces section prose given "
-        f"the deterministic receipts + thesis as structured input.\n"
-        f"- **In-writing reviewer:** `{c.in_writing_judge_model}` judges "
-        f"each section against the receipt set; failed sections trigger "
-        f"a writer revision pass.\n"
-        f"- **Final-layer reviewer:** `{c.final_layer_reviewer_model}` "
-        f"performs a final adversarial pass over the assembled paper "
-        f"(fallback `{c.final_layer_fallback_model}` if the primary is "
-        f"unreachable). Patches are auto-applied subject to a single-"
-        f"occurrence mechanical safety gate.\n\n"
-        f"### Pipeline stages (deterministic, in order)\n\n"
-        f"{stages_md}\n\n"
-        f"{not_run_section}"
-        f"### Claim source\n\n"
-        f"`{c.claim_source}` — the canonical ground truth for every "
-        f"sentence in this paper.\n"
+        f"The review used a predeclared corpus of {c.n_papers_in_corpus} "
+        f"source papers on {c.topic}. Source documents were screened for "
+        f"quantitative outcome statements, and "
+        f"{c.n_high_confidence_claims_used_by_writer} source-bound "
+        f"observations were retained for synthesis after role, unit, and "
+        f"citation checks.\n\n"
+        f"### Evidence selection and synthesis\n\n"
+        f"Claims were retained only when their numeric value, endpoint, and "
+        f"study label could be reconciled with the source record. Evidence "
+        f"was grouped by outcome class, study design, direction of effect, "
+        f"and endpoint proximity. Cross-paper tensions were summarized when "
+        f"two retained findings addressed related outcomes but differed in "
+        f"direction, directness, population, comparator, or follow-up.\n\n"
+        f"### Manuscript controls\n\n"
+        f"Public prose was constrained to the retained evidence set. Numeric "
+        f"statements were checked against the source-bound claim table, and "
+        f"rows with unresolved endpoint, unit, study-label, or citation "
+        f"problems were excluded from the public quantitative evidence "
+        f"index.\n"
     )
 
 
@@ -260,18 +221,8 @@ def validate_rendered(methods_md: str) -> list[str]:
     """Return SORTED list of blocked phrases found in the rendered
     Methods. Empty list = clean. Case-insensitive substring match.
 
-    Excludes the `### What did NOT run` disclosure block from the
-    haystack — that block is BY DESIGN explicit-named ('Multi-receipt
-    cluster aggregation did NOT run' must mention 'multi-receipt
-    cluster'). Validation only runs against assertion prose."""
-    # Strip the disclosure section if present.
-    haystack_md = re.sub(
-        r"^### What did NOT run\b.*?(?=^### |\Z)",
-        "",
-        methods_md,
-        flags=re.MULTILINE | re.DOTALL,
-    )
-    haystack = haystack_md.lower()
+    """
+    haystack = methods_md.lower()
     found: list[str] = []
     for phrase in _BLOCKED_METHODS_PHRASES:
         if phrase.lower() in haystack:

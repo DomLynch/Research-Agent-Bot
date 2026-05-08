@@ -1255,6 +1255,27 @@ def test_apply_fixes_removes_conclusion_paragraph_repeated_earlier() -> None:
     ]
 
 
+def test_apply_fixes_depth_backfill_is_document_global_idempotent() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Introduction\n\n"
+        + fixer._BACKGROUND_BACKFILL
+        + "\n\n## Background\n\n"
+        + "short background. " * 20
+    )
+    fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
+    assert fixed.count("### Evidence-context framing") == 1
+    assert not [
+        e for e in log
+        if e["fix_type"] == "analytical_depth_backfill"
+        and "'Background'" in e["description"]
+    ]
+
+
 def test_apply_fixes_repairs_role_drift_before_strip(tmp_path) -> None:
     import sys as _sys
     from pathlib import Path as _Path

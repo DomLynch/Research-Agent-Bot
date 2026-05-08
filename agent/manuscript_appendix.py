@@ -630,9 +630,17 @@ def splice_appendix_before_references(
     the paper, returns the paper unchanged. Otherwise inserts the
     appendix block immediately before the first '## References'
     occurrence; if no References section exists, appends to end."""
-    # Idempotency: don't double-insert
+    if "## Publication Appendix" not in appendix_md:
+        appendix_md = "## Publication Appendix\n\n" + appendix_md.lstrip()
+    # Idempotency: don't double-insert; wrap historical bare appendix.
     if "## Search Provenance and Selection" in paper_md:
-        return paper_md
+        if "## Publication Appendix" in paper_md:
+            return paper_md
+        return paper_md.replace(
+            "## Search Provenance and Selection",
+            "## Publication Appendix\n\n## Search Provenance and Selection",
+            1,
+        )
     m = _REFERENCES_SPLICE_RE.search(paper_md)
     if m:
         insert_pos = m.start() + 1  # after the leading newline

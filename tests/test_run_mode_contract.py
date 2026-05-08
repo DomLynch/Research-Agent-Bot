@@ -44,25 +44,24 @@ def test_v06_contract_renders_without_blocked_phrases() -> None:
     )
 
 
-def test_methods_explicitly_discloses_what_did_not_run() -> None:
-    """Negative-disclosure block: a reader must see that SPAR / cluster
-    / fact-extraction did NOT run, so absence is itself audit-trailed."""
+def test_methods_excludes_operational_absence_disclosures() -> None:
+    """Public Methods must not expose operational absence audit prose."""
     methods = rmc.render_methods(_v06_contract())
-    assert "What did NOT run" in methods
-    assert "SPAR" in methods and "did NOT run" in methods
-    assert "Multi-receipt cluster" in methods or "cluster" in methods.lower()
-    assert "LLM fact extraction" in methods
+    assert "What did NOT run" not in methods
+    assert "SPAR" not in methods
+    assert "did NOT run" not in methods
+    assert "LLM fact extraction" not in methods
 
 
-def test_methods_names_actual_writer_model() -> None:
-    """Methods must accurately name the LLMs that ran. Pre-fix the
-    static template named SPAR judge models that never executed."""
+def test_methods_does_not_name_operational_models() -> None:
+    """Model stack belongs in appendix/provenance, not public Methods."""
     contract = _v06_contract()
     methods = rmc.render_methods(contract)
-    assert contract.writer_model in methods
-    assert contract.in_writing_judge_model in methods
-    assert contract.final_layer_reviewer_model in methods
-    assert contract.final_layer_fallback_model in methods
+    assert contract.writer_model not in methods
+    assert contract.in_writing_judge_model not in methods
+    assert contract.final_layer_reviewer_model not in methods
+    assert contract.final_layer_fallback_model not in methods
+    assert contract.submission_id not in methods
 
 
 def test_contract_validates_self_consistency_spar_requires_fact_extraction() -> None:
@@ -282,6 +281,21 @@ def test_what_did_not_run_section_omitted_when_nothing_to_disclose() -> None:
     )
     methods = rmc.render_methods(full_run)
     assert "What did NOT run" not in methods
+
+
+def test_public_methods_excludes_root_cause_meta_phrases() -> None:
+    methods = rmc.render_methods(_v06_contract())
+    lower = methods.lower()
+    for phrase in (
+        "this synthesis was produced by",
+        "submission `synthesis-",
+        "final-layer reviewer",
+        "patches are auto-applied",
+        "grok",
+        "llm proposes, code disposes",
+        "no llm authorship",
+    ):
+        assert phrase not in lower
 
 
 def test_contract_validates_unsubstituted_topic_placeholder() -> None:

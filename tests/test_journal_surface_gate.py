@@ -8,25 +8,25 @@ from agent.journal_surface_gate import (
 from agent.results_table import EvidenceRow
 
 
-def _words(n: int) -> str:
-    return " ".join(f"word{i}" for i in range(n))
+def _words(n: int, prefix: str = "word") -> str:
+    return " ".join(f"{prefix}{i}" for i in range(n))
 
 
 def _paper(row: str) -> str:
     return (
-        f"## Abstract\n\n{_words(150)}\n\n"
-        f"## Introduction\n\n{_words(400)}\n\n"
-        f"## Background\n\n{_words(300)}\n\n"
+        f"## Abstract\n\n{_words(150, 'abstract')}\n\n"
+        f"## Introduction\n\n{_words(400, 'intro')}\n\n"
+        f"## Background\n\n{_words(300, 'background')}\n\n"
         "## Quantitative Evidence Index — topic\n\n"
         "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
         "|---|---|---|---|---|---|\n"
         f"{row}\n\n"
-        f"## Methods\n\n{_words(300)}\n\n"
-        f"## Results\n\n{_words(500)}\n\n"
-        f"## Cross-Domain Synthesis\n\n{_words(850)}\n\n"
-        f"## Discussion\n\n{_words(800)}\n\n"
-        f"## Limitations\n\n{_words(250)}\n\n"
-        f"## Conclusion\n\n{_words(250)}\n"
+        f"## Methods\n\n{_words(300, 'methods')}\n\n"
+        f"## Results\n\n{_words(500, 'results')}\n\n"
+        f"## Cross-Domain Synthesis\n\n{_words(850, 'cross')}\n\n"
+        f"## Discussion\n\n{_words(800, 'discussion')}\n\n"
+        f"## Limitations\n\n{_words(250, 'limits')}\n\n"
+        f"## Conclusion\n\n{_words(250, 'conclusion')}\n"
     )
 
 
@@ -124,6 +124,33 @@ def test_appendix_meta_language_does_not_block_body_surface():
         + "\n\n## Data and Code Availability\n\n"
         "The audit appendix can describe that LLM proposes, code disposes.\n"
     )
+    report = evaluate_journal_surface(paper)
+    assert report.passed
+
+
+def test_public_template_meta_blocks_journal_surface():
+    paper = (
+        "## Methods\n\n"
+        "This synthesis was produced by the v0.6 pipeline "
+        "(submission `synthesis-demo`). Patches are auto-applied.\n"
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "template_meta" for i in report.issues)
+
+
+def test_duplicate_public_paragraph_blocks_journal_surface():
+    para = " ".join(f"alpha{i}" for i in range(35))
+    paper = f"## Results\n\n{para}\n\n{para} extra\n\n"
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "duplicate_paragraph" for i in report.issues)
+
+
+def test_duplicate_appendix_paragraph_does_not_block_body_surface():
+    good = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    para = " ".join(f"alpha{i}" for i in range(35))
+    paper = good + f"\n\n## Publication Appendix\n\n{para}\n\n{para}\n"
     report = evaluate_journal_surface(paper)
     assert report.passed
 

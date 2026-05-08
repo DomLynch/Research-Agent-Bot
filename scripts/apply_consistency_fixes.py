@@ -1801,6 +1801,8 @@ def _ensure_analytical_depth_floors(paper_md: str) -> tuple[str, list[dict]]:
         s, e, section = _extract_section(paper_md, heading)
         if s < 0:
             continue
+        if _paragraph_already_present(paper_md, paragraph):
+            continue
         updated = section.rstrip() + "\n\n" + paragraph + "\n\n"
         paper_md = paper_md[:s] + updated + paper_md[e:]
         new_count = _section_word_count(paper_md, heading)
@@ -1828,6 +1830,12 @@ def _ensure_analytical_depth_floors(paper_md: str) -> tuple[str, list[dict]]:
             ),
         })
     return paper_md, log
+
+
+def _paragraph_already_present(paper_md: str, paragraph: str) -> bool:
+    needle = re.sub(r"\s+", " ", paragraph).strip().lower()
+    haystack = re.sub(r"\s+", " ", paper_md).lower()
+    return needle in haystack
 
 
 _DISCUSSION_HEDGE_PHRASES = (

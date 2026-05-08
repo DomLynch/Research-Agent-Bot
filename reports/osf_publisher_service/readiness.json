@@ -1,0 +1,13 @@
+{
+  "schema": "osf_publisher_service.readiness.v1",
+  "architecture": "research-agent-bot -> DW -> osf-publisher -> OSF -> DW",
+  "dry_run_ready": true,
+  "live_ready": false,
+  "blockers": [
+    "No live OSF call performed",
+    "No live DW write-back performed",
+    "Rotated OSF PAT required before first smoke",
+    "DW registry_record/register support must be confirmed on deployment"
+  ],
+  "changed_project": "/Users/domininclynch/Desktop/Business/osf-publisher"
+}
