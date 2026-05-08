@@ -82,6 +82,12 @@ class Settings:
     # Run logging
     runs_dir: str
 
+    # Optional Granite arbitrator scaffold
+    granite_arbitrator_api_key: str = ""
+    granite_arbitrator_base_url: str = "https://openrouter.ai/api/v1"
+    granite_arbitrator_model: str = "ibm-granite/granite-4.1-8b"
+    granite_arbitrator_enabled: bool = False
+
 
 def load_settings() -> Settings:
     _load_dotenv_if_present()
@@ -110,6 +116,14 @@ def load_settings() -> Settings:
         final_layer_reviewer_model=os.environ.get(
             "FINAL_LAYER_REVIEWER_MODEL", "x-ai/grok-4.3"
         ),
+        granite_arbitrator_api_key=os.environ.get("OPENROUTER_API_KEY", "").strip(),
+        granite_arbitrator_base_url=os.environ.get(
+            "OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"
+        ),
+        granite_arbitrator_model=os.environ.get(
+            "GRANITE_ARBITRATOR_MODEL", "ibm-granite/granite-4.1-8b"
+        ),
+        granite_arbitrator_enabled=bool(os.environ.get("OPENROUTER_API_KEY", "").strip()),
         bot_enabled=_bool("BOT_ENABLED", True),
         daily_cost_cap_usd=_float("DAILY_COST_CAP_USD", 10.0),
         dashboard_host=os.environ.get("DASHBOARD_HOST", "127.0.0.1"),
