@@ -18,22 +18,26 @@ corpus_search_queries = [
   "urolithin A AND muscle endurance AND randomized",
   "mitopure AND clinical trial",
   "urolithin A AND safety AND human",
+  "ellagitannin AND urolithin A AND aging",
+  "ellagic acid metabolite AND urolithin A AND mitochondria",
+  "punicalagin AND urolithin A AND mitophagy",
+  "urolithin A AND skeletal muscle AND older adults",
+  "urolithin A AND gut microbiome AND clinical",
 ]
 canonical_rct_paper_ids = []
 canonical_trials = []
 known_role_overrides = {}
 
 [retrieval]
-topic_terms = ["urolithin A", "urolithin-a", "mitopure"]
-scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "mitochondrial function", "mitophagy", "muscle function", "endurance"]
+topic_terms = ["urolithin A", "urolithin-a", "mitopure", "ellagitannin", "ellagic acid", "punicalagin", "ellagic acid metabolite"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "mitochondrial function", "mitophagy", "muscle function", "endurance", "gut microbiome", "sarcopenia"]
 evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
-exclude_terms = ["animal only", "in vitro only", "cell culture only", "pomegranate only", "pediatric only"]
+exclude_terms = ["pomegranate only", "pediatric only"]
 date_from = 2000
 languages = ["English"]
-species = ["humans"]
 
 [retrieval.background]
-allow = ["mitophagy mechanism", "mitochondrial aging", "ellagitannin metabolism", "muscle endurance biology"]
+allow = ["mitophagy mechanism", "mitochondrial aging", "ellagitannin metabolism", "muscle endurance biology", "preclinical mitophagy", "cellular mitochondrial function"]
 
 [endpoint_polarity]
 mitochondrial_function = "higher_is_better"
@@ -41,4 +45,3 @@ muscle_function = "higher_is_better"
 endurance = "higher_is_better"
 inflammation = "lower_is_better"
 adverse_events = "lower_is_better"
-

@@ -86,6 +86,10 @@ corpus_search_queries = [
   # (Q9 audit needs ≥8 numerics/1000 words; thin corpus → low density)
   "statin AND (LDL cholesterol OR lipid lowering) AND clinical",
   "statin AND (PROSPER OR HOPE-3 OR JUPITER OR STAREE) AND outcomes",
+  "statin AND (4S OR HPS OR CTT OR CTSU) AND mortality",
+  "statin AND (ASCVD OR atherosclerosis OR LDL-C reduction) AND older adults",
+  "statin AND cardiovascular mortality AND meta-analysis",
+  "statin AND secondary prevention AND all-cause mortality",
   "(atorvastatin OR rosuvastatin) AND (cognitive OR dementia OR Alzheimer) AND outcome",
   "statin AND (cancer incidence OR cancer mortality) AND cohort",
   "statin AND inflammation AND (CRP OR hsCRP OR cytokine)",
@@ -114,18 +118,19 @@ scope_terms    = [
   "older adults", "elderly", "geriatric", "exercise",
   "all-cause mortality", "cardiovascular event", "cancer",
   "incident diabetes", "cognitive decline", "alzheimer",
+  "cardiovascular mortality", "ASCVD", "LDL-C reduction",
+  "atherosclerosis", "major adverse cardiovascular events",
 ]
 evidence_types = [
   "clinical trial", "randomized controlled trial", "cohort study",
   "observational study", "meta-analysis", "systematic review",
 ]
 exclude_terms  = [
-  "stroke prevention only", "atrial fibrillation only",
   "in vitro only", "rodent only", "neurovascular unit only",
   "blood-brain barrier only", "PCSK9 inhibitor monotherapy only",
   "pediatric only", "familial hypercholesterolemia only",
 ]
-date_from      = 2010
+date_from      = 1990
 languages      = ["English"]
 species        = ["humans"]
 
