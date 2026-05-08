@@ -1,0 +1,176 @@
+{
+  "cases": [
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 1.0,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "da6b167833aa5e03473f6655a5c769580b1607883de73de9272b4de70c31c153",
+        "model": "mistralai/mistral-small-2603",
+        "patch_id": "P03",
+        "rationale": "The numeric claim '275' is removed, leaving the rest of the sentence intact. The before text is a public artifact with an unsupported numeric row, and after is empty for that numeric portion, satisfying the conservative rule for APPLY.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 1.0,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "glp1-rich6-p03",
+      "passed": true,
+      "rationale": "The numeric claim '275' is removed, leaving the rest of the sentence intact. The before text is a public artifact with an unsupported numeric row, and after is empty for that numeric portion, satisfying the conservative rule for APPLY."
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.9,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": false,
+        "input_hash": "92e550f258959e2c9e6875cc124ec4f7a7895b624452d028a5c778e45577d245",
+        "model": "mistralai/mistral-small-2603",
+        "patch_id": "P01",
+        "rationale": "before appears multiple times consecutively as an exact duplicate paragraph block, creating ambiguity about the target for replacement.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.9,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "omega3-richfix2-p01",
+      "passed": true,
+      "rationale": "before appears multiple times consecutively as an exact duplicate paragraph block, creating ambiguity about the target for replacement."
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.9,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": false,
+        "input_hash": "67c5831c0c6a66a173f4d9d2baec37ba23e9d78123b945e2667586a72d7981e0",
+        "model": "mistralai/mistral-small-2603",
+        "patch_id": "P04",
+        "rationale": "Ambiguous target; 'adults' conflicts semantically with 'senior dogs' study context.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.9,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "senolytics-proof005-p04",
+      "passed": true,
+      "rationale": "Ambiguous target; 'adults' conflicts semantically with 'senior dogs' study context."
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 1.0,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "bccf2f05eacfe11286e312b02ded215b3724f7c8ec59d5d8048368272655b676",
+        "model": "mistralai/mistral-small-2603",
+        "patch_id": "P03",
+        "rationale": "The 'after' text is empty, and the 'before' row is an unattested numeric claim in a table format, which qualifies as template residue. Deletion is appropriate.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 1.0,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "urolithin-a-1437-p03",
+      "passed": true,
+      "rationale": "The 'after' text is empty, and the 'before' row is an unattested numeric claim in a table format, which qualifies as template residue. Deletion is appropriate."
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.95,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": false,
+        "input_hash": "623d5e703523f1141ef7f47a6830b06eebfff2105833d7b80b52e2adb5d29687",
+        "model": "mistralai/mistral-small-2603",
+        "patch_id": "P08",
+        "rationale": "before appears multiple times in the table (Li 2020_ele) and the refusal indicates the replacement is not traced as a canonical public token, creating ambiguity in the target reference.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.95,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "rapamycin-endgame-p08",
+      "passed": false,
+      "rationale": "before appears multiple times in the table (Li 2020_ele) and the refusal indicates the replacement is not traced as a canonical public token, creating ambiguity in the target reference."
+    },
+    {
+      "actual": "REJECT",
+      "arbitration_log_entry": {
+        "confidence": 0.95,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "REJECT",
+        "fail_closed": false,
+        "input_hash": "179e2474b68383d52301668d1a402ac13b6ddf60618471c6c7d0ac4ba8434015",
+        "model": "mistralai/mistral-small-2603",
+        "patch_id": "P09",
+        "rationale": "The replacement introduces an untraced citation ('Kell 2026_ex' to 'Kell 2026') without a verifiable source in the paper context, violating the constraint to avoid untraced citations or new claims.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.95,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "rapamycin-endgame-p09",
+      "passed": true,
+      "rationale": "The replacement introduces an untraced citation ('Kell 2026_ex' to 'Kell 2026') without a verifiable source in the paper context, violating the constraint to avoid untraced citations or new claims."
+    }
+  ],
+  "metrics": {
+    "actual_distribution": {
+      "APPLY": 2,
+      "ESCALATE": 3,
+      "REJECT": 1
+    },
+    "agreement_rate": 0.8333333333333334,
+    "by_expected": {
+      "APPLY": {
+        "agreed": 2,
+        "agreement_rate": 1.0,
+        "total": 2
+      },
+      "ESCALATE": {
+        "agreed": 2,
+        "agreement_rate": 1.0,
+        "total": 2
+      },
+      "REJECT": {
+        "agreed": 1,
+        "agreement_rate": 0.5,
+        "total": 2
+      }
+    },
+    "confusion_matrix": {
+      "APPLY": {
+        "APPLY": 2,
+        "ESCALATE": 0,
+        "REJECT": 0
+      },
+      "ESCALATE": {
+        "APPLY": 0,
+        "ESCALATE": 2,
+        "REJECT": 0
+      },
+      "REJECT": {
+        "APPLY": 0,
+        "ESCALATE": 1,
+        "REJECT": 1
+      }
+    },
+    "escalate_count": 3,
+    "expected_distribution": {
+      "APPLY": 2,
+      "ESCALATE": 2,
+      "REJECT": 2
+    },
+    "fail_closed_count": 0
+  },
+  "model": "mistralai/mistral-small-2603",
+  "passed": 5,
+  "total": 6
+}

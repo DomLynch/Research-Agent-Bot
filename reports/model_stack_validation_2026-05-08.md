@@ -21,6 +21,8 @@ The arbitrator remains judge-only: `APPLY`, `REJECT`, or `ESCALATE`.
 | Fail-closed count | 4 |
 | Live Mistral sample | 5/5 pass |
 | Live Mistral distribution | APPLY 4 / ESCALATE 1 |
+| Live Mistral mixed sample | 5/6 pass |
+| Mixed-sample miss | expected REJECT, returned conservative ESCALATE |
 
 ## Coverage
 
@@ -37,6 +39,7 @@ failure.
 - `reports/model_stack_validation_2026-05-08.json`
 - `reports/model_stack_validation_2026-05-08.failclosed.json`
 - `reports/model_stack_validation_2026-05-08.live_mistral.json`
+- `reports/model_stack_validation_2026-05-08.live_mistral_mixed.json`
 
 ## Tests
 
@@ -59,4 +62,5 @@ failure.
 Mistral Small 4 is adding value as a bounded arbitration reviewer. It is not
 used as a broad semantic authority and does not silently inflate L5: all
 decisions are logged in arbitration-log-compatible shape and unsafe classes
-fail closed.
+fail closed. The mixed live sample shows one miss, but it was conservative
+escalation rather than unsafe patch application.
