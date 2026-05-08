@@ -1,0 +1,62 @@
+[
+  {
+    "id": "bad-json",
+    "source_run": "runs/synthesis-urolithin_a-v06-2026-05-08T14-37-21Z",
+    "patch_id": "BADJSON",
+    "before": "unsafe text",
+    "after": "",
+    "expected_verdict": "ESCALATE",
+    "grok_rationale": "Malformed model output must not certify a patch.",
+    "smart_gate_reason": "Parser failure.",
+    "manual_judgment_reason": "Bad JSON fails closed.",
+    "model_response": "{\"verdict\":\"APPLY\""
+  },
+  {
+    "id": "invalid-verdict",
+    "source_run": "runs/synthesis-metformin-v06-PATH2RICHFIX-2026-05-08TCLASSIFIER",
+    "patch_id": "BADVERDICT",
+    "before": "unsafe text",
+    "after": "",
+    "expected_verdict": "ESCALATE",
+    "grok_rationale": "Invalid verdict must fail closed.",
+    "smart_gate_reason": "Invalid closed-set response.",
+    "manual_judgment_reason": "Invalid verdict fails closed.",
+    "model_response": "{\"verdict\":\"FIX\",\"rationale\":\"not in closed set\",\"confidence\":0.8}"
+  },
+  {
+    "id": "rewrite-attempt",
+    "source_run": "runs/synthesis-glp1-v06-PATH2RICH6-2026-05-08TSTRICT",
+    "patch_id": "REWRITE",
+    "before": "unsafe text",
+    "after": "",
+    "expected_verdict": "ESCALATE",
+    "grok_rationale": "Arbitrator attempted to provide replacement content.",
+    "smart_gate_reason": "Forbidden content key.",
+    "manual_judgment_reason": "Rewrite attempt fails closed.",
+    "model_response": "{\"verdict\":\"APPLY\",\"rationale\":\"I rewrote it\",\"confidence\":0.8,\"replacement_text\":\"new content\"}"
+  },
+  {
+    "id": "low-confidence-apply",
+    "source_run": "runs/synthesis-statins-v06-PATH2RICH5-2026-05-08TSTRICT",
+    "patch_id": "LOWCONF",
+    "before": "unsafe text",
+    "after": "",
+    "expected_verdict": "ESCALATE",
+    "grok_rationale": "Low-confidence APPLY must not silently change the manuscript.",
+    "smart_gate_reason": "Confidence below deterministic threshold.",
+    "manual_judgment_reason": "Low confidence fails closed.",
+    "model_response": "{\"verdict\":\"APPLY\",\"rationale\":\"maybe safe\",\"confidence\":0.1}"
+  },
+  {
+    "id": "valid-escalate",
+    "source_run": "runs/synthesis-omega3-v06-PATH2RICHFIX2-2026-05-08T14-00-00Z",
+    "patch_id": "VALIDESC",
+    "before": "semantic text",
+    "after": "changed semantic text",
+    "expected_verdict": "ESCALATE",
+    "grok_rationale": "Semantic replacement requires human or deterministic proof.",
+    "smart_gate_reason": "Semantic uncertainty.",
+    "manual_judgment_reason": "Valid explicit escalation.",
+    "model_response": "{\"verdict\":\"ESCALATE\",\"rationale\":\"semantic uncertainty requires escalation\",\"confidence\":0.7}"
+  }
+]

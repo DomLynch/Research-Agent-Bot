@@ -1,0 +1,435 @@
+{
+  "cases": [
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.9,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "ad29103f7cdbc82f52ecb3bae8170eba268701c59a728c922241ce8a1fa2a751",
+        "model": "offline-fixture",
+        "patch_id": "P02",
+        "rationale": "Safe duplicate-prose deletion with no new scientific content.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.9,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "glp1-rich6-p02",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.88,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "da6b167833aa5e03473f6655a5c769580b1607883de73de9272b4de70c31c153",
+        "model": "offline-fixture",
+        "patch_id": "P03",
+        "rationale": "Patch only removes an unsupported numeric and preserves the nonnumeric claim.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.88,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "glp1-rich6-p03",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.9,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "301840b75262b547aa17acccc91c4528897614cade0dbd256c3997283ef4a70c",
+        "model": "offline-fixture",
+        "patch_id": "P04",
+        "rationale": "Empty-after deletion removes an unsupported numeric claim without replacement.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.9,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "glp1-rich6-p04",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.74,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": false,
+        "input_hash": "3b4c4a65d4c1bf667421fbaae5f2b480bfa2a4622e1fd01f54eb5d56ebe427c4",
+        "model": "offline-fixture",
+        "patch_id": "P01",
+        "rationale": "The replacement expands public prose, so deterministic arbitration cannot prove safety.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.74,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "glp1-rich6-p01",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.86,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "fd01abcfbe22aaff57540cebb571ccbf3e51c060298567dd93cf8784bc7ba3ba",
+        "model": "offline-fixture",
+        "patch_id": "P01",
+        "rationale": "The patch deletes a vague numeric phrase and adds nothing.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.86,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "statins-rich5-p01",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.88,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "32eb0f74f3fb62620bf69086f19eb836fe39f9bdd7abc372a3519e865cbcb517",
+        "model": "offline-fixture",
+        "patch_id": "P02",
+        "rationale": "Duplicate boilerplate can be deleted without adding scientific content.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.88,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "omega3-richfix2-p02",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.88,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "df70912c19e08d44d0bca14137f0a3f6e1bd7857a44f2ab0b2be326ec312efde",
+        "model": "offline-fixture",
+        "patch_id": "P03",
+        "rationale": "This is an empty-after deletion of repeated boilerplate.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.88,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "omega3-richfix2-p03",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.72,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": false,
+        "input_hash": "92e550f258959e2c9e6875cc124ec4f7a7895b624452d028a5c778e45577d245",
+        "model": "offline-fixture",
+        "patch_id": "P01",
+        "rationale": "The replacement expands prose and cannot be deterministically approved.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.72,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "omega3-richfix2-p01",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.95,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "fec7267283f252ad341c272e04d9aa6014ec4e51fa1a780bd8c54a187eea07b8",
+        "model": "offline-fixture",
+        "patch_id": "P01",
+        "rationale": "A validation placeholder is public residue and can be deleted exactly.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.95,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "senolytics-proof005-p01",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.92,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "a2460dd6f87c34176b925d977d4f8c960c6732dc6d13fada3a0a85824f25dab1",
+        "model": "offline-fixture",
+        "patch_id": "P03",
+        "rationale": "The patch deletes an unsupported numeric table row and adds nothing.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.92,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "senolytics-proof005-p03",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.76,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": false,
+        "input_hash": "67c5831c0c6a66a173f4d9d2baec37ba23e9d78123b945e2667586a72d7981e0",
+        "model": "offline-fixture",
+        "patch_id": "P04",
+        "rationale": "A common word deletion with semantic population impact is not deterministically safe.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.76,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "senolytics-proof005-p04",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.85,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "53945bd5d6883e8cf617df034c6f79d92025a77a268eee2d1206b4ae8498aa94",
+        "model": "offline-fixture",
+        "patch_id": "P03",
+        "rationale": "This is a narrow identifier typo correction with no new claim.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.85,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "vitamin-d-diag-p03",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.92,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "49680879427b5aebc477e4902c4564f63f3c705db6f32a639d9aa201ad0d097b",
+        "model": "offline-fixture",
+        "patch_id": "P05",
+        "rationale": "The patch deletes a malformed numeric row and does not rewrite content.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.92,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "vitamin-d-diag-p05",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.78,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": false,
+        "input_hash": "eb397a3a87c60868ba59bc1e1aef3a1d968e23211451adf2b03ebe1197696a23",
+        "model": "offline-fixture",
+        "patch_id": "P02",
+        "rationale": "The patch changes a polarity claim, so judge-only arbitration should not approve it.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.78,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "vitamin-d-diag-p02",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.93,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "303cd0263b0a012a3cde778720e9628af57ec30fd492310ba331b8bc3eead757",
+        "model": "offline-fixture",
+        "patch_id": "P02",
+        "rationale": "Deleting an unattested numeric table row is deterministic and adds no content.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.93,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "urolithin-a-1437-p02",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.94,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "bccf2f05eacfe11286e312b02ded215b3724f7c8ec59d5d8048368272655b676",
+        "model": "offline-fixture",
+        "patch_id": "P03",
+        "rationale": "The patch removes an untraceable numeric row without replacement.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.94,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "urolithin-a-1437-p03",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.87,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "e66b285cadcc15759b7156c4e435acf06f19ab186973e949be0c2b4fe1a2bea6",
+        "model": "offline-fixture",
+        "patch_id": "P01",
+        "rationale": "The patch collapses a malformed citation token to the existing registered token.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.87,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "metformin-richfix-p01",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.9,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "c26a1e095de066500f85b0ed48cf04cde1e88082ddc8b0c896ff9f79ac2a3506",
+        "model": "offline-fixture",
+        "patch_id": "P03",
+        "rationale": "The patch deletes a malformed table fragment and adds no replacement text.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.9,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "metformin-richfix-p03",
+      "passed": true
+    },
+    {
+      "actual": "REJECT",
+      "arbitration_log_entry": {
+        "confidence": 0.89,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "REJECT",
+        "fail_closed": false,
+        "input_hash": "623d5e703523f1141ef7f47a6830b06eebfff2105833d7b80b52e2adb5d29687",
+        "model": "offline-fixture",
+        "patch_id": "P08",
+        "rationale": "The replacement would publish an untraced citation token, so the patch should not apply.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.89,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "rapamycin-endgame-p08",
+      "passed": true
+    },
+    {
+      "actual": "REJECT",
+      "arbitration_log_entry": {
+        "confidence": 0.89,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "REJECT",
+        "fail_closed": false,
+        "input_hash": "179e2474b68383d52301668d1a402ac13b6ddf60618471c6c7d0ac4ba8434015",
+        "model": "offline-fixture",
+        "patch_id": "P09",
+        "rationale": "The replacement would publish an untraced citation token, so deterministic arbitration should reject it.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.89,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "rapamycin-endgame-p09",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "actual_distribution": {
+      "APPLY": 14,
+      "ESCALATE": 4,
+      "REJECT": 2
+    },
+    "agreement_rate": 1.0,
+    "by_expected": {
+      "APPLY": {
+        "agreed": 14,
+        "agreement_rate": 1.0,
+        "total": 14
+      },
+      "ESCALATE": {
+        "agreed": 4,
+        "agreement_rate": 1.0,
+        "total": 4
+      },
+      "REJECT": {
+        "agreed": 2,
+        "agreement_rate": 1.0,
+        "total": 2
+      }
+    },
+    "confusion_matrix": {
+      "APPLY": {
+        "APPLY": 14,
+        "ESCALATE": 0,
+        "REJECT": 0
+      },
+      "ESCALATE": {
+        "APPLY": 0,
+        "ESCALATE": 4,
+        "REJECT": 0
+      },
+      "REJECT": {
+        "APPLY": 0,
+        "ESCALATE": 0,
+        "REJECT": 2
+      }
+    },
+    "escalate_count": 4,
+    "expected_distribution": {
+      "APPLY": 14,
+      "ESCALATE": 4,
+      "REJECT": 2
+    },
+    "fail_closed_count": 0
+  },
+  "passed": 20,
+  "total": 20
+}

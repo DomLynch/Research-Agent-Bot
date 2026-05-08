@@ -1,0 +1,150 @@
+{
+  "cases": [
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.0,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": true,
+        "input_hash": "679a1c3274dc5825f7a595b4d70f6b736b381d3565811bc579b5e7ae07327903",
+        "model": "offline-fixture",
+        "patch_id": "BADJSON",
+        "rationale": "malformed json",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.0,
+      "expected": "ESCALATE",
+      "fail_closed": true,
+      "id": "bad-json",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.0,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": true,
+        "input_hash": "663b77969e4a410a202fb45c429fe5aaf873754cf4edc4dae86af3324b876cef",
+        "model": "offline-fixture",
+        "patch_id": "BADVERDICT",
+        "rationale": "invalid verdict",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.0,
+      "expected": "ESCALATE",
+      "fail_closed": true,
+      "id": "invalid-verdict",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.0,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": true,
+        "input_hash": "20321f5a2fece85a919c54e37959e9e28ff36fcc41bbc9cb4a104b30e771b5ab",
+        "model": "offline-fixture",
+        "patch_id": "REWRITE",
+        "rationale": "model attempted to provide replacement content",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.0,
+      "expected": "ESCALATE",
+      "fail_closed": true,
+      "id": "rewrite-attempt",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.0,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": true,
+        "input_hash": "cc0a72ec9d71a5a8b9998ba857b6ff3604b637ff1d2864f5aa2171e128ab5204",
+        "model": "offline-fixture",
+        "patch_id": "LOWCONF",
+        "rationale": "low confidence arbitration decision",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.0,
+      "expected": "ESCALATE",
+      "fail_closed": true,
+      "id": "low-confidence-apply",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.7,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": false,
+        "input_hash": "ae714fa18d95ba72047b5680dddc5ea9c190fa9f24d0e9fbeee6bc9a2218a298",
+        "model": "offline-fixture",
+        "patch_id": "VALIDESC",
+        "rationale": "semantic uncertainty requires escalation",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.7,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "valid-escalate",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "actual_distribution": {
+      "APPLY": 0,
+      "ESCALATE": 5,
+      "REJECT": 0
+    },
+    "agreement_rate": 1.0,
+    "by_expected": {
+      "APPLY": {
+        "agreed": 0,
+        "agreement_rate": 0.0,
+        "total": 0
+      },
+      "ESCALATE": {
+        "agreed": 5,
+        "agreement_rate": 1.0,
+        "total": 5
+      },
+      "REJECT": {
+        "agreed": 0,
+        "agreement_rate": 0.0,
+        "total": 0
+      }
+    },
+    "confusion_matrix": {
+      "APPLY": {
+        "APPLY": 0,
+        "ESCALATE": 0,
+        "REJECT": 0
+      },
+      "ESCALATE": {
+        "APPLY": 0,
+        "ESCALATE": 5,
+        "REJECT": 0
+      },
+      "REJECT": {
+        "APPLY": 0,
+        "ESCALATE": 0,
+        "REJECT": 0
+      }
+    },
+    "escalate_count": 5,
+    "expected_distribution": {
+      "APPLY": 0,
+      "ESCALATE": 5,
+      "REJECT": 0
+    },
+    "fail_closed_count": 4
+  },
+  "passed": 5,
+  "total": 5
+}

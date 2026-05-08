@@ -73,6 +73,15 @@ def test_malformed_outputs_fail_closed_to_escalate() -> None:
         assert decision.fail_closed is True
 
 
+def test_low_confidence_apply_fails_closed_to_escalate() -> None:
+    decision = decide_from_model_response(
+        {"verdict": "APPLY", "rationale": "too uncertain", "confidence": 0.1}
+    )
+    assert decision.verdict == "ESCALATE"
+    assert decision.fail_closed is True
+    assert decision.rationale == "low confidence arbitration decision"
+
+
 def test_parse_valid_json_content() -> None:
     decision = parse_model_content(
         '{"verdict":"REJECT","rationale":"violates judge-only rule","confidence":0.8}'
@@ -235,6 +244,33 @@ def test_mock_client_response_is_parsed_without_network() -> None:
     assert decision.verdict == "ESCALATE"
     assert decision.fail_closed is False
     assert decision.confidence == 0.7
+
+
+def test_transport_error_fails_closed_without_patch_application() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        raise httpx.ReadTimeout("simulated timeout")
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await request_granite_arbitration(
+                _input(),
+                GraniteArbitratorConfig(
+                    base_url="https://openrouter.ai/api/v1",
+                    api_key="test-key",
+                    model="mistralai/mistral-small-2603",
+                    enabled=True,
+                    timeout_sec=0.01,
+                ),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    decision = asyncio.run(go())
+    assert decision.verdict == "ESCALATE"
+    assert decision.fail_closed is True
+    assert decision.rationale == "granite arbitrator call failed"
 
 
 def test_default_arbitrator_model_is_mistral_small(monkeypatch) -> None:

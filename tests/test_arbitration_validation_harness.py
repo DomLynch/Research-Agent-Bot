@@ -181,3 +181,74 @@ def test_validation_harness_cli_allows_lower_agreement_threshold(tmp_path: Path)
         encoding="utf-8",
     )
     assert main([str(fixture), "--min-agreement", "0"]) == 0
+
+
+def test_model_stack_benchmark_fixture_schema_and_coverage() -> None:
+    fixture = Path("tests/fixtures/model_stack_arbitration_benchmark_2026-05-08.json")
+    rows = json.loads(fixture.read_text(encoding="utf-8"))
+    required = {
+        "id",
+        "topic",
+        "patch_id",
+        "patch_type",
+        "severity",
+        "before",
+        "after",
+        "expected_verdict",
+        "grok_rationale",
+        "smart_gate_reason",
+        "manual_judgment_reason",
+        "model_response",
+        "source_run",
+    }
+    topics = {row["topic"] for row in rows}
+    assert len(rows) == 20
+    assert {
+        "urolithin_a",
+        "metformin",
+        "glp1",
+        "statins",
+        "rapamycin",
+        "omega3",
+        "senolytics",
+    } <= topics
+    assert {row["expected_verdict"] for row in rows} == {
+        "APPLY",
+        "REJECT",
+        "ESCALATE",
+    }
+    for row in rows:
+        assert required <= row.keys()
+        assert Path(row["source_run"]).exists()
+
+
+def test_model_stack_benchmark_runs_and_persists_log_shape() -> None:
+    fixture = Path("tests/fixtures/model_stack_arbitration_benchmark_2026-05-08.json")
+    result = run_fixture(fixture)
+    assert result["total"] == 20
+    assert result["passed"] == 20
+    assert result["metrics"]["agreement_rate"] == 1.0
+    assert result["metrics"]["expected_distribution"] == {
+        "APPLY": 14,
+        "ESCALATE": 4,
+        "REJECT": 2,
+    }
+    first = result["cases"][0]["arbitration_log_entry"]
+    assert first["schema_version"] == "arbitration_log.v1"
+    assert first["decision"] in {"APPLY", "REJECT", "ESCALATE"}
+    assert first["model"] == "offline-fixture"
+    assert first["input_hash"]
+
+
+def test_model_stack_fail_closed_fixture() -> None:
+    fixture = Path("tests/fixtures/model_stack_fail_closed_cases_2026-05-08.json")
+    result = run_fixture(fixture)
+    assert result["total"] == 5
+    assert result["passed"] == 5
+    assert result["metrics"]["agreement_rate"] == 1.0
+    assert result["metrics"]["fail_closed_count"] == 4
+    assert result["metrics"]["actual_distribution"] == {
+        "APPLY": 0,
+        "ESCALATE": 5,
+        "REJECT": 0,
+    }

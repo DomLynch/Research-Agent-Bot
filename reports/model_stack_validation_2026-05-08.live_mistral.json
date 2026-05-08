@@ -1,0 +1,156 @@
+{
+  "cases": [
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 1.0,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "ad29103f7cdbc82f52ecb3bae8170eba268701c59a728c922241ce8a1fa2a751",
+        "model": "mistralai/mistral-small-2603",
+        "patch_id": "P02",
+        "rationale": "The 'after' text is empty, and the 'before' text contains duplicate public prose that repeats prior content, making deletion appropriate.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 1.0,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "glp1-rich6-p02",
+      "passed": true,
+      "rationale": "The 'after' text is empty, and the 'before' text contains duplicate public prose that repeats prior content, making deletion appropriate."
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 1.0,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "da6b167833aa5e03473f6655a5c769580b1607883de73de9272b4de70c31c153",
+        "model": "mistralai/mistral-small-2603",
+        "patch_id": "P03",
+        "rationale": "The after text removes an unsupported numeric claim (275) while preserving all other content, including the reference to 'Cross-Domain Synthesis'. The before text contains a numeric residue (275) that is not supported by the paper context, making its removal appropriate.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 1.0,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "glp1-rich6-p03",
+      "passed": true,
+      "rationale": "The after text removes an unsupported numeric claim (275) while preserving all other content, including the reference to 'Cross-Domain Synthesis'. The before text contains a numeric residue (275) that is not supported by the paper context, making its removal appropriate."
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 1.0,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "301840b75262b547aa17acccc91c4528897614cade0dbd256c3997283ef4a70c",
+        "model": "mistralai/mistral-small-2603",
+        "patch_id": "P04",
+        "rationale": "The 'after' text is empty, and the 'before' text contains an unsupported numeric claim (71.0%) that does not align with the structured, evidence-tiered synthesis described in the paper context. The refusal explicitly states the claim is unsupported and vague.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 1.0,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "glp1-rich6-p04",
+      "passed": true,
+      "rationale": "The 'after' text is empty, and the 'before' text contains an unsupported numeric claim (71.0%) that does not align with the structured, evidence-tiered synthesis described in the paper context. The refusal explicitly states the claim is unsupported and vague."
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.9,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": false,
+        "input_hash": "3b4c4a65d4c1bf667421fbaae5f2b480bfa2a4622e1fd01f54eb5d56ebe427c4",
+        "model": "mistralai/mistral-small-2603",
+        "patch_id": "P01",
+        "rationale": "before appears multiple times verbatim, creating ambiguity about which instance is the target for replacement.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.9,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "glp1-rich6-p01",
+      "passed": true,
+      "rationale": "before appears multiple times verbatim, creating ambiguity about which instance is the target for replacement."
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.95,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "fd01abcfbe22aaff57540cebb571ccbf3e51c060298567dd93cf8784bc7ba3ba",
+        "model": "mistralai/mistral-small-2603",
+        "patch_id": "P01",
+        "rationale": "before is a vague numeric phrase (public artifact/template residue) and after is empty, so deletion is appropriate.",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.95,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "statins-rich5-p01",
+      "passed": true,
+      "rationale": "before is a vague numeric phrase (public artifact/template residue) and after is empty, so deletion is appropriate."
+    }
+  ],
+  "metrics": {
+    "actual_distribution": {
+      "APPLY": 4,
+      "ESCALATE": 1,
+      "REJECT": 0
+    },
+    "agreement_rate": 1.0,
+    "by_expected": {
+      "APPLY": {
+        "agreed": 4,
+        "agreement_rate": 1.0,
+        "total": 4
+      },
+      "ESCALATE": {
+        "agreed": 1,
+        "agreement_rate": 1.0,
+        "total": 1
+      },
+      "REJECT": {
+        "agreed": 0,
+        "agreement_rate": 0.0,
+        "total": 0
+      }
+    },
+    "confusion_matrix": {
+      "APPLY": {
+        "APPLY": 4,
+        "ESCALATE": 0,
+        "REJECT": 0
+      },
+      "ESCALATE": {
+        "APPLY": 0,
+        "ESCALATE": 1,
+        "REJECT": 0
+      },
+      "REJECT": {
+        "APPLY": 0,
+        "ESCALATE": 0,
+        "REJECT": 0
+      }
+    },
+    "escalate_count": 1,
+    "expected_distribution": {
+      "APPLY": 4,
+      "ESCALATE": 1,
+      "REJECT": 0
+    },
+    "fail_closed_count": 0
+  },
+  "model": "mistralai/mistral-small-2603",
+  "passed": 5,
+  "total": 5
+}
