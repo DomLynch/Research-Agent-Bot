@@ -1,8 +1,7 @@
-"""IBM Granite arbitrator scaffold.
+"""IBM Granite arbitrator.
 
-Scaffold only: no pipeline integration. The arbitrator judges whether an
-existing patch should APPLY, REJECT, or ESCALATE. It must not generate
-replacement scientific content.
+The arbitrator judges whether an existing patch should APPLY, REJECT, or
+ESCALATE. It must not generate replacement scientific content.
 """
 
 from __future__ import annotations
@@ -49,6 +48,7 @@ class ArbitrationInput:
     refusal: str
     rationale: str
     context_hash: str
+    paper_context: str = ""
 
 
 @dataclass(frozen=True, slots=True)
@@ -179,6 +179,12 @@ def build_arbitration_prompt(
         arbitration_input.rationale,
         _remaining_budget(arbitration_input, max_context_chars) - len(refusal),
     )
+    context = _truncate(
+        arbitration_input.paper_context,
+        _remaining_budget(arbitration_input, max_context_chars)
+        - len(refusal)
+        - len(rationale),
+    )
     return (
         f"patch_id: {arbitration_input.patch_id}\n"
         f"context_hash: {arbitration_input.context_hash}\n"
@@ -190,6 +196,7 @@ def build_arbitration_prompt(
         "- Return only JSON: verdict, rationale, confidence.\n"
         f"before:\n{arbitration_input.before}\n"
         f"after:\n{arbitration_input.after}\n"
+        f"paper_context:\n{context}\n"
         f"refusal:\n{refusal}\n"
         f"rationale:\n{rationale}\n"
     )
@@ -243,6 +250,7 @@ def input_hash(arbitration_input: ArbitrationInput) -> str:
         "refusal": arbitration_input.refusal,
         "rationale": arbitration_input.rationale,
         "context_hash": arbitration_input.context_hash,
+        "paper_context": arbitration_input.paper_context,
     }
     encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
     return hashlib.sha256(encoded).hexdigest()
