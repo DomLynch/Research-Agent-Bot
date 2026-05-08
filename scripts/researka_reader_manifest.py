@@ -1,0 +1,187 @@
+#!/usr/bin/env python3
+"""Build a public reader manifest for a run or exported bundle."""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+from typing import Any
+
+from bundle_snapshot import is_secret_path, sha256_file
+
+MANIFEST_NAME = "researka_reader_manifest.json"
+SCHEMA = "researka.reader_manifest.v1"
+DW_SCHEMA = "derivation_web.register_public_bundle.v1"
+
+_EXCLUDED_NAMES = {
+    MANIFEST_NAME,
+    "bundle_snapshot.json",
+    "osf_publish_plan.json",
+    "osf_publish_result.json",
+}
+_ENTRYPOINT_CANDIDATES = {
+    "paper": ("paper.md", "full_paper.md", "paper_synthesis.md"),
+    "certification": ("certification.md", "full_paper.certification.md"),
+    "audit": ("audit.md", "full_paper.audit.md"),
+    "manifest": ("manifest.json", "multi_receipt_manifest.json"),
+    "citations": ("citation_registry.json",),
+}
+
+
+def _read_json(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _topic(root: Path) -> str:
+    manifest = _read_json(root / "manifest.json")
+    topic = manifest.get("topic")
+    if isinstance(topic, str) and topic:
+        return topic
+    name = root.name
+    if name.startswith("synthesis-") and "-v" in name:
+        return name.removeprefix("synthesis-").split("-v", 1)[0]
+    return "unknown"
+
+
+def _osf_value(osf: dict[str, Any] | None, *names: str) -> Any:
+    data = osf or {}
+    return next((data[name] for name in names if data.get(name)), None)
+
+
+def iter_public_files(root: Path) -> list[Path]:
+    """Return deterministic, non-secret public files relative to root."""
+    root = root.resolve()
+    if not root.is_dir():
+        raise NotADirectoryError(root)
+    files: list[Path] = []
+    for path in root.rglob("*"):
+        if not path.is_file():
+            continue
+        rel = path.relative_to(root)
+        if rel.name in _EXCLUDED_NAMES or is_secret_path(rel):
+            continue
+        files.append(rel)
+    return sorted(files, key=lambda p: p.as_posix())
+
+
+def build_reader_manifest(
+    root: Path,
+    *,
+    public_url: str | None = None,
+    osf: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Build a deterministic public-reader manifest."""
+    root = root.resolve()
+    entries = [
+        {
+            "path": rel.as_posix(),
+            "size": (root / rel).stat().st_size,
+            "sha256": sha256_file(root / rel),
+        }
+        for rel in iter_public_files(root)
+    ]
+    paths = {entry["path"] for entry in entries}
+    entrypoints = {
+        key: next((name for name in names if name in paths), None)
+        for key, names in _ENTRYPOINT_CANDIDATES.items()
+    }
+    topic = _topic(root)
+    osf_url = _osf_value(osf, "url", "osf_url")
+    doi = _osf_value(osf, "doi", "osf_doi")
+    return {
+        "schema": SCHEMA,
+        "run_id": root.name,
+        "topic": topic,
+        "public_url": public_url,
+        "file_count": len(entries),
+        "total_size": sum(entry["size"] for entry in entries),
+        "entrypoints": entrypoints,
+        "json_ld": {
+            "@context": "https://schema.org",
+            "@type": "ScholarlyArticle",
+            "name": f"Researka synthesis: {topic}",
+            "about": topic,
+            "identifier": doi,
+            "url": public_url,
+            "isBasedOn": osf_url,
+        },
+        "files": entries,
+    }
+
+
+def write_reader_manifest(
+    root: Path,
+    out: Path | None = None,
+    *,
+    public_url: str | None = None,
+    osf: dict[str, Any] | None = None,
+) -> Path:
+    manifest = build_reader_manifest(root, public_url=public_url, osf=osf)
+    out_path = out or root / MANIFEST_NAME
+    out_path.write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    return out_path
+
+
+def build_dw_register_payload(
+    reader_manifest: dict[str, Any],
+    *,
+    public_url: str | None = None,
+    osf: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Return the Derivation Web registration payload shape only."""
+    return {
+        "schema": DW_SCHEMA,
+        "reader_manifest_schema": reader_manifest.get("schema"),
+        "run_id": reader_manifest.get("run_id"),
+        "topic": reader_manifest.get("topic"),
+        "public_url": public_url or reader_manifest.get("public_url"),
+        "osf": {
+            "node_id": _osf_value(osf, "node_id", "osf_node_id"),
+            "url": _osf_value(osf, "url", "osf_url"),
+            "doi": _osf_value(osf, "doi", "osf_doi"),
+        },
+        "file_count": reader_manifest.get("file_count", 0),
+        "aggregate_files": [
+            {
+                "path": item["path"],
+                "sha256": item["sha256"],
+                "size": item["size"],
+            }
+            for item in reader_manifest.get("files", [])
+        ],
+    }
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("root", help="Run or public bundle directory")
+    parser.add_argument("--out", help=f"Output path; default <root>/{MANIFEST_NAME}")
+    parser.add_argument("--public-url")
+    parser.add_argument("--osf-result", help="Optional osf_publish_result.json path")
+    args = parser.parse_args(argv)
+    try:
+        out = write_reader_manifest(
+            Path(args.root),
+            Path(args.out).resolve() if args.out else None,
+            public_url=args.public_url,
+            osf=_read_json(Path(args.osf_result)) if args.osf_result else None,
+        )
+    except OSError as exc:
+        print(f"reader manifest failed: {exc}", file=sys.stderr)
+        return 2
+    print(f"reader manifest written: {out}", file=sys.stderr)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

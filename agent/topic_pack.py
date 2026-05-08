@@ -25,6 +25,7 @@ __all__ = [
     "CanonicalTrial",
     "BackgroundLiteratureEntry",
     "InferenceSpec",
+    "OSFMetadata",
     "TopicPack",
     "TopicPackError",
     "load_topic_pack",
@@ -134,6 +135,16 @@ class InferenceSpec:
 
 
 @dataclass(frozen=True, slots=True)
+class OSFMetadata:
+    """Optional OSF registration/publication metadata for a topic."""
+
+    node_id: str | None = None
+    doi: str | None = None
+    first_registered_at: str | None = None
+    latest_version_at: str | None = None
+
+
+@dataclass(frozen=True, slots=True)
 class TopicPack:
     """Frozen topic pack. All collections are tuples / frozensets / mappingproxies.
 
@@ -186,6 +197,8 @@ class TopicPack:
     retrieval: "RetrievalSpec | None" = None
     # Optional D1 bridge config. D1 never counts as receipt evidence.
     inference: InferenceSpec = InferenceSpec()
+    # Optional [osf] metadata. Absent block stays None for old packs.
+    osf: OSFMetadata | None = None
 
     # --- Lookups (intentionally explicit, not __contains__-style) ----------
 
@@ -414,6 +427,15 @@ def load_topic_pack(path: str | Path) -> TopicPack:
                 raw_inference.get("max_inferences_per_paper", 5)
             ),
         )
+    raw_osf = data.get("osf")
+    osf = None
+    if isinstance(raw_osf, dict):
+        osf = OSFMetadata(
+            node_id=raw_osf.get("node_id"),
+            doi=raw_osf.get("doi"),
+            first_registered_at=raw_osf.get("first_registered_at"),
+            latest_version_at=raw_osf.get("latest_version_at"),
+        )
 
     return TopicPack(
         topic=data["topic"],
@@ -439,4 +461,5 @@ def load_topic_pack(path: str | Path) -> TopicPack:
         endpoint_polarity=endpoint_polarity,
         retrieval=retrieval,
         inference=inference,
+        osf=osf,
     )

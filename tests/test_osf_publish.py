@@ -26,7 +26,36 @@ def test_dry_run_writes_snapshot_and_plan_without_pat(
     plan = json.loads((tmp_path / "osf_publish_plan.json").read_text())
     assert plan["mode"] == "dry-run"
     assert plan["file_count"] == 1
+    assert plan["planned_files"] == [
+        {
+            "file_url": None,
+            "path": "paper.md",
+            "sha256": plan["planned_files"][0]["sha256"],
+            "size": 6,
+        }
+    ]
     assert "OSF_PAT" not in json.dumps(plan)
+
+
+def test_dry_run_ignores_pat_and_excludes_generated_artifacts(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv("OSF_PAT", "test-secret-token")
+    (tmp_path / "paper.md").write_text("public", encoding="utf-8")
+    (tmp_path / osf.RESULT_NAME).write_text("{}", encoding="utf-8")
+    (tmp_path / "researka_reader_manifest.json").write_text("{}", encoding="utf-8")
+
+    paths = osf.run(tmp_path, dry_run=True, snapshot_only=False, force=True)
+
+    snapshot = json.loads(paths["snapshot"].read_text(encoding="utf-8"))
+    plan = json.loads(paths["plan"].read_text(encoding="utf-8"))
+    assert [item["path"] for item in snapshot["files"]] == ["paper.md"]
+    assert [item["path"] for item in plan["planned_files"]] == ["paper.md"]
+    serialized = json.dumps({"snapshot": snapshot, "plan": plan})
+    assert "test-secret-token" not in serialized
+    assert osf.RESULT_NAME not in serialized
+    assert "researka_reader_manifest.json" not in serialized
 
 
 def test_plan_and_header_helpers_do_not_store_pat(tmp_path: Path) -> None:
@@ -41,6 +70,9 @@ def test_plan_and_header_helpers_do_not_store_pat(tmp_path: Path) -> None:
     plan_path = osf.write_plan(tmp_path, plan)
     assert plan_path == tmp_path / osf.PLAN_NAME
     assert plan["osf_api"] == "https://api.test/v2"
+    assert plan["aggregate_sha"] == "a" * 64
+    assert plan["aggregate_sha256"] == "a" * 64
+    assert plan["planned_files"][0]["file_url"] is None
     assert osf._auth_headers("test-secret-token")["Authorization"] == (
         "Bearer test-secret-token"
     )
@@ -53,6 +85,16 @@ def test_snapshot_only_does_not_write_plan(tmp_path: Path) -> None:
     assert paths["snapshot"] == tmp_path / "bundle_snapshot.json"
     assert paths["plan"] is None
     assert not (tmp_path / "osf_publish_plan.json").exists()
+
+
+def test_snapshot_only_ignores_existing_publish_result(tmp_path: Path) -> None:
+    (tmp_path / "paper.md").write_text("public", encoding="utf-8")
+    (tmp_path / osf.RESULT_NAME).write_text("{}", encoding="utf-8")
+
+    paths = osf.run(tmp_path, dry_run=False, snapshot_only=True)
+
+    assert paths["snapshot"] == tmp_path / "bundle_snapshot.json"
+    assert paths["result"] is None
 
 
 def test_live_mode_fails_closed_without_pat(
@@ -73,13 +115,19 @@ def test_publish_live_uses_bearer_pat_but_never_returns_it(
         "file_count": 1,
         "total_size": 6,
         "aggregate_sha256": "a" * 64,
-        "files": [],
+        "files": [{"path": "paper.md", "size": 6, "sha256": "b" * 64}],
     }
-    captured = {}
+    captured = {"uploads": 0}
 
     def handler(request: httpx.Request) -> httpx.Response:
         captured["auth"] = request.headers["authorization"]
         captured["url"] = str(request.url)
+        if request.method == "PUT":
+            captured["uploads"] += 1
+            return httpx.Response(
+                201,
+                json={"data": {"links": {"html": "https://osf.io/abc123/files/paper/"}}},
+            )
         return httpx.Response(
             201,
             json={
@@ -99,8 +147,15 @@ def test_publish_live_uses_bearer_pat_but_never_returns_it(
         base_url="https://api.test/v2",
     )
     assert captured["auth"] == "Bearer test-secret-token"
-    assert captured["url"] == "https://api.test/v2/nodes/"
+    assert result["node_id"] == "abc123"
     assert result["osf_node_id"] == "abc123"
+    assert result["url"] == "https://osf.io/abc123/"
+    assert result["osf_url"] == "https://osf.io/abc123/"
+    assert result["uploaded_files"] == [
+        {"path": "paper.md", "file_url": "https://osf.io/abc123/files/paper/"}
+    ]
+    assert result["errors"] == []
+    assert captured["uploads"] == 1
     assert "test-secret-token" not in json.dumps(result)
 
 
@@ -110,8 +165,15 @@ def test_live_run_writes_result_with_mock_transport(
 ) -> None:
     monkeypatch.setenv("OSF_PAT", "test-secret-token")
     (tmp_path / "paper.md").write_text("public", encoding="utf-8")
+    seen_paths = []
 
     def handler(request: httpx.Request) -> httpx.Response:
+        if request.method == "PUT":
+            seen_paths.append(str(request.url))
+            return httpx.Response(
+                201,
+                json={"data": {"links": {"html": "https://osf.io/file/"}}},
+            )
         return httpx.Response(
             201,
             json={"data": {"id": "abc123", "links": {"html": "https://osf.io/abc123/"}}},
@@ -126,7 +188,85 @@ def test_live_run_writes_result_with_mock_transport(
     )
     result = json.loads((tmp_path / "osf_publish_result.json").read_text())
     assert paths["result"] == tmp_path / "osf_publish_result.json"
-    assert result["osf_url"] == "https://osf.io/abc123/"
+    assert result["url"] == "https://osf.io/abc123/"
+    assert result["planned_files"][0]["path"] == "paper.md"
+    assert len(seen_paths) == 1
+    assert "bundle_snapshot.json" not in seen_paths[0]
+    assert "osf_publish_plan.json" not in seen_paths[0]
+    assert "osf_publish_result.json" not in seen_paths[0]
+    assert "test-secret-token" not in json.dumps(result)
+
+
+def test_run_skips_existing_result_unless_forced(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.delenv("OSF_PAT", raising=False)
+    result_path = tmp_path / osf.RESULT_NAME
+    result_path.write_text("{}", encoding="utf-8")
+    paths = osf.run(tmp_path, dry_run=True, snapshot_only=False)
+    assert paths == {"snapshot": None, "plan": None, "result": result_path}
+    assert not (tmp_path / "bundle_snapshot.json").exists()
+    assert not (tmp_path / osf.PLAN_NAME).exists()
+
+    (tmp_path / "paper.md").write_text("public", encoding="utf-8")
+    paths = osf.run(tmp_path, dry_run=True, snapshot_only=False, force=True)
+    assert paths["plan"] == tmp_path / osf.PLAN_NAME
+
+
+def test_upload_file_retries_transient_without_leaking_token(tmp_path: Path) -> None:
+    (tmp_path / "paper.md").write_text("public", encoding="utf-8")
+    calls = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(request)
+        if len(calls) == 1:
+            return httpx.Response(429, json={"detail": "slow down test-secret-token"})
+        return httpx.Response(
+            201,
+            json={"data": {"links": {"html": "https://osf.io/file/"}}},
+        )
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    uploaded = osf.upload_file(
+        client,
+        node_id="abc123",
+        run_dir=tmp_path,
+        rel_path="paper.md",
+        token="test-secret-token",
+        files_url="https://files.test/v1",
+    )
+    assert len(calls) == 2
+    assert uploaded == {"path": "paper.md", "file_url": "https://osf.io/file/"}
+
+
+def test_live_result_errors_do_not_include_token(tmp_path: Path) -> None:
+    (tmp_path / "paper.md").write_text("public", encoding="utf-8")
+    snapshot = {
+        "file_count": 1,
+        "total_size": 6,
+        "aggregate_sha256": "a" * 64,
+        "files": [{"path": "paper.md", "size": 6, "sha256": "b" * 64}],
+    }
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.method == "PUT":
+            return httpx.Response(500, json={"detail": "test-secret-token"})
+        return httpx.Response(
+            201,
+            json={"data": {"id": "abc123", "links": {"html": "https://osf.io/abc123/"}}},
+        )
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    result = osf.publish_live(
+        tmp_path,
+        snapshot,
+        token="test-secret-token",
+        client=client,
+        base_url="https://api.test/v2",
+        files_url="https://files.test/v1",
+    )
+    assert result["errors"] == ["paper.md: HTTP 500"]
     assert "test-secret-token" not in json.dumps(result)
 
 
