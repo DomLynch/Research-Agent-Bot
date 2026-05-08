@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_different_doses_of_rosuvastatin_therapy_on_regression_of_cri",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_different_doses_of_rosuvastatin_therapy_on_regression_of_cri-u-63",
+      "claim_type": "unit_value",
+      "raw_text": "10mg/d",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 63,
+      "sentence": "The purpose of this study is to determine whether Rosuvastatin 10mg/d or 20mg/d for 36 weeks can regress critical coronary atherosclerosis as determined by IVUS imaging in Chinese Acute Coronary Syndrome (ACS) patients.",
+      "context_window": "purpose of this study is to determine whether Rosuvastatin 10mg/d or 20mg/d for 36 weeks can regress critical coronary athero",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_different_doses_of_rosuvastatin_therapy_on_regression_of_cri-u-73",
+      "claim_type": "unit_value",
+      "raw_text": "20mg/d",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 73,
+      "sentence": "The purpose of this study is to determine whether Rosuvastatin 10mg/d or 20mg/d for 36 weeks can regress critical coronary atherosclerosis as determined by IVUS imaging in Chinese Acute Coronary Syndrome (ACS) patients.",
+      "context_window": "f this study is to determine whether Rosuvastatin 10mg/d or 20mg/d for 36 weeks can regress critical coronary atherosclerosis",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_different_doses_of_rosuvastatin_therapy_on_regression_of_cri-u-84",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 84,
+      "sentence": "The purpose of this study is to determine whether Rosuvastatin 10mg/d or 20mg/d for 36 weeks can regress critical coronary atherosclerosis as determined by IVUS imaging in Chinese Acute Coronary Syndrome (ACS) patients.",
+      "context_window": "y is to determine whether Rosuvastatin 10mg/d or 20mg/d for 36 weeks can regress critical coronary atherosclerosis as determined",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

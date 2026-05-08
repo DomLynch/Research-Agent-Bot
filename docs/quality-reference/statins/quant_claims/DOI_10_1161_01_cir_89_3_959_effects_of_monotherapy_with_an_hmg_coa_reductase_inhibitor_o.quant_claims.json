@@ -1,0 +1,373 @@
+{
+  "paper_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o",
+  "doi": "10.1161/01.cir.89.3.959",
+  "extracted_at": "2026-05-08T16:22:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 10,
+    "percentage": 7,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-u-405",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/dL",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 405,
+      "sentence": "METHODS AND RESULTS: To address this issue, 331 patients with diffuse but not necessarily severe coronary atherosclerosis documented on a recent arteriogram and with fasting serum cholesterol between 220 and 300 mg/dL were enrolled in a randomized, double-blind, placebo-controlled trial.",
+      "context_window": "eriogram and with fasting serum cholesterol between 220 and 300 mg/dL were enrolled in a randomized, double-blind, placebo-contro",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-u-573",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg/d",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 573,
+      "sentence": "Lovastatin or placebo was begun at 20 mg/d and was titrated to 40 and 80 mg during the first 16 weeks to attain a fasting low-density lipoprotein (LDL) cholesterol < or = 130 mg/dL.",
+      "context_window": "sive dietary counseling. Lovastatin or placebo was begun at 20 mg/d and was titrated to 40 and 80 mg during the first 16 weeks",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-u-608",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 608,
+      "sentence": "Lovastatin or placebo was begun at 20 mg/d and was titrated to 40 and 80 mg during the first 16 weeks to attain a fasting low-density lipoprotein (LDL) cholesterol < or = 130 mg/dL.",
+      "context_window": "or placebo was begun at 20 mg/d and was titrated to 40 and 80 mg during the first 16 weeks to attain a fasting low-density l",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-u-631",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 631,
+      "sentence": "Lovastatin or placebo was begun at 20 mg/d and was titrated to 40 and 80 mg during the first 16 weeks to attain a fasting low-density lipoprotein (LDL) cholesterol < or = 130 mg/dL.",
+      "context_window": "t 20 mg/d and was titrated to 40 and 80 mg during the first 16 weeks to attain a fasting low-density lipoprotein (LDL) cholester",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-u-709",
+      "claim_type": "unit_value",
+      "raw_text": "130 mg/dL",
+      "numeric_values": [
+        130.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 709,
+      "sentence": "Lovastatin or placebo was begun at 20 mg/d and was titrated to 40 and 80 mg during the first 16 weeks to attain a fasting low-density lipoprotein (LDL) cholesterol < or = 130 mg/dL.",
+      "context_window": "a fasting low-density lipoprotein (LDL) cholesterol < or = 130 mg/dL. The mean lovastatin dose was 36 mg/d. Coronary arteriograp",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-u-749",
+      "claim_type": "unit_value",
+      "raw_text": "36 mg/d",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 749,
+      "sentence": "The mean lovastatin dose was 36 mg/d.",
+      "context_window": "cholesterol < or = 130 mg/dL. The mean lovastatin dose was 36 mg/d. Coronary arteriography was repeated after 2 years. In 299",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-u-800",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 800,
+      "sentence": "Coronary arteriography was repeated after 2 years.",
+      "context_window": "dose was 36 mg/d. Coronary arteriography was repeated after 2 years. In 299 patients (90%), 3858 coronary segments containing 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-pct-826",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 826,
+      "sentence": "In 299 patients (90%), 3858 coronary segments containing 2309 stenoses were measured blindly on pairs of films with an automated computerized quantitative system.",
+      "context_window": "arteriography was repeated after 2 years. In 299 patients (90%), 3858 coronary segments containing 2309 stenoses were meas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-pct-1018",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1018,
+      "sentence": "Total and LDL cholesterol decreased by 21 +/- 11% and 29 +/- 11%, respectively, in the lovastatin-treated group but changed by < 2% in placebo patients.",
+      "context_window": "ative system. Total and LDL cholesterol decreased by 21 +/- 11% and 29 +/- 11%, respectively, in the lovastatin-treated gro",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-pct-1033",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1033,
+      "sentence": "Total and LDL cholesterol decreased by 21 +/- 11% and 29 +/- 11%, respectively, in the lovastatin-treated group but changed by < 2% in placebo patients.",
+      "context_window": "otal and LDL cholesterol decreased by 21 +/- 11% and 29 +/- 11%, respectively, in the lovastatin-treated group but changed",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-pct-1101",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1101,
+      "sentence": "Total and LDL cholesterol decreased by 21 +/- 11% and 29 +/- 11%, respectively, in the lovastatin-treated group but changed by < 2% in placebo patients.",
+      "context_window": "pectively, in the lovastatin-treated group but changed by < 2% in placebo patients. The primary end point, coronary change",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-pct-1322",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1322,
+      "sentence": "The primary end point, coronary change score, defined as the per-patient mean of the minimum lumen diameter changes (follow-up minus baseline angiogram) for all lesions measured, excluding those < 25% on both films, worsened by 0.09 +/- 0.16 mm in the placebo group and by 0.05 +/- 0.13 mm in the lovastatin group (P = .01).",
+      "context_window": "line angiogram) for all lesions measured, excluding those < 25% on both films, worsened by 0.09 +/- 0.16 mm in the placebo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-u-1362",
+      "claim_type": "unit_value",
+      "raw_text": "0.16 mm",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1362,
+      "sentence": "The primary end point, coronary change score, defined as the per-patient mean of the minimum lumen diameter changes (follow-up minus baseline angiogram) for all lesions measured, excluding those < 25% on both films, worsened by 0.09 +/- 0.16 mm in the placebo group and by 0.05 +/- 0.13 mm in the lovastatin group (P = .01).",
+      "context_window": ", excluding those < 25% on both films, worsened by 0.09 +/- 0.16 mm in the placebo group and by 0.05 +/- 0.13 mm in the lovasta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-u-1407",
+      "claim_type": "unit_value",
+      "raw_text": "0.13 mm",
+      "numeric_values": [
+        0.13
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1407,
+      "sentence": "The primary end point, coronary change score, defined as the per-patient mean of the minimum lumen diameter changes (follow-up minus baseline angiogram) for all lesions measured, excluding those < 25% on both films, worsened by 0.09 +/- 0.16 mm in the placebo group and by 0.05 +/- 0.13 mm in the lovastatin group (P = .01).",
+      "context_window": "ed by 0.09 +/- 0.16 mm in the placebo group and by 0.05 +/- 0.13 mm in the lovastatin group (P = .01). Progression (a worsening",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-p-1440",
+      "claim_type": "p_value",
+      "raw_text": "P = .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1440,
+      "sentence": "The primary end point, coronary change score, defined as the per-patient mean of the minimum lumen diameter changes (follow-up minus baseline angiogram) for all lesions measured, excluding those < 25% on both films, worsened by 0.09 +/- 0.16 mm in the placebo group and by 0.05 +/- 0.13 mm in the lovastatin group (P = .01).",
+      "context_window": "cebo group and by 0.05 +/- 0.13 mm in the lovastatin group (P = .01). Progression (a worsening in minimum diameter of one or mo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-u-1529",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 mm",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1529,
+      "sentence": "Progression (a worsening in minimum diameter of one or more stenoses by > or = 0.4 mm) with no regression at other sites occurred in 48 of 146 lovastatin and 76 of 153 placebo patients (33% versus 50%, P = .003).",
+      "context_window": "ening in minimum diameter of one or more stenoses by > or = 0.4 mm) with no regression at other sites occurred in 48 of 146 lo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-pct-1636",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1636,
+      "sentence": "Progression (a worsening in minimum diameter of one or more stenoses by > or = 0.4 mm) with no regression at other sites occurred in 48 of 146 lovastatin and 76 of 153 placebo patients (33% versus 50%, P = .003).",
+      "context_window": "red in 48 of 146 lovastatin and 76 of 153 placebo patients (33% versus 50%, P = .003). New coronary lesions developed in 23",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-pct-1647",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1647,
+      "sentence": "Progression (a worsening in minimum diameter of one or more stenoses by > or = 0.4 mm) with no regression at other sites occurred in 48 of 146 lovastatin and 76 of 153 placebo patients (33% versus 50%, P = .003).",
+      "context_window": "f 146 lovastatin and 76 of 153 placebo patients (33% versus 50%, P = .003). New coronary lesions developed in 23 lovastatin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-p-1652",
+      "claim_type": "p_value",
+      "raw_text": "P = .003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1652,
+      "sentence": "Progression (a worsening in minimum diameter of one or more stenoses by > or = 0.4 mm) with no regression at other sites occurred in 48 of 146 lovastatin and 76 of 153 placebo patients (33% versus 50%, P = .003).",
+      "context_window": "lovastatin and 76 of 153 placebo patients (33% versus 50%, P = .003). New coronary lesions developed in 23 lovastatin and 49 pl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy_with_an_hmg_coa_reductase_inhibitor_o-p-1736",
+      "claim_type": "p_value",
+      "raw_text": "P = .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1736,
+      "sentence": "New coronary lesions developed in 23 lovastatin and 49 placebo patients (P = .001).",
+      "context_window": "lesions developed in 23 lovastatin and 49 placebo patients (P = .001). The beneficial effect of treatment was most pronounced in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

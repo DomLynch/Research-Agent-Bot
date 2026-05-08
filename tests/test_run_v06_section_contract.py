@@ -198,6 +198,29 @@ def test_restore_required_section_body_compiles_safe_fallback() -> None:
     assert "receipt-bound synthesis" in out
 
 
+def test_restore_public_surface_floors_without_typed_sections() -> None:
+    paper = (
+        "## Abstract\n\n" + _words(160) + "\n\n"
+        "## Introduction\n\nToo short.\n\n"
+        "## Background\n\n" + _words(320) + "\n\n"
+        "## Methods\n\n" + _words(320) + "\n\n"
+        "## Results\n\n" + _words(520) + "\n\n"
+        "## Cross-Domain Synthesis\n\n" + _words(870) + "\n\n"
+        "## Discussion\n\n" + _words(820) + "\n\n"
+        "## Limitations\n\n" + _words(260) + "\n\n"
+        "## Conclusion\n\n" + _words(260) + "\n"
+    )
+    out, log = orch._restore_public_surface_floors(paper)
+    assert log == [{
+        "fix_type": "surface_floor_backstop",
+        "section": "Introduction",
+        "reason": "replace_short_section",
+    }]
+    body = orch._rendered_section_match(out, "## Introduction").group(1)
+    assert "Too short." not in body
+    assert orch._word_count(body) >= 400
+
+
 def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     paper = "## Results\n\nToo short.\n"
     sections = (

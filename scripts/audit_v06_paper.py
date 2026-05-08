@@ -792,9 +792,14 @@ def _check_inferential_bridge_contract(paper: str) -> tuple[bool, str]:
     for i, block in enumerate(blocks, 1):
         if not _D1_RE.search(block):
             return False, f"D1 claim {i} missing tier/confidence tag"
-        for tag in ("[mechanism_anchor:", "[conservation:", "[testability:"):
-            if tag not in block:
-                return False, f"D1 claim {i} missing {tag}"
+        tag_groups = (
+            ("[mechanism anchor:", "[mechanism_anchor:"),
+            ("[conservation:",),
+            ("[testability:",),
+        )
+        for tags in tag_groups:
+            if not any(tag in block for tag in tags):
+                return False, f"D1 claim {i} missing {tags[0]}"
         visible = re.sub(r"\[[^\]]+\]", "", block)
         visible = re.sub(r"^\s*(?:\d+\.|\-)\s+", "", visible)
         visible = re.sub(r"Existing human signal:.*?(?:\n|$)", "", visible)

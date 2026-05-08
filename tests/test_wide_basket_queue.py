@@ -54,6 +54,7 @@ def test_build_report_queues_topics_without_rich_runs(tmp_path: Path) -> None:
     runs.mkdir()
     _pack(packs, "alpha", queries=7, trials=3)
     _pack(packs, "beta", queries=5)
+    _pack(packs, "_biomedical_default", queries=0)
     _run(runs, "synthesis-alpha-v06-PATH2RICH-2026-01-01Z", topic="alpha")
 
     data = build_report(packs, runs)

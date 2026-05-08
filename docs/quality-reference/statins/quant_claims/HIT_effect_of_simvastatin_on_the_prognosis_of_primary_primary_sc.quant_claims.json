@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_effect_of_simvastatin_on_the_prognosis_of_primary_primary_sc",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_simvastatin_on_the_prognosis_of_primary_primary_sc-u-270",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 270,
+      "sentence": "After an updated powercalculation 560 was condidered enough The study will include patients with primary sclerosing cholangitis (PSC) for daily intake of 40 mg simvastatin/placebo for 5 years.",
+      "context_window": "th primary sclerosing cholangitis (PSC) for daily intake of 40 mg simvastatin/placebo for 5 years. The aim is to study effect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_simvastatin_on_the_prognosis_of_primary_primary_sc-u-300",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 300,
+      "sentence": "After an updated powercalculation 560 was condidered enough The study will include patients with primary sclerosing cholangitis (PSC) for daily intake of 40 mg simvastatin/placebo for 5 years.",
+      "context_window": "tis (PSC) for daily intake of 40 mg simvastatin/placebo for 5 years. The aim is to study effect of prognosis of PSC by long ter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_efficacy_of_simvastatin_for_the_treatment_of_copd",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_efficacy_of_simvastatin_for_the_treatment_of_copd-u-330",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 330,
+      "sentence": "Design: a 12 weeks randomized (1:1), double-blind, placebo control study.",
+      "context_window": "; (4) Uric acid; and, (5)vascular growth factors. Design: a 12 weeks randomized (1:1), double-blind, placebo control study. Popu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_efficacy_of_simvastatin_for_the_treatment_of_copd-u-443",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 443,
+      "sentence": "Population: 18 males with stable COPD between 40-80 years of age, exsmokers, with Forced expiratory volume in one second (FEV1) between 30 and 80% predicted post-bronchodilation.",
+      "context_window": "rol study. Population: 18 males with stable COPD between 40-80 years of age, exsmokers, with Forced expiratory volume in one sec",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_efficacy_of_simvastatin_for_the_treatment_of_copd-pct-537",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 537,
+      "sentence": "Population: 18 males with stable COPD between 40-80 years of age, exsmokers, with Forced expiratory volume in one second (FEV1) between 30 and 80% predicted post-bronchodilation.",
+      "context_window": "orced expiratory volume in one second (FEV1) between 30 and 80% predicted post-bronchodilation.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

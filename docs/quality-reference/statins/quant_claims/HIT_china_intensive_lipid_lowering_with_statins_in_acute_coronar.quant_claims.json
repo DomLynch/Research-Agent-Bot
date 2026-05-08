@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_china_intensive_lipid_lowering_with_statins_in_acute_coronar",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_china_intensive_lipid_lowering_with_statins_in_acute_coronar-u-357",
+      "claim_type": "unit_value",
+      "raw_text": "100mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 357,
+      "sentence": "Therefore, it will determine whether \"lower is better\", that is, whether LDL cholesterol lowering to a level of approximately 100mg/dl provides a benefit inferior to that of LDL cholesterol lowering to a much lower level; examine the role of inflammatory markers in predicting cardiac events and response to statin therapy; and evaluate the effects of statin therapy on regression of coronary atherosclerosis using IVUS.",
+      "context_window": "hether LDL cholesterol lowering to a level of approximately 100mg/dl provides a benefit inferior to that of LDL cholesterol l",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

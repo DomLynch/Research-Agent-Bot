@@ -1,0 +1,53 @@
+{
+  "cases": [
+    {
+      "actual": "ESCALATE",
+      "confidence": 0.0,
+      "expected": "ESCALATE",
+      "fail_closed": true,
+      "id": "synthetic-bad-json-fail-closed",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "agreement_rate": 1.0,
+    "by_expected": {
+      "APPLY": {
+        "agreed": 0,
+        "agreement_rate": 0.0,
+        "total": 0
+      },
+      "ESCALATE": {
+        "agreed": 1,
+        "agreement_rate": 1.0,
+        "total": 1
+      },
+      "REJECT": {
+        "agreed": 0,
+        "agreement_rate": 0.0,
+        "total": 0
+      }
+    },
+    "confusion_matrix": {
+      "APPLY": {
+        "APPLY": 0,
+        "ESCALATE": 0,
+        "REJECT": 0
+      },
+      "ESCALATE": {
+        "APPLY": 0,
+        "ESCALATE": 1,
+        "REJECT": 0
+      },
+      "REJECT": {
+        "APPLY": 0,
+        "ESCALATE": 0,
+        "REJECT": 0
+      }
+    },
+    "escalate_count": 1,
+    "fail_closed_count": 1
+  },
+  "passed": 1,
+  "total": 1
+}

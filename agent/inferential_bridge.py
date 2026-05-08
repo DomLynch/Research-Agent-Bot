@@ -134,7 +134,7 @@ def render_inferential_bridge_section(
         lines.extend([
             (
                 f"{i}. [{c.tier} | confidence={c.confidence}] {c.claim} "
-                f"[mechanism_anchor: {anchors}] [conservation: {canon}]"
+                f"[mechanism anchor: {anchors}] [conservation: {canon}]"
             ),
             f"   Existing human signal: {human}.",
             f"   Testability: {testability}. [testability: explicit]",

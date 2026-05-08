@@ -1,49 +1,432 @@
 {
   "topic": "urolithin_a",
   "retrieval_mode": "calibrated",
-  "n_queries": 5,
-  "n_unique_candidates": 42,
-  "n_selected_for_fetch": 42,
-  "n_pmcid_resolved": 16,
-  "n_extracted": 15,
+  "n_queries": 10,
+  "n_unique_candidates": 201,
+  "n_selected_for_fetch": 201,
+  "n_pmcid_resolved": 117,
+  "n_abstract_fallback": 92,
+  "n_extracted": 201,
   "active_pools": [
-    "core",
-    "adjacent"
+    "adjacent",
+    "background",
+    "core"
   ],
   "active_pmcids": [
+    "PMC10001356",
+    "PMC10034769",
+    "PMC10136031",
+    "PMC10272986",
+    "PMC10281726",
+    "PMC10376282",
+    "PMC10387767",
+    "PMC10421179",
     "PMC10460156",
+    "PMC10497365",
     "PMC10609777",
+    "PMC10612130",
+    "PMC10728757",
     "PMC10791945",
+    "PMC10873453",
+    "PMC10878087",
+    "PMC10887565",
+    "PMC10993698",
+    "PMC11067828",
+    "PMC11095213",
+    "PMC11180933",
+    "PMC11186080",
+    "PMC11188796",
+    "PMC11231190",
+    "PMC11262884",
+    "PMC11280374",
+    "PMC11311380",
     "PMC11335992",
+    "PMC11408861",
+    "PMC11428424",
+    "PMC11439666",
+    "PMC11478980",
+    "PMC11489441",
     "PMC11536656",
+    "PMC11572288",
+    "PMC11624366",
     "PMC11631940",
     "PMC11673756",
     "PMC11722880",
+    "PMC11760930",
+    "PMC11822506",
+    "PMC11834323",
+    "PMC11869585",
+    "PMC11875685",
     "PMC11901897",
+    "PMC11947095",
+    "PMC11954813",
+    "PMC11970383",
+    "PMC11979956",
+    "PMC11986606",
+    "PMC11989139",
+    "PMC12078357",
+    "PMC12108056",
+    "PMC12122305",
     "PMC12188533",
+    "PMC12251368",
+    "PMC12292322",
+    "PMC12292995",
+    "PMC12297016",
+    "PMC12300076",
+    "PMC12302922",
+    "PMC12356704",
+    "PMC12430871",
+    "PMC12526280",
     "PMC12608000",
     "PMC12608089",
+    "PMC12611738",
+    "PMC12618261",
     "PMC12628386",
+    "PMC12634460",
+    "PMC12693830",
+    "PMC12803790",
+    "PMC12828597",
+    "PMC12829081",
+    "PMC12857355",
+    "PMC12862256",
+    "PMC12870791",
+    "PMC12885030",
+    "PMC12995754",
+    "PMC13008638",
+    "PMC13067832",
+    "PMC13083899",
+    "PMC3655614",
+    "PMC3736548",
+    "PMC5859803",
     "PMC6183836",
+    "PMC6698978",
+    "PMC7918969",
+    "PMC7987831",
+    "PMC8007722",
+    "PMC8065090",
+    "PMC8245698",
+    "PMC8300261",
+    "PMC8347929",
+    "PMC8617978",
+    "PMC8727228",
     "PMC8777576",
-    "PMC8968651"
+    "PMC8821002",
+    "PMC8822684",
+    "PMC8935220",
+    "PMC8968651",
+    "PMC9049876",
+    "PMC9095590",
+    "PMC9101441",
+    "PMC9133463",
+    "PMC9185853",
+    "PMC9229509",
+    "PMC9240289",
+    "PMC9381911",
+    "PMC9454743",
+    "PMC9455165",
+    "PMC9539031",
+    "PMC9601659",
+    "PMC9682137",
+    "PMC9854132",
+    "PMC9886708",
+    "PMC9889402"
   ],
   "active_paper_ids": [
+    "DOI_10_1002_cmdc_201100338_urolithin_as_a_converging_scaffold_linking_ellagic_acid_and",
+    "DOI_10_1002_mnfr_202000091_ellagic_acid_and_its_microbial_metabolite_urolithin_a_allevi",
+    "DOI_10_1002_oby_22404_urolithin_a_a_gut_metabolite_improves_insulin_sensitivity_th",
+    "DOI_10_1016_j_bbadis_2025_168106_urolithin_a_protects_against_calcium_oxalate_induced_crystal",
+    "DOI_10_1016_j_exger_2024_112589_urolithin_a_prevents_age_related_hearing_loss_in_c57bl_6j_mi",
+    "DOI_10_1016_j_immuni_2022_09_014_expansion_of_t_memory_stem_cells_with_superior_anti_tumor_im",
+    "DOI_10_1016_j_jare_2026_01_017_fructooligosaccharides_and_ellagic_acid_synergistically_enha",
+    "DOI_10_1016_j_mad_2023_111897_the_cgas_sting_signaling_pathway_is_modulated_by_urolithin_a",
+    "DOI_10_1016_j_molmed_2021_04_009_impact_of_the_natural_compound_urolithin_a_on_health_disease",
+    "DOI_10_1016_j_nutos_2025_04_004_urolithin_a_supplementation_to_improve_endothelial_and_cereb",
+    "DOI_10_1017_s0954422425100292_distinct_roles_of_urolithin_a_and_spermidine_in_mitophagy_an",
+    "DOI_10_1021_acs_jafc_3c00960_ameliorative_effect_of_ellagic_acid_on_aging_in_rats_with_th",
+    "DOI_10_1021_acs_jafc_3c01062_urolithin_a_produced_by_novel_microbial_fermentation_possess",
+    "DOI_10_1039_c5fo00120j_the_ellagic_acid_derived_gut_microbiota_metabolite_urolithin",
+    "DOI_10_1039_c9fo03008e_ellagic_acid_and_urolithin_a_modulate_the_immune_response_in",
+    "DOI_10_1039_d1fo02534a_urolithin_a_protects_dopaminergic_neurons_in_experimental_mo",
+    "DOI_10_1039_d2fo03310k_walnut_polyphenols_and_the_active_metabolite_urolithin_a_imp",
+    "DOI_10_1039_d3fo03847e_inhibition_of_the_nf_b_and_mtor_targets_by_urolithin_a_atten",
+    "DOI_10_1039_d3fo05014a_urolithin_a_production_drives_the_effects_of_pomegranate_on",
+    "DOI_10_1039_d5fo00440c_differential_effects_of_ellagic_acid_on_non_alcoholic_fatty",
+    "DOI_10_1093_gerona_glad072_novel_potential_targets_for_function_promoting_therapies_orp",
+    "DOI_10_1093_geroni_igx004_4446_orally_administered_urolithin_a_is_safe_and_modulates_muscle",
+    "DOI_10_1093_humrep_deab053_the_ellagic_acid_metabolites_urolithin_a_and_b_differentiall",
+    "DOI_10_1093_jas_skad232_effect_of_ellagic_acid_on_body_weight_nutrient_digestibility",
+    "DOI_10_1096_fasebj_2019_33_1_supplement_lb530_the_microbiome_product_urolithin_a_abolishes_tgf_dependent_s",
+    "DOI_10_1096_fasebj_25_1_supplement_235_4_urolithin_a_and_ellagic_acid_inhibit_prostate_cancer_through",
+    "DOI_10_1096_fasebj_26_1_supplement_251_7_pomegranate_ellagitannin_metabolite_urolithin_a_inhibits_pro",
+    "DOI_10_1101_2023_06_16_23291378_topical_application_of_urolithin_a_slows_intrinsic_skin_agin",
+    "DOI_10_1101_2023_07_13_548937_amyloid_accelerates_age_related_proteome_wide_protein_insolu",
+    "DOI_10_1101_2023_08_22_554375_urolithin_a_induces_cardioprotection_and_enhanced_mitochondr",
+    "DOI_10_1101_2024_01_30_577986_urolithin_a_improves_alzheimer_s_disease_cognition_and_resto",
+    "DOI_10_1101_2024_02_08_579493_the_dietary_ellagitannin_metabolite_urolithin_a_is_produced",
+    "DOI_10_1101_2025_01_07_631588_mitigating_proinflammatory_sasp_and_damp_with_urolithin_a_a",
+    "DOI_10_1101_2025_07_10_25331277_the_effects_of_urolithin_a_supplementation_on_muscle_strengt",
+    "DOI_10_1126_scitranslmed_abb0319_urolithin_a_improves_muscle_function_by_inducing_mitophagy_i",
+    "DOI_10_1158_1538_7445_am2019_2971_abstract_2971_ellagic_acid_and_its_metabolite_urolithin_a_in",
+    "DOI_10_1200_jco_2024_42_16_suppl_e14562_impact_of_urolithin_a_supplementation_a_mitophagy_activator",
+    "DOI_10_4049_jimmunol_202_supp_192_4_enhancement_of_gut_barrier_function_by_microbial_metabolite",
+    "DOI_10_64898_2025_12_26_696570_urolithin_a_restores_mitochondrial_function_and_reverses_car",
+    "DOI_10_7506_spkx1002_6630_20250327_203_urolithin_a_regulates_mitophagy_and_senescence_signaling_pat",
+    "HIT_anti_aging_efficacy_study_on_one_cosmetic_product_containing",
+    "HIT_bioavailability_of_five_mitopure_formulations",
+    "HIT_bioavailability_of_four_mitopure_formulations",
+    "HIT_bioavailability_of_seven_mitopure_formulations",
+    "HIT_biomimetic_carboxymethyl_glucan_zif_8_nanocarrier_enhances_s",
+    "HIT_cerebrospinal_fluid_kinetics_of_urolithin_a",
+    "HIT_effects_of_mitopure_urolithin_a_on_skeletal_muscle_function_",
+    "HIT_effects_of_urolithin_a_supplementation_on_glucose_metabolism",
+    "HIT_evaluation_of_urolithin_a_and_fisetin_on_improving_sleep_and",
+    "HIT_human_skin_safety_testing_of_a_mitopure_topical_product_usin",
+    "HIT_impact_of_a_novel_brain_longevity_supplement_containing_the_",
+    "HIT_impact_of_urolithin_a_mitopure_on_mitochondrial_quality_in_m",
+    "HIT_influence_of_the_urolithin_a_on_the_population_with_bmi_high",
+    "HIT_mitopure_proprietary_urolithin_a_bioavailability_in_healthy_",
+    "HIT_orally_administered_urolithin_a_is_safe_and_modulates_muscle",
+    "HIT_the_effect_of_urolithin_a_mitopure_supplementation_on_muscle",
+    "HIT_the_mitopure_challenge_to_detect_levels_of_urolithin_a_in_dr",
+    "HIT_urolithin_a_a_gut_microbiome_derived_metabolite_improves_mit",
+    "HIT_urolithin_a_enhances_muscle_performance_in_elderly_and_posit",
+    "HIT_urolithin_a_supplementation_in_middle_aged_adults_with_obesi",
+    "HIT_urolithin_a_supplementation_to_boost_immune_health",
+    "PMC10001356_genetic_and_probiotic_characteristics_of_urolithin_a_produci",
+    "PMC10034769_urolithin_a_ua_attenuates_ferroptosis_in_lps_induced_acute_l",
+    "PMC10136031_urolithin_a_s_antioxidative_anti_inflammatory_and_antiapopto",
+    "PMC10281726_urolithin_a_exhibits_a_neuroprotective_effect_against_alzhei",
+    "PMC10376282_urolithin_a_in_health_and_diseases_prospects_for_parkinson_s",
+    "PMC10387767_urolithin_a_alleviates_neuropathic_pain_and_activates_mitoph",
+    "PMC10421179_unripe_rubus_occidentalis_ellagic_acid_and_urolithin_a_atten",
     "PMC10460156_urolithin_a_as_a_potential_agent_for_prevention_of_age_relat",
+    "PMC10497365_absorption_and_metabolism_of_urolithin_a_and_ellagic_acid_in",
     "PMC10609777_pharmacological_effects_of_urolithin_a_and_its_role_in_muscl",
+    "PMC10728757_urolithin_a_protects_severe_acute_pancreatitis_associated_ac",
     "PMC10791945_mitophagy_activation_by_urolithin_a_to_target_muscle_aging",
+    "PMC10873453_in_vitro_conversion_of_ellagic_acid_to_urolithin_a_by_differ",
+    "PMC10878087_the_microbial_metabolite_urolithin_a_reduces_clostridioides_",
+    "PMC10887565_antidiabetic_effect_of_urolithin_a_in_cultured_l6_myotubes_a",
+    "PMC10993698_the_effects_of_urolithin_a_on_poly_i_c_induced_microglial_ac",
+    "PMC11067828_urolithin_a_promotes_cd8_t_cell_mediated_cancer_immunosurvei",
+    "PMC11095213_urolithin_a_hijacks_erk1_2_ulk1_cascade_to_improve_cd8_t_cel",
+    "PMC11180933_urolithin_a_improves_alzheimer_s_disease_cognition_and_resto",
+    "PMC11186080_urolithin_a_promotes_p62_dependent_lysophagy_to_prevent_acut",
+    "PMC11188796_mup1_mediates_urolithin_a_alleviation_of_chronic_alcohol_rel",
+    "PMC11231190_urolithin_a_mediated_augmentation_of_intestinal_barrier_func",
+    "PMC11280374_effect_of_urolithin_a_on_the_improvement_of_circadian_rhythm",
+    "PMC11311380_urolithin_a_protects_against_hypoxia_induced_pulmonary_hyper",
     "PMC11335992_testing_the_amount_of_nicotinamide_mononucleotide_and_urolit",
+    "PMC11408861_urolithin_a_attenuates_hexavalent_chromium_induced_small_int",
+    "PMC11428424_effect_of_urolithin_a_on_bovine_sperm_capacitation_and_in_vi",
+    "PMC11439666_urolithin_a_alleviates_cell_senescence_by_inhibiting_ferropt",
+    "PMC11478980_activation_of_the_gut_brain_interaction_by_urolithin_a_and_i",
     "PMC11536656_assessment_of_urolithin_a_effects_on_muscle_endurance_streng",
+    "PMC11572288_recycling_the_recyclers_lysophagy_emerges_as_a_new_pharmacol",
+    "PMC11624366_sulforaphane_urolithin_a_and_zln005_induce_time_dependent_al",
     "PMC11631940_urolithin_a_and_nicotinamide_riboside_differentially_regulat",
     "PMC11673756_urolithin_a_protects_hepatocytes_from_palmitic_acid_induced_",
     "PMC11722880_urolithin_a_modulates_per2_degradation_via_sirt1_and_enhance",
+    "PMC11760930_diet_derived_urolithin_a_is_produced_by_a_dehydroxylase_enco",
+    "PMC11822506_uplc_ms_ms_method_for_simultaneous_quantification_of_cyclosp",
+    "PMC11834323_the_polyphenol_metabolite_urolithin_a_suppresses_myostatin_e",
+    "PMC11869585_microbiota_derived_urolithin_a_in_monoclonal_gammopathies_an",
+    "PMC11875685_urolithin_a_provides_cardioprotection_and_mitochondrial_qual",
     "PMC11901897_determination_of_urolithin_a_in_health_products_by_ultra_hig",
+    "PMC11947095_urolithin_a_alleviates_schizophrenic_like_behaviors_and_cogn",
+    "PMC11954813_urolithin_a_inhibits_breast_cancer_progression_via_activatin",
+    "PMC11970383_bioengineering_the_metabolic_network_of_car_t_cells_with_glp",
+    "PMC11979956_systemic_inflammation_and_the_inflammatory_context_of_the_co",
+    "PMC11986606_novel_ph_responsive_lipid_nanoparticles_deliver_ua_mediated_",
+    "PMC11989139_urolithin_a_protects_porcine_oocytes_from_artificially_induc",
+    "PMC12078357_urolithin_a_improves_motor_dysfunction_induced_by_copper_exp",
+    "PMC12108056_effect_of_urolithin_a_on_intracellular_survival_of_mycobacte",
+    "PMC12122305_emerging_evidence_of_urolithin_a_in_sports_nutrition_bridgin",
     "PMC12188533_unveiling_the_potential_of_urolithin_a_in_cancer_therapy_mec",
+    "PMC12251368_urolithin_a_attenuates_periodontitis_in_mice_via_dual_anti_i",
+    "PMC12292322_urolithin_a_protects_ovarian_reserve_via_inhibiting_pi3k_akt",
+    "PMC12292995_urolithin_a_in_central_nervous_system_disorders_therapeutic_",
+    "PMC12297016_ellagitannins_ellagic_acid_urolithin_a_urolithin_b_inhibit_t",
+    "PMC12300076_urolithin_a_exhibits_antidepressant_like_effects_by_modulati",
+    "PMC12302922_urolithin_a_producing_limosilactobacillus_fermentum_fua033_f",
+    "PMC12356704_sepsis_induces_long_term_muscle_and_mitochondrial_dysfunctio",
+    "PMC12430871_multi_species_synbiotic_supplementation_enhances_gut_microbi",
+    "PMC12526280_eicosapentaenoic_acid_and_urolithin_a_synergistically_mitiga",
     "PMC12608000_urolithin_a_alleviates_doxorubicin_induced_senescence_in_mes",
     "PMC12608089_mitigating_pro_inflammatory_sasp_and_damp_with_urolithin_a_a",
+    "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an",
+    "PMC12618261_effect_of_the_mitophagy_inducer_urolithin_a_on_age_related_i",
     "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn",
+    "PMC12634460_development_of_a_submicron_emulsion_based_delivery_system_to",
+    "PMC12693830_microbial_metabolite_macro_impact_urolithin_a_in_the_nexus_o",
+    "PMC12803790_oenological_tannins_mitigate_rotenone_induced_mitochondrial_",
+    "PMC12828597_functionalized_hydrogels_of_ceo_2_and_urolithin_a_synergisti",
+    "PMC12829081_urinary_polyphenol_signature_of_the_mediterranean_diet_is_as",
+    "PMC12857355_dietary_urolithin_a_improves_hepatic_antioxidant_function_an",
+    "PMC12862256_urolithin_a_regulates_gut_liver_axis_to_ameliorate_alcohol_a",
+    "PMC12870791_regulation_of_skeletal_muscle_development_and_metabolism_in_",
+    "PMC12885030_urolithin_a_alleviates_vascular_remodeling_through_mitochond",
+    "PMC12995754_potential_impact_of_urolithin_a_on_pathways_relevant_to_slee",
+    "PMC13008638_urolithin_a_a_multi_target_therapeutic_candidate_derived_fro",
+    "PMC13067832_gut_microbiota_derived_anandamide_mediates_the_therapeutic_e",
+    "PMC13083899_early_mitophagy_activation_by_urolithin_a_prevents_but_late_",
+    "PMC3655614_pomegranate_juice_metabolites_ellagic_acid_and_urolithin_a_s",
+    "PMC3736548_pomegranate_juice_augments_memory_and_fmri_activity_in_middl",
+    "PMC5859803_emblic_leafflower_phyllanthus_emblica_l_fruits_ameliorate_va",
+    "PMC6698978_urolithin_a_activated_autophagy_but_not_mitophagy_protects_a",
+    "PMC7918969_immunomodulatory_role_of_urolithin_a_on_metabolic_diseases",
+    "PMC7987831_the_punicalagin_metabolites_ellagic_acid_and_urolithin_a_exe",
+    "PMC8007722_the_gut_microbiota_metabolite_urolithin_a_inhibits_nf_b_acti",
+    "PMC8245698_urolithin_a_protects_chondrocytes_from_mechanical_overloadin",
+    "PMC8300261_anti_aging_effect_of_urolithin_a_on_bovine_oocytes_in_vitro",
+    "PMC8347929_effects_of_urolithin_a_on_mitochondrial_parameters_in_a_cell",
+    "PMC8617978_therapeutic_potential_of_mitophagy_inducing_microflora_metab",
+    "PMC8727228_urolithin_a_alleviates_oxidative_stress_induced_senescence_i",
     "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an",
-    "PMC8968651_urolithin_a_enhances_muscle_performance_in_elderly_and_posit"
+    "PMC8821002_direct_supplementation_with_urolithin_a_overcomes_limitation",
+    "PMC8822684_gut_bacterial_metabolite_urolithin_a_inhibits_myocardial_fib",
+    "PMC8935220_urolithin_a_protects_against_acetaminophen_induced_liver_inj",
+    "PMC8968651_urolithin_a_enhances_muscle_performance_in_elderly_and_posit",
+    "PMC9049876_ameliorative_effect_of_urolithin_a_on_d_gal_induced_liver_an",
+    "PMC9095590_urolithin_a_attenuates_auditory_cell_senescence_by_activatin",
+    "PMC9101441_urolithin_a_inactivation_of_tlr3_trif_signaling_to_block_the",
+    "PMC9133463_urolithin_a_improves_muscle_strength_exercise_performance_an",
+    "PMC9229509_ameliorative_effects_of_gut_microbial_metabolite_urolithin_a",
+    "PMC9240289_urolithin_a_attenuates_hyperuricemic_nephropathy_in_fructose",
+    "PMC9381911_urolithin_a_improves_mitochondrial_health_reduces_cartilage_",
+    "PMC9454743_a_combination_therapy_of_urolithin_a_egcg_has_stronger_prote",
+    "PMC9455165_lactococcus_garvieae_fua009_a_novel_intestinal_bacterium_cap",
+    "PMC9539031_urolithin_a_targets_the_akt_wnk1_axis_to_induce_autophagy_an",
+    "PMC9601659_a_novel_streptococcus_thermophilus_fua329_isolated_from_huma",
+    "PMC9682137_isolation_and_characterization_of_a_novel_human_intestinal_e",
+    "PMC9854132_effect_of_urolithin_a_on_the_improvement_of_vascular_endothe",
+    "PMC9886708_urolithin_a_reduces_amyloid_beta_load_and_improves_cognitive",
+    "PMID33666815_urolithin_a_induces_cell_cycle_arrest_and_apoptosis_by_inhib",
+    "PMID35065082_urolithin_a_promotes_mitophagy_and_suppresses_nlrp3_inflamma",
+    "PMID35567884_urolithin_a_protects_human_dermal_fibroblasts_from_uva_induc",
+    "PMID35655094_urolithin_a_ameliorates_obesity_induced_metabolic_cardiomyop",
+    "PMID37725214_urolithin_a_prevents_sleep_deprivation_induced_neuroinflamma",
+    "PMID38000358_urolithin_a_conjugation_with_nsaids_inhibits_its_glucuronida",
+    "PMID38415449_evaluation_of_urolithin_a_efficacy_in_heart_failure_patients",
+    "PMID38468112_urolithin_a_ameliorates_athletic_ability_and_intestinal_micr",
+    "PMID38636727_methylated_urolithin_a_mitigates_cognitive_impairment_by_inh",
+    "PMID38768764_engineered_urolithin_a_laden_functional_polymer_lipid_hybrid",
+    "PMID38886550_urolithin_a_promotes_atherosclerotic_plaque_stability_by_lim",
+    "PMID39002645_targeting_aging_with_urolithin_a_in_humans_a_systematic_revi",
+    "PMID39179206_consumption_of_a_sourdough_leavened_croissant_enriched_with_",
+    "PMID39643139_computational_analysis_of_urolithin_a_as_a_potential_compoun",
+    "PMID39725191_urolithin_a_attenuates_doxorubicin_induced_cardiotoxicity_by",
+    "PMID39827665_urolithin_a_alleviates_nlrp3_inflammasome_activation_and_pyr",
+    "PMID39961873_urolithin_a_enhances_tight_junction_protein_expression_in_en",
+    "PMID40180655_urolithin_as_a_metabolite_of_ellagitannins_and_ellagic_acid_",
+    "PMID40203794_urolithin_a_enhances_diabetic_wound_healing_insights_from_pa",
+    "PMID40227891_urolithin_a_derivative_uas03_improves_cognitive_deficits_and",
+    "PMID40253768_urolithin_a_alleviates_radiation_pneumonitis_by_activating_p",
+    "PMID40328344_urolithin_a_supplementation_alleviates_sepsis_induced_acute_",
+    "PMID40554052_urolithin_a_attenuates_pulmonary_fibrosis_via_the_pi3k_akt_m",
+    "PMID40752777_urolithin_a_abolishes_high_anxiety_and_rescues_the_associate",
+    "PMID41172819_urolithin_a_promotes_peripheral_nerve_regeneration_via_tfeb_",
+    "PMID41534475_naringenin_functionalized_polyester_nanoparticles_improve_or",
+    "PMID41652714_biomimetic_carboxymethyl_glucan_zif_8_nanocarrier_enhances_s",
+    "PMID41740767_mitochondria_targeting_urolithin_a_borneol_nanoparticles_enh",
+    "PMID41837341_urolithin_a_attenuates_aging_induced_liver_injury_by_inhibit",
+    "PMID41866331_urolithin_a_from_gut_metabolite_to_therapeutic_agent_bioavai",
+    "PMID41980377_a_3_n_nose_to_brain_urolithin_a_nanomotor_targeting_microgli"
+  ],
+  "abstract_fallback_paper_ids": [
+    "DOI_10_1002_cmdc_201100338_urolithin_as_a_converging_scaffold_linking_ellagic_acid_and",
+    "DOI_10_1002_mnfr_202000091_ellagic_acid_and_its_microbial_metabolite_urolithin_a_allevi",
+    "DOI_10_1002_oby_22404_urolithin_a_a_gut_metabolite_improves_insulin_sensitivity_th",
+    "DOI_10_1016_j_bbadis_2025_168106_urolithin_a_protects_against_calcium_oxalate_induced_crystal",
+    "DOI_10_1016_j_exger_2024_112589_urolithin_a_prevents_age_related_hearing_loss_in_c57bl_6j_mi",
+    "DOI_10_1016_j_immuni_2022_09_014_expansion_of_t_memory_stem_cells_with_superior_anti_tumor_im",
+    "DOI_10_1016_j_jare_2026_01_017_fructooligosaccharides_and_ellagic_acid_synergistically_enha",
+    "DOI_10_1016_j_mad_2023_111897_the_cgas_sting_signaling_pathway_is_modulated_by_urolithin_a",
+    "DOI_10_1016_j_molmed_2021_04_009_impact_of_the_natural_compound_urolithin_a_on_health_disease",
+    "DOI_10_1016_j_nutos_2025_04_004_urolithin_a_supplementation_to_improve_endothelial_and_cereb",
+    "DOI_10_1017_s0954422425100292_distinct_roles_of_urolithin_a_and_spermidine_in_mitophagy_an",
+    "DOI_10_1021_acs_jafc_3c00960_ameliorative_effect_of_ellagic_acid_on_aging_in_rats_with_th",
+    "DOI_10_1021_acs_jafc_3c01062_urolithin_a_produced_by_novel_microbial_fermentation_possess",
+    "DOI_10_1039_c5fo00120j_the_ellagic_acid_derived_gut_microbiota_metabolite_urolithin",
+    "DOI_10_1039_c9fo03008e_ellagic_acid_and_urolithin_a_modulate_the_immune_response_in",
+    "DOI_10_1039_d1fo02534a_urolithin_a_protects_dopaminergic_neurons_in_experimental_mo",
+    "DOI_10_1039_d2fo03310k_walnut_polyphenols_and_the_active_metabolite_urolithin_a_imp",
+    "DOI_10_1039_d3fo03847e_inhibition_of_the_nf_b_and_mtor_targets_by_urolithin_a_atten",
+    "DOI_10_1039_d3fo05014a_urolithin_a_production_drives_the_effects_of_pomegranate_on",
+    "DOI_10_1039_d5fo00440c_differential_effects_of_ellagic_acid_on_non_alcoholic_fatty",
+    "DOI_10_1093_gerona_glad072_novel_potential_targets_for_function_promoting_therapies_orp",
+    "DOI_10_1093_geroni_igx004_4446_orally_administered_urolithin_a_is_safe_and_modulates_muscle",
+    "DOI_10_1093_humrep_deab053_the_ellagic_acid_metabolites_urolithin_a_and_b_differentiall",
+    "DOI_10_1093_jas_skad232_effect_of_ellagic_acid_on_body_weight_nutrient_digestibility",
+    "DOI_10_1096_fasebj_2019_33_1_supplement_lb530_the_microbiome_product_urolithin_a_abolishes_tgf_dependent_s",
+    "DOI_10_1096_fasebj_25_1_supplement_235_4_urolithin_a_and_ellagic_acid_inhibit_prostate_cancer_through",
+    "DOI_10_1096_fasebj_26_1_supplement_251_7_pomegranate_ellagitannin_metabolite_urolithin_a_inhibits_pro",
+    "DOI_10_1101_2023_06_16_23291378_topical_application_of_urolithin_a_slows_intrinsic_skin_agin",
+    "DOI_10_1101_2023_07_13_548937_amyloid_accelerates_age_related_proteome_wide_protein_insolu",
+    "DOI_10_1101_2023_08_22_554375_urolithin_a_induces_cardioprotection_and_enhanced_mitochondr",
+    "DOI_10_1101_2024_01_30_577986_urolithin_a_improves_alzheimer_s_disease_cognition_and_resto",
+    "DOI_10_1101_2024_02_08_579493_the_dietary_ellagitannin_metabolite_urolithin_a_is_produced",
+    "DOI_10_1101_2025_01_07_631588_mitigating_proinflammatory_sasp_and_damp_with_urolithin_a_a",
+    "DOI_10_1101_2025_07_10_25331277_the_effects_of_urolithin_a_supplementation_on_muscle_strengt",
+    "DOI_10_1126_scitranslmed_abb0319_urolithin_a_improves_muscle_function_by_inducing_mitophagy_i",
+    "DOI_10_1158_1538_7445_am2019_2971_abstract_2971_ellagic_acid_and_its_metabolite_urolithin_a_in",
+    "DOI_10_1200_jco_2024_42_16_suppl_e14562_impact_of_urolithin_a_supplementation_a_mitophagy_activator",
+    "DOI_10_4049_jimmunol_202_supp_192_4_enhancement_of_gut_barrier_function_by_microbial_metabolite",
+    "DOI_10_64898_2025_12_26_696570_urolithin_a_restores_mitochondrial_function_and_reverses_car",
+    "DOI_10_7506_spkx1002_6630_20250327_203_urolithin_a_regulates_mitophagy_and_senescence_signaling_pat",
+    "HIT_anti_aging_efficacy_study_on_one_cosmetic_product_containing",
+    "HIT_bioavailability_of_five_mitopure_formulations",
+    "HIT_bioavailability_of_four_mitopure_formulations",
+    "HIT_bioavailability_of_seven_mitopure_formulations",
+    "HIT_biomimetic_carboxymethyl_glucan_zif_8_nanocarrier_enhances_s",
+    "HIT_cerebrospinal_fluid_kinetics_of_urolithin_a",
+    "HIT_effects_of_mitopure_urolithin_a_on_skeletal_muscle_function_",
+    "HIT_effects_of_urolithin_a_supplementation_on_glucose_metabolism",
+    "HIT_evaluation_of_urolithin_a_and_fisetin_on_improving_sleep_and",
+    "HIT_human_skin_safety_testing_of_a_mitopure_topical_product_usin",
+    "HIT_impact_of_a_novel_brain_longevity_supplement_containing_the_",
+    "HIT_impact_of_urolithin_a_mitopure_on_mitochondrial_quality_in_m",
+    "HIT_influence_of_the_urolithin_a_on_the_population_with_bmi_high",
+    "HIT_mitopure_proprietary_urolithin_a_bioavailability_in_healthy_",
+    "HIT_orally_administered_urolithin_a_is_safe_and_modulates_muscle",
+    "HIT_the_effect_of_urolithin_a_mitopure_supplementation_on_muscle",
+    "HIT_the_mitopure_challenge_to_detect_levels_of_urolithin_a_in_dr",
+    "HIT_urolithin_a_a_gut_microbiome_derived_metabolite_improves_mit",
+    "HIT_urolithin_a_enhances_muscle_performance_in_elderly_and_posit",
+    "HIT_urolithin_a_supplementation_in_middle_aged_adults_with_obesi",
+    "HIT_urolithin_a_supplementation_to_boost_immune_health",
+    "PMID33666815_urolithin_a_induces_cell_cycle_arrest_and_apoptosis_by_inhib",
+    "PMID35065082_urolithin_a_promotes_mitophagy_and_suppresses_nlrp3_inflamma",
+    "PMID35567884_urolithin_a_protects_human_dermal_fibroblasts_from_uva_induc",
+    "PMID35655094_urolithin_a_ameliorates_obesity_induced_metabolic_cardiomyop",
+    "PMID37725214_urolithin_a_prevents_sleep_deprivation_induced_neuroinflamma",
+    "PMID38000358_urolithin_a_conjugation_with_nsaids_inhibits_its_glucuronida",
+    "PMID38415449_evaluation_of_urolithin_a_efficacy_in_heart_failure_patients",
+    "PMID38468112_urolithin_a_ameliorates_athletic_ability_and_intestinal_micr",
+    "PMID38636727_methylated_urolithin_a_mitigates_cognitive_impairment_by_inh",
+    "PMID38768764_engineered_urolithin_a_laden_functional_polymer_lipid_hybrid",
+    "PMID38886550_urolithin_a_promotes_atherosclerotic_plaque_stability_by_lim",
+    "PMID39002645_targeting_aging_with_urolithin_a_in_humans_a_systematic_revi",
+    "PMID39179206_consumption_of_a_sourdough_leavened_croissant_enriched_with_",
+    "PMID39643139_computational_analysis_of_urolithin_a_as_a_potential_compoun",
+    "PMID39725191_urolithin_a_attenuates_doxorubicin_induced_cardiotoxicity_by",
+    "PMID39827665_urolithin_a_alleviates_nlrp3_inflammasome_activation_and_pyr",
+    "PMID39961873_urolithin_a_enhances_tight_junction_protein_expression_in_en",
+    "PMID40180655_urolithin_as_a_metabolite_of_ellagitannins_and_ellagic_acid_",
+    "PMID40203794_urolithin_a_enhances_diabetic_wound_healing_insights_from_pa",
+    "PMID40227891_urolithin_a_derivative_uas03_improves_cognitive_deficits_and",
+    "PMID40253768_urolithin_a_alleviates_radiation_pneumonitis_by_activating_p",
+    "PMID40328344_urolithin_a_supplementation_alleviates_sepsis_induced_acute_",
+    "PMID40554052_urolithin_a_attenuates_pulmonary_fibrosis_via_the_pi3k_akt_m",
+    "PMID40752777_urolithin_a_abolishes_high_anxiety_and_rescues_the_associate",
+    "PMID41172819_urolithin_a_promotes_peripheral_nerve_regeneration_via_tfeb_",
+    "PMID41534475_naringenin_functionalized_polyester_nanoparticles_improve_or",
+    "PMID41652714_biomimetic_carboxymethyl_glucan_zif_8_nanocarrier_enhances_s",
+    "PMID41740767_mitochondria_targeting_urolithin_a_borneol_nanoparticles_enh",
+    "PMID41837341_urolithin_a_attenuates_aging_induced_liver_injury_by_inhibit",
+    "PMID41866331_urolithin_a_from_gut_metabolite_to_therapeutic_agent_bioavai",
+    "PMID41980377_a_3_n_nose_to_brain_urolithin_a_nanomotor_targeting_microgli"
   ],
   "failures": [
     {
@@ -53,13 +436,61 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
+      "title": "Evaluation of Urolithin A Efficacy in Heart Failure Patients with Reduced Ejecti",
+      "doi": "10.2174/0115748871279354240209101604",
+      "pmid": "38415449",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Consumption of a Sourdough-Leavened Croissant Enriched with a Blend of Fibers In",
+      "doi": "10.1016/j.tjnut.2024.08.015",
+      "pmid": "39179206",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Inhibition of the NF-\u03baB and mTOR targets by urolithin A attenuates <scp>d</scp>-",
+      "doi": "10.1039/d3fo03847e",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A induces cardioprotection and enhanced mitochondrial quality during n",
+      "doi": "10.1101/2023.08.22.554375",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Topical application of Urolithin A slows intrinsic skin aging and protects from ",
+      "doi": "10.1101/2023.06.16.23291378",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A improves muscle function by inducing mitophagy in muscular dystrophy",
+      "doi": "10.1126/scitranslmed.abb0319",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A, a Gut Metabolite, Improves Insulin Sensitivity Through Augmentation",
+      "doi": "10.1002/oby.22404",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Urolithin A (Mitopure\u00ae) Supplementation on Muscle Strength in Heal",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
       "title": "Effects of Urolithin A Supplementation on Glucose Metabolism in Healthy Adults 5",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "The Effect of Urolithin A (Mitopure\u00ae) Supplementation on Muscle Strength in Heal",
+      "title": "Cerebrospinal Fluid Kinetics of Urolithin A",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -71,19 +502,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Anti-aging Efficacy Study on One Cosmetic Product Containing Mitopure",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Influence of the Urolithin A on the Population With BMI Higher Than 30 During Re",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "The Mitopure Challenge to Detect Levels of Urolithin A in Dried Blood Spots",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -95,7 +514,49 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Urolithin A Supplementation in Middle-aged Adults With Obesity",
+      "title": "The Mitopure Challenge to Detect Levels of Urolithin A in Dried Blood Spots",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Anti-aging Efficacy Study on One Cosmetic Product Containing Mitopure",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Distinct roles of urolithin A and spermidine in mitophagy and autophagy: implica",
+      "doi": "10.1017/s0954422425100292",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A Restores Mitochondrial Function and Reverses Cardiac Remodeling in H",
+      "doi": "10.64898/2025.12.26.696570",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A protects against calcium oxalate-induced crystal formation and kidne",
+      "doi": "10.1016/j.bbadis.2025.168106",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of a Novel Brain Longevity Supplement Containing the Postbiotic Urolithin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bioavailability of Four Mitopure Formulations",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bioavailability of Five Mitopure Formulations",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -107,7 +568,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Impact of a Novel Brain Longevity Supplement Containing the Postbiotic Urolithin",
+      "title": "Urolithin A Supplementation in Middle-aged Adults With Obesity",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bioavailability of Seven Mitopure Formulations",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -125,14 +592,26 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Evaluation of Urolithin A Efficacy in Heart Failure Patients with Reduced Ejecti",
-      "doi": "10.2174/0115748871279354240209101604",
-      "pmid": "38415449",
+      "title": "Differential effects of ellagic acid on non-alcoholic fatty liver disease in mic",
+      "doi": "10.1039/d5fo00440c",
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Impact of urolithin A supplementation, a mitophagy activator on mitochondrial he",
-      "doi": "10.1200/jco.2024.42.16_suppl.e14562",
+      "title": "Urolithin A Regulates Mitophagy and Senescence Signaling Pathways to Antagonize ",
+      "doi": "10.7506/spkx1002-6630-20250327-203",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A supplementation to improve endothelial and cerebrovascular function ",
+      "doi": "10.1016/j.nutos.2025.04.004",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A prevents age-related hearing loss in C57BL/6J mice likely by inducin",
+      "doi": "10.1016/j.exger.2024.112589",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -149,8 +628,50 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
+      "title": "Urolithin A improves Alzheimer\u2019s disease cognition and restores mitophagy and ly",
+      "doi": "10.1101/2024.01.30.577986",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A production drives the effects of pomegranate on the gut microbial me",
+      "doi": "10.1039/d3fo05014a",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of urolithin A supplementation, a mitophagy activator on mitochondrial he",
+      "doi": "10.1200/jco.2024.42.16_suppl.e14562",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ameliorative Effect of Ellagic Acid on Aging in Rats with the Potential Mechanis",
+      "doi": "10.1021/acs.jafc.3c00960",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
       "title": "Urolithin A Produced by Novel Microbial Fermentation Possesses Anti-aging Effect",
       "doi": "10.1021/acs.jafc.3c01062",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The cGAS-STING signaling pathway is modulated by urolithin A",
+      "doi": "10.1016/j.mad.2023.111897",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Amyloid \u03b2 accelerates age-related proteome-wide protein insolubility",
+      "doi": "10.1101/2023.07.13.548937",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Walnut polyphenols and the active metabolite urolithin A improve oxidative damag",
+      "doi": "10.1039/d2fo03310k",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -167,14 +688,26 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Urolithin A improves muscle function by inducing mitophagy in muscular dystrophy",
-      "doi": "10.1126/scitranslmed.abb0319",
+      "title": "Urolithin A protects dopaminergic neurons in experimental models of Parkinson's ",
+      "doi": "10.1039/d1fo02534a",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of the Natural Compound Urolithin A on Health, Disease, and Aging",
+      "doi": "10.1016/j.molmed.2021.04.009",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
       "title": "Human Skin Safety Testing of a Mitopure Topical Product Using a Human Repeat Ins",
       "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The ellagic acid metabolites urolithin A and B differentially affect growth, adh",
+      "doi": "10.1093/humrep/deab053",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -191,9 +724,207 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
+      "title": "Ellagic acid and urolithin A modulate the immune response in LPS-stimulated U937",
+      "doi": "10.1039/c9fo03008e",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 2971: Ellagic acid and its metabolite Urolithin A induce prostate cance",
+      "doi": "10.1158/1538-7445.am2019-2971",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Enhancement of gut barrier function by microbial metabolite, urolithin A via AhR",
+      "doi": "10.4049/jimmunol.202.supp.192.4",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The ellagic acid-derived gut microbiota metabolite, urolithin A, potentiates the",
+      "doi": "10.1039/c5fo00120j",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pomegranate ellagitannin metabolite, Urolithin A, inhibits prostate cancer cell ",
+      "doi": "10.1096/fasebj.26.1_supplement.251.7",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A and Ellagic Acid Inhibit Prostate Cancer Through Different Molecular",
+      "doi": "10.1096/fasebj.25.1_supplement.235.4",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin as a Converging Scaffold Linking Ellagic acid and Coumarin Analogues: ",
+      "doi": "10.1002/cmdc.201100338",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Biomimetic carboxymethyl \u03b2-glucan-ZIF-8 nanocarrier enhances structural stabilit",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A From Gut Metabolite to Therapeutic Agent: Bioavailability, Mechanism",
+      "doi": "10.1111/1750-3841.70988",
+      "pmid": "41866331",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Biomimetic carboxymethyl \u03b2-glucan-ZIF-8 nanocarrier enhances structural stabilit",
+      "doi": "10.1016/j.foodres.2025.118314",
+      "pmid": "41652714",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mitochondria-targeting urolithin A/borneol nanoparticles: enhanced therapeutic e",
+      "doi": "10.1016/j.ijpharm.2026.126717",
+      "pmid": "41740767",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A 3-N nose-to-brain urolithin a nanomotor targeting microglial mitophagy in neur",
+      "doi": "10.1016/j.biomaterials.2026.124162",
+      "pmid": "41980377",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A Attenuates Aging-Induced Liver Injury by Inhibiting Nur77 Ubiquitina",
+      "doi": "10.1021/acs.jafc.5c17898",
+      "pmid": "41837341",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Naringenin-functionalized polyester nanoparticles improve oral urolithin A deliv",
+      "doi": "10.1016/j.jpet.2025.103794",
+      "pmid": "41534475",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin as a Metabolite of Ellagitannins and Ellagic Acid from Fruits and Nuts",
+      "doi": "10.1007/s13668-025-00645-0",
+      "pmid": "40180655",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A promotes peripheral nerve regeneration via TFEB-mediated mitophagy a",
+      "doi": "10.1016/j.intimp.2025.115723",
+      "pmid": "41172819",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin-A supplementation alleviates sepsis-induced acute lung injury by reduc",
+      "doi": "10.1016/j.mito.2025.102047",
+      "pmid": "40328344",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A alleviates NLRP3 inflammasome activation and pyroptosis by promoting",
+      "doi": "10.1016/j.intimp.2025.114057",
+      "pmid": "39827665",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Computational analysis of Urolithin A as a potential compound for anti-inflammat",
+      "doi": "10.1016/j.freeradbiomed.2024.12.003",
+      "pmid": "39643139",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A Abolishes High Anxiety and Rescues the Associated Mitochondria-Relat",
+      "doi": "10.1016/j.biopsych.2025.07.020",
+      "pmid": "40752777",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A enhances diabetic wound healing: Insights from parkin-mediated mitop",
+      "doi": "10.1016/j.intimp.2025.114572",
+      "pmid": "40203794",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A alleviates radiation pneumonitis by activating PINK1/PRKN-mediated M",
+      "doi": "10.1016/j.intimp.2025.114671",
+      "pmid": "40253768",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A Enhances Tight Junction Protein Expression in Endothelial Cells Cult",
+      "doi": "10.1007/s12031-024-02302-7",
+      "pmid": "39961873",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A attenuates Doxorubicin-induced cardiotoxicity by enhancing PINK1-reg",
+      "doi": "10.1016/j.cbi.2024.111363",
+      "pmid": "39725191",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A attenuates pulmonary fibrosis via the PI3K/AKT/mTOR pathway: Evidenc",
+      "doi": "10.1016/j.bbrc.2025.152219",
+      "pmid": "40554052",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin-A Derivative UAS03 Improves Cognitive Deficits and Memory by Activatin",
+      "doi": "10.1021/acschemneuro.4c00886",
+      "pmid": "40227891",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Methylated urolithin A, mitigates cognitive impairment by inhibiting NLRP3 infla",
+      "doi": "10.1016/j.neuropharm.2024.109950",
+      "pmid": "38636727",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A Ameliorates Athletic Ability and Intestinal Microbiota in Sleep Depr",
+      "doi": "10.1002/mnfr.202300599",
+      "pmid": "38468112",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A Prevents Sleep-deprivation-induced Neuroinflammation and Mitochondri",
+      "doi": "10.1007/s12035-023-03651-x",
+      "pmid": "37725214",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A conjugation with NSAIDs inhibits its glucuronidation and maintains i",
+      "doi": "10.1016/j.biopha.2023.115932",
+      "pmid": "38000358",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A promotes mitophagy and suppresses NLRP3 inflammasome activation in l",
+      "doi": "10.1016/j.neuropharm.2022.108963",
+      "pmid": "35065082",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
       "title": "Urolithin A protects human dermal fibroblasts from UVA-induced photoaging throug",
       "doi": "10.1016/j.jphotobiol.2022.112462",
       "pmid": "35567884",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urolithin A, a Gut Microbiome Derived Metabolite Improves Mitochondrial and Cell",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ORALLY ADMINISTERED UROLITHIN A IS SAFE AND MODULATES MUSCLE AND MITOCHONDRIAL B",
+      "doi": null,
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
@@ -204,14 +935,149 @@
     }
   ],
   "papers_resolved": {
+    "PMC8821002": {
+      "title": "Direct supplementation with Urolithin A overcomes limitations of dietary exposure and gut microbiome variability in healthy adults to achieve consistent levels across the population.",
+      "doi": "10.1038/s41430-021-00950-1",
+      "pmid": "34117375",
+      "year": 2022,
+      "venue": "Eur J Clin Nutr",
+      "authors": [
+        "A Singh",
+        "D D'Amico",
+        "PA Andreux",
+        "G Dunngalvin",
+        "T Kern",
+        "W Blanco-Bose",
+        "J Auwerx",
+        "P Aebischer",
+        "C Rinsch"
+      ],
+      "sources": [
+        "crossref",
+        "europepmc",
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC12618261": {
+      "title": "Effect of the mitophagy inducer urolithin A on age-related immune decline: a randomized, placebo-controlled trial.",
+      "doi": "10.1038/s43587-025-00996-x",
+      "pmid": "41174221",
+      "year": 2025,
+      "venue": "Nat Aging",
+      "authors": [
+        "D Denk",
+        "A Singh",
+        "HG Kasler",
+        "D D'Amico",
+        "J Rey",
+        "L Alcober-Boquet",
+        "JM Gorol",
+        "C Steup",
+        "R Tiwari",
+        "R Kwok",
+        "RJ Arg\u00fcello",
+        "J Faitg",
+        "K Sprinzl",
+        "S Zeuzem",
+        "V Nekljudova",
+        "S Loibl",
+        "E Verdin",
+        "C Rinsch",
+        "FR Greten"
+      ],
+      "sources": [
+        "europepmc",
+        "openalex",
+        "pubmed"
+      ]
+    },
     "PMC11536656": {
       "title": "Assessment of Urolithin A effects on muscle endurance, strength, inflammation, oxidative stress, and protein metabolism in male athletes with resistance training: an 8-week randomized, double-blind, placebo-controlled study.",
       "doi": "10.1080/15502783.2024.2419388",
       "pmid": "39487653",
       "year": 2024,
       "venue": "J Int Soc Sports Nutr",
+      "authors": [
+        "H Zhao",
+        "H Zhu",
+        "H Yun",
+        "J Liu",
+        "G Song",
+        "J Teng",
+        "D Zou",
+        "N Lu",
+        "C Liu"
+      ],
       "sources": [
+        "europepmc",
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC9854132": {
+      "title": "Effect of urolithin A on the improvement of vascular endothelial function depends on the gut microbiota",
+      "doi": "10.3389/fnut.2022.1077534",
+      "pmid": "36687672",
+      "year": 2022,
+      "venue": "Front Nutr",
+      "authors": [
+        "Y Nishimoto",
+        "K Fujisawa",
+        "Y Ukawa",
+        "M Kudoh",
+        "K Funahashi",
+        "Y Kishimoto",
+        "S Fukuda"
+      ],
+      "sources": [
+        "crossref",
         "doaj",
+        "openalex"
+      ]
+    },
+    "PMC9133463": {
+      "title": "Urolithin A improves muscle strength, exercise performance, and biomarkers of mitochondrial health in a randomized trial in middle-aged adults.",
+      "doi": "10.1016/j.xcrm.2022.100633",
+      "pmid": "35584623",
+      "year": 2022,
+      "venue": "Cell Rep Med",
+      "authors": [
+        "A Singh",
+        "D D'Amico",
+        "PA Andreux",
+        "AM Fouassier",
+        "W Blanco-Bose",
+        "M Evans",
+        "P Aebischer",
+        "J Auwerx",
+        "C Rinsch"
+      ],
+      "sources": [
+        "europepmc",
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC8777576": {
+      "title": "Effect of Urolithin A Supplementation on Muscle Endurance and Mitochondrial Health in Older Adults: A Randomized Clinical Trial.",
+      "doi": "10.1001/jamanetworkopen.2021.44279",
+      "pmid": "35050355",
+      "year": 2022,
+      "venue": "JAMA Netw Open",
+      "authors": [
+        "S Liu",
+        "D D'Amico",
+        "E Shankland",
+        "S Bhayana",
+        "JM Garcia",
+        "P Aebischer",
+        "C Rinsch",
+        "A Singh",
+        "DJ Marcinek"
+      ],
+      "sources": [
+        "europepmc",
         "openalex",
         "pubmed"
       ]
@@ -222,69 +1088,566 @@
       "pmid": "40839339",
       "year": 2025,
       "venue": "Sports Med",
+      "authors": [
+        "J Whitfield",
+        "AKA McKay",
+        "N Tee",
+        "R McCormick",
+        "A Morabito",
+        "LG Karagounis",
+        "AM Fouassier",
+        "D D'Amico",
+        "A Singh",
+        "LM Burke",
+        "JA Hawley"
+      ],
       "sources": [
-        "openalex",
+        "europepmc",
         "pubmed"
+      ]
+    },
+    "PMC11760930": {
+      "title": "Diet-derived urolithin A is produced by a dehydroxylase encoded by human gut Enterocloster species",
+      "doi": "10.1038/s41467-025-56266-2",
+      "pmid": "39856097",
+      "year": 2025,
+      "venue": "Nat Commun",
+      "authors": [
+        "R Pidgeon",
+        "S Mitchell",
+        "M Shamash",
+        "L Suleiman",
+        "L Dridi",
+        "CF Maurice",
+        "B Castagner"
+      ],
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC11875685": {
+      "title": "Urolithin A provides cardioprotection and mitochondrial quality enhancement preclinically and improves human cardiovascular health biomarkers",
+      "doi": "10.1016/j.isci.2025.111814",
+      "pmid": "40034121",
+      "year": 2025,
+      "venue": "iScience",
+      "authors": [
+        "S Liu",
+        "J Faitg",
+        "C Tissot",
+        "D Konstantopoulos",
+        "R Laws",
+        "G Bourdier",
+        "PA Andreux",
+        "T Davey",
+        "H Gallart-Ayala",
+        "J Ivanisevic",
+        "A Singh",
+        "C Rinsch",
+        "DJ Marcinek",
+        "D D'Amico"
+      ],
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC12356704": {
+      "title": "Sepsis Induces Long\u2010Term Muscle and Mitochondrial Dysfunction due to Autophagy Disruption Amenable by Urolithin A",
+      "doi": "10.1002/jcsm.70041",
+      "pmid": "40817441",
+      "year": 2025,
+      "venue": "J Cachexia Sarcopenia Muscle",
+      "authors": [
+        "A Pierre",
+        "R Favory",
+        "B Brassart",
+        "C Bourel",
+        "R Romien",
+        "S Normandin",
+        "A Dubech",
+        "C Vincent",
+        "J Lemaire",
+        "G Grolaux",
+        "O Not",
+        "F Wallet",
+        "F Daussin",
+        "E Boulanger",
+        "A Durand",
+        "M Frimat",
+        "A Ghinet",
+        "M Howsam",
+        "W Laine",
+        "P Marchetti"
+      ],
+      "sources": [
+        "crossref",
+        "doaj"
+      ]
+    },
+    "PMC11624366": {
+      "title": "Sulforaphane, Urolithin A, and ZLN005 induce time-dependent alterations in antioxidant capacity, mitophagy, and mitochondrial biogenesis in muscle cells",
+      "doi": "10.1016/j.smhs.2024.03.011",
+      "pmid": "39649792",
+      "year": 2025,
+      "venue": "Sports Med Health Sci",
+      "authors": [
+        "N Moradi",
+        "S Champsi",
+        "DA Hood"
+      ],
+      "sources": [
+        "doaj",
+        "openalex"
       ]
     },
     "PMC10791945": {
       "title": "Mitophagy Activation by Urolithin A to Target Muscle Aging",
       "doi": "10.1007/s00223-023-01145-5",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Calcified Tissue International",
+      "pmid": "37925671",
+      "year": 2024,
+      "venue": "Calcif Tissue Int",
+      "authors": [
+        "J Faitg",
+        "D D'Amico",
+        "C Rinsch",
+        "A Singh"
+      ],
       "sources": [
         "crossref",
         "openalex"
       ]
     },
-    "PMC8777576": {
-      "title": "Effect of Urolithin A Supplementation on Muscle Endurance and Mitochondrial Health in Older Adults: A Randomized Clinical Trial.",
-      "doi": "10.1001/jamanetworkopen.2021.44279",
-      "pmid": "35050355",
-      "year": 2022,
-      "venue": "JAMA Netw Open",
+    "PMC10497365": {
+      "title": "Absorption and Metabolism of Urolithin A and Ellagic Acid in Mice and Their Cytotoxicity in Human Colorectal Cancer Cells",
+      "doi": "10.1155/2023/8264716",
+      "pmid": "37706115",
+      "year": 2023,
+      "venue": "Evid Based Complement Alternat Med",
+      "authors": [
+        "IC Lin",
+        "JY Wu",
+        "CY Fang",
+        "SC Wang",
+        "YW Liu",
+        "ST Ho"
+      ],
       "sources": [
-        "openalex",
-        "pubmed"
-      ]
-    },
-    "PMC12188533": {
-      "title": "Unveiling the potential of Urolithin A in Cancer Therapy: Mechanistic Insights to Future Perspectives of Nanomedicine",
-      "doi": "10.7150/ntno.110966",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Nanotheranostics",
-      "sources": [
+        "crossref",
         "openalex"
       ]
     },
-    "PMC11901897": {
-      "title": "Determination of Urolithin A in Health Products by Ultra-High-Performance Liquid Chromatography",
-      "doi": "10.3390/molecules30051141",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Molecules",
+    "PMC8300261": {
+      "title": "Anti-Aging Effect of Urolithin A on Bovine Oocytes In Vitro",
+      "doi": "10.3390/ani11072048",
+      "pmid": "34359176",
+      "year": 2021,
+      "venue": "Animals (Basel)",
+      "authors": [
+        "Fonseca \u00c9",
+        "CC Marques",
+        "J Pimenta",
+        "J Jorge",
+        "MC Baptista",
+        "AC Gon\u00e7alves",
+        "RMLN Pereira"
+      ],
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC8245698": {
+      "title": "Urolithin A Protects Chondrocytes From Mechanical Overloading-Induced Injuries",
+      "doi": "10.3389/fphar.2021.703847",
+      "pmid": "34220525",
+      "year": 2021,
+      "venue": "Front Pharmacol",
+      "authors": [
+        "Y He",
+        "L Yocum",
+        "PG Alexander",
+        "MJ Jurczak",
+        "H Lin"
+      ],
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC9185853": {
+      "title": "Ellagic Acid and Its Microbial Metabolite Urolithin A Alleviate Diet\u2010Induced Insulin Resistance in Mice",
+      "doi": "10.1002/mnfr.202000091",
+      "pmid": "32783299",
+      "year": 2020,
+      "venue": "Mol Nutr Food Res",
+      "authors": [
+        "J Yang",
+        "Y Guo",
+        "SM Henning",
+        "B Chan",
+        "J Long",
+        "J Zhong",
+        "R Acin-Perez",
+        "A Petcherski",
+        "O Shirihai",
+        "D Heber",
+        "Z Li"
+      ],
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC13067832": {
+      "title": "Gut Microbiota\u2010Derived Anandamide Mediates the Therapeutic Effects of Urolithin A on Alcohol\u2010Induced Cognitive and Social Dysfunction via CB1R\u2010DRD2\u2010RAP1 Signaling Axis",
+      "doi": "10.1002/advs.202508048",
+      "pmid": "41632030",
+      "year": 2026,
+      "venue": "Adv Sci (Weinh)",
+      "authors": [
+        "H Zhang",
+        "Z Li",
+        "Y Xiao",
+        "J Bian",
+        "C He",
+        "C Liu",
+        "L Gong",
+        "L Han",
+        "Z Liu",
+        "M Wang"
+      ],
       "sources": [
         "doaj"
       ]
     },
-    "PMC11722880": {
-      "title": "Urolithin A Modulates PER2 Degradation via SIRT1 and Enhances the Amplitude of Circadian Clocks in Human Senescent Cells",
-      "doi": "10.3390/nu17010020",
-      "pmid": null,
-      "year": 2024,
+    "PMC12995754": {
+      "title": "Potential impact of urolithin A on pathways relevant to sleep health: a mini review",
+      "doi": "10.3389/fnut.2026.1779855",
+      "pmid": "41859662",
+      "year": 2026,
+      "venue": "Front Nutr",
+      "authors": [
+        "ACDC Pinaffi-Langley",
+        "FM Zuraikat",
+        "MP St-Onge",
+        "A Yabluchanskiy"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12828597": {
+      "title": "Functionalized hydrogels of CeO2 and Urolithin A synergistically scavenge ROS and activate mitophagy for cartilage repair",
+      "doi": "10.1016/j.mtbio.2026.102785",
+      "pmid": "41585439",
+      "year": 2026,
+      "venue": "Mater Today Bio",
+      "authors": [
+        "C Ma",
+        "B Hua",
+        "H Wang",
+        "T Ma",
+        "Q Lv",
+        "Z Yan"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12430871": {
+      "title": "Multi-Species Synbiotic Supplementation Enhances Gut Microbial Diversity, Increases Urolithin A and Butyrate Production, and Reduces Inflammation in Healthy Adults: A Randomized, Placebo-Controlled Trial.",
+      "doi": "10.3390/nu17172734",
+      "pmid": "40944126",
+      "year": 2025,
       "venue": "Nutrients",
+      "authors": [
+        "BA Napier",
+        "JR Allegretti",
+        "P Feuerstadt",
+        "CR Kelly",
+        "NW Van Hise",
+        "R J\u00e4ger",
+        "Z Kassam",
+        "G Reid"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12829081": {
+      "title": "Urinary polyphenol signature of the Mediterranean diet is associated with lower cardiovascular disease risk: the PREDIMED trial.",
+      "doi": "10.1186/s12916-025-04587-w",
+      "pmid": "41408634",
+      "year": 2025,
+      "venue": "BMC Med",
+      "authors": [
+        "I Dom\u00ednguez-L\u00f3pez",
+        "P Galkina",
+        "G Fern\u00e1ndez-Duval",
+        "C Pozzoli",
+        "C Razquin",
+        "O J\u00e1uregui",
+        "J Salas-Salvad\u00f3",
+        "L Tojal-Sierra",
+        "M Fit\u00f3",
+        "D Corella",
+        "M Fiol",
+        "J Lapetra",
+        "E G\u00f3mez-Gracia",
+        "X Pint\u00f3",
+        "M Ruiz-Canela",
+        "O Casta\u00f1er",
+        "L Liang",
+        "Q Sun",
+        "L Serra-Majem",
+        "E Ros"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12292995": {
+      "title": "Urolithin A in Central Nervous System Disorders: Therapeutic Applications and Challenges",
+      "doi": "10.3390/biomedicines13071553",
+      "pmid": "40722629",
+      "year": 2025,
+      "venue": "Biomedicines",
+      "authors": [
+        "Q Zhang",
+        "W Zhang",
+        "X Yuan",
+        "X Peng",
+        "G Hu"
+      ],
       "sources": [
         "openalex"
+      ]
+    },
+    "PMC12297016": {
+      "title": "Ellagitannins (Ellagic Acid, Urolithin A, Urolithin B) Inhibit the Catalytic Activity of Human Recombinant Metalloproteinase 9",
+      "doi": "10.5812/ijpr-148332",
+      "pmid": "40718443",
+      "year": 2025,
+      "venue": "Iran J Pharm Res",
+      "authors": [
+        "N Houssein-Zadeh",
+        "L Sadeghi",
+        "G Dehghan"
+      ],
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12611738": {
+      "title": "Effects of Urolithin A supplementation on performance and antioxidant status in academy soccer players during preseason: a pilot randomised controlled trial",
+      "doi": "10.3389/fnut.2025.1674446",
+      "pmid": "41245402",
+      "year": 2025,
+      "venue": "Front Nutr",
+      "authors": [
+        "A Monsalve Acevedo",
+        "C Sanctuary",
+        "RJ Aitken",
+        "A Wilkins",
+        "N Harrison",
+        "M Naughton"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12634460": {
+      "title": "Development of a submicron emulsion-based delivery system to improve the anti-inflammatory activity of urolithin A",
+      "doi": "10.3389/jpps.2025.15553",
+      "pmid": "41280710",
+      "year": 2025,
+      "venue": "J Pharm Pharm Sci",
+      "authors": [
+        "E Esposito",
+        "V Dzyhovskyi",
+        "F Santamaria",
+        "L Marvelli",
+        "P Boldrini",
+        "P Mariani",
+        "A Pepe",
+        "MG Ortore",
+        "M Benedusi",
+        "G Valacchi",
+        "L Ferraro"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11970383": {
+      "title": "Bioengineering the metabolic network of CAR T cells with GLP-1 and Urolithin A increases persistence and long-term anti-tumor activity",
+      "doi": "10.1016/j.xcrm.2025.102021",
+      "pmid": "40107240",
+      "year": 2025,
+      "venue": "Cell Rep Med",
+      "authors": [
+        "A Akhtar",
+        "M Shakir",
+        "MS Ansari",
+        "Divya",
+        "MI Faizan",
+        "V Chauhan",
+        "A Singh",
+        "R Alam",
+        "I Azmi",
+        "S Sharma",
+        "M Pracha",
+        "IM Uddin",
+        "U Bashir",
+        "SN Shahni",
+        "R Chaudhuri",
+        "S Albogami",
+        "R Ganguly",
+        "S Sagar",
+        "VP Singh",
+        "G Kharya"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12122305": {
+      "title": "Emerging evidence of Urolithin A in sports nutrition: bridging preclinical findings to athletic applications",
+      "doi": "10.3389/fnut.2025.1585922",
+      "pmid": "40453722",
+      "year": 2025,
+      "venue": "Front Nutr",
+      "authors": [
+        "M Wang",
+        "L Yu"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11180933": {
+      "title": "Urolithin A improves Alzheimer's disease cognition and restores mitophagy and lysosomal functions",
+      "doi": "10.1002/alz.13847",
+      "pmid": "38753870",
+      "year": 2024,
+      "venue": "Alzheimers Dement",
+      "authors": [
+        "Y Hou",
+        "X Chu",
+        "JH Park",
+        "Q Zhu",
+        "M Hussain",
+        "Z Li",
+        "HB Madsen",
+        "B Yang",
+        "Y Wei",
+        "Y Wang",
+        "EF Fang",
+        "DL Croteau",
+        "VA Bohr"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11954813": {
+      "title": "Urolithin A inhibits breast cancer progression via activating TFEB-mediated mitophagy in tumor macrophages",
+      "doi": "10.1016/j.jare.2024.04.010",
+      "pmid": "38615740",
+      "year": 2025,
+      "venue": "J Adv Res",
+      "authors": [
+        "B Zheng",
+        "Y Wang",
+        "B Zhou",
+        "F Qian",
+        "D Liu",
+        "D Ye",
+        "X Zhou",
+        "L Fang"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11067828": {
+      "title": "Urolithin-A Promotes CD8+ T Cell\u2013mediated Cancer Immunosurveillance via FOXO1 Activation",
+      "doi": "10.1158/2767-9764.crc-24-0022",
+      "pmid": "38626334",
+      "year": 2024,
+      "venue": "Cancer Res Commun",
+      "authors": [
+        "P Ginefra",
+        "HC Hope",
+        "YH Chiang",
+        "S Nutten",
+        "S Blum",
+        "G Coukos",
+        "N Vannini"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10873453": {
+      "title": "In vitro conversion of ellagic acid to urolithin A by different gut microbiota of urolithin metabotype A",
+      "doi": "10.1007/s00253-024-13061-1",
+      "pmid": "38363367",
+      "year": 2024,
+      "venue": "Appl Microbiol Biotechnol",
+      "authors": [
+        "F He",
+        "Y Bian",
+        "Y Zhao",
+        "M Xia",
+        "S Liu",
+        "J Gui",
+        "X Hou",
+        "Y Fang"
+      ],
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11188796": {
+      "title": "MUP1 mediates urolithin A alleviation of chronic alcohol-related liver disease via gut-microbiota-liver axis",
+      "doi": "10.1080/19490976.2024.2367342",
+      "pmid": "38889450",
+      "year": 2024,
+      "venue": "Gut Microbes",
+      "authors": [
+        "H Zhang",
+        "C Li",
+        "L Han",
+        "Y Xiao",
+        "J Bian",
+        "C Liu",
+        "L Gong",
+        "Z Liu",
+        "M Wang"
+      ],
+      "sources": [
+        "doaj"
       ]
     },
     "PMC11673756": {
       "title": "Urolithin A Protects Hepatocytes from Palmitic Acid-Induced ER Stress by Regulating Calcium Homeostasis in the MAM",
       "doi": "10.3390/biom14121505",
-      "pmid": null,
+      "pmid": "39766212",
       "year": 2024,
       "venue": "Biomolecules",
+      "authors": [
+        "G Ryu",
+        "M Ko",
+        "S Lee",
+        "SI Park",
+        "JW Choi",
+        "JY Lee",
+        "JY Kim",
+        "HJ Kwon"
+      ],
       "sources": [
         "doaj"
       ]
@@ -292,31 +1655,394 @@
     "PMC11631940": {
       "title": "Urolithin A and nicotinamide riboside differentially regulate innate immune defenses and metabolism in human microglial cells",
       "doi": "10.3389/fnagi.2024.1503336",
-      "pmid": null,
+      "pmid": "39665042",
       "year": 2024,
-      "venue": "Frontiers in Aging Neuroscience",
+      "venue": "Front Aging Neurosci",
+      "authors": [
+        "HB Madsen",
+        "C Navarro",
+        "E Gasparini",
+        "JH Park",
+        "Z Li",
+        "DL Croteau",
+        "VA Bohr"
+      ],
       "sources": [
         "doaj"
       ]
     },
-    "PMC10609777": {
-      "title": "Pharmacological Effects of Urolithin A and Its Role in Muscle Health and Performance: Current Knowledge and Prospects",
-      "doi": "10.3390/nu15204441",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Nutrients",
+    "PMC11428424": {
+      "title": "Effect of Urolithin A on Bovine Sperm Capacitation and In Vitro Fertilization",
+      "doi": "10.3390/ani14182726",
+      "pmid": "39335315",
+      "year": 2024,
+      "venue": "Animals (Basel)",
+      "authors": [
+        "M Jorge",
+        "FC Ferreira",
+        "CC Marques",
+        "MC Batista",
+        "PJ Oliveira",
+        "F Lidon",
+        "SC Duarte",
+        "J Teixeira",
+        "RMLN Pereira"
+      ],
       "sources": [
-        "openalex"
+        "doaj"
       ]
     },
     "PMC10460156": {
       "title": "Urolithin A as a Potential Agent for Prevention of Age-Related Disease: A Scoping Review",
       "doi": "10.7759/cureus.42550",
-      "pmid": null,
+      "pmid": "37637627",
       "year": 2023,
       "venue": "Cureus",
+      "authors": [
+        "B Kothe",
+        "S Klein",
+        "SN Petrosky"
+      ],
       "sources": [
         "openalex"
+      ]
+    },
+    "PMC10387767": {
+      "title": "Urolithin A alleviates neuropathic pain and activates mitophagy",
+      "doi": "10.1177/17448069231190815",
+      "pmid": "37464536",
+      "year": 2023,
+      "venue": "Mol Pain",
+      "authors": [
+        "C Wang",
+        "Z Wang",
+        "S Xue",
+        "Y Zhu",
+        "J Jin",
+        "Q Ren",
+        "X Shi"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10609777": {
+      "title": "Pharmacological Effects of Urolithin A and Its Role in Muscle Health and Performance: Current Knowledge and Prospects",
+      "doi": "10.3390/nu15204441",
+      "pmid": "37892516",
+      "year": 2023,
+      "venue": "Nutrients",
+      "authors": [
+        "H Zhao",
+        "G Song",
+        "H Zhu",
+        "H Qian",
+        "X Pan",
+        "X Song",
+        "Y Xie",
+        "C Liu"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10376282": {
+      "title": "Urolithin A in Health and Diseases: Prospects for Parkinson\u2019s Disease Management",
+      "doi": "10.3390/antiox12071479",
+      "pmid": "37508017",
+      "year": 2023,
+      "venue": "Antioxidants (Basel)",
+      "authors": [
+        "O Wojciechowska",
+        "M Kujawska"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10421179": {
+      "title": "Unripe Rubus occidentalis, Ellagic Acid, and Urolithin A Attenuate Inflammatory Responses in IL-1\u03b2-Stimulated A549 Cells and PMA-Stimulated Differentiated HL-60 Cells",
+      "doi": "10.3390/nu15153364",
+      "pmid": "37571300",
+      "year": 2023,
+      "venue": "Nutrients",
+      "authors": [
+        "S Kim",
+        "J Kim",
+        "Y Song",
+        "S Kim",
+        "H Kong"
+      ],
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10612130": {
+      "title": "Effect of ellagic acid on body weight, nutrient digestibility, fecal microbiota, and urolithin A metabolism in Thoroughbred horses",
+      "doi": "10.1093/jas/skad232",
+      "pmid": "37422771",
+      "year": 2023,
+      "venue": "J Anim Sci",
+      "authors": [
+        "J Li",
+        "X Huang",
+        "L He",
+        "C Li",
+        "H Jing",
+        "J Lin",
+        "C Ma",
+        "X Li"
+      ],
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10728757": {
+      "title": "Urolithin A protects severe acute pancreatitis\u2010associated acute cardiac injury by regulating mitochondrial fatty acid oxidative metabolism in cardiomyocytes",
+      "doi": "10.1002/mco2.459",
+      "pmid": "38116065",
+      "year": 2023,
+      "venue": "MedComm (2020)",
+      "authors": [
+        "Y Yang",
+        "Q Hu",
+        "H Kang",
+        "J Li",
+        "X Zhao",
+        "L Zhu",
+        "W Tang",
+        "M Wan"
+      ],
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10272986": {
+      "title": "Novel Potential Targets for Function-Promoting Therapies: Orphan Nuclear Receptors, Anti-inflammatory Drugs, Troponin Activators, Mas Receptor Agonists, and Urolithin A",
+      "doi": "10.1093/gerona/glad072",
+      "pmid": "37325960",
+      "year": 2023,
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "authors": [
+        "W Dioh",
+        "V Narkar",
+        "A Singh",
+        "F Malik",
+        "L Ferrucci",
+        "C Tourette",
+        "J Mariani",
+        "R van Maanen",
+        "RA Fielding"
+      ],
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9381911": {
+      "title": "Urolithin A improves mitochondrial health, reduces cartilage degeneration, and alleviates pain in osteoarthritis",
+      "doi": "10.1111/acel.13662",
+      "pmid": "35778837",
+      "year": 2022,
+      "venue": "Aging Cell",
+      "authors": [
+        "D D'Amico",
+        "M Olmer",
+        "AM Fouassier",
+        "P Vald\u00e9s",
+        "PA Andreux",
+        "C Rinsch",
+        "M Lotz"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9095590": {
+      "title": "Urolithin A attenuates auditory cell senescence by activating mitophagy",
+      "doi": "10.1038/s41598-022-11894-2",
+      "pmid": "35546176",
+      "year": 2022,
+      "venue": "Sci Rep",
+      "authors": [
+        "SI Cho",
+        "ER Jo",
+        "H Song"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9240289": {
+      "title": "Urolithin A Attenuates Hyperuricemic Nephropathy in Fructose-Fed Mice by Impairing STING-NLRP3 Axis-Mediated Inflammatory Response via Restoration of Parkin-Dependent Mitophagy",
+      "doi": "10.3389/fphar.2022.907209",
+      "pmid": "35784701",
+      "year": 2022,
+      "venue": "Front Pharmacol",
+      "authors": [
+        "C Zhang",
+        "Y Song",
+        "L Chen",
+        "P Chen",
+        "M Yuan",
+        "Y Meng",
+        "Q Wang",
+        "G Zheng",
+        "Z Qiu"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9454743": {
+      "title": "A Combination Therapy of Urolithin A+EGCG Has Stronger Protective Effects than Single Drug Urolithin A in a Humanized Amyloid Beta Knockin Mice for Late-Onset Alzheimer\u2019s Disease",
+      "doi": "10.3390/cells11172660",
+      "pmid": "36078067",
+      "year": 2022,
+      "venue": "Cells",
+      "authors": [
+        "S Kshirsagar",
+        "RV Alvir",
+        "JA Pradeepkiran",
+        "A Hindle",
+        "M Vijayan",
+        "B Ramasubramaniam",
+        "S Kumar",
+        "AP Reddy",
+        "PH Reddy"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9229509": {
+      "title": "Ameliorative Effects of Gut Microbial Metabolite Urolithin A on Pancreatic Diseases",
+      "doi": "10.3390/nu14122549",
+      "pmid": "35745279",
+      "year": 2022,
+      "venue": "Nutrients",
+      "authors": [
+        "K Li",
+        "Y Xiao",
+        "J Bian",
+        "L Han",
+        "C He",
+        "E El-Omar",
+        "L Gong",
+        "M Wang"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9101441": {
+      "title": "Urolithin A Inactivation of TLR3/TRIF Signaling to Block the NF-\u03baB/STAT1 Axis Reduces Inflammation and Enhances Antioxidant Defense in Poly(I:C)-Induced RAW264.7 Cells",
+      "doi": "10.3390/ijms23094697",
+      "pmid": "35563088",
+      "year": 2022,
+      "venue": "Int J Mol Sci",
+      "authors": [
+        "WC Huang",
+        "CJ Liou",
+        "SC Shen",
+        "S Hu",
+        "JC Chao",
+        "CY Hsiao",
+        "SJ Wu"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9886708": {
+      "title": "Urolithin A reduces amyloid-beta load and improves cognitive deficits uncorrelated with plaque burden in a mouse model of Alzheimer\u2019s disease",
+      "doi": "10.1007/s11357-022-00708-y",
+      "pmid": "36576642",
+      "year": 2023,
+      "venue": "Geroscience",
+      "authors": [
+        "J Ballesteros-\u00c1lvarez",
+        "W Nguyen",
+        "R Sivapatham",
+        "A Rane",
+        "JK Andersen"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9682137": {
+      "title": "Isolation and characterization of a novel human intestinal Enterococcus faecium FUA027 capable of producing urolithin A from ellagic acid",
+      "doi": "10.3389/fnut.2022.1039697",
+      "pmid": "36438752",
+      "year": 2022,
+      "venue": "Front Nutr",
+      "authors": [
+        "X Zhang",
+        "Y Fang",
+        "G Yang",
+        "X Hou",
+        "Y Hai",
+        "M Xia",
+        "F He",
+        "Y Zhao",
+        "S Liu"
+      ],
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8617978": {
+      "title": "Therapeutic Potential of Mitophagy-Inducing Microflora Metabolite, Urolithin A for Alzheimer\u2019s Disease",
+      "doi": "10.3390/nu13113744",
+      "pmid": "34836000",
+      "year": 2021,
+      "venue": "Nutrients",
+      "authors": [
+        "DPW Jayatunga",
+        "E Hone",
+        "H Khaira",
+        "T Lunelli",
+        "H Singh",
+        "GJ Guillemin",
+        "B Fernando",
+        "ML Garg",
+        "G Verdile",
+        "RN Martins"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8347929": {
+      "title": "Effects of Urolithin A on Mitochondrial Parameters in a Cellular Model of Early Alzheimer Disease",
+      "doi": "10.3390/ijms22158333",
+      "pmid": "34361099",
+      "year": 2021,
+      "venue": "Int J Mol Sci",
+      "authors": [
+        "C Esselun",
+        "E Theyssen",
+        "GP Eckert"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7987831": {
+      "title": "The Punicalagin Metabolites Ellagic Acid and Urolithin A Exert Different Strengthening and Anti-Inflammatory Effects on Tight Junction-Mediated Intestinal Barrier Function In Vitro",
+      "doi": "10.3389/fphar.2021.610164",
+      "pmid": "33776763",
+      "year": 2021,
+      "venue": "Front Pharmacol",
+      "authors": [
+        "NA Hering",
+        "J Luettig",
+        "B Jebautzke",
+        "JD Schulzke",
+        "R Rosenthal"
+      ],
+      "sources": [
+        "crossref"
       ]
     },
     "PMC8968651": {
@@ -324,7 +2050,81 @@
       "doi": "10.1093/geroni/igab046.2529",
       "pmid": null,
       "year": 2021,
-      "venue": "Innovation in Aging",
+      "venue": "Innov Aging",
+      "authors": [
+        "S Liu",
+        "D Marcinek"
+      ],
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8007722": {
+      "title": "The gut microbiota metabolite urolithin A inhibits NF-\u03baB activation in LPS stimulated BMDMs",
+      "doi": "10.1038/s41598-021-86514-6",
+      "pmid": "33782464",
+      "year": 2021,
+      "venue": "Sci Rep",
+      "authors": [
+        "KNM Abdelazeem",
+        "MZ Kalo",
+        "S Beer-Hammer",
+        "F Lang"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9049876": {
+      "title": "Ameliorative effect of urolithin A on<scp>d</scp>-gal-induced liver and kidney damage in aging miceviaits antioxidative, anti-inflammatory and antiapoptotic properties",
+      "doi": "10.1039/d0ra00774a",
+      "pmid": "35497859",
+      "year": 2020,
+      "venue": "RSC Adv",
+      "authors": [
+        "P Chen",
+        "J Lei",
+        "F Chen",
+        "B Zhou"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6698978": {
+      "title": "Urolithin A\u2010activated autophagy but not mitophagy protects against ischemic neuronal injury by inhibiting ER stress in vitro and in vivo",
+      "doi": "10.1111/cns.13136",
+      "pmid": "30972969",
+      "year": 2019,
+      "venue": "CNS Neurosci Ther",
+      "authors": [
+        "A Ahsan",
+        "YR Zheng",
+        "XL Wu",
+        "WD Tang",
+        "MR Liu",
+        "SJ Ma",
+        "L Jiang",
+        "WW Hu",
+        "XN Zhang",
+        "Z Chen"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5859803": {
+      "title": "Emblic Leafflower (Phyllanthus emblica L.) Fruits Ameliorate Vascular Smooth Muscle Cell Dysfunction in Hyperglycemia: An Underlying Mechanism Involved in Ellagitannin Metabolite Urolithin A",
+      "doi": "10.1155/2018/8478943",
+      "pmid": "29692859",
+      "year": 2018,
+      "venue": "Evid Based Complement Alternat Med",
+      "authors": [
+        "J Zhou",
+        "C Zhang",
+        "GH Zheng",
+        "Z Qiu"
+      ],
       "sources": [
         "crossref"
       ]
@@ -334,19 +2134,185 @@
       "doi": "10.1093/geroni/igx004.4446",
       "pmid": null,
       "year": 2017,
-      "venue": "Innovation in Aging",
+      "venue": "Innov Aging",
+      "authors": [
+        "A Singh",
+        "P Andreux",
+        "W Blanco-Bose",
+        "D Ryu",
+        "P Aebischer",
+        "J Auwerx",
+        "C Rinsch"
+      ],
       "sources": [
         "openalex"
       ]
     },
-    "PMC12608000": {
-      "title": "Urolithin A Alleviates Doxorubicin-Induced Senescence in Mesenchymal Stem Cells.",
-      "doi": "10.3390/ijms262110257",
-      "pmid": "41226300",
-      "year": 2025,
-      "venue": "Int J Mol Sci",
+    "PMC3736548": {
+      "title": "Pomegranate Juice Augments Memory and fMRI Activity in Middle-Aged and Older Adults with Mild Memory Complaints",
+      "doi": "10.1155/2013/946298",
+      "pmid": "23970941",
+      "year": 2013,
+      "venue": "Evid Based Complement Alternat Med",
+      "authors": [
+        "SY Bookheimer",
+        "BA Renner",
+        "A Ekstrom",
+        "Z Li",
+        "SM Henning",
+        "JA Brown",
+        "M Jones",
+        "T Moody",
+        "GW Small"
+      ],
       "sources": [
-        "pubmed"
+        "openalex"
+      ]
+    },
+    "PMC3655614": {
+      "title": "Pomegranate Juice Metabolites, Ellagic Acid and Urolithin A, Synergistically Inhibit Androgen-Independent Prostate Cancer Cell Growth via Distinct Effects on Cell Cycle Control and Apoptosis",
+      "doi": "10.1155/2013/247504",
+      "pmid": "23710216",
+      "year": 2013,
+      "venue": "Evid Based Complement Alternat Med",
+      "authors": [
+        "R Vicinanza",
+        "Y Zhang",
+        "SM Henning",
+        "D Heber"
+      ],
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC13008638": {
+      "title": "Urolithin A: a multi-target therapeutic candidate derived from the gut microbiota for obesity and metabolic dysfunction.",
+      "doi": "10.3389/fendo.2026.1786776",
+      "pmid": "41884209",
+      "year": 2026,
+      "venue": "Front Endocrinol (Lausanne)",
+      "authors": [
+        "C Liu",
+        "M Sun",
+        "Z Zhao",
+        "Y Yang",
+        "Y Yang",
+        "Y Zhao",
+        "R Zhang",
+        "X Du",
+        "X Liu",
+        "S Ran",
+        "Y Wang",
+        "X Pang"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC13083899": {
+      "title": "Early mitophagy activation by Urolithin A prevents, but late activation does not reverse, age-related cognitive impairment.",
+      "doi": "10.1038/s41514-026-00351-3",
+      "pmid": "41786716",
+      "year": 2026,
+      "venue": "NPJ Aging",
+      "authors": [
+        "C Jara",
+        "L Venegas-Zamora",
+        "HS Park-Kang",
+        "M Lira",
+        "M Ricca",
+        "S Valenzuela",
+        "C Tapia-Rojas"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12885030": {
+      "title": "Urolithin A alleviates vascular remodeling through mitochondrial SIRT3-mediated SOD2 deacetylation and antioxidation in hypertensive rats.",
+      "doi": "10.1080/13510002.2026.2622255",
+      "pmid": "41645805",
+      "year": 2026,
+      "venue": "Redox Rep",
+      "authors": [
+        "M Dai",
+        "YM Wang",
+        "HK Dong",
+        "XY Xu",
+        "JX Wang",
+        "GQ Zhu",
+        "F Zheng"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12857355": {
+      "title": "Dietary urolithin a improves hepatic antioxidant function and laying performance in aging hens via Nrf2 signaling pathway activation.",
+      "doi": "10.1016/j.psj.2026.106448",
+      "pmid": "41564535",
+      "year": 2026,
+      "venue": "Poult Sci",
+      "authors": [
+        "L Wu",
+        "Y Zhang",
+        "L Peng",
+        "L Ye",
+        "X Zhao"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12870791": {
+      "title": "Regulation of skeletal muscle development and metabolism in broiler chickens by Urolithin A through threonine kinase 1 pathway activation.",
+      "doi": "10.1016/j.psj.2026.106502",
+      "pmid": "41610604",
+      "year": 2026,
+      "venue": "Poult Sci",
+      "authors": [
+        "L Wu",
+        "L Peng",
+        "X Zhao"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12803790": {
+      "title": "Oenological tannins mitigate rotenone-induced mitochondrial impairments and oxidative stress, with concomitant detection of urolithin A in the brain.",
+      "doi": "10.1016/j.bbrep.2025.102263",
+      "pmid": "41542174",
+      "year": 2025,
+      "venue": "Biochem Biophys Rep",
+      "authors": [
+        "O Wojciechowska",
+        "M Jourdes",
+        "M Andrusiewicz",
+        "M Pokrzywa",
+        "M Kara\u017aniewicz-\u0141ada",
+        "J Jodynis-Liebert",
+        "PL Teissedre",
+        "M Kujawska"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12693830": {
+      "title": "Microbial Metabolite, Macro Impact: Urolithin A in the Nexus of Insulin Resistance and Colorectal Tumorigenesis.",
+      "doi": "10.3390/nu17233712",
+      "pmid": "41374004",
+      "year": 2025,
+      "venue": "Nutrients",
+      "authors": [
+        "V Joseph",
+        "S Hornak",
+        "P Kubatka",
+        "D B\u00fcsselberg"
+      ],
+      "sources": [
+        "europepmc"
       ]
     },
     "PMC12608089": {
@@ -355,8 +2321,408 @@
       "pmid": "41021772",
       "year": 2025,
       "venue": "Aging Cell",
+      "authors": [
+        "A Barkovskaya",
+        "A Brauning",
+        "A Thambala",
+        "K Bhardwaj",
+        "M Chamoli",
+        "A Rane",
+        "JK Andersen",
+        "A Sharma"
+      ],
       "sources": [
-        "pubmed"
+        "europepmc"
+      ]
+    },
+    "PMC12608000": {
+      "title": "Urolithin A Alleviates Doxorubicin-Induced Senescence in Mesenchymal Stem Cells.",
+      "doi": "10.3390/ijms262110257",
+      "pmid": "41226300",
+      "year": 2025,
+      "venue": "Int J Mol Sci",
+      "authors": [
+        "A Kalinin",
+        "E Zubkova",
+        "M Menshikov",
+        "Y Parfyonova"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12188533": {
+      "title": "Unveiling the potential of Urolithin A in Cancer Therapy: Mechanistic Insights to Future Perspectives of Nanomedicine.",
+      "doi": "10.7150/ntno.110966",
+      "pmid": "40568370",
+      "year": 2025,
+      "venue": "Nanotheranostics",
+      "authors": [
+        "V Karumuru",
+        "A Dhasmana",
+        "N Mamidi",
+        "SC Chauhan",
+        "MM Yallapu"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11901897": {
+      "title": "Determination of Urolithin A in Health Products by Ultra-High-Performance Liquid Chromatography.",
+      "doi": "10.3390/molecules30051141",
+      "pmid": "40076364",
+      "year": 2025,
+      "venue": "Molecules",
+      "authors": [
+        "Y E",
+        "Z Wang",
+        "J Nie"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11834323": {
+      "title": "The polyphenol metabolite urolithin A suppresses myostatin expression and augments glucose uptake in human skeletal muscle cells.",
+      "doi": "10.1186/s12986-025-00909-0",
+      "pmid": "39962542",
+      "year": 2025,
+      "venue": "Nutr Metab (Lond)",
+      "authors": [
+        "A Wilhelmsen",
+        "LG Karagounis",
+        "AJ Bennett",
+        "D D'Amico",
+        "AM Fouassier",
+        "SW Jones",
+        "K Tsintzas"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12292322": {
+      "title": "Urolithin A Protects Ovarian Reserve Via Inhibiting PI3K/Akt Signaling and Preventing Chemotherapy-Induced Follicle Apoptosis.",
+      "doi": "10.3390/biology14070829",
+      "pmid": "40723388",
+      "year": 2025,
+      "venue": "Biology (Basel)",
+      "authors": [
+        "W Wang",
+        "R Zhou",
+        "Y Ruan",
+        "S Fan"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11979956": {
+      "title": "Systemic Inflammation and the Inflammatory Context of the Colonic Microenvironment Are Improved by Urolithin A.",
+      "doi": "10.1158/1940-6207.capr-24-0383",
+      "pmid": "39995164",
+      "year": 2025,
+      "venue": "Cancer Prev Res (Phila)",
+      "authors": [
+        "MR Moussa",
+        "N Fan",
+        "J Birk",
+        "AA Provatas",
+        "P Mehta",
+        "Y Hatano",
+        "OK Chun",
+        "M Darooghegi Mofrad",
+        "A Lotfi",
+        "A Aksenov",
+        "VN Motta",
+        "M Zenali",
+        "H Vaziri",
+        "JJ Grady",
+        "M Nakanishi",
+        "DW Rosenberg"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12526280": {
+      "title": "Eicosapentaenoic Acid and Urolithin a Synergistically Mitigate Heat Stroke-Induced NLRP3 Inflammasome Activation in Microglial Cells.",
+      "doi": "10.3390/nu17193063",
+      "pmid": "41097140",
+      "year": 2025,
+      "venue": "Nutrients",
+      "authors": [
+        "H Cho",
+        "J Kim",
+        "Y Park",
+        "YC Kim",
+        "S Chung"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12862256": {
+      "title": "Urolithin A regulates gut: liver axis to ameliorate alcohol-associated liver disease.",
+      "doi": "10.3389/fphar.2025.1706111",
+      "pmid": "41635923",
+      "year": 2025,
+      "venue": "Front Pharmacol",
+      "authors": [
+        "S Ghosh",
+        "R Singh",
+        "ZM Vanwinkle",
+        "CJ McClain",
+        "V Vatsalya",
+        "B Haribabu",
+        "PK Vemula",
+        "VR Jala"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12251368": {
+      "title": "Urolithin A Attenuates Periodontitis in Mice via Dual Anti-Inflammatory and Osteoclastogenesis Inhibition: A Natural Metabolite-Based Therapeutic Strategy.",
+      "doi": "10.3390/molecules30132881",
+      "pmid": "40649395",
+      "year": 2025,
+      "venue": "Molecules",
+      "authors": [
+        "Y Xia",
+        "D Wu",
+        "L Zhou",
+        "X Wu",
+        "J Chen"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11989139": {
+      "title": "Urolithin A Protects Porcine Oocytes from Artificially Induced Oxidative Stress Damage to Enhance Oocyte Maturation and Subsequent Embryo Development.",
+      "doi": "10.3390/ijms26073037",
+      "pmid": "40243704",
+      "year": 2025,
+      "venue": "Int J Mol Sci",
+      "authors": [
+        "W Shi",
+        "C Qin",
+        "Y Yang",
+        "X Yang",
+        "Y Fang",
+        "B Zhang",
+        "D Wang",
+        "W Feng",
+        "D Shi"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12300076": {
+      "title": "Urolithin A Exhibits Antidepressant-like Effects by Modulating the AMPK/CREB/BDNF Pathway.",
+      "doi": "10.3390/nu17142294",
+      "pmid": "40732919",
+      "year": 2025,
+      "venue": "Nutrients",
+      "authors": [
+        "Y Di",
+        "R Xue",
+        "X Li",
+        "Z Jin",
+        "H Li",
+        "L Wu",
+        "Y Zhang",
+        "L An"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12078357": {
+      "title": "Urolithin a Improves Motor Dysfunction Induced by Copper Exposure in SOD1<sup>G93A</sup> Transgenic Mice Via Activation of Mitophagy.",
+      "doi": "10.1007/s12035-024-04473-1",
+      "pmid": "39292338",
+      "year": 2025,
+      "venue": "Mol Neurobiol",
+      "authors": [
+        "H Zhang",
+        "C Gao",
+        "D Yang",
+        "L Nie",
+        "K He",
+        "C Chen",
+        "S Li",
+        "G Huang",
+        "L Zhou",
+        "X Huang",
+        "D Wu",
+        "J Liu",
+        "Z Huang",
+        "J Wang",
+        "W Li",
+        "Z Zhang",
+        "X Yang",
+        "L Zou"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11869585": {
+      "title": "Microbiota-derived urolithin A in monoclonal gammopathies and multiple myeloma therapy.",
+      "doi": "10.1186/s40168-025-02045-6",
+      "pmid": "40022244",
+      "year": 2025,
+      "venue": "Microbiome",
+      "authors": [
+        "A Rodr\u00edguez-Garc\u00eda",
+        "R Ancos-Pintado",
+        "R Garc\u00eda-Vicente",
+        "A Ortiz-Ruiz",
+        "A Arroyo",
+        "Navarro M\u00c1",
+        "ML Morales",
+        "P Guevara-Ramirez",
+        "P Justo",
+        "N L\u00f3pez-Mu\u00f1oz",
+        "J S\u00e1nchez-Pina",
+        "R Alonso",
+        "MV Selma",
+        "MD Frutos-Lis\u00f3n",
+        "R Garc\u00eda-Villalba",
+        "FA Tom\u00e1s-Barber\u00e1n",
+        "R Ayala",
+        "J Mart\u00ednez-L\u00f3pez",
+        "J Mart\u00ednez-L\u00f3pez",
+        "M Linares"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12108056": {
+      "title": "Effect of urolithin A on intracellular survival of <i>Mycobacterium tuberculosis</i> by regulating AKT-FOXO1-mediated autophagy.",
+      "doi": "10.1128/msphere.00061-25",
+      "pmid": "40207917",
+      "year": 2025,
+      "venue": "mSphere",
+      "authors": [
+        "J Bi",
+        "L Song",
+        "Q Guo",
+        "X Chen",
+        "Y Gong",
+        "H Wu",
+        "F Zhang",
+        "J Wang",
+        "G Zhang"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11986606": {
+      "title": "Novel pH-responsive lipid nanoparticles deliver UA-mediated mitophagy and ferroptosis for osteoarthritis treatment.",
+      "doi": "10.1016/j.mtbio.2025.101697",
+      "pmid": "40225130",
+      "year": 2025,
+      "venue": "Mater Today Bio",
+      "authors": [
+        "G Yi",
+        "M Li",
+        "J Zhou",
+        "J Li",
+        "X Song",
+        "S Li",
+        "J Liu",
+        "H Zhang",
+        "Z Chen"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC12302922": {
+      "title": "Urolithin A\u2011producing <i>Limosilactobacillus fermentum</i> FUA033 fermentation significantly improves the sensory and antioxidant properties of strawberry juice.",
+      "doi": "10.1016/j.fochx.2025.102805",
+      "pmid": "40726490",
+      "year": 2025,
+      "venue": "Food Chem X",
+      "authors": [
+        "Q Wu",
+        "W Ma",
+        "S Liu",
+        "F Zhou",
+        "H Wu",
+        "X Wang",
+        "G Yang",
+        "Y Fang"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11947095": {
+      "title": "Urolithin A alleviates schizophrenic-like behaviors and cognitive impairment in rats through modulation of neuroinflammation, neurogenesis, and synaptic plasticity.",
+      "doi": "10.1038/s41598-025-93554-9",
+      "pmid": "40140679",
+      "year": 2025,
+      "venue": "Sci Rep",
+      "authors": [
+        "Z Huang",
+        "Z Ren",
+        "S Wang",
+        "L Xiao",
+        "Y Ling",
+        "Y Xie",
+        "G Wang",
+        "B Zhou"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11822506": {
+      "title": "UPLC-MS/MS Method for Simultaneous Quantification of Cyclosporine A and Urolithin A in Plasma and Interspecies Analysis Across Mammals Including Humans.",
+      "doi": "10.1021/acsomega.4c08515",
+      "pmid": "39959077",
+      "year": 2025,
+      "venue": "ACS Omega",
+      "authors": [
+        "IM Heyns",
+        "R Ganugula",
+        "MNVR Kumar",
+        "M Arora"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11722880": {
+      "title": "Urolithin A Modulates PER2 Degradation via SIRT1 and Enhances the Amplitude of Circadian Clocks in Human Senescent Cells.",
+      "doi": "10.3390/nu17010020",
+      "pmid": "39796454",
+      "year": 2024,
+      "venue": "Nutrients",
+      "authors": [
+        "R Kuatov",
+        "J Takano",
+        "H Arie",
+        "M Kominami",
+        "N Tateishi",
+        "KI Wakabayashi",
+        "D Takemoto",
+        "T Izumo",
+        "Y Nakao",
+        "W Nakamura",
+        "K Shinohara",
+        "Y Nakahata"
+      ],
+      "sources": [
+        "europepmc"
       ]
     },
     "PMC11335992": {
@@ -365,8 +2731,589 @@
       "pmid": "38935229",
       "year": 2024,
       "venue": "Geroscience",
+      "authors": [
+        "E Sandalova",
+        "H Li",
+        "L Guan",
+        "SD Raj",
+        "TG Lim",
+        "E Tian",
+        "BK Kennedy",
+        "AB Maier"
+      ],
       "sources": [
-        "pubmed"
+        "europepmc"
+      ]
+    },
+    "PMC11478980": {
+      "title": "Activation of the Gut-Brain Interaction by Urolithin A and Its Molecular Basis.",
+      "doi": "10.3390/nu16193369",
+      "pmid": "39408336",
+      "year": 2024,
+      "venue": "Nutrients",
+      "authors": [
+        "D Kubota",
+        "M Sato",
+        "M Udono",
+        "A Kohara",
+        "M Kudoh",
+        "Y Ukawa",
+        "K Teruya",
+        "Y Katakura"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11572288": {
+      "title": "Recycling the recyclers: lysophagy emerges as a new pharmacological target for retinal degeneration.",
+      "doi": "10.1080/15548627.2024.2391726",
+      "pmid": "39133039",
+      "year": 2024,
+      "venue": "Autophagy",
+      "authors": [
+        "JI Jim\u00e9nez-Loygorri",
+        "P Boya"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11186080": {
+      "title": "Urolithin A promotes p62-dependent lysophagy to prevent acute retinal neurodegeneration.",
+      "doi": "10.1186/s13024-024-00739-3",
+      "pmid": "38890703",
+      "year": 2024,
+      "venue": "Mol Neurodegener",
+      "authors": [
+        "JI Jim\u00e9nez-Loygorri",
+        "Viedma-Poyatos \u00c1",
+        "R G\u00f3mez-Sintes",
+        "P Boya"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11280374": {
+      "title": "Effect of Urolithin A on the Improvement of Circadian Rhythm Dysregulation in Intestinal Barrier Induced by Inflammation.",
+      "doi": "10.3390/nu16142263",
+      "pmid": "39064706",
+      "year": 2024,
+      "venue": "Nutrients",
+      "authors": [
+        "Y Du",
+        "X Chen",
+        "S Kajiwara",
+        "K Orihara"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11311380": {
+      "title": "Urolithin A Protects against Hypoxia-Induced Pulmonary Hypertension by Inhibiting Pulmonary Arterial Smooth Muscle Cell Pyroptosis via AMPK/NF-\u03baB/NLRP3 Signaling.",
+      "doi": "10.3390/ijms25158246",
+      "pmid": "39125817",
+      "year": 2024,
+      "venue": "Int J Mol Sci",
+      "authors": [
+        "X He",
+        "Z Wu",
+        "J Jiang",
+        "W Xu",
+        "A Yuan",
+        "F Liao",
+        "S Ding",
+        "J Pu"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC10993698": {
+      "title": "The effects of urolithin A on poly I:C-induced microglial activation.",
+      "doi": "10.3389/fncel.2024.1343562",
+      "pmid": "38577490",
+      "year": 2024,
+      "venue": "Front Cell Neurosci",
+      "authors": [
+        "YB Mingo",
+        "L Gabele",
+        "N Lonnemann",
+        "B Br\u00f4ne",
+        "M Korte",
+        "S Hosseini"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11439666": {
+      "title": "Urolithin A alleviates cell senescence by inhibiting ferroptosis and enhances corneal epithelial wound healing.",
+      "doi": "10.3389/fmed.2024.1441196",
+      "pmid": "39351004",
+      "year": 2024,
+      "venue": "Front Med (Lausanne)",
+      "authors": [
+        "XX Guo",
+        "XJ Chang",
+        "Q Pu",
+        "AL Li",
+        "J Li",
+        "XY Li"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11408861": {
+      "title": "Urolithin A attenuates hexavalent chromium-induced small intestinal injury by modulating PP2A/Hippo/YAP1 pathway.",
+      "doi": "10.1016/j.jbc.2024.107669",
+      "pmid": "39128717",
+      "year": 2024,
+      "venue": "J Biol Chem",
+      "authors": [
+        "P Guo",
+        "R Yang",
+        "S Zhong",
+        "Y Ding",
+        "J Wu",
+        "Z Wang",
+        "H Wang",
+        "J Zhang",
+        "N Tu",
+        "H Zhou",
+        "S Chen",
+        "Q Wang",
+        "D Li",
+        "W Chen",
+        "L Chen"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC10887565": {
+      "title": "Antidiabetic Effect of Urolithin A in Cultured L6 Myotubes and Type 2 Diabetic Model KK-Ay/Ta Mice with Glucose Intolerance.",
+      "doi": "10.3390/cimb46020068",
+      "pmid": "38392186",
+      "year": 2024,
+      "venue": "Curr Issues Mol Biol",
+      "authors": [
+        "S Kondo",
+        "SI Adachi",
+        "W Komatsu",
+        "F Yoshizawa",
+        "K Yagasaki"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC10878087": {
+      "title": "The microbial metabolite urolithin A reduces Clostridioides difficile toxin expression and toxin-induced epithelial damage.",
+      "doi": "10.1128/msystems.01255-23",
+      "pmid": "38193707",
+      "year": 2024,
+      "venue": "mSystems",
+      "authors": [
+        "S Ghosh",
+        "D Erickson",
+        "MJ Chua",
+        "J Collins",
+        "VR Jala"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11489441": {
+      "title": "Urolithin A promotes atherosclerotic plaque stability by limiting inflammation and hypercholesteremia in Apolipoprotein E-deficient mice.",
+      "doi": "10.1038/s41401-024-01317-5",
+      "pmid": "38886550",
+      "year": 2024,
+      "venue": "Acta Pharmacol Sin",
+      "authors": [
+        "MY Xu",
+        "JJ Xu",
+        "LJ Kang",
+        "ZH Liu",
+        "MM Su",
+        "WQ Zhao",
+        "ZH Wang",
+        "L Sun",
+        "JB Xiao",
+        "PC Evans",
+        "XY Tian",
+        "L Wang",
+        "Y Huang",
+        "XM Liang",
+        "JP Weng",
+        "SW Xu"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11231190": {
+      "title": "Urolithin A-mediated augmentation of intestinal barrier function through elevated secretory mucin synthesis.",
+      "doi": "10.1038/s41598-024-65791-x",
+      "pmid": "38977770",
+      "year": 2024,
+      "venue": "Sci Rep",
+      "authors": [
+        "T Yasuda",
+        "T Takagi",
+        "K Asaeda",
+        "H Hashimoto",
+        "M Kajiwara",
+        "Y Azuma",
+        "H Kitae",
+        "Y Hirai",
+        "K Mizushima",
+        "T Doi",
+        "K Inoue",
+        "O Dohi",
+        "N Yoshida",
+        "K Uchiyama",
+        "T Ishikawa",
+        "H Konishi",
+        "Y Ukawa",
+        "A Kohara",
+        "M Kudoh",
+        "R Inoue"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11262884": {
+      "title": "Engineered urolithin A-laden functional polymer-lipid hybrid nanoparticles prevent cisplatin-induced proximal tubular injury in vitro.",
+      "doi": "10.1016/j.ejpb.2024.114334",
+      "pmid": "38768764",
+      "year": 2024,
+      "venue": "Eur J Pharm Biopharm",
+      "authors": [
+        "W Pula",
+        "R Ganugula",
+        "E Esposito",
+        "MNV Ravi Kumar",
+        "M Arora"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC11095213": {
+      "title": "Urolithin A Hijacks ERK1/2-ULK1 Cascade to Improve CD8<sup>+</sup> T Cell Fitness for Antitumor Immunity.",
+      "doi": "10.1002/advs.202310065",
+      "pmid": "38447147",
+      "year": 2024,
+      "venue": "Adv Sci (Weinh)",
+      "authors": [
+        "S Ma",
+        "Q Wu",
+        "W Wu",
+        "Y Tian",
+        "J Zhang",
+        "C Chen",
+        "X Sheng",
+        "F Zhao",
+        "L Ding",
+        "T Wang",
+        "L Zhao",
+        "Y Xie",
+        "Y Wang",
+        "X Yue",
+        "Z Wu",
+        "J Wei",
+        "K Zhang",
+        "X Liang",
+        "L Gao",
+        "H Wang"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC10281726": {
+      "title": "Urolithin A exhibits a neuroprotective effect against Alzheimer's disease by inhibiting DYRK1A activity.",
+      "doi": "10.38212/2224-6614.3462",
+      "pmid": "37335158",
+      "year": 2023,
+      "venue": "J Food Drug Anal",
+      "authors": [
+        "HJ Tu",
+        "CJ Su",
+        "CS Peng",
+        "TE Lin",
+        "WC HuangFu",
+        "KC Hsu",
+        "TL Hwang",
+        "SL Pan"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC10136031": {
+      "title": "Urolithin A's Antioxidative, Anti-Inflammatory, and Antiapoptotic Activities Mitigate Doxorubicin-Induced Liver Injury in Wistar Rats.",
+      "doi": "10.3390/biomedicines11041125",
+      "pmid": "37189743",
+      "year": 2023,
+      "venue": "Biomedicines",
+      "authors": [
+        "S Karim",
+        "B Madani",
+        "AS Burzangi",
+        "M Alsieni",
+        "MA Bazuhair",
+        "M Jamal",
+        "H Daghistani",
+        "MO Barasheed",
+        "H Alkreathy",
+        "MA Khan",
+        "LM Khan"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC10034769": {
+      "title": "Urolithin A (UA) attenuates ferroptosis in LPS-induced acute lung injury in mice by upregulating Keap1-Nrf2/HO-1 signaling pathway.",
+      "doi": "10.3389/fphar.2023.1067402",
+      "pmid": "36969874",
+      "year": 2023,
+      "venue": "Front Pharmacol",
+      "authors": [
+        "L Lou",
+        "M Wang",
+        "J He",
+        "S Yang",
+        "F Meng",
+        "S Wang",
+        "X Jin",
+        "J Cai",
+        "C Cai"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC9889402": {
+      "title": "Urolithin A ameliorates obesity-induced metabolic cardiomyopathy in mice via mitophagy activation.",
+      "doi": "10.1038/s41401-022-00919-1",
+      "pmid": "35655094",
+      "year": 2023,
+      "venue": "Acta Pharmacol Sin",
+      "authors": [
+        "JR Huang",
+        "MH Zhang",
+        "YJ Chen",
+        "YL Sun",
+        "ZM Gao",
+        "ZJ Li",
+        "GP Zhang",
+        "Y Qin",
+        "XY Dai",
+        "XY Yu",
+        "XQ Wu"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC10001356": {
+      "title": "Genetic and Probiotic Characteristics of Urolithin A Producing Enterococcus faecium FUA027.",
+      "doi": "10.3390/foods12051021",
+      "pmid": "36900537",
+      "year": 2023,
+      "venue": "Foods",
+      "authors": [
+        "M Xia",
+        "S Mu",
+        "Y Fang",
+        "X Zhang",
+        "G Yang",
+        "X Hou",
+        "F He",
+        "Y Zhao",
+        "Y Huang",
+        "W Zhang",
+        "J Shen",
+        "S Liu"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC9601659": {
+      "title": "A Novel Streptococcus thermophilus FUA329 Isolated from Human Breast Milk Capable of Producing Urolithin A from Ellagic Acid.",
+      "doi": "10.3390/foods11203280",
+      "pmid": "37431038",
+      "year": 2022,
+      "venue": "Foods",
+      "authors": [
+        "Q Liu",
+        "S Liu",
+        "Q Ye",
+        "X Hou",
+        "G Yang",
+        "J Lu",
+        "Y Hai",
+        "J Shen",
+        "Y Fang"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC9455165": {
+      "title": "Lactococcus garvieae FUA009, a Novel Intestinal Bacterium Capable of Producing the Bioactive Metabolite Urolithin A from Ellagic Acid.",
+      "doi": "10.3390/foods11172621",
+      "pmid": "36076807",
+      "year": 2022,
+      "venue": "Foods",
+      "authors": [
+        "H Mi",
+        "S Liu",
+        "Y Hai",
+        "G Yang",
+        "J Lu",
+        "F He",
+        "Y Zhao",
+        "M Xia",
+        "X Hou",
+        "Y Fang"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC8935220": {
+      "title": "Urolithin A protects against acetaminophen-induced liver injury in mice via sustained activation of Nrf2.",
+      "doi": "10.7150/ijbs.69116",
+      "pmid": "35342347",
+      "year": 2022,
+      "venue": "Int J Biol Sci",
+      "authors": [
+        "Z Gao",
+        "W Yi",
+        "J Tang",
+        "Y Sun",
+        "J Huang",
+        "T Lan",
+        "X Dai",
+        "S Xu",
+        "ZG Jin",
+        "X Wu"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC9539031": {
+      "title": "Urolithin A targets the AKT/WNK1 axis to induce autophagy and exert anti-tumor effects in cholangiocarcinoma.",
+      "doi": "10.3389/fonc.2022.963314",
+      "pmid": "36212467",
+      "year": 2022,
+      "venue": "Front Oncol",
+      "authors": [
+        "H Sahashi",
+        "A Kato",
+        "M Yoshida",
+        "K Hayashi",
+        "I Naitoh",
+        "Y Hori",
+        "M Natsume",
+        "N Jinno",
+        "K Kachi",
+        "G Asano",
+        "T Toyohara",
+        "Y Kito",
+        "S Ammanamanchi",
+        "H Kataoka"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC8822684": {
+      "title": "Gut bacterial metabolite Urolithin A inhibits myocardial fibrosis through activation of Nrf2 pathway in vitro and in vivo.",
+      "doi": "10.1186/s10020-022-00444-1",
+      "pmid": "35135471",
+      "year": 2022,
+      "venue": "Mol Med",
+      "authors": [
+        "P Chen",
+        "J Pei",
+        "X Wang",
+        "S Tai",
+        "L Tang",
+        "X Hu"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC7918969": {
+      "title": "Immunomodulatory Role of Urolithin A on Metabolic Diseases.",
+      "doi": "10.3390/biomedicines9020192",
+      "pmid": "33671880",
+      "year": 2021,
+      "venue": "Biomedicines",
+      "authors": [
+        "AM Toney",
+        "D Fox",
+        "V Chaidez",
+        "AE Ramer-Tait",
+        "S Chung"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC8727228": {
+      "title": "Urolithin a alleviates oxidative stress-induced senescence in nucleus pulposus-derived mesenchymal stem cells through SIRT1/PGC-1\u03b1 pathway.",
+      "doi": "10.4252/wjsc.v13.i12.1928",
+      "pmid": "35069991",
+      "year": 2021,
+      "venue": "World J Stem Cells",
+      "authors": [
+        "PZ Shi",
+        "JW Wang",
+        "PC Wang",
+        "B Han",
+        "XH Lu",
+        "YX Ren",
+        "XM Feng",
+        "XF Cheng",
+        "L Zhang"
+      ],
+      "sources": [
+        "europepmc"
+      ]
+    },
+    "PMC8065090": {
+      "title": "Urolithin A induces cell cycle arrest and apoptosis by inhibiting Bcl-2, increasing p53-p21 proteins and reactive oxygen species production in colorectal cancer cells.",
+      "doi": "10.1007/s12192-020-01189-8",
+      "pmid": "33666815",
+      "year": 2021,
+      "venue": "Cell Stress Chaperones",
+      "authors": [
+        "MS El-Wetidy",
+        "R Ahmad",
+        "I Rady",
+        "H Helal",
+        "MI Rady",
+        "MA Vaali-Mohammed",
+        "K Al-Khayal",
+        "TB Traiki",
+        "MH Abdulla"
+      ],
+      "sources": [
+        "europepmc"
       ]
     }
   }

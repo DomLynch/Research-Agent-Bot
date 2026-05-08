@@ -1,0 +1,101 @@
+{
+  "paper_id": "HIT_effect_of_rosuvastatin_on_triglyceride_levels_in_mexican_hyp",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_rosuvastatin_on_triglyceride_levels_in_mexican_hyp-u-92",
+      "claim_type": "unit_value",
+      "raw_text": "20mg/day",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 92,
+      "sentence": "The primary purpose of this trial is to determine if the treatment with rosuvastatin 10 and 20mg/day during 8 weeks in hypertriglyceridemic patients will reduce their triglyceride levels.",
+      "context_window": "l is to determine if the treatment with rosuvastatin 10 and 20mg/day during 8 weeks in hypertriglyceridemic patients will reduce",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_rosuvastatin_on_triglyceride_levels_in_mexican_hyp-u-108",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 108,
+      "sentence": "The primary purpose of this trial is to determine if the treatment with rosuvastatin 10 and 20mg/day during 8 weeks in hypertriglyceridemic patients will reduce their triglyceride levels.",
+      "context_window": "e if the treatment with rosuvastatin 10 and 20mg/day during 8 weeks in hypertriglyceridemic patients will reduce their triglyce",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_rosuvastatin_on_triglyceride_levels_in_mexican_hyp-u-303",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 303,
+      "sentence": "Posted outcomes: Change (Reduction) in Triglycerides Levels From Baseline to End of Treatment (Week 8). timeframe=8 weeks.",
+      "context_window": "evels From Baseline to End of Treatment (Week 8). timeframe=8 weeks. Rosuvastatin 10 mg=67.95 (\u00b1128.46); Rosuvastatin 20 mg=78.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_effect_of_rosuvastatin_on_triglyceride_levels_in_mexican_hyp-u-325",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 325,
+      "sentence": "Rosuvastatin 10 mg=67.95 (\u00b1128.46); Rosuvastatin 20 mg=78.61 (\u00b1121.51); Placebo=22.31 (\u00b1120.54)",
+      "context_window": "End of Treatment (Week 8). timeframe=8 weeks. Rosuvastatin 10 mg=67.95 (\u00b1128.46); Rosuvastatin 20 mg=78.61 (\u00b1121.51); Placeb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_rosuvastatin_on_triglyceride_levels_in_mexican_hyp-u-361",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 361,
+      "sentence": "Rosuvastatin 10 mg=67.95 (\u00b1128.46); Rosuvastatin 20 mg=78.61 (\u00b1121.51); Placebo=22.31 (\u00b1120.54)",
+      "context_window": "e=8 weeks. Rosuvastatin 10 mg=67.95 (\u00b1128.46); Rosuvastatin 20 mg=78.61 (\u00b1121.51); Placebo=22.31 (\u00b1120.54)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

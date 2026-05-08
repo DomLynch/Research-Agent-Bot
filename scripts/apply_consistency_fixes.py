@@ -141,6 +141,30 @@ def _normalize_public_topic_slug(
     return body + tail, n
 
 
+_PUBLIC_SNAKE_CASE_RE = re.compile(r"\b[a-z][a-z0-9]*_[a-z0-9_]*\b")
+_PUBLIC_LABELS = {
+    "ci": "confidence interval",
+    "cross_domain": "cross-domain",
+    "mean_sd": "mean ± SD",
+    "null_vs_positive": "null vs positive",
+    "p_value": "p-value",
+    "sample_size": "sample size",
+    "unit_value": "unit value",
+}
+
+
+def _normalize_public_snake_case_labels(paper_md: str) -> tuple[str, int]:
+    """Rewrite internal enum-style labels in the public manuscript body."""
+    body, tail = _split_public_body(paper_md)
+
+    def repl(match: re.Match[str]) -> str:
+        token = match.group(0)
+        return _PUBLIC_LABELS.get(token, token.replace("_", " "))
+
+    body, n = _PUBLIC_SNAKE_CASE_RE.subn(repl, body)
+    return body + tail, n
+
+
 def _strip_consecutive_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:
     body, tail = _split_public_body(paper_md)
     paragraphs = re.split(r"(\n\s*\n)", body)
@@ -400,6 +424,8 @@ def _strip_extra_methods_numbered_steps(paper_md: str) -> tuple[str, int]:
             number = match.group(1)
             body = re.sub(r"\s+", " ", match.group(2).strip()).lower()
             expected = allowed_steps.get(number)
+            if number == "6" and body.startswith(("paper_id", "paper id")):
+                return match.group(0)
             if expected and body.startswith(expected):
                 return match.group(0)
             return ""
@@ -617,6 +643,7 @@ def _strip_orphan_inference_fragments(paper_md: str) -> tuple[str, int]:
         is_orphan = (
             "[d1_" in hay
             or "[mechanism_anchor:" in hay
+            or "[mechanism anchor:" in hay
             or "[conservation:" in hay
             or "[testability:" in hay
             or hay.lstrip().startswith("existing human signal:")
@@ -646,9 +673,11 @@ _INLINE_NUMERIC_RE = re.compile(r"(?<![A-Za-z])(?:\d+(?:\.\d+)?|\d+\s*%)")
 def _valid_d1_block(block: str) -> bool:
     if not _D1_TAG_RE.search(block):
         return False
-    if any(t not in block for t in (
-        "[mechanism_anchor:", "[conservation:", "[testability:",
-    )):
+    if (
+        not any(t in block for t in ("[mechanism_anchor:", "[mechanism anchor:"))
+        or "[conservation:" not in block
+        or "[testability:" not in block
+    ):
         return False
     visible = re.sub(r"\[[^\]]+\]", "", block)
     visible = re.sub(r"^\s*(?:\d+\.|\-)\s+", "", visible)
@@ -799,6 +828,17 @@ def apply_fixes(
             "description": (
                 "rewrote topic-pack slug tokens in the public manuscript "
                 "body to the display topic name"
+            ),
+        })
+
+    new_md, n_snake_label = _normalize_public_snake_case_labels(new_md)
+    if n_snake_label:
+        log.append({
+            "fix_type": "public_snake_case_label_normalization",
+            "n_changes": n_snake_label,
+            "description": (
+                "rewrote internal enum-style snake_case labels in the "
+                "public manuscript body"
             ),
         })
 
@@ -1589,6 +1629,17 @@ def apply_fixes(
             "description": (
                 "re-normalized topic-pack slug tokens after section "
                 "restoration/backfill"
+            ),
+        })
+
+    new_md, n_snake_label = _normalize_public_snake_case_labels(new_md)
+    if n_snake_label:
+        log.append({
+            "fix_type": "public_snake_case_label_normalization_post_depth",
+            "n_changes": n_snake_label,
+            "description": (
+                "re-normalized internal enum-style snake_case labels after "
+                "section restoration/backfill"
             ),
         })
 

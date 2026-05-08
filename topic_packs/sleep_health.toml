@@ -1,7 +1,7 @@
 topic = "sleep_health"
 class_ = "behavioral_intervention"
 
-aliases = ["sleep", "sleep health", "sleep duration", "sleep quality", "insomnia treatment", "CBT-I", "sleep extension"]
+aliases = ["sleep", "sleep health", "sleep duration", "sleep quality", "insomnia treatment", "CBT-I", "sleep extension", "sleep apnea", "obstructive sleep apnea", "CPAP"]
 expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "cognition", "cardiometabolic", "mortality"]
 special_rules = [
   "Separate sleep duration, sleep quality, insomnia treatment, and sleep-apnea treatment.",
@@ -10,22 +10,27 @@ special_rules = [
 ]
 forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
 forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
-active_arm_synonyms = ["sleep intervention", "sleep extension", "CBT-I", "insomnia treatment", "sleep hygiene"]
-placebo_arm_synonyms = ["control", "usual care", "attention control", "waitlist", "sleep education"]
+active_arm_synonyms = ["sleep intervention", "sleep extension", "CBT-I", "insomnia treatment", "sleep hygiene", "CPAP", "sleep apnea treatment"]
+placebo_arm_synonyms = ["control", "usual care", "attention control", "waitlist", "sleep education", "sham CPAP"]
 corpus_search_queries = [
   "sleep duration AND aging AND mortality",
   "sleep quality AND older adults AND cognition",
   "CBT-I AND older adults AND randomized trial",
   "sleep extension AND cardiometabolic trial",
   "insomnia treatment AND elderly AND randomized",
+  "sleep apnea AND older adults AND mortality",
+  "CPAP AND elderly AND cardiovascular outcomes",
+  "sleep efficiency AND frailty AND older adults",
+  "actigraphy AND older adults AND cognition",
+  "sleep health AND aging AND meta-analysis",
 ]
 canonical_rct_paper_ids = []
 canonical_trials = []
 known_role_overrides = {}
 
 [retrieval]
-topic_terms = ["sleep health", "sleep duration", "sleep quality", "insomnia treatment", "CBT-I", "sleep extension"]
-scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cognition", "frailty", "cardiometabolic", "mortality"]
+topic_terms = ["sleep health", "sleep duration", "sleep quality", "insomnia treatment", "CBT-I", "sleep extension", "sleep apnea", "obstructive sleep apnea", "CPAP", "sleep efficiency", "actigraphy"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cognition", "frailty", "cardiometabolic", "mortality", "cardiovascular", "insomnia", "sleep quality"]
 evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
 exclude_terms = ["pediatric only", "animal only", "in vitro only", "shift workers only", "acute sleep deprivation only"]
 date_from = 2000
@@ -33,7 +38,7 @@ languages = ["English"]
 species = ["humans"]
 
 [retrieval.background]
-allow = ["circadian biology", "glymphatic hypothesis", "sleep epidemiology", "insomnia treatment history"]
+allow = ["circadian biology", "glymphatic hypothesis", "sleep epidemiology", "insomnia treatment history", "sleep architecture", "sleep apnea physiology"]
 
 [endpoint_polarity]
 mortality = "lower_is_better"
@@ -42,4 +47,3 @@ frailty = "lower_is_better"
 sleep_quality = "higher_is_better"
 insomnia_severity = "lower_is_better"
 cardiometabolic_risk = "lower_is_better"
-

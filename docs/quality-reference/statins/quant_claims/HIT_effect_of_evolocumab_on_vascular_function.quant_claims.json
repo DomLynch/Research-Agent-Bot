@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_effect_of_evolocumab_on_vascular_function",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_evolocumab_on_vascular_function-u-1753",
+      "claim_type": "unit_value",
+      "raw_text": "420 mg",
+      "numeric_values": [
+        420.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1753,
+      "sentence": "At visit 2, baseline vascular function parameters will be obtained and the patient will be given an SC injection of the study drug (either SC 420 mg evolocumab or SC placebo).",
+      "context_window": "will be given an SC injection of the study drug (either SC 420 mg evolocumab or SC placebo). At visit 4, the second injection",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_evolocumab_on_vascular_function-u-1871",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1871,
+      "sentence": "After 1, 4 and 8 weeks of treatment (visits 3, 4 and 5), testing of vascular function will be repeated.",
+      "context_window": "njection of study drug will be administered. After 1, 4 and 8 weeks of treatment (visits 3, 4 and 5), testing of vascular funct",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

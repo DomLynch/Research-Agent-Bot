@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_trial_to_evaluate_the_safety_of_lovastatin_in_individuals_wi",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_trial_to_evaluate_the_safety_of_lovastatin_in_individuals_wi-pct-671",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 671,
+      "sentence": "Neurocognitive deficits and specific learning disabilities occur in approximately 30 to 50% of individuals with NF1 and are regarded by some observers and sufferers to be among the most troubling features of a disease.",
+      "context_window": "specific learning disabilities occur in approximately 30 to 50% of individuals with NF1 and are regarded by some observers",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_trial_to_evaluate_the_safety_of_lovastatin_in_individuals_wi-u-2053",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 2053,
+      "sentence": "Participants will be randomly assigned to lovastatin or placebo and treated for approximately 14 weeks with baseline and follow-up assessments to evaluate safety and any effects on neurocognitive test performance.",
+      "context_window": "gned to lovastatin or placebo and treated for approximately 14 weeks with baseline and follow-up assessments to evaluate safety",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

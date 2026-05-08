@@ -67,6 +67,23 @@ def _safe(v: Any, default: str = "n/a") -> str:
     return str(v)
 
 
+def _public_label(value: Any) -> str:
+    """Human-readable display for internal enum/claim labels."""
+    s = _safe(value, "—").strip()
+    labels = {
+        "ci": "confidence interval",
+        "cross_domain": "cross-domain",
+        "mean_sd": "mean ± SD",
+        "null_vs_positive": "null vs positive",
+        "p_value": "p-value",
+        "sample_size": "sample size",
+        "unit_value": "unit value",
+    }
+    if s in labels:
+        return labels[s]
+    return s.replace("_", " ")
+
+
 # --- Reused helpers from Fix #6 -----------------------------------------
 
 
@@ -234,8 +251,8 @@ def render_table_1_included_studies(receipts: list) -> str:
             tier,
             n_cell,
             pop_label,
-            _safe(getattr(r, "outcome_class", None), "—"),
-            _safe(getattr(r, "effect_direction", None), "—"),
+            _public_label(getattr(r, "outcome_class", None)),
+            _public_label(getattr(r, "effect_direction", None)),
             _safe(getattr(r, "directness", None), "—"),
             _safe(getattr(r, "canonical_trial_id", None), "—"),
             _representative_p_value(r),
@@ -316,19 +333,22 @@ def render_table_2_endpoint_evidence(receipts: list) -> str:
         direction = _safe(getattr(r, "effect_direction", None), "—")
         directness = _safe(getattr(r, "directness", None), "—")
         tier = _safe(getattr(r, "evidence_tier", None), "—")
+        endpoint_display = _public_label(endpoint)
+        direction_display_base = _public_label(direction)
         pvals = [p for p in (getattr(r, "p_values", None) or ()) if p]
         if not pvals:
-            interp = _interpretation(direction, endpoint)
+            interp = _interpretation(direction, endpoint_display)
             rows.append(_row(
-                endpoint, study, "—", direction, directness, tier, interp,
+                endpoint_display, study, "—", direction_display_base,
+                directness, tier, interp,
             ))
             continue
         for p in pvals:
             stat = p.strip() or "—"
-            interp = _interpretation(direction, endpoint, stat)
-            direction_display = _display_direction(direction, stat)
+            interp = _interpretation(direction, endpoint_display, stat)
+            direction_display = _public_label(_display_direction(direction, stat))
             rows.append(_row(
-                endpoint, study, stat, direction_display,
+                endpoint_display, study, stat, direction_display,
                 directness, tier, interp,
             ))
     return header + "\n".join(rows) + "\n"
@@ -350,7 +370,7 @@ def _tension_implication(kind: str, severity: int) -> str:
         return f"directness mismatch ({sev_label}) — generalisability caveat"
     if kind == "tier_mismatch":
         return f"tier gap ({sev_label}) — weight clinical evidence higher"
-    return f"{kind} ({sev_label})"
+    return f"{_public_label(kind)} ({sev_label})"
 
 
 def render_table_3_cross_domain_tensions(matrix: object | None) -> str:
@@ -389,12 +409,12 @@ def render_table_3_cross_domain_tensions(matrix: object | None) -> str:
         kind = _safe(getattr(t, "kind", None), "—")
         sev = getattr(t, "severity", 0) or 0
         rows.append(_row(
-            kind,
+            _public_label(kind),
             str(sev),
             _safe(getattr(t, "receipt_a_id", None), "—"),
             _safe(getattr(t, "receipt_b_id", None), "—"),
-            _safe(getattr(t, "outcome_class", None), "—"),
-            _safe(getattr(t, "summary", None), "—"),
+            _public_label(getattr(t, "outcome_class", None)),
+            _public_label(getattr(t, "summary", None)),
             _tension_implication(kind, int(sev)),
         ))
     return header + "\n".join(rows) + "\n"
@@ -728,7 +748,7 @@ def render_table_5_numeric_index(
             rows.append(_row(
                 body_cite,
                 _safe(c.get("source_section"), "—"),
-                _safe(c.get("claim_type"), "—"),
+                _public_label(c.get("claim_type")),
                 _format_claim_value(c),
                 _safe(c.get("units"), "—"),
             ))

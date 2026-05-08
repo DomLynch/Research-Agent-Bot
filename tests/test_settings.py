@@ -31,7 +31,7 @@ def isolated_dotenv(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
     for k in (
         "MIMO_API_KEY", "OPENROUTER_API_KEY", "MIMO_MODEL", "MIMO_BASE_URL",
         "JUDGE_MODEL", "FALLBACK_MODEL", "DOTENV_TEST_KEY", "DOTENV_QUOTED",
-        "DOTENV_OVERRIDE_TEST",
+        "FINAL_LAYER_REVIEWER_MODEL", "DOTENV_OVERRIDE_TEST",
     ):
         monkeypatch.delenv(k, raising=False)
     return tmp_path
@@ -96,6 +96,7 @@ def test_load_settings_defaults_when_unset(
     assert s.mimo_model == "mimo-v2.5-pro"
     assert s.judge_model == "google/gemma-4-31b-it"
     assert s.fallback_model == "mistralai/mistral-small-2603"
+    assert s.final_layer_reviewer_model == "deepseek/deepseek-v4-pro"
 
 
 def test_load_settings_reads_dotenv(isolated_dotenv: Path) -> None:

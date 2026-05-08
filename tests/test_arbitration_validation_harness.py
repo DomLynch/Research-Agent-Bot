@@ -6,6 +6,41 @@ from pathlib import Path
 from scripts.arbitration_validation_harness import main, run_fixture
 
 
+def test_arbitration_benchmark_fixture_schema_and_coverage() -> None:
+    fixture = Path("tests/fixtures/arbitration_benchmark.jsonl")
+    rows = [
+        json.loads(line)
+        for line in fixture.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    required = {
+        "id",
+        "patch_id",
+        "patch_type",
+        "severity",
+        "before",
+        "after",
+        "expected_verdict",
+        "grok_rationale",
+        "smart_gate_reason",
+        "manual_judgment_reason",
+        "model_response",
+        "source_run",
+    }
+    assert len(rows) == 10
+    assert {row["expected_verdict"] for row in rows} == {
+        "APPLY",
+        "REJECT",
+        "ESCALATE",
+    }
+    assert sum(row["expected_verdict"] == "APPLY" for row in rows) == 2
+    assert sum(row["expected_verdict"] == "REJECT" for row in rows) == 2
+    assert sum(row["expected_verdict"] == "ESCALATE" for row in rows) == 6
+    for row in rows:
+        assert required <= row.keys()
+        assert Path(row["source_run"]).exists()
+
+
 def test_validation_harness_compares_fixture_labels(tmp_path: Path) -> None:
     fixture = tmp_path / "cases.json"
     fixture.write_text(

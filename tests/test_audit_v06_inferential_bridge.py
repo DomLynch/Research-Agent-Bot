@@ -18,7 +18,7 @@ def test_q14_accepts_tagged_d1_claim() -> None:
 ## Inferential Bridge
 
 1. [D1_inferential_bridge | confidence=low] Conserved pathway logic is
-   plausible. [mechanism_anchor: r1] [conservation: Canon 2020]
+   plausible. [mechanism anchor: r1] [conservation: Canon 2020]
    Existing human signal: none identified.
    Testability: Run prospective validation. [testability: explicit]
 
@@ -33,7 +33,7 @@ def test_q14_rejects_missing_conservation_tag() -> None:
 ## Inferential Bridge
 
 1. [D1_inferential_bridge | confidence=low] Conserved pathway logic is
-   plausible. [mechanism_anchor: r1]
+   plausible. [mechanism anchor: r1]
    Testability: Run prospective validation. [testability: explicit]
 """
     ok, msg = audit._check_inferential_bridge_contract(paper)
@@ -48,7 +48,7 @@ def test_q14_rejects_untagged_numbered_bridge_claim() -> None:
 1. Untagged bridge prose that should not be invisible to Q14.
 
 2. [D1_inferential_bridge | confidence=low] Tagged bridge prose.
-   [mechanism_anchor: r1] [conservation: Canon 2020]
+   [mechanism anchor: r1] [conservation: Canon 2020]
    Testability: Run prospective validation. [testability: explicit]
 """
     ok, msg = audit._check_inferential_bridge_contract(paper)
@@ -61,7 +61,7 @@ def test_q14_rejects_new_inferred_numeric() -> None:
 ## Inferential Bridge
 
 1. [D1_inferential_bridge | confidence=low] The pathway may improve
-   outcomes by 12 percent. [mechanism_anchor: r1] [conservation: Canon 2020]
+   outcomes by 12 percent. [mechanism anchor: r1] [conservation: Canon 2020]
    Testability: Run prospective validation. [testability: explicit]
 """
     ok, msg = audit._check_inferential_bridge_contract(paper)

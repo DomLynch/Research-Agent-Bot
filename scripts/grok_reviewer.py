@@ -1,9 +1,8 @@
-"""Day 10.17 Phase 6.2 Layer 2 — Grok 4.3 patch proposer.
+"""Day 10.17 Phase 6.2 Layer 2 — final-layer patch proposer.
 
-Per the converged reviewer plan (and the user's "Grok can edit, with
-guardrails" call): Grok proposes typed patches with provenance. Every
-patch is then validated and applied by `scripts/apply_patches.py` per
-per-type gate rules:
+The reviewer proposes typed patches with provenance. Every patch is
+then validated and applied by `scripts/apply_patches.py` per per-type
+gate rules:
 
   formatting   — auto-apply (typos, spacing, header tier)
   numeric      — must trace to v0.6 quant_claims; else flag-only
@@ -11,9 +10,9 @@ per-type gate rules:
   claim        — flag-only (no silent claim edits)
   structure    — flag-only (no silent restructuring)
 
-The Grok prompt explicitly enumerates these rules so the model
-proposes appropriately-typed patches; the applicator independently
-verifies each patch against the trust spine.
+The prompt explicitly enumerates these rules so the model proposes
+appropriately-typed patches; the applicator independently verifies each
+patch against the trust spine.
 
 Inputs:
   - full_paper.md
@@ -25,7 +24,8 @@ Output:
   - <paper>.review_patches.json — list of TypedPatch records
   - <paper>.review_summary.md   — human-readable review notes
 
-Cost budget: ~$0.05-0.15 per paper (Grok 4.3 via OpenRouter).
+Default primary: DeepSeek V4 Pro via OpenRouter. Mistral Small 4 is the
+cheap fallback.
 """
 from __future__ import annotations
 
@@ -283,7 +283,8 @@ def _build_grok_prompt(
 # transparency / retroactive audit, not budgeting.
 _PRICING_PER_MTOK: dict[str, tuple[float, float]] = {
     "x-ai/grok-4.3": (3.00, 15.00),
-    "mistralai/mistral-small-2603": (0.20, 0.60),
+    "deepseek/deepseek-v4-pro": (0.435, 0.87),
+    "mistralai/mistral-small-2603": (0.15, 0.60),
 }
 
 
@@ -340,9 +341,8 @@ async def _call_with_fallback(
     fallback_model: str, api_key: str, base_url: str, client: Any,
 ) -> tuple[dict[str, Any], str, float]:
     """Try primary first; on any HTTP/parse failure, fall back. Returns
-    (parsed_json, model_used, cost_usd_estimate). Per the user: Grok
-    4.3 is the final fail-safe, Mistral fallback only fires on
-    OpenRouter outage / Grok unavailability — unlikely in practice."""
+    (parsed_json, model_used, cost_usd_estimate). The fallback only
+    fires on primary-model outage or invalid JSON."""
     import httpx
     for model in (primary_model, fallback_model):
         try:
@@ -353,7 +353,8 @@ async def _call_with_fallback(
             return parsed, model, cost
         except (httpx.HTTPError, ValueError, KeyError, json.JSONDecodeError) as exc:
             print(
-                f"grok_reviewer: {model} failed ({type(exc).__name__}); "
+                f"final_layer_reviewer: {model} failed "
+                f"({type(exc).__name__}); "
                 f"trying fallback",
                 file=sys.stderr,
             )
@@ -449,17 +450,17 @@ async def repair_flagged_patches(
     flagged: list[tuple[Any, str]],
     paper_md: str,
     *,
-    model: str = "x-ai/grok-4.3",
+    model: str = "deepseek/deepseek-v4-pro",
     fallback_model: str = "mistralai/mistral-small-2603",
     api_key: str | None = None,
     base_url: str = "https://openrouter.ai/api/v1",
     client: Any | None = None,
 ) -> list[TypedPatch]:
-    """Fix #49: agent-to-agent repair pass. Re-prompts Grok with the
+    """Fix #49: agent-to-agent repair pass. Re-prompts the reviewer with the
     rejection reasons; returns repaired TypedPatch list (or empty
-    list if Grok returns 'unfixable' for every entry).
+    list if the reviewer returns 'unfixable' for every entry).
 
-    Caller threads these through the SAME apply_patches gate; Grok's
+    Caller threads these through the SAME apply_patches gate; the reviewer's
     proposals here have no special privilege — they pass or fail the
     smart-gate the same way the original proposals did."""
     if not flagged:
@@ -490,7 +491,7 @@ async def repair_flagged_patches(
 
 async def review_with_grok(
     paper_md: str, manifest: dict, audit: dict,
-    *, model: str = "x-ai/grok-4.3",
+    *, model: str = "deepseek/deepseek-v4-pro",
     fallback_model: str = "mistralai/mistral-small-2603",
     api_key: str | None = None,
     base_url: str = "https://openrouter.ai/api/v1",
@@ -498,8 +499,8 @@ async def review_with_grok(
     citation_registry: dict | None = None,
 ) -> tuple[list[TypedPatch], dict, str, float]:
     """Run the final-layer review. Returns (patches, raw_response,
-    model_used, cost_usd). Grok 4.3 is the primary; Mistral Small
-    is the fallback that only fires on OpenRouter outage."""
+    model_used, cost_usd). DeepSeek V4 Pro is the primary; Mistral Small
+    is the fallback that only fires on primary outage or invalid JSON."""
     api_key = api_key or os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
         raise RuntimeError(
@@ -529,7 +530,7 @@ async def review_with_grok(
 def _format_summary(
     patches: list[TypedPatch],
     cost_usd: float = 0.0,
-    model_used: str = "x-ai/grok-4.3",
+    model_used: str = "deepseek/deepseek-v4-pro",
 ) -> str:
     if not patches:
         return (
@@ -565,12 +566,16 @@ def _format_summary(
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Phase 6.2 Layer 2 — Grok 4.3 patch proposer",
+        description="Phase 6.2 Layer 2 — final-layer patch proposer",
     )
     parser.add_argument("paper_md", help="full_paper.md")
     parser.add_argument(
-        "--model", default=os.environ.get("GROK_MODEL", "x-ai/grok-4.3"),
-        help="OpenRouter model id (default: x-ai/grok-4.3)",
+        "--model",
+        default=os.environ.get(
+            "FINAL_LAYER_REVIEWER_MODEL",
+            os.environ.get("GROK_MODEL", "deepseek/deepseek-v4-pro"),
+        ),
+        help="OpenRouter model id (default: deepseek/deepseek-v4-pro)",
     )
     args = parser.parse_args(argv)
     paper_path = Path(args.paper_md).resolve()

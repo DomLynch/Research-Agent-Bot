@@ -1,17 +1,20 @@
 # Arbitration v1
 
-IBM Granite arbitration is a judge-only helper for deciding whether an
+Mistral arbitration is a judge-only helper for deciding whether an
 existing patch should `APPLY`, `REJECT`, or `ESCALATE`.
 
 ## Environment
 
-- `GRANITE_ARBITRATOR_ENABLED=1` enables live arbitration. Default is off.
-- `GRANITE_API_KEY` supplies a Granite-specific API key when present.
-- `OPENROUTER_API_KEY` is the fallback key for Granite via OpenRouter.
+- `ARBITRATOR_ENABLED=1` enables live arbitration. Default is off.
+- `GRANITE_ARBITRATOR_ENABLED=1` remains accepted as a legacy alias.
+- `ARBITRATOR_API_KEY` supplies an arbitrator-specific API key when present.
+- `GRANITE_API_KEY` remains accepted as a legacy alias.
+- `OPENROUTER_API_KEY` is the fallback key via OpenRouter.
 - `OPENROUTER_BASE_URL` defaults to `https://openrouter.ai/api/v1`.
-- `GRANITE_ARBITRATOR_MODEL` defaults to `ibm-granite/granite-4.1-8b`.
-  IBM Granite 4.1 8B via OpenRouter is the preferred V1 arbitrator.
-- `GRANITE_ARBITRATOR_TIMEOUT_SEC` defaults to `60`.
+- `ARBITRATOR_MODEL` defaults to `mistralai/mistral-small-2603`.
+- `GRANITE_ARBITRATOR_MODEL` remains accepted as a legacy alias.
+- `ARBITRATOR_TIMEOUT_SEC` defaults to `60`.
+- `GRANITE_ARBITRATOR_TIMEOUT_SEC` remains accepted as a legacy alias.
 
 No keys are committed. No live network calls are required for tests. Unit tests
 use `httpx.MockTransport`.
@@ -26,8 +29,8 @@ use `httpx.MockTransport`.
   attempted replacement content fail closed to `ESCALATE`.
 - `APPLY` can only apply the exact existing `after` text, only when `before`
   appears once, and only after deterministic post-apply audit passes.
-- `REJECT` preserves the original manuscript text and records that Granite
-  rejected Grok's patch.
+- `REJECT` preserves the original manuscript text and records that the arbitrator
+  rejected the reviewer patch.
 - `ESCALATE`, timeout, malformed output, or failed post-apply audit falls back
   to the existing fail-closed path.
 - Audit entries record `patch_id`, `decision`, `rationale`, `model`,

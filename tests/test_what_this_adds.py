@@ -203,6 +203,17 @@ def test_section_includes_research_contribution_layer() -> None:
     assert "direct clinical gap" in md
 
 
+def test_research_contribution_layer_humanizes_public_labels() -> None:
+    receipts = [
+        _r("Direct 2024", outcome="muscle_function", directness="direct"),
+    ]
+    md = build_what_this_adds_section(
+        receipts, _matrix(receipts), _thesis(), topic="urolithin A",
+    )
+    assert "muscle function" in md
+    assert "muscle_function" not in md
+
+
 def test_next_study_design_targets_highest_priority_gap() -> None:
     receipts = [
         _r("Direct Cardio", outcome="cardiometabolic", directness="direct"),

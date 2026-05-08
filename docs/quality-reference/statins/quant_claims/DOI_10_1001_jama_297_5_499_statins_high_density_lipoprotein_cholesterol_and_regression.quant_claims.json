@@ -1,0 +1,427 @@
+{
+  "paper_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression",
+  "doi": "10.1001/jama.297.5.499",
+  "extracted_at": "2026-05-08T16:22:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 14,
+    "p_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-u-727",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 727,
+      "sentence": "DESIGN, SETTING, AND PATIENTS: Post-hoc analysis combining raw data from 4 prospective randomized trials (performed in the United States, North America, Europe, and Australia between 1999 and 2005), in which 1455 patients with angiographic coronary disease underwent serial intravascular ultrasonography while receiving statin treatment for 18 months or for 24 months.",
+      "context_window": "scular ultrasonography while receiving statin treatment for 18 months or for 24 months. Ultrasound analysis was performed in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-u-744",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 744,
+      "sentence": "DESIGN, SETTING, AND PATIENTS: Post-hoc analysis combining raw data from 4 prospective randomized trials (performed in the United States, North America, Europe, and Australia between 1999 and 2005), in which 1455 patients with angiographic coronary disease underwent serial intravascular ultrasonography while receiving statin treatment for 18 months or for 24 months.",
+      "context_window": "raphy while receiving statin treatment for 18 months or for 24 months. Ultrasound analysis was performed in the same core laborat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-1107",
+      "claim_type": "percentage",
+      "raw_text": "23.5%",
+      "numeric_values": [
+        23.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1107,
+      "sentence": "RESULTS: During statin therapy, mean (SD) LDL-C levels were reduced from 124.0 (38.3) mg/dL (3.2 [0.99] mmol/L) to 87.5 (28.8) mg/dL (2.3 [0.75] mmol/L) (a 23.5% decrease; P<.001), and HDL-C levels increased from 42.5 (11.0) mg/dL (1.1 [0.28] mmol/L) to 45.1 (11.4) mg/dL (1.2 [0.29] mmol/L) (a 7.5% increase; P<.001).",
+      "context_window": "[0.99] mmol/L) to 87.5 (28.8) mg/dL (2.3 [0.75] mmol/L) (a 23.5% decrease; P<.001), and HDL-C levels increased from 42.5 (11",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-p-1123",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1123,
+      "sentence": "RESULTS: During statin therapy, mean (SD) LDL-C levels were reduced from 124.0 (38.3) mg/dL (3.2 [0.99] mmol/L) to 87.5 (28.8) mg/dL (2.3 [0.75] mmol/L) (a 23.5% decrease; P<.001), and HDL-C levels increased from 42.5 (11.0) mg/dL (1.1 [0.28] mmol/L) to 45.1 (11.4) mg/dL (1.2 [0.29] mmol/L) (a 7.5% increase; P<.001).",
+      "context_window": "to 87.5 (28.8) mg/dL (2.3 [0.75] mmol/L) (a 23.5% decrease; P<.001), and HDL-C levels increased from 42.5 (11.0) mg/dL (1.1 [0",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-1246",
+      "claim_type": "percentage",
+      "raw_text": "7.5%",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1246,
+      "sentence": "RESULTS: During statin therapy, mean (SD) LDL-C levels were reduced from 124.0 (38.3) mg/dL (3.2 [0.99] mmol/L) to 87.5 (28.8) mg/dL (2.3 [0.75] mmol/L) (a 23.5% decrease; P<.001), and HDL-C levels increased from 42.5 (11.0) mg/dL (1.1 [0.28] mmol/L) to 45.1 (11.4) mg/dL (1.2 [0.29] mmol/L) (a 7.5% increase; P<.001).",
+      "context_window": "[0.28] mmol/L) to 45.1 (11.4) mg/dL (1.2 [0.29] mmol/L) (a 7.5% increase; P<.001). The ratio of LDL-C to HDL-C was reduced",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-p-1261",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1261,
+      "sentence": "RESULTS: During statin therapy, mean (SD) LDL-C levels were reduced from 124.0 (38.3) mg/dL (3.2 [0.99] mmol/L) to 87.5 (28.8) mg/dL (2.3 [0.75] mmol/L) (a 23.5% decrease; P<.001), and HDL-C levels increased from 42.5 (11.0) mg/dL (1.1 [0.28] mmol/L) to 45.1 (11.4) mg/dL (1.2 [0.29] mmol/L) (a 7.5% increase; P<.001).",
+      "context_window": "to 45.1 (11.4) mg/dL (1.2 [0.29] mmol/L) (a 7.5% increase; P<.001). The ratio of LDL-C to HDL-C was reduced from a mean (SD)",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-1356",
+      "claim_type": "percentage",
+      "raw_text": "26.7%",
+      "numeric_values": [
+        26.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1356,
+      "sentence": "The ratio of LDL-C to HDL-C was reduced from a mean (SD) of 3.0 (1.1) to 2.1 (0.9) (a 26.7% decrease; P<.001).",
+      "context_window": "C was reduced from a mean (SD) of 3.0 (1.1) to 2.1 (0.9) (a 26.7% decrease; P<.001). These changes were accompanied by a mean",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-p-1372",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1372,
+      "sentence": "The ratio of LDL-C to HDL-C was reduced from a mean (SD) of 3.0 (1.1) to 2.1 (0.9) (a 26.7% decrease; P<.001).",
+      "context_window": "om a mean (SD) of 3.0 (1.1) to 2.1 (0.9) (a 26.7% decrease; P<.001). These changes were accompanied by a mean (SD) increase in",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-1468",
+      "claim_type": "percentage",
+      "raw_text": "39.7%",
+      "numeric_values": [
+        39.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1468,
+      "sentence": "These changes were accompanied by a mean (SD) increase in percent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) decrease in total atheroma volume of 2.4 (23.6) mm3 (P<.001).",
+      "context_window": "ied by a mean (SD) increase in percent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-1475",
+      "claim_type": "percentage",
+      "raw_text": "9.8%",
+      "numeric_values": [
+        9.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1475,
+      "sentence": "These changes were accompanied by a mean (SD) increase in percent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) decrease in total atheroma volume of 2.4 (23.6) mm3 (P<.001).",
+      "context_window": "a mean (SD) increase in percent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-1484",
+      "claim_type": "percentage",
+      "raw_text": "40.1%",
+      "numeric_values": [
+        40.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1484,
+      "sentence": "These changes were accompanied by a mean (SD) increase in percent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) decrease in total atheroma volume of 2.4 (23.6) mm3 (P<.001).",
+      "context_window": "D) increase in percent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-1491",
+      "claim_type": "percentage",
+      "raw_text": "9.7%",
+      "numeric_values": [
+        9.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1491,
+      "sentence": "These changes were accompanied by a mean (SD) increase in percent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) decrease in total atheroma volume of 2.4 (23.6) mm3 (P<.001).",
+      "context_window": "ease in percent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) decreas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-1500",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1500,
+      "sentence": "These changes were accompanied by a mean (SD) increase in percent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) decrease in total atheroma volume of 2.4 (23.6) mm3 (P<.001).",
+      "context_window": "ercent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) decrease in tota",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-1506",
+      "claim_type": "percentage",
+      "raw_text": "3.9%",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1506,
+      "sentence": "These changes were accompanied by a mean (SD) increase in percent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) decrease in total atheroma volume of 2.4 (23.6) mm3 (P<.001).",
+      "context_window": "atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) decrease in total athe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-p-1522",
+      "claim_type": "p_value",
+      "raw_text": "P = .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1522,
+      "sentence": "These changes were accompanied by a mean (SD) increase in percent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) decrease in total atheroma volume of 2.4 (23.6) mm3 (P<.001).",
+      "context_window": "from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) decrease in total atheroma volume of 2.4 (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-p-1601",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1601,
+      "sentence": "These changes were accompanied by a mean (SD) increase in percent atheroma volume from 39.7% (9.8%) to 40.1% (9.7%) (a 0.5% [3.9%] increase; P = .001) and a mean (SD) decrease in total atheroma volume of 2.4 (23.6) mm3 (P<.001).",
+      "context_window": "n (SD) decrease in total atheroma volume of 2.4 (23.6) mm3 (P<.001). In univariate analysis, mean levels and treatment-mediate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-2042",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2042,
+      "sentence": "In multivariate analysis, mean levels of LDL-C (beta coefficient, 0.11 [95% confidence interval, 0.07-0.15]) and increases in HDL-C (beta coefficient, -0.26 [95% confidence interval, -0.41 to -0.10]) remained independent predictors of atheroma regression.",
+      "context_window": "ate analysis, mean levels of LDL-C (beta coefficient, 0.11 [95% confidence interval, 0.07-0.15]) and increases in HDL-C (be",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-2128",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2128,
+      "sentence": "In multivariate analysis, mean levels of LDL-C (beta coefficient, 0.11 [95% confidence interval, 0.07-0.15]) and increases in HDL-C (beta coefficient, -0.26 [95% confidence interval, -0.41 to -0.10]) remained independent predictors of atheroma regression.",
+      "context_window": ".07-0.15]) and increases in HDL-C (beta coefficient, -0.26 [95% confidence interval, -0.41 to -0.10]) remained independent",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-2265",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2265,
+      "sentence": "Substantial atheroma regression (> or =5% reduction in atheroma volume) was observed in patients with levels of LDL-C less than the mean (87.5 mg/dL) during treatment and percentage increases of HDL-C greater than the mean (7.5%; P<.001).",
+      "context_window": "atheroma regression. Substantial atheroma regression (> or =5% reduction in atheroma volume) was observed in patients with",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-u-2364",
+      "claim_type": "unit_value",
+      "raw_text": "87.5 mg/dL",
+      "numeric_values": [
+        87.5
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 2364,
+      "sentence": "Substantial atheroma regression (> or =5% reduction in atheroma volume) was observed in patients with levels of LDL-C less than the mean (87.5 mg/dL) during treatment and percentage increases of HDL-C greater than the mean (7.5%; P<.001).",
+      "context_window": "served in patients with levels of LDL-C less than the mean (87.5 mg/dL) during treatment and percentage increases of HDL-C greater",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-2450",
+      "claim_type": "percentage",
+      "raw_text": "7.5%",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2450,
+      "sentence": "Substantial atheroma regression (> or =5% reduction in atheroma volume) was observed in patients with levels of LDL-C less than the mean (87.5 mg/dL) during treatment and percentage increases of HDL-C greater than the mean (7.5%; P<.001).",
+      "context_window": "nt and percentage increases of HDL-C greater than the mean (7.5%; P<.001). No significant differences were found with regard",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-p-2456",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2456,
+      "sentence": "Substantial atheroma regression (> or =5% reduction in atheroma volume) was observed in patients with levels of LDL-C less than the mean (87.5 mg/dL) during treatment and percentage increases of HDL-C greater than the mean (7.5%; P<.001).",
+      "context_window": "percentage increases of HDL-C greater than the mean (7.5%; P<.001). No significant differences were found with regard to clin",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_5_499_statins_high_density_lipoprotein_cholesterol_and_regression-pct-2693",
+      "claim_type": "percentage",
+      "raw_text": "7.5%",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2693,
+      "sentence": "CONCLUSIONS: Statin therapy is associated with regression of coronary atherosclerosis when LDL-C is substantially reduced and HDL-C is increased by more than 7.5%.",
+      "context_window": "s substantially reduced and HDL-C is increased by more than 7.5%. These findings suggest that statin benefits are derived fr",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    }
+  ]
+}

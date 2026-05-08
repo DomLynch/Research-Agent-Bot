@@ -1,0 +1,9 @@
+[
+  {
+    "id": "synthetic-bad-json-fail-closed",
+    "fixture_kind": "synthetic_schema_guard",
+    "expected_verdict": "ESCALATE",
+    "model_response": "{\"verdict\":\"APPLY\"",
+    "manual_judgment_reason": "Malformed arbitrator JSON must fail closed to ESCALATE."
+  }
+]

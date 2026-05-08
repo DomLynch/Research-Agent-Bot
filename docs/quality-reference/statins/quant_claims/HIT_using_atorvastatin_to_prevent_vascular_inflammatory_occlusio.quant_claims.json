@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_using_atorvastatin_to_prevent_vascular_inflammatory_occlusio",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_using_atorvastatin_to_prevent_vascular_inflammatory_occlusio-pct-279",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 279,
+      "sentence": "Approximately 10 to 15% of all critically ill patients die in hospital.",
+      "context_window": "ave a high likelihood of causing death. Approximately 10 to 15% of all critically ill patients die in hospital. A large amo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_using_atorvastatin_to_prevent_vascular_inflammatory_occlusio-u-1176",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1176,
+      "sentence": "In VASTVALUS, participating patients will receive either atorvastatin 80 mg daily or a placebo.",
+      "context_window": "US, participating patients will receive either atorvastatin 80 mg daily or a placebo. Atorvastatin is a statin with a well-es",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

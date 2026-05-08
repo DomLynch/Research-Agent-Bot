@@ -146,7 +146,11 @@ def main(argv: list[str] | None = None) -> int:
 def _topic_packs(root: Path) -> dict[str, dict[str, Any]]:
     packs = {}
     for path in sorted(root.glob("*.toml")):
+        if path.stem.startswith("_"):
+            continue
         data = tomllib.loads(path.read_text(encoding="utf-8"))
+        if str(data.get("class_", "")) == "template":
+            continue
         packs[str(data.get("topic") or path.stem)] = data
     return packs
 

@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1101_2025_10_09_25337698_clinical_validation_of_a_statin_benefit_polygenic_score_usin",
+  "doi": "10.1101/2025.10.09.25337698",
+  "extracted_at": "2026-05-08T16:22:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2025_10_09_25337698_clinical_validation_of_a_statin_benefit_polygenic_score_usin-p-1740",
+      "claim_type": "p_value",
+      "raw_text": "P =.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1740,
+      "sentence": "Results Across all cohorts, statin use was more strongly associated with reduced risk of major adverse cardiovascular events among participants with no myocardial infarction at index in the highest versus lowest polygenic risk score group for the PRS2022 (interaction beta 0.19, standard error 0.07, interaction P =2.3E-3) and metaGRS (interaction beta 0.14, standard error 0.07, interaction P =.02) scores.",
+      "context_window": "RS (interaction beta 0.14, standard error 0.07, interaction P =.02) scores. However, the association was not statistically sig",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_09_25337698_clinical_validation_of_a_statin_benefit_polygenic_score_usin-p-1872",
+      "claim_type": "p_value",
+      "raw_text": "P =.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1872,
+      "sentence": "However, the association was not statistically significant (interaction beta 0.09, standard error 0.07, interaction P =.08) for the 164SNP risk score.",
+      "context_window": "nt (interaction beta 0.09, standard error 0.07, interaction P =.08) for the 164SNP risk score. Conclusions We demonstrated tha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

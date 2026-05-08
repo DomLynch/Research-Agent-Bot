@@ -1,0 +1,128 @@
+# Biomedical topic-pack defaults — template only.
+#
+# This file is loader-safe because some tests and helper tools glob
+# topic_packs/*.toml. Do not run synthesis directly on this sentinel topic.
+# Copy the defaults into a real topic pack, then override topic-specific
+# aliases, scope terms, exclusions, background allow-list, endpoints, and
+# canonical trials.
+
+topic = "__biomedical_default__"
+class_ = "template"
+
+aliases = ["__biomedical_default_do_not_match__"]
+expected_evidence_slots = [
+  "human_rcts",
+  "human_observational",
+  "human_mechanism",
+  "preclinical_lifespan",
+  "meta_analysis",
+  "systematic_review",
+  "safety_tolerability",
+  "dosing_regimen",
+  "cardiometabolic",
+  "muscle_function",
+  "cognition",
+  "frailty",
+  "mortality",
+  "inflammation",
+]
+special_rules = [
+  "Separate direct human endpoints from indirect mechanistic or preclinical evidence.",
+  "Biomarker and surrogate improvements are not equivalent to healthspan or lifespan extension.",
+  "Older-adult, frailty, muscle-function, cognition, cardiometabolic, mortality, safety, and adherence outcomes should be handled separately.",
+  "Disease-treatment evidence is aging-relevant only when outcome-class directness is explicit.",
+]
+forbidden_verbs_for_protocol_role = [
+  "found",
+  "showed",
+  "improved",
+  "reduced",
+  "demonstrated",
+  "established",
+  "proved",
+]
+forbidden_verbs_for_results_role_with_protocol_keywords = [
+  "planned",
+  "will assess",
+  "pending",
+  "ongoing",
+  "awaiting",
+]
+active_arm_synonyms = ["__biomedical_default_do_not_match__"]
+placebo_arm_synonyms = [
+  "placebo",
+  "control",
+  "usual care",
+  "standard care",
+  "vehicle",
+  "no intervention",
+  "waitlist",
+]
+corpus_search_queries = []
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["__biomedical_default_do_not_match__"]
+scope_terms = [
+  "aging",
+  "older adults",
+  "elderly",
+  "geriatric",
+  "longevity",
+  "healthspan",
+  "frailty",
+  "sarcopenia",
+  "muscle function",
+  "physical function",
+  "cognition",
+  "cardiometabolic",
+  "cardiovascular",
+  "mortality",
+  "inflammation",
+  "biomarkers",
+  "safety",
+]
+evidence_types = [
+  "clinical trial",
+  "randomized controlled trial",
+  "cohort study",
+  "observational study",
+  "meta-analysis",
+  "systematic review",
+]
+exclude_terms = [
+  "pediatric only",
+  "pregnancy only",
+  "case report only",
+  "cosmetic device only",
+  "sports performance only",
+]
+date_from = 2000
+languages = ["English"]
+
+[retrieval.background]
+allow = [
+  "mechanism",
+  "dose rationale",
+  "field history",
+  "preclinical lifespan signal",
+  "mitochondrial function",
+  "autophagy mechanism",
+  "inflammation biology",
+  "safety history",
+]
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+frailty = "lower_is_better"
+inflammation = "lower_is_better"
+cardiometabolic_risk = "lower_is_better"
+cardiovascular_events = "lower_is_better"
+adverse_events = "lower_is_better"
+muscle_function = "higher_is_better"
+physical_function = "higher_is_better"
+cognition = "higher_is_better"
+lean_mass = "higher_is_better"
+adherence = "higher_is_better"

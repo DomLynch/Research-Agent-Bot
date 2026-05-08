@@ -297,8 +297,8 @@ def _body_citation_from_metadata(meta: dict) -> str | None:
     first_author = (authors[0] or "").strip()
     if not first_author:
         return _title_citation_from_metadata(meta, year_str)
-    surname = first_author.split()[-1]
-    if not surname:
+    surname = re.sub(r"[^A-Za-z-]", "", first_author.split()[-1])
+    if not surname or surname.lower() in _GENERIC_AUTHOR_TOKENS:
         return _title_citation_from_metadata(meta, year_str)
     return f"{surname} {year_str}"
 
@@ -306,6 +306,11 @@ def _body_citation_from_metadata(meta: dict) -> str | None:
 _TITLE_CITATION_SKIP: frozenset[str] = frozenset({
     "a", "an", "the", "study", "effect", "effects", "role",
     "association", "associations", "comparison", "comparative",
+})
+
+_GENERIC_AUTHOR_TOKENS: frozenset[str] = frozenset({
+    "trial", "study", "group", "committee", "collaborators",
+    "collaboration", "investigators", "officers", "coordinators",
 })
 
 
@@ -317,6 +322,8 @@ def _title_citation_from_metadata(meta: dict, year_str: str) -> str | None:
     internal handles into public prose.
     """
     title = str(meta.get("title") or "").strip()
+    for acronym in re.findall(r"\(([A-Z][A-Z0-9-]{2,})\)", title):
+        return f"{acronym.split('-', 1)[0]} {year_str}"
     for token in re.findall(r"[A-Za-z][A-Za-z\-]{2,}", title):
         cleaned = token.strip("-")
         if cleaned.lower() in _TITLE_CITATION_SKIP:

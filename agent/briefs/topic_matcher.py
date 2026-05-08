@@ -15,6 +15,7 @@ def load_brief_topic_packs(topic_packs_dir: str | Path) -> tuple[TopicPack, ...]
     root = Path(topic_packs_dir)
     return tuple(
         load_topic_pack(path) for path in sorted(root.glob("*.toml"))
+        if not path.stem.startswith("_")
     )
 
 

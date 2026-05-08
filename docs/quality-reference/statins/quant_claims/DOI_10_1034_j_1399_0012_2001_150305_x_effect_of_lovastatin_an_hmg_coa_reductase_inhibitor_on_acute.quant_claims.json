@@ -1,0 +1,102 @@
+{
+  "paper_id": "DOI_10_1034_j_1399_0012_2001_150305_x_effect_of_lovastatin_an_hmg_coa_reductase_inhibitor_on_acute",
+  "doi": "10.1034/j.1399-0012.2001.150305.x",
+  "extracted_at": "2026-05-08T16:22:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1034_j_1399_0012_2001_150305_x_effect_of_lovastatin_an_hmg_coa_reductase_inhibitor_on_acute-u-626",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg/d",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 626,
+      "sentence": "Sixty\u2010five consecutive, one\u2010haplotype\u2010matched, living related first renal transplant recipients were randomized to receive either lovastatin 20 mg/d or placebo for 3 months, in addition to cyclosporine, azathioprine, and steroids.",
+      "context_window": "ant recipients were randomized to receive either lovastatin 20 mg/d or placebo for 3 months, in addition to cyclosporine, azath",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1034_j_1399_0012_2001_150305_x_effect_of_lovastatin_an_hmg_coa_reductase_inhibitor_on_acute-u-649",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 649,
+      "sentence": "Sixty\u2010five consecutive, one\u2010haplotype\u2010matched, living related first renal transplant recipients were randomized to receive either lovastatin 20 mg/d or placebo for 3 months, in addition to cyclosporine, azathioprine, and steroids.",
+      "context_window": "domized to receive either lovastatin 20 mg/d or placebo for 3 months, in addition to cyclosporine, azathioprine, and steroids. L",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1034_j_1399_0012_2001_150305_x_effect_of_lovastatin_an_hmg_coa_reductase_inhibitor_on_acute-u-790",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 790,
+      "sentence": "Lipid levels, AR episodes, and liver and muscle enzymes were followed for 3 months post\u2010transplant.",
+      "context_window": "AR episodes, and liver and muscle enzymes were followed for 3 months post\u2010transplant. At the end of the study period, lovastatin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1034_j_1399_0012_2001_150305_x_effect_of_lovastatin_an_hmg_coa_reductase_inhibitor_on_acute-pct-946",
+      "claim_type": "percentage",
+      "raw_text": "15.15%",
+      "numeric_values": [
+        15.15
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 946,
+      "sentence": "However, there was no effect on AR episodes (15.15% in the treatment group vs.",
+      "context_window": "lipid levels. However, there was no effect on AR episodes (15.15% in the treatment group vs. 18.75% in the placebo group).</j",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1034_j_1399_0012_2001_150305_x_effect_of_lovastatin_an_hmg_coa_reductase_inhibitor_on_acute-pct-980",
+      "claim_type": "percentage",
+      "raw_text": "18.75%",
+      "numeric_values": [
+        18.75
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 980,
+      "sentence": "18.75% in the placebo group).</jats:p>",
+      "context_window": "no effect on AR episodes (15.15% in the treatment group vs. 18.75% in the placebo group).</jats:p>",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

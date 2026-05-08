@@ -1,0 +1,427 @@
+{
+  "paper_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi",
+  "doi": "10.1001/jama.297.12.1344",
+  "extracted_at": "2026-05-08T16:22:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 11,
+    "p_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-u-371",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 371,
+      "sentence": "OBJECTIVE: To assess whether statin therapy could slow progression and/or cause regression of carotid intima-media thickness (CIMT) over 2 years.",
+      "context_window": "se regression of carotid intima-media thickness (CIMT) over 2 years. DESIGN, SETTING, AND PARTICIPANTS: Randomized, double-blin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-u-595",
+      "claim_type": "unit_value",
+      "raw_text": "57 years",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 595,
+      "sentence": "DESIGN, SETTING, AND PARTICIPANTS: Randomized, double-blind, placebo-controlled study (Measuring Effects on Intima-Media Thickness: an Evaluation of Rosuvastatin [METEOR]) of 984 individuals, with either age (mean, 57 years) as the only coronary heart disease risk factor or a 10-year FRS of less than 10%, modest CIMT thickening (1.2-<3.5 mm), and elevated LDL cholesterol (mean, 154 mg/dL); conducted at 61 primary care centers in the United States and Europe between August 2002 and May 2006.",
+      "context_window": "statin [METEOR]) of 984 individuals, with either age (mean, 57 years) as the only coronary heart disease risk factor or a 10-yea",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-pct-682",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 682,
+      "sentence": "DESIGN, SETTING, AND PARTICIPANTS: Randomized, double-blind, placebo-controlled study (Measuring Effects on Intima-Media Thickness: an Evaluation of Rosuvastatin [METEOR]) of 984 individuals, with either age (mean, 57 years) as the only coronary heart disease risk factor or a 10-year FRS of less than 10%, modest CIMT thickening (1.2-<3.5 mm), and elevated LDL cholesterol (mean, 154 mg/dL); conducted at 61 primary care centers in the United States and Europe between August 2002 and May 2006.",
+      "context_window": "ary heart disease risk factor or a 10-year FRS of less than 10%, modest CIMT thickening (1.2-<3.5 mm), and elevated LDL cho",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-u-716",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 mm",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 716,
+      "sentence": "DESIGN, SETTING, AND PARTICIPANTS: Randomized, double-blind, placebo-controlled study (Measuring Effects on Intima-Media Thickness: an Evaluation of Rosuvastatin [METEOR]) of 984 individuals, with either age (mean, 57 years) as the only coronary heart disease risk factor or a 10-year FRS of less than 10%, modest CIMT thickening (1.2-<3.5 mm), and elevated LDL cholesterol (mean, 154 mg/dL); conducted at 61 primary care centers in the United States and Europe between August 2002 and May 2006.",
+      "context_window": "10-year FRS of less than 10%, modest CIMT thickening (1.2-<3.5 mm), and elevated LDL cholesterol (mean, 154 mg/dL); conducted",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-u-761",
+      "claim_type": "unit_value",
+      "raw_text": "154 mg/dL",
+      "numeric_values": [
+        154.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 761,
+      "sentence": "DESIGN, SETTING, AND PARTICIPANTS: Randomized, double-blind, placebo-controlled study (Measuring Effects on Intima-Media Thickness: an Evaluation of Rosuvastatin [METEOR]) of 984 individuals, with either age (mean, 57 years) as the only coronary heart disease risk factor or a 10-year FRS of less than 10%, modest CIMT thickening (1.2-<3.5 mm), and elevated LDL cholesterol (mean, 154 mg/dL); conducted at 61 primary care centers in the United States and Europe between August 2002 and May 2006.",
+      "context_window": "ickening (1.2-<3.5 mm), and elevated LDL cholesterol (mean, 154 mg/dL); conducted at 61 primary care centers in the United States",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-pct-1455",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1455,
+      "sentence": "RESULTS: Among participants in the rosuvastatin group, the mean (SD) baseline LDL cholesterol level of 155 (24.1) mg/dL declined to 78 (27.5) mg/dL, a mean reduction of 49% (P<.001 vs placebo group).",
+      "context_window": "4.1) mg/dL declined to 78 (27.5) mg/dL, a mean reduction of 49% (P<.001 vs placebo group). The change in maximum CIMT for t",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-p-1460",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1460,
+      "sentence": "RESULTS: Among participants in the rosuvastatin group, the mean (SD) baseline LDL cholesterol level of 155 (24.1) mg/dL declined to 78 (27.5) mg/dL, a mean reduction of 49% (P<.001 vs placebo group).",
+      "context_window": "mg/dL declined to 78 (27.5) mg/dL, a mean reduction of 49% (P<.001 vs placebo group). The change in maximum CIMT for the 12 ca",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-pct-1551",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1551,
+      "sentence": "The change in maximum CIMT for the 12 carotid sites was -0.0014 (95% CI, -0.0041 to 0.0014) mm/y for the rosuvastatin group vs 0.0131 (95% CI, 0.0087-0.0174) mm/y for the placebo group (P<.001).",
+      "context_window": "hange in maximum CIMT for the 12 carotid sites was -0.0014 (95% CI, -0.0041 to 0.0014) mm/y for the rosuvastatin group vs 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-pct-1621",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1621,
+      "sentence": "The change in maximum CIMT for the 12 carotid sites was -0.0014 (95% CI, -0.0041 to 0.0014) mm/y for the rosuvastatin group vs 0.0131 (95% CI, 0.0087-0.0174) mm/y for the placebo group (P<.001).",
+      "context_window": ".0041 to 0.0014) mm/y for the rosuvastatin group vs 0.0131 (95% CI, 0.0087-0.0174) mm/y for the placebo group (P<.001). The",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-p-1672",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1672,
+      "sentence": "The change in maximum CIMT for the 12 carotid sites was -0.0014 (95% CI, -0.0041 to 0.0014) mm/y for the rosuvastatin group vs 0.0131 (95% CI, 0.0087-0.0174) mm/y for the placebo group (P<.001).",
+      "context_window": "0.0131 (95% CI, 0.0087-0.0174) mm/y for the placebo group (P<.001). The change in maximum CIMT for the rosuvastatin group was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-pct-1748",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1748,
+      "sentence": "The change in maximum CIMT for the rosuvastatin group was -0.0038 (95% CI, -0.0064 to -0.0013) mm/y for the common carotid artery sites (P<.001), -0.0040 (95% CI, -0.0090 to 0.0010) mm/y for the carotid bulb sites (P<.001), and 0.0039 (95% CI, -0.0009 to 0.0088) mm/y for the internal carotid artery sites (P = .02).",
+      "context_window": "nge in maximum CIMT for the rosuvastatin group was -0.0038 (95% CI, -0.0064 to -0.0013) mm/y for the common carotid artery",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-p-1818",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1818,
+      "sentence": "The change in maximum CIMT for the rosuvastatin group was -0.0038 (95% CI, -0.0064 to -0.0013) mm/y for the common carotid artery sites (P<.001), -0.0040 (95% CI, -0.0090 to 0.0010) mm/y for the carotid bulb sites (P<.001), and 0.0039 (95% CI, -0.0009 to 0.0088) mm/y for the internal carotid artery sites (P = .02).",
+      "context_window": ".0064 to -0.0013) mm/y for the common carotid artery sites (P<.001), -0.0040 (95% CI, -0.0090 to 0.0010) mm/y for the carotid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-pct-1836",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1836,
+      "sentence": "The change in maximum CIMT for the rosuvastatin group was -0.0038 (95% CI, -0.0064 to -0.0013) mm/y for the common carotid artery sites (P<.001), -0.0040 (95% CI, -0.0090 to 0.0010) mm/y for the carotid bulb sites (P<.001), and 0.0039 (95% CI, -0.0009 to 0.0088) mm/y for the internal carotid artery sites (P = .02).",
+      "context_window": "mm/y for the common carotid artery sites (P<.001), -0.0040 (95% CI, -0.0090 to 0.0010) mm/y for the carotid bulb sites (P<.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-p-1896",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1896,
+      "sentence": "The change in maximum CIMT for the rosuvastatin group was -0.0038 (95% CI, -0.0064 to -0.0013) mm/y for the common carotid artery sites (P<.001), -0.0040 (95% CI, -0.0090 to 0.0010) mm/y for the carotid bulb sites (P<.001), and 0.0039 (95% CI, -0.0009 to 0.0088) mm/y for the internal carotid artery sites (P = .02).",
+      "context_window": "95% CI, -0.0090 to 0.0010) mm/y for the carotid bulb sites (P<.001), and 0.0039 (95% CI, -0.0009 to 0.0088) mm/y for the inter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-pct-1917",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1917,
+      "sentence": "The change in maximum CIMT for the rosuvastatin group was -0.0038 (95% CI, -0.0064 to -0.0013) mm/y for the common carotid artery sites (P<.001), -0.0040 (95% CI, -0.0090 to 0.0010) mm/y for the carotid bulb sites (P<.001), and 0.0039 (95% CI, -0.0009 to 0.0088) mm/y for the internal carotid artery sites (P = .02).",
+      "context_window": "0010) mm/y for the carotid bulb sites (P<.001), and 0.0039 (95% CI, -0.0009 to 0.0088) mm/y for the internal carotid artery",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-p-1988",
+      "claim_type": "p_value",
+      "raw_text": "P = .02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1988,
+      "sentence": "The change in maximum CIMT for the rosuvastatin group was -0.0038 (95% CI, -0.0064 to -0.0013) mm/y for the common carotid artery sites (P<.001), -0.0040 (95% CI, -0.0090 to 0.0010) mm/y for the carotid bulb sites (P<.001), and 0.0039 (95% CI, -0.0009 to 0.0088) mm/y for the internal carotid artery sites (P = .02).",
+      "context_window": "0009 to 0.0088) mm/y for the internal carotid artery sites (P = .02). The change in mean CIMT for the rosuvastatin group for th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-pct-2097",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2097,
+      "sentence": "The change in mean CIMT for the rosuvastatin group for the common carotid artery sites was 0.0004 (95% CI, -0.0011 to 0.0019) mm/y (P<.001).",
+      "context_window": "tatin group for the common carotid artery sites was 0.0004 (95% CI, -0.0011 to 0.0019) mm/y (P<.001). All P values are vs p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-p-2130",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2130,
+      "sentence": "The change in mean CIMT for the rosuvastatin group for the common carotid artery sites was 0.0004 (95% CI, -0.0011 to 0.0019) mm/y (P<.001).",
+      "context_window": "d artery sites was 0.0004 (95% CI, -0.0011 to 0.0019) mm/y (P<.001). All P values are vs placebo group. Overall, rosuvastatin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-pct-2286",
+      "claim_type": "percentage",
+      "raw_text": "0.86%",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2286,
+      "sentence": "Overall, rosuvastatin was well tolerated with infrequent serious adverse cardiovascular events (6 participants [0.86%] had 8 events [1.1%] over 2 years).",
+      "context_window": "uent serious adverse cardiovascular events (6 participants [0.86%] had 8 events [1.1%] over 2 years). CONCLUSIONS: In middle-",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-pct-2307",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2307,
+      "sentence": "Overall, rosuvastatin was well tolerated with infrequent serious adverse cardiovascular events (6 participants [0.86%] had 8 events [1.1%] over 2 years).",
+      "context_window": "cardiovascular events (6 participants [0.86%] had 8 events [1.1%] over 2 years). CONCLUSIONS: In middle-aged adults with an",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-u-2318",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 2318,
+      "sentence": "Overall, rosuvastatin was well tolerated with infrequent serious adverse cardiovascular events (6 participants [0.86%] had 8 events [1.1%] over 2 years).",
+      "context_window": "lar events (6 participants [0.86%] had 8 events [1.1%] over 2 years). CONCLUSIONS: In middle-aged adults with an FRS of less th",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-pct-2388",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2388,
+      "sentence": "CONCLUSIONS: In middle-aged adults with an FRS of less than 10% and evidence of subclinical atherosclerosis, rosuvastatin resulted in statistically significant reductions in the rate of progression of maximum CIMT over 2 years vs placebo.",
+      "context_window": "CONCLUSIONS: In middle-aged adults with an FRS of less than 10% and evidence of subclinical atherosclerosis, rosuvastatin r",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_297_12_1344_effect_of_rosuvastatin_on_progression_of_carotid_intima_medi-u-2547",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 2547,
+      "sentence": "CONCLUSIONS: In middle-aged adults with an FRS of less than 10% and evidence of subclinical atherosclerosis, rosuvastatin resulted in statistically significant reductions in the rate of progression of maximum CIMT over 2 years vs placebo.",
+      "context_window": "reductions in the rate of progression of maximum CIMT over 2 years vs placebo. Rosuvastatin did not induce disease regression.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1346 @@
+{
+  "paper_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno",
+  "doi": "10.5114/amsad/178441",
+  "extracted_at": "2026-05-08T16:22:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 41,
+    "sample_size": 6,
+    "p_value": 19,
+    "percentage": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-369",
+      "claim_type": "unit_value",
+      "raw_text": "160 mg",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 369,
+      "sentence": "We previously randomized patients with mixed hyperlipidemia (low-density lipoprotein [LDL-C] > 160 mg/dl and triglycerides > 200 mg/dl) to rosuvastatin monotherapy 40 mg/day (R group, n = 30) or rosuvastatin 10 mg/day combined with fenofibrate 200 mg/day (RF group, n = 30) or omega-3 fatty acids 2 g/day (R\u03a9 group, n = 30).",
+      "context_window": "ith mixed hyperlipidemia (low-density lipoprotein [LDL-C] > 160 mg/dl and triglycerides > 200 mg/dl) to rosuvastatin monothera",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-399",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 399,
+      "sentence": "We previously randomized patients with mixed hyperlipidemia (low-density lipoprotein [LDL-C] > 160 mg/dl and triglycerides > 200 mg/dl) to rosuvastatin monotherapy 40 mg/day (R group, n = 30) or rosuvastatin 10 mg/day combined with fenofibrate 200 mg/day (RF group, n = 30) or omega-3 fatty acids 2 g/day (R\u03a9 group, n = 30).",
+      "context_window": "density lipoprotein [LDL-C] > 160 mg/dl and triglycerides > 200 mg/dl) to rosuvastatin monotherapy 40 mg/day (R group, n = 30)",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-438",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 438,
+      "sentence": "We previously randomized patients with mixed hyperlipidemia (low-density lipoprotein [LDL-C] > 160 mg/dl and triglycerides > 200 mg/dl) to rosuvastatin monotherapy 40 mg/day (R group, n = 30) or rosuvastatin 10 mg/day combined with fenofibrate 200 mg/day (RF group, n = 30) or omega-3 fatty acids 2 g/day (R\u03a9 group, n = 30).",
+      "context_window": "and triglycerides > 200 mg/dl) to rosuvastatin monotherapy 40 mg/day (R group, n = 30) or rosuvastatin 10 mg/day combined with f",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-n-458",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 458,
+      "sentence": "We previously randomized patients with mixed hyperlipidemia (low-density lipoprotein [LDL-C] > 160 mg/dl and triglycerides > 200 mg/dl) to rosuvastatin monotherapy 40 mg/day (R group, n = 30) or rosuvastatin 10 mg/day combined with fenofibrate 200 mg/day (RF group, n = 30) or omega-3 fatty acids 2 g/day (R\u03a9 group, n = 30).",
+      "context_window": "200 mg/dl) to rosuvastatin monotherapy 40 mg/day (R group, n = 30) or rosuvastatin 10 mg/day combined with fenofibrate 200 mg",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-482",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg/day",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 482,
+      "sentence": "We previously randomized patients with mixed hyperlipidemia (low-density lipoprotein [LDL-C] > 160 mg/dl and triglycerides > 200 mg/dl) to rosuvastatin monotherapy 40 mg/day (R group, n = 30) or rosuvastatin 10 mg/day combined with fenofibrate 200 mg/day (RF group, n = 30) or omega-3 fatty acids 2 g/day (R\u03a9 group, n = 30).",
+      "context_window": "tin monotherapy 40 mg/day (R group, n = 30) or rosuvastatin 10 mg/day combined with fenofibrate 200 mg/day (RF group, n = 30) or",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-518",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg/day",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 518,
+      "sentence": "We previously randomized patients with mixed hyperlipidemia (low-density lipoprotein [LDL-C] > 160 mg/dl and triglycerides > 200 mg/dl) to rosuvastatin monotherapy 40 mg/day (R group, n = 30) or rosuvastatin 10 mg/day combined with fenofibrate 200 mg/day (RF group, n = 30) or omega-3 fatty acids 2 g/day (R\u03a9 group, n = 30).",
+      "context_window": "n = 30) or rosuvastatin 10 mg/day combined with fenofibrate 200 mg/day (RF group, n = 30) or omega-3 fatty acids 2 g/day (R\u03a9 group",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-n-540",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 540,
+      "sentence": "We previously randomized patients with mixed hyperlipidemia (low-density lipoprotein [LDL-C] > 160 mg/dl and triglycerides > 200 mg/dl) to rosuvastatin monotherapy 40 mg/day (R group, n = 30) or rosuvastatin 10 mg/day combined with fenofibrate 200 mg/day (RF group, n = 30) or omega-3 fatty acids 2 g/day (R\u03a9 group, n = 30).",
+      "context_window": "n 10 mg/day combined with fenofibrate 200 mg/day (RF group, n = 30) or omega-3 fatty acids 2 g/day (R\u03a9 group, n = 30). In the",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-n-590",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 590,
+      "sentence": "We previously randomized patients with mixed hyperlipidemia (low-density lipoprotein [LDL-C] > 160 mg/dl and triglycerides > 200 mg/dl) to rosuvastatin monotherapy 40 mg/day (R group, n = 30) or rosuvastatin 10 mg/day combined with fenofibrate 200 mg/day (RF group, n = 30) or omega-3 fatty acids 2 g/day (R\u03a9 group, n = 30).",
+      "context_window": "RF group, n = 30) or omega-3 fatty acids 2 g/day (R\u03a9 group, n = 30). In the present post-hoc analysis, we included only the pa",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-814",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 814,
+      "sentence": "Lipid profile and Lp(a) were measured at baseline and after 3 months of treatment.",
+      "context_window": "Lipid profile and Lp(a) were measured at baseline and after 3 months of treatment. Significant reductions in total cholesterol,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-1056",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1056,
+      "sentence": "A significant increase in Lp(a) levels was noted in the R ( p = 0.017) and RF ( p = 0.029) groups, while no significant difference was seen in the R\u03a9 group ( p = NS).",
+      "context_window": "A significant increase in Lp(a) levels was noted in the R ( p = 0.017) and RF ( p = 0.029) groups, while no significant differenc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-1076",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1076,
+      "sentence": "A significant increase in Lp(a) levels was noted in the R ( p = 0.017) and RF ( p = 0.029) groups, while no significant difference was seen in the R\u03a9 group ( p = NS).",
+      "context_window": "se in Lp(a) levels was noted in the R ( p = 0.017) and RF ( p = 0.029) groups, while no significant difference was seen in the R\u03a9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-1332",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.049",
+      "numeric_values": [
+        0.049
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1332,
+      "sentence": "In the R group, a strong negative correlation between the changes in Lp(a) and LDL-C ( r = -0.500, p = 0.049) was observed, while a significant negative correlation between the changes in Lp(a) and triglycerides ( r = -0.531, p = 0.034) was noted in the RF group.",
+      "context_window": "lation between the changes in Lp(a) and LDL-C ( r = -0.500, p = 0.049) was observed, while a significant negative correlation bet",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-1459",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1459,
+      "sentence": "In the R group, a strong negative correlation between the changes in Lp(a) and LDL-C ( r = -0.500, p = 0.049) was observed, while a significant negative correlation between the changes in Lp(a) and triglycerides ( r = -0.531, p = 0.034) was noted in the RF group.",
+      "context_window": "etween the changes in Lp(a) and triglycerides ( r = -0.531, p = 0.034) was noted in the RF group. Rosuvastatin and/or fenofibrat",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-377",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 377,
+      "sentence": "The threshold for elevated Lp(a) levels is set at > 30 mg/dl (> 75 nmol/l) [ 10 ].",
+      "context_window": "- 11 ]. The threshold for elevated Lp(a) levels is set at > 30 mg/dl (> 75 nmol/l) [ 10 ]. Of note, almost 20% of the general",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-pct-424",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 424,
+      "sentence": "Of note, almost 20% of the general population has Lp(a) > 50 mg/dl (> 125 nmol/l) [ 10 ].",
+      "context_window": "is set at > 30 mg/dl (> 75 nmol/l) [ 10 ]. Of note, almost 20% of the general population has Lp(a) > 50 mg/dl (> 125 nmol/",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-466",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 466,
+      "sentence": "Of note, almost 20% of the general population has Lp(a) > 50 mg/dl (> 125 nmol/l) [ 10 ].",
+      "context_window": ". Of note, almost 20% of the general population has Lp(a) > 50 mg/dl (> 125 nmol/l) [ 10 ]. According to the 2018 AHA/ACC/AAC",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-648",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 648,
+      "sentence": "According to the 2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol [ 12 ], Lp(a) levels \u2265 50 mg/dl or \u2265 125 nmol/l may be considered a risk-enhancing factor; thus Lp(a) assessment can help to identify individuals at high ASCVD risk.",
+      "context_window": "the Management of Blood Cholesterol [ 12 ], Lp(a) levels \u2265 50 mg/dl or \u2265 125 nmol/l may be considered a risk-enhancing facto",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1346",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 1346,
+      "sentence": "In an open-label study, we randomized 90 patients with mixed hyperlipidemia (LDL-C > 160 and triglycerides > 200 mg/dl) to either rosuvastatin 40 mg/day (R group) or rosuvastatin 10 mg/day with micronized fenofibrate 200 mg/day (RF group) or omega-3 fatty acids 2 g/day (R\u03a9 group) [ 22 ].",
+      "context_window": "with mixed hyperlipidemia (LDL-C > 160 and triglycerides > 200 mg/dl) to either rosuvastatin 40 mg/day (R group) or rosuvasta",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1380",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 1380,
+      "sentence": "In an open-label study, we randomized 90 patients with mixed hyperlipidemia (LDL-C > 160 and triglycerides > 200 mg/dl) to either rosuvastatin 40 mg/day (R group) or rosuvastatin 10 mg/day with micronized fenofibrate 200 mg/day (RF group) or omega-3 fatty acids 2 g/day (R\u03a9 group) [ 22 ].",
+      "context_window": "> 160 and triglycerides > 200 mg/dl) to either rosuvastatin 40 mg/day (R group) or rosuvastatin 10 mg/day with micronized fenofib",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1416",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg/day",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 1416,
+      "sentence": "In an open-label study, we randomized 90 patients with mixed hyperlipidemia (LDL-C > 160 and triglycerides > 200 mg/dl) to either rosuvastatin 40 mg/day (R group) or rosuvastatin 10 mg/day with micronized fenofibrate 200 mg/day (RF group) or omega-3 fatty acids 2 g/day (R\u03a9 group) [ 22 ].",
+      "context_window": "to either rosuvastatin 40 mg/day (R group) or rosuvastatin 10 mg/day with micronized fenofibrate 200 mg/day (RF group) or omega-",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1454",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg/day",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 1454,
+      "sentence": "In an open-label study, we randomized 90 patients with mixed hyperlipidemia (LDL-C > 160 and triglycerides > 200 mg/dl) to either rosuvastatin 40 mg/day (R group) or rosuvastatin 10 mg/day with micronized fenofibrate 200 mg/day (RF group) or omega-3 fatty acids 2 g/day (R\u03a9 group) [ 22 ].",
+      "context_window": "roup) or rosuvastatin 10 mg/day with micronized fenofibrate 200 mg/day (RF group) or omega-3 fatty acids 2 g/day (R\u03a9 group) [ 22 ]",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-47",
+      "claim_type": "unit_value",
+      "raw_text": "160 mg",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 47,
+      "sentence": "As previously described, patients with LDL-C > 160 mg/dl (4.2 mmol/l) and triglycerides > 200 mg/dl (2.3 mmol/l) on two consecutive visits, attending the Outpatient Lipid Clinic of the University Hospital of Ioannina, Greece, were recruited [ 22 - 24 ].",
+      "context_window": "As previously described, patients with LDL-C > 160 mg/dl (4.2 mmol/l) and triglycerides > 200 mg/dl (2.3 mmol/l)",
+      "claim_role": "population",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-58",
+      "claim_type": "unit_value",
+      "raw_text": "4.2 mmol",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 58,
+      "sentence": "As previously described, patients with LDL-C > 160 mg/dl (4.2 mmol/l) and triglycerides > 200 mg/dl (2.3 mmol/l) on two consecutive visits, attending the Outpatient Lipid Clinic of the University Hospital of Ioannina, Greece, were recruited [ 22 - 24 ].",
+      "context_window": "As previously described, patients with LDL-C > 160 mg/dl (4.2 mmol/l) and triglycerides > 200 mg/dl (2.3 mmol/l) on two consec",
+      "claim_role": "population",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-90",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 90,
+      "sentence": "As previously described, patients with LDL-C > 160 mg/dl (4.2 mmol/l) and triglycerides > 200 mg/dl (2.3 mmol/l) on two consecutive visits, attending the Outpatient Lipid Clinic of the University Hospital of Ioannina, Greece, were recruited [ 22 - 24 ].",
+      "context_window": "nts with LDL-C > 160 mg/dl (4.2 mmol/l) and triglycerides > 200 mg/dl (2.3 mmol/l) on two consecutive visits, attending the Ou",
+      "claim_role": "population",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-101",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 mmol",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 101,
+      "sentence": "As previously described, patients with LDL-C > 160 mg/dl (4.2 mmol/l) and triglycerides > 200 mg/dl (2.3 mmol/l) on two consecutive visits, attending the Outpatient Lipid Clinic of the University Hospital of Ioannina, Greece, were recruited [ 22 - 24 ].",
+      "context_window": "L-C > 160 mg/dl (4.2 mmol/l) and triglycerides > 200 mg/dl (2.3 mmol/l) on two consecutive visits, attending the Outpatient Lipi",
+      "claim_role": "population",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-329",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 329,
+      "sentence": "Exclusion criteria were: (i) established ASCVD, (ii) triglyceride levels > 500 mg/dl (5.6 mmol/l), (iii) renal disease (defined as serum creatinine levels > 1.6 mg/dl [141 \u00b5mol/l]), (iv) diabetes mellitus (fasting blood glucose > 126 mg/dl [7.0 mmol/l]), (v) hypothyroidism (thyroid stimulating hormone > 5 IU/ml), (vi) liver disease (alanine and/or aspartate aminotransferase [ALT/AST] activities > 3-fold upper limit of normal (ULN) on more than two consecutive measurements), (vii) any medical condition that might preclude successful completion of the study protocol, (viii) active hypolipidemic treatment during the last 4 weeks before study entry and (ix) hypertensive patients with any change in antihypertensive medications during the study period.",
+      "context_window": "ria were: (i) established ASCVD, (ii) triglyceride levels > 500 mg/dl (5.6 mmol/l), (iii) renal disease (defined as serum crea",
+      "claim_role": "duration",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-340",
+      "claim_type": "unit_value",
+      "raw_text": "5.6 mmol",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 340,
+      "sentence": "Exclusion criteria were: (i) established ASCVD, (ii) triglyceride levels > 500 mg/dl (5.6 mmol/l), (iii) renal disease (defined as serum creatinine levels > 1.6 mg/dl [141 \u00b5mol/l]), (iv) diabetes mellitus (fasting blood glucose > 126 mg/dl [7.0 mmol/l]), (v) hypothyroidism (thyroid stimulating hormone > 5 IU/ml), (vi) liver disease (alanine and/or aspartate aminotransferase [ALT/AST] activities > 3-fold upper limit of normal (ULN) on more than two consecutive measurements), (vii) any medical condition that might preclude successful completion of the study protocol, (viii) active hypolipidemic treatment during the last 4 weeks before study entry and (ix) hypertensive patients with any change in antihypertensive medications during the study period.",
+      "context_window": "i) established ASCVD, (ii) triglyceride levels > 500 mg/dl (5.6 mmol/l), (iii) renal disease (defined as serum creatinine levels",
+      "claim_role": "duration",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-411",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 mg",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 411,
+      "sentence": "Exclusion criteria were: (i) established ASCVD, (ii) triglyceride levels > 500 mg/dl (5.6 mmol/l), (iii) renal disease (defined as serum creatinine levels > 1.6 mg/dl [141 \u00b5mol/l]), (iv) diabetes mellitus (fasting blood glucose > 126 mg/dl [7.0 mmol/l]), (v) hypothyroidism (thyroid stimulating hormone > 5 IU/ml), (vi) liver disease (alanine and/or aspartate aminotransferase [ALT/AST] activities > 3-fold upper limit of normal (ULN) on more than two consecutive measurements), (vii) any medical condition that might preclude successful completion of the study protocol, (viii) active hypolipidemic treatment during the last 4 weeks before study entry and (ix) hypertensive patients with any change in antihypertensive medications during the study period.",
+      "context_window": ", (iii) renal disease (defined as serum creatinine levels > 1.6 mg/dl [141 \u00b5mol/l]), (iv) diabetes mellitus (fasting blood glu",
+      "claim_role": "duration",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-422",
+      "claim_type": "unit_value",
+      "raw_text": "141 \u00b5mol",
+      "numeric_values": [
+        141.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "methods",
+      "source_offset": 422,
+      "sentence": "Exclusion criteria were: (i) established ASCVD, (ii) triglyceride levels > 500 mg/dl (5.6 mmol/l), (iii) renal disease (defined as serum creatinine levels > 1.6 mg/dl [141 \u00b5mol/l]), (iv) diabetes mellitus (fasting blood glucose > 126 mg/dl [7.0 mmol/l]), (v) hypothyroidism (thyroid stimulating hormone > 5 IU/ml), (vi) liver disease (alanine and/or aspartate aminotransferase [ALT/AST] activities > 3-fold upper limit of normal (ULN) on more than two consecutive measurements), (vii) any medical condition that might preclude successful completion of the study protocol, (viii) active hypolipidemic treatment during the last 4 weeks before study entry and (ix) hypertensive patients with any change in antihypertensive medications during the study period.",
+      "context_window": "al disease (defined as serum creatinine levels > 1.6 mg/dl [141 \u00b5mol/l]), (iv) diabetes mellitus (fasting blood glucose > 126 mg",
+      "claim_role": "duration",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-484",
+      "claim_type": "unit_value",
+      "raw_text": "126 mg",
+      "numeric_values": [
+        126.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 484,
+      "sentence": "Exclusion criteria were: (i) established ASCVD, (ii) triglyceride levels > 500 mg/dl (5.6 mmol/l), (iii) renal disease (defined as serum creatinine levels > 1.6 mg/dl [141 \u00b5mol/l]), (iv) diabetes mellitus (fasting blood glucose > 126 mg/dl [7.0 mmol/l]), (v) hypothyroidism (thyroid stimulating hormone > 5 IU/ml), (vi) liver disease (alanine and/or aspartate aminotransferase [ALT/AST] activities > 3-fold upper limit of normal (ULN) on more than two consecutive measurements), (vii) any medical condition that might preclude successful completion of the study protocol, (viii) active hypolipidemic treatment during the last 4 weeks before study entry and (ix) hypertensive patients with any change in antihypertensive medications during the study period.",
+      "context_window": "1 \u00b5mol/l]), (iv) diabetes mellitus (fasting blood glucose > 126 mg/dl [7.0 mmol/l]), (v) hypothyroidism (thyroid stimulating h",
+      "claim_role": "duration",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-495",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 mmol",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 495,
+      "sentence": "Exclusion criteria were: (i) established ASCVD, (ii) triglyceride levels > 500 mg/dl (5.6 mmol/l), (iii) renal disease (defined as serum creatinine levels > 1.6 mg/dl [141 \u00b5mol/l]), (iv) diabetes mellitus (fasting blood glucose > 126 mg/dl [7.0 mmol/l]), (v) hypothyroidism (thyroid stimulating hormone > 5 IU/ml), (vi) liver disease (alanine and/or aspartate aminotransferase [ALT/AST] activities > 3-fold upper limit of normal (ULN) on more than two consecutive measurements), (vii) any medical condition that might preclude successful completion of the study protocol, (viii) active hypolipidemic treatment during the last 4 weeks before study entry and (ix) hypertensive patients with any change in antihypertensive medications during the study period.",
+      "context_window": "(iv) diabetes mellitus (fasting blood glucose > 126 mg/dl [7.0 mmol/l]), (v) hypothyroidism (thyroid stimulating hormone > 5 IU",
+      "claim_role": "duration",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-880",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 880,
+      "sentence": "Exclusion criteria were: (i) established ASCVD, (ii) triglyceride levels > 500 mg/dl (5.6 mmol/l), (iii) renal disease (defined as serum creatinine levels > 1.6 mg/dl [141 \u00b5mol/l]), (iv) diabetes mellitus (fasting blood glucose > 126 mg/dl [7.0 mmol/l]), (v) hypothyroidism (thyroid stimulating hormone > 5 IU/ml), (vi) liver disease (alanine and/or aspartate aminotransferase [ALT/AST] activities > 3-fold upper limit of normal (ULN) on more than two consecutive measurements), (vii) any medical condition that might preclude successful completion of the study protocol, (viii) active hypolipidemic treatment during the last 4 weeks before study entry and (ix) hypertensive patients with any change in antihypertensive medications during the study period.",
+      "context_window": "ocol, (viii) active hypolipidemic treatment during the last 4 weeks before study entry and (ix) hypertensive patients with any",
+      "claim_role": "duration",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1063",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1063,
+      "sentence": "Patients were allocated to open-label rosuvastatin 40 mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin 10 mg plus 2 g of omega-3 fatty acids (each gram of the preparation contained approximately 465 mg of eicosapentaenoic acid [EPA] and 375 mg of docosahexaenoic acid [DHA]) ( n = 30, group R\u03a9) daily.",
+      "context_window": "period. Patients were allocated to open-label rosuvastatin 40 mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-n-1071",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1071,
+      "sentence": "Patients were allocated to open-label rosuvastatin 40 mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin 10 mg plus 2 g of omega-3 fatty acids (each gram of the preparation contained approximately 465 mg of eicosapentaenoic acid [EPA] and 375 mg of docosahexaenoic acid [DHA]) ( n = 30, group R\u03a9) daily.",
+      "context_window": "Patients were allocated to open-label rosuvastatin 40 mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1102",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1102,
+      "sentence": "Patients were allocated to open-label rosuvastatin 40 mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin 10 mg plus 2 g of omega-3 fatty acids (each gram of the preparation contained approximately 465 mg of eicosapentaenoic acid [EPA] and 375 mg of docosahexaenoic acid [DHA]) ( n = 30, group R\u03a9) daily.",
+      "context_window": "n-label rosuvastatin 40 mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1125",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1125,
+      "sentence": "Patients were allocated to open-label rosuvastatin 40 mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin 10 mg plus 2 g of omega-3 fatty acids (each gram of the preparation contained approximately 465 mg of eicosapentaenoic acid [EPA] and 375 mg of docosahexaenoic acid [DHA]) ( n = 30, group R\u03a9) daily.",
+      "context_window": "mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin 10 mg plus 2 g of omega",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-n-1134",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1134,
+      "sentence": "Patients were allocated to open-label rosuvastatin 40 mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin 10 mg plus 2 g of omega-3 fatty acids (each gram of the preparation contained approximately 465 mg of eicosapentaenoic acid [EPA] and 375 mg of docosahexaenoic acid [DHA]) ( n = 30, group R\u03a9) daily.",
+      "context_window": "30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin 10 mg plus 2 g of omega-3 fatty",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1168",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1168,
+      "sentence": "Patients were allocated to open-label rosuvastatin 40 mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin 10 mg plus 2 g of omega-3 fatty acids (each gram of the preparation contained approximately 465 mg of eicosapentaenoic acid [EPA] and 375 mg of docosahexaenoic acid [DHA]) ( n = 30, group R\u03a9) daily.",
+      "context_window": "plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin 10 mg plus 2 g of omega-3 fatty acids (each gram of the preparati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1260",
+      "claim_type": "unit_value",
+      "raw_text": "465 mg",
+      "numeric_values": [
+        465.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1260,
+      "sentence": "Patients were allocated to open-label rosuvastatin 40 mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin 10 mg plus 2 g of omega-3 fatty acids (each gram of the preparation contained approximately 465 mg of eicosapentaenoic acid [EPA] and 375 mg of docosahexaenoic acid [DHA]) ( n = 30, group R\u03a9) daily.",
+      "context_window": "acids (each gram of the preparation contained approximately 465 mg of eicosapentaenoic acid [EPA] and 375 mg of docosahexaenoi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1302",
+      "claim_type": "unit_value",
+      "raw_text": "375 mg",
+      "numeric_values": [
+        375.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1302,
+      "sentence": "Patients were allocated to open-label rosuvastatin 40 mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin 10 mg plus 2 g of omega-3 fatty acids (each gram of the preparation contained approximately 465 mg of eicosapentaenoic acid [EPA] and 375 mg of docosahexaenoic acid [DHA]) ( n = 30, group R\u03a9) daily.",
+      "context_window": "ned approximately 465 mg of eicosapentaenoic acid [EPA] and 375 mg of docosahexaenoic acid [DHA]) ( n = 30, group R\u03a9) daily.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-n-1342",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1342,
+      "sentence": "Patients were allocated to open-label rosuvastatin 40 mg ( n = 30, group R), rosuvastatin 10 mg plus fenofibrate 200 mg ( n = 30, group RF) or rosuvastatin 10 mg plus 2 g of omega-3 fatty acids (each gram of the preparation contained approximately 465 mg of eicosapentaenoic acid [EPA] and 375 mg of docosahexaenoic acid [DHA]) ( n = 30, group R\u03a9) daily.",
+      "context_window": "noic acid [EPA] and 375 mg of docosahexaenoic acid [DHA]) ( n = 30, group R\u03a9) daily. All participants gave their informed con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1581",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1581,
+      "sentence": "Anthropometric variables and serum metabolic parameters were assessed at baseline and after 3 months of treatment.",
+      "context_window": "um metabolic parameters were assessed at baseline and after 3 months of treatment. All laboratory determinations were carried ou",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1762",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1762,
+      "sentence": "LDL-C was calculated using the Friedewald formula (provided that triglycerides were < 400 mg/dl).",
+      "context_window": "the Friedewald formula (provided that triglycerides were < 400 mg/dl). Serum concentrations of total cholesterol (TC) and tri",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-3257",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3257,
+      "sentence": "Significance was defined as p < 0.05.",
+      "context_window": "man\u2019s correlation coefficients. Significance was defined as p < 0.05. Analyses were performed using SPSS 29.0 (IBM SPSS Statisti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-pct-216",
+      "claim_type": "percentage",
+      "raw_text": "53.3%",
+      "numeric_values": [
+        53.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 216,
+      "sentence": "From all patients recruited in this study, we had data on Lp(a) levels for 16/30 in the R group (53.3%), 16/30 in the RF group (53.3%) and 15/30 in the R\u03a9 group (50.00%).",
+      "context_window": "tudy, we had data on Lp(a) levels for 16/30 in the R group (53.3%), 16/30 in the RF group (53.3%) and 15/30 in the R\u03a9 group (",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-pct-247",
+      "claim_type": "percentage",
+      "raw_text": "53.3%",
+      "numeric_values": [
+        53.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 247,
+      "sentence": "From all patients recruited in this study, we had data on Lp(a) levels for 16/30 in the R group (53.3%), 16/30 in the RF group (53.3%) and 15/30 in the R\u03a9 group (50.00%).",
+      "context_window": "ls for 16/30 in the R group (53.3%), 16/30 in the RF group (53.3%) and 15/30 in the R\u03a9 group (50.00%). The demographic and cl",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-pct-281",
+      "claim_type": "percentage",
+      "raw_text": "50.00%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 281,
+      "sentence": "From all patients recruited in this study, we had data on Lp(a) levels for 16/30 in the R group (53.3%), 16/30 in the RF group (53.3%) and 15/30 in the R\u03a9 group (50.00%).",
+      "context_window": "), 16/30 in the RF group (53.3%) and 15/30 in the R\u03a9 group (50.00%). The demographic and clinical characteristics of these pat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-1285",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1285,
+      "sentence": "Regarding LDL-C, these changes were greater in the R compared with the RF and R\u03a9 groups ( p < 0.05 for the comparison).",
+      "context_window": "were greater in the R compared with the RF and R\u03a9 groups ( p < 0.05 for the comparison). No significant difference was noted be",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-1515",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1515,
+      "sentence": "This decrease was significantly greater in the RF compared with the R ( p < 0.001) and the R\u03a9 ( p = 0.031) groups.",
+      "context_window": "e was significantly greater in the RF compared with the R ( p < 0.001) and the R\u03a9 ( p = 0.031) groups. No significant alterations",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-1539",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1539,
+      "sentence": "This decrease was significantly greater in the RF compared with the R ( p < 0.001) and the R\u03a9 ( p = 0.031) groups.",
+      "context_window": "ter in the RF compared with the R ( p < 0.001) and the R\u03a9 ( p = 0.031) groups. No significant alterations were noted in HDL-C and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1881",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1881,
+      "sentence": "R - rosuvastatin 40 mg, RF - rosuvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosuvastatin 10 mg plus omega-3 fatty acids 2 g, TC - total cholesterol, HDL-C - high-density lipoprotein cholesterol, LDL-C - low-density lipoprotein cholesterol, non-HDL-C - non-high-density lipoprotein cholesterol, apo - apolipoprotein; Lp(a) - lipoprotein(a).\n\np < 0.05,\n\np < 0.01,\n\np < 0.001 compared with baseline.\n\np < 0.001 compared with RF and R\u03a9,\n\np < 0.001 compared with R and R\u03a9.",
+      "context_window": "a), which are expressed as median (range). R - rosuvastatin 40 mg, RF - rosuvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosu",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1906",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1906,
+      "sentence": "R - rosuvastatin 40 mg, RF - rosuvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosuvastatin 10 mg plus omega-3 fatty acids 2 g, TC - total cholesterol, HDL-C - high-density lipoprotein cholesterol, LDL-C - low-density lipoprotein cholesterol, non-HDL-C - non-high-density lipoprotein cholesterol, apo - apolipoprotein; Lp(a) - lipoprotein(a).\n\np < 0.05,\n\np < 0.01,\n\np < 0.001 compared with baseline.\n\np < 0.001 compared with RF and R\u03a9,\n\np < 0.001 compared with R and R\u03a9.",
+      "context_window": "s median (range). R - rosuvastatin 40 mg, RF - rosuvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosuvastatin 10 mg plus omega",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1929",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1929,
+      "sentence": "R - rosuvastatin 40 mg, RF - rosuvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosuvastatin 10 mg plus omega-3 fatty acids 2 g, TC - total cholesterol, HDL-C - high-density lipoprotein cholesterol, LDL-C - low-density lipoprotein cholesterol, non-HDL-C - non-high-density lipoprotein cholesterol, apo - apolipoprotein; Lp(a) - lipoprotein(a).\n\np < 0.05,\n\np < 0.01,\n\np < 0.001 compared with baseline.\n\np < 0.001 compared with RF and R\u03a9,\n\np < 0.001 compared with R and R\u03a9.",
+      "context_window": "osuvastatin 40 mg, RF - rosuvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosuvastatin 10 mg plus omega-3 fatty acids 2 g, TC -",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-1955",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1955,
+      "sentence": "R - rosuvastatin 40 mg, RF - rosuvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosuvastatin 10 mg plus omega-3 fatty acids 2 g, TC - total cholesterol, HDL-C - high-density lipoprotein cholesterol, LDL-C - low-density lipoprotein cholesterol, non-HDL-C - non-high-density lipoprotein cholesterol, apo - apolipoprotein; Lp(a) - lipoprotein(a).\n\np < 0.05,\n\np < 0.01,\n\np < 0.001 compared with baseline.\n\np < 0.001 compared with RF and R\u03a9,\n\np < 0.001 compared with R and R\u03a9.",
+      "context_window": "suvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosuvastatin 10 mg plus omega-3 fatty acids 2 g, TC - total cholesterol, HDL-C",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-2207",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2207,
+      "sentence": "R - rosuvastatin 40 mg, RF - rosuvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosuvastatin 10 mg plus omega-3 fatty acids 2 g, TC - total cholesterol, HDL-C - high-density lipoprotein cholesterol, LDL-C - low-density lipoprotein cholesterol, non-HDL-C - non-high-density lipoprotein cholesterol, apo - apolipoprotein; Lp(a) - lipoprotein(a).\n\np < 0.05,\n\np < 0.01,\n\np < 0.001 compared with baseline.\n\np < 0.001 compared with RF and R\u03a9,\n\np < 0.001 compared with R and R\u03a9.",
+      "context_window": "cholesterol, apo - apolipoprotein; Lp(a) - lipoprotein(a). p < 0.05, p < 0.01, p < 0.001 compared with baseline. p < 0.001 c",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-2218",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2218,
+      "sentence": "R - rosuvastatin 40 mg, RF - rosuvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosuvastatin 10 mg plus omega-3 fatty acids 2 g, TC - total cholesterol, HDL-C - high-density lipoprotein cholesterol, LDL-C - low-density lipoprotein cholesterol, non-HDL-C - non-high-density lipoprotein cholesterol, apo - apolipoprotein; Lp(a) - lipoprotein(a).\n\np < 0.05,\n\np < 0.01,\n\np < 0.001 compared with baseline.\n\np < 0.001 compared with RF and R\u03a9,\n\np < 0.001 compared with R and R\u03a9.",
+      "context_window": ", apo - apolipoprotein; Lp(a) - lipoprotein(a). p < 0.05, p < 0.01, p < 0.001 compared with baseline. p < 0.001 compared wit",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-2229",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2229,
+      "sentence": "R - rosuvastatin 40 mg, RF - rosuvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosuvastatin 10 mg plus omega-3 fatty acids 2 g, TC - total cholesterol, HDL-C - high-density lipoprotein cholesterol, LDL-C - low-density lipoprotein cholesterol, non-HDL-C - non-high-density lipoprotein cholesterol, apo - apolipoprotein; Lp(a) - lipoprotein(a).\n\np < 0.05,\n\np < 0.01,\n\np < 0.001 compared with baseline.\n\np < 0.001 compared with RF and R\u03a9,\n\np < 0.001 compared with R and R\u03a9.",
+      "context_window": "lipoprotein; Lp(a) - lipoprotein(a). p < 0.05, p < 0.01, p < 0.001 compared with baseline. p < 0.001 compared with RF and R\u03a9,",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-2264",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2264,
+      "sentence": "R - rosuvastatin 40 mg, RF - rosuvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosuvastatin 10 mg plus omega-3 fatty acids 2 g, TC - total cholesterol, HDL-C - high-density lipoprotein cholesterol, LDL-C - low-density lipoprotein cholesterol, non-HDL-C - non-high-density lipoprotein cholesterol, apo - apolipoprotein; Lp(a) - lipoprotein(a).\n\np < 0.05,\n\np < 0.01,\n\np < 0.001 compared with baseline.\n\np < 0.001 compared with RF and R\u03a9,\n\np < 0.001 compared with R and R\u03a9.",
+      "context_window": ". p < 0.05, p < 0.01, p < 0.001 compared with baseline. p < 0.001 compared with RF and R\u03a9, p < 0.001 compared with R and R\u03a9.",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-2300",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2300,
+      "sentence": "R - rosuvastatin 40 mg, RF - rosuvastatin 10 mg plus fenofibrate 200 mg, R\u03a9 - rosuvastatin 10 mg plus omega-3 fatty acids 2 g, TC - total cholesterol, HDL-C - high-density lipoprotein cholesterol, LDL-C - low-density lipoprotein cholesterol, non-HDL-C - non-high-density lipoprotein cholesterol, apo - apolipoprotein; Lp(a) - lipoprotein(a).\n\np < 0.05,\n\np < 0.01,\n\np < 0.001 compared with baseline.\n\np < 0.001 compared with RF and R\u03a9,\n\np < 0.001 compared with R and R\u03a9.",
+      "context_window": "ompared with baseline. p < 0.001 compared with RF and R\u03a9, p < 0.001 compared with R and R\u03a9. A significant increase in Lp(a) le",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-2391",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2391,
+      "sentence": "A significant increase in Lp(a) levels was noted in R ( p = 0.017) and RF ( p = 0.029) groups compared with baseline levels, while a non-significant difference was seen in the R\u03a9 group ( Figure 1 ).",
+      "context_window": "\u03a9. A significant increase in Lp(a) levels was noted in R ( p = 0.017) and RF ( p = 0.029) groups compared with baseline levels,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-2411",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2411,
+      "sentence": "A significant increase in Lp(a) levels was noted in R ( p = 0.017) and RF ( p = 0.029) groups compared with baseline levels, while a non-significant difference was seen in the R\u03a9 group ( Figure 1 ).",
+      "context_window": "crease in Lp(a) levels was noted in R ( p = 0.017) and RF ( p = 0.029) groups compared with baseline levels, while a non-signific",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-2610",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2610,
+      "sentence": "Effect of hypolipidemic treatment on serum lipoprotein(a) concentrations\n\n*p < 0.05 compared with baseline.",
+      "context_window": "ipidemic treatment on serum lipoprotein(a) concentrations *p < 0.05 compared with baseline. Regarding Lp(a), no significant di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-3101",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.049",
+      "numeric_values": [
+        0.049
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3101,
+      "sentence": "However, after performing a bivariate analysis, a significant negative correlation between Lp(a) increase and LDL-C decrease was observed in the R monotherapy group ( r = -0.500, p = 0.049), while a significant negative correlation between Lp(a) increase and triglycerides decrease was noted in the RF group ( r = -0.531, p = 0.034).",
+      "context_window": "rease was observed in the R monotherapy group ( r = -0.500, p = 0.049), while a significant negative correlation between Lp(a) in",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-3244",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3244,
+      "sentence": "However, after performing a bivariate analysis, a significant negative correlation between Lp(a) increase and LDL-C decrease was observed in the R monotherapy group ( r = -0.500, p = 0.049), while a significant negative correlation between Lp(a) increase and triglycerides decrease was noted in the RF group ( r = -0.531, p = 0.034).",
+      "context_window": "glycerides decrease was noted in the RF group ( r = -0.531, p = 0.034). No significant correlations were noted in the R\u03a9 group.",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-181",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 181,
+      "sentence": "The present study is a post-hoc analysis of a previously published open-label randomized study in which 90 patients with mixed hyperlipidemia were randomized to either high-dosing (40 mg/day) rosuvastatin monotherapy or moderate dosing (10 mg/day) rosuvastatin combined with fenofibrate (200 mg/day) or omega-3 fatty acids (2g/day) [ 22 ].",
+      "context_window": "mixed hyperlipidemia were randomized to either high-dosing (40 mg/day) rosuvastatin monotherapy or moderate dosing (10 mg/day) ro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-237",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg/day",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 237,
+      "sentence": "The present study is a post-hoc analysis of a previously published open-label randomized study in which 90 patients with mixed hyperlipidemia were randomized to either high-dosing (40 mg/day) rosuvastatin monotherapy or moderate dosing (10 mg/day) rosuvastatin combined with fenofibrate (200 mg/day) or omega-3 fatty acids (2g/day) [ 22 ].",
+      "context_window": "ng (40 mg/day) rosuvastatin monotherapy or moderate dosing (10 mg/day) rosuvastatin combined with fenofibrate (200 mg/day) or ome",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-288",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg/day",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 288,
+      "sentence": "The present study is a post-hoc analysis of a previously published open-label randomized study in which 90 patients with mixed hyperlipidemia were randomized to either high-dosing (40 mg/day) rosuvastatin monotherapy or moderate dosing (10 mg/day) rosuvastatin combined with fenofibrate (200 mg/day) or omega-3 fatty acids (2g/day) [ 22 ].",
+      "context_window": "dosing (10 mg/day) rosuvastatin combined with fenofibrate (200 mg/day) or omega-3 fatty acids (2g/day) [ 22 ]. The present analys",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-pct-1073",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1073,
+      "sentence": "Lp(a) levels are almost 90% genetically determined.",
+      "context_window": "increased in both R and RF groups. Lp(a) levels are almost 90% genetically determined. Lp(a) inheritance follows an autoso",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-4380",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4380,
+      "sentence": "Indeed, a study on 56 hypertriglyceridemic patients on fenofibrate 200 mg/dl showed that the more triglyceride levels were decreased, the more Lp(a) levels were increased ( r = -0.35, p = 0.008) [ 28 ].",
+      "context_window": "a study on 56 hypertriglyceridemic patients on fenofibrate 200 mg/dl showed that the more triglyceride levels were decreased,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-p-4497",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4497,
+      "sentence": "Indeed, a study on 56 hypertriglyceridemic patients on fenofibrate 200 mg/dl showed that the more triglyceride levels were decreased, the more Lp(a) levels were increased ( r = -0.35, p = 0.008) [ 28 ].",
+      "context_window": "ecreased, the more Lp(a) levels were increased ( r = -0.35, p = 0.008) [ 28 ]. Similarly, our results demonstrated a strong negat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-pct-4889",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4889,
+      "sentence": "Thus, we may suggest that the rosuvastatin plus fenofibrate-induced elevation of Lp(a) levels by almost 26% reflects the combined effects of both moderate doses of rosuvastatin and fenofibrate.",
+      "context_window": "lus fenofibrate-induced elevation of Lp(a) levels by almost 26% reflects the combined effects of both moderate doses of ros",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-pct-5601",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5601,
+      "sentence": "More specifically, PCSK9 inhibitors are associated with a 20-30% decrease of Lp(a) levels [ 1 ].",
+      "context_window": "ore specifically, PCSK9 inhibitors are associated with a 20-30% decrease of Lp(a) levels [ 1 ]. Additionally, anti-sense ol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-pct-5793",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5793,
+      "sentence": "Additionally, anti-sense oligonucleotides (ASOs) and small interfering RNAs (siRNAs) inhibiting hepatic apo(a) synthesis decrease Lp(a) levels by more than 90% [ 1 , 29 , 30 ].",
+      "context_window": "hepatic apo(a) synthesis decrease Lp(a) levels by more than 90% [ 1 , 29 , 30 ]. The latter treatments are being investigat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno-u-6789",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6789,
+      "sentence": "As a result, it may have influenced the mean differences between groups after 12 weeks of treatment, taking into account the small sample size.",
+      "context_window": "y have influenced the mean differences between groups after 12 weeks of treatment, taking into account the small sample size. Al",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

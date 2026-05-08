@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_detection_of_plaque_inflammation_by_positron_emission_tomogr",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_detection_of_plaque_inflammation_by_positron_emission_tomogr-u-310",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 310,
+      "sentence": "Posted outcomes: Plaque Inflammation. timeframe=Baseline, 3 months.",
+      "context_window": "Posted outcomes: Plaque Inflammation. timeframe=Baseline, 3 months. Simvastatin Group=1.59 (\u00b10.22); Control Group=1.63 (\u00b10.12)",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

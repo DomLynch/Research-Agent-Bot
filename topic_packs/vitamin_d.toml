@@ -1,7 +1,7 @@
 topic = "vitamin_d"
 class_ = "nutritional_supplement"
 
-aliases = ["vitamin D", "cholecalciferol", "ergocalciferol", "25-hydroxyvitamin D", "calcifediol"]
+aliases = ["vitamin D", "vitamin D3", "cholecalciferol", "ergocalciferol", "25-hydroxyvitamin D", "calcifediol"]
 expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "falls", "fractures", "mortality"]
 special_rules = [
   "Separate baseline deficiency correction from supplementation in sufficient populations.",
@@ -10,7 +10,7 @@ special_rules = [
 ]
 forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
 forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
-active_arm_synonyms = ["vitamin D", "cholecalciferol", "ergocalciferol", "calcifediol"]
+active_arm_synonyms = ["vitamin D", "vitamin D3", "cholecalciferol", "ergocalciferol", "calcifediol"]
 placebo_arm_synonyms = ["placebo", "control", "usual care", "no supplement"]
 corpus_search_queries = [
   "vitamin D AND older adults AND randomized trial",
@@ -18,14 +18,19 @@ corpus_search_queries = [
   "cholecalciferol AND falls AND elderly",
   "vitamin D AND fractures AND meta-analysis",
   "25-hydroxyvitamin D AND frailty AND older adults",
+  "vitamin D supplementation AND VITAL AND older adults",
+  "vitamin D AND DO-HEALTH AND trial",
+  "vitamin D AND D-Health AND mortality",
+  "vitamin D AND muscle function AND randomized",
+  "vitamin D AND infection AND older adults AND trial",
 ]
 canonical_rct_paper_ids = []
 canonical_trials = []
 known_role_overrides = {}
 
 [retrieval]
-topic_terms = ["vitamin D", "cholecalciferol", "ergocalciferol", "25-hydroxyvitamin D", "calcifediol"]
-scope_terms = ["aging", "older adults", "elderly", "geriatric", "frailty", "falls", "fractures", "mortality", "muscle function"]
+topic_terms = ["vitamin D", "vitamin D3", "cholecalciferol", "ergocalciferol", "25-hydroxyvitamin D", "calcifediol"]
+scope_terms = ["aging", "older adults", "elderly", "geriatric", "frailty", "falls", "fractures", "mortality", "muscle function", "infection", "cancer", "bone density"]
 evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
 exclude_terms = ["pediatric only", "pregnancy only", "animal only", "in vitro only", "dialysis only"]
 date_from = 2000
@@ -33,7 +38,7 @@ languages = ["English"]
 species = ["humans"]
 
 [retrieval.background]
-allow = ["vitamin D endocrine biology", "bone metabolism", "muscle function", "deficiency epidemiology"]
+allow = ["vitamin D endocrine biology", "bone metabolism", "muscle function", "deficiency epidemiology", "immune modulation", "baseline deficiency rationale"]
 
 [endpoint_polarity]
 mortality = "lower_is_better"
@@ -42,4 +47,3 @@ fractures = "lower_is_better"
 frailty = "lower_is_better"
 muscle_function = "higher_is_better"
 hypercalcemia = "lower_is_better"
-

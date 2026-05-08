@@ -97,19 +97,30 @@ def run_fixture(path: Path) -> dict[str, Any]:
 async def run_live_fixture(path: Path, *, limit: int | None = None) -> dict[str, Any]:
     cases = _load_cases(path)
     settings = load_settings()
-    api_key = os.environ.get("GRANITE_API_KEY", settings.openrouter_api_key).strip()
+    api_key = os.environ.get(
+        "ARBITRATOR_API_KEY",
+        os.environ.get("GRANITE_API_KEY", settings.openrouter_api_key),
+    ).strip()
     if not api_key:
-        raise RuntimeError("missing GRANITE_API_KEY/OPENROUTER_API_KEY")
+        raise RuntimeError("missing ARBITRATOR_API_KEY/OPENROUTER_API_KEY")
     config = GraniteArbitratorConfig(
         base_url=os.environ.get(
-            "GRANITE_ARBITRATOR_BASE_URL", settings.openrouter_base_url,
+            "ARBITRATOR_BASE_URL",
+            os.environ.get("GRANITE_ARBITRATOR_BASE_URL", settings.openrouter_base_url),
         ),
         api_key=api_key,
         model=os.environ.get(
-            "GRANITE_ARBITRATOR_MODEL", "ibm-granite/granite-4.1-8b",
+            "ARBITRATOR_MODEL",
+            os.environ.get(
+                "GRANITE_ARBITRATOR_MODEL",
+                "mistralai/mistral-small-2603",
+            ),
         ),
         enabled=True,
-        timeout_sec=float(os.environ.get("GRANITE_ARBITRATOR_TIMEOUT_SEC", "60")),
+        timeout_sec=float(os.environ.get(
+            "ARBITRATOR_TIMEOUT_SEC",
+            os.environ.get("GRANITE_ARBITRATOR_TIMEOUT_SEC", "60"),
+        )),
     )
     rows = []
     for idx, case in enumerate(cases[:limit]):

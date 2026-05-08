@@ -1,0 +1,160 @@
+{
+  "paper_id": "DOI_10_1002_bdd_2510130407_absorption_and_disposition_of_fluvastatin_an_inhibitor_of_hm",
+  "doi": "10.1002/bdd.2510130407",
+  "extracted_at": "2026-05-08T16:22:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "mean_sd": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_bdd_2510130407_absorption_and_disposition_of_fluvastatin_an_inhibitor_of_hm-u-174",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 174,
+      "sentence": "In naive rabbits receiving a single oral dose (1 mg kg<jats:sup>-1</jats:sup>) of [<jats:sup>3</jats:sup>H] fluvastatin, absorption was rapid and amounted to <jats:italic>c</jats:italic>.",
+      "context_window": "male rabbit. In naive rabbits receiving a single oral dose (1 mg kg<jats:sup>-1</jats:sup>) of [<jats:sup>3</jats:sup>H] flu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_bdd_2510130407_absorption_and_disposition_of_fluvastatin_an_inhibitor_of_hm-msd-535",
+      "claim_type": "mean_sd",
+      "raw_text": "0.29\u00b10.04",
+      "numeric_values": [
+        0.29,
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 535,
+      "sentence": "The steady\u2010state volume of distribution of fluvastatin was 0.29\u00b10.04 1 kg<jats:sup>-1</jats:sup> while the total body clearance was 0.33\u00b10.05 1 h<jats:sup>-1</jats:sup> kg<jats:sup>-1</jats:sup>.",
+      "context_window": "The steady\u2010state volume of distribution of fluvastatin was 0.29\u00b10.04 1 kg<jats:sup>-1</jats:sup> while the total body clearance",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_bdd_2510130407_absorption_and_disposition_of_fluvastatin_an_inhibitor_of_hm-u-545",
+      "claim_type": "unit_value",
+      "raw_text": "1 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 545,
+      "sentence": "The steady\u2010state volume of distribution of fluvastatin was 0.29\u00b10.04 1 kg<jats:sup>-1</jats:sup> while the total body clearance was 0.33\u00b10.05 1 h<jats:sup>-1</jats:sup> kg<jats:sup>-1</jats:sup>.",
+      "context_window": "y\u2010state volume of distribution of fluvastatin was 0.29\u00b10.04 1 kg<jats:sup>-1</jats:sup> while the total body clearance was 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_bdd_2510130407_absorption_and_disposition_of_fluvastatin_an_inhibitor_of_hm-msd-608",
+      "claim_type": "mean_sd",
+      "raw_text": "0.33\u00b10.05",
+      "numeric_values": [
+        0.33,
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 608,
+      "sentence": "The steady\u2010state volume of distribution of fluvastatin was 0.29\u00b10.04 1 kg<jats:sup>-1</jats:sup> while the total body clearance was 0.33\u00b10.05 1 h<jats:sup>-1</jats:sup> kg<jats:sup>-1</jats:sup>.",
+      "context_window": "g<jats:sup>-1</jats:sup> while the total body clearance was 0.33\u00b10.05 1 h<jats:sup>-1</jats:sup> kg<jats:sup>-1</jats:sup>. The a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_bdd_2510130407_absorption_and_disposition_of_fluvastatin_an_inhibitor_of_hm-msd-778",
+      "claim_type": "mean_sd",
+      "raw_text": "28\u00b14",
+      "numeric_values": [
+        28.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 778,
+      "sentence": "The administered radioactivity was excreted predominantly in feces, with the renal pathway accounting for 28\u00b14 per cent of the oral dose and 32\u00b13 per cent of the intravenous dose.",
+      "context_window": "edominantly in feces, with the renal pathway accounting for 28\u00b14 per cent of the oral dose and 32\u00b13 per cent of the intraven",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_bdd_2510130407_absorption_and_disposition_of_fluvastatin_an_inhibitor_of_hm-msd-813",
+      "claim_type": "mean_sd",
+      "raw_text": "32\u00b13",
+      "numeric_values": [
+        32.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 813,
+      "sentence": "The administered radioactivity was excreted predominantly in feces, with the renal pathway accounting for 28\u00b14 per cent of the oral dose and 32\u00b13 per cent of the intravenous dose.",
+      "context_window": "l pathway accounting for 28\u00b14 per cent of the oral dose and 32\u00b13 per cent of the intravenous dose. In pregnant rabbits on a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_bdd_2510130407_absorption_and_disposition_of_fluvastatin_an_inhibitor_of_hm-u-907",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 907,
+      "sentence": "In pregnant rabbits on a multiple oral dosing regimen, 1 mg kg<jats:sup>-1</jats:sup> day<jats:sup>-1</jats:sup> beginning day 6 post\u2010conception (p.c.), steady\u2010state concentrations in maternal blood and tissues were achieved within 5 days.",
+      "context_window": "ose. In pregnant rabbits on a multiple oral dosing regimen, 1 mg kg<jats:sup>-1</jats:sup> day<jats:sup>-1</jats:sup> beginn",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_bdd_2510130407_absorption_and_disposition_of_fluvastatin_an_inhibitor_of_hm-u-1084",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1084,
+      "sentence": "In pregnant rabbits on a multiple oral dosing regimen, 1 mg kg<jats:sup>-1</jats:sup> day<jats:sup>-1</jats:sup> beginning day 6 post\u2010conception (p.c.), steady\u2010state concentrations in maternal blood and tissues were achieved within 5 days.",
+      "context_window": "trations in maternal blood and tissues were achieved within 5 days. The concentrations in the reproductive organs were <jats:i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

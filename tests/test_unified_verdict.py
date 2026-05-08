@@ -493,6 +493,60 @@ def test_l4_aaa_but_surgery_blocks_journal_ready() -> None:
     assert v.journal_ready is False
 
 
+def test_l4_aaa_but_flagged_review_patch_blocks_journal_ready() -> None:
+    """AAA can hold, but any unresolved flagged reviewer patch blocks L5."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    manifest = {
+        "n_receipts": 15, "n_high_confidence_claims_total": 134,
+        "n_non_orthogonal_tensions": 42,
+        "receipts": [
+            {"outcome_class": ["a", "b", "c"][i % 3],
+             "evidence_tier": "A1", "directness": "direct",
+             "receipt_id": f"P{i}"} for i in range(15)
+        ],
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=15, n_high_conf_claims=134,
+        n_non_orthogonal_tensions=42,
+        manifest=manifest, grok_flagged_count=1,
+        auto_stripped_count=0,
+    )
+    assert v.verdict == "AAA"
+    assert v.grok_flagged == 1
+    assert v.maturity_level == 4
+    assert v.journal_ready is False
+
+
+def test_unified_verdict_exposes_arbitration_provenance() -> None:
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    manifest = {
+        "n_receipts": 15, "n_high_confidence_claims_total": 134,
+        "n_non_orthogonal_tensions": 42,
+        "receipts": [
+            {"outcome_class": ["a", "b", "c"][i % 3],
+             "evidence_tier": "A1", "directness": "direct",
+             "receipt_id": f"P{i}"} for i in range(15)
+        ],
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=15, n_high_conf_claims=134,
+        n_non_orthogonal_tensions=42,
+        manifest=manifest,
+        n_arbitrated=3,
+        n_arbitration_apply=2,
+        n_arbitration_reject=1,
+        n_arbitration_escalate=0,
+        arbitration_log="full_paper.arbitration_log.json",
+    )
+    assert v.n_arbitrated == 3
+    assert v.arbitration_log == "full_paper.arbitration_log.json"
+    md = orch._format_unified_verdict(v)
+    assert "Third-layer arbitration: 3 decision(s)" in md
+    assert "log=full_paper.arbitration_log.json" in md
+
+
 def test_l4_aaa_but_surface_gate_blocks_journal_ready() -> None:
     """Analytical AAA remains AAA, but Journal-Ready is capped by
     manuscript-surface failures."""

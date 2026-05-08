@@ -302,6 +302,19 @@ _OUTCOME_IMPORTANCE = {
 }
 
 
+def _public_label(value: str) -> str:
+    labels = {
+        "cross_domain": "cross-domain",
+        "mean_sd": "mean ± SD",
+        "null_vs_positive": "null vs positive",
+        "p_value": "p-value",
+        "sample_size": "sample size",
+        "unit_value": "unit value",
+    }
+    s = (value or "").strip()
+    return labels.get(s, s.replace("_", " "))
+
+
 def _outcome_rows(
     receipts: Sequence[ReceiptSummary], matrix: TensionMatrix | None,
 ) -> list[tuple[int, str, int, int, str, str]]:
@@ -347,7 +360,8 @@ def _append_research_contribution_layer(
     ]
     for _, oc, direct, indirect, directions, gap in rows:
         lines.append(
-            f"| {oc} | {direct} | {indirect} | {directions or 'unclear'} | {gap} |"
+            f"| {_public_label(oc)} | {direct} | {indirect} | "
+            f"{directions or 'unclear'} | {gap} |"
         )
     top = rows[:5]
     lines += [
@@ -362,8 +376,8 @@ def _append_research_contribution_layer(
             f"{direct} direct and {indirect} indirect receipt(s); "
             f"direction profile: {directions or 'unclear'}"
         )
-        lines.append(f"| P{i} | {oc}: {gap} | {rationale} |")
-    target = top[0][1]
+        lines.append(f"| P{i} | {_public_label(oc)}: {gap} | {rationale} |")
+    target = _public_label(top[0][1])
     lines += [
         "",
         "### Next-Study Design Recommendation",

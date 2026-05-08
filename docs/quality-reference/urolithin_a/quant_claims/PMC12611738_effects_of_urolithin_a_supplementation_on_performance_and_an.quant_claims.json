@@ -1,0 +1,2072 @@
+{
+  "paper_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an",
+  "doi": "10.3389/fnut.2025.1674446",
+  "extracted_at": "2026-05-08T16:03:18+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 14,
+    "unit_value": 34,
+    "confidence_interval": 7,
+    "p_value": 21,
+    "percentage": 34,
+    "sample_size": 2,
+    "correlation": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-642",
+      "claim_type": "mean_sd",
+      "raw_text": "17.5 \u00b1 1.0",
+      "numeric_values": [
+        17.5,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 642,
+      "sentence": "Twenty male academy soccer players (age: 17.5 \u00b1 1.0 years) were randomly assigned 1:1 to receive 1,000 mg/day of UA or an isocaloric taste-matched placebo which was given post-training over the course of a six-week training intervention in a single-blinded, parallel-group design.",
+      "context_window": "y soccer players. Twenty male academy soccer players (age: 17.5 \u00b1 1.0 years) were randomly assigned 1:1 to receive 1,000 mg/day o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-649",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 years",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 649,
+      "sentence": "Twenty male academy soccer players (age: 17.5 \u00b1 1.0 years) were randomly assigned 1:1 to receive 1,000 mg/day of UA or an isocaloric taste-matched placebo which was given post-training over the course of a six-week training intervention in a single-blinded, parallel-group design.",
+      "context_window": "r players. Twenty male academy soccer players (age: 17.5 \u00b1 1.0 years) were randomly assigned 1:1 to receive 1,000 mg/day of UA o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-700",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg/day",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 700,
+      "sentence": "Twenty male academy soccer players (age: 17.5 \u00b1 1.0 years) were randomly assigned 1:1 to receive 1,000 mg/day of UA or an isocaloric taste-matched placebo which was given post-training over the course of a six-week training intervention in a single-blinded, parallel-group design.",
+      "context_window": ": 17.5 \u00b1 1.0 years) were randomly assigned 1:1 to receive 1,000 mg/day of UA or an isocaloric taste-matched placebo which was give",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-ci-1908",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [20, 454",
+      "numeric_values": [
+        20.0,
+        454.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1908,
+      "sentence": "UA supplementation led to significantly greater improvements in Yo-Yo IRT1 performance compared to placebo (\u0394 = +239 m, 95% CI [20, 454 m], p = 0.048).",
+      "context_window": "in Yo-Yo IRT1 performance compared to placebo (\u0394 = +239 m, 95% CI [20, 454 m], p = 0.048). For secondary outcomes, countermovement jum",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-1928",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1928,
+      "sentence": "UA supplementation led to significantly greater improvements in Yo-Yo IRT1 performance compared to placebo (\u0394 = +239 m, 95% CI [20, 454 m], p = 0.048).",
+      "context_window": "rmance compared to placebo (\u0394 = +239 m, 95% CI [20, 454 m], p = 0.048). For secondary outcomes, countermovement jump height also",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-2048",
+      "claim_type": "unit_value",
+      "raw_text": "3.33 cm",
+      "numeric_values": [
+        3.33
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 2048,
+      "sentence": "For secondary outcomes, countermovement jump height also improved in the UA group relative to placebo (\u0394 = +3.33 cm, [0.88, 5.95 cm], p = 0.020).",
+      "context_window": "ght also improved in the UA group relative to placebo (\u0394 = +3.33 cm, [0.88, 5.95 cm], p = 0.020). No group x time differences w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-2064",
+      "claim_type": "unit_value",
+      "raw_text": "5.95 cm",
+      "numeric_values": [
+        5.95
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 2064,
+      "sentence": "For secondary outcomes, countermovement jump height also improved in the UA group relative to placebo (\u0394 = +3.33 cm, [0.88, 5.95 cm], p = 0.020).",
+      "context_window": "d in the UA group relative to placebo (\u0394 = +3.33 cm, [0.88, 5.95 cm], p = 0.020). No group x time differences were observed in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-2074",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2074,
+      "sentence": "For secondary outcomes, countermovement jump height also improved in the UA group relative to placebo (\u0394 = +3.33 cm, [0.88, 5.95 cm], p = 0.020).",
+      "context_window": "A group relative to placebo (\u0394 = +3.33 cm, [0.88, 5.95 cm], p = 0.020). No group x time differences were observed in sprint speed",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-1138",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 1138,
+      "sentence": "Depending on the player performance level and age group categorisation (i.e., junior, academy, or senior), preseason typically lasts 4-6 weeks during which athletes are exposed to progressively elevated training loads ( 5 ).",
+      "context_window": "., junior, academy, or senior), preseason typically lasts 4-6 weeks during which athletes are exposed to progressively elevated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-3628",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3628,
+      "sentence": "The formation of UA in the human body is highly dependent on individual gut microbiome composition, with ~30% of people not producing UA (and UA metabolites) ( 19 ).",
+      "context_window": "y dependent on individual gut microbiome composition, with ~30% of people not producing UA (and UA metabolites) ( 19 ). Ini",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-3830",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3830,
+      "sentence": "Initial preclinical work identified UA supplementation as extending nematode lifespan significantly, whilst also improving running distance (~57%) and grip strength (~9%) in rodents compared to placebo control ( 20 ).",
+      "context_window": "pan significantly, whilst also improving running distance (~57%) and grip strength (~9%) in rodents compared to placebo con",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-3855",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3855,
+      "sentence": "Initial preclinical work identified UA supplementation as extending nematode lifespan significantly, whilst also improving running distance (~57%) and grip strength (~9%) in rodents compared to placebo control ( 20 ).",
+      "context_window": "also improving running distance (~57%) and grip strength (~9%) in rodents compared to placebo control ( 20 ). This led to",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-3990",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg/day",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 3990,
+      "sentence": "This led to subsequent research in humans which observed supplementation of up to 1,000 mg/day to be safe and effective for inducing an upregulation in mitophagy which promoted favourable molecular signals and metabolic outcomes in older adults ( 15 ).",
+      "context_window": "esearch in humans which observed supplementation of up to 1,000 mg/day to be safe and effective for inducing an upregulation in mi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-4213",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 4213,
+      "sentence": "Subsequent research by Singh et al. ( 16 ) identified 4 months of 1,000 mg/day of UA supplementation improved hamstring muscle strength, aerobic endurance capacity (i.e., VO 2peak ), and C-reactive protein, a key marker of inflammation, in older adults to a greater extent than placebo.",
+      "context_window": "15 ). Subsequent research by Singh et al. ( 16 ) identified 4 months of 1,000 mg/day of UA supplementation improved hamstring mu",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-4227",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg/day",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 4227,
+      "sentence": "Subsequent research by Singh et al. ( 16 ) identified 4 months of 1,000 mg/day of UA supplementation improved hamstring muscle strength, aerobic endurance capacity (i.e., VO 2peak ), and C-reactive protein, a key marker of inflammation, in older adults to a greater extent than placebo.",
+      "context_window": "nt research by Singh et al. ( 16 ) identified 4 months of 1,000 mg/day of UA supplementation improved hamstring muscle strength, a",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-5122",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg/day",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 5122,
+      "sentence": "Here, Zhao et al. ( 22 ) undertook a blinded, placebo-controlled study with 1,000 mg/day supplementation or placebo for 8 weeks with 20 weightlifters and examined a range of performance and health related markers before and after the intervention.",
+      "context_window": "( 22 ) undertook a blinded, placebo-controlled study with 1,000 mg/day supplementation or placebo for 8 weeks with 20 weightlifter",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-5164",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 5164,
+      "sentence": "Here, Zhao et al. ( 22 ) undertook a blinded, placebo-controlled study with 1,000 mg/day supplementation or placebo for 8 weeks with 20 weightlifters and examined a range of performance and health related markers before and after the intervention.",
+      "context_window": "lled study with 1,000 mg/day supplementation or placebo for 8 weeks with 20 weightlifters and examined a range of performance a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-5443",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5443,
+      "sentence": "This study identified UA supplementation, compared to placebo, led to improvements in maximal voluntary isometric contractions of the knee extensors (~8%), and bench press repetitions to failure with a 60% 1RM submaximal load (~11%) ( 22 ).",
+      "context_window": "al voluntary isometric contractions of the knee extensors (~8%), and bench press repetitions to failure with a 60% 1RM sub",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-5494",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5494,
+      "sentence": "This study identified UA supplementation, compared to placebo, led to improvements in maximal voluntary isometric contractions of the knee extensors (~8%), and bench press repetitions to failure with a 60% 1RM submaximal load (~11%) ( 22 ).",
+      "context_window": "ensors (~8%), and bench press repetitions to failure with a 60% 1RM submaximal load (~11%) ( 22 ). Collectively, the availa",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-5520",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5520,
+      "sentence": "This study identified UA supplementation, compared to placebo, led to improvements in maximal voluntary isometric contractions of the knee extensors (~8%), and bench press repetitions to failure with a 60% 1RM submaximal load (~11%) ( 22 ).",
+      "context_window": "ess repetitions to failure with a 60% 1RM submaximal load (~11%) ( 22 ). Collectively, the available research suggests UA m",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-187",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 187,
+      "sentence": "Written informed consent was obtained from players aged 18 years and over and for players under 18 years of age, parental or legal guardian consent was obtained.",
+      "context_window": "nt. Written informed consent was obtained from players aged 18 years and over and for players under 18 years of age, parental or",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-227",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 227,
+      "sentence": "Written informed consent was obtained from players aged 18 years and over and for players under 18 years of age, parental or legal guardian consent was obtained.",
+      "context_window": "d from players aged 18 years and over and for players under 18 years of age, parental or legal guardian consent was obtained. Th",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-n-1666",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1666,
+      "sentence": "Participants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recruited from the same A-League Under 23 Academy team.",
+      "context_window": "der ecologically valid training conditions. Participants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-1674",
+      "claim_type": "mean_sd",
+      "raw_text": "17.5 \u00b1 1",
+      "numeric_values": [
+        17.5,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1674,
+      "sentence": "Participants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recruited from the same A-League Under 23 Academy team.",
+      "context_window": "ogically valid training conditions. Participants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recru",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-1681",
+      "claim_type": "unit_value",
+      "raw_text": "1 years",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1681,
+      "sentence": "Participants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recruited from the same A-League Under 23 Academy team.",
+      "context_window": "y valid training conditions. Participants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recruited f",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-1697",
+      "claim_type": "mean_sd",
+      "raw_text": "178.1 \u00b1 6.5",
+      "numeric_values": [
+        178.1,
+        6.5
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1697,
+      "sentence": "Participants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recruited from the same A-League Under 23 Academy team.",
+      "context_window": "conditions. Participants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recruited from the same A-Leagu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-1705",
+      "claim_type": "unit_value",
+      "raw_text": "6.5 cm",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 1705,
+      "sentence": "Participants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recruited from the same A-League Under 23 Academy team.",
+      "context_window": "ons. Participants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recruited from the same A-League U",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-1717",
+      "claim_type": "mean_sd",
+      "raw_text": "74.3 \u00b1 8.7",
+      "numeric_values": [
+        74.3,
+        8.7
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1717,
+      "sentence": "Participants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recruited from the same A-League Under 23 Academy team.",
+      "context_window": "ipants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recruited from the same A-League Under 23 Academy",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-1724",
+      "claim_type": "unit_value",
+      "raw_text": "8.7 kg",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1724,
+      "sentence": "Participants ( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recruited from the same A-League Under 23 Academy team.",
+      "context_window": "( n = 20, 17.5 \u00b1 1 years of age, 178.1 \u00b1 6.5 cm, and 74.3 \u00b1 8.7 kg) were recruited from the same A-League Under 23 Academy tea",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-2755",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2755,
+      "sentence": "Players were excluded if they had sustained an injury in the 6 weeks prior to testing, were not regularly participating in training sessions, or had any known medical conditions that could increase the risk of adverse effects during physical exertion.",
+      "context_window": "layers were excluded if they had sustained an injury in the 6 weeks prior to testing, were not regularly participating in train",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-5104",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5104,
+      "sentence": "Beato et al. ( 46 ) evaluated the validity and between unit variability of STATSports Apex 10 GNSS units for measuring distance and peak speed in team sports and observed high validity and low between unit variability with measurement errors ranging from ~1 to 2%.",
+      "context_window": "unit variability with measurement errors ranging from ~1 to 2%. The average satellite count for these sessions was 17.0 w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-5380",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 m/s",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 5380,
+      "sentence": "Weekly locomotor workloads during the preseason period were determined using key variables: total distance (meters), high-speed running distance (>5.5 m/s; meters), sprint distance (>7.0 m/s; meters), and maximal sprint speed (km/h).",
+      "context_window": "les: total distance (meters), high-speed running distance (>5.5 m/s; meters), sprint distance (>7.0 m/s; meters), and maximal s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-5416",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 m/s",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 5416,
+      "sentence": "Weekly locomotor workloads during the preseason period were determined using key variables: total distance (meters), high-speed running distance (>5.5 m/s; meters), sprint distance (>7.0 m/s; meters), and maximal sprint speed (km/h).",
+      "context_window": "peed running distance (>5.5 m/s; meters), sprint distance (>7.0 m/s; meters), and maximal sprint speed (km/h). Players assigne",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-5512",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5512,
+      "sentence": "Players assigned to the UA group received 1,000 mg of flavoured Urolithin A powder (Mitopure, Timeline Nutrition, Switzerland) on each training occasion which was mixed into their post-training protein drink following each scheduled training session over the six-week preseason period.",
+      "context_window": "speed (km/h). Players assigned to the UA group received 1,000 mg of flavoured Urolithin A powder (Mitopure, Timeline Nutriti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-5924",
+      "claim_type": "unit_value",
+      "raw_text": "250 mL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 5924,
+      "sentence": "To provide a fat-soluble matrix, the drink was made with ~250 mL of full cream dairy milk which contained, 8.8 g of protein, 11.5 g of carbohydrates, 8.3 g of fat, and provided 650 kj of energy per serve.",
+      "context_window": ". To provide a fat-soluble matrix, the drink was made with ~250 mL of full cream dairy milk which contained, 8.8 g of protein,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-corr-11278",
+      "claim_type": "correlation",
+      "raw_text": "( r = 0.65)",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 11278,
+      "sentence": "Previous meta-analytic research has identified a strong relationship between YoYo IRT1 performance and lab-based VO 2max assessment ( r = 0.65) ( 28 ).",
+      "context_window": "ween YoYo IRT1 performance and lab-based VO 2max assessment ( r = 0.65) ( 28 ). The test involves intermittent shuttle running acti",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-13017",
+      "claim_type": "unit_value",
+      "raw_text": "2 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 13017,
+      "sentence": "Briefly, players were provided with a visual familiarisation of the passive drool collection technique and the SalivaBio Passive Drool Saliva Collection Aid (SCA) and 2 mL Cryovial aliqouts (Salimetrics, State College, PA, USA).",
+      "context_window": "the SalivaBio Passive Drool Saliva Collection Aid (SCA) and 2 mL Cryovial aliqouts (Salimetrics, State College, PA, USA). Pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-13182",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 13182,
+      "sentence": "Participants instructed to consume no fluid for 10 min prior to providing then sample and then provide 1 mL of saliva via passive drool as per the manufacturers guidelines with the SCA placed into their mouth.",
+      "context_window": "for 10 min prior to providing then sample and then provide 1 mL of saliva via passive drool as per the manufacturers guidel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-13916",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13916,
+      "sentence": "The reaction mixture contains 225 \u03bcL of phosphate buffer (pH 6.5), 8.3 \u03bcL 10 mM ABTS (final concentration 250 \u03bcM), 33.3 \u03bcL sample (20% dilution), and 33.3 \u03bcL hematin (0.05 mg/mL final concentration).",
+      "context_window": "\u03bcL 10 mM ABTS (final concentration 250 \u03bcM), 33.3 \u03bcL sample (20% dilution), and 33.3 \u03bcL hematin (0.05 mg/mL final concentrat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-13952",
+      "claim_type": "unit_value",
+      "raw_text": "0.05 mg",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 13952,
+      "sentence": "The reaction mixture contains 225 \u03bcL of phosphate buffer (pH 6.5), 8.3 \u03bcL 10 mM ABTS (final concentration 250 \u03bcM), 33.3 \u03bcL sample (20% dilution), and 33.3 \u03bcL hematin (0.05 mg/mL final concentration).",
+      "context_window": "50 \u03bcM), 33.3 \u03bcL sample (20% dilution), and 33.3 \u03bcL hematin (0.05 mg/mL final concentration). The reaction was initiated by the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-14504",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14504,
+      "sentence": "The reaction mixture comprised of 245 \u03bcL phosphate buffer (pH 6.5), 5 \u03bcL of ABTS (150 \u03bcM final), 33.3 \u03bcL saliva (30% dilution), and 16.7 \u03bcL of horseradish peroxidase (HRP; 0.05 mg/mL final).",
+      "context_window": "ffer (pH 6.5), 5 \u03bcL of ABTS (150 \u03bcM final), 33.3 \u03bcL saliva (30% dilution), and 16.7 \u03bcL of horseradish peroxidase (HRP; 0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-14563",
+      "claim_type": "unit_value",
+      "raw_text": "0.05 mg",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 14563,
+      "sentence": "The reaction mixture comprised of 245 \u03bcL phosphate buffer (pH 6.5), 5 \u03bcL of ABTS (150 \u03bcM final), 33.3 \u03bcL saliva (30% dilution), and 16.7 \u03bcL of horseradish peroxidase (HRP; 0.05 mg/mL final).",
+      "context_window": "(30% dilution), and 16.7 \u03bcL of horseradish peroxidase (HRP; 0.05 mg/mL final). After the addition of 33.3 \u03bcL 300 \u03bcM hydrogen pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-15076",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15076,
+      "sentence": "Following activation, 360 \u03bcL of the radical-containing solution was combined with 18 \u03bcL of saliva (50% dilution) and the reduction in absorbance recorded after a 5 min incubation.",
+      "context_window": "ical-containing solution was combined with 18 \u03bcL of saliva (50% dilution) and the reduction in absorbance recorded after a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-17398",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 17398,
+      "sentence": "For all analyses, statistical significance was set a priori at p < 0.05, and \u03b2 regression coefficients and 95% confidence intervals (CI\u2019s) were reported for the effect sizes in the same units and scale of analysis to aid in interpretability and variability of the effect.",
+      "context_window": "all analyses, statistical significance was set a priori at p < 0.05, and \u03b2 regression coefficients and 95% confidence intervals",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-17442",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 17442,
+      "sentence": "For all analyses, statistical significance was set a priori at p < 0.05, and \u03b2 regression coefficients and 95% confidence intervals (CI\u2019s) were reported for the effect sizes in the same units and scale of analysis to aid in interpretability and variability of the effect.",
+      "context_window": "set a priori at p < 0.05, and \u03b2 regression coefficients and 95% confidence intervals (CI\u2019s) were reported for the effect si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-289",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 289,
+      "sentence": "Most players \u2018liked\u2019 or \u2018strongly liked\u2019 the supplement, with 65% selecting \u2018like\u2019 and 20% selecting \u2018strongly like\u2019.",
+      "context_window": "st players \u2018liked\u2019 or \u2018strongly liked\u2019 the supplement, with 65% selecting \u2018like\u2019 and 20% selecting \u2018strongly like\u2019. Explori",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-314",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 314,
+      "sentence": "Most players \u2018liked\u2019 or \u2018strongly liked\u2019 the supplement, with 65% selecting \u2018like\u2019 and 20% selecting \u2018strongly like\u2019.",
+      "context_window": "rongly liked\u2019 the supplement, with 65% selecting \u2018like\u2019 and 20% selecting \u2018strongly like\u2019. Exploring the effort to engage w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-399",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 399,
+      "sentence": "Exploring the effort to engage with the intervention, 60% reported it took \u2018little effort\u2019, and 25% said it took \u2018no effort at all\u2019.",
+      "context_window": "ike\u2019. Exploring the effort to engage with the intervention, 60% reported it took \u2018little effort\u2019, and 25% said it took \u2018no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-441",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 441,
+      "sentence": "Exploring the effort to engage with the intervention, 60% reported it took \u2018little effort\u2019, and 25% said it took \u2018no effort at all\u2019.",
+      "context_window": "the intervention, 60% reported it took \u2018little effort\u2019, and 25% said it took \u2018no effort at all\u2019. In terms of perceived effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-521",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 521,
+      "sentence": "In terms of perceived effectiveness, here, 50% \u2018agreed\u2019 and 15% \u2018strongly agreed\u2019 that the intervention improved their aerobic endurance capacity.",
+      "context_window": "effort at all\u2019. In terms of perceived effectiveness, here, 50% \u2018agreed\u2019 and 15% \u2018strongly agreed\u2019 that the intervention im",
+      "claim_role": "effect",
+      "endpoint": "endurance",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-538",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 538,
+      "sentence": "In terms of perceived effectiveness, here, 50% \u2018agreed\u2019 and 15% \u2018strongly agreed\u2019 that the intervention improved their aerobic endurance capacity.",
+      "context_window": "In terms of perceived effectiveness, here, 50% \u2018agreed\u2019 and 15% \u2018strongly agreed\u2019 that the intervention improved their aero",
+      "claim_role": "effect",
+      "endpoint": "endurance",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-638",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 638,
+      "sentence": "In addition, 55% \u2018agreed\u2019 it improved their force and power.",
+      "context_window": "ion improved their aerobic endurance capacity. In addition, 55% \u2018agreed\u2019 it improved their force and power. Finally, 50% \u2018a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-695",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 695,
+      "sentence": "Finally, 50% \u2018agreed\u2019 and 10% \u2018strongly agreed\u2019 that they understood how the UA supplement let to potential training adaptations.",
+      "context_window": "n, 55% \u2018agreed\u2019 it improved their force and power. Finally, 50% \u2018agreed\u2019 and 10% \u2018strongly agreed\u2019 that they understood how",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-712",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 712,
+      "sentence": "Finally, 50% \u2018agreed\u2019 and 10% \u2018strongly agreed\u2019 that they understood how the UA supplement let to potential training adaptations.",
+      "context_window": "t improved their force and power. Finally, 50% \u2018agreed\u2019 and 10% \u2018strongly agreed\u2019 that they understood how the UA supplemen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-883",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 883,
+      "sentence": "The feasibility of future implementation was also rated positively-55% \u2018agreed\u2019 and 30% \u2018strongly agreed\u2019 that it would be feasible to explore the UA supplement with a larger group.",
+      "context_window": "sibility of future implementation was also rated positively-55% \u2018agreed\u2019 and 30% \u2018strongly agreed\u2019 that it would be feasibl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-900",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 900,
+      "sentence": "The feasibility of future implementation was also rated positively-55% \u2018agreed\u2019 and 30% \u2018strongly agreed\u2019 that it would be feasible to explore the UA supplement with a larger group.",
+      "context_window": "e implementation was also rated positively-55% \u2018agreed\u2019 and 30% \u2018strongly agreed\u2019 that it would be feasible to explore the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-1006",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1006,
+      "sentence": "Lastly, 80% \u2018disagreed\u2019 or \u2018strongly disagreed\u2019 that the supplement interfered with other priorities.",
+      "context_window": "e to explore the UA supplement with a larger group. Lastly, 80% \u2018disagreed\u2019 or \u2018strongly disagreed\u2019 that the supplement int",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-1106",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1106,
+      "sentence": "Plus, 60% found the intervention \u2018acceptable\u2019, with \u201820%\u2019 rating it as \u2018completely acceptable\u2019.",
+      "context_window": "that the supplement interfered with other priorities. Plus, 60% found the intervention \u2018acceptable\u2019, with \u201820%\u2019 rating it a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-1153",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1153,
+      "sentence": "Plus, 60% found the intervention \u2018acceptable\u2019, with \u201820%\u2019 rating it as \u2018completely acceptable\u2019.",
+      "context_window": "ities. Plus, 60% found the intervention \u2018acceptable\u2019, with \u201820%\u2019 rating it as \u2018completely acceptable\u2019. The full summary fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-1407",
+      "claim_type": "mean_sd",
+      "raw_text": "91.2 \u00b1 7.6",
+      "numeric_values": [
+        91.2,
+        7.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1407,
+      "sentence": "Adherence to training, either by the completion of the full session or with minor modifications was 91.2 \u00b1 7.6% in the UA group, and 75.6 \u00b1 20.2% in the placebo group.",
+      "context_window": "pletion of the full session or with minor modifications was 91.2 \u00b1 7.6% in the UA group, and 75.6 \u00b1 20.2% in the placebo group. Co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-1414",
+      "claim_type": "percentage",
+      "raw_text": "7.6%",
+      "numeric_values": [
+        7.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1414,
+      "sentence": "Adherence to training, either by the completion of the full session or with minor modifications was 91.2 \u00b1 7.6% in the UA group, and 75.6 \u00b1 20.2% in the placebo group.",
+      "context_window": "of the full session or with minor modifications was 91.2 \u00b1 7.6% in the UA group, and 75.6 \u00b1 20.2% in the placebo group. Com",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-1440",
+      "claim_type": "mean_sd",
+      "raw_text": "75.6 \u00b1 20.2",
+      "numeric_values": [
+        75.6,
+        20.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1440,
+      "sentence": "Adherence to training, either by the completion of the full session or with minor modifications was 91.2 \u00b1 7.6% in the UA group, and 75.6 \u00b1 20.2% in the placebo group.",
+      "context_window": "th minor modifications was 91.2 \u00b1 7.6% in the UA group, and 75.6 \u00b1 20.2% in the placebo group. Common reasons for absences from tra",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-1447",
+      "claim_type": "percentage",
+      "raw_text": "20.2%",
+      "numeric_values": [
+        20.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1447,
+      "sentence": "Adherence to training, either by the completion of the full session or with minor modifications was 91.2 \u00b1 7.6% in the UA group, and 75.6 \u00b1 20.2% in the placebo group.",
+      "context_window": "r modifications was 91.2 \u00b1 7.6% in the UA group, and 75.6 \u00b1 20.2% in the placebo group. Common reasons for absences from trai",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-2286",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 m/s",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 2286,
+      "sentence": "NB - HSR distance = > 5.5 m/s, and sprint distance = > 7.0 m/s.",
+      "context_window": "are mean \u00b1 standard deviation (SD). NB - HSR distance = > 5.5 m/s, and sprint distance = > 7.0 m/s. The week-to-week changes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-2319",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 m/s",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 2319,
+      "sentence": "NB - HSR distance = > 5.5 m/s, and sprint distance = > 7.0 m/s.",
+      "context_window": "D). NB - HSR distance = > 5.5 m/s, and sprint distance = > 7.0 m/s. The week-to-week changes in SRSS Overall Stress and Overa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-2856",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2856,
+      "sentence": "A significant interaction effect between group and time was found for the Yo-Yo IRT1, with the UA group demonstrated a significantly greater improvement in performance compared to those in the placebo group ( F (1, 15.27) = 0.661, p = 0.048).",
+      "context_window": "pared to those in the placebo group ( F (1, 15.27) = 0.661, p = 0.048). The estimated increase ( \u03b2 ) in performance for the UA gr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-ci-2958",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [20, 454",
+      "numeric_values": [
+        20.0,
+        454.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2958,
+      "sentence": "The estimated increase ( \u03b2 ) in performance for the UA group relative to placebo was 239 (95% CI [20, 454]) meters.",
+      "context_window": "n performance for the UA group relative to placebo was 239 (95% CI [20, 454]) meters. Individual and group-level changes in Yo-Yo IRT1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-3357",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3357,
+      "sentence": "Individual data points and lines represent individual players, and error bars denote standard deviation around each mean. * p < 0.05, ** p < 0.01.",
+      "context_window": "nd error bars denote standard deviation around each mean. * p < 0.05, ** p < 0.01. A significant group-by-time interaction was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-3370",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3370,
+      "sentence": "Individual data points and lines represent individual players, and error bars denote standard deviation around each mean. * p < 0.05, ** p < 0.01.",
+      "context_window": "denote standard deviation around each mean. * p < 0.05, ** p < 0.01. A significant group-by-time interaction was observed for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-3595",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3595,
+      "sentence": "A significant group-by-time interaction was observed for Countermovement Jump Height (cm) ( Figure 2a ), with the UA group showing an increase while the placebo group experienced a decrease ( F (1, 14.90) = 6.828, p = 0.020).",
+      "context_window": "lacebo group experienced a decrease ( F (1, 14.90) = 6.828, p = 0.020). The estimated improvement ( \u03b2 ) in CMJ height for the UA",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-3674",
+      "claim_type": "unit_value",
+      "raw_text": "3.33 cm",
+      "numeric_values": [
+        3.33
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 3674,
+      "sentence": "The estimated improvement ( \u03b2 ) in CMJ height for the UA group was 3.33 cm (95%CI [0.88, 5.95]) above the change for placebo.",
+      "context_window": "imated improvement ( \u03b2 ) in CMJ height for the UA group was 3.33 cm (95%CI [0.88, 5.95]) above the change for placebo. A signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-ci-3683",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI [0.88, 5.95",
+      "numeric_values": [
+        0.88,
+        5.95
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3683,
+      "sentence": "The estimated improvement ( \u03b2 ) in CMJ height for the UA group was 3.33 cm (95%CI [0.88, 5.95]) above the change for placebo.",
+      "context_window": "provement ( \u03b2 ) in CMJ height for the UA group was 3.33 cm (95%CI [0.88, 5.95]) above the change for placebo. A significant interaction w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-3951",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.046",
+      "numeric_values": [
+        0.046
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3951,
+      "sentence": "A significant interaction was observed for the Countermovement Jump Peak Force ( Figure 2b ), with the UA group demonstrating a slight reduction while the placebo group demonstrated an increase ( F (1, 15.13) = 4.722, p = 0.046).",
+      "context_window": "cebo group demonstrated an increase ( F (1, 15.13) = 4.722, p = 0.046). The estimated difference in the UA group vs. placebo was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-ci-4032",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI [-257, -13",
+      "numeric_values": [
+        -257.0,
+        -13.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4032,
+      "sentence": "The estimated difference in the UA group vs. placebo was \u03b2 = -136 N (95%CI [-257, -13]).",
+      "context_window": "ated difference in the UA group vs. placebo was \u03b2 = -136 N (95%CI [-257, -13]). Finally, Countermovement Jump Peak Power (W) demonstrate",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-4181",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.797",
+      "numeric_values": [
+        0.797
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4181,
+      "sentence": "Finally, Countermovement Jump Peak Power (W) demonstrated no significant group x time interaction effect ( F (1, 14.95) = 0.069, p = 0.797), with minimal changes observed in both the UA and placebo groups ( \u03b2 = 25 W, 95%CI [-162, 215]) ( Figure 2c ).",
+      "context_window": "ant group x time interaction effect ( F (1, 14.95) = 0.069, p = 0.797), with minimal changes observed in both the UA and placebo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-ci-4269",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI [-162, 215",
+      "numeric_values": [
+        -162.0,
+        215.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4269,
+      "sentence": "Finally, Countermovement Jump Peak Power (W) demonstrated no significant group x time interaction effect ( F (1, 14.95) = 0.069, p = 0.797), with minimal changes observed in both the UA and placebo groups ( \u03b2 = 25 W, 95%CI [-162, 215]) ( Figure 2c ).",
+      "context_window": "nges observed in both the UA and placebo groups ( \u03b2 = 25 W, 95%CI [-162, 215]) ( Figure 2c ). Results for countermovement jump (a) heig",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-4588",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4588,
+      "sentence": "Individual data points and lines represent individual players, and error bars denote standard deviation around each mean. * p < 0.05, ** p < 0.01.",
+      "context_window": "nd error bars denote standard deviation around each mean. * p < 0.05, ** p < 0.01. Countermovement Jump Concentric Impulse (N.s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-4601",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4601,
+      "sentence": "Individual data points and lines represent individual players, and error bars denote standard deviation around each mean. * p < 0.05, ** p < 0.01.",
+      "context_window": "denote standard deviation around each mean. * p < 0.05, ** p < 0.01. Countermovement Jump Concentric Impulse (N.s -1 ) demonst",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-4744",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.055",
+      "numeric_values": [
+        0.055
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4744,
+      "sentence": "Countermovement Jump Concentric Impulse (N.s -1 ) demonstrated no significant group x time interaction effect ( F (1, 15.2) = 4.33, p = 0.055), with minimal change ( \u03b2 = 15.5 N.s -1 , 95%CI [1.1, 30.2]) observed between the UA and placebo groups ( Figure 3a ).",
+      "context_window": "icant group x time interaction effect ( F (1, 15.2) = 4.33, p = 0.055), with minimal change ( \u03b2 = 15.5 N.s -1 , 95%CI [1.1, 30.2]",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-ci-4796",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI [1.1, 30.2",
+      "numeric_values": [
+        1.1,
+        30.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4796,
+      "sentence": "Countermovement Jump Concentric Impulse (N.s -1 ) demonstrated no significant group x time interaction effect ( F (1, 15.2) = 4.33, p = 0.055), with minimal change ( \u03b2 = 15.5 N.s -1 , 95%CI [1.1, 30.2]) observed between the UA and placebo groups ( Figure 3a ).",
+      "context_window": "= 4.33, p = 0.055), with minimal change ( \u03b2 = 15.5 N.s -1 , 95%CI [1.1, 30.2]) observed between the UA and placebo groups ( Figure 3a ).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-4943",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.707",
+      "numeric_values": [
+        0.707
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4943,
+      "sentence": "Finally, there was no group x time interaction ( F (1, 16.2) = 0.147, p = 0.707) between UA and placebo groups for Countermovement Jump Eccentric Duration (msec) ( \u03b2 = -15.4 msec, 95%CI [-94.0, 62.9], Figure 3b ).",
+      "context_window": "here was no group x time interaction ( F (1, 16.2) = 0.147, p = 0.707) between UA and placebo groups for Countermovement Jump Ecc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-ci-5053",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI [-94.0, 62.9",
+      "numeric_values": [
+        -94.0,
+        62.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5053,
+      "sentence": "Finally, there was no group x time interaction ( F (1, 16.2) = 0.147, p = 0.707) between UA and placebo groups for Countermovement Jump Eccentric Duration (msec) ( \u03b2 = -15.4 msec, 95%CI [-94.0, 62.9], Figure 3b ).",
+      "context_window": "ermovement Jump Eccentric Duration (msec) ( \u03b2 = -15.4 msec, 95%CI [-94.0, 62.9], Figure 3b ). Results for countermovement jump (a) concen",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-5562",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5562,
+      "sentence": "The three measures of antioxidant status (free radical scavenging, hydrogen peroxide scavenging and organic hydroperoxide scavenging) were moderately to moderately-strongly related ( p < 0.05-0.001) across the entire data set ( R 2 = 0.30-0.64; Supplementary Figure 1 ), indicating that these assays were measuring different facets of antioxidant defence.",
+      "context_window": "cavenging) were moderately to moderately-strongly related ( p < 0.05-0.001) across the entire data set ( R 2 = 0.30-0.64; Supple",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-5870",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.350",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5870,
+      "sentence": "There were no overall significant group \u00d7 time interactions observed for Free Radical Scavenging ( Figure 4a ) ( F (1, 17.79) = 0.96, p = 0.350), Hydrogen Peroxide Scavenging ( Figure 4b ) ( F (1, 34) = 0.003, p = 0.997), and Lipid Peroxide Scavenging ( Figure 4c ) ( F (1, 17.38) = 0.95, p = 0.353).",
+      "context_window": "ree Radical Scavenging ( Figure 4a ) ( F (1, 17.79) = 0.96, p = 0.350), Hydrogen Peroxide Scavenging ( Figure 4b ) ( F (1, 34) =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-5946",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.997",
+      "numeric_values": [
+        0.997
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5946,
+      "sentence": "There were no overall significant group \u00d7 time interactions observed for Free Radical Scavenging ( Figure 4a ) ( F (1, 17.79) = 0.96, p = 0.350), Hydrogen Peroxide Scavenging ( Figure 4b ) ( F (1, 34) = 0.003, p = 0.997), and Lipid Peroxide Scavenging ( Figure 4c ) ( F (1, 17.38) = 0.95, p = 0.353).",
+      "context_window": "ogen Peroxide Scavenging ( Figure 4b ) ( F (1, 34) = 0.003, p = 0.997), and Lipid Peroxide Scavenging ( Figure 4c ) ( F (1, 17.38",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-6025",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.353",
+      "numeric_values": [
+        0.353
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6025,
+      "sentence": "There were no overall significant group \u00d7 time interactions observed for Free Radical Scavenging ( Figure 4a ) ( F (1, 17.79) = 0.96, p = 0.350), Hydrogen Peroxide Scavenging ( Figure 4b ) ( F (1, 34) = 0.003, p = 0.997), and Lipid Peroxide Scavenging ( Figure 4c ) ( F (1, 17.38) = 0.95, p = 0.353).",
+      "context_window": "id Peroxide Scavenging ( Figure 4c ) ( F (1, 17.38) = 0.95, p = 0.353). Completion of the intense physical training regime in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-6261",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6261,
+      "sentence": "Completion of the intense physical training regime in the absence of UA significantly reduced antioxidant capacity of the athletes from pre- to post-intervention, as seen the in salivary values for free radical scavenging ( p < 0.05) and organic hydroperoxide scavenging ( p < 0.001) activities ( Figures 3a , c ).",
+      "context_window": "s seen the in salivary values for free radical scavenging ( p < 0.05) and organic hydroperoxide scavenging ( p < 0.001) activiti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-6310",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6310,
+      "sentence": "Completion of the intense physical training regime in the absence of UA significantly reduced antioxidant capacity of the athletes from pre- to post-intervention, as seen the in salivary values for free radical scavenging ( p < 0.05) and organic hydroperoxide scavenging ( p < 0.001) activities ( Figures 3a , c ).",
+      "context_window": "avenging ( p < 0.05) and organic hydroperoxide scavenging ( p < 0.001) activities ( Figures 3a , c ). By contrast, in the UA trea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-6852",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6852,
+      "sentence": "Individual data points and lines represent individual players, and error bars denote standard deviation around each mean. * p < 0.05, *** p < 0.001.",
+      "context_window": "nd error bars denote standard deviation around each mean. * p < 0.05, *** p < 0.001. Analysis of the pre-intervention dietary i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-p-6866",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6866,
+      "sentence": "Individual data points and lines represent individual players, and error bars denote standard deviation around each mean. * p < 0.05, *** p < 0.001.",
+      "context_window": "denote standard deviation around each mean. * p < 0.05, *** p < 0.001. Analysis of the pre-intervention dietary intake recall da",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-6986",
+      "claim_type": "mean_sd",
+      "raw_text": "437 \u00b1 554",
+      "numeric_values": [
+        437.0,
+        554.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6986,
+      "sentence": "Analysis of the pre-intervention dietary intake recall data indicated that players consumed an average of 2,437 \u00b1 554 kcal per day.",
+      "context_window": "recall data indicated that players consumed an average of 2,437 \u00b1 554 kcal per day. The macronutrient distribution of total energ",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-7074",
+      "claim_type": "mean_sd",
+      "raw_text": "24.1 \u00b1 6.7",
+      "numeric_values": [
+        24.1,
+        6.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7074,
+      "sentence": "The macronutrient distribution of total energy intake comprised 24.1 \u00b1 6.7% from protein, 39.6 \u00b1 7.9% from carbohydrates, and 33.3 \u00b1 8.3% from fat.",
+      "context_window": "macronutrient distribution of total energy intake comprised 24.1 \u00b1 6.7% from protein, 39.6 \u00b1 7.9% from carbohydrates, and 33.3 \u00b1 8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-7081",
+      "claim_type": "percentage",
+      "raw_text": "6.7%",
+      "numeric_values": [
+        6.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7081,
+      "sentence": "The macronutrient distribution of total energy intake comprised 24.1 \u00b1 6.7% from protein, 39.6 \u00b1 7.9% from carbohydrates, and 33.3 \u00b1 8.3% from fat.",
+      "context_window": "trient distribution of total energy intake comprised 24.1 \u00b1 6.7% from protein, 39.6 \u00b1 7.9% from carbohydrates, and 33.3 \u00b1 8.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-7100",
+      "claim_type": "mean_sd",
+      "raw_text": "39.6 \u00b1 7.9",
+      "numeric_values": [
+        39.6,
+        7.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7100,
+      "sentence": "The macronutrient distribution of total energy intake comprised 24.1 \u00b1 6.7% from protein, 39.6 \u00b1 7.9% from carbohydrates, and 33.3 \u00b1 8.3% from fat.",
+      "context_window": "of total energy intake comprised 24.1 \u00b1 6.7% from protein, 39.6 \u00b1 7.9% from carbohydrates, and 33.3 \u00b1 8.3% from fat. Post-interve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-7107",
+      "claim_type": "percentage",
+      "raw_text": "7.9%",
+      "numeric_values": [
+        7.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7107,
+      "sentence": "The macronutrient distribution of total energy intake comprised 24.1 \u00b1 6.7% from protein, 39.6 \u00b1 7.9% from carbohydrates, and 33.3 \u00b1 8.3% from fat.",
+      "context_window": "al energy intake comprised 24.1 \u00b1 6.7% from protein, 39.6 \u00b1 7.9% from carbohydrates, and 33.3 \u00b1 8.3% from fat. Post-interven",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-7136",
+      "claim_type": "mean_sd",
+      "raw_text": "33.3 \u00b1 8.3",
+      "numeric_values": [
+        33.3,
+        8.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7136,
+      "sentence": "The macronutrient distribution of total energy intake comprised 24.1 \u00b1 6.7% from protein, 39.6 \u00b1 7.9% from carbohydrates, and 33.3 \u00b1 8.3% from fat.",
+      "context_window": ".1 \u00b1 6.7% from protein, 39.6 \u00b1 7.9% from carbohydrates, and 33.3 \u00b1 8.3% from fat. Post-intervention dietary analysis revealed that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-7143",
+      "claim_type": "percentage",
+      "raw_text": "8.3%",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7143,
+      "sentence": "The macronutrient distribution of total energy intake comprised 24.1 \u00b1 6.7% from protein, 39.6 \u00b1 7.9% from carbohydrates, and 33.3 \u00b1 8.3% from fat.",
+      "context_window": "7% from protein, 39.6 \u00b1 7.9% from carbohydrates, and 33.3 \u00b1 8.3% from fat. Post-intervention dietary analysis revealed that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-7282",
+      "claim_type": "mean_sd",
+      "raw_text": "363 \u00b1 507",
+      "numeric_values": [
+        363.0,
+        507.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7282,
+      "sentence": "Post-intervention dietary analysis revealed that players consumed a similar overall energy consumption with an average of 2,363 \u00b1 507 kcal per day.",
+      "context_window": "d a similar overall energy consumption with an average of 2,363 \u00b1 507 kcal per day. Macronutrient distribution indicated that 19.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-7348",
+      "claim_type": "mean_sd",
+      "raw_text": "19.9 \u00b1 5.0",
+      "numeric_values": [
+        19.9,
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7348,
+      "sentence": "Macronutrient distribution indicated that 19.9 \u00b1 5.0% of total energy intake was derived from protein, 47.0 \u00b1 7.4% from carbohydrates, and 29.4 \u00b1 5.6% from fat.",
+      "context_window": "507 kcal per day. Macronutrient distribution indicated that 19.9 \u00b1 5.0% of total energy intake was derived from protein, 47.0 \u00b1 7.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-7355",
+      "claim_type": "percentage",
+      "raw_text": "5.0%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7355,
+      "sentence": "Macronutrient distribution indicated that 19.9 \u00b1 5.0% of total energy intake was derived from protein, 47.0 \u00b1 7.4% from carbohydrates, and 29.4 \u00b1 5.6% from fat.",
+      "context_window": "l per day. Macronutrient distribution indicated that 19.9 \u00b1 5.0% of total energy intake was derived from protein, 47.0 \u00b1 7.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-7409",
+      "claim_type": "mean_sd",
+      "raw_text": "47.0 \u00b1 7.4",
+      "numeric_values": [
+        47.0,
+        7.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7409,
+      "sentence": "Macronutrient distribution indicated that 19.9 \u00b1 5.0% of total energy intake was derived from protein, 47.0 \u00b1 7.4% from carbohydrates, and 29.4 \u00b1 5.6% from fat.",
+      "context_window": "9.9 \u00b1 5.0% of total energy intake was derived from protein, 47.0 \u00b1 7.4% from carbohydrates, and 29.4 \u00b1 5.6% from fat. A summary of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-7416",
+      "claim_type": "percentage",
+      "raw_text": "7.4%",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7416,
+      "sentence": "Macronutrient distribution indicated that 19.9 \u00b1 5.0% of total energy intake was derived from protein, 47.0 \u00b1 7.4% from carbohydrates, and 29.4 \u00b1 5.6% from fat.",
+      "context_window": ".0% of total energy intake was derived from protein, 47.0 \u00b1 7.4% from carbohydrates, and 29.4 \u00b1 5.6% from fat. A summary of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-msd-7445",
+      "claim_type": "mean_sd",
+      "raw_text": "29.4 \u00b1 5.6",
+      "numeric_values": [
+        29.4,
+        5.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7445,
+      "sentence": "Macronutrient distribution indicated that 19.9 \u00b1 5.0% of total energy intake was derived from protein, 47.0 \u00b1 7.4% from carbohydrates, and 29.4 \u00b1 5.6% from fat.",
+      "context_window": "s derived from protein, 47.0 \u00b1 7.4% from carbohydrates, and 29.4 \u00b1 5.6% from fat. A summary of this including macronutrient consum",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-7452",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7452,
+      "sentence": "Macronutrient distribution indicated that 19.9 \u00b1 5.0% of total energy intake was derived from protein, 47.0 \u00b1 7.4% from carbohydrates, and 29.4 \u00b1 5.6% from fat.",
+      "context_window": "ed from protein, 47.0 \u00b1 7.4% from carbohydrates, and 29.4 \u00b1 5.6% from fat. A summary of this including macronutrient consump",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-144",
+      "claim_type": "unit_value",
+      "raw_text": "6 week",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "week",
+      "source_section": "discussion",
+      "source_offset": 144,
+      "sentence": "This pilot study is the first study to examine the effects of Urolithin A (UA) supplementation on performance outcomes in soccer players over a 6 week pre-season training period.",
+      "context_window": "ementation on performance outcomes in soccer players over a 6 week pre-season training period. Soccer is a physically demandin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "urolithin a",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-pct-1752",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1752,
+      "sentence": "For example, using the method of Borm et al. ( 34 ) in accounting for within participant correlation and the results of this study for the primary outcome measure of YoYo IRT distance, ~34 participants per group would be required to achieve 80% power at a two-sided statistical significance of 0.05.",
+      "context_window": "ce, ~34 participants per group would be required to achieve 80% power at a two-sided statistical significance of 0.05. Thr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-3082",
+      "claim_type": "unit_value",
+      "raw_text": "3 mL",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mL",
+      "source_section": "discussion",
+      "source_offset": 3082,
+      "sentence": "Singh et al. ( 16 ) identified clinically meaningful improvements in maximal oxygen consumption (~3 mL/kg/min) and physical performance through a six-minute walk test (~30 m) after administration of 1,000 mg UA for 16 weeks in a cohort of older individuals.",
+      "context_window": "lly meaningful improvements in maximal oxygen consumption (~3 mL/kg/min) and physical performance through a six-minute walk",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-3185",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3185,
+      "sentence": "Singh et al. ( 16 ) identified clinically meaningful improvements in maximal oxygen consumption (~3 mL/kg/min) and physical performance through a six-minute walk test (~30 m) after administration of 1,000 mg UA for 16 weeks in a cohort of older individuals.",
+      "context_window": "gh a six-minute walk test (~30 m) after administration of 1,000 mg UA for 16 weeks in a cohort of older individuals. When exam",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-3199",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3199,
+      "sentence": "Singh et al. ( 16 ) identified clinically meaningful improvements in maximal oxygen consumption (~3 mL/kg/min) and physical performance through a six-minute walk test (~30 m) after administration of 1,000 mg UA for 16 weeks in a cohort of older individuals.",
+      "context_window": "e walk test (~30 m) after administration of 1,000 mg UA for 16 weeks in a cohort of older individuals. When examining the underl",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-4671",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 cm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "cm",
+      "source_section": "discussion",
+      "source_offset": 4671,
+      "sentence": "This change was greater than the test-retest typical error (3.3 vs. ~2.0 cm) in a similar academy soccer cohort ( 36 ), suggesting a potentially meaningful improvement with UA supplementation.",
+      "context_window": "ge was greater than the test-retest typical error (3.3 vs. ~2.0 cm) in a similar academy soccer cohort ( 36 ), suggesting a po",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-133",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 133,
+      "sentence": "First, the short intervention duration of 6 weeks may not have been sufficient to observe meaningful changes in some performance domains, such as sprint speed or maximal strength, which often require longer training exposure and adaptation.",
+      "context_window": "ing our findings. First, the short intervention duration of 6 weeks may not have been sufficient to observe meaningful changes",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-u-371",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 371,
+      "sentence": "Presently, the manufacturer recommends 8 weeks as the minimum duration to see optimal benefits with the formulation of UA used in this study.",
+      "context_window": "sure and adaptation. Presently, the manufacturer recommends 8 weeks as the minimum duration to see optimal benefits with the fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12611738_effects_of_urolithin_a_supplementation_on_performance_and_an-n-519",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 519,
+      "sentence": "Secondly, the relatively small sample size ( n = 20) of this pilot study also limits statistical power and increases the risk of type II error.",
+      "context_window": "in this study. Secondly, the relatively small sample size ( n = 20) of this pilot study also limits statistical power and incr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -24,7 +24,7 @@ def test_valid_d1_bridge_renders_machine_checkable_tags() -> None:
     )
     md = render_inferential_bridge_section((claim,)).body_md
     assert "[D1_inferential_bridge | confidence=medium]" in md
-    assert "[mechanism_anchor: r1]" in md
+    assert "[mechanism anchor: r1]" in md
     assert "[conservation: Canon 2020]" in md
     assert "[testability: explicit]" in md
     assert ".. [testability:" not in md

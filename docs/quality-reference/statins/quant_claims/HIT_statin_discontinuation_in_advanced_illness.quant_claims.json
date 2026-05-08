@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_statin_discontinuation_in_advanced_illness",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_statin_discontinuation_in_advanced_illness-u-87",
+      "claim_type": "unit_value",
+      "raw_text": "60 days",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 87,
+      "sentence": "The purpose of this study is to determine if there is a difference in survival rate at 60 days after enrollment between patients with advanced life-limiting illness for whom statins are discontinued vs. for patients with advanced life-limiting illness who are maintained on the medication.",
+      "context_window": "s to determine if there is a difference in survival rate at 60 days after enrollment between patients with advanced life-limiti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_statin_discontinuation_in_advanced_illness-u-624",
+      "claim_type": "unit_value",
+      "raw_text": "60 days",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 624,
+      "sentence": "Posted outcomes: Proportion of Deaths Within 60 Days of Enrollment.. timeframe=Within 60 days of Subject Enrollment.",
+      "context_window": "n of Deaths Within 60 Days of Enrollment.. timeframe=Within 60 days of Subject Enrollment. Continue Statins=0.203; Discontinue",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

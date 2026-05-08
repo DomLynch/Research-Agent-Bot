@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_effect_of_rosuvastatin_therapy_in_patients_with_stable_chron",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_rosuvastatin_therapy_in_patients_with_stable_chron-u-330",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 330,
+      "sentence": "Posted outcomes: Relative Change in Reactive Hyperemia Index (RHI). timeframe=Baseline to 3 months.",
+      "context_window": "ge in Reactive Hyperemia Index (RHI). timeframe=Baseline to 3 months. Rosuvastatin=6.65; Placebo=-1.27. p=0.292",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_effect_of_rosuvastatin_therapy_in_patients_with_stable_chron-p-374",
+      "claim_type": "p_value",
+      "raw_text": "p=0.292",
+      "numeric_values": [
+        0.292
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 374,
+      "sentence": "Rosuvastatin=6.65; Placebo=-1.27. p=0.292",
+      "context_window": "ame=Baseline to 3 months. Rosuvastatin=6.65; Placebo=-1.27. p=0.292",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

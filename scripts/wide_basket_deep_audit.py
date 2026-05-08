@@ -161,7 +161,11 @@ def main(argv: list[str] | None = None) -> int:
 def _load_packs(root: Path) -> dict[str, dict[str, Any]]:
     out = {}
     for path in sorted(root.glob("*.toml")):
+        if path.stem.startswith("_"):
+            continue
         data = tomllib.loads(path.read_text(encoding="utf-8"))
+        if str(data.get("class_", "")) == "template":
+            continue
         topic = str(data.get("topic") or path.stem)
         retrieval = data.get("retrieval") if isinstance(data.get("retrieval"), dict) else {}
         out[topic] = {

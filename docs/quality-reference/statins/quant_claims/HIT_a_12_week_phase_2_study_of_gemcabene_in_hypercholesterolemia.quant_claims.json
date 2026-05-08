@@ -1,0 +1,102 @@
+{
+  "paper_id": "HIT_a_12_week_phase_2_study_of_gemcabene_in_hypercholesterolemia",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_12_week_phase_2_study_of_gemcabene_in_hypercholesterolemia-u-110",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 110,
+      "sentence": "The purpose of this study was to assess the efficacy, safety, and tolerability of multiple doses of gemcabene 600 mg QD compared to placebo in patients with hypercholesterolemia not adequately controlled on high-intensity or moderate-intensity stable statin therapy.",
+      "context_window": "cy, safety, and tolerability of multiple doses of gemcabene 600 mg QD compared to placebo in patients with hypercholesterolemi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_12_week_phase_2_study_of_gemcabene_in_hypercholesterolemia-u-365",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/dL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 365,
+      "sentence": "Patients with HeFH, ASCVD, or otherwise uncontrolled, may be included with baseline LDL-C value \u2265 100 mg/dL.",
+      "context_window": "e uncontrolled, may be included with baseline LDL-C value \u2265 100 mg/dL. Subjects were randomized 1:1 to gemcabene 600 mg once dail",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_12_week_phase_2_study_of_gemcabene_in_hypercholesterolemia-u-418",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 418,
+      "sentence": "Subjects were randomized 1:1 to gemcabene 600 mg once daily (QD) or placebo.",
+      "context_window": "alue \u2265 100 mg/dL. Subjects were randomized 1:1 to gemcabene 600 mg once daily (QD) or placebo. Posted outcomes: Percent Chang",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_12_week_phase_2_study_of_gemcabene_in_hypercholesterolemia-u-560",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 560,
+      "sentence": "Gemcabene 600 mg=-16.03 (\u00b13.234); Placebo=-4.98 (\u00b13.330). p=0.0057",
+      "context_window": "in LDL-C at Week 12. timeframe=Baseline, Week 12. Gemcabene 600 mg=-16.03 (\u00b13.234); Placebo=-4.98 (\u00b13.330). p=0.0057",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_12_week_phase_2_study_of_gemcabene_in_hypercholesterolemia-p-608",
+      "claim_type": "p_value",
+      "raw_text": "p=0.0057",
+      "numeric_values": [
+        0.0057
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 608,
+      "sentence": "Gemcabene 600 mg=-16.03 (\u00b13.234); Placebo=-4.98 (\u00b13.330). p=0.0057",
+      "context_window": ". Gemcabene 600 mg=-16.03 (\u00b13.234); Placebo=-4.98 (\u00b13.330). p=0.0057",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

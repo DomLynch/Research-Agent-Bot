@@ -141,7 +141,8 @@ def _removes_bridge_contract_tags(location: str, before: str, after: str) -> boo
     if "inferential bridge" not in location.lower():
         return False
     required = (
-        "[D1_", "[mechanism_anchor:", "[conservation:", "[testability:",
+        "[D1_", "[mechanism_anchor:", "[mechanism anchor:",
+        "[conservation:", "[testability:",
     )
     return any(tag in before and tag not in after for tag in required)
 
@@ -153,9 +154,40 @@ def _breaks_markdown_table_shape(location: str, before: str, after: str) -> bool
     wording is a safe subset."""
     if "|" not in before:
         return False
+    if not after.strip() and "\n" not in before:
+        # Pure deletion of one pipe-delimited row is applied by
+        # _apply_text_patch as whole-row removal, preserving shape.
+        return False
     if "quantitative evidence index" not in location.lower() and "|" not in after:
         return False
     return after.count("|") != before.count("|")
+
+
+def _apply_text_patch(md: str, before: str, after: str) -> str:
+    """Apply an exact patch, expanding table-fragment deletions to rows.
+
+    Grok sometimes proposes deleting a pipe-free fragment from a markdown
+    table row. Replacing only the fragment leaves a malformed row and
+    makes the post-apply audit explode. If the patch is a pure deletion
+    and the unique BEFORE text lives inside one markdown table row,
+    remove the whole row instead.
+    """
+    if after.strip() or "\n" in before:
+        return md.replace(before, after, 1)
+    idx = md.find(before)
+    if idx < 0:
+        return md
+    line_start = md.rfind("\n", 0, idx) + 1
+    line_end = md.find("\n", idx)
+    if line_end < 0:
+        line_end = len(md)
+        newline = ""
+    else:
+        newline = "\n"
+    line = md[line_start:line_end]
+    if line.strip().startswith("|") and line.strip().endswith("|"):
+        return md[:line_start] + md[line_end + len(newline):]
+    return md.replace(before, after, 1)
 
 
 def _is_repeated_safe_simplification(ptype: str, before: str, after: str) -> bool:
@@ -454,9 +486,9 @@ def apply_patches(
 ) -> tuple[str, list[PatchResult]]:
     """Walk patches with strict per-type gates + mechanical safety.
 
-    Architectural rule (LLM proposes, code disposes): Grok 4.3 is the
-    final-layer reviewer, but Grok is still an LLM. Without strict
-    deterministic gates, Grok can launder hallucinated numerics or
+    Architectural rule (LLM proposes, code disposes): the final-layer
+    reviewer is still an LLM. Without strict deterministic gates, it
+    can launder hallucinated numerics or
     fabricated citations into the published paper. The previous
     "trust Grok auto-apply" branch tried to honor "no humans in the
     pipeline" but conflated it with "no deterministic verification" —
@@ -679,7 +711,7 @@ def apply_patches(
         # already pass deterministic verifiers; no audit-regression
         # risk).
         if ptype in ("claim", "numeric"):
-            tentative_md = new_md.replace(before, after, 1)
+            tentative_md = _apply_text_patch(new_md, before, after)
             audit_safe, audit_msg = _post_apply_audit_safe(
                 pre_md=new_md, post_md=tentative_md, manifest=manifest,
             )
@@ -697,7 +729,7 @@ def apply_patches(
                 continue
             new_md = tentative_md
         else:
-            new_md = new_md.replace(before, after, 1)
+            new_md = _apply_text_patch(new_md, before, after)
         results.append(PatchResult(
             patch_id=pid, patch_type=ptype, severity=sev,
             decision="applied",

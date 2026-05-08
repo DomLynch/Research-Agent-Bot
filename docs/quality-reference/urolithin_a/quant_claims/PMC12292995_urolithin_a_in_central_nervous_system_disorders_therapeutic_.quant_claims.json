@@ -1,0 +1,66 @@
+{
+  "paper_id": "PMC12292995_urolithin_a_in_central_nervous_system_disorders_therapeutic_",
+  "doi": "10.3390/biomedicines13071553",
+  "extracted_at": "2026-05-08T16:03:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12292995_urolithin_a_in_central_nervous_system_disorders_therapeutic_-pct-485",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 485,
+      "sentence": "For instance, PD alone affects up to 3% of individuals over 65, with projections indicating a 50% rise in its prevalence by 2030 [ 4 ].",
+      "context_window": "population [ 2 , 3 ]. For instance, PD alone affects up to 3% of individuals over 65, with projections indicating a 50% r",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12292995_urolithin_a_in_central_nervous_system_disorders_therapeutic_-pct-542",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 542,
+      "sentence": "For instance, PD alone affects up to 3% of individuals over 65, with projections indicating a 50% rise in its prevalence by 2030 [ 4 ].",
+      "context_window": "to 3% of individuals over 65, with projections indicating a 50% rise in its prevalence by 2030 [ 4 ]. Stroke, recognized as",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12292995_urolithin_a_in_central_nervous_system_disorders_therapeutic_-u-2111",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 2111,
+      "sentence": "Regarding safety, clinical trials have confirmed UA\u2019s tolerability at doses up to 1000 mg daily, with no serious adverse effects reported in interventions lasting up to four months.",
+      "context_window": "ical trials have confirmed UA\u2019s tolerability at doses up to 1000 mg daily, with no serious adverse effects reported in interven",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

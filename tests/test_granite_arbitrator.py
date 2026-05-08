@@ -16,6 +16,7 @@ from scripts.granite_arbitrator import (
     parse_model_content,
     request_granite_arbitration,
 )
+import run_v06_synthesis as orch  # noqa: E402
 
 
 def _input(**kwargs: str) -> ArbitrationInput:
@@ -234,3 +235,15 @@ def test_mock_client_response_is_parsed_without_network() -> None:
     assert decision.verdict == "ESCALATE"
     assert decision.fail_closed is False
     assert decision.confidence == 0.7
+
+
+def test_default_arbitrator_model_is_mistral_small(monkeypatch) -> None:
+    for key in (
+        "ARBITRATOR_MODEL",
+        "GRANITE_ARBITRATOR_MODEL",
+        "ARBITRATOR_API_KEY",
+        "GRANITE_API_KEY",
+    ):
+        monkeypatch.delenv(key, raising=False)
+    config = orch._granite_config()
+    assert config.model == "mistralai/mistral-small-2603"

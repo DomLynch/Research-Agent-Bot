@@ -174,6 +174,41 @@ def test_formatting_patch_cannot_remove_bridge_contract_tags() -> None:
     assert "contract-preserving rejection" in results[0].reason_for_decision
 
 
+def test_formatting_patch_cannot_remove_public_bridge_contract_tags() -> None:
+    p = {
+        "id": "P05", "patch_type": "formatting", "severity": "P2",
+        "location": "Inferential Bridge",
+        "before": (
+            "1. [D1_inferential_bridge | confidence=medium] Claim. "
+            "[mechanism anchor: A 2020] [conservation: B 2021]"
+        ),
+        "after": "1. Claim.",
+        "reason": "remove internal tags",
+    }
+    paper = "## Inferential Bridge\n\n" + p["before"] + "\n"
+    new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "rejected"
+    assert "[mechanism anchor:" in new_md
+    assert "contract-preserving rejection" in results[0].reason_for_decision
+
+
+def test_table_fragment_deletion_removes_full_markdown_row() -> None:
+    paper = (
+        "| Citation | Section | Type | Value | Units |\n"
+        "| --- | --- | --- | --- | --- |\n"
+        "| Liu 2021 | abstract | mean ± SD | 11.6 ±147.5 | — |\n"
+        "| Smith 2022 | results | p-value | P = 0.01 | — |\n"
+    )
+    fixed = apply_patches._apply_text_patch(
+        paper,
+        "Liu 2021 | abstract | mean ± SD | 11.6 ±147.5 | —",
+        "",
+    )
+    assert "Liu 2021" not in fixed
+    assert "|  |" not in fixed
+    assert "Smith 2022" in fixed
+
+
 def test_numeric_patch_with_untraceable_value_is_flagged_with_fail_diagnostic() -> None:
     """Numeric patches are flag-only regardless of verifier outcome.
     When the global verifier ALSO fails, both reasons are logged."""
@@ -371,6 +406,29 @@ def test_numeric_patch_cannot_break_qei_table_shape() -> None:
     assert results[0].decision == "flagged"
     assert "table-shape FAIL" in results[0].reason_for_decision
     assert out == paper
+
+
+def test_numeric_qei_row_deletion_removes_full_row() -> None:
+    p = {
+        "id": "P-QEI-DEL",
+        "patch_type": "numeric",
+        "severity": "P2",
+        "location": "Quantitative Evidence Index — metformin",
+        "before": "Anisimov 2008 | lifespan | metformin | 37.8% | % | —",
+        "after": "",
+        "reason": "delete disputed row",
+    }
+    paper = (
+        "## Quantitative Evidence Index — metformin\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| Anisimov 2008 | lifespan | metformin | 37.8% | % | — |\n"
+        "| UKPDS 1998 | diabetes | metformin | P = 0.03 | p-value | — |\n"
+    )
+    out, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "applied"
+    assert "Anisimov 2008" not in out
+    assert "UKPDS 1998" in out
 
 
 def test_consecutive_duplicate_qei_headings_are_collapsed() -> None:

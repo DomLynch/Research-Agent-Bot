@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_evaluation_of_rosuvastatin_effect_as_adjuvant_therapy_to_met",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_evaluation_of_rosuvastatin_effect_as_adjuvant_therapy_to_met-u-506",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 506,
+      "sentence": "A double blinded placebo controlled clinical trial with 8 weeks follow up periods at which 40 patients with active RA using MTX were randomized into 2 groups to receive either rosuvastatin 10mg or placebo as adjuvant therapy to MTX.",
+      "context_window": "ts. A double blinded placebo controlled clinical trial with 8 weeks follow up periods at which 40 patients with active RA using",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_evaluation_of_rosuvastatin_effect_as_adjuvant_therapy_to_met-u-639",
+      "claim_type": "unit_value",
+      "raw_text": "10mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 639,
+      "sentence": "A double blinded placebo controlled clinical trial with 8 weeks follow up periods at which 40 patients with active RA using MTX were randomized into 2 groups to receive either rosuvastatin 10mg or placebo as adjuvant therapy to MTX.",
+      "context_window": "ere randomized into 2 groups to receive either rosuvastatin 10mg or placebo as adjuvant therapy to MTX. In addition to twent",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_evaluation_of_rosuvastatin_effect_as_adjuvant_therapy_to_met-u-1152",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1152,
+      "sentence": "At the end of the study rosuvastatin significantly reduced ESR, TC and LDLc after 8 weeks of treatment.",
+      "context_window": "y rosuvastatin significantly reduced ESR, TC and LDLc after 8 weeks of treatment. It can be concluded that MTX has the ability",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

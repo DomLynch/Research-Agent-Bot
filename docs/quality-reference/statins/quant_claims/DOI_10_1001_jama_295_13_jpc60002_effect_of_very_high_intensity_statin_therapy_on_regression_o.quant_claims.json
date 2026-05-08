@@ -1,0 +1,409 @@
+{
+  "paper_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o",
+  "doi": "10.1001/jama.295.13.jpc60002",
+  "extracted_at": "2026-05-08T16:22:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "percentage": 12,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-u-822",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 822,
+      "sentence": "A motorized IVUS pullback was used to assess coronary atheroma burden at baseline and after 24 months of treatment.",
+      "context_window": "ed to assess coronary atheroma burden at baseline and after 24 months of treatment. Each pair of baseline and follow-up IVUS asse",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-u-1079",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1079,
+      "sentence": "After 24 months, 349 patients had evaluable serial IVUS examinations.",
+      "context_window": "amination and received at least 1 dose of study drug. After 24 months, 349 patients had evaluable serial IVUS examinations. INTER",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-u-1223",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/d",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 1223,
+      "sentence": "INTERVENTION: All patients received intensive statin therapy with rosuvastatin, 40 mg/d.",
+      "context_window": "tients received intensive statin therapy with rosuvastatin, 40 mg/d. MAIN OUTCOME MEASURES: Two primary efficacy parameters wer",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-pct-1713",
+      "claim_type": "percentage",
+      "raw_text": "53.2%",
+      "numeric_values": [
+        53.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1713,
+      "sentence": "RESULTS: The mean (SD) baseline low-density lipoprotein cholesterol (LDL-C) level of 130.4 (34.3) mg/dL declined to 60.8 (20.0) mg/dL, a mean reduction of 53.2% (P<.001).",
+      "context_window": "3) mg/dL declined to 60.8 (20.0) mg/dL, a mean reduction of 53.2% (P<.001). Mean (SD) high-density lipoprotein cholesterol (H",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-p-1720",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1720,
+      "sentence": "RESULTS: The mean (SD) baseline low-density lipoprotein cholesterol (LDL-C) level of 130.4 (34.3) mg/dL declined to 60.8 (20.0) mg/dL, a mean reduction of 53.2% (P<.001).",
+      "context_window": "L declined to 60.8 (20.0) mg/dL, a mean reduction of 53.2% (P<.001). Mean (SD) high-density lipoprotein cholesterol (HDL-C) le",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-pct-1873",
+      "claim_type": "percentage",
+      "raw_text": "14.7%",
+      "numeric_values": [
+        14.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1873,
+      "sentence": "Mean (SD) high-density lipoprotein cholesterol (HDL-C) level at baseline was 43.1 (11.1) mg/dL, increasing to 49.0 (12.6) mg/dL, an increase of 14.7% (P<.001).",
+      "context_window": "1.1) mg/dL, increasing to 49.0 (12.6) mg/dL, an increase of 14.7% (P<.001). The mean (SD) change in PAV for the entire vessel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-p-1880",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1880,
+      "sentence": "Mean (SD) high-density lipoprotein cholesterol (HDL-C) level at baseline was 43.1 (11.1) mg/dL, increasing to 49.0 (12.6) mg/dL, an increase of 14.7% (P<.001).",
+      "context_window": "/dL, increasing to 49.0 (12.6) mg/dL, an increase of 14.7% (P<.001). The mean (SD) change in PAV for the entire vessel was -0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-pct-1944",
+      "claim_type": "percentage",
+      "raw_text": "0.98%",
+      "numeric_values": [
+        0.98
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1944,
+      "sentence": "The mean (SD) change in PAV for the entire vessel was -0.98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.001 vs baseline).",
+      "context_window": "01). The mean (SD) change in PAV for the entire vessel was -0.98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-pct-1951",
+      "claim_type": "percentage",
+      "raw_text": "3.15%",
+      "numeric_values": [
+        3.15
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1951,
+      "sentence": "The mean (SD) change in PAV for the entire vessel was -0.98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.001 vs baseline).",
+      "context_window": "e mean (SD) change in PAV for the entire vessel was -0.98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-pct-1977",
+      "claim_type": "percentage",
+      "raw_text": "0.79%",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1977,
+      "sentence": "The mean (SD) change in PAV for the entire vessel was -0.98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.001 vs baseline).",
+      "context_window": "for the entire vessel was -0.98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.001 vs baseline). The mean",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-pct-1984",
+      "claim_type": "percentage",
+      "raw_text": "97.5%",
+      "numeric_values": [
+        97.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1984,
+      "sentence": "The mean (SD) change in PAV for the entire vessel was -0.98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.001 vs baseline).",
+      "context_window": "entire vessel was -0.98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.001 vs baseline). The mean (SD) c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-pct-1995",
+      "claim_type": "percentage",
+      "raw_text": "1.21%",
+      "numeric_values": [
+        1.21
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1995,
+      "sentence": "The mean (SD) change in PAV for the entire vessel was -0.98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.001 vs baseline).",
+      "context_window": "sel was -0.98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.001 vs baseline). The mean (SD) change in at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-pct-2005",
+      "claim_type": "percentage",
+      "raw_text": "0.53%",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2005,
+      "sentence": "The mean (SD) change in PAV for the entire vessel was -0.98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.001 vs baseline).",
+      "context_window": ".98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.001 vs baseline). The mean (SD) change in atheroma vol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-p-2013",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2013,
+      "sentence": "The mean (SD) change in PAV for the entire vessel was -0.98% (3.15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.001 vs baseline).",
+      "context_window": "15%), with a median of -0.79% (97.5% CI, -1.21% to -0.53%) (P<.001 vs baseline). The mean (SD) change in atheroma volume in th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-pct-2160",
+      "claim_type": "percentage",
+      "raw_text": "97.5%",
+      "numeric_values": [
+        97.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2160,
+      "sentence": "The mean (SD) change in atheroma volume in the most diseased 10-mm subsegment was -6.1 (10.1) mm3, with a median of -5.6 mm3 (97.5% CI, -6.8 to -4.0 mm3) (P<.001 vs baseline).",
+      "context_window": "subsegment was -6.1 (10.1) mm3, with a median of -5.6 mm3 (97.5% CI, -6.8 to -4.0 mm3) (P<.001 vs baseline). Change in total",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-p-2189",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2189,
+      "sentence": "The mean (SD) change in atheroma volume in the most diseased 10-mm subsegment was -6.1 (10.1) mm3, with a median of -5.6 mm3 (97.5% CI, -6.8 to -4.0 mm3) (P<.001 vs baseline).",
+      "context_window": "m3, with a median of -5.6 mm3 (97.5% CI, -6.8 to -4.0 mm3) (P<.001 vs baseline). Change in total atheroma volume showed a 6.8%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-pct-2251",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2251,
+      "sentence": "Change in total atheroma volume showed a 6.8% median reduction; with a mean (SD) reduction of -14.7 (25.7) mm3, with a median of -12.5 mm3 (95% CI, -15.1 to -10.5 mm3) (P<.001 vs baseline).",
+      "context_window": ".001 vs baseline). Change in total atheroma volume showed a 6.8% median reduction; with a mean (SD) reduction of -14.7 (25.7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-pct-2350",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2350,
+      "sentence": "Change in total atheroma volume showed a 6.8% median reduction; with a mean (SD) reduction of -14.7 (25.7) mm3, with a median of -12.5 mm3 (95% CI, -15.1 to -10.5 mm3) (P<.001 vs baseline).",
+      "context_window": "reduction of -14.7 (25.7) mm3, with a median of -12.5 mm3 (95% CI, -15.1 to -10.5 mm3) (P<.001 vs baseline). Adverse event",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-p-2379",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2379,
+      "sentence": "Change in total atheroma volume showed a 6.8% median reduction; with a mean (SD) reduction of -14.7 (25.7) mm3, with a median of -12.5 mm3 (95% CI, -15.1 to -10.5 mm3) (P<.001 vs baseline).",
+      "context_window": "3, with a median of -12.5 mm3 (95% CI, -15.1 to -10.5 mm3) (P<.001 vs baseline). Adverse events were infrequent and similar to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-u-2534",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/d",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 2534,
+      "sentence": "CONCLUSIONS: Very high-intensity statin therapy using rosuvastatin 40 mg/d achieved an average LDL-C of 60.8 mg/dL and increased HDL-C by 14.7%, resulting in significant regression of atherosclerosis for all 3 prespecified IVUS measures of disease burden.",
+      "context_window": "IONS: Very high-intensity statin therapy using rosuvastatin 40 mg/d achieved an average LDL-C of 60.8 mg/dL and increased HDL-C",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-u-2571",
+      "claim_type": "unit_value",
+      "raw_text": "60.8 mg/dL",
+      "numeric_values": [
+        60.8
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 2571,
+      "sentence": "CONCLUSIONS: Very high-intensity statin therapy using rosuvastatin 40 mg/d achieved an average LDL-C of 60.8 mg/dL and increased HDL-C by 14.7%, resulting in significant regression of atherosclerosis for all 3 prespecified IVUS measures of disease burden.",
+      "context_window": "apy using rosuvastatin 40 mg/d achieved an average LDL-C of 60.8 mg/dL and increased HDL-C by 14.7%, resulting in significant regr",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_295_13_jpc60002_effect_of_very_high_intensity_statin_therapy_on_regression_o-pct-2605",
+      "claim_type": "percentage",
+      "raw_text": "14.7%",
+      "numeric_values": [
+        14.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2605,
+      "sentence": "CONCLUSIONS: Very high-intensity statin therapy using rosuvastatin 40 mg/d achieved an average LDL-C of 60.8 mg/dL and increased HDL-C by 14.7%, resulting in significant regression of atherosclerosis for all 3 prespecified IVUS measures of disease burden.",
+      "context_window": "ieved an average LDL-C of 60.8 mg/dL and increased HDL-C by 14.7%, resulting in significant regression of atherosclerosis for",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "paper_id": "HIT_intensive_statin_therapy_effect_on_post_operative_atrial_fib",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_intensive_statin_therapy_effect_on_post_operative_atrial_fib-u-39",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 39,
+      "sentence": "This study will compare the effects of 20 mg of atorvastatin to 80 mg of atorvastatin for the prevention of atrial fibrillation after cardiothoracic surgery.",
+      "context_window": "This study will compare the effects of 20 mg of atorvastatin to 80 mg of atorvastatin for the prevention",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_intensive_statin_therapy_effect_on_post_operative_atrial_fib-u-64",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 64,
+      "sentence": "This study will compare the effects of 20 mg of atorvastatin to 80 mg of atorvastatin for the prevention of atrial fibrillation after cardiothoracic surgery.",
+      "context_window": "study will compare the effects of 20 mg of atorvastatin to 80 mg of atorvastatin for the prevention of atrial fibrillation a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_intensive_statin_therapy_effect_on_post_operative_atrial_fib-u-187",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 187,
+      "sentence": "The study hypothesis is that 80 mg of atorvastatin will be more effective at preventing atrial fibrillation compared to 20 mg.",
+      "context_window": "after cardiothoracic surgery. The study hypothesis is that 80 mg of atorvastatin will be more effective at preventing atrial",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_intensive_statin_therapy_effect_on_post_operative_atrial_fib-u-278",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 278,
+      "sentence": "The study hypothesis is that 80 mg of atorvastatin will be more effective at preventing atrial fibrillation compared to 20 mg.",
+      "context_window": "ore effective at preventing atrial fibrillation compared to 20 mg.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

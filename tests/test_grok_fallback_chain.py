@@ -1,7 +1,5 @@
-"""Tests for the Grok 4.3 → Mistral Small fallback chain in
-scripts/grok_reviewer.py — the user mandate is: Grok primary, Mistral
-only if Grok / OpenRouter is unreachable. NEVER skip the final-layer
-review."""
+"""Tests for the DeepSeek → Mistral Small fallback chain in
+scripts/grok_reviewer.py. NEVER skip the final-layer review."""
 from __future__ import annotations
 
 import asyncio
@@ -29,27 +27,26 @@ def _mock_chat_response(
     return response
 
 
-def test_grok_primary_used_when_available() -> None:
-    """When Grok responds normally, Mistral is never called."""
+def test_primary_used_when_available() -> None:
+    """When the primary responds normally, Mistral is never called."""
     client = MagicMock()
     client.post = AsyncMock(return_value=_mock_chat_response(
-        "x-ai/grok-4.3", {"patches": []},
+        "deepseek/deepseek-v4-pro", {"patches": []},
     ))
     parsed, model_used, cost = asyncio.run(
         grok_reviewer._call_with_fallback(
-            "sys", "user", "x-ai/grok-4.3",
+            "sys", "user", "deepseek/deepseek-v4-pro",
             "mistralai/mistral-small-2603",
             "test-key", "https://openrouter.ai/api/v1", client,
         )
     )
-    assert model_used == "x-ai/grok-4.3"
+    assert model_used == "deepseek/deepseek-v4-pro"
     assert client.post.call_count == 1
-    # Cost should be Grok's pricing (3/15 per Mtok), not zero
     assert cost > 0
 
 
-def test_mistral_fallback_when_grok_fails() -> None:
-    """When Grok throws (HTTP error / parse failure), Mistral is the
+def test_mistral_fallback_when_primary_fails() -> None:
+    """When primary throws (HTTP error / parse failure), Mistral is the
     next call. Pipeline never silently skips final-layer review."""
     client = MagicMock()
     grok_failure = httpx.HTTPError("OpenRouter 503")
@@ -59,7 +56,7 @@ def test_mistral_fallback_when_grok_fails() -> None:
     client.post = AsyncMock(side_effect=[grok_failure, mistral_success])
     parsed, model_used, cost = asyncio.run(
         grok_reviewer._call_with_fallback(
-            "sys", "user", "x-ai/grok-4.3",
+            "sys", "user", "deepseek/deepseek-v4-pro",
             "mistralai/mistral-small-2603",
             "test-key", "https://openrouter.ai/api/v1", client,
         )
@@ -71,13 +68,13 @@ def test_mistral_fallback_when_grok_fails() -> None:
 
 
 def test_both_failures_raises() -> None:
-    """If BOTH Grok and Mistral fail, raise so the pipeline can record
+    """If BOTH primary and fallback fail, raise so the pipeline can record
     the gap rather than silently skip review."""
     client = MagicMock()
     client.post = AsyncMock(side_effect=httpx.HTTPError("OpenRouter down"))
     try:
         asyncio.run(grok_reviewer._call_with_fallback(
-            "sys", "user", "x-ai/grok-4.3",
+            "sys", "user", "deepseek/deepseek-v4-pro",
             "mistralai/mistral-small-2603",
             "test-key", "https://openrouter.ai/api/v1", client,
         ))
@@ -88,8 +85,8 @@ def test_both_failures_raises() -> None:
 
 def test_prompt_uses_body_citations_when_registry_provided() -> None:
     """Fix #11: when citation_registry is passed, the user prompt
-    surfaces clean Author-Year tokens to Grok, NOT internal receipt_id
-    handles. Pre-fix Grok was reverting clean citations because the
+    surfaces clean Author-Year tokens to the reviewer, NOT internal receipt_id
+    handles. Pre-fix reviewer was reverting clean citations because the
     prompt said 'use ONLY these for citations' next to receipt_ids."""
     from dataclasses import dataclass
 
@@ -165,13 +162,18 @@ def test_prompt_falls_back_to_receipt_ids_without_registry() -> None:
 def test_cost_estimate_is_real_not_zero() -> None:
     """Pre-fix cost was a hardcoded 0.0 placeholder. Verify the cost
     function actually computes something for known models."""
+    deepseek_cost = grok_reviewer._estimate_cost(
+        "deepseek/deepseek-v4-pro", 1_000_000, 100_000,
+    )
+    # DeepSeek V4 Pro: $0.435/Mtok in, $0.87/Mtok out.
+    assert 0.50 < deepseek_cost < 0.60, f"unexpected deepseek cost: {deepseek_cost}"
     grok_cost = grok_reviewer._estimate_cost("x-ai/grok-4.3", 1_000_000, 100_000)
     # Grok 4.3: $3/Mtok in, $15/Mtok out → $3 + $1.5 = $4.50
     assert 4.0 < grok_cost < 5.0, f"unexpected grok cost: {grok_cost}"
     mistral_cost = grok_reviewer._estimate_cost(
         "mistralai/mistral-small-2603", 1_000_000, 100_000,
     )
-    # Mistral: $0.20/Mtok in, $0.60/Mtok out → $0.20 + $0.06 = $0.26
-    assert 0.20 < mistral_cost < 0.30, f"unexpected mistral cost: {mistral_cost}"
+    # Mistral: $0.15/Mtok in, $0.60/Mtok out → $0.15 + $0.06 = $0.21
+    assert 0.20 < mistral_cost < 0.22, f"unexpected mistral cost: {mistral_cost}"
     unknown_cost = grok_reviewer._estimate_cost("foo/bar-99", 1_000_000, 100_000)
     assert unknown_cost == 0.0  # no pricing table → 0

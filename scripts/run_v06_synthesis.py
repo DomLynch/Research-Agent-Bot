@@ -60,7 +60,7 @@ from agent.synthesis_schemas import (  # noqa: E402
 from agent.settings import load_settings  # noqa: E402
 
 # Pipeline-stage modules (auto-included after writer; final-layer
-# review by Grok 4.3 with Mistral fallback closes the loop with NO
+# review by the final-layer reviewer with Mistral fallback closes the loop with NO
 # manual step required).
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 import audit_v06_paper as _audit_v06  # noqa: E402
@@ -217,6 +217,59 @@ def _restore_required_section_bodies(
                 + "\n\n" + out[pos:].lstrip()
             )
     return out
+
+
+def _restore_public_surface_floors(
+    paper_md: str,
+) -> tuple[str, list[dict[str, str]]]:
+    """Final public-section floor guard, independent of writer objects.
+
+    Late patching can shorten a rendered section after the typed
+    section contract was restored. This pass reads the public markdown
+    itself and compiles a safe corpus-level backstop for any required
+    journal-surface section still below its floor.
+    """
+    try:
+        from agent.journal_surface_gate import _REQUIRED_SECTIONS
+    except ImportError:
+        return paper_md, []
+    out = paper_md
+    log: list[dict[str, str]] = []
+    titles = tuple(_REQUIRED_SECTIONS.keys())
+    for idx, title in enumerate(titles):
+        floor = int(_REQUIRED_SECTIONS[title])
+        heading = f"## {title}"
+        fallback_md = _compile_public_section_backstop(title, floor)
+        if not fallback_md:
+            continue
+        match = _rendered_section_match(out, heading)
+        if match is not None and _word_count(match.group(1)) >= floor:
+            continue
+        if match is not None:
+            out = (
+                out[:match.start()].rstrip() + "\n\n"
+                + fallback_md + "\n\n"
+                + out[match.end():].lstrip()
+            ).lstrip()
+            reason = "replace_short_section"
+        else:
+            next_headings = tuple(f"## {t}" for t in titles[idx + 1:])
+            pos = _first_heading_after(out, next_headings + ("## References",), 0)
+            if pos < 0:
+                out = out.rstrip() + "\n\n" + fallback_md + "\n"
+            else:
+                out = (
+                    out[:pos].rstrip() + "\n\n"
+                    + fallback_md + "\n\n"
+                    + out[pos:].lstrip()
+                )
+            reason = "insert_missing_section"
+        log.append({
+            "fix_type": "surface_floor_backstop",
+            "section": title,
+            "reason": reason,
+        })
+    return out, log
 
 
 def _topic_display_name() -> str:
@@ -1965,7 +2018,7 @@ async def _run_post_paper_pipeline(
     methods_md: str = "",
 ) -> str:
     """Layer 1 deterministic audit + auto-fix → final-layer LLM review
-    (Grok 4.3 → Mistral fallback) → auto-apply patches → final audit.
+    (DeepSeek → Mistral fallback) → auto-apply patches → final audit.
 
     Each step's artifact is written to disk so a human can retroactively
     review what changed and why. Returns the final paper text."""
@@ -2009,9 +2062,9 @@ async def _run_post_paper_pipeline(
     audit_md = _audit_v06._format_summary(audit_report)
     paper_path.with_suffix(".audit.md").write_text(audit_md)
 
-    # Stage 3: Final-layer LLM review (Grok 4.3 primary, Mistral fallback).
+    # Stage 3: Final-layer LLM review (DeepSeek primary, Mistral fallback).
     print(
-        "[pipeline] Stage 3/5 — final-layer review (Grok 4.3 → Mistral fallback)...",
+        "[pipeline] Stage 3/5 — final-layer review (DeepSeek → Mistral fallback)...",
         file=sys.stderr,
     )
     try:
@@ -2025,7 +2078,7 @@ async def _run_post_paper_pipeline(
             citation_registry=citation_registry,
         )
     except RuntimeError as exc:
-        # No OPENROUTER_API_KEY OR both Grok and Mistral failed. Log
+        # No OPENROUTER_API_KEY OR both primary and fallback failed. Log
         # but don't crash the whole run — the deterministic Layer 1
         # work has already happened. The reviewer artifact records
         # the gap for transparency.
@@ -2155,6 +2208,18 @@ async def _run_post_paper_pipeline(
             1 for r in results if r.decision == "applied_via_repair"
         )
         n_arbitrated = len(arbitration_log)
+        n_arbitration_apply = sum(
+            1 for r in arbitration_log if r.get("decision") == "APPLY"
+        )
+        n_arbitration_reject = sum(
+            1 for r in arbitration_log if r.get("decision") == "REJECT"
+        )
+        n_arbitration_escalate = sum(
+            1 for r in arbitration_log if r.get("decision") == "ESCALATE"
+        )
+        arbitration_log_name = (
+            arbitration_log_path.name if arbitration_log_path.exists() else None
+        )
         n_arb_rejected = sum(
             1 for r in results if r.decision == "rejected_by_arbitration"
         )
@@ -2213,7 +2278,13 @@ async def _run_post_paper_pipeline(
         )
     else:
         grok_unresolved_p1 = 0
+        n_flagged = 0
         n_stripped = 0
+        n_arbitrated = 0
+        n_arbitration_apply = 0
+        n_arbitration_reject = 0
+        n_arbitration_escalate = 0
+        arbitration_log_name = None
 
     # Stage 5: Final audit + UNIFIED verdict (Fix #1 reviewer-P1).
     # Re-runs stage-1 audit AND stage-2 consistency on the post-Grok
@@ -2298,11 +2369,24 @@ async def _run_post_paper_pipeline(
             ),
         )
         _refix_log.extend(_final_public_log)
+    paper_md, _surface_floor_log = _restore_public_surface_floors(paper_md)
+    _refix_log.extend(_surface_floor_log)
+    if _surface_floor_log:
+        paper_md, _post_surface_floor_log = _consistency_fixer.apply_fixes(
+            paper_md, [], manifest=manifest, quant_claims_dir=QUANT_DIR,
+            numeric_quarantine_path=paper_path.with_name(
+                "numeric_claim_quarantine.json",
+            ),
+        )
+        _refix_log.extend(_post_surface_floor_log)
     if (
         _refix_log
         or any(i.auto_fixable for i in pre_issues)
         or paper_md != pre_final_cleanup_md
     ):
+        paper_path.with_suffix(".final_fixed_log.json").write_text(
+            json.dumps(_refix_log, indent=2)
+        )
         paper_path.write_text(paper_md)
     audit_report = _audit_v06.audit(paper_md)
     audit_path.write_text(json.dumps(audit_report, indent=2))
@@ -2350,11 +2434,17 @@ async def _run_post_paper_pipeline(
         n_non_orthogonal_tensions=_n_tens,
         cert_floors=_cert_floors,
         manifest=manifest,
+        grok_flagged_count=n_flagged,
         auto_stripped_count=n_stripped,
         journal_surface_pass=bool(
             surface_report is not None and surface_report.passed
         ),
         journal_surface_issues=_surface_issues,
+        n_arbitrated=n_arbitrated,
+        n_arbitration_apply=n_arbitration_apply,
+        n_arbitration_reject=n_arbitration_reject,
+        n_arbitration_escalate=n_arbitration_escalate,
+        arbitration_log=arbitration_log_name,
     )
     paper_path.with_suffix(".final_verdict.json").write_text(
         json.dumps(dataclasses.asdict(unified), indent=2)
@@ -2465,16 +2555,28 @@ def _granite_config() -> _granite.GraniteArbitratorConfig:
     settings = load_settings()
     return _granite.GraniteArbitratorConfig(
         base_url=os.environ.get(
-            "GRANITE_ARBITRATOR_BASE_URL", settings.openrouter_base_url,
+            "ARBITRATOR_BASE_URL",
+            os.environ.get("GRANITE_ARBITRATOR_BASE_URL", settings.openrouter_base_url),
         ),
         api_key=os.environ.get(
-            "GRANITE_API_KEY", settings.openrouter_api_key,
+            "ARBITRATOR_API_KEY",
+            os.environ.get("GRANITE_API_KEY", settings.openrouter_api_key),
         ).strip(),
         model=os.environ.get(
-            "GRANITE_ARBITRATOR_MODEL", "ibm-granite/granite-4.1-8b",
+            "ARBITRATOR_MODEL",
+            os.environ.get(
+                "GRANITE_ARBITRATOR_MODEL",
+                "mistralai/mistral-small-2603",
+            ),
         ),
-        enabled=_env_bool("GRANITE_ARBITRATOR_ENABLED", False),
-        timeout_sec=_env_float("GRANITE_ARBITRATOR_TIMEOUT_SEC", 60.0),
+        enabled=_env_bool(
+            "ARBITRATOR_ENABLED",
+            _env_bool("GRANITE_ARBITRATOR_ENABLED", False),
+        ),
+        timeout_sec=_env_float(
+            "ARBITRATOR_TIMEOUT_SEC",
+            _env_float("GRANITE_ARBITRATOR_TIMEOUT_SEC", 60.0),
+        ),
     )
 
 
@@ -2551,6 +2653,18 @@ def _granite_apply_shape_allowed(r: Any) -> tuple[bool, str]:
     return False, "non-deletion semantic/numeric/structure patch"
 
 
+def _granite_delete_all_allowed(r: Any, count: int) -> bool:
+    """Allow Granite delete-all only for bounded exact deletion patches."""
+    before = (r.before or "").strip()
+    return (
+        r.patch_type in {"numeric", "formatting"}
+        and not (r.after or "").strip()
+        and 1 < count <= 5
+        and len(before) >= 24
+        and "\n" not in before
+    )
+
+
 async def _granite_arbitration_pass(
     *,
     paper_md: str,
@@ -2567,6 +2681,11 @@ async def _granite_arbitration_pass(
     ) if paper_path else []
     updated = list(results)
     for r in flagged_p1:
+        current = next(
+            (rr for rr in updated if rr.patch_id == r.patch_id), r,
+        )
+        if not _is_p1_flagged(current):
+            continue
         arb_input = _arbitration_input(r, paper_md)
         decision = await _granite.request_granite_arbitration(arb_input, config)
         entry = dict(_granite.build_audit_log_entry(
@@ -2578,10 +2697,20 @@ async def _granite_arbitration_pass(
             entry["apply_shape_reason"] = shape_reason
             if not shape_ok:
                 entry["pipeline_effect"] = "blocked_apply_shape"
-            elif not r.before or paper_md.count(r.before) != 1:
-                entry["pipeline_effect"] = "blocked_non_unique_before"
+            elif not r.before:
+                entry["pipeline_effect"] = "blocked_empty_before"
             else:
-                tentative = paper_md.replace(r.before, r.after or "", 1)
+                before_count = paper_md.count(r.before)
+                delete_all = _granite_delete_all_allowed(r, before_count)
+                if before_count != 1 and not delete_all:
+                    entry["pipeline_effect"] = "blocked_non_unique_before"
+                    log_rows.append(entry)
+                    continue
+                tentative = (
+                    paper_md.replace(r.before, r.after or "")
+                    if delete_all
+                    else paper_md.replace(r.before, r.after or "", 1)
+                )
                 safe, reason = _patch_applier._post_apply_audit_safe(
                     pre_md=paper_md, post_md=tentative, manifest=manifest,
                 )
@@ -2589,7 +2718,10 @@ async def _granite_arbitration_pass(
                 entry["post_apply_audit_reason"] = reason
                 if safe:
                     paper_md = tentative
-                    entry["pipeline_effect"] = "applied_exact_after"
+                    entry["pipeline_effect"] = (
+                        "applied_delete_all"
+                        if delete_all else "applied_exact_after"
+                    )
                     updated = [
                         _with_arbitration_decision(
                             rr,
@@ -2598,7 +2730,15 @@ async def _granite_arbitration_pass(
                                 "GRANITE-ARBITRATION-APPLY: exact AFTER "
                                 f"applied after deterministic audit. {decision.rationale}"
                             ),
-                        ) if rr.patch_id == r.patch_id else rr
+                        ) if (
+                            rr.patch_id == r.patch_id
+                            or (
+                                delete_all
+                                and _is_p1_flagged(rr)
+                                and rr.before == r.before
+                                and rr.after == r.after
+                            )
+                        ) else rr
                         for rr in updated
                     ]
                 else:
@@ -3073,6 +3213,12 @@ class UnifiedVerdict:
     all_green: bool
     p1_clean: bool
     grok_unresolved_p1: int = 0
+    grok_flagged: int = 0
+    n_arbitrated: int = 0
+    n_arbitration_apply: int = 0
+    n_arbitration_reject: int = 0
+    n_arbitration_escalate: int = 0
+    arbitration_log: str | None = None
     corpus_gaps: tuple[str, ...] = ()
     expansion_targets: tuple[str, ...] = ()
     maturity_level: int = 0
@@ -3103,9 +3249,15 @@ def _compute_unified_verdict(
     n_non_orthogonal_tensions: int = 0,
     cert_floors: dict[str, int] | None = None,
     manifest: dict[str, Any] | None = None,
+    grok_flagged_count: int = 0,
     auto_stripped_count: int = 0,
     journal_surface_pass: bool = True,
     journal_surface_issues: tuple[str, ...] = (),
+    n_arbitrated: int = 0,
+    n_arbitration_apply: int = 0,
+    n_arbitration_reject: int = 0,
+    n_arbitration_escalate: int = 0,
+    arbitration_log: str | None = None,
 ) -> UnifiedVerdict:
     """Worst-of(stage1, stage2, grok-unresolved). AAA reserved for
     fully-green (P1+P2 + zero unresolved Grok P1). SHIP-BLOCKED if
@@ -3317,14 +3469,15 @@ def _compute_unified_verdict(
             manifest or {},
             verdict=verdict,
             grok_unresolved_p1=grok_unresolved_p1,
+            review_flagged_count=grok_flagged_count,
             auto_stripped_count=auto_stripped_count,
             cert_floors=cert_floors,
             journal_surface_pass=journal_surface_pass,
         )
         if verdict == "AAA" and tiered_floor_clean and maturity_level < 4:
             maturity_level = (
-                5 if grok_unresolved_p1 == 0 and auto_stripped_count == 0
-                and journal_surface_pass else 4
+                5 if grok_unresolved_p1 == 0 and grok_flagged_count == 0
+                and auto_stripped_count == 0 and journal_surface_pass else 4
             )
         maturity_label = format_maturity_label(maturity_level)
         journal_ready = is_journal_ready(maturity_level)
@@ -3343,6 +3496,12 @@ def _compute_unified_verdict(
         all_green=all_green,
         p1_clean=p1_clean,
         grok_unresolved_p1=grok_unresolved_p1,
+        grok_flagged=grok_flagged_count,
+        n_arbitrated=n_arbitrated,
+        n_arbitration_apply=n_arbitration_apply,
+        n_arbitration_reject=n_arbitration_reject,
+        n_arbitration_escalate=n_arbitration_escalate,
+        arbitration_log=arbitration_log,
         corpus_gaps=corpus_gaps,
         expansion_targets=expansion_targets,
         maturity_level=maturity_level,
@@ -3390,6 +3549,14 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
         f"clinical={u.evidence_weight_clinical:.2f}; "
         f"mechanistic={u.evidence_weight_mechanistic:.2f})\n"
     )
+    arbitration_line = (
+        f"- Third-layer arbitration: {u.n_arbitrated} decision(s) "
+        f"(apply={u.n_arbitration_apply}, "
+        f"reject={u.n_arbitration_reject}, "
+        f"escalate={u.n_arbitration_escalate})"
+        + (f"; log={u.arbitration_log}" if u.arbitration_log else "")
+        + "\n"
+    )
     return (
         f"# Unified Final Verdict\n\n"
         f"**Verdict: {u.verdict}**\n\n"
@@ -3411,6 +3578,7 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
         )
         + "\n"
         + track_line
+        + arbitration_line
         + surface_line
         + (
             f"- Grok-flagged P1 patches unresolved: "

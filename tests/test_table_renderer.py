@@ -131,7 +131,8 @@ def test_table_2_includes_interpretation_column() -> None:
         ),
     ]
     md = tr.render_table_2_endpoint_evidence(receipts)
-    assert "worsens muscle_function" in md
+    assert "worsens muscle function" in md
+    assert "muscle_function" not in md
 
 
 def test_table_2_null_receipt_with_p_value_uses_source_local_interpretation() -> None:
@@ -150,7 +151,7 @@ def test_table_2_null_receipt_with_p_value_uses_source_local_interpretation() ->
     md = tr.render_table_2_endpoint_evidence(receipts)
     assert "p = 0.04 | significant statistic |" in md
     assert "significant statistic; receipt-level direction remains null" in md
-    assert "no significant effect on muscle_function" not in md
+    assert "no significant effect on muscle function" not in md
 
 
 def test_table_2_null_receipt_with_non_significant_p_value_keeps_null_summary() -> None:
@@ -187,7 +188,7 @@ def test_table_2_positive_receipt_with_p_value_uses_summary_language() -> None:
     md = tr.render_table_2_endpoint_evidence(receipts)
     assert "p = 0.01 | positive summary |" in md
     assert "reported statistic; receipt summary remains positive" in md
-    assert "improves muscle_function" not in md
+    assert "improves muscle function" not in md
 
 
 def test_table_3_assigns_per_domain_grades_by_tier() -> None:
@@ -759,8 +760,10 @@ def test_table_3_tensions_renders_one_row_per_pair() -> None:
     # Each pair surfaces both receipt ids and the kind label
     for rid in ("A", "B", "C", "D", "E", "F"):
         assert rid in md
-    assert "directionality_disagreement" in md
-    assert "tier_mismatch" in md
+    assert "directionality disagreement" in md
+    assert "directionality_disagreement" not in md
+    assert "tier mismatch" in md
+    assert "tier_mismatch" not in md
     # Severity 5 / 3 / 2 surfaced as raw numerics (Q9 density carrier)
     for sev in ("5", "3", "2"):
         assert sev in md
@@ -848,7 +851,8 @@ def test_render_all_tables_threads_matrix_into_table_3() -> None:
             return [_T()]
     receipts = [_FakeReceipt(receipt_id="X 2020")]
     md = tr.render_all_tables(receipts, _M())
-    assert "tier_mismatch" in md
+    assert "tier mismatch" in md
+    assert "tier_mismatch" not in md
     assert "no matrix supplied" not in md
 
 

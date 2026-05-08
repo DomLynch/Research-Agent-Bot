@@ -1,7 +1,9 @@
-"""IBM Granite arbitrator.
+"""Judge-only patch arbitrator.
 
 The arbitrator judges whether an existing patch should APPLY, REJECT, or
 ESCALATE. It must not generate replacement scientific content.
+
+The module name is legacy; the default runtime model is Mistral Small 4.
 """
 
 from __future__ import annotations

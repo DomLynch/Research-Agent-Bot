@@ -3,7 +3,7 @@
 Research Agent Bot may use two independent AI review layers before human use:
 
 1. SPAR panel review checks evidence support, domain scope, and final verdict.
-2. Granite arbitration may judge whether a proposed patch should `APPLY`,
+2. Mistral arbitration may judge whether a proposed patch should `APPLY`,
    `REJECT`, or `ESCALATE`.
 
 Both layers are AI-only reviewers. They do not replace human scientific review,
@@ -25,7 +25,7 @@ responsibility remains with the human operator.
 
 ## Methodological Boundary
 
-Do not describe Granite arbitration as equivalent to Cochrane human
+Do not describe Mistral arbitration as equivalent to Cochrane human
 dual-review. The current defensible claim is narrower: an AI reviewer and
 judge-only arbitrator can produce logged disagreement decisions, and those
 decisions can be benchmarked against human-consensus fixtures. Human review,

@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_effects_of_ezetimibe_add_on_to_statin_therapy_on_adipokine_p",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effects_of_ezetimibe_add_on_to_statin_therapy_on_adipokine_p-u-260",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 mmol",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 260,
+      "sentence": "The purpose of this study is to investigate the effects of adding ezetimibe to statin therapy on levels of inflammatory markers and adipokines in patients with atherosclerosis disease and features of the metabolic syndrome,whose LDL-c remains above target (\\> 2.0 mmol/L) despite statin monotherapy.",
+      "context_window": "the metabolic syndrome,whose LDL-c remains above target (\\> 2.0 mmol/L) despite statin monotherapy. We hypothesize that the addi",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_ezetimibe_add_on_to_statin_therapy_on_adipokine_p-u-347",
+      "claim_type": "unit_value",
+      "raw_text": "10mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 347,
+      "sentence": "We hypothesize that the addition of Ezetimibe (10mg per day for 12 weeks) to ongoing statin therapy in patients with atherosclerosis and features of the metabolic syndrome will favourably modify levels of inflammatory biomarkers and adipokines.",
+      "context_window": "monotherapy. We hypothesize that the addition of Ezetimibe (10mg per day for 12 weeks) to ongoing statin therapy in patients",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_ezetimibe_add_on_to_statin_therapy_on_adipokine_p-u-364",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 364,
+      "sentence": "We hypothesize that the addition of Ezetimibe (10mg per day for 12 weeks) to ongoing statin therapy in patients with atherosclerosis and features of the metabolic syndrome will favourably modify levels of inflammatory biomarkers and adipokines.",
+      "context_window": "ypothesize that the addition of Ezetimibe (10mg per day for 12 weeks) to ongoing statin therapy in patients with atherosclerosis",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

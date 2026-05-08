@@ -1,0 +1,156 @@
+{
+  "paper_id": "HIT_a_multicenter_study_to_evaluate_the_effect_of_high_dose_rosu",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 7,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_multicenter_study_to_evaluate_the_effect_of_high_dose_rosu-u-397",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/dL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 397,
+      "sentence": "Statin therapy is recommended even if it is less than 100 mg/dL.",
+      "context_window": "CVD). Statin therapy is recommended even if it is less than 100 mg/dL. The 2016 ESC/EAS and 2017 AACE guidelines include ischemic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_multicenter_study_to_evaluate_the_effect_of_high_dose_rosu-u-640",
+      "claim_type": "unit_value",
+      "raw_text": "70 mg/dL",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 640,
+      "sentence": "The 2016 ESC/EAS and 2017 AACE guidelines include ischemic stroke and transient cerebral ischemic attacks caused by atherosclerosis in ASCVD, classifying them as ultra-high-risk groups, and recommending LDL cholesterol of less than 70 mg/dL as a treatment goal.",
+      "context_window": "-risk groups, and recommending LDL cholesterol of less than 70 mg/dL as a treatment goal. The recently published guidelines for",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_multicenter_study_to_evaluate_the_effect_of_high_dose_rosu-u-889",
+      "claim_type": "unit_value",
+      "raw_text": "70 mg/dL",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 889,
+      "sentence": "The recently published guidelines for dyslipidemia in Korea also recommend that the target level of LDL cholesterol in patients with atherosclerotic ischemic stroke and transient ischemic attack be reduced to less than 70 mg/dL or 50% or more from the baseline.",
+      "context_window": "troke and transient ischemic attack be reduced to less than 70 mg/dL or 50% or more from the baseline. According to a previous s",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_multicenter_study_to_evaluate_the_effect_of_high_dose_rosu-pct-901",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 901,
+      "sentence": "The recently published guidelines for dyslipidemia in Korea also recommend that the target level of LDL cholesterol in patients with atherosclerotic ischemic stroke and transient ischemic attack be reduced to less than 70 mg/dL or 50% or more from the baseline.",
+      "context_window": "ansient ischemic attack be reduced to less than 70 mg/dL or 50% or more from the baseline. According to a previous study on",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_multicenter_study_to_evaluate_the_effect_of_high_dose_rosu-u-1102",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1102,
+      "sentence": "According to a previous study on the efficacy and safety of high-intensity rosuvastatin in patients with ischemic stroke, it is not clear whether the use of rosuvastatin 20 mg prevents recurrence of cerebral infarction in the acute stage, but it is safe and effective for hemorrhagic conversion of cerebral infarction.",
+      "context_window": "mic stroke, it is not clear whether the use of rosuvastatin 20 mg prevents recurrence of cerebral infarction in the acute sta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_multicenter_study_to_evaluate_the_effect_of_high_dose_rosu-u-1558",
+      "claim_type": "unit_value",
+      "raw_text": "70 mg/dL",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1558,
+      "sentence": "In a study comparing the group whose LDL cholesterol target was reduced to 70 mg/dL or less after stroke and the group maintained at 90-110 mg/dL, the group whose LDL cholesterol was controlled to 70 mg/dL or less It was confirmed that the incidence of cardiovascular disease was reduced.",
+      "context_window": "aring the group whose LDL cholesterol target was reduced to 70 mg/dL or less after stroke and the group maintained at 90-110 mg/",
+      "claim_role": "background",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_multicenter_study_to_evaluate_the_effect_of_high_dose_rosu-u-1619",
+      "claim_type": "unit_value",
+      "raw_text": "110 mg/dL",
+      "numeric_values": [
+        110.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1619,
+      "sentence": "In a study comparing the group whose LDL cholesterol target was reduced to 70 mg/dL or less after stroke and the group maintained at 90-110 mg/dL, the group whose LDL cholesterol was controlled to 70 mg/dL or less It was confirmed that the incidence of cardiovascular disease was reduced.",
+      "context_window": "0 mg/dL or less after stroke and the group maintained at 90-110 mg/dL, the group whose LDL cholesterol was controlled to 70 mg/dL",
+      "claim_role": "background",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_multicenter_study_to_evaluate_the_effect_of_high_dose_rosu-u-1680",
+      "claim_type": "unit_value",
+      "raw_text": "70 mg/dL",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1680,
+      "sentence": "In a study comparing the group whose LDL cholesterol target was reduced to 70 mg/dL or less after stroke and the group maintained at 90-110 mg/dL, the group whose LDL cholesterol was controlled to 70 mg/dL or less It was confirmed that the incidence of cardiovascular disease was reduced.",
+      "context_window": "10 mg/dL, the group whose LDL cholesterol was controlled to 70 mg/dL or less It was confirmed that the incidence of cardiovascul",
+      "claim_role": "background",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

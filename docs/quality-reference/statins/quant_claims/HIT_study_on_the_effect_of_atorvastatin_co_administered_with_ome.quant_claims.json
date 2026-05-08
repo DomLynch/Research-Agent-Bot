@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_study_on_the_effect_of_atorvastatin_co_administered_with_ome",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_study_on_the_effect_of_atorvastatin_co_administered_with_ome-u-100",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 100,
+      "sentence": "This is a 2-arm, prospective, randomized, parallel-group, open-label, longitudinal study that lasts 30 days for each study participant.",
+      "context_window": ", parallel-group, open-label, longitudinal study that lasts 30 days for each study participant. This study aims to investigate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_study_on_the_effect_of_atorvastatin_co_administered_with_ome-u-366",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 366,
+      "sentence": "Primary endpoint: Higher statin lactone level in intervention arm after 30 days.",
+      "context_window": "oint: Higher statin lactone level in intervention arm after 30 days. Secondary endpoints: Higher hs-CRP in intervention arm Lip",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

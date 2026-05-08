@@ -67,6 +67,7 @@ active_arm_synonyms = [
   "nicotinamide mononucleotide",
   "nicotinamide",
   "niacinamide",
+  "nicotinamide adenine dinucleotide",
 ]
 
 placebo_arm_synonyms = [
@@ -84,6 +85,9 @@ corpus_search_queries = [
   "(NMN OR NR) AND elderly AND (frailty OR sarcopenia OR muscle)",
   "NAD AND (cognitive OR cardiovascular) AND outcomes",
   "(NMN OR NR) AND safety AND tolerability AND human",
+  "(nicotinamide riboside OR nicotinamide mononucleotide) AND muscle AND older adults",
+  "(NAD precursor OR NAD booster) AND mitochondrial function AND human",
+  "(NR OR NMN) AND inflammation AND randomized",
 ]
 
 canonical_rct_paper_ids = []
@@ -95,12 +99,13 @@ canonical_rct_paper_ids = []
 topic_terms    = [
   "NAD precursor", "NAD booster", "nicotinamide riboside",
   "nicotinamide mononucleotide", "NR", "NMN", "nicotinamide",
-  "niacinamide",
+  "niacinamide", "nicotinamide adenine dinucleotide",
 ]
 scope_terms    = [
   "aging", "older adults", "elderly", "geriatric", "longevity",
   "healthspan", "frailty", "sarcopenia", "muscle function",
-  "cognition", "cardiometabolic",
+  "cognition", "cardiometabolic", "mitochondrial function",
+  "inflammation", "insulin sensitivity",
 ]
 evidence_types = [
   "clinical trial", "randomized controlled trial", "cohort study",
@@ -112,7 +117,6 @@ exclude_terms  = [
 ]
 date_from      = 2010
 languages      = ["English"]
-species        = ["humans"]
 
 [retrieval.background]
 allow = [
@@ -120,6 +124,8 @@ allow = [
   "sirtuin mechanism",
   "mitochondrial aging rationale",
   "supplement safety history",
+  "DNA repair biology",
+  "cellular energetics",
 ]
 
 

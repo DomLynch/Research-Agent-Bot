@@ -1,0 +1,191 @@
+{
+  "paper_id": "HIT_easego_study_doubling_of_atorvastatin_simvastatin_or_inegy_i",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 10
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_easego_study_doubling_of_atorvastatin_simvastatin_or_inegy_i-u-67",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mmol",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 67,
+      "sentence": "In patients with coronary artery disease and a LDL-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting dose (simvastatin 20 mg or atorvastatin 10 mg), investigate what the LCL-C lowering efficacy is of doubling the statin dose (to 40 mg simvastatin or 20 mg atorvastatin) versus a combination tablet of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks.",
+      "context_window": "ents with coronary artery disease and a LDL-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting d",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_easego_study_doubling_of_atorvastatin_simvastatin_or_inegy_i-u-82",
+      "claim_type": "unit_value",
+      "raw_text": "5.0 mmol",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 82,
+      "sentence": "In patients with coronary artery disease and a LDL-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting dose (simvastatin 20 mg or atorvastatin 10 mg), investigate what the LCL-C lowering efficacy is of doubling the statin dose (to 40 mg simvastatin or 20 mg atorvastatin) versus a combination tablet of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks.",
+      "context_window": "ary artery disease and a LDL-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting dose (simvastati",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_easego_study_doubling_of_atorvastatin_simvastatin_or_inegy_i-u-109",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 109,
+      "sentence": "In patients with coronary artery disease and a LDL-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting dose (simvastatin 20 mg or atorvastatin 10 mg), investigate what the LCL-C lowering efficacy is of doubling the statin dose (to 40 mg simvastatin or 20 mg atorvastatin) versus a combination tablet of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks.",
+      "context_window": "L-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting dose (simvastatin 20 mg or atorvastatin 10",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_easego_study_doubling_of_atorvastatin_simvastatin_or_inegy_i-u-152",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 152,
+      "sentence": "In patients with coronary artery disease and a LDL-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting dose (simvastatin 20 mg or atorvastatin 10 mg), investigate what the LCL-C lowering efficacy is of doubling the statin dose (to 40 mg simvastatin or 20 mg atorvastatin) versus a combination tablet of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks.",
+      "context_window": "on a stable (\\> 4 weeks) statin starting dose (simvastatin 20 mg or atorvastatin 10 mg), investigate what the LCL-C lowering",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_easego_study_doubling_of_atorvastatin_simvastatin_or_inegy_i-u-174",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 174,
+      "sentence": "In patients with coronary artery disease and a LDL-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting dose (simvastatin 20 mg or atorvastatin 10 mg), investigate what the LCL-C lowering efficacy is of doubling the statin dose (to 40 mg simvastatin or 20 mg atorvastatin) versus a combination tablet of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks.",
+      "context_window": "ks) statin starting dose (simvastatin 20 mg or atorvastatin 10 mg), investigate what the LCL-C lowering efficacy is of doubli",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_easego_study_doubling_of_atorvastatin_simvastatin_or_inegy_i-u-262",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 262,
+      "sentence": "In patients with coronary artery disease and a LDL-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting dose (simvastatin 20 mg or atorvastatin 10 mg), investigate what the LCL-C lowering efficacy is of doubling the statin dose (to 40 mg simvastatin or 20 mg atorvastatin) versus a combination tablet of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks.",
+      "context_window": "LCL-C lowering efficacy is of doubling the statin dose (to 40 mg simvastatin or 20 mg atorvastatin) versus a combination tab",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_easego_study_doubling_of_atorvastatin_simvastatin_or_inegy_i-u-283",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 283,
+      "sentence": "In patients with coronary artery disease and a LDL-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting dose (simvastatin 20 mg or atorvastatin 10 mg), investigate what the LCL-C lowering efficacy is of doubling the statin dose (to 40 mg simvastatin or 20 mg atorvastatin) versus a combination tablet of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks.",
+      "context_window": "acy is of doubling the statin dose (to 40 mg simvastatin or 20 mg atorvastatin) versus a combination tablet of ezetimibe 10 m",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_easego_study_doubling_of_atorvastatin_simvastatin_or_inegy_i-u-344",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 344,
+      "sentence": "In patients with coronary artery disease and a LDL-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting dose (simvastatin 20 mg or atorvastatin 10 mg), investigate what the LCL-C lowering efficacy is of doubling the statin dose (to 40 mg simvastatin or 20 mg atorvastatin) versus a combination tablet of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks.",
+      "context_window": "0 mg atorvastatin) versus a combination tablet of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks. It is postu",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_easego_study_doubling_of_atorvastatin_simvastatin_or_inegy_i-u-367",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 367,
+      "sentence": "In patients with coronary artery disease and a LDL-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting dose (simvastatin 20 mg or atorvastatin 10 mg), investigate what the LCL-C lowering efficacy is of doubling the statin dose (to 40 mg simvastatin or 20 mg atorvastatin) versus a combination tablet of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks.",
+      "context_window": "us a combination tablet of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks. It is postulated that more patient",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_easego_study_doubling_of_atorvastatin_simvastatin_or_inegy_i-u-388",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 388,
+      "sentence": "In patients with coronary artery disease and a LDL-C level between 2.5 mmol/L and 5.0 mmol/L on a stable (\\> 4 weeks) statin starting dose (simvastatin 20 mg or atorvastatin 10 mg), investigate what the LCL-C lowering efficacy is of doubling the statin dose (to 40 mg simvastatin or 20 mg atorvastatin) versus a combination tablet of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks.",
+      "context_window": "et of ezetimibe 10 mg plus simvastatin 20 mg once daily for 12 weeks. It is postulated that more patients reach their LDL-C trea",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an",
   "doi": "10.1001/jamanetworkopen.2021.44279",
-  "extracted_at": "2026-05-05T21:39:52+00:00",
+  "extracted_at": "2026-05-08T16:03:17+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 33,
@@ -23,10 +23,10 @@
       "sentence": "This randomized clinical trial evaluates the improvement in the 6-minute walk distance test and in leg and hand muscle endurance after use of urolithin A in patients aged 65 to 90 years.",
       "context_window": "e endurance after use of urolithin A in patients aged 65 to 90 years.",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "endurance",
+      "arm": "urolithin a",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an-u-20",
@@ -59,10 +59,10 @@
       "sentence": "A supplementation period of 4 months, with efficacy readouts at 2 and 4 months, was chosen as the earliest time point at which improvements in muscle function end points would be likely observed.",
       "context_window": "y (MRS) in the skeletal muscle. A supplementation period of 4 months, with efficacy readouts at 2 and 4 months, was chosen as th",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an-u-1941",
@@ -77,10 +77,10 @@
       "sentence": "A supplementation period of 4 months, with efficacy readouts at 2 and 4 months, was chosen as the earliest time point at which improvements in muscle function end points would be likely observed.",
       "context_window": "ntation period of 4 months, with efficacy readouts at 2 and 4 months, was chosen as the earliest time point at which improvement",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an-u-946",
@@ -132,7 +132,7 @@
       "context_window": "istinguishable in appearance. Each softgel contained either 250 mg of urolithin A along with excipients or only excipients for",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -150,7 +150,7 @@
       "context_window": "only excipients for the placebo. To reach the daily dose of 1000 mg urolithin A, each participant consumed 4 softgels (containi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -185,10 +185,10 @@
       "sentence": "Muscle endurance (ie, resistance to fatigue) was assessed on the right hand (FDI) and leg skeletal (TA) muscles by measuring the number of contractions during repeated isometric contractions until fatigue using a custom-built exercise apparatus 19 , 20 at baseline, 2 months, and 4 months.",
       "context_window": "sing a custom-built exercise apparatus 19 , 20 at baseline, 2 months, and 4 months. The contraction intensity was set at 70% of",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "endurance",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an-u-3755",
@@ -203,10 +203,10 @@
       "sentence": "Muscle endurance (ie, resistance to fatigue) was assessed on the right hand (FDI) and leg skeletal (TA) muscles by measuring the number of contractions during repeated isometric contractions until fatigue using a custom-built exercise apparatus 19 , 20 at baseline, 2 months, and 4 months.",
       "context_window": "built exercise apparatus 19 , 20 at baseline, 2 months, and 4 months. The contraction intensity was set at 70% of the maximum vo",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "endurance",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an-pct-3802",
@@ -330,9 +330,9 @@
       "context_window": "thin A glucuronide, were analyzed in plasma at baseline and 4 months (end of the study) using a validated method, as described p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "urolithin a",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an-u-7226",
@@ -348,9 +348,9 @@
       "context_window": "quantification was 5.00 pg/mL for urolithin A in plasma and 5.00 ng/mL for urolithin A glucuronide. For mean value calculations, a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "urolithin a",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an-pct-8515",
@@ -402,7 +402,7 @@
       "context_window": "s and corresponding nonadjusted P values were calculated. A 5% significance level (\u03b1 = .05 or 2-sided P < .05) was applied",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -420,7 +420,7 @@
       "context_window": "ere calculated. A 5% significance level (\u03b1 = .05 or 2-sided P < .05) was applied for the comparison of urolithin A to placebo g",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -474,7 +474,7 @@
       "context_window": "Of the 128 adults aged 65 to 90 years screened for this trial, 66 (51.6%) were included and rando",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -492,7 +492,7 @@
       "context_window": "128 adults aged 65 to 90 years screened for this trial, 66 (51.6%) were included and randomized to either the urolithin A (n",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -510,7 +510,7 @@
       "context_window": "6%) were included and randomized to either the urolithin A (n = 33) or placebo (n = 33) intervention. These participants had a",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -528,7 +528,7 @@
       "context_window": "d randomized to either the urolithin A (n = 33) or placebo (n = 33) intervention. These participants had a mean (SD) age of 71",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -618,7 +618,7 @@
       "context_window": "g the study, of which a total of 31 treatment-emergent AEs (93.9%) were reported by participants in the urolithin A (n = 16)",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -636,7 +636,7 @@
       "context_window": "s (93.9%) were reported by participants in the urolithin A (n = 16) and placebo (n = 15) groups ( Table 2 ). The AEs were dive",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -654,7 +654,7 @@
       "context_window": "ed by participants in the urolithin A (n = 16) and placebo (n = 15) groups ( Table 2 ). The AEs were diverse in nature, with n",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -672,7 +672,7 @@
       "context_window": "te walk distance, the primary end point, was 60.8 (67.2) m (n = 30; percentage change from baseline: 14.9%) among participants",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -690,7 +690,7 @@
       "context_window": "was 60.8 (67.2) m (n = 30; percentage change from baseline: 14.9%) among participants who were supplemented with a 1000-mg/d",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -708,7 +708,7 @@
       "context_window": "ere supplemented with a 1000-mg/d dosage of urolithin A for 120 days, compared with 42.5 (73.3) m (n = 30; percentage change fro",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -726,7 +726,7 @@
       "context_window": "e of urolithin A for 120 days, compared with 42.5 (73.3) m (n = 30; percentage change from baseline: 10.1%) in the placebo gro",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -744,7 +744,7 @@
       "context_window": "ith 42.5 (73.3) m (n = 30; percentage change from baseline: 10.1%) in the placebo group ( Figure 2 A). This increase with uro",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -888,7 +888,7 @@
       "context_window": "mean (SD) change in maximal ATP production from baseline to 4 months in either the hand FDI (urolithin A group vs placebo group:",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "urolithin a",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -905,10 +905,10 @@
       "sentence": "To assess the effect of urolithin A supplementation on muscle endurance, we measured the ability to maintain repeated voluntary contractions to 70% of maximum voluntary contraction in the FDI and TA.",
       "context_window": "the ability to maintain repeated voluntary contractions to 70% of maximum voluntary contraction in the FDI and TA. At the",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "endurance",
+      "arm": "urolithin a",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an-u-4609",
@@ -924,9 +924,9 @@
       "context_window": "ilability. High levels of parent urolithin A (1038 pg/mL at 4 months) and its conjugated form urolithin A glucuronide (1014 ng/m",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "urolithin a",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an-u-4668",
@@ -942,9 +942,9 @@
       "context_window": "4 months) and its conjugated form urolithin A glucuronide (1014 ng/mL at 4 months) were detected 4 months after administration of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "urolithin a",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an-u-4682",
@@ -960,9 +960,9 @@
       "context_window": "its conjugated form urolithin A glucuronide (1014 ng/mL at 4 months) were detected 4 months after administration of urolithin A",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "urolithin a",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an-u-4706",
@@ -978,9 +978,9 @@
       "context_window": "lithin A glucuronide (1014 ng/mL at 4 months) were detected 4 months after administration of urolithin A compared with baseline",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "urolithin a",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8777576_effect_of_urolithin_a_supplementation_on_muscle_endurance_an-u-5504",
@@ -996,7 +996,7 @@
       "context_window": "e urolithin A group but not the placebo group at both 2 and 4 months ( Figure 3 E and F; and eFigure 4C and D in Supplement 2 ).",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1158,7 +1158,7 @@
       "context_window": "he urolithin A group but not the placebo group (baseline vs 4 months: urolithin A, 2.14 [2.15] vs 2.07 [1.46]; placebo, 2.17 [2.",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "placebo",
+      "arm": "urolithin a",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1176,7 +1176,7 @@
       "context_window": "higher powering, a longer intervention regimen of more than 6 months, or combining urolithin A supplementation with exercise tra",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "urolithin a",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1230,7 +1230,7 @@
       "context_window": "d mitochondrial metabolic efficiency, in older adults after 4 weeks of supplementation. 17 Impaired mitochondrial health has be",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "urolithin a",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1248,7 +1248,7 @@
       "context_window": "ture studies should have a longer intervention of more than 6 months, track daily physical activity levels, and select participa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "urolithin a",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1266,7 +1266,7 @@
       "context_window": "ture studies should have a longer intervention of more than 6 months, track daily physical activity levels, and select participa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "urolithin a",
       "direction": "increase",
       "binding_confidence": "partial"
     }

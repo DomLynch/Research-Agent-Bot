@@ -1,0 +1,125 @@
+{
+  "cases": [
+    {
+      "actual": "APPLY",
+      "confidence": 0.9,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-PATH2RICHFIX3-2026-05-08TCLASSIFIER:P02",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "confidence": 0.9,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "synthesis-urolithin_a-v06-2026-05-08T14-37-21Z:P02",
+      "passed": true
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 0.9,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-ENDGAME-2026-05-05T20-30-00Z:P08",
+      "passed": true
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 0.9,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-ENDGAME-2026-05-05T20-30-00Z:P09",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "confidence": 0.7,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-creatine-v06-Q14VALID-2026-05-06T12-19-00Z:P01",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "confidence": 0.7,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-creatine-v06-Q14VALID-2026-05-06T12-19-00Z:P05",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "confidence": 0.7,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-metformin-v06-FINAL-2026-05-05T21-15-00Z:P05",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "confidence": 0.7,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-metformin-v06-aaa-real-2026-05-03T16-00-40Z:P01",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "confidence": 0.7,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-PATH2RICHFIX3-2026-05-08TCLASSIFIER:P03",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "confidence": 0.7,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-metformin-v06-phd-2026-05-03T16-58-57Z:P01",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "agreement_rate": 1.0,
+    "by_expected": {
+      "APPLY": {
+        "agreed": 2,
+        "agreement_rate": 1.0,
+        "total": 2
+      },
+      "ESCALATE": {
+        "agreed": 6,
+        "agreement_rate": 1.0,
+        "total": 6
+      },
+      "REJECT": {
+        "agreed": 2,
+        "agreement_rate": 1.0,
+        "total": 2
+      }
+    },
+    "confusion_matrix": {
+      "APPLY": {
+        "APPLY": 2,
+        "ESCALATE": 0,
+        "REJECT": 0
+      },
+      "ESCALATE": {
+        "APPLY": 0,
+        "ESCALATE": 6,
+        "REJECT": 0
+      },
+      "REJECT": {
+        "APPLY": 0,
+        "ESCALATE": 0,
+        "REJECT": 2
+      }
+    },
+    "escalate_count": 6,
+    "fail_closed_count": 0
+  },
+  "passed": 10,
+  "total": 10
+}

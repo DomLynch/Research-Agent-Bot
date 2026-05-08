@@ -10,8 +10,9 @@ signals. Higher levels imply lower gates have cleared:
                        (audit failures or unresolved Grok flags)
   L4 — ANALYTICAL      verdict == "AAA", but journal-surface or
                        surgery gate still requires editorial work
-  L5 — JOURNAL-READY   AAA + zero unresolved Grok + zero auto-strip
-                       surgery + clean journal-surface gate
+  L5 — JOURNAL-READY   AAA + zero unresolved Grok + zero flagged review
+                       patches + zero auto-strip surgery + clean
+                       journal-surface gate
   L6 — REPRODUCIBLE    at least two consecutive clean L5 runs
 """
 from __future__ import annotations
@@ -60,6 +61,7 @@ def compute_maturity_level(
     *,
     verdict: str,
     grok_unresolved_p1: int = 0,
+    review_flagged_count: int = 0,
     auto_stripped_count: int = 0,
     cert_floors: dict[str, int] | None = None,
     journal_surface_pass: bool = True,
@@ -105,6 +107,7 @@ def compute_maturity_level(
     # AAA achieved — distinguish L4 from L5 on hardening signals
     if (
         grok_unresolved_p1 == 0
+        and review_flagged_count == 0
         and auto_stripped_count == 0
         and journal_surface_pass
     ):

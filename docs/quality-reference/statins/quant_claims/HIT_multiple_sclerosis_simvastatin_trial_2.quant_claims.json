@@ -1,0 +1,121 @@
+{
+  "paper_id": "HIT_multiple_sclerosis_simvastatin_trial_2",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "sample_size": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_multiple_sclerosis_simvastatin_trial_2-u-426",
+      "claim_type": "unit_value",
+      "raw_text": "15 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 426,
+      "sentence": "Most people with MS experience two stages of the disease: Early MS - Relapsing-Remitting MS (RRMS), which is partially reversible, and Late MS - Secondary Progressive MS (SPMS), which affects the majority of patients, usually after 10 to 15 years after diagnosis.",
+      "context_window": "which affects the majority of patients, usually after 10 to 15 years after diagnosis. SPMS results from progressive neuronal deg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_multiple_sclerosis_simvastatin_trial_2-n-1043",
+      "claim_type": "sample_size",
+      "raw_text": "n=8500",
+      "numeric_values": [
+        8500.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1043,
+      "sentence": "This is the overwhelming conclusion from an analysis of 18 phase 3 trials (n=8500), of which 70% of the population had SPMS, all performed in the last 25 years.",
+      "context_window": "rwhelming conclusion from an analysis of 18 phase 3 trials (n=8500), of which 70% of the population had SPMS, all performed in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_multiple_sclerosis_simvastatin_trial_2-pct-1061",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1061,
+      "sentence": "This is the overwhelming conclusion from an analysis of 18 phase 3 trials (n=8500), of which 70% of the population had SPMS, all performed in the last 25 years.",
+      "context_window": "on from an analysis of 18 phase 3 trials (n=8500), of which 70% of the population had SPMS, all performed in the last 25 ye",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_multiple_sclerosis_simvastatin_trial_2-u-1119",
+      "claim_type": "unit_value",
+      "raw_text": "25 years",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1119,
+      "sentence": "This is the overwhelming conclusion from an analysis of 18 phase 3 trials (n=8500), of which 70% of the population had SPMS, all performed in the last 25 years.",
+      "context_window": "h 70% of the population had SPMS, all performed in the last 25 years. In an earlier study (Multiple Sclerosis-Simvastatin 1; MS-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_multiple_sclerosis_simvastatin_trial_2-u-1755",
+      "claim_type": "unit_value",
+      "raw_text": "80mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1755,
+      "sentence": "The study is designed to test the effectiveness of repurposed simvastatin (80mg) in a phase 3 double blind, randomised, placebo controlled trial (1:1) in patients with secondary progressive MS (SPMS), to determine if the rate of disability progression can be slowed over a 3 to 4.5 year period.",
+      "context_window": "signed to test the effectiveness of repurposed simvastatin (80mg) in a phase 3 double blind, randomised, placebo controlled",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_multiple_sclerosis_simvastatin_trial_2-u-1958",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 year",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 1958,
+      "sentence": "The study is designed to test the effectiveness of repurposed simvastatin (80mg) in a phase 3 double blind, randomised, placebo controlled trial (1:1) in patients with secondary progressive MS (SPMS), to determine if the rate of disability progression can be slowed over a 3 to 4.5 year period.",
+      "context_window": "he rate of disability progression can be slowed over a 3 to 4.5 year period. The results generated from this trial may help to i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

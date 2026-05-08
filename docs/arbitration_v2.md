@@ -1,4 +1,4 @@
-# Tri-Agent / Granite Arbitration Spec v2
+# Tri-Agent / Mistral Arbitration Spec v2
 
 Status: draft.
 
@@ -12,7 +12,7 @@ numerics, citations, estimates, or replacement prose.
 - Reviewer: flags risks, missing support, overclaims, and surface defects.
 - Arbitrator: judges contested patches or reviewer objections.
 
-IBM Granite may be used as the arbitrator when available. Granite is not a
+Mistral Small 4 may be used as the arbitrator when available. It is not a
 domain authority; it is a logged judge in a bounded dispute.
 
 ## Judge-Only Constraint

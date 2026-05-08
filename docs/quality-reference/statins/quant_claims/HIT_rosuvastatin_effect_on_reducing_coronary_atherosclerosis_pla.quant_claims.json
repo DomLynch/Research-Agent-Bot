@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_rosuvastatin_effect_on_reducing_coronary_atherosclerosis_pla",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_rosuvastatin_effect_on_reducing_coronary_atherosclerosis_pla-u-89",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 89,
+      "sentence": "This multicentre, open-label, single-arm Study is to evaluate the effect of Rosuvastatin 20 mg 76 weeks on coronary atherosclerosis plaque versus baseline in Chinese coronary heart disease (CHD) patients with hyperlipidemia by measuring the plaque volume using a 64 slice spiral CT.",
+      "context_window": "single-arm Study is to evaluate the effect of Rosuvastatin 20 mg 76 weeks on coronary atherosclerosis plaque versus baseline",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_rosuvastatin_effect_on_reducing_coronary_atherosclerosis_pla-u-95",
+      "claim_type": "unit_value",
+      "raw_text": "76 weeks",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 95,
+      "sentence": "This multicentre, open-label, single-arm Study is to evaluate the effect of Rosuvastatin 20 mg 76 weeks on coronary atherosclerosis plaque versus baseline in Chinese coronary heart disease (CHD) patients with hyperlipidemia by measuring the plaque volume using a 64 slice spiral CT.",
+      "context_window": "e-arm Study is to evaluate the effect of Rosuvastatin 20 mg 76 weeks on coronary atherosclerosis plaque versus baseline in Chine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

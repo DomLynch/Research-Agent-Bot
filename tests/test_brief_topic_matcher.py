@@ -33,3 +33,9 @@ def test_match_multiple_interventions() -> None:
 
 def test_no_intervention_returns_no_topics() -> None:
     assert _topics("what evidence exists for mortality in older adults") == ()
+
+
+def test_template_pack_is_not_matchable() -> None:
+    assert "__biomedical_default__" not in _topics(
+        "__biomedical_default_do_not_match__ for aging"
+    )

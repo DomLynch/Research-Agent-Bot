@@ -340,10 +340,10 @@ def _claim_to_row(
         value_str = raw if (raw and len(raw) < 24) else _format_value(
             primary_value,
         )
-    # Unit/type: prefer explicit units, fall back to claim_type.
-    unit_str = units if units else claim_type.replace("_", " ")
+    # Unit/type: prefer explicit units, fall back to public claim type.
+    unit_str = units if units else _public_label(claim_type)
     # Endpoint column: bound endpoint > claim_role > short claim_type.
-    ep = endpoint or role or claim_type.replace("_", " ") or "—"
+    ep = endpoint or role or _public_label(claim_type) or "—"
     citation = citation_token or _short_citation(paper_id)
     return EvidenceRow(
         study_label=citation,
@@ -400,6 +400,18 @@ def _format_value(v: float) -> str:
     if v == int(v):
         return f"{int(v):,}"
     return f"{v:.3g}"
+
+
+def _public_label(value: str) -> str:
+    labels = {
+        "ci": "confidence interval",
+        "mean_sd": "mean ± SD",
+        "p_value": "p-value",
+        "sample_size": "sample size",
+        "unit_value": "unit value",
+    }
+    s = (value or "").strip()
+    return labels.get(s, s.replace("_", " "))
 
 
 def _format_statistic(claim: dict[str, Any], value: float) -> str:

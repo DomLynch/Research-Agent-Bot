@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_atorvastatin_plus_ezetimibe_on_coronary_plaque_progression",
+  "doi": "",
+  "extracted_at": "2026-05-08T16:22:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_atorvastatin_plus_ezetimibe_on_coronary_plaque_progression-u-326",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/d",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 326,
+      "sentence": "Studies indicated that coronary artery plaque progression had positive relationship with the plasma cholesterol level, and could be halted or reversed by intensive statin therapy (such as 20-40 mg/d atorvastatin).",
+      "context_window": "halted or reversed by intensive statin therapy (such as 20-40 mg/d atorvastatin). Ezetimibe plus statin could further lowered",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

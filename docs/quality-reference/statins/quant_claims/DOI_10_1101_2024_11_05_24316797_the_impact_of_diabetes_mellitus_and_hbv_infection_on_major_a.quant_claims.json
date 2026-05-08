@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1101_2024_11_05_24316797_the_impact_of_diabetes_mellitus_and_hbv_infection_on_major_a",
+  "doi": "10.1101/2024.11.05.24316797",
+  "extracted_at": "2026-05-08T16:22:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2024_11_05_24316797_the_impact_of_diabetes_mellitus_and_hbv_infection_on_major_a-n-630",
+      "claim_type": "sample_size",
+      "raw_text": "n = 225",
+      "numeric_values": [
+        225.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 630,
+      "sentence": "Finally, a sample size of 496 participants was included in the study: patients with coexisting CVD and HBV (n = 225) and patients with CVD alone (n = 271).The implementation of statins has demonstrated the potential to reduce the incidence of coronary heart disease (CHD) and angina pectoris (AP) in individuals with CVD who are also affected by HBV infection.",
+      "context_window": "ncluded in the study: patients with coexisting CVD and HBV (n = 225) and patients with CVD alone (n = 271).The implementation o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_11_05_24316797_the_impact_of_diabetes_mellitus_and_hbv_infection_on_major_a-n-668",
+      "claim_type": "sample_size",
+      "raw_text": "n = 271",
+      "numeric_values": [
+        271.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 668,
+      "sentence": "Finally, a sample size of 496 participants was included in the study: patients with coexisting CVD and HBV (n = 225) and patients with CVD alone (n = 271).The implementation of statins has demonstrated the potential to reduce the incidence of coronary heart disease (CHD) and angina pectoris (AP) in individuals with CVD who are also affected by HBV infection.",
+      "context_window": "existing CVD and HBV (n = 225) and patients with CVD alone (n = 271).The implementation of statins has demonstrated the potenti",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

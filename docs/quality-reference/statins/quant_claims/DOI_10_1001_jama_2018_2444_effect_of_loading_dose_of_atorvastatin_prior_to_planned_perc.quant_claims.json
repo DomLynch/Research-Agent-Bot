@@ -1,0 +1,410 @@
+{
+  "paper_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc",
+  "doi": "10.1001/jama.2018.2444",
+  "extracted_at": "2026-05-08T16:22:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "sample_size": 2,
+    "percentage": 13,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-u-841",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 841,
+      "sentence": "Interventions: Patients were randomized to receive 2 loading doses of 80 mg of atorvastatin (n = 2087) or matching placebo (n = 2104) before and 24 hours after a planned PCI.",
+      "context_window": "ons: Patients were randomized to receive 2 loading doses of 80 mg of atorvastatin (n = 2087) or matching placebo (n = 2104) b",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-n-864",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2087",
+      "numeric_values": [
+        2087.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 864,
+      "sentence": "Interventions: Patients were randomized to receive 2 loading doses of 80 mg of atorvastatin (n = 2087) or matching placebo (n = 2104) before and 24 hours after a planned PCI.",
+      "context_window": "omized to receive 2 loading doses of 80 mg of atorvastatin (n = 2087) or matching placebo (n = 2104) before and 24 hours after a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-n-895",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2104",
+      "numeric_values": [
+        2104.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 895,
+      "sentence": "Interventions: Patients were randomized to receive 2 loading doses of 80 mg of atorvastatin (n = 2087) or matching placebo (n = 2104) before and 24 hours after a planned PCI.",
+      "context_window": "es of 80 mg of atorvastatin (n = 2087) or matching placebo (n = 2104) before and 24 hours after a planned PCI. All patients rece",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-u-968",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 968,
+      "sentence": "All patients received 40 mg of atorvastatin for 30 days starting 24 hours after the second dose of study medication.",
+      "context_window": "ore and 24 hours after a planned PCI. All patients received 40 mg of atorvastatin for 30 days starting 24 hours after the sec",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-u-994",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 994,
+      "sentence": "All patients received 40 mg of atorvastatin for 30 days starting 24 hours after the second dose of study medication.",
+      "context_window": "lanned PCI. All patients received 40 mg of atorvastatin for 30 days starting 24 hours after the second dose of study medication",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-u-1248",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1248,
+      "sentence": "Main Outcomes and Measures: The primary outcome was MACE, defined as a composite of all-cause mortality, myocardial infarction, stroke, and unplanned coronary revascularization through 30 days.",
+      "context_window": "n, stroke, and unplanned coronary revascularization through 30 days. Results: Among the 4191 patients (mean age, 61.8 [SD, 11.5",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1336",
+      "claim_type": "percentage",
+      "raw_text": "25.9%",
+      "numeric_values": [
+        25.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1336,
+      "sentence": "Results: Among the 4191 patients (mean age, 61.8 [SD, 11.5] years; 1085 women [25.9%]) enrolled, 4163 (99.3%) completed 30-day follow-up.",
+      "context_window": "4191 patients (mean age, 61.8 [SD, 11.5] years; 1085 women [25.9%]) enrolled, 4163 (99.3%) completed 30-day follow-up. A tota",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1360",
+      "claim_type": "percentage",
+      "raw_text": "99.3%",
+      "numeric_values": [
+        99.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1360,
+      "sentence": "Results: Among the 4191 patients (mean age, 61.8 [SD, 11.5] years; 1085 women [25.9%]) enrolled, 4163 (99.3%) completed 30-day follow-up.",
+      "context_window": "61.8 [SD, 11.5] years; 1085 women [25.9%]) enrolled, 4163 (99.3%) completed 30-day follow-up. A total of 2710 (64.7%) underw",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1412",
+      "claim_type": "percentage",
+      "raw_text": "64.7%",
+      "numeric_values": [
+        64.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1412,
+      "sentence": "A total of 2710 (64.7%) underwent PCI, 333 (8%) underwent coronary artery bypass graft surgery, and 1144 (27.3%) had exclusively medical management.",
+      "context_window": ", 4163 (99.3%) completed 30-day follow-up. A total of 2710 (64.7%) underwent PCI, 333 (8%) underwent coronary artery bypass g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1439",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1439,
+      "sentence": "A total of 2710 (64.7%) underwent PCI, 333 (8%) underwent coronary artery bypass graft surgery, and 1144 (27.3%) had exclusively medical management.",
+      "context_window": "-day follow-up. A total of 2710 (64.7%) underwent PCI, 333 (8%) underwent coronary artery bypass graft surgery, and 1144 (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1501",
+      "claim_type": "percentage",
+      "raw_text": "27.3%",
+      "numeric_values": [
+        27.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1501,
+      "sentence": "A total of 2710 (64.7%) underwent PCI, 333 (8%) underwent coronary artery bypass graft surgery, and 1144 (27.3%) had exclusively medical management.",
+      "context_window": ") underwent coronary artery bypass graft surgery, and 1144 (27.3%) had exclusively medical management. At 30 days, 130 patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-u-1547",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1547,
+      "sentence": "At 30 days, 130 patients in the atorvastatin group (6.2%) and 149 in the placebo group (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27).",
+      "context_window": "ry, and 1144 (27.3%) had exclusively medical management. At 30 days, 130 patients in the atorvastatin group (6.2%) and 149 in t",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1596",
+      "claim_type": "percentage",
+      "raw_text": "6.2%",
+      "numeric_values": [
+        6.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1596,
+      "sentence": "At 30 days, 130 patients in the atorvastatin group (6.2%) and 149 in the placebo group (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27).",
+      "context_window": "gement. At 30 days, 130 patients in the atorvastatin group (6.2%) and 149 in the placebo group (7.1%) had a MACE (absolute d",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1632",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1632,
+      "sentence": "At 30 days, 130 patients in the atorvastatin group (6.2%) and 149 in the placebo group (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27).",
+      "context_window": "the atorvastatin group (6.2%) and 149 in the placebo group (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1671",
+      "claim_type": "percentage",
+      "raw_text": "0.85%",
+      "numeric_values": [
+        0.85
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1671,
+      "sentence": "At 30 days, 130 patients in the atorvastatin group (6.2%) and 149 in the placebo group (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27).",
+      "context_window": "n the placebo group (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1678",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1678,
+      "sentence": "At 30 days, 130 patients in the atorvastatin group (6.2%) and 149 in the placebo group (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27).",
+      "context_window": "lacebo group (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1687",
+      "claim_type": "percentage",
+      "raw_text": "0.70%",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1687,
+      "sentence": "At 30 days, 130 patients in the atorvastatin group (6.2%) and 149 in the placebo group (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27).",
+      "context_window": "oup (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27).",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1696",
+      "claim_type": "percentage",
+      "raw_text": "2.41%",
+      "numeric_values": [
+        2.41
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1696,
+      "sentence": "At 30 days, 130 patients in the atorvastatin group (6.2%) and 149 in the placebo group (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27).",
+      "context_window": ") had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27). No cases",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1724",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1724,
+      "sentence": "At 30 days, 130 patients in the atorvastatin group (6.2%) and 149 in the placebo group (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27).",
+      "context_window": "rence, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27). No cases of hepatic failure were r",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-p-1743",
+      "claim_type": "p_value",
+      "raw_text": "P = .27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1743,
+      "sentence": "At 30 days, 130 patients in the atorvastatin group (6.2%) and 149 in the placebo group (7.1%) had a MACE (absolute difference, 0.85% [95% CI, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27).",
+      "context_window": "I, -0.70% to 2.41%]; hazard ratio, 0.88; 95% CI, 0.69-1.11; P = .27). No cases of hepatic failure were reported; 3 cases of rha",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-pct-1858",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1858,
+      "sentence": "No cases of hepatic failure were reported; 3 cases of rhabdomyolysis were reported in the placebo group (0.1%) and 0 in the atorvastatin group.",
+      "context_window": "cases of rhabdomyolysis were reported in the placebo group (0.1%) and 0 in the atorvastatin group. Conclusions and Relevance",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2018_2444_effect_of_loading_dose_of_atorvastatin_prior_to_planned_perc-u-2070",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 2070,
+      "sentence": "Conclusions and Relevance: Among patients with ACS and planned invasive management with PCI, periprocedural loading doses of atorvastatin did not reduce the rate of MACE at 30 days.",
+      "context_window": "ng doses of atorvastatin did not reduce the rate of MACE at 30 days. These findings do not support the routine use of loading d",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

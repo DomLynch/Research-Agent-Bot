@@ -1,0 +1,65 @@
+{
+  "paper_id": "PMID39002645_targeting_aging_with_urolithin_a_in_humans_a_systematic_revi",
+  "doi": "10.1016/j.arr.2024.102406",
+  "extracted_at": "2026-05-08T16:03:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMID39002645_targeting_aging_with_urolithin_a_in_humans_a_systematic_revi-u-207",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg/day",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 207,
+      "sentence": "In five studies including 250 healthy individuals, UA (10-1000 mg/day) for a duration ranging from 28 days to 4 months, showed a dose-dependent anti-inflammatory effect and upregulated some mitochondrial genes, markers of autophagy, and fatty acid oxidation.",
+      "context_window": ". In five studies including 250 healthy individuals, UA (10-1000 mg/day) for a duration ranging from 28 days to 4 months, showed a",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39002645_targeting_aging_with_urolithin_a_in_humans_a_systematic_revi-u-248",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 248,
+      "sentence": "In five studies including 250 healthy individuals, UA (10-1000 mg/day) for a duration ranging from 28 days to 4 months, showed a dose-dependent anti-inflammatory effect and upregulated some mitochondrial genes, markers of autophagy, and fatty acid oxidation.",
+      "context_window": "ndividuals, UA (10-1000 mg/day) for a duration ranging from 28 days to 4 months, showed a dose-dependent anti-inflammatory effe",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39002645_targeting_aging_with_urolithin_a_in_humans_a_systematic_revi-u-259",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 259,
+      "sentence": "In five studies including 250 healthy individuals, UA (10-1000 mg/day) for a duration ranging from 28 days to 4 months, showed a dose-dependent anti-inflammatory effect and upregulated some mitochondrial genes, markers of autophagy, and fatty acid oxidation.",
+      "context_window": "UA (10-1000 mg/day) for a duration ranging from 28 days to 4 months, showed a dose-dependent anti-inflammatory effect and upreg",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "ua",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

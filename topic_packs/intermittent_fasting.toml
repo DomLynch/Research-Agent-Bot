@@ -1,7 +1,7 @@
 topic = "intermittent_fasting"
 class_ = "dietary_pattern"
 
-aliases = ["intermittent fasting", "time-restricted eating", "time restricted feeding", "alternate-day fasting", "periodic fasting", "TRE"]
+aliases = ["intermittent fasting", "time-restricted eating", "time restricted feeding", "alternate-day fasting", "periodic fasting", "TRE", "time-restricted feeding", "early time-restricted feeding", "eTRF"]
 expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "weight_loss", "metabolic_health", "adherence"]
 special_rules = [
   "Separate time-restricted eating, alternate-day fasting, and periodic fasting.",
@@ -10,7 +10,7 @@ special_rules = [
 ]
 forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
 forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
-active_arm_synonyms = ["intermittent fasting", "time-restricted eating", "alternate-day fasting", "periodic fasting", "TRE"]
+active_arm_synonyms = ["intermittent fasting", "time-restricted eating", "alternate-day fasting", "periodic fasting", "TRE", "time-restricted feeding", "early time-restricted feeding", "eTRF"]
 placebo_arm_synonyms = ["control", "usual diet", "ad libitum", "continuous energy restriction"]
 corpus_search_queries = [
   "intermittent fasting AND aging AND randomized trial",
@@ -18,22 +18,25 @@ corpus_search_queries = [
   "alternate-day fasting AND metabolic health",
   "intermittent fasting AND longevity AND human",
   "time restricted feeding AND cardiometabolic AND trial",
+  "early time-restricted feeding AND insulin sensitivity",
+  "time-restricted eating AND lean mass AND trial",
+  "intermittent fasting AND adherence AND adverse events",
+  "periodic fasting AND inflammation AND human",
 ]
 canonical_rct_paper_ids = []
 canonical_trials = []
 known_role_overrides = {}
 
 [retrieval]
-topic_terms = ["intermittent fasting", "time-restricted eating", "time restricted feeding", "alternate-day fasting", "periodic fasting", "TRE"]
-scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "metabolic health", "weight loss", "insulin resistance", "frailty"]
+topic_terms = ["intermittent fasting", "time-restricted eating", "time restricted eating", "time-restricted feeding", "time restricted feeding", "alternate-day fasting", "periodic fasting", "early time-restricted feeding", "TRE", "eTRF"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "metabolic health", "weight loss", "insulin resistance", "frailty", "lean mass", "adherence", "inflammation", "circadian"]
 evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
 exclude_terms = ["animal only", "in vitro only", "religious fasting only", "pediatric only", "eating disorder only"]
 date_from = 2000
 languages = ["English"]
-species = ["humans"]
 
 [retrieval.background]
-allow = ["caloric restriction biology", "circadian metabolism", "autophagy mechanism", "fasting physiology"]
+allow = ["caloric restriction biology", "circadian metabolism", "autophagy mechanism", "fasting physiology", "metabolic switching", "feeding window physiology"]
 
 [endpoint_polarity]
 weight_loss = "higher_is_better"
@@ -42,4 +45,3 @@ insulin_resistance = "lower_is_better"
 blood_pressure = "lower_is_better"
 adverse_events = "lower_is_better"
 adherence = "higher_is_better"
-

@@ -558,6 +558,20 @@ def test_body_citation_from_metadata_helper_handles_edge_cases() -> None:
     assert cr._body_citation_from_metadata({
         "authors": ["Smith"], "year": "2024",
     }) == "Smith 2024"
+    assert cr._body_citation_from_metadata({
+        "authors": [
+            "ALLHAT Officers and Coordinators for the ALLHAT "
+            "Collaborative Research Group. The Antihypertensive and "
+            "Lipid-Lowering Treatment to Prevent Heart Attack Trial."
+        ],
+        "title": (
+            "Major Outcomes in Moderately Hypercholesterolemic, "
+            "Hypertensive Patients Randomized to Pravastatin vs Usual "
+            "Care: The Antihypertensive and Lipid-Lowering Treatment "
+            "to Prevent Heart Attack Trial (ALLHAT-LLT)"
+        ),
+        "year": 2002,
+    }) == "ALLHAT 2002"
 
 
 def test_year_suffix_after_helper_extracts_correct_year() -> None:

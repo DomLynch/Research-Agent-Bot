@@ -352,6 +352,57 @@ def test_repair_loop_granite_apply_requires_unique_before(
     assert log["arbitrations"][0]["pipeline_effect"] == "blocked_non_unique_before"
 
 
+def test_repair_loop_granite_can_delete_repeated_numeric_placeholder(
+    monkeypatch, tmp_path: Path,
+) -> None:
+    monkeypatch.setenv("GRANITE_ARBITRATOR_ENABLED", "1")
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-key")
+    bad = "Nissen 2004 reported an effect estimate of 150.2 mg/dL."
+    paper = f"## Results\n\n{bad}\n\n## Discussion\n\n{bad}\n"
+    results = [
+        ap.PatchResult(
+            patch_id="P-del1", patch_type="numeric", severity="P1",
+            decision="flagged", reason_for_decision="ambiguous",
+            before=bad, after="",
+        ),
+        ap.PatchResult(
+            patch_id="P-del2", patch_type="numeric", severity="P1",
+            decision="flagged", reason_for_decision="ambiguous",
+            before=bad, after="",
+        ),
+    ]
+
+    async def _no_repair(*_args, **_kwargs):
+        return []
+
+    async def _arb(*_args, **_kwargs):
+        return orch._granite.ArbitrationDecision("APPLY", "delete all", 0.9)
+
+    monkeypatch.setattr(orch._final_reviewer, "repair_flagged_patches", _no_repair)
+    monkeypatch.setattr(orch._granite, "request_granite_arbitration", _arb)
+    monkeypatch.setattr(
+        orch._patch_applier,
+        "_post_apply_audit_safe",
+        lambda **_kwargs: (True, "audit clean"),
+    )
+
+    async def _go():
+        return await orch._agent_repair_loop(
+            paper_md=paper,
+            results=results,
+            manifest={},
+            paper_path=tmp_path / "full_paper.md",
+        )
+
+    new_paper, new_results = asyncio.run(_go())
+    assert bad not in new_paper
+    assert [r.decision for r in new_results] == [
+        "applied_via_arbitration", "applied_via_arbitration",
+    ]
+    log = json.loads((tmp_path / "full_paper.arbitration_log.json").read_text())
+    assert log["arbitrations"][0]["pipeline_effect"] == "applied_delete_all"
+
+
 def test_repair_loop_granite_apply_fails_closed_on_post_audit(
     monkeypatch, tmp_path: Path,
 ) -> None:

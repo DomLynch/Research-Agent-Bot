@@ -82,6 +82,9 @@ corpus_search_queries = [
   "senolytic AND clinical trial AND randomized",
   "(senolytic OR senescence) AND (longevity OR healthspan)",
   "(p16 OR SASP OR senescent cell) AND human AND clinical",
+  "senotherapeutic AND older adults AND trial",
+  "(senescent cell OR SASP) AND frailty AND human",
+  "(dasatinib OR quercetin OR fisetin) AND safety AND tolerability",
 ]
 
 canonical_rct_paper_ids = []
@@ -93,11 +96,13 @@ canonical_rct_paper_ids = []
 topic_terms    = [
   "senolytic", "senolytics", "senotherapeutic", "dasatinib",
   "quercetin", "fisetin", "navitoclax", "ABT-263", "D+Q",
+  "senescent cell", "senescence-associated secretory phenotype",
+  "p16INK4a",
 ]
 scope_terms    = [
   "aging", "longevity", "healthspan", "older adults", "elderly",
   "frailty", "senescence", "SASP", "p16", "gait speed",
-  "physical function",
+  "physical function", "inflammation", "tissue function", "safety",
 ]
 evidence_types = [
   "clinical trial", "randomized controlled trial", "cohort study",
@@ -110,7 +115,6 @@ exclude_terms  = [
 ]
 date_from      = 2010
 languages      = ["English"]
-species        = ["humans"]
 
 [retrieval.background]
 allow = [
@@ -118,6 +122,8 @@ allow = [
   "preclinical lifespan landmark",
   "SASP biomarker rationale",
   "senolytic field history",
+  "senescent cell clearance",
+  "intermittent dosing rationale",
 ]
 
 

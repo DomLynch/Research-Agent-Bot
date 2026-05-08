@@ -1,7 +1,7 @@
 topic = "berberine"
 class_ = "nutritional_supplement"
 
-aliases = ["berberine", "berberine hydrochloride", "berberine HCl"]
+aliases = ["berberine", "berberine hydrochloride", "berberine HCl", "berberine supplementation"]
 expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "cardiometabolic", "lipids", "glycemia"]
 special_rules = [
   "Separate supplement-quality issues from pharmacologic efficacy claims.",
@@ -10,7 +10,7 @@ special_rules = [
 ]
 forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
 forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
-active_arm_synonyms = ["berberine", "berberine hydrochloride", "berberine HCl"]
+active_arm_synonyms = ["berberine", "berberine hydrochloride", "berberine HCl", "berberine supplementation"]
 placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
 corpus_search_queries = [
   "berberine AND randomized trial AND metabolic syndrome",
@@ -18,14 +18,18 @@ corpus_search_queries = [
   "berberine AND lipids AND meta-analysis",
   "berberine AND diabetes AND clinical trial",
   "berberine AND safety AND human",
+  "berberine AND dyslipidemia AND randomized",
+  "berberine AND insulin resistance AND meta-analysis",
+  "berberine AND inflammation AND human",
+  "berberine supplementation AND cardiometabolic AND trial",
 ]
 canonical_rct_paper_ids = []
 canonical_trials = []
 known_role_overrides = {}
 
 [retrieval]
-topic_terms = ["berberine", "berberine hydrochloride", "berberine HCl"]
-scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "metabolic syndrome", "lipids", "diabetes", "insulin resistance"]
+topic_terms = ["berberine", "berberine hydrochloride", "berberine HCl", "berberine supplementation"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "metabolic syndrome", "lipids", "dyslipidemia", "diabetes", "insulin resistance", "inflammation", "cardiometabolic"]
 evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
 exclude_terms = ["animal only", "in vitro only", "traditional formula only", "pediatric only", "cell culture only"]
 date_from = 2000
@@ -33,7 +37,7 @@ languages = ["English"]
 species = ["humans"]
 
 [retrieval.background]
-allow = ["AMPK mechanism", "lipid metabolism", "glucose metabolism", "microbiome mechanism"]
+allow = ["AMPK mechanism", "lipid metabolism", "glucose metabolism", "microbiome mechanism", "PCSK9 mechanism", "inflammation biology"]
 
 [endpoint_polarity]
 hba1c = "lower_is_better"
@@ -41,4 +45,3 @@ ldl = "lower_is_better"
 triglycerides = "lower_is_better"
 insulin_resistance = "lower_is_better"
 adverse_events = "lower_is_better"
-

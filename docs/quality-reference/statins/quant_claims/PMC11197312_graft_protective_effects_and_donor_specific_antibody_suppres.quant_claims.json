@@ -1,0 +1,769 @@
+{
+  "paper_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres",
+  "doi": "10.1186/s13019-024-02888-4",
+  "extracted_at": "2026-05-08T16:22:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 22,
+    "percentage": 2,
+    "p_value": 18
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-1088",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1088,
+      "sentence": "CBA recipients with no treatment rejected B6 cardiac graft acutely (median survival time [MST], 7 days).",
+      "context_window": "ected B6 cardiac graft acutely (median survival time [MST], 7 days). CBA mice treated with 500 \u03bcg/kg/day of rosuvastatin prolo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-1185",
+      "claim_type": "unit_value",
+      "raw_text": "77 days",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1185,
+      "sentence": "CBA mice treated with 500 \u03bcg/kg/day of rosuvastatin prolonged allograft survival (MSTs, 77 days).",
+      "context_window": "/kg/day of rosuvastatin prolonged allograft survival (MSTs, 77 days). Fluorescent staining studies showed that rosuvastatin-tre",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-pct-587",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 587,
+      "sentence": "Even if T cell-mediated rejection can be controlled, the risk of acute rejection during the first year after heart transplantation is particularly high [ 2 ], and chronic rejection is reported to occur in approximately 3-5% of patients with transplants every year from the first year after transplantation [ 3 ].",
+      "context_window": "d chronic rejection is reported to occur in approximately 3-5% of patients with transplants every year from the first year",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-75",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 75,
+      "sentence": "Male CBA (H2 k ), C57BL/6 (H2 b , [B6]), and BALB/c (H2 d ) mice aged 8 to 12 weeks were purchased from Sankyo Ltd (Tokyo, Japan), housed in conventional facilities at the Biomedical Services Unit of Teikyo University, and maintained under a 12 h-12 h light-dark cycle with ad libitum access to food and water.",
+      "context_window": "), C57BL/6 (H2 b , [B6]), and BALB/c (H2 d ) mice aged 8 to 12 weeks were purchased from Sankyo Ltd (Tokyo, Japan), housed in co",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-1039",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1039,
+      "sentence": "CBA recipients of a B6 heart were administered 1 mL distilled water per day (no treatment group) or 50 or 500 \u03bcg/kg/day of rosuvastatin (rosuvastatin group).",
+      "context_window": "splantation. CBA recipients of a B6 heart were administered 1 mL distilled water per day (no treatment group) or 50 or 500 \u03bc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-1954",
+      "claim_type": "unit_value",
+      "raw_text": "100 \u03bcg/d",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "\u03bcg/d",
+      "source_section": "methods",
+      "source_offset": 1954,
+      "sentence": "CBA recipients treated with rosuvastatin for seven days after transplantation were intraperitoneally injected with 100 \u03bcg/d of PC-61 on days 0, 3, 6, and 9.",
+      "context_window": "after transplantation were intraperitoneally injected with 100 \u03bcg/d of PC-61 on days 0, 3, 6, and 9. Fig. 1 Mevalonate pathway",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-2587",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2587,
+      "sentence": "MVA, mevalonic acid. nTx, no-treatment. ** P < 0.01 and * P < 0.05\n\nMevalonate pathway and graft survival of CBA recipients. ( A ) The mevalonate pathway.",
+      "context_window": "n survival time. MVA, mevalonic acid. nTx, no-treatment. ** P < 0.01 and * P < 0.05 Mevalonate pathway and graft survival of CB",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-2602",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2602,
+      "sentence": "MVA, mevalonic acid. nTx, no-treatment. ** P < 0.01 and * P < 0.05\n\nMevalonate pathway and graft survival of CBA recipients. ( A ) The mevalonate pathway.",
+      "context_window": ". MVA, mevalonic acid. nTx, no-treatment. ** P < 0.01 and * P < 0.05 Mevalonate pathway and graft survival of CBA recipients. (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-3195",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3195,
+      "sentence": "MVA, mevalonic acid. nTx, no-treatment. ** P < 0.01 and * P < 0.05\n\nSplenocytes were obtained from no-treatment and rosuvastatin-treated recipients two weeks after transplantation.",
+      "context_window": "n survival time. MVA, mevalonic acid. nTx, no-treatment. ** P < 0.01 and * P < 0.05 Splenocytes were obtained from no-treatment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-3210",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3210,
+      "sentence": "MVA, mevalonic acid. nTx, no-treatment. ** P < 0.01 and * P < 0.05\n\nSplenocytes were obtained from no-treatment and rosuvastatin-treated recipients two weeks after transplantation.",
+      "context_window": ". MVA, mevalonic acid. nTx, no-treatment. ** P < 0.01 and * P < 0.05 Splenocytes were obtained from no-treatment and rosuvastat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-4688",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mL",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4688,
+      "sentence": "Na\u00efve B6 or BALB/c thymocytes (2 \u00d7 10 6 /0.1 mL) were incubated with the recipient sera (10 \u03bcL) for 45 min on ice.",
+      "context_window": "t 56 \u2103 for 30 min. Na\u00efve B6 or BALB/c thymocytes (2 \u00d7 10 6 /0.1 mL) were incubated with the recipient sera (10 \u03bcL) for 45 min",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-6468",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 6468,
+      "sentence": "In MLC studies, the responder cells were splenocytes from no-treatment CBA mice that had undergone transplantation of a B6 heart 14 days earlier.",
+      "context_window": "t CBA mice that had undergone transplantation of a B6 heart 14 days earlier. The stimulator cells were B6 (allogeneic) splenocy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-6629",
+      "claim_type": "unit_value",
+      "raw_text": "1 \u03bcmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "\u03bcmol",
+      "source_section": "methods",
+      "source_offset": 6629,
+      "sentence": "Rosuvastatin (1 \u03bcmol/well) was added to MLC to assess the direct effects of this agent on cellular proliferation.",
+      "context_window": "in C (Kyowa Hakko, Osaka) for 30 min at 37 \u2103. Rosuvastatin (1 \u03bcmol/well) was added to MLC to assess the direct effects of this",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-pct-6865",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6865,
+      "sentence": "The responder cells (2.5 \u00d7 10 5 /well) were co-cultured with the stimulator cells (5.0 \u00d7 10 5 /well) in complete medium in a humidified 5% CO 2 atmosphere (CH-16 M; Hitachi, Tokyo) at 37 \u2103 in 96-well, round-bottomed tissue-culture plates (Iwaki Scitech Division, Tokyo) for seven days.",
+      "context_window": "cells (5.0 \u00d7 10 5 /well) in complete medium in a humidified 5% CO 2 atmosphere (CH-16 M; Hitachi, Tokyo) at 37 \u2103 in 96-wel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-96",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 96,
+      "sentence": "No treatment CBA recipients acutely rejected B6 cardiac allografts (median survival time [MST], 7 days).",
+      "context_window": "rejected B6 cardiac allografts (median survival time [MST], 7 days). CBA recipients treated with 500 \u03bcg/kg/day of rosuvastatin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-167",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 167,
+      "sentence": "CBA recipients treated with 500 \u03bcg/kg/day of rosuvastatin for 7 days had significantly prolonged allograft survival (MST, 77 days; Fig.",
+      "context_window": "A recipients treated with 500 \u03bcg/kg/day of rosuvastatin for 7 days had significantly prolonged allograft survival (MST, 77 day",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-227",
+      "claim_type": "unit_value",
+      "raw_text": "77 days",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 227,
+      "sentence": "CBA recipients treated with 500 \u03bcg/kg/day of rosuvastatin for 7 days had significantly prolonged allograft survival (MST, 77 days; Fig.",
+      "context_window": "7 days had significantly prolonged allograft survival (MST, 77 days; Fig. 1 B). However, treatment with 50 \u03bcg/kg/day of rosuvas",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-338",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 338,
+      "sentence": "However, treatment with 50 \u03bcg/kg/day of rosuvastatin did not increase graft survival (MST, 15 days; Fig.",
+      "context_window": "g/day of rosuvastatin did not increase graft survival (MST, 15 days; Fig. 1 B). Administration of 500 \u03bcg/kg/day of MVA for 7 da",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-401",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 401,
+      "sentence": "Administration of 500 \u03bcg/kg/day of MVA for 7 days prevented CBA recipients treated with 500 \u03bcg/kg/day of rosuvastatin from prolonging allograft survival (MST, 18 days; Fig.",
+      "context_window": "days; Fig. 1 B). Administration of 500 \u03bcg/kg/day of MVA for 7 days prevented CBA recipients treated with 500 \u03bcg/kg/day of rosu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-517",
+      "claim_type": "unit_value",
+      "raw_text": "18 days",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 517,
+      "sentence": "Administration of 500 \u03bcg/kg/day of MVA for 7 days prevented CBA recipients treated with 500 \u03bcg/kg/day of rosuvastatin from prolonging allograft survival (MST, 18 days; Fig.",
+      "context_window": "ay of rosuvastatin from prolonging allograft survival (MST, 18 days; Fig. 1 C). Histological examination of cardiac allografts",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-1509",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1509,
+      "sentence": "2 Histological studies of transplanted cardiac allografts. ( A , B ) Results of hematoxylin-eosin staining of representative heart cross-sections, myocardium, and coronary arteries in cardiac allografts obtained two weeks after transplantation from rosuvastatin-treated ( A ) or no-treatment group (nTx) ( B ). ( C ) Each section was assessed by grading with a semiquantitative scale for mononuclear cell infiltration by manually. nTx, no-treatment. ** P < 0.01 compared with the no-treatment group\n\nHistological studies of transplanted cardiac allografts. ( A , B ) Results of hematoxylin-eosin staining of representative heart cross-sections, myocardium, and coronary arteries in cardiac allografts obtained two weeks after transplantation from rosuvastatin-treated ( A ) or no-treatment group (nTx) ( B ). ( C ) Each section was assessed by grading with a semiquantitative scale for mononuclear cell infiltration by manually. nTx, no-treatment. ** P < 0.01 compared with the no-treatment group\n\nFluorescent staining studies performed two weeks after grafting clearly demonstrated that cardiac allografts from rosuvastatin-treated CBA recipients showed aggregation of more CD4 + Foxp3 + cells in the myocardium (Fig.",
+      "context_window": "uclear cell infiltration by manually. nTx, no-treatment. ** P < 0.01 compared with the no-treatment group Histological studies",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-2007",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2007,
+      "sentence": "2 Histological studies of transplanted cardiac allografts. ( A , B ) Results of hematoxylin-eosin staining of representative heart cross-sections, myocardium, and coronary arteries in cardiac allografts obtained two weeks after transplantation from rosuvastatin-treated ( A ) or no-treatment group (nTx) ( B ). ( C ) Each section was assessed by grading with a semiquantitative scale for mononuclear cell infiltration by manually. nTx, no-treatment. ** P < 0.01 compared with the no-treatment group\n\nHistological studies of transplanted cardiac allografts. ( A , B ) Results of hematoxylin-eosin staining of representative heart cross-sections, myocardium, and coronary arteries in cardiac allografts obtained two weeks after transplantation from rosuvastatin-treated ( A ) or no-treatment group (nTx) ( B ). ( C ) Each section was assessed by grading with a semiquantitative scale for mononuclear cell infiltration by manually. nTx, no-treatment. ** P < 0.01 compared with the no-treatment group\n\nFluorescent staining studies performed two weeks after grafting clearly demonstrated that cardiac allografts from rosuvastatin-treated CBA recipients showed aggregation of more CD4 + Foxp3 + cells in the myocardium (Fig.",
+      "context_window": "uclear cell infiltration by manually. nTx, no-treatment. ** P < 0.01 compared with the no-treatment group Fluorescent staining",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-3558",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3558,
+      "sentence": "The representative data are shown since we achieved similar results in these independent experiments. nTx, no-treatment. ** P < 0.01 and* P < 0.05 compared with the no-treatment group\n\nTriple fluorescent staining studies of cardiac allograft exposed with rosuvastatin. ( A - D ) Triple fluorescent staining studies of the myocardium ( A , B ) and coronary arteries ( C , D ) in cardiac allografts from rosuvastatin-treated and no-treatment recipients (nTx) were assessed two weeks after grafting.",
+      "context_window": "lts in these independent experiments. nTx, no-treatment. ** P < 0.01 and* P < 0.05 compared with the no-treatment group Triple",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-3572",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3572,
+      "sentence": "The representative data are shown since we achieved similar results in these independent experiments. nTx, no-treatment. ** P < 0.01 and* P < 0.05 compared with the no-treatment group\n\nTriple fluorescent staining studies of cardiac allograft exposed with rosuvastatin. ( A - D ) Triple fluorescent staining studies of the myocardium ( A , B ) and coronary arteries ( C , D ) in cardiac allografts from rosuvastatin-treated and no-treatment recipients (nTx) were assessed two weeks after grafting.",
+      "context_window": "ndependent experiments. nTx, no-treatment. ** P < 0.01 and* P < 0.05 compared with the no-treatment group Triple fluorescent st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-4495",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4495,
+      "sentence": "The representative data are shown since we achieved similar results in these independent experiments. nTx, no-treatment. ** P < 0.01 and* P < 0.05 compared with the no-treatment group\n\nFlow cytometry studies showed that the population of splenic CD4 + or CD8 + T cells from rosuvastatin-treated CBA recipients was the same as that from no-treatment CBA recipients (Fig.",
+      "context_window": "lts in these independent experiments. nTx, no-treatment. ** P < 0.01 and* P < 0.05 compared with the no-treatment group Flow cy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-4509",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4509,
+      "sentence": "The representative data are shown since we achieved similar results in these independent experiments. nTx, no-treatment. ** P < 0.01 and* P < 0.05 compared with the no-treatment group\n\nFlow cytometry studies showed that the population of splenic CD4 + or CD8 + T cells from rosuvastatin-treated CBA recipients was the same as that from no-treatment CBA recipients (Fig.",
+      "context_window": "ndependent experiments. nTx, no-treatment. ** P < 0.01 and* P < 0.05 compared with the no-treatment group Flow cytometry studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-5357",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5357,
+      "sentence": "Data are represented as mean \u00b1 standard deviation of five animals in one experiment since we repeated flow cytometry experiment three times and achieved similar results in these independent experiments. nTx, no-treatment. * P < 0.05 compared with the no-treatment group\n\nFlow cytometry analysis.",
+      "context_window": "ults in these independent experiments. nTx, no-treatment. * P < 0.05 compared with the no-treatment group Flow cytometry analys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-5825",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5825,
+      "sentence": "Data are represented as mean \u00b1 standard deviation of five animals in one experiment since we repeated flow cytometry experiment three times and achieved similar results in these independent experiments. nTx, no-treatment. * P < 0.05 compared with the no-treatment group\n\nTo assess the change in the Th-1 and Th-2 balance in rosuvastatin-treated CBA recipients with Tregs, intracellular T-bet and GATA3 specifically expressed in Th-1 and Th-2 cells were analyzed by flow cytometry.",
+      "context_window": "ults in these independent experiments. nTx, no-treatment. * P < 0.05 compared with the no-treatment group To assess the change",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-7698",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 7698,
+      "sentence": "The syngeneic MLC (syn-MLC) showed a minimal proliferation of responder cells alone (negative control). ( B ) The population of CD4 + CD25 + Foxp3 + T cells in the allogeneic MLC. ( C ) Various amounts of CD4 + CD25 + splenocytes purified from rosuvastatin-treated recipients that had undergone transplantation of a B6 heart 14 days earlier were added to a fixed number of no-treatment CBA responders (2.5 \u00d7 10 5 /well) and B6 stimulators (5.0 \u00d7 10 5 /well).",
+      "context_window": "recipients that had undergone transplantation of a B6 heart 14 days earlier were added to a fixed number of no-treatment CBA re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-8221",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8221,
+      "sentence": "MLC, mixed leukocyte culture. * P < 0.05 compared with the no-treatment group\n\nCell proliferation analysis. ( A ) Direct effect of rosuvastatin on alloproliferation in the mixed leukocytes culture (MLC).",
+      "context_window": "se independent experiments. MLC, mixed leukocyte culture. * P < 0.05 compared with the no-treatment group Cell proliferation an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-8821",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8821,
+      "sentence": "The syngeneic MLC (syn-MLC) showed a minimal proliferation of responder cells alone (negative control). ( B ) The population of CD4 + CD25 + Foxp3 + T cells in the allogeneic MLC. ( C ) Various amounts of CD4 + CD25 + splenocytes purified from rosuvastatin-treated recipients that had undergone transplantation of a B6 heart 14 days earlier were added to a fixed number of no-treatment CBA responders (2.5 \u00d7 10 5 /well) and B6 stimulators (5.0 \u00d7 10 5 /well).",
+      "context_window": "recipients that had undergone transplantation of a B6 heart 14 days earlier were added to a fixed number of no-treatment CBA re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-9344",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9344,
+      "sentence": "MLC, mixed leukocyte culture. * P < 0.05 compared with the no-treatment group\n\nRosuvastatin-treated recipients with four doses of PC-61 displayed significantly shortened allograft survival compared with rosuvastatin-treated recipients (MST of 9 vs.",
+      "context_window": "se independent experiments. MLC, mixed leukocyte culture. * P < 0.05 compared with the no-treatment group Rosuvastatin-treated",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-9561",
+      "claim_type": "unit_value",
+      "raw_text": "77 days",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 9561,
+      "sentence": "77 days; Fig.",
+      "context_window": "compared with rosuvastatin-treated recipients (MST of 9 vs. 77 days; Fig. 6 ). It suggests that rosuvastatin-induced Treg may r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-9817",
+      "claim_type": "unit_value",
+      "raw_text": "100 \u03bcg/d",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "\u03bcg/d",
+      "source_section": "results",
+      "source_offset": 9817,
+      "sentence": "Rosuvastatin-treated CBA recipients were administered 100 \u03bcg/d of PC-61 on days 0, 3, 6, and 9.",
+      "context_window": "-61). Rosuvastatin-treated CBA recipients were administered 100 \u03bcg/d of PC-61 on days 0, 3, 6, and 9. MST, median survival time.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-9951",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9951,
+      "sentence": "PC-61, anti-interleukin-2 receptor alpha monoclonal antibody. ** P < 0.01\n\nAdministration of an anti-interleukin-2 receptor alpha monoclonal antibody (PC-61).",
+      "context_window": ", anti-interleukin-2 receptor alpha monoclonal antibody. ** P < 0.01 Administration of an anti-interleukin-2 receptor alpha mon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-10099",
+      "claim_type": "unit_value",
+      "raw_text": "100 \u03bcg/d",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "\u03bcg/d",
+      "source_section": "results",
+      "source_offset": 10099,
+      "sentence": "Rosuvastatin-treated CBA recipients were administered 100 \u03bcg/d of PC-61 on days 0, 3, 6, and 9.",
+      "context_window": "-61). Rosuvastatin-treated CBA recipients were administered 100 \u03bcg/d of PC-61 on days 0, 3, 6, and 9. MST, median survival time.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-10233",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10233,
+      "sentence": "PC-61, anti-interleukin-2 receptor alpha monoclonal antibody. ** P < 0.01\n\nDSA levels were downregulated on day 14 in CBA recipients treated with rosuvastatin compared to those in no-treatment CBA recipients (Fig.",
+      "context_window": ", anti-interleukin-2 receptor alpha monoclonal antibody. ** P < 0.01 DSA levels were downregulated on day 14 in CBA recipients",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-10986",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 10986,
+      "sentence": "DSAs in the sera of rosuvastatin- and rosuvastatin/PC-61-treated CBA recipients were measured 14 days after transplantation.",
+      "context_window": "and rosuvastatin/PC-61-treated CBA recipients were measured 14 days after transplantation. Data are shown as mean \u00b1 standard de",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-11160",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11160,
+      "sentence": "MFI, mean fluorescence intensity. nTx, no-treatment. * P < 0.05 compared with the no-treatment group\n\nAssessment of donor-specific antibodies (DSAs).",
+      "context_window": "ent. MFI, mean fluorescence intensity. nTx, no-treatment. * P < 0.05 compared with the no-treatment group Assessment of donor-s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-11349",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 11349,
+      "sentence": "DSAs in the sera of rosuvastatin- and rosuvastatin/PC-61-treated CBA recipients were measured 14 days after transplantation.",
+      "context_window": "and rosuvastatin/PC-61-treated CBA recipients were measured 14 days after transplantation. Data are shown as mean \u00b1 standard de",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-p-11523",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11523,
+      "sentence": "MFI, mean fluorescence intensity. nTx, no-treatment. * P < 0.05 compared with the no-treatment group",
+      "context_window": "ent. MFI, mean fluorescence intensity. nTx, no-treatment. * P < 0.05 compared with the no-treatment group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11197312_graft_protective_effects_and_donor_specific_antibody_suppres-u-6755",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 6755,
+      "sentence": "In this study, histological analysis of cardiac allografts obtained 14 days after transplantation from rosuvastatin-treated recipients showed less leukocyte infiltration, maintenance of myocardial structure, and milder obliterative vasculopathy than those from no-treatment recipients (Fig.",
+      "context_window": "study, histological analysis of cardiac allografts obtained 14 days after transplantation from rosuvastatin-treated recipients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

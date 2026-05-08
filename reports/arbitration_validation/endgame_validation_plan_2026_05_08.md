@@ -2,7 +2,7 @@
 
 ## Scope
 
-IBM Granite 4.1 8B via OpenRouter is the preferred V1 arbitrator. The
+Mistral Small 4 via OpenRouter is the preferred V1 arbitrator. The
 arbitrator is judge-only: it decides `APPLY`, `REJECT`, or `ESCALATE` for an
 existing patch. It must not write replacement manuscript content or introduce
 new facts, numerics, claims, or citations.
