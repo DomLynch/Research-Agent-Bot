@@ -20,16 +20,10 @@ from pathlib import Path
 from types import MappingProxyType
 from typing import Literal
 
-__all__ = [
-    "OverrideRecord",
-    "CanonicalTrial",
-    "BackgroundLiteratureEntry",
-    "InferenceSpec",
-    "OSFMetadata",
-    "TopicPack",
-    "TopicPackError",
-    "load_topic_pack",
-]
+__all__ = (
+    "OverrideRecord", "CanonicalTrial", "BackgroundLiteratureEntry",
+    "InferenceSpec", "TopicPack", "TopicPackError", "load_topic_pack",
+)
 
 # Type aliases match agent/types.py Role/Tier/Design literals so a hit in the
 # override table is directly assignable to an EvidenceItem field.
@@ -135,16 +129,6 @@ class InferenceSpec:
 
 
 @dataclass(frozen=True, slots=True)
-class OSFMetadata:
-    """Optional OSF registration/publication metadata for a topic."""
-
-    node_id: str | None = None
-    doi: str | None = None
-    first_registered_at: str | None = None
-    latest_version_at: str | None = None
-
-
-@dataclass(frozen=True, slots=True)
 class TopicPack:
     """Frozen topic pack. All collections are tuples / frozensets / mappingproxies.
 
@@ -197,8 +181,7 @@ class TopicPack:
     retrieval: "RetrievalSpec | None" = None
     # Optional D1 bridge config. D1 never counts as receipt evidence.
     inference: InferenceSpec = InferenceSpec()
-    # Optional [osf] metadata. Absent block stays None for old packs.
-    osf: OSFMetadata | None = None
+    osf: Mapping[str, str] | None = None
 
     # --- Lookups (intentionally explicit, not __contains__-style) ----------
 
@@ -428,14 +411,7 @@ def load_topic_pack(path: str | Path) -> TopicPack:
             ),
         )
     raw_osf = data.get("osf")
-    osf = None
-    if isinstance(raw_osf, dict):
-        osf = OSFMetadata(
-            node_id=raw_osf.get("node_id"),
-            doi=raw_osf.get("doi"),
-            first_registered_at=raw_osf.get("first_registered_at"),
-            latest_version_at=raw_osf.get("latest_version_at"),
-        )
+    osf = MappingProxyType(raw_osf) if isinstance(raw_osf, dict) else None
 
     return TopicPack(
         topic=data["topic"],

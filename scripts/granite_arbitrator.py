@@ -15,8 +15,6 @@ from typing import Any, Literal
 
 import httpx
 
-from agent.settings import Settings
-
 ArbitratorVerdict = Literal["APPLY", "REJECT", "ESCALATE"]
 
 _VALID_VERDICTS: set[str] = {"APPLY", "REJECT", "ESCALATE"}
@@ -67,15 +65,6 @@ class ArbitrationDecision:
             raise ValueError("arbitration rationale is required")
         if not 0 <= float(self.confidence) <= 1:
             raise ValueError("arbitration confidence must be between 0 and 1")
-
-
-def config_from_settings(settings: Settings) -> GraniteArbitratorConfig:
-    return GraniteArbitratorConfig(
-        base_url=settings.granite_arbitrator_base_url,
-        api_key=settings.granite_arbitrator_api_key,
-        model=settings.granite_arbitrator_model,
-        enabled=settings.granite_arbitrator_enabled,
-    )
 
 
 def parse_model_content(content: str) -> ArbitrationDecision:

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from agent.topic_pack import OSFMetadata, load_topic_pack
+from agent.topic_pack import load_topic_pack
 
 
 def _write_pack(path: Path, osf_block: str = "") -> Path:
@@ -44,12 +44,12 @@ first_registered_at = "2026-05-01T00:00:00Z"
 latest_version_at = "2026-05-08T00:00:00Z"
 """.strip(),
     ))
-    assert pack.osf == OSFMetadata(
-        node_id="abc123",
-        doi="10.17605/OSF.IO/ABC123",
-        first_registered_at="2026-05-01T00:00:00Z",
-        latest_version_at="2026-05-08T00:00:00Z",
-    )
+    assert dict(pack.osf or {}) == {
+        "node_id": "abc123",
+        "doi": "10.17605/OSF.IO/ABC123",
+        "first_registered_at": "2026-05-01T00:00:00Z",
+        "latest_version_at": "2026-05-08T00:00:00Z",
+    }
 
 
 def test_absent_osf_block_is_safe(tmp_path: Path) -> None:
