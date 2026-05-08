@@ -23,6 +23,8 @@ The arbitrator remains judge-only: `APPLY`, `REJECT`, or `ESCALATE`.
 | Live Mistral distribution | APPLY 4 / ESCALATE 1 |
 | Live Mistral mixed sample | 5/6 pass |
 | Mixed-sample miss | expected REJECT, returned conservative ESCALATE |
+| Live DeepSeek reviewer smoke | HTTP 200; parsed `{"patches":[]}` |
+| DeepSeek model resolved | `deepseek/deepseek-v4-pro-20260423` |
 
 ## Coverage
 
@@ -40,6 +42,7 @@ failure.
 - `reports/model_stack_validation_2026-05-08.failclosed.json`
 - `reports/model_stack_validation_2026-05-08.live_mistral.json`
 - `reports/model_stack_validation_2026-05-08.live_mistral_mixed.json`
+- `reports/model_stack_validation_2026-05-08.live_deepseek.json`
 
 ## Tests
 
