@@ -20,6 +20,7 @@ from agent.settings import load_settings  # noqa: E402
 from scripts.granite_arbitrator import (  # noqa: E402
     ArbitrationInput,
     GraniteArbitratorConfig,
+    build_audit_log_entry,
     parse_model_content,
     request_granite_arbitration,
 )
@@ -57,10 +58,20 @@ def _metrics(rows: list[dict[str, Any]]) -> dict[str, Any]:
             "agreed": agreed,
             "agreement_rate": agreed / n if n else 0.0,
         }
+    actual_distribution = {
+        verdict: sum(1 for row in rows if row["actual"] == verdict)
+        for verdict in sorted(VALID_VERDICTS)
+    }
+    expected_distribution = {
+        verdict: sum(1 for row in rows if row["expected"] == verdict)
+        for verdict in sorted(VALID_VERDICTS)
+    }
     return {
         "agreement_rate": passed / total if total else 0.0,
         "fail_closed_count": sum(1 for row in rows if row["fail_closed"]),
         "escalate_count": sum(1 for row in rows if row["actual"] == "ESCALATE"),
+        "actual_distribution": actual_distribution,
+        "expected_distribution": expected_distribution,
         "by_expected": by_expected,
         "confusion_matrix": confusion,
     }
@@ -76,6 +87,7 @@ def run_fixture(path: Path) -> dict[str, Any]:
             raise ValueError(f"case {idx} must be an object")
         expected = _expected_verdict(case, idx)
         decision = parse_model_content(str(case["model_response"]))
+        arb_input = _input_from_case(case)
         rows.append(
             {
                 "id": case.get("id", str(idx)),
@@ -84,6 +96,12 @@ def run_fixture(path: Path) -> dict[str, Any]:
                 "passed": decision.verdict == expected,
                 "fail_closed": decision.fail_closed,
                 "confidence": decision.confidence,
+                "arbitration_log_entry": build_audit_log_entry(
+                    arb_input,
+                    decision,
+                    model=str(case.get("model", "offline-fixture")),
+                    created_at="2026-05-08T00:00:00+00:00",
+                ),
             }
         )
     return {
@@ -128,6 +146,7 @@ async def run_live_fixture(path: Path, *, limit: int | None = None) -> dict[str,
         decision = await request_granite_arbitration(
             _input_from_case(case), config,
         )
+        arb_input = _input_from_case(case)
         rows.append({
             "id": case.get("id", str(idx)),
             "expected": expected,
@@ -136,6 +155,12 @@ async def run_live_fixture(path: Path, *, limit: int | None = None) -> dict[str,
             "fail_closed": decision.fail_closed,
             "confidence": decision.confidence,
             "rationale": decision.rationale,
+            "arbitration_log_entry": build_audit_log_entry(
+                arb_input,
+                decision,
+                model=config.model,
+                created_at="2026-05-08T00:00:00+00:00",
+            ),
         })
     return {
         "total": len(rows),

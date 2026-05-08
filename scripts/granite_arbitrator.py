@@ -20,6 +20,7 @@ ArbitratorVerdict = Literal["APPLY", "REJECT", "ESCALATE"]
 
 _VALID_VERDICTS: set[str] = {"APPLY", "REJECT", "ESCALATE"}
 _ALLOWED_RESPONSE_KEYS = {"verdict", "rationale", "confidence"}
+_MIN_CONFIDENCE_FOR_NON_ESCALATE = 0.2
 _FORBIDDEN_CONTENT_KEYS = {
     "replacement",
     "replacement_text",
@@ -107,6 +108,8 @@ def decide_from_model_response(response: dict[str, Any]) -> ArbitrationDecision:
         or not 0 <= float(confidence) <= 1
     ):
         return _escalate("invalid confidence")
+    if verdict != "ESCALATE" and float(confidence) < _MIN_CONFIDENCE_FOR_NON_ESCALATE:
+        return _escalate("low confidence arbitration decision")
     try:
         return ArbitrationDecision(
             verdict=verdict,  # type: ignore[arg-type]
