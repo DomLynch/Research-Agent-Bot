@@ -20,7 +20,10 @@ aliases = [
   "navitoclax",
   "ABT-263",
   "ABT-199",  # venetoclax, also senolytic in some contexts
+  "UBX0101",
+  "BCL-xL inhibitor",
   "D+Q",       # dasatinib + quercetin combo notation
+  "D + Q",
   "DQ",
 ]
 
@@ -62,7 +65,10 @@ active_arm_synonyms = [
   "quercetin",
   "fisetin",
   "navitoclax",
+  "UBX0101",
+  "BCL-xL inhibitor",
   "D+Q",
+  "D + Q",
   "DQ",
 ]
 
@@ -85,6 +91,11 @@ corpus_search_queries = [
   "senotherapeutic AND older adults AND trial",
   "(senescent cell OR SASP) AND frailty AND human",
   "(dasatinib OR quercetin OR fisetin) AND safety AND tolerability",
+  "\"dasatinib plus quercetin\" AND human AND trial",
+  "\"dasatinib and quercetin\" AND frailty",
+  "fisetin AND older adults AND randomized trial",
+  "senolytic AND idiopathic pulmonary fibrosis AND trial",
+  "senolytic AND diabetic kidney disease AND human",
 ]
 
 canonical_rct_paper_ids = []
@@ -95,7 +106,8 @@ canonical_rct_paper_ids = []
 [retrieval]
 topic_terms    = [
   "senolytic", "senolytics", "senotherapeutic", "dasatinib",
-  "quercetin", "fisetin", "navitoclax", "ABT-263", "D+Q",
+  "quercetin", "fisetin", "navitoclax", "ABT-263", "UBX0101",
+  "BCL-xL inhibitor", "D+Q", "D + Q", "dasatinib plus quercetin",
   "senescent cell", "senescence-associated secretory phenotype",
   "p16INK4a",
 ]
@@ -124,6 +136,8 @@ allow = [
   "senolytic field history",
   "senescent cell clearance",
   "intermittent dosing rationale",
+  "diabetic kidney disease senolytic trial",
+  "idiopathic pulmonary fibrosis senolytic trial",
 ]
 
 

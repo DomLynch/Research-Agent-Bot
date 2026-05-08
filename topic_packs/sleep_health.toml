@@ -1,7 +1,7 @@
 topic = "sleep_health"
 class_ = "behavioral_intervention"
 
-aliases = ["sleep", "sleep health", "sleep duration", "sleep quality", "insomnia treatment", "CBT-I", "sleep extension", "sleep apnea", "obstructive sleep apnea", "CPAP"]
+aliases = ["sleep", "sleep health", "sleep duration", "sleep quality", "insomnia treatment", "CBT-I", "cognitive behavioral therapy for insomnia", "sleep extension", "sleep apnea", "obstructive sleep apnea", "CPAP", "Pittsburgh Sleep Quality Index", "Insomnia Severity Index"]
 expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "cognition", "cardiometabolic", "mortality"]
 special_rules = [
   "Separate sleep duration, sleep quality, insomnia treatment, and sleep-apnea treatment.",
@@ -10,7 +10,7 @@ special_rules = [
 ]
 forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
 forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
-active_arm_synonyms = ["sleep intervention", "sleep extension", "CBT-I", "insomnia treatment", "sleep hygiene", "CPAP", "sleep apnea treatment"]
+active_arm_synonyms = ["sleep intervention", "sleep extension", "CBT-I", "cognitive behavioral therapy for insomnia", "insomnia treatment", "sleep restriction therapy", "stimulus control", "sleep hygiene", "CPAP", "continuous positive airway pressure", "sleep apnea treatment"]
 placebo_arm_synonyms = ["control", "usual care", "attention control", "waitlist", "sleep education", "sham CPAP"]
 corpus_search_queries = [
   "sleep duration AND aging AND mortality",
@@ -23,14 +23,19 @@ corpus_search_queries = [
   "sleep efficiency AND frailty AND older adults",
   "actigraphy AND older adults AND cognition",
   "sleep health AND aging AND meta-analysis",
+  "cognitive behavioral therapy for insomnia AND older adults AND trial",
+  "Insomnia Severity Index AND older adults AND randomized",
+  "Pittsburgh Sleep Quality Index AND older adults AND trial",
+  "apnea-hypopnea index AND CPAP AND older adults",
+  "sleep duration AND frailty AND cohort",
 ]
 canonical_rct_paper_ids = []
 canonical_trials = []
 known_role_overrides = {}
 
 [retrieval]
-topic_terms = ["sleep health", "sleep duration", "sleep quality", "insomnia treatment", "CBT-I", "sleep extension", "sleep apnea", "obstructive sleep apnea", "CPAP", "sleep efficiency", "actigraphy"]
-scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cognition", "frailty", "cardiometabolic", "mortality", "cardiovascular", "insomnia", "sleep quality"]
+topic_terms = ["sleep health", "sleep duration", "sleep quality", "insomnia treatment", "CBT-I", "cognitive behavioral therapy for insomnia", "sleep extension", "sleep apnea", "obstructive sleep apnea", "CPAP", "continuous positive airway pressure", "sleep efficiency", "actigraphy", "Insomnia Severity Index", "Pittsburgh Sleep Quality Index"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cognition", "frailty", "cardiometabolic", "mortality", "cardiovascular", "insomnia", "sleep quality", "sleep efficiency", "total sleep time", "apnea-hypopnea index"]
 evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
 exclude_terms = ["pediatric only", "animal only", "in vitro only", "shift workers only", "acute sleep deprivation only"]
 date_from = 2000
@@ -38,7 +43,7 @@ languages = ["English"]
 species = ["humans"]
 
 [retrieval.background]
-allow = ["circadian biology", "glymphatic hypothesis", "sleep epidemiology", "insomnia treatment history", "sleep architecture", "sleep apnea physiology"]
+allow = ["circadian biology", "glymphatic hypothesis", "sleep epidemiology", "insomnia treatment history", "sleep architecture", "sleep apnea physiology", "sleep fragmentation", "slow-wave sleep"]
 
 [endpoint_polarity]
 mortality = "lower_is_better"

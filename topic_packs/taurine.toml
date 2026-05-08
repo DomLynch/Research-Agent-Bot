@@ -1,7 +1,7 @@
 topic = "taurine"
 class_ = "nutritional_supplement"
 
-aliases = ["taurine", "taurine supplementation", "2-aminoethanesulfonic acid"]
+aliases = ["taurine", "taurine supplementation", "2-aminoethanesulfonic acid", "plasma taurine", "taurine abundance"]
 expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "preclinical_lifespan", "meta_analysis", "safety_tolerability", "dosing_regimen", "cardiometabolic", "muscle_function"]
 special_rules = [
   "Separate human supplement trials from preclinical lifespan claims.",
@@ -21,21 +21,25 @@ corpus_search_queries = [
   "taurine AND lifespan AND mammals",
   "taurine AND blood pressure AND randomized",
   "taurine abundance AND mortality AND cohort",
+  "taurine deficiency AND aging AND human cohort",
+  "plasma taurine AND older adults AND mortality",
+  "taurine supplementation AND blood pressure AND meta-analysis",
+  "taurine AND muscle function AND older adults",
 ]
 canonical_rct_paper_ids = []
 canonical_trials = []
 known_role_overrides = {}
 
 [retrieval]
-topic_terms = ["taurine", "taurine supplementation", "2-aminoethanesulfonic acid", "taurine deficiency", "taurine abundance"]
-scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cardiometabolic", "muscle function", "inflammation", "mortality", "blood pressure", "mitochondrial function"]
+topic_terms = ["taurine", "taurine supplementation", "2-aminoethanesulfonic acid", "taurine deficiency", "taurine abundance", "plasma taurine"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cardiometabolic", "muscle function", "physical function", "inflammation", "mortality", "blood pressure", "mitochondrial function", "metabolic health"]
 evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
 exclude_terms = ["animal only", "in vitro only", "cell culture only", "pediatric only", "sports drink only"]
 date_from = 2000
 languages = ["English"]
 
 [retrieval.background]
-allow = ["taurine aging biology", "mitochondrial function", "cardiometabolic mechanism", "preclinical lifespan signal", "taurine transporter biology", "cellular osmoregulation"]
+allow = ["taurine aging biology", "mitochondrial function", "cardiometabolic mechanism", "preclinical lifespan signal", "taurine transporter biology", "cellular osmoregulation", "taurine deficiency biology"]
 
 [endpoint_polarity]
 mortality = "lower_is_better"

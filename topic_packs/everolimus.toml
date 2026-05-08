@@ -21,6 +21,7 @@ aliases = [
   "Afinitor",
   "Zortress",
   "RTB101",
+  "TORC1 inhibitor",
   "mTOR inhibitor",
   "mTORC1 inhibitor",
 ]
@@ -75,6 +76,7 @@ active_arm_synonyms = [
   "Afinitor",
   "Zortress",
   "RTB101",
+  "TORC1 inhibitor",
 ]
 
 placebo_arm_synonyms = [
@@ -91,6 +93,11 @@ corpus_search_queries = [
   "mTOR inhibitor AND aging AND clinical trial",
   "everolimus AND frailty OR healthspan",
   "everolimus AND safety AND older adults",
+  "Mannick mTOR inhibition immune function elderly",
+  "RAD001 influenza vaccine elderly",
+  "TORC1 inhibition older adults respiratory tract infection",
+  "RTB101 respiratory tract infection older adults randomized",
+  "mTOR inhibition improves immune function elderly",
 ]
 
 canonical_rct_paper_ids = []
@@ -101,11 +108,12 @@ canonical_rct_paper_ids = []
 [retrieval]
 topic_terms    = [
   "everolimus", "RAD001", "Afinitor", "Zortress", "RTB101",
-  "mTOR inhibitor", "mTORC1 inhibitor",
+  "TORC1 inhibitor", "mTOR inhibitor", "mTORC1 inhibitor",
 ]
 scope_terms    = [
   "aging", "older adults", "elderly", "geriatric", "longevity",
   "healthspan", "immune function", "immunosenescence", "frailty",
+  "respiratory tract infection", "vaccine response", "influenza vaccine",
 ]
 evidence_types = [
   "clinical trial", "randomized controlled trial", "cohort study",
@@ -129,6 +137,8 @@ allow = [
   "immune-aging trial history",
   "dose rationale",
   "RTB101 field history",
+  "vaccine-response endpoint",
+  "respiratory-infection endpoint",
 ]
 
 

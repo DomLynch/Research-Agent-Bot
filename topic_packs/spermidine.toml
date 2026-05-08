@@ -1,7 +1,7 @@
 topic = "spermidine"
 class_ = "nutritional_supplement"
 
-aliases = ["spermidine", "spermidine supplementation", "polyamine"]
+aliases = ["spermidine", "spermidine supplementation", "polyamine", "polyamine-rich diet", "spermidine-rich wheat germ", "SmartAge"]
 expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "preclinical_lifespan", "meta_analysis", "safety_tolerability", "dosing_regimen", "cognition", "cardiometabolic"]
 special_rules = [
   "Separate dietary spermidine exposure from supplement trials.",
@@ -10,7 +10,7 @@ special_rules = [
 ]
 forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
 forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
-active_arm_synonyms = ["spermidine", "spermidine supplementation", "polyamine", "polyamine-rich diet", "wheat germ extract"]
+active_arm_synonyms = ["spermidine", "spermidine supplementation", "polyamine", "polyamine-rich diet", "wheat germ extract", "spermidine-rich wheat germ", "SmartAge"]
 placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
 corpus_search_queries = [
   "spermidine AND aging AND human",
@@ -21,21 +21,26 @@ corpus_search_queries = [
   "polyamine intake AND aging AND cohort",
   "wheat germ extract AND spermidine AND trial",
   "spermidine AND cardiometabolic AND human",
+  "spermidine-rich wheat germ AND memory AND older adults",
+  "SmartAge spermidine AND cognition",
+  "spermidine AND Bruneck study AND mortality",
+  "polyamine-rich diet AND older adults AND cognition",
+  "spermidine AND cognitive decline AND randomized",
 ]
 canonical_rct_paper_ids = []
 canonical_trials = []
 known_role_overrides = {}
 
 [retrieval]
-topic_terms = ["spermidine", "spermidine supplementation", "polyamine", "polyamines", "dietary spermidine", "wheat germ extract"]
-scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cognition", "mortality", "autophagy", "cardiometabolic", "inflammation", "memory"]
+topic_terms = ["spermidine", "spermidine supplementation", "polyamine", "polyamines", "dietary spermidine", "wheat germ extract", "spermidine-rich wheat germ", "SmartAge"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cognition", "cognitive decline", "mortality", "autophagy", "cardiometabolic", "inflammation", "memory"]
 evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
 exclude_terms = ["animal only", "in vitro only", "cell culture only", "pediatric only", "plant biology only"]
 date_from = 2000
 languages = ["English"]
 
 [retrieval.background]
-allow = ["autophagy mechanism", "polyamine biology", "preclinical lifespan signal", "dietary exposure epidemiology", "translation regulation", "cellular stress resistance"]
+allow = ["autophagy mechanism", "polyamine biology", "preclinical lifespan signal", "dietary exposure epidemiology", "translation regulation", "cellular stress resistance", "polyamine metabolism"]
 
 [endpoint_polarity]
 mortality = "lower_is_better"

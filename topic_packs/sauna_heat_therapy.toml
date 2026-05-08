@@ -1,7 +1,7 @@
 topic = "sauna_heat_therapy"
 class_ = "behavioral_intervention"
 
-aliases = ["sauna", "sauna bathing", "heat therapy", "passive heat therapy", "whole-body heat therapy"]
+aliases = ["sauna", "sauna bathing", "Finnish sauna", "heat therapy", "passive heat therapy", "whole-body heat therapy", "Waon therapy", "hot water immersion", "infrared sauna"]
 expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "cardiovascular_outcomes", "vascular_function"]
 special_rules = [
   "Separate sauna-bathing epidemiology from controlled heat-therapy trials.",
@@ -10,7 +10,7 @@ special_rules = [
 ]
 forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
 forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
-active_arm_synonyms = ["sauna", "sauna bathing", "heat therapy", "passive heat therapy"]
+active_arm_synonyms = ["sauna", "sauna bathing", "Finnish sauna", "heat therapy", "passive heat therapy", "whole-body heat therapy", "Waon therapy", "hot water immersion", "infrared sauna"]
 placebo_arm_synonyms = ["control", "usual care", "sham", "thermoneutral"]
 corpus_search_queries = [
   "sauna bathing AND aging AND mortality",
@@ -18,14 +18,19 @@ corpus_search_queries = [
   "heat therapy AND older adults AND vascular function",
   "sauna AND dementia AND cohort",
   "whole-body heat therapy AND healthspan",
+  "Finnish sauna AND cardiovascular mortality",
+  "sauna bathing AND sudden cardiac death cohort",
+  "Kuopio sauna AND dementia cohort",
+  "Waon therapy AND cardiovascular function trial",
+  "hot water immersion AND older adults AND vascular function",
 ]
 canonical_rct_paper_ids = []
 canonical_trials = []
 known_role_overrides = {}
 
 [retrieval]
-topic_terms = ["sauna", "sauna bathing", "heat therapy", "passive heat therapy", "whole-body heat therapy"]
-scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cardiovascular", "vascular function", "mortality", "cognition"]
+topic_terms = ["sauna", "sauna bathing", "Finnish sauna", "heat therapy", "passive heat therapy", "whole-body heat therapy", "Waon therapy", "hot water immersion", "infrared sauna"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cardiovascular", "vascular function", "mortality", "cognition", "dementia", "blood pressure", "endothelial function"]
 evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
 exclude_terms = ["animal only", "in vitro only", "heat stroke only", "occupational heat stress only", "pediatric only"]
 date_from = 2000
@@ -33,7 +38,7 @@ languages = ["English"]
 species = ["humans"]
 
 [retrieval.background]
-allow = ["heat shock proteins", "vascular adaptation", "Finnish sauna epidemiology", "thermoregulation"]
+allow = ["heat shock proteins", "vascular adaptation", "Finnish sauna epidemiology", "thermoregulation", "passive heating physiology", "endothelial function"]
 
 [endpoint_polarity]
 mortality = "lower_is_better"
@@ -42,4 +47,3 @@ blood_pressure = "lower_is_better"
 vascular_function = "higher_is_better"
 cognition = "higher_is_better"
 adverse_events = "lower_is_better"
-
