@@ -61,10 +61,14 @@ def test_dw_register_payload_is_offline_shape_only(tmp_path: Path) -> None:
     )
 
     assert payload["schema"] == "derivation_web.register_public_bundle.v1"
+    assert payload["idempotency_key"].startswith("dw-register:")
     assert payload["reader_manifest_schema"] == "researka.reader_manifest.v1"
     assert payload["topic"] == "unknown"
     assert payload["osf"]["node_id"] == "abc123"
     assert payload["aggregate_files"][0]["path"] == "paper.md"
+    assert payload["dw"]["append_only"] is True
+    assert payload["dw"]["step"]["step_type"] == "register"
+    assert "secret" not in json.dumps(payload).lower()
 
 
 def test_reader_manifest_cli_accepts_public_url_and_osf_result(tmp_path: Path) -> None:
