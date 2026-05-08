@@ -594,6 +594,36 @@ def test_source_context_drift_skips_deterministic_tables(tmp_path):
     assert drift == []
 
 
+def test_untraceable_numeric_guard_blocks_citationless_prose_value(tmp_path):
+    """Q2-blocking numerics must be stripped even when the sentence
+    names an author without an exact Author-Year citation token."""
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_keech.quant_claims.json").write_text(
+        '{"paper_id":"PMC_keech","claims":[{'
+        '"claim_type":"unit_value","numeric_values":[12.3,24,0.001],'
+        '"binding_confidence":"high","claim_role":"effect"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_keech",
+        "citation_token": "Keech 2003",
+    }]}
+    paper = (
+        "Keech et al. showed pravastatin reduced major coronary "
+        "heart disease events from 15.9% to 12.3% "
+        "(relative risk reduction 24%, P < 0.001)."
+    )
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    found = [i for i in issues if i.issue_type == "untraceable_numeric"]
+    assert found
+    assert "15.9" in found[0].detail
+    fixed, n = auto_strip_offending_sentences(paper, issues)
+    assert n == 1
+    assert "15.9%" not in fixed
+
+
 def test_scan_paper_back_compat_no_kwargs_works():
     """Existing callers passing only paper_md (no manifest /
     bg_lit) keep working — drift check is silently disabled."""

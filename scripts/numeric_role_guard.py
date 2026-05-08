@@ -81,6 +81,29 @@ _EXPLICIT_COMPARISON_RE = re.compile(
     r"|≤|≥|<=|>=|\bbelow\s+the\b|\babove\s+the\b",
     flags=re.IGNORECASE,
 )
+_OBJECTIVE_PARTIAL_TYPES = {
+    "unit_value", "sample_size", "year", "sample_count",
+}
+_REPORTABLE_NUMERIC_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
+    (
+        "percentage",
+        re.compile(
+            r"\b(\d+\.?\d*)\s*%(?!\s*(?:CI|confidence\s+interval))",
+            flags=re.IGNORECASE,
+        ),
+    ),
+    ("p_value", re.compile(r"\b[Pp]\s*[<>=]\s*(0?\.\d+)\b")),
+    (
+        "ratio",
+        re.compile(
+            r"\b(?:aHR|aOR|HR|OR|RR|RRR|IRR|SHR|SMR)\s*[=:]\s*"
+            r"(\d+\.?\d*)"
+        ),
+    ),
+    ("sample_size", re.compile(r"\b[nN]\s*=\s*(\d+)\b")),
+    ("dose", re.compile(r"\b(\d+\.?\d*)\s*(?:mg|g|kg|μg|mcg|mL)\b")),
+    ("speed", re.compile(r"\b(\d+\.?\d*)\s*m\s*/\s*s\b")),
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -491,6 +514,71 @@ def _build_citation_allowed_numerics(
         quant_claims_dir=quant_claims_dir,
     )
     return {tok: set(slot.keys()) for tok, slot in role_index.items()}
+
+
+def _build_global_allowed_numerics(
+    *, bg_lit_registry: dict | None, quant_claims_dir,
+) -> set[str]:
+    """Strict prose-wide numeric pool.
+
+    Citation-bound drift catches "right number, wrong source" cases.
+    This pool catches citationless reportable numerics before Q2 has to
+    ship-block the final artifact.
+    """
+    out: set[str] = set()
+    if isinstance(bg_lit_registry, dict):
+        for entry in bg_lit_registry.values():
+            num = (entry.get("numeric") or "").strip()
+            if num:
+                out.update(_numeric_variants(num))
+    if not quant_claims_dir:
+        return out
+    try:
+        from pathlib import Path as _Path
+        import json as _json
+        qcd = _Path(quant_claims_dir)
+        paths = tuple(qcd.glob("*.quant_claims.json")) if qcd.exists() else ()
+    except (OSError, TypeError, ValueError):
+        return out
+    for path in paths:
+        try:
+            data = _json.loads(path.read_text())
+        except (OSError, ValueError):
+            continue
+        for claim in data.get("claims", []) or []:
+            confidence = (claim.get("binding_confidence") or "").lower()
+            claim_type = claim.get("claim_type") or ""
+            if confidence != "high" and not (
+                confidence == "partial"
+                and claim_type in _OBJECTIVE_PARTIAL_TYPES
+            ):
+                continue
+            for value in claim.get("numeric_values", []) or []:
+                out.update(_numeric_variants(str(value)))
+    return out
+
+
+def _untraceable_reportable_numerics(
+    sentence: str, allowed_numerics: set[str],
+) -> list[str]:
+    if not allowed_numerics:
+        return []
+    clean = re.sub(
+        r"\b(?:95|99|99\.9|90)\s*%\s*CI\b", "",
+        sentence, flags=re.IGNORECASE,
+    )
+    bad: set[str] = set()
+    for category, pattern in _REPORTABLE_NUMERIC_PATTERNS:
+        for value in set(pattern.findall(clean)):
+            if category == "percentage":
+                try:
+                    if not (1.0 < float(value) < 1000):
+                        continue
+                except (TypeError, ValueError):
+                    continue
+            if not (_numeric_variants(value) & allowed_numerics):
+                bad.add(value)
+    return sorted(bad)
 
 
 def _numeric_variants(value: str) -> set[str]:
@@ -1039,6 +1127,10 @@ def scan_paper(
         bg_lit_registry=bg_lit_registry,
         quant_claims_dir=quant_claims_dir,
     )
+    global_allowed_numerics = _build_global_allowed_numerics(
+        bg_lit_registry=bg_lit_registry,
+        quant_claims_dir=quant_claims_dir,
+    )
     prose_md = _strip_citation_footer_lines(
         _strip_non_prose_guard_sections(paper_md),
     )
@@ -1078,6 +1170,24 @@ def scan_paper(
                 )
                 if issue:
                     issues.append(issue)
+                    continue
+            bad_nums = _untraceable_reportable_numerics(
+                sentence, global_allowed_numerics,
+            )
+            if bad_nums:
+                issues.append(NumericIssue(
+                    sentence=sentence,
+                    issue_type="untraceable_numeric",
+                    severity="P1",
+                    detail=(
+                        "Reportable prose numeric(s) not present in the "
+                        f"strict corpus numeric pool: {bad_nums[:3]}"
+                    ),
+                    suggested_fix=(
+                        "Strip the sentence or replace the numeric with a "
+                        "registered corpus value."
+                    ),
+                ))
     return issues
 
 
