@@ -40,6 +40,7 @@ def test_qei_surface_gate_flags_endpoint_unit_mismatches():
         "| Moel 2025 | HbA1c | placebo | 5 mg | mg | — |",
         "| Dhanabalan 2022 | body weight | control | 100 mm | mm | — |",
         "| Wang 2019 | body weight | control | 1 mL | mL | — |",
+        "| Smith 2024 | inflammation | pooled | 48 mL/min | mL/min | — |",
     ]
     for row in bad_rows:
         report = evaluate_journal_surface(_paper(row))

@@ -130,6 +130,39 @@ def test_claim_to_row_drops_ci_prefix_percentage():
     ) is None
 
 
+def test_claim_to_row_drops_i2_heterogeneity_percentages():
+    assert _claim_to_row(
+        {
+            "claim_type": "percentage",
+            "raw_text": "65.6%",
+            "numeric_values": [65.6],
+            "units": "%",
+            "binding_confidence": "high",
+            "endpoint": "body weight",
+            "arm": "placebo",
+            "claim_role": "effect",
+            "sentence": "The I2 was 65.6%, indicating heterogeneity.",
+        },
+        paper_id="x",
+    ) is None
+
+
+def test_claim_to_row_drops_nondose_endpoint_dose_thresholds():
+    assert _claim_to_row(
+        {
+            "claim_type": "unit_value",
+            "raw_text": "45 kg",
+            "numeric_values": [45],
+            "units": "kg",
+            "binding_confidence": "partial",
+            "endpoint": "body weight",
+            "claim_role": "dose",
+            "sentence": "Children below 45 kg received a lower dose.",
+        },
+        paper_id="x",
+    ) is None
+
+
 def test_claim_to_row_renders_confidence_interval_once():
     row = _claim_to_row(
         {

@@ -177,7 +177,9 @@ def _endpoint_class(endpoint: str) -> str:
         ("biomarker", (
             "glucose", "hba1c", "cholesterol", "ldl", "hdl",
             "triglyceride", "insulin", "crp", "biomarker",
+            "inflammation",
         )),
+        ("renal", ("egfr", "kidney", "renal", "glomerular")),
         ("speed", ("walk speed", "gait speed", "walking speed")),
         ("mass", ("body weight", "lean mass", "fat mass", "muscle mass")),
         ("strength", ("strength", "grip", "force")),
@@ -207,6 +209,8 @@ def _unit_class(unit: str, value: str) -> str:
         return "bmi_unit"
     if "mg/dl" in hay or "mmol/l" in hay or "ng/ml" in hay:
         return "concentration"
+    if re.search(r"\bml\s*/\s*min\b", hay):
+        return "renal_rate"
     if unit in {"ml", "l"}:
         return "volume"
     if unit in {"mg", "g", "mcg", "µg", "μg", "ng"}:
@@ -236,6 +240,7 @@ _ALLOWED_UNIT_CLASSES = {
     "pressure": _COMMON | {"pressure"},
     "bmi": _COMMON | {"bmi_unit"},
     "biomarker": _COMMON | {"concentration"},
+    "renal": _COMMON | {"renal_rate"},
     "speed": _COMMON | {"speed"},
     "mass": _COMMON | {"mass"},
     "strength": _COMMON | {"mass"},

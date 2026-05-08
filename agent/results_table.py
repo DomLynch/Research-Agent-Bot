@@ -252,9 +252,18 @@ def _row_is_meaningful(claim: dict[str, Any]) -> bool:
     context = f"{sent} {claim.get('context_window') or ''}".lower()
     if claim_type == "percentage" and raw == "95%" and "95% ci" in context:
         return False
+    if claim_type == "percentage" and (
+        "heterogeneity" in context
+        or re.search(r"\bi\s*(?:2|²)\b", context)
+    ):
+        return False
+    if claim_type == "mean_sd" and role not in {"effect", "outcome"}:
+        return False
     if claim_type == "p_value" and _ambiguous_multi_stat_binding(
         raw, endpoint, str(claim.get("sentence") or ""),
     ):
+        return False
+    if role == "dose" and endpoint not in _DOSE_ENDPOINTS:
         return False
     if claim_type == "sample_size" and role != "population":
         return False
