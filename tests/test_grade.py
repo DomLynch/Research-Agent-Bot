@@ -9,7 +9,13 @@ import pytest
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
-from grade_assessment import GradeAssessment, assess_grade  # noqa: E402
+from grade_assessment import (  # noqa: E402
+    GradeAssessment,
+    assess_grade,
+    assess_grade_batch,
+    assess_grade_batch_json,
+    to_stable_json,
+)
 
 
 def test_low_risk_direct_rct_is_high_certainty() -> None:
@@ -90,3 +96,34 @@ def test_grade_dataclass_is_frozen_and_json_friendly() -> None:
     assert grade.to_dict()["certainty"] == "high"
     with pytest.raises(dataclasses.FrozenInstanceError):
         grade.certainty = "low"  # type: ignore[misc]
+
+
+def test_batch_summarizes_receipts_grouped_by_outcome_fail_closed() -> None:
+    grades = assess_grade_batch({
+        "mortality": (
+            {"tier": "A1", "directness": "direct", "risk_of_bias": "low"},
+            {"tier": "C1", "directness": "mechanistic", "risk_of_bias": "high"},
+        ),
+        "frailty": ({"tier": "A1"},),
+    })
+
+    by_outcome = {grade.outcome: grade for grade in grades}
+    assert by_outcome["mortality"].certainty == "very_low"
+    assert by_outcome["mortality"].start_certainty == "high"
+    assert by_outcome["frailty"].fail_closed
+
+
+def test_grade_stable_json_serializer_sorts_keys_and_is_compact() -> None:
+    grade = assess_grade("mortality", {"tier": "A1", "directness": "direct"})
+
+    assert to_stable_json({"z": grade, "a": 1}).startswith(
+        '{"a":1,"z":{"caps":[],"certainty":"high"'
+    )
+
+
+def test_grade_batch_json_is_stable() -> None:
+    payload = assess_grade_batch_json({
+        "mortality": ({"tier": "A1", "directness": "direct"},)
+    })
+
+    assert payload.startswith('[{"caps":[],"certainty":"high"')

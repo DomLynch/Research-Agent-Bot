@@ -5,8 +5,9 @@ full Cochrane RoB 2 signaling questionnaire.
 """
 from __future__ import annotations
 
+import json
 from dataclasses import asdict, dataclass
-from typing import Any, Literal, Mapping
+from typing import Any, Literal, Mapping, Sequence
 
 RiskLevel = Literal["low", "some_concerns", "high"]
 
@@ -34,6 +35,9 @@ class RiskOfBiasAssessment:
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+    def to_json(self) -> str:
+        return to_stable_json(self)
 
 
 def assess_risk_of_bias(receipt: Mapping[str, Any]) -> RiskOfBiasAssessment:
@@ -67,6 +71,32 @@ def assess_risk_of_bias(receipt: Mapping[str, Any]) -> RiskOfBiasAssessment:
         base = "some_concerns"
         basis += ("mechanistic_preclinical_bias_floor",)
     return _assessment(base, basis)
+
+
+def assess_risk_of_bias_batch(
+    receipts_by_outcome: Mapping[str, Sequence[Mapping[str, Any]]],
+) -> dict[str, tuple[RiskOfBiasAssessment, ...]]:
+    return {
+        str(outcome or "unknown"): tuple(
+            assess_risk_of_bias(receipt) for receipt in receipts
+        )
+        for outcome, receipts in sorted(receipts_by_outcome.items())
+    }
+
+
+def assess_risk_of_bias_batch_json(
+    receipts_by_outcome: Mapping[str, Sequence[Mapping[str, Any]]],
+) -> str:
+    return to_stable_json(assess_risk_of_bias_batch(receipts_by_outcome))
+
+
+def to_stable_json(value: Any) -> str:
+    return json.dumps(
+        _jsonable(value),
+        ensure_ascii=True,
+        separators=(",", ":"),
+        sort_keys=True,
+    )
 
 
 def _assessment(
@@ -123,3 +153,15 @@ def _text(value: Any) -> str:
 
 def _tier(value: Any) -> str:
     return str(value or "").strip()
+
+
+def _jsonable(value: Any) -> Any:
+    if isinstance(value, RiskOfBiasAssessment):
+        return value.to_dict()
+    if isinstance(value, tuple):
+        return [_jsonable(v) for v in value]
+    if isinstance(value, list):
+        return [_jsonable(v) for v in value]
+    if isinstance(value, Mapping):
+        return {str(k): _jsonable(v) for k, v in value.items()}
+    return value

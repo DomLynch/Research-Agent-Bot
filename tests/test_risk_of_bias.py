@@ -12,7 +12,10 @@ sys.path.insert(0, str(REPO / "scripts"))
 from risk_of_bias import (  # noqa: E402
     SCREENING_LABEL,
     RiskOfBiasAssessment,
+    assess_risk_of_bias_batch,
+    assess_risk_of_bias_batch_json,
     assess_risk_of_bias,
+    to_stable_json,
 )
 
 
@@ -78,3 +81,32 @@ def test_assessment_dataclass_is_frozen() -> None:
 
     with pytest.raises(dataclasses.FrozenInstanceError):
         assessment.overall = "high"  # type: ignore[misc]
+
+
+def test_batch_assesses_receipts_grouped_by_outcome() -> None:
+    grouped = {
+        "mortality": ({"tier": "A1", "directness": "direct"},),
+        "frailty": ({"tier": "C1", "directness": "mechanistic"},),
+    }
+
+    assessed = assess_risk_of_bias_batch(grouped)
+
+    assert tuple(assessed) == ("frailty", "mortality")
+    assert assessed["mortality"][0].overall == "low"
+    assert assessed["frailty"][0].overall == "high"
+
+
+def test_stable_json_serializer_sorts_keys_and_is_compact() -> None:
+    assessment = assess_risk_of_bias({"directness": "direct", "tier": "A1"})
+
+    assert to_stable_json({"z": assessment, "a": 1}).startswith(
+        '{"a":1,"z":{"basis":["randomized_or_top_tier_default"]'
+    )
+
+
+def test_batch_json_is_stable() -> None:
+    payload = assess_risk_of_bias_batch_json({
+        "mortality": ({"tier": "A1", "directness": "direct"},)
+    })
+
+    assert payload.startswith('{"mortality":[{"basis":["randomized_or_top_tier_default"]')

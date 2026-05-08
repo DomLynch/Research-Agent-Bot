@@ -1,8 +1,9 @@
 """Deterministic GRADE certainty scaffold."""
 from __future__ import annotations
 
+import json
 from dataclasses import asdict, dataclass
-from typing import Any, Literal, Mapping
+from typing import Any, Literal, Mapping, Sequence
 
 Certainty = Literal["high", "moderate", "low", "very_low"]
 Problem = Literal["not_serious", "serious", "very_serious"]
@@ -37,6 +38,9 @@ class GradeAssessment:
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+    def to_json(self) -> str:
+        return to_stable_json(self)
 
 
 def assess_grade(outcome: str, evidence: Mapping[str, Any]) -> GradeAssessment:
@@ -73,6 +77,30 @@ def assess_grade(outcome: str, evidence: Mapping[str, Any]) -> GradeAssessment:
     )
 
 
+def assess_grade_batch(
+    receipts_by_outcome: Mapping[str, Sequence[Mapping[str, Any]]],
+) -> tuple[GradeAssessment, ...]:
+    return tuple(
+        _summarize_outcome_grade(str(outcome or "unknown"), receipts)
+        for outcome, receipts in sorted(receipts_by_outcome.items())
+    )
+
+
+def assess_grade_batch_json(
+    receipts_by_outcome: Mapping[str, Sequence[Mapping[str, Any]]],
+) -> str:
+    return to_stable_json(assess_grade_batch(receipts_by_outcome))
+
+
+def to_stable_json(value: Any) -> str:
+    return json.dumps(
+        _jsonable(value),
+        ensure_ascii=True,
+        separators=(",", ":"),
+        sort_keys=True,
+    )
+
+
 def _starting_certainty(tier: str, directness: str) -> Certainty:
     if tier == "A1" and directness == "direct":
         return "high"
@@ -106,9 +134,42 @@ def _directness_cap(tier: str, directness: str) -> Certainty | None:
     return None
 
 
+def _summarize_outcome_grade(
+    outcome: str,
+    receipts: Sequence[Mapping[str, Any]],
+) -> GradeAssessment:
+    grades = [assess_grade(outcome, receipt) for receipt in receipts]
+    if not grades:
+        return assess_grade(outcome, {})
+    worst = min(grades, key=lambda g: _SCORES[g.certainty])
+    return GradeAssessment(
+        outcome=outcome,
+        certainty=worst.certainty,
+        start_certainty=max(
+            (g.start_certainty for g in grades),
+            key=lambda c: _SCORES[c],
+        ),
+        downgrades=tuple(sorted({d for g in grades for d in g.downgrades})),
+        caps=tuple(sorted({c for g in grades for c in g.caps})),
+        fail_closed=any(g.fail_closed for g in grades),
+    )
+
+
 def _text(value: Any) -> str:
     return str(value or "").strip().lower().replace("-", "_")
 
 
 def _tier(value: Any) -> str:
     return str(value or "").strip()
+
+
+def _jsonable(value: Any) -> Any:
+    if isinstance(value, GradeAssessment):
+        return value.to_dict()
+    if isinstance(value, tuple):
+        return [_jsonable(v) for v in value]
+    if isinstance(value, list):
+        return [_jsonable(v) for v in value]
+    if isinstance(value, Mapping):
+        return {str(k): _jsonable(v) for k, v in value.items()}
+    return value
