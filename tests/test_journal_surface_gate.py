@@ -74,6 +74,43 @@ def test_qei_surface_gate_flags_malformed_row_shape():
     assert any("malformed QEI row cell count" in i.detail for i in report.issues)
 
 
+def test_qei_surface_gate_flags_malformed_zero_numeric_artifacts():
+    report = evaluate_journal_surface(
+        _paper("| Singh 2022 | dose | treatment | 000 mg/day | mg/day | — |"),
+    )
+    assert not report.passed
+    assert any("malformed numeric artifact" in i.detail for i in report.issues)
+
+
+def test_surface_gate_allows_thousands_separated_doses():
+    report = evaluate_journal_surface(
+        _paper("| Singh 2022 | dose | treatment | 1,000 mg/day | mg/day | — |"),
+    )
+    assert not any("malformed numeric artifact" in i.detail for i in report.issues)
+
+
+def test_surface_gate_flags_consecutive_duplicate_qei_headings():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "## Quantitative Evidence Index — topic\n\n",
+        (
+            "## Quantitative Evidence Index — Urolithin A\n\n"
+            "## Quantitative Evidence Index — urolithin_a\n\n"
+        ),
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "duplicate_heading" for i in report.issues)
+
+
+def test_surface_gate_flags_public_topic_slug_artifacts():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("background1", "urolithin_a", 1)
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "topic_slug_artifact" for i in report.issues)
+
+
 def test_malformed_qei_row_in_appendix_does_not_block_public_body():
     paper = (
         _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")

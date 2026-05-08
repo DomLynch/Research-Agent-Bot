@@ -184,7 +184,7 @@ def _status(
 def _candidate_pairs(rows: Sequence[Mapping[str, Any]]) -> list[tuple[str, str]]:
     pairs = []
     for prev, cur in zip(rows, rows[1:]):
-        if prev["maturity_level"] >= 5 and cur["maturity_level"] >= 5:
+        if _clean_l5(prev) and _clean_l5(cur):
             pairs.append((str(prev["run_dir"]), str(cur["run_dir"])))
     return pairs
 
@@ -209,16 +209,20 @@ def _certify_pair(
     result = cert_runner(paths, output_dir or Path("reports/l6_retrofit"), timeout_s)
     parsed = result.get("parsed", {})
     eligibility_blockers = _eligibility_blockers(parsed, pair)
+    selected_pair_matches = _selected_pair_matches(parsed, pair)
     return {
         "pair": list(pair),
         "returncode": result.get("returncode"),
         "stdout_path": result.get("stdout_path", ""),
         "stderr_path": result.get("stderr_path", ""),
-        "l6_confirmed": bool(parsed.get("l6_reproducibly_journal_ready")),
+        "l6_confirmed": bool(
+            parsed.get("l6_reproducibly_journal_ready") and selected_pair_matches
+        ),
         "certified": bool(parsed.get("certified")),
         "maturity_level": parsed.get("maturity_level", 0),
         "blockers": parsed.get("l6_blockers", []),
         "eligibility_blockers": eligibility_blockers,
+        "selected_pair_matches": selected_pair_matches,
         "reason": parsed.get("reason", ""),
         "topic": topic,
     }
@@ -274,6 +278,7 @@ def _run_consecutive_cert(
 def _row(run_dir: Path) -> dict[str, Any]:
     final = _read_json(run_dir / "full_paper.final_verdict.json")
     manifest = _read_json(run_dir / "manifest.json")
+    patch_counts = _patch_counts(run_dir, final)
     return {
         "run_dir": run_dir.name,
         "topic": _topic_for_run(run_dir),
@@ -286,6 +291,8 @@ def _row(run_dir: Path) -> dict[str, Any]:
         "grok_unresolved_p1": int(final.get("grok_unresolved_p1", 0) or 0),
         "stage2_p1": int(final.get("stage2_p1", 0) or 0),
         "stage2_p2": int(final.get("stage2_p2", 0) or 0),
+        "flagged_patches": patch_counts["flagged"],
+        "auto_stripped_patches": patch_counts["auto_stripped"],
         "corpus_signature": _corpus_signature(manifest),
         "code_signature": _code_signature(manifest, final),
         "has_final_verdict": bool(final),
@@ -298,6 +305,8 @@ def _eligibility_blockers(
     pair: tuple[str, str],
 ) -> list[str]:
     blockers = []
+    if not _selected_pair_matches(parsed, pair):
+        blockers.append("cert selected_pair does not match evaluated pair")
     selected = set(parsed.get("selected_pair") or pair)
     for run in parsed.get("runs", []):
         if run.get("run_id") not in selected:
@@ -314,6 +323,47 @@ def _eligibility_blockers(
         if reasons:
             blockers.append(f"{run.get('run_id')}: {', '.join(reasons)}")
     return blockers
+
+
+def _selected_pair_matches(parsed: Mapping[str, Any], pair: tuple[str, str]) -> bool:
+    selected = parsed.get("selected_pair")
+    if not selected:
+        return True
+    return list(selected) == list(pair)
+
+
+def _clean_l5(row: Mapping[str, Any]) -> bool:
+    return bool(
+        row.get("maturity_level", 0) >= 5
+        and row.get("journal_surface_pass")
+        and int(row.get("grok_unresolved_p1", 0) or 0) == 0
+        and int(row.get("stage2_p1", 0) or 0) == 0
+        and int(row.get("stage2_p2", 0) or 0) == 0
+        and int(row.get("flagged_patches", 0) or 0) == 0
+        and int(row.get("auto_stripped_patches", 0) or 0) == 0
+        and row.get("has_final_verdict")
+        and row.get("has_full_paper_md")
+    )
+
+
+def _patch_counts(run_dir: Path, final: Mapping[str, Any]) -> dict[str, int]:
+    patch_log = _read_json(run_dir / "full_paper.review_patch_log.json")
+    return {
+        "flagged": int(
+            patch_log.get(
+                "n_flagged",
+                final.get("flagged_patches", final.get("grok_unresolved_p1", 0)),
+            )
+            or 0
+        ),
+        "auto_stripped": int(
+            patch_log.get(
+                "n_auto_stripped",
+                final.get("auto_stripped_patches", final.get("auto_stripped_count", 0)),
+            )
+            or 0
+        ),
+    }
 
 
 def _aaa_certified(run: Mapping[str, Any]) -> bool:

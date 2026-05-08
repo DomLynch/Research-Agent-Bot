@@ -911,6 +911,23 @@ def test_table_5_prefers_one_of_each_claim_type() -> None:
     assert "Methods" in md or "methods" in md
 
 
+def test_table_5_drops_malformed_zero_numeric_artifacts() -> None:
+    claims = {
+        "Singh 2022": [
+            {"claim_id": "bad", "claim_type": "unit_value",
+             "raw_text": "000 mg", "source_section": "results",
+             "units": "mg"},
+            {"claim_id": "good", "claim_type": "unit_value",
+             "raw_text": "1,000 mg", "source_section": "results",
+             "units": "mg"},
+        ],
+    }
+    receipts = [_FakeReceipt(receipt_id="Singh 2022")]
+    md = tr.render_table_5_numeric_index(receipts, claims, top_n=2)
+    assert "| 000 mg |" not in md
+    assert "1,000 mg" in md
+
+
 def test_table_5_handles_no_claims_dict() -> None:
     """No claims dict → header + placeholder row, no crash."""
     receipts = [_FakeReceipt(receipt_id="X 2020")]

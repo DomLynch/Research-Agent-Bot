@@ -373,6 +373,38 @@ def test_numeric_patch_cannot_break_qei_table_shape() -> None:
     assert out == paper
 
 
+def test_consecutive_duplicate_qei_headings_are_collapsed() -> None:
+    paper = (
+        "## Quantitative Evidence Index — Urolithin A\n\n"
+        "## Quantitative Evidence Index — urolithin_a\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| Acevedo 2025 | muscle strength | ua | 57% | % | — |\n\n"
+        "## Methods\n\nText.\n"
+    )
+    out, results = apply_patches.apply_patches(paper, [], _manifest())
+    assert out.count("## Quantitative Evidence Index") == 1
+    assert "## Quantitative Evidence Index — Urolithin A" in out
+    assert "## Quantitative Evidence Index — urolithin_a" not in out
+    assert "57%" in out
+    assert any(
+        r.patch_id == "SECTION-CONTRACT-Quantitative-Evidence-Index-Dedup"
+        for r in results
+    )
+
+
+def test_single_qei_heading_is_not_rewritten() -> None:
+    paper = (
+        "## Quantitative Evidence Index — topic\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| A 2020 | glucose | drug | p=0.04 | p value | — |\n"
+    )
+    out, results = apply_patches.apply_patches(paper, [], _manifest())
+    assert out == paper
+    assert not any("Dedup" in r.patch_id for r in results)
+
+
 def test_log_includes_per_patch_decision_with_reason() -> None:
     """Log structure must capture the per-patch decision and reason
     for downstream audit replay (per the converged 'audit replay'

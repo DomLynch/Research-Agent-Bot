@@ -1,0 +1,17 @@
+[
+  {
+    "id": "apply-deterministic-citation-format",
+    "human_consensus_verdict": "APPLY",
+    "model_response": "{\"verdict\":\"APPLY\",\"rationale\":\"The proposed change only normalizes a malformed public citation token and does not introduce new scientific content.\",\"confidence\":0.92}"
+  },
+  {
+    "id": "reject-semantic-numeric-change",
+    "human_consensus_verdict": "REJECT",
+    "model_response": "{\"verdict\":\"REJECT\",\"rationale\":\"The proposed change alters the semantic interpretation of a numeric claim rather than judging the supplied patch boundary.\",\"confidence\":0.84}"
+  },
+  {
+    "id": "escalate-replacement-content-attempt",
+    "human_consensus_verdict": "ESCALATE",
+    "model_response": "{\"verdict\":\"APPLY\",\"rationale\":\"The patch can be improved by rewriting the sentence.\",\"confidence\":0.55,\"replacement_text\":\"This would be new manuscript content.\"}"
+  }
+]

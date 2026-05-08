@@ -1,0 +1,27 @@
+{
+  "audit_score": 9.2,
+  "blockers": [
+    "rotated OSF PAT required before live smoke",
+    "DW register endpoint support must be confirmed",
+    "no live OSF/DW call performed in this lane"
+  ],
+  "dry_deployment_ready": true,
+  "dry_run_default": true,
+  "dry_run_outputs": [
+    "/Users/domininclynch/Desktop/Business/osf-publisher/dry_run_statins_aaa.json",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/dry_run_statins_aaa_repeat.json"
+  ],
+  "idempotency_key": "osf-register:1dd26a8317d46f6aaaf256e4b6c73def7c43cdfd8165a9e060d238808f465c55",
+  "idempotency_stable": true,
+  "live_gate": "OSF_PUBLISHER_LIVE=1 plus OSF_PAT, DW_API_URL, DW_API_TOKEN",
+  "deployment_templates": [
+    "/Users/domininclynch/Desktop/Business/osf-publisher/deploy/env.example",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/deploy/osf-publisher.service",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/deploy/osf-publisher.timer"
+  ],
+  "live_ready": false,
+  "no_pat_read_probe": true,
+  "schema": "osf_publisher.deployment_dry_run.v1",
+  "source_fixture": "/Users/domininclynch/Desktop/Business/osf-publisher/fixtures/approved_statins_aaa.json",
+  "source_run": "synthesis-statins-v06-AAA-2026-05-04T16-05-37Z"
+}

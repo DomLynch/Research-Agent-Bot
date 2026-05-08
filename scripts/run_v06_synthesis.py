@@ -157,9 +157,10 @@ def _restore_rendered_section_contract(
     *, prefer_typed_sections: bool = True,
 ) -> str:
     out = _restore_rendered_section_headings(paper_md, sections)
-    return _restore_required_section_bodies(
+    out = _restore_required_section_bodies(
         out, sections, prefer_typed_sections=prefer_typed_sections,
     )
+    return _patch_applier._collapse_consecutive_qei_headings(out)[0]
 
 
 def _restore_required_section_bodies(
@@ -2078,9 +2079,15 @@ async def _run_post_paper_pipeline(
             manifest=manifest,
         )
         paper_md = _restore_rendered_section_contract(paper_md, sections)
+        paper_md, _n_qei_heading_deduped = (
+            _patch_applier._collapse_consecutive_qei_headings(paper_md)
+        )
         if methods_md:
             paper_md = _run_mode.replace_methods_in_paper(
                 paper_md, methods_md,
+            )
+            paper_md, _n_qei_heading_deduped = (
+                _patch_applier._collapse_consecutive_qei_headings(paper_md)
             )
         paper_md = _strip_rendered_citation_markers(paper_md)
         results = _resolve_absent_flagged_patches(results, paper_md)

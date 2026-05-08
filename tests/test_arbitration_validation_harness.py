@@ -60,6 +60,44 @@ def test_validation_harness_accepts_human_consensus_labels(tmp_path: Path) -> No
     }
 
 
+def test_validation_harness_reports_all_three_verdict_classes(tmp_path: Path) -> None:
+    fixture = tmp_path / "cases.json"
+    fixture.write_text(
+        json.dumps(
+            [
+                {
+                    "human_consensus_verdict": "APPLY",
+                    "model_response": (
+                        '{"verdict":"APPLY","rationale":"safe deterministic patch",'
+                        '"confidence":0.9}'
+                    ),
+                },
+                {
+                    "human_consensus_verdict": "REJECT",
+                    "model_response": (
+                        '{"verdict":"REJECT","rationale":"would alter science",'
+                        '"confidence":0.8}'
+                    ),
+                },
+                {
+                    "human_consensus_verdict": "ESCALATE",
+                    "model_response": (
+                        '{"verdict":"APPLY","rationale":"attempted rewrite",'
+                        '"confidence":0.5,"replacement_text":"new content"}'
+                    ),
+                },
+            ]
+        ),
+        encoding="utf-8",
+    )
+    metrics = run_fixture(fixture)["metrics"]
+    assert metrics["agreement_rate"] == 1.0
+    assert metrics["fail_closed_count"] == 1
+    assert metrics["confusion_matrix"]["APPLY"]["APPLY"] == 1
+    assert metrics["confusion_matrix"]["REJECT"]["REJECT"] == 1
+    assert metrics["confusion_matrix"]["ESCALATE"]["ESCALATE"] == 1
+
+
 def test_validation_harness_rejects_invalid_consensus_label(tmp_path: Path) -> None:
     fixture = tmp_path / "cases.json"
     fixture.write_text(

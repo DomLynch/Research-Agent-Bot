@@ -1,0 +1,69 @@
+{
+  "schema": "osf_publisher.install_pack_readiness.v1",
+  "date": "2026-05-08",
+  "scope": {
+    "sibling_service": "/Users/domininclynch/Desktop/Business/osf-publisher",
+    "bot_report_dir": "/Users/domininclynch/Desktop/Business/Research Agent Bot/reports/osf_publisher_service",
+    "live_network": false,
+    "real_tokens_read": false
+  },
+  "evidence": {
+    "macbook_install_checklist": true,
+    "vps_install_checklist": true,
+    "dry_run_systemd_smoke_script": true,
+    "status_cli": true,
+    "structured_dry_run_logs": true,
+    "lockfile_single_flight": true,
+    "dead_letter_file": true,
+    "rotated_pat_live_smoke_docs": true,
+    "exact_rollback_docs": true
+  },
+  "changed_sibling_files": [
+    "/Users/domininclynch/Desktop/Business/osf-publisher/README.md",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/deploy/dry-run-smoke.sh",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/deploy/env.example",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/deploy/osf-publisher.service",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/osf_publisher/cli.py",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/osf_publisher/ops.py",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/tests/test_deploy_templates.py",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/tests/test_ops_cli.py"
+  ],
+  "verification": [
+    {
+      "command": "python3 -m pytest -q",
+      "result": "40 passed",
+      "repeated": true
+    },
+    {
+      "command": "python3 -m ruff check .",
+      "result": "clean",
+      "repeated": true
+    },
+    {
+      "command": "OSF_PUBLISHER_PAYLOAD=fixtures/approved_statins_aaa.json OSF_PUBLISHER_STATE_DIR=/tmp/osf-publisher-smoke ./deploy/dry-run-smoke.sh",
+      "result": "exit 0, report written"
+    },
+    {
+      "command": "missing-payload dry-run smoke",
+      "result": "exit 2, dead-letter written"
+    },
+    {
+      "command": "production-file secret scan",
+      "result": "no PAT/Bearer/JWT-style values found"
+    },
+    {
+      "command": "cache cleanup",
+      "result": "no __pycache__, .pytest_cache, or .ruff_cache remains"
+    }
+  ],
+  "remaining_live_blockers": [
+    "rotated OSF PAT must be installed env-only",
+    "real DW candidate and register endpoints need confirmation",
+    "live HTTP transport must be verified separately",
+    "timer must stay disabled for first manual live smoke"
+  ],
+  "ready": {
+    "install_pack_dry_run": true,
+    "live_osf_dw_publication": false
+  }
+}

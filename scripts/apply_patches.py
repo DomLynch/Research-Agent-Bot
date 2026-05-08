@@ -720,7 +720,80 @@ def apply_patches(
             before="",
             after=heading,
         ))
+    new_md, qei_deduped = _collapse_consecutive_qei_headings(new_md)
+    if qei_deduped:
+        results.append(PatchResult(
+            patch_id="SECTION-CONTRACT-Quantitative-Evidence-Index-Dedup",
+            patch_type="structure",
+            severity="P1",
+            decision="applied",
+            reason_for_decision=(
+                "section-contract guard collapsed consecutive "
+                "Quantitative Evidence Index headings so the table "
+                "remains inside the deterministic QEI audit block"
+            ),
+            before="duplicate consecutive Quantitative Evidence Index headings",
+            after="single Quantitative Evidence Index heading",
+        ))
     return new_md, results
+
+
+_QEI_HEADING_LINE_RE = re.compile(
+    r"^##\s+Quantitative\s+Evidence\s+Index\b"
+)
+
+
+def _is_qei_heading_line(line: str) -> bool:
+    return _QEI_HEADING_LINE_RE.match(line.strip()) is not None
+
+
+def _collapse_consecutive_qei_headings(md: str) -> tuple[str, int]:
+    """Keep one display-safe heading in a consecutive QEI-heading run.
+
+    Reviewer heading-normalization patches can leave:
+
+        ## Quantitative Evidence Index — Title Case
+        ## Quantitative Evidence Index — raw_topic
+
+    with only blank lines between them. The audit splitter treats the
+    second heading as the next section, which ejects the real table from
+    the QEI block. This repair is deliberately narrow: it only touches
+    consecutive QEI headings separated by whitespace. It prefers the
+    title-cased display heading over a raw topic slug when both exist.
+    """
+    lines = md.splitlines()
+    out: list[str] = []
+    removed = 0
+    i = 0
+    while i < len(lines):
+        if not _is_qei_heading_line(lines[i]):
+            out.append(lines[i])
+            i += 1
+            continue
+
+        heading = lines[i]
+        headings = [heading]
+        j = i + 1
+        while True:
+            k = j
+            while k < len(lines) and not lines[k].strip():
+                k += 1
+            if k < len(lines) and _is_qei_heading_line(lines[k]):
+                heading = lines[k]
+                headings.append(heading)
+                removed += 1
+                j = k + 1
+                continue
+            heading = next((h for h in headings if "_" not in h), heading)
+            out.append(heading)
+            out.extend(lines[j:k])
+            i = k
+            break
+
+    fixed = "\n".join(out)
+    if md.endswith("\n"):
+        fixed += "\n"
+    return fixed, removed
 
 
 def _extract_heading_section(md: str, heading: str) -> str:

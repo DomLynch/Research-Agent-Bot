@@ -620,6 +620,11 @@ _CLAIM_TYPE_PRIORITY: tuple[str, ...] = (
     "p_value", "percentage", "ratio", "ci", "unit_value",
     "mean_sd", "sample_size",
 )
+_MALFORMED_NUMERIC_RE = re.compile(
+    r"(?<![\d,])0{2,}(?:\.\d+)?\s*"
+    r"(?:mg/day|mg|g|mcg|µg|μg|ng|kg|m/s|mmHg)\b",
+    re.IGNORECASE,
+)
 
 
 def _format_claim_value(claim: dict) -> str:
@@ -639,6 +644,12 @@ def _format_claim_value(claim: dict) -> str:
     return raw
 
 
+def _publishable_numeric_claim(claim: dict) -> bool:
+    raw = (claim.get("raw_text") or "").strip()
+    units = (claim.get("units") or "").strip()
+    return _MALFORMED_NUMERIC_RE.search(f"{raw} {units}") is None
+
+
 def _select_top_claims(
     claims: list[dict], top_n: int = 5,
 ) -> list[dict]:
@@ -647,8 +658,9 @@ def _select_top_claims(
     (avoids 5 p-values from the same study)."""
     if not claims:
         return []
+    publishable = [c for c in claims if _publishable_numeric_claim(c)]
     by_type: dict[str, list[dict]] = {}
-    for c in claims:
+    for c in publishable:
         ct = c.get("claim_type", "")
         by_type.setdefault(ct, []).append(c)
     selected: list[dict] = []
@@ -661,7 +673,7 @@ def _select_top_claims(
     # Second pass: fill remaining slots with any unused claims
     if len(selected) < top_n:
         seen_ids = {c.get("claim_id") for c in selected}
-        for c in claims:
+        for c in publishable:
             if c.get("claim_id") in seen_ids:
                 continue
             selected.append(c)

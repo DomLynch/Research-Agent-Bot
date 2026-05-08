@@ -4,12 +4,16 @@ Independent sibling project: `/Users/domininclynch/Desktop/Business/osf-publishe
 
 Architecture:
 
-`Research Agent Bot -> Derivation Web -> osf-publisher -> OSF -> Derivation Web`
+`Research Agent Bot -> public bundle/provenance payload -> provenance.researka.org`
 
-Research Agent Bot writes artifacts/provenance to DW. DW remains append-only and
-does not call OSF. The sibling publisher polls approved AAA registry candidates
-from DW, plans or performs OSF publication, then writes a `registry_record` and
-`register` step back to DW.
+`osf-publisher -> OSF -> provenance.researka.org registry record`
+
+Research Agent Bot remains synthesis-only. It writes local artifacts and public
+bundle/provenance payloads. The canonical provenance endpoint is
+`https://provenance.researka.org/`. The sibling publisher polls approved
+registry candidates, plans or performs OSF publication, then writes a
+`registry_record` and `register` step back to provenance. The bot never performs
+live OSF calls.
 
 ## V1 Scope
 

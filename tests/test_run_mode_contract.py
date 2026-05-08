@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+import re
 
 import pytest
 
@@ -51,6 +52,15 @@ def test_methods_excludes_operational_absence_disclosures() -> None:
     assert "SPAR" not in methods
     assert "did NOT run" not in methods
     assert "LLM fact extraction" not in methods
+
+
+def test_public_methods_meets_journal_surface_depth_floor() -> None:
+    """Regression for urolithin_a live repro: deterministic Methods must
+    clear the public journal-surface depth floor without operational prose."""
+    methods = rmc.render_methods(_v06_contract())
+    body = re.search(r"^## Methods\n\n(.*)", methods, flags=re.S).group(1)
+    assert len(re.findall(r"\b\w+\b", body)) >= 300
+    assert rmc.validate_rendered(methods) == []
 
 
 def test_methods_does_not_name_operational_models() -> None:

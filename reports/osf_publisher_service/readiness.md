@@ -13,7 +13,9 @@ Latest local checks:
 
 ## Architecture
 
-`research-agent-bot -> Derivation Web -> osf-publisher -> OSF -> Derivation Web`
+`research-agent-bot -> public bundle/provenance payload -> provenance.researka.org`
+
+`osf-publisher -> OSF -> provenance.researka.org registry record`
 
 ## Blockers
 

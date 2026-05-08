@@ -18,6 +18,24 @@ The retrofit report may claim a topic has local L6 evidence only for
 `confirmed_l6` rows. It is not a publication claim and does not certify
 scientific truth.
 
+## Interpretation Boundary
+
+L6 means reproducibly journal-ready under the same code/corpus cohort. It is
+not a higher scientific-novelty label than L5. A narrow, low-novelty paper can
+be L6 if it reruns cleanly; a richer paper can remain below L6 if one run needs
+patching. Scientific novelty must be judged separately from reproducibility.
+
+Candidate pairs are deliberately conservative:
+
+- same topic
+- same corpus signature
+- same code signature
+- adjacent in generated-time order
+- both clean L5 or higher
+- zero unresolved Grok P1
+- zero auto-stripped patches
+- zero flagged patches
+
 ## Reproduce
 
 ```bash

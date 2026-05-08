@@ -20,32 +20,36 @@ class SurfaceReport:
 _DASHES = {"", "-", "—", "–", "none", "n/a", "na"}
 _BAD_ENDPOINTS = {"unknown", "background", "effect", "n/a", "none", "?"}
 _PLACEHOLDER_PATTERNS = (
-    "this paper evaluates the topic through accepted receipts", "the background is limited to corpus-supported context", "this synthesis aims to contribute to the field by",
-    "the evidence base is limited to accepted receipts", "the conclusion is limited to claims that survive receipt qualification", "section generation cannot satisfy the validation contract",
-    "generated section cannot satisfy the validation contract", "deterministic evidence summary", "deterministic synthesis summary", "llm proposes, code disposes", "no llm authorship",
-    "accepted receipts contain source-traced quantitative evidence",
-    "fallback stub used", "conservative placeholder",
+    "this paper evaluates the topic through accepted receipts", "the background is limited to corpus-supported context", "this synthesis aims to contribute to the field by", "the evidence base is limited to accepted receipts",
+    "the conclusion is limited to claims that survive receipt qualification", "section generation cannot satisfy the validation contract", "generated section cannot satisfy the validation contract",
+    "deterministic evidence summary", "deterministic synthesis summary", "llm proposes, code disposes", "no llm authorship", "accepted receipts contain source-traced quantitative evidence", "fallback stub used", "conservative placeholder",
 )
 _META_PATTERNS = (
-    "this synthesis was produced by", "submission `synthesis-", "final-layer reviewer",
-    "patches are auto-applied", "rejected-evidence quarantine did not run",
+    "this synthesis was produced by", "submission `synthesis-", "final-layer reviewer", "patches are auto-applied", "rejected-evidence quarantine did not run",
     "full grok review", "run manifest", "bundle contains", "certification record",
 )
 _REQUIRED_SECTIONS = {"Abstract": 150, "Introduction": 400, "Background": 300, "Methods": 300, "Results": 500, "Cross-Domain Synthesis": 850, "Discussion": 800, "Limitations": 250, "Conclusion": 250}
 _APPENDIX_CUTOFF_RE = re.compile(r"^##\s+(?:Publication Appendix|Researka Submitter Block|Data and Code Availability|Search Provenance|AI(?:-Use)? Disclosure|Accountability|References)\b", flags=re.M)
 _CITATION_ARTIFACT_RE = re.compile(r"\[(?:citation needed|source|ref|pmid|doi|TODO)[^\]]*\]|(?:^|\s)(?:PMID|DOI):?\s*$|<\s*(?:citation|ref)[^>]*>", re.IGNORECASE | re.MULTILINE)
 _HEDGE_FRAGMENT_RE = re.compile(r"^(?:may|might|could|appears|suggests|uncertain|preliminary|context[- ]dependent|not definitive|requires confirmation)\.?$", re.IGNORECASE)
+_MALFORMED_NUMERIC_RE = re.compile(r"(?<![\d,])0{2,}(?:\.\d+)?\s*(?:mg/day|mg|g|mcg|µg|μg|ng|kg|m/s|mmHg)\b", re.IGNORECASE)
+_PUBLIC_SLUG_RE = re.compile(r"\b(?:[a-z][a-z0-9]*_[a-z0-9_]*|glp1|omega3)\b")
+_QEI_HEADING_RE = re.compile(r"^##\s+Quantitative\s+Evidence\s+Index\b.*$", re.M)
 
 
 def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
     issues: list[SurfaceIssue] = []
     body_md = _journal_body(paper_md)
     low = body_md.lower()
+    qei_heads = list(_QEI_HEADING_RE.finditer(body_md))
     issues.extend(SurfaceIssue("placeholder_prose", pat) for pat in _PLACEHOLDER_PATTERNS if pat in low)
     issues.extend(SurfaceIssue("template_meta", pat) for pat in _META_PATTERNS if pat in low)
     issues.extend(SurfaceIssue("duplicate_paragraph", msg) for msg in _duplicate_paragraph_issue_messages(body_md))
     issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _citation_artifact_issue_messages(body_md))
     issues.extend(SurfaceIssue("hedge_fragment", msg) for msg in _hedge_fragment_issue_messages(body_md))
+    issues.extend(SurfaceIssue("malformed_numeric", f"malformed numeric artifact: {m.group(0).strip()}") for m in _MALFORMED_NUMERIC_RE.finditer(body_md))
+    issues.extend(SurfaceIssue("topic_slug_artifact", f"public topic-slug artifact: {m.group(0)}") for m in _PUBLIC_SLUG_RE.finditer(body_md))
+    issues.extend(SurfaceIssue("duplicate_heading", "duplicate consecutive Quantitative Evidence Index headings") for left, right in zip(qei_heads, qei_heads[1:]) if not body_md[left.end():right.start()].strip())
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _section_issue_messages(body_md))
     issues.extend(SurfaceIssue("qei_surface", msg) for msg in _qei_shape_issue_messages(body_md))
     for row in _extract_qei_rows(body_md):
@@ -75,6 +79,8 @@ def qei_row_issue_messages(row: dict[str, str]) -> tuple[str, ...]:
         issues.append(f"empty QEI row: {study or 'unknown study'}")
     if _malformed_study_id(study):
         issues.append(f"malformed study id: {study}")
+    if _MALFORMED_NUMERIC_RE.search(f"{value} {unit} {stat}"):
+        issues.append(f"malformed numeric artifact: {value} {unit}")
     unit_class = _unit_class(unit, value)
     endpoint_class = _endpoint_class(endpoint)
     if endpoint_class and unit_class:
@@ -179,22 +185,16 @@ def _row_to_dict(row: Any) -> dict[str, str]:
 
 
 def _malformed_study_id(study: str) -> bool:
-    if "_" not in study:
-        return bool(re.search(r"\b(?:19|20)\d{2}[a-z]{2,}$", study))
-    return bool(re.search(r"(?:_\w{1,5}|_+)$", study))
+    pattern = r"\b(?:19|20)\d{2}[a-z]{2,}$" if "_" not in study else r"(?:_\w{1,5}|_+)$"
+    return bool(re.search(pattern, study))
 
 
 def _endpoint_class(endpoint: str) -> str:
     checks = (
-        ("event", ("mortality", "survival", "death", "incident")),
-        ("pressure", ("blood pressure", "systolic", "diastolic")),
-        ("bmi", ("body mass index", "bmi")),
+        ("event", ("mortality", "survival", "death", "incident")), ("pressure", ("blood pressure", "systolic", "diastolic")), ("bmi", ("body mass index", "bmi")),
         ("biomarker", ("glucose", "hba1c", "cholesterol", "ldl", "hdl", "triglyceride", "insulin", "crp", "biomarker", "inflammation")),
-        ("renal", ("egfr", "kidney", "renal", "glomerular")),
-        ("speed", ("walk speed", "gait speed", "walking speed")),
-        ("mass", ("body weight", "lean mass", "fat mass", "muscle mass")),
-        ("strength", ("strength", "grip", "force")),
-        ("scale", ("frailty", "score", "index", "cognition")),
+        ("renal", ("egfr", "kidney", "renal", "glomerular")), ("speed", ("walk speed", "gait speed", "walking speed")), ("mass", ("body weight", "lean mass", "fat mass", "muscle mass")),
+        ("strength", ("strength", "grip", "force")), ("scale", ("frailty", "score", "index", "cognition")),
     )
     for cls, needles in checks:
         if any(n in endpoint for n in needles):

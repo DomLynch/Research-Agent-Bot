@@ -1044,6 +1044,89 @@ def test_apply_fixes_removes_consecutive_duplicate_paragraphs() -> None:
     assert any(e["fix_type"] == "duplicate_paragraph" for e in log)
 
 
+def test_apply_fixes_removes_urolithin_shape_cross_section_duplicates(monkeypatch) -> None:
+    """Live urolithin_a repro: exact Cross-Domain paragraphs repeated
+    later in the public body should be removed without topic hardcoding."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    # Simulate duplicates introduced after the early cleanup passes by
+    # disabling those earlier strippers; the final post-depth pass must catch.
+    monkeypatch.setattr(
+        fixer, "_strip_consecutive_duplicate_paragraphs",
+        lambda md: (md, 0),
+    )
+    monkeypatch.setattr(
+        fixer, "_strip_fuzzy_duplicate_paragraphs",
+        lambda md: (md, 0),
+    )
+    monkeypatch.setattr(
+        fixer, "_strip_duplicate_long_sentences",
+        lambda md: (md, 0),
+    )
+    para_a = (
+        "A second major tension exists between direct clinical evidence "
+        "for muscle function and preclinical cardiometabolic evidence, "
+        "highlighting the risk of extrapolating across outcome domains. "
+        "The evidence that would resolve this is a human trial with "
+        "cardiometabolic endpoints and neurocognitive outcomes."
+    )
+    para_b = (
+        "The immune-modulatory evidence presents a tension between "
+        "consistent mechanistic signaling and unclear net effects in "
+        "complex in-vivo systems. The boundary condition likely involves "
+        "dose, timing, tissue specificity, and measurement context."
+    )
+    paper = (
+        f"## Cross-Domain Synthesis\n\n{para_a}\n\n{para_b}\n\n"
+        f"## Discussion\n\n{para_a}\n\n{para_b}\n\nUnique discussion.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert out.count(para_a) == 1
+    assert out.count(para_b) == 1
+    assert "Unique discussion." in out
+    assert any(
+        e["fix_type"] == "exact_public_duplicate_paragraph_post_depth"
+        for e in log
+    )
+
+
+def test_apply_fixes_preserves_duplicate_appendix_paragraphs() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    para = " ".join(f"appendixword{i}" for i in range(35))
+    paper = (
+        "## Discussion\n\n"
+        "The public interpretation remains source bounded and unique.\n\n"
+        "## Publication Appendix\n\n"
+        f"{para}\n\n{para}\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert out.count(para) == 2
+    assert not any("duplicate" in e["fix_type"] for e in log)
+
+
+def test_apply_fixes_keeps_repeated_legitimate_methods_phrasing() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    phrase = "Source documents were screened for quantitative outcomes. "
+    paper = (
+        "## Methods\n\n"
+        + phrase * 4
+        + "\n\n## Results\n\n"
+        + phrase * 3
+        + "The retained findings addressed different endpoints.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert out.count(phrase.strip()) == 7
+    assert not any("duplicate" in e["fix_type"] for e in log)
+
+
 def test_apply_fixes_removes_duplicate_backstop_subsection() -> None:
     import sys as _sys
     from pathlib import Path as _Path
@@ -1192,6 +1275,27 @@ def test_apply_fixes_writes_numeric_claim_quarantine(monkeypatch, tmp_path) -> N
         e for e in log
         if e["fix_type"] == "numeric_claim_contract_quarantine"
     ]
+
+
+def test_apply_fixes_normalizes_public_topic_slug_from_manifest() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Background\n\n"
+        "The urolithin_a evidence base remains early.\n\n"
+        "## Publication Appendix\n\n"
+        "Bundle path: docs/quality-reference/urolithin_a/quant_claims/.\n"
+    )
+    fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "urolithin_a"})
+    public_body = fixed.split("## Publication Appendix", 1)[0]
+    appendix = fixed.split("## Publication Appendix", 1)[1]
+    assert "urolithin_a" not in public_body
+    assert "Urolithin A evidence base" in public_body
+    assert "urolithin_a/quant_claims" in appendix
+    assert [e for e in log if e["fix_type"] == "public_topic_slug_normalization"]
 
 
 def test_apply_fixes_depth_backfill_reaches_floor_after_large_strip() -> None:
@@ -1587,3 +1691,40 @@ def test_apply_fixes_backfills_cross_domain_after_review_trim() -> None:
     ok, msg = audit_v06._check_cross_domain_depth(fixed)
     assert ok is True, msg
     assert "analytical_depth_backfill" in {x["fix_type"] for x in log}
+
+
+def test_apply_fixes_restores_depth_after_final_public_dedupe(monkeypatch) -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    monkeypatch.setattr(
+        fixer, "_strip_consecutive_duplicate_paragraphs",
+        lambda md: (md, 0),
+    )
+    monkeypatch.setattr(
+        fixer, "_strip_fuzzy_duplicate_paragraphs",
+        lambda md: (md, 0),
+    )
+    monkeypatch.setattr(
+        fixer, "_strip_duplicate_long_sentences",
+        lambda md: (md, 0),
+    )
+    para = (
+        "A boundary-condition paragraph explains why direct human evidence "
+        "and indirect mechanistic evidence should not be interpreted as "
+        "interchangeable when endpoints, populations, comparators, and "
+        "follow-up windows differ across the retained corpus."
+    )
+    paper = (
+        "## Cross-Domain Synthesis\n\n"
+        + (para + "\n\n") * 2
+        + "## Discussion\n\n"
+        + "Discussion safe sentence. " * 280
+    )
+    fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
+    assert fixed.count(para) == 1
+    assert fixer._section_word_count(fixed, "Cross-Domain Synthesis") >= 850
+    assert "exact_public_duplicate_paragraph_post_depth" in {
+        x["fix_type"] for x in log
+    }

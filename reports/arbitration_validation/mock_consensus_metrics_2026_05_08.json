@@ -1,0 +1,69 @@
+{
+  "cases": [
+    {
+      "actual": "APPLY",
+      "confidence": 0.92,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "apply-deterministic-citation-format",
+      "passed": true
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 0.84,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "reject-semantic-numeric-change",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "confidence": 0.0,
+      "expected": "ESCALATE",
+      "fail_closed": true,
+      "id": "escalate-replacement-content-attempt",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "agreement_rate": 1.0,
+    "by_expected": {
+      "APPLY": {
+        "agreed": 1,
+        "agreement_rate": 1.0,
+        "total": 1
+      },
+      "ESCALATE": {
+        "agreed": 1,
+        "agreement_rate": 1.0,
+        "total": 1
+      },
+      "REJECT": {
+        "agreed": 1,
+        "agreement_rate": 1.0,
+        "total": 1
+      }
+    },
+    "confusion_matrix": {
+      "APPLY": {
+        "APPLY": 1,
+        "ESCALATE": 0,
+        "REJECT": 0
+      },
+      "ESCALATE": {
+        "APPLY": 0,
+        "ESCALATE": 1,
+        "REJECT": 0
+      },
+      "REJECT": {
+        "APPLY": 0,
+        "ESCALATE": 0,
+        "REJECT": 1
+      }
+    },
+    "escalate_count": 1,
+    "fail_closed_count": 1
+  },
+  "passed": 3,
+  "total": 3
+}

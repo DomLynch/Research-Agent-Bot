@@ -1,0 +1,61 @@
+{
+  "schema": "osf_publisher.fake_dw_e2e_report.v1",
+  "date": "2026-05-08",
+  "scope": {
+    "sibling_service": "/Users/domininclynch/Desktop/Business/osf-publisher",
+    "bot_report_dir": "/Users/domininclynch/Desktop/Business/Research Agent Bot/reports/osf_publisher_service",
+    "live_network": false,
+    "real_tokens_read": false
+  },
+  "evidence": {
+    "fake_dw_poll_aaa_candidates": true,
+    "fake_dw_accept_register_writeback": true,
+    "dry_run_e2e": true,
+    "transient_osf_retry_no_duplicate_writeback": true,
+    "duplicate_artifact_hash_single_plan": true,
+    "non_aaa_skipped_by_default": true,
+    "e2e_env_token_read": false,
+    "operator_safety_checklist": true,
+    "cli_smoke_command": "python3 -m osf_publisher.cli fixtures/approved_statins_aaa.json --out dry_report.json"
+  },
+  "changed_sibling_files": [
+    "/Users/domininclynch/Desktop/Business/osf-publisher/README.md",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/osf_publisher/service.py",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/tests/fake_dw.py",
+    "/Users/domininclynch/Desktop/Business/osf-publisher/tests/test_fake_dw_e2e.py"
+  ],
+  "verification": [
+    {
+      "command": "python3 -m pytest -q",
+      "result": "32 passed",
+      "repeated": true
+    },
+    {
+      "command": "python3 -m ruff check .",
+      "result": "clean",
+      "repeated": true
+    },
+    {
+      "command": "python3 -m osf_publisher.cli fixtures/approved_statins_aaa.json --out /tmp/osf_publisher_cli_smoke.json",
+      "result": "dry-run report generated"
+    },
+    {
+      "command": "touched-file secret scan",
+      "result": "no PAT/Bearer/JWT-style values found"
+    },
+    {
+      "command": "sibling whitespace check",
+      "result": "clean"
+    }
+  ],
+  "live_blockers": [
+    "rotated OSF PAT must be installed env-only",
+    "real DW candidate and register endpoints need operator confirmation",
+    "live HTTP transport is not exercised by fake-DW dry-run tests",
+    "systemd timer must stay disabled until manual live smoke succeeds"
+  ],
+  "ready": {
+    "dry_run_fake_dw_e2e": true,
+    "live_osf_dw_publication": false
+  }
+}

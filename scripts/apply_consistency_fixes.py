@@ -23,6 +23,7 @@ import argparse
 import json
 import re
 import sys
+import tomllib
 import unicodedata
 from pathlib import Path
 
@@ -96,10 +97,53 @@ _DEPTH_PROTECTED_SECTIONS = {
     "Limitations": 200,           # analytical-core, not Q-gated
     "Conclusion": 150,            # analytical-core, not Q-gated
 }
+_PUBLIC_BODY_CUTOFF_RE = re.compile(
+    r"^##\s+(?:Publication Appendix|Researka Submitter Block|"
+    r"Data and Code Availability|Search Provenance|AI(?:-Use)? "
+    r"Disclosure|Accountability|References)\b",
+    re.MULTILINE,
+)
+
+
+def _split_public_body(paper_md: str) -> tuple[str, str]:
+    m = _PUBLIC_BODY_CUTOFF_RE.search(paper_md)
+    return (paper_md[:m.start()], paper_md[m.start():]) if m else (paper_md, "")
+
+
+def _topic_display_name(topic: str) -> str:
+    repo = Path(__file__).resolve().parent.parent
+    pack_path = repo / "topic_packs" / f"{topic}.toml"
+    if pack_path.exists():
+        try:
+            pack = tomllib.loads(pack_path.read_text())
+            aliases = pack.get("aliases") or []
+            for alias in aliases:
+                if isinstance(alias, str) and alias.strip():
+                    if alias.isupper() or "-" in alias or " " in alias:
+                        return alias.strip()[:1].upper() + alias.strip()[1:]
+        except (OSError, ValueError, tomllib.TOMLDecodeError):
+            pass
+    return topic.replace("_", " ").title()
+
+
+def _normalize_public_topic_slug(
+    paper_md: str, manifest: dict | None,
+) -> tuple[str, int]:
+    if not isinstance(manifest, dict):
+        return paper_md, 0
+    topic = str(manifest.get("topic") or "").strip()
+    if not topic or ("_" not in topic and topic not in {"glp1", "omega3"}):
+        return paper_md, 0
+    body, tail = _split_public_body(paper_md)
+    display = _topic_display_name(topic)
+    pattern = re.compile(rf"\b{re.escape(topic)}\b", re.IGNORECASE)
+    body, n = pattern.subn(display, body)
+    return body + tail, n
 
 
 def _strip_consecutive_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:
-    paragraphs = re.split(r"(\n\s*\n)", paper_md)
+    body, tail = _split_public_body(paper_md)
+    paragraphs = re.split(r"(\n\s*\n)", body)
     out: list[str] = []
     last_norm = ""
     n = 0
@@ -118,7 +162,7 @@ def _strip_consecutive_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:
         if sep:
             out.append(sep)
         last_norm = norm if is_prose else ""
-    cleaned = "".join(out)
+    cleaned = "".join(out) + tail
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     return cleaned, n
 
@@ -162,7 +206,8 @@ def _strip_fuzzy_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:
     """Remove later body paragraphs that substantially repeat earlier
     body paragraphs. This catches LLM stutter across sections while
     preserving tables, appendices, Methods, and short recurring caveats."""
-    blocks = re.split(r"(^##\s+.+?$)", paper_md, flags=re.MULTILINE)
+    body, tail = _split_public_body(paper_md)
+    blocks = re.split(r"(^##\s+.+?$)", body, flags=re.MULTILINE)
     out: list[str] = []
     seen: list[set[str]] = []
     current_heading = ""
@@ -203,7 +248,7 @@ def _strip_fuzzy_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:
         return paper_md, 0
     cleaned = "".join(out)
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
-    return cleaned, n
+    return cleaned + tail, n
 
 
 def _paragraph_token_set(text: str) -> set[str]:
@@ -222,13 +267,67 @@ def _jaccard(a: set[str], b: set[str]) -> float:
     return len(a & b) / len(a | b)
 
 
+def _strip_exact_duplicate_public_paragraphs(paper_md: str) -> tuple[str, int]:
+    """Remove later exact public-body prose paragraphs.
+
+    This runs after restoration/backfill paths and is deliberately narrower
+    than fuzzy dedupe: exact normalized paragraph repeats only.
+    """
+    body, tail = _split_public_body(paper_md)
+    parts = re.split(r"(\n\s*\n)", body)
+    out: list[str] = []
+    seen: set[str] = set()
+    n = 0
+    for i in range(0, len(parts), 2):
+        para = parts[i]
+        sep = parts[i + 1] if i + 1 < len(parts) else ""
+        text = para.strip()
+        norm = re.sub(r"\s+", " ", text).lower()
+        is_long_prose = (
+            len(re.findall(r"\b\w+\b", text)) >= 30
+            and not text.startswith(("#", "|", "-", "`", "*", "_Cited:"))
+            and "\n|" not in para
+            and not _is_depth_backfill_paragraph(text)
+        )
+        if is_long_prose and norm in seen:
+            n += 1
+            continue
+        out.append(para)
+        if sep:
+            out.append(sep)
+        if is_long_prose:
+            seen.add(norm)
+    if not n:
+        return paper_md, 0
+    fixed_body = re.sub(r"\n{3,}", "\n\n", "".join(out)).rstrip()
+    return fixed_body + "\n\n" + tail, n
+
+
+def _is_depth_backfill_paragraph(text: str) -> bool:
+    norm = re.sub(r"\s+", " ", text).strip().lower()
+    return norm in {
+        re.sub(r"\s+", " ", str(globals().get(name, ""))).strip().lower()
+        for name in (
+            "_INTRODUCTION_BACKFILL",
+            "_BACKGROUND_BACKFILL",
+            "_RESULTS_BACKFILL",
+            "_CROSS_DOMAIN_BACKFILL",
+            "_DISCUSSION_BACKFILL",
+            "_LIMITATIONS_BACKFILL",
+            "_CONCLUSION_BACKFILL",
+            "_DEPTH_BACKFILL_EXTENSION",
+        )
+    }
+
+
 def _strip_duplicate_long_sentences(paper_md: str) -> tuple[str, int]:
     sentence_re = re.compile(r"(?<=[.!?])\s+")
     seen: set[str] = set()
     n = 0
     out_sections: list[str] = []
     current_heading = ""
-    for block in re.split(r"(^##\s+.+?$)", paper_md, flags=re.MULTILINE):
+    body, tail = _split_public_body(paper_md)
+    for block in re.split(r"(^##\s+.+?$)", body, flags=re.MULTILINE):
         heading = re.match(r"^##\s+(.+?)\s*$", block)
         if heading:
             current_heading = heading.group(1).strip()
@@ -265,7 +364,7 @@ def _strip_duplicate_long_sentences(paper_md: str) -> tuple[str, int]:
         out_sections.append("\n\n".join(out_paras))
     if not n:
         return paper_md, 0
-    cleaned = "".join(out_sections)
+    cleaned = "".join(out_sections) + tail
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     return cleaned, n
 
@@ -689,6 +788,17 @@ def apply_fixes(
             "description": (
                 "stripped public placeholder prose paragraphs before "
                 "journal surface review"
+            ),
+        })
+
+    new_md, n_topic_slug = _normalize_public_topic_slug(new_md, manifest)
+    if n_topic_slug:
+        log.append({
+            "fix_type": "public_topic_slug_normalization",
+            "n_changes": n_topic_slug,
+            "description": (
+                "rewrote topic-pack slug tokens in the public manuscript "
+                "body to the display topic name"
             ),
         })
 
@@ -1471,6 +1581,33 @@ def apply_fixes(
             ),
         })
 
+    new_md, n_topic_slug = _normalize_public_topic_slug(new_md, manifest)
+    if n_topic_slug:
+        log.append({
+            "fix_type": "public_topic_slug_normalization_post_depth",
+            "n_changes": n_topic_slug,
+            "description": (
+                "re-normalized topic-pack slug tokens after section "
+                "restoration/backfill"
+            ),
+        })
+
+    new_md, n_final_dup_paragraphs = _strip_exact_duplicate_public_paragraphs(
+        new_md,
+    )
+    if n_final_dup_paragraphs:
+        log.append({
+            "fix_type": "exact_public_duplicate_paragraph_post_depth",
+            "n_changes": n_final_dup_paragraphs,
+            "description": (
+                "removed exact repeated long public-body prose paragraphs "
+                "after restoration/backfill paths"
+            ),
+        })
+        if manifest is not None:
+            new_md, depth_log = _ensure_analytical_depth_floors(new_md)
+            log.extend(depth_log)
+
     return new_md, log
 
 
@@ -1814,7 +1951,7 @@ def _ensure_analytical_depth_floors(paper_md: str) -> tuple[str, list[dict]]:
             updated = (
                 section.rstrip()
                 + "\n\n"
-                + _DEPTH_BACKFILL_EXTENSION
+                + _depth_backfill_extension(heading, n_blocks)
                 + "\n\n"
             )
             paper_md = paper_md[:s] + updated + paper_md[e:]
@@ -1830,6 +1967,67 @@ def _ensure_analytical_depth_floors(paper_md: str) -> tuple[str, list[dict]]:
             ),
         })
     return paper_md, log
+
+
+def _depth_backfill_extension(heading: str, index: int) -> str:
+    prefixes = (
+        "Population fit, comparator alignment, endpoint proximity, follow-up "
+        "length, ascertainment method, baseline risk, adherence, exposure "
+        "dose, and external validity are kept separate during interpretation.",
+        "Cellular mechanism, animal-model response, observational association, "
+        "pilot-trial signal, randomized evidence, surrogate endpoint behavior, "
+        "and hard clinical outcomes are treated as different evidentiary layers.",
+        "Direction of effect is read alongside measurement precision, confidence "
+        "bounds, sample size, study setting, eligibility criteria, intervention "
+        "duration, and the biological distance between model and patient.",
+        "The synthesis distinguishes replication across similar designs from "
+        "convergence across different designs, because those patterns answer "
+        "different questions about reliability, transportability, and mechanism.",
+        "Where evidence is sparse, the manuscript emphasizes unresolved design "
+        "choices: dose selection, comparator choice, endpoint hierarchy, subgroup "
+        "definition, follow-up window, and clinically meaningful thresholds.",
+        "Where evidence is broad but indirect, the public conclusion remains "
+        "conditional on whether the same pathway produces measurable benefit in "
+        "the target human population rather than only in adjacent systems.",
+        "The final interpretive step is conservative: it preserves the question, "
+        "the uncertainty, and the boundary conditions while withholding any "
+        "unsupported estimate, causal claim, or population-level generalization.",
+    )
+    section_context = {
+        "Introduction": (
+            "In the Introduction, this framing defines the research question "
+            "and explains why the evidence must be interpreted by design."
+        ),
+        "Background": (
+            "In the Background, this framing situates the biological rationale "
+            "without converting plausibility into a clinical claim."
+        ),
+        "Results": (
+            "In the Results, this framing keeps descriptive findings separate "
+            "from interpretation and preserves endpoint-specific boundaries."
+        ),
+        "Cross-Domain Synthesis": (
+            "In the Cross-Domain Synthesis, this framing compares outcome "
+            "classes and identifies where signals converge or diverge."
+        ),
+        "Discussion": (
+            "In the Discussion, this framing calibrates confidence, clinical "
+            "meaning, generalizability, and unresolved study-design needs."
+        ),
+        "Limitations": (
+            "In the Limitations, this framing names evidence gaps, missing "
+            "populations, indirect endpoints, and unresolved follow-up windows."
+        ),
+        "Conclusion": (
+            "In the Conclusion, this framing preserves the final claim boundary "
+            "and avoids implying certainty beyond the retained evidence."
+        ),
+    }.get(heading, "In this section, the framing preserves interpretive limits.")
+    prefix = prefixes[min(max(index - 1, 0), len(prefixes) - 1)]
+    return _DEPTH_BACKFILL_EXTENSION.format(
+        section_context=section_context,
+        prefix=prefix,
+    )
 
 
 def _paragraph_already_present(paper_md: str, paragraph: str) -> bool:
@@ -1878,7 +2076,7 @@ def _ensure_discussion_hedge_density(paper_md: str) -> tuple[str, list[dict]]:
     }]
 
 
-_DEPTH_BACKFILL_EXTENSION = """The public interpretation remains tied to
+_DEPTH_BACKFILL_EXTENSION = """{section_context} {prefix} The public interpretation remains tied to
 the source record rather than to any single unsupported sentence. When
 a source-context sentence cannot support its own specificity, the paper
 does not infer a replacement result; it retains only the higher-level

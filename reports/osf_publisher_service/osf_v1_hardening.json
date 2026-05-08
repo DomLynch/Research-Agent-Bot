@@ -1,0 +1,23 @@
+{
+  "bundle_attachments": "V1.1 design-only inventory; no upload",
+  "dry_run_default": true,
+  "live_config_required": [
+    "OSF_PAT",
+    "DW_BASE_URL",
+    "DW_API_TOKEN",
+    "OSF_PUBLISHER_ACTOR_ID",
+    "DW_PROVENANCE_ENDPOINT",
+    "OSF_PUBLISHER_LIVE=1"
+  ],
+  "remaining_blockers": [
+    "no live OSF call",
+    "no live DW write-back",
+    "rotated PAT required",
+    "DW register support must be confirmed"
+  ],
+  "ruff": "clean",
+  "schema": "osf_publisher.v1_hardening.v1",
+  "secret_redaction": "strict redaction utility rejects bearer/osf_/dwk_/jwt-like strings",
+  "tests": "28 passed",
+  "v1_policy": "title+description+registry metadata only; no bundle upload"
+}

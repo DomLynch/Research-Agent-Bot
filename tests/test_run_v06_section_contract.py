@@ -216,6 +216,20 @@ def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     assert orch._word_count(body) >= 500
 
 
+def test_restore_contract_collapses_consecutive_qei_headings() -> None:
+    paper = (
+        "## Quantitative Evidence Index — Urolithin A\n\n"
+        "## Quantitative Evidence Index — urolithin_a\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| Acevedo 2025 | muscle strength | ua | 57% | % | — |\n"
+    )
+    out = orch._restore_rendered_section_contract(paper, ())
+    assert out.count("## Quantitative Evidence Index") == 1
+    assert "## Quantitative Evidence Index — Urolithin A" in out
+    assert "57%" in out
+
+
 def test_public_section_backstop_covers_abstract() -> None:
     md = orch._compile_public_section_backstop("Abstract", 150)
     assert md.startswith("## Abstract")
