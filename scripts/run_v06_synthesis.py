@@ -811,6 +811,12 @@ _ENDPOINT_POLARITY: dict[str, int] = {
 
 _RATIO_CLAIM_TYPES = {"hazard_ratio", "odds_ratio", "risk_ratio"}
 _TIME_TO_EVENT_BENEFIT_ENDPOINTS = {"lifespan", "healthspan", "longevity"}
+_ACTIVE_VS_PLACEBO_RE = re.compile(
+    r"\b(?:greater|higher|improved|gain(?:ed)?|increase[ds]?)\b"
+    r".{0,120}\b(?:than|compared\s+to|different\s+from)\b"
+    r".{0,80}\bplacebo\b|\bbetween\b.{0,80}\band\s+placebo\b",
+    re.IGNORECASE,
+)
 _OUTCOME_CLASSES = frozenset({
     "muscle_function", "cardiometabolic", "cognitive", "frailty",
     "longevity", "immune", "oncology", "mechanism", "safety", "other",
@@ -865,6 +871,21 @@ def _outcome_class_for_endpoint(endpoint: str) -> str:
 
 def _polarity_for_endpoint(endpoint: str) -> int:
     return _ENDPOINT_POLARITY.get(endpoint, 0) or _pack_endpoint_polarity(endpoint)
+
+
+def _mentions_any_synonym(text: str, synonyms) -> bool:
+    low = (text or "").lower()
+    for syn in synonyms or ():
+        token = str(syn).strip().lower()
+        if len(token) < 3:
+            continue
+        if re.search(rf"(?<![a-z0-9]){re.escape(token)}(?![a-z0-9])", low):
+            return True
+    return False
+
+
+def _active_vs_placebo_context(text: str) -> bool:
+    return bool(_ACTIVE_VS_PLACEBO_RE.search(text or ""))
 
 
 def _author_year_token(receipt) -> str | None:
@@ -929,25 +950,55 @@ def _claim_topic_effect(claim: dict) -> int:
                 return +1 if ratio < 1.0 else -1
             movement = +1 if ratio > 1.0 else -1
             return polarity * movement
-    if claim.get("claim_type") in {"p_value", "confidence_interval"}:
+    if (
+        claim.get("claim_type") in {"p_value", "confidence_interval"}
+        and claim.get("claim_role") != "effect"
+    ):
         return 0
     if not direction or direction == "no_change":
         return 0
     direction_sign = +1 if direction == "increase" else -1
-    # If the direction is described from the active-drug arm, +1.
-    # If from the placebo arm, -1 (placebo gain = drug underperformed).
+    # If the direction is described from the active arm, +1.
+    # Placebo/control rows are comparator context unless the sentence
+    # explicitly describes an active-vs-placebo advantage.
     pack = _get_topic_pack()
-    if pack is not None and arm:
-        if arm in pack.active_arm_synonyms:
+    active_synonyms = (
+        pack.active_arm_synonyms if pack is not None else {_get_active_topic()}
+    )
+    placebo_synonyms = (
+        pack.placebo_arm_synonyms if pack is not None else {"placebo", "control"}
+    )
+    if arm:
+        if arm in active_synonyms:
             arm_sign = +1
-        elif arm in pack.placebo_arm_synonyms:
-            arm_sign = -1
+        elif arm in placebo_synonyms:
+            text = " ".join(str(claim.get(k) or "") for k in (
+                "sentence", "context_window", "raw_text",
+            ))
+            if _active_vs_placebo_context(text):
+                arm_sign = +1
+            else:
+                return 0
         else:
-            # Unknown arm name — fall back to topic-name match
-            arm_sign = +1 if arm == _get_active_topic() else -1
+            text = " ".join(str(claim.get(k) or "") for k in (
+                "sentence", "context_window", "raw_text",
+            ))
+            if _mentions_any_synonym(text, active_synonyms):
+                arm_sign = +1
+            elif _mentions_any_synonym(text, placebo_synonyms):
+                return 0
+            else:
+                return 0
     else:
-        # No pack loaded — fall back to topic-name string match
-        arm_sign = +1 if arm == _get_active_topic() else -1
+        text = " ".join(str(claim.get(k) or "") for k in (
+            "sentence", "context_window", "raw_text",
+        ))
+        if _mentions_any_synonym(text, active_synonyms):
+            arm_sign = +1
+        elif _mentions_any_synonym(text, placebo_synonyms):
+            return 0
+        else:
+            return 0
     drug_movement = direction_sign * arm_sign
     return polarity * drug_movement
 
