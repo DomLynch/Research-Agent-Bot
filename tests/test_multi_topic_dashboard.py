@@ -13,6 +13,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 import multi_topic_dashboard as dash  # noqa: E402
+import certification_report as cert  # noqa: E402
 
 
 def _make_run(
@@ -79,6 +80,42 @@ def test_summarize_topic_pulls_wave7_fields(tmp_path, monkeypatch):
     assert summary.journal_ready is True
     assert summary.corpus_gaps == ()
     assert summary.expansion_targets == ()
+
+
+def test_summarize_topic_promotes_consecutive_l5_to_l6(
+    tmp_path, monkeypatch,
+):
+    """Dashboard surfaces topic-level L6 when consecutive cert says so."""
+    monkeypatch.setattr(dash, "REPO", tmp_path)
+    for suffix in ("AAA1-2026-05-05T10-00-00Z",
+                   "AAA2-2026-05-05T11-00-00Z"):
+        run = _make_run(
+            tmp_path, f"synthesis-topic-v06-{suffix}",
+            verdict_doc={
+                "verdict": "AAA",
+                "stage1_pass_rate": "14/14",
+                "stage2_p1": 0, "stage2_p2": 0,
+                "grok_unresolved_p1": 0,
+                "maturity_level": 5,
+                "maturity_label": "L5 — JOURNAL-READY",
+                "journal_ready": True,
+            },
+        )
+        (run / "full_paper.md").write_text(_surface_clean_paper())
+    monkeypatch.setattr(
+        cert, "certify_consecutive",
+        lambda paths: {
+            "certified": True,
+            "l6_reproducibly_journal_ready": True,
+            "maturity_level": 6,
+            "maturity_label": "L6 — REPRODUCIBLY JOURNAL-READY",
+        },
+    )
+    summary = dash.summarize_topic("topic", list((tmp_path / "runs").iterdir()))
+    assert summary.certified is True
+    assert summary.maturity_level == 6
+    assert summary.maturity_label == "L6 — REPRODUCIBLY JOURNAL-READY"
+    assert summary.journal_ready is True
 
 
 def test_summarize_topic_caps_stale_l5_when_surface_fails(

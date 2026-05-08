@@ -1,4 +1,4 @@
-"""Tests for agent/topic_maturity.py — L0-L5 ladder + Journal-Ready
+"""Tests for agent/topic_maturity.py — L0-L6 ladder + Journal-Ready
 (Wave 7 Evidence Factory slice 3).
 
 Pure-function tests. Universal across topics — every assertion uses
@@ -80,6 +80,16 @@ def test_l5_when_aaa_clean_no_surgery():
     ) == 5
 
 
+def test_l6_when_consecutive_clean_l5_runs():
+    """Consecutive clean L5 runs promote the topic to L6."""
+    m = {"n_receipts": 15, "n_high_confidence_claims_total": 60,
+         "n_non_orthogonal_tensions": 12}
+    assert compute_maturity_level(
+        m, verdict="AAA", grok_unresolved_p1=0, auto_stripped_count=0,
+        consecutive_aaa_count=2,
+    ) == 6
+
+
 def test_l4_when_journal_surface_gate_fails():
     """Analytical AAA with visible manuscript residue is L4, not L5."""
     m = {"n_receipts": 15, "n_high_confidence_claims_total": 60,
@@ -99,6 +109,16 @@ def test_l5_unreachable_when_grok_unresolved_even_at_aaa():
     assert compute_maturity_level(
         m, verdict="AAA", grok_unresolved_p1=1, auto_stripped_count=0,
     ) == 4  # AAA path but degraded by grok flag
+
+
+def test_l6_requires_clean_l5_gate():
+    """Consecutive count cannot promote a surgically repaired run."""
+    m = {"n_receipts": 15, "n_high_confidence_claims_total": 60,
+         "n_non_orthogonal_tensions": 12}
+    assert compute_maturity_level(
+        m, verdict="AAA", grok_unresolved_p1=0, auto_stripped_count=1,
+        consecutive_aaa_count=2,
+    ) == 4
 
 
 # ---------- cert-floor override --------------------------------------
@@ -139,6 +159,7 @@ def test_label_formatting_for_each_level():
         (0, "L0 — UNSEEDED"), (1, "L1 — SEEDED"), (2, "L2 — PARTIAL"),
         (3, "L3 — FLOOR-MET"), (4, "L4 — ANALYTICALLY CERTIFIED"),
         (5, "L5 — JOURNAL-READY"),
+        (6, "L6 — REPRODUCIBLY JOURNAL-READY"),
     ]:
         assert format_maturity_label(lvl) == expected
 
@@ -151,12 +172,13 @@ def test_unknown_level_label_falls_back():
 
 
 def test_description_explains_each_level():
-    for lvl in range(6):
+    for lvl in range(7):
         desc = format_maturity_description(lvl)
         assert isinstance(desc, str) and len(desc) > 20
 
 
-def test_is_journal_ready_only_at_l5():
+def test_is_journal_ready_from_l5_up():
     for lvl in range(5):
         assert is_journal_ready(lvl) is False
     assert is_journal_ready(5) is True
+    assert is_journal_ready(6) is True

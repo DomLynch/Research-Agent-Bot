@@ -51,6 +51,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Optional
 
+from agent.topic_maturity import format_maturity_label
+
 REPO = Path(__file__).resolve().parent.parent
 
 # Old-defect scan patterns: known reviewer-detected misreads from
@@ -134,6 +136,15 @@ class CertificationVerdict:
             and self.grok_clean
             and self.no_regression_pass
             and self.old_defect_scan_clean
+        )
+
+    @property
+    def l5_certified(self) -> bool:
+        """Single-run Journal-Ready cert: AAA plus no strip/flag scars."""
+        return (
+            self.aaa_certified
+            and self.auto_stripped_patches == 0
+            and self.flagged_patches == 0
         )
 
 
@@ -339,6 +350,8 @@ def certify_consecutive(
         }
     per_run = [certify_run(p) for p in paper_md_paths]
     all_pass = all(r.aaa_certified for r in per_run)
+    all_l5 = all(r.l5_certified for r in per_run)
+    maturity_level = 6 if all_l5 else 5 if all_pass else 0
     failures = [
         {
             "run_id": r.run_id,
@@ -350,7 +363,11 @@ def certify_consecutive(
         "certified": all_pass,
         "n_runs": len(per_run),
         "n_aaa_certified": sum(r.aaa_certified for r in per_run),
+        "n_l5_certified": sum(r.l5_certified for r in per_run),
         "all_aaa_consecutive": all_pass,
+        "l6_reproducibly_journal_ready": all_l5,
+        "maturity_level": maturity_level,
+        "maturity_label": format_maturity_label(maturity_level),
         "git_sha": _git_head_sha(),
         "timestamp_iso": datetime.now(timezone.utc).strftime(
             "%Y-%m-%dT%H:%M:%SZ"

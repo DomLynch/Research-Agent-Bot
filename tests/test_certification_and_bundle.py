@@ -109,6 +109,53 @@ def test_consecutive_requires_two_runs() -> None:
     assert "need" in result["reason"].lower()
 
 
+def _passing_cert(
+    run_id: str, *, auto_stripped: int = 0,
+) -> cert.CertificationVerdict:
+    return cert.CertificationVerdict(
+        run_id=run_id, git_sha="deadbeef",
+        timestamp_iso="2026-01-01T00:00:00Z",
+        final_verdict="AAA",
+        aaa_pass=True,
+        q2_traceability_pct=100.0, q2_full=True,
+        stage1_pass_rate="14/14",
+        stage2_p1=0, stage2_p2=0, stage2_clean=True,
+        grok_unresolved_p1=0, grok_clean=True,
+        no_regression_pass=True,
+        old_defect_scan_clean=True,
+        auto_stripped_patches=auto_stripped,
+    )
+
+
+def test_consecutive_l5_runs_surface_l6(monkeypatch) -> None:
+    """Two clean single-run certs surface L6 reproducibility."""
+    monkeypatch.setattr(
+        cert, "certify_run",
+        lambda p: _passing_cert(p.parent.name),
+    )
+    result = cert.certify_consecutive([
+        Path("run-a/full_paper.md"),
+        Path("run-b/full_paper.md"),
+    ])
+    assert result["certified"] is True
+    assert result["l6_reproducibly_journal_ready"] is True
+    assert result["maturity_level"] == 6
+    assert result["maturity_label"] == "L6 — REPRODUCIBLY JOURNAL-READY"
+
+
+def test_consecutive_auto_strip_blocks_l6_only(monkeypatch) -> None:
+    """AAA can remain consecutive while L6 refuses strip-scarred runs."""
+    vals = [_passing_cert("run-a"), _passing_cert("run-b", auto_stripped=1)]
+    monkeypatch.setattr(cert, "certify_run", lambda p: vals.pop(0))
+    result = cert.certify_consecutive([
+        Path("run-a/full_paper.md"),
+        Path("run-b/full_paper.md"),
+    ])
+    assert result["certified"] is True
+    assert result["l6_reproducibly_journal_ready"] is False
+    assert result["maturity_level"] == 5
+
+
 def test_failure_reasons_lists_all_failed_criteria() -> None:
     """If a verdict has multiple failures, _failure_reasons surfaces
     each one — important for actionable cert.md output."""

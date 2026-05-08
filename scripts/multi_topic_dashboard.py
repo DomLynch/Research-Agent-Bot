@@ -202,6 +202,7 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
     # alphabetical — different run-name prefixes (AAA2-, FINAL-,
     # public-, etc.) make alphabetical sort wrong.
     certified = False
+    l6_reproducible = False
     if len(aaa_runs) >= 2:
         # Sort by timestamp DESCENDING — most recent first
         sorted_aaa = sorted(
@@ -220,6 +221,9 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
             if len(paths) == 2:
                 result = _cert.certify_consecutive(paths)
                 certified = bool(result.get("certified"))
+                l6_reproducible = bool(
+                    result.get("l6_reproducibly_journal_ready")
+                )
         except (ImportError, OSError, ValueError):
             pass
 
@@ -251,6 +255,9 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
                     maturity_label = "L4 — ANALYTICALLY CERTIFIED"
         except (ImportError, OSError):
             journal_ready = False
+    if l6_reproducible and journal_ready:
+        maturity_level = 6
+        maturity_label = "L6 — REPRODUCIBLY JOURNAL-READY"
     corpus_gaps = tuple(verdict_doc.get("corpus_gaps") or [])
     expansion_targets = tuple(verdict_doc.get("expansion_targets") or [])
 

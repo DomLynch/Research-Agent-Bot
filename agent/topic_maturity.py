@@ -1,13 +1,7 @@
-"""Topic Maturity Ladder L0-L5 — Wave 7 reviewer fix (2026-05-05).
+"""Topic Maturity Ladder L0-L6.
 
-Evidence Factory slice 3: every topic gets a maturity badge derived
-from its corpus + audit signals, so the operator can see at a glance
-whether the topic is unseeded, partial, audit-blocked, or
-journal-ready. Universal across topics — driven by manifest signals
-+ unified verdict, no per-topic logic.
-
-Levels (monotonic — higher level always implies all lower-level
-gates have been cleared):
+Universal maturity badges from corpus + audit + reproducibility
+signals. Higher levels imply lower gates have cleared:
 
   L0 — UNSEEDED        no receipts
   L1 — SEEDED          receipts exist, but no high-confidence claims
@@ -18,9 +12,7 @@ gates have been cleared):
                        surgery gate still requires editorial work
   L5 — JOURNAL-READY   AAA + zero unresolved Grok + zero auto-strip
                        surgery + clean journal-surface gate
-
-Journal-Ready is the strictest tier we expose; it gates "this run is
-ready to send to a peer-reviewed journal without further review."
+  L6 — REPRODUCIBLE    at least two consecutive clean L5 runs
 """
 from __future__ import annotations
 
@@ -40,6 +32,7 @@ _LEVEL_LABELS: dict[int, str] = {
     3: "L3 — FLOOR-MET",
     4: "L4 — ANALYTICALLY CERTIFIED",
     5: "L5 — JOURNAL-READY",
+    6: "L6 — REPRODUCIBLY JOURNAL-READY",
 }
 
 _LEVEL_DESCRIPTIONS: dict[int, str] = {
@@ -57,6 +50,8 @@ _LEVEL_DESCRIPTIONS: dict[int, str] = {
     5: "Journal-Ready — AAA plus zero unresolved Grok flags plus "
        "zero auto-strip surgery. No structural patching was needed "
        "to clear the gates. Suitable for peer-reviewed submission.",
+    6: "Reproducibly Journal-Ready — at least two consecutive clean "
+       "L5-grade runs under the same certification gate.",
 }
 
 
@@ -68,8 +63,9 @@ def compute_maturity_level(
     auto_stripped_count: int = 0,
     cert_floors: dict[str, int] | None = None,
     journal_surface_pass: bool = True,
+    consecutive_aaa_count: int = 1,
 ) -> int:
-    """Pure function: returns 0-5 from manifest + unified-verdict
+    """Pure function: returns 0-6 from manifest + unified-verdict
     signals. `verdict` is the UnifiedVerdict.verdict string ("AAA",
     "Trust-Spine Pass", "SHIP-BLOCKED", etc.). Cert floors honored
     via max(default, override) — packs may RAISE but not LOWER.
@@ -110,6 +106,8 @@ def compute_maturity_level(
         and auto_stripped_count == 0
         and journal_surface_pass
     ):
+        if consecutive_aaa_count >= 2:
+            return 6
         return 5
     return 4
 
