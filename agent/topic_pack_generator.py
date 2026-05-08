@@ -1,9 +1,4 @@
-"""Dry-run topic-pack generator.
-
-This module does not replace curated TOML packs. It produces a conservative,
-TOML-compatible candidate structure that a human or later persistence layer can
-review before use.
-"""
+"""Dry-run topic-pack generator; does not replace curated TOML packs."""
 from __future__ import annotations
 
 import re
@@ -43,7 +38,7 @@ _EXPECTED_SLOTS = (
 _SPECIAL_RULES = (
     "Separate direct human endpoints from indirect mechanistic evidence.",
     "Biomarker improvements are not healthspan or lifespan extension.",
-    "Disease-treatment evidence is aging-relevant only with explicit outcome directness.",
+    "Disease evidence is aging-relevant only with explicit outcome directness.",
 )
 _FORBIDDEN_PROTOCOL_VERBS = (
     "found", "showed", "improved", "reduced", "demonstrated",
@@ -89,10 +84,8 @@ _PRECURSORS = {
     "omega3": ("eicosapentaenoic acid", "docosahexaenoic acid", "EPA", "DHA"),
     "omega-3": ("eicosapentaenoic acid", "docosahexaenoic acid", "EPA", "DHA"),
 }
-_ADAPTIVE_TERMS = (
-    "dose response", "older adults", "randomized controlled trial",
-    "systematic review", "safety", "mechanism",
-)
+_ADAPTIVE_TERMS = ("dose response", "older adults", "randomized controlled trial",
+                   "systematic review", "safety", "mechanism")
 
 
 @dataclass(frozen=True, slots=True)

@@ -2,9 +2,11 @@
 
 ## Scope
 
-This lane added a dry-run topic-pack generator prototype only. It does not
-replace curated TOML packs, does not write DB records, does not expose a public
-API, and does not run retrieval.
+This lane added a dry-run topic-pack generator prototype only.
+It does not replace curated TOML packs.
+It does not write DB records.
+It does not expose a public API.
+It does not run retrieval.
 
 ## Implemented
 
@@ -72,13 +74,18 @@ API, and does not run retrieval.
 
 ```bash
 python3 -m pytest tests/test_topic_pack_generator.py
+ruff check agent/topic_pack_generator.py tests/test_topic_pack_generator.py
 ```
 
-Initial result:
+Final result:
 
 ```text
 9 passed
+ruff: all checks passed
 ```
+
+Runtime LOC check: `agent/topic_pack_generator.py` is 297 lines, below the
+300-line soft budget.
 
 ## Remaining Risks
 
