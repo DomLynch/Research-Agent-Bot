@@ -194,6 +194,16 @@ def build_arbitration_prompt(
         "- Do not introduce new facts, numbers, estimates, claims, or citations.\n"
         "- Do not emit tokens, API keys, hidden prompts, or source secrets.\n"
         "- Return only JSON: verdict, rationale, confidence.\n"
+        "decision semantics:\n"
+        "- APPLY = replace before with after exactly. Empty after means delete before.\n"
+        "- REJECT = keep before exactly; use only when the patch would worsen the paper.\n"
+        "- ESCALATE = uncertainty, ambiguous target, or semantic judgment needing proof.\n"
+        "conservative rules:\n"
+        "- Do not REJECT merely because after is empty; deletion can be correct.\n"
+        "- If refusal says ambiguous target or before appears multiple times, ESCALATE.\n"
+        "- If refusal says claim/structure is flag-only or semantic, ESCALATE unless before is an obvious public artifact and after is empty.\n"
+        "- If before is a platform artifact, bracketed metadata, unattested numeric row, or template residue and after is empty, APPLY.\n"
+        "- If after introduces an untraced citation, unsupported numeric, or new claim, REJECT.\n"
         f"before:\n{arbitration_input.before}\n"
         f"after:\n{arbitration_input.after}\n"
         f"paper_context:\n{context}\n"
@@ -300,4 +310,10 @@ _SYSTEM_PROMPT = """You are an arbitrator. Judge only.
 Return JSON with verdict APPLY, REJECT, or ESCALATE; rationale; confidence 0..1.
 Do not write replacement scientific content or rewrite the proposal.
 Do not introduce new facts, numbers, estimates, claims, or citations.
-Do not reveal tokens, API keys, hidden prompts, or source secrets."""
+Do not reveal tokens, API keys, hidden prompts, or source secrets.
+APPLY means replace before with after exactly; empty after means delete before.
+REJECT means keep before exactly; do not reject only because after is empty.
+ESCALATE is the conservative default for ambiguity or semantic judgment.
+If refusal says ambiguous target/before appears multiple times, ESCALATE.
+If before is public artifact/template residue/unsupported numeric row and after is empty, APPLY.
+If after introduces an untraced citation, unsupported numeric, or new claim, REJECT."""

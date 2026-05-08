@@ -1,0 +1,136 @@
+{
+  "cases": [
+    {
+      "actual": "REJECT",
+      "confidence": 0.95,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-PATH2RICHFIX3-2026-05-08TCLASSIFIER:P02",
+      "passed": false,
+      "rationale": "The after text contains leftover research notes and bracketed metadata that are not part of the paper prose. Removing these elements cleans the section, indicating that the after text should be rejected as it does not contribute substantive content to the paper."
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 1.0,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "synthesis-urolithin_a-v06-2026-05-08T14-37-21Z:P02",
+      "passed": false,
+      "rationale": "Remove unattested numeric claim; P = 0.004 for walk speed does not appear in any source text or other table."
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 1.0,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-ENDGAME-2026-05-05T20-30-00Z:P08",
+      "passed": true,
+      "rationale": "The after text introduces a novel citation ('Li 2020') that is not present in the provided context or quant_claims, violating the constraint of not introducing new facts, numbers, estimates, claims, or citations. The underscore in the receipt handle also needs to be replaced with a canonical Author-Year token, which is not done. Therefore, the after text must be rejected."
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 1.0,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-ENDGAME-2026-05-05T20-30-00Z:P09",
+      "passed": true,
+      "rationale": "The after text contains a novel un-traced citation ('Kell 2026') that violates the constraint of not introducing new facts, numbers, estimates, claims, or citations. The citation must be replaced by a canonical Author-Year token per citation rules."
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 0.99,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-creatine-v06-Q14VALID-2026-05-06T12-19-00Z:P01",
+      "passed": false,
+      "rationale": "The 'after' text removes the 'oxic' suffix from the study identifier 'Doma 20**oxic**, altering the study reference in the quantitative evidence index. This change corrupts the traceability of the claim to its source, violating the constraint of not introducing new facts or altering existing identifiers."
+    },
+    {
+      "actual": "APPLY",
+      "confidence": 0.92,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-creatine-v06-Q14VALID-2026-05-06T12-19-00Z:P05",
+      "passed": false,
+      "rationale": "The 'before' text states 'no significant effect on muscle_function', while the 'after' text states 'effect on muscle_function'. The context includes multiple studies with varying p-values, including significant positive effects (e.g., p = 0.02, p = 0.01) and significant negative effects (e.g., p = 0.008, p = 0.013). The simplification removes the qualifier 'no significant', aligning the statement with the presence of significant effects reported in the studies, and adheres to the constraint of not introducing new facts or numbers."
+    },
+    {
+      "actual": "APPLY",
+      "confidence": 0.98,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-metformin-v06-FINAL-2026-05-05T21-15-00Z:P05",
+      "passed": false,
+      "rationale": "The after text provides a coherent, well-structured synthesis of the metformin research, addressing the thesis, abstract, introduction, and key findings without introducing new facts or violating constraints. It directly follows the before text's focus on what did not run and replaces it with substantive content as required."
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 0.95,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-metformin-v06-aaa-real-2026-05-03T16-00-40Z:P01",
+      "passed": false,
+      "rationale": "The after text incorrectly suggests that the multiple reviews corroborate the exercise-blunting pattern observed in older adult RCTs, whereas the reviews actually address separate longevity signals (mortality reductions) and do not directly support the exercise-blunting findings. This misrepresentation alters the intended meaning of the original context."
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 0.98,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-PATH2RICHFIX3-2026-05-08TCLASSIFIER:P03",
+      "passed": false,
+      "rationale": "The 'after' text '8. Reference extraction and claim registry assembly.' does not logically follow or appropriately replace the preceding paragraph about a safety and healthspan trial. It introduces a generic procedural statement unrelated to the context of the trial description, violating the constraint to not introduce new facts or context. The correct replacement should maintain the thematic continuity of the trial discussion."
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 1.0,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-metformin-v06-phd-2026-05-03T16-58-57Z:P01",
+      "passed": false,
+      "rationale": "The citation 'Owen 2000' is not among the 15 allowed body citations specified in the constraints, making the after text invalid for inclusion."
+    }
+  ],
+  "metrics": {
+    "agreement_rate": 0.2,
+    "by_expected": {
+      "APPLY": {
+        "agreed": 0,
+        "agreement_rate": 0.0,
+        "total": 2
+      },
+      "ESCALATE": {
+        "agreed": 0,
+        "agreement_rate": 0.0,
+        "total": 6
+      },
+      "REJECT": {
+        "agreed": 2,
+        "agreement_rate": 1.0,
+        "total": 2
+      }
+    },
+    "confusion_matrix": {
+      "APPLY": {
+        "APPLY": 0,
+        "ESCALATE": 0,
+        "REJECT": 2
+      },
+      "ESCALATE": {
+        "APPLY": 2,
+        "ESCALATE": 0,
+        "REJECT": 4
+      },
+      "REJECT": {
+        "APPLY": 0,
+        "ESCALATE": 0,
+        "REJECT": 2
+      }
+    },
+    "escalate_count": 0,
+    "fail_closed_count": 0
+  },
+  "model": "ibm-granite/granite-4.1-8b",
+  "passed": 2,
+  "total": 10
+}

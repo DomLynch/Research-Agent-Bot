@@ -159,12 +159,12 @@ def test_repair_loop_granite_applies_exact_after(
     exact AFTER text after the deterministic post-apply audit passes."""
     monkeypatch.setenv("GRANITE_ARBITRATOR_ENABLED", "1")
     monkeypatch.setenv("OPENROUTER_API_KEY", "test-key")
-    paper = "## Discussion\n\nunsafe numeric prose.\n"
+    paper = "## Discussion\n\npublic typo prose.\n"
     results = [
         ap.PatchResult(
-            patch_id="P-apply", patch_type="claim", severity="P1",
+            patch_id="P-apply", patch_type="formatting", severity="P1",
             decision="flagged", reason_for_decision="smart-gate refused",
-            before="unsafe numeric prose.", after="safe bounded prose.",
+            before="public typo prose.", after="public corrected prose.",
         ),
     ]
 
@@ -189,8 +189,8 @@ def test_repair_loop_granite_applies_exact_after(
         )
 
     new_paper, new_results = asyncio.run(_go())
-    assert "safe bounded prose." in new_paper
-    assert "unsafe numeric prose." not in new_paper
+    assert "public corrected prose." in new_paper
+    assert "public typo prose." not in new_paper
     assert new_results[0].decision == "applied_via_arbitration"
     log = json.loads(paper_path.with_suffix(".arbitration_log.json").read_text())
     assert log["arbitrations"][0]["pipeline_effect"] == "applied_exact_after"
@@ -235,6 +235,85 @@ def test_repair_loop_granite_rejects_without_auto_strip(
     assert "GRANITE-ARBITRATION-REJECT" in new_results[0].reason_for_decision
 
 
+def test_repair_loop_granite_cannot_apply_non_deletion_claim(
+    monkeypatch, tmp_path: Path,
+) -> None:
+    monkeypatch.setenv("GRANITE_ARBITRATOR_ENABLED", "1")
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-key")
+    paper = "## Discussion\n\nsemantic claim.\n"
+    results = [
+        ap.PatchResult(
+            patch_id="P-claim", patch_type="claim", severity="P1",
+            decision="flagged", reason_for_decision="claim flag-only",
+            before="semantic claim.", after="changed semantic claim.",
+        ),
+    ]
+
+    async def _no_repair(*_args, **_kwargs):
+        return []
+
+    async def _arb(*_args, **_kwargs):
+        return orch._granite.ArbitrationDecision("APPLY", "apply", 0.9)
+
+    monkeypatch.setattr(orch._final_reviewer, "repair_flagged_patches", _no_repair)
+    monkeypatch.setattr(orch._granite, "request_granite_arbitration", _arb)
+
+    async def _go():
+        return await orch._agent_repair_loop(
+            paper_md=paper,
+            results=results,
+            manifest={},
+            paper_path=tmp_path / "full_paper.md",
+        )
+
+    new_paper, new_results = asyncio.run(_go())
+    assert "changed semantic claim." not in new_paper
+    assert new_results[0].decision == "auto_stripped"
+    log = json.loads((tmp_path / "full_paper.arbitration_log.json").read_text())
+    assert log["arbitrations"][0]["pipeline_effect"] == "blocked_apply_shape"
+
+
+def test_repair_loop_granite_reject_on_deletion_fails_closed(
+    monkeypatch, tmp_path: Path,
+) -> None:
+    monkeypatch.setenv("GRANITE_ARBITRATOR_ENABLED", "1")
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-key")
+    paper = "## QEI\n\n| row | unsupported 57% |\n"
+    results = [
+        ap.PatchResult(
+            patch_id="P-del", patch_type="numeric", severity="P1",
+            decision="flagged", reason_for_decision="unattested numeric",
+            before="| row | unsupported 57% |", after="",
+        ),
+    ]
+
+    async def _no_repair(*_args, **_kwargs):
+        return []
+
+    async def _arb(*_args, **_kwargs):
+        return orch._granite.ArbitrationDecision("REJECT", "keep it", 0.9)
+
+    monkeypatch.setattr(orch._final_reviewer, "repair_flagged_patches", _no_repair)
+    monkeypatch.setattr(orch._granite, "request_granite_arbitration", _arb)
+
+    async def _go():
+        return await orch._agent_repair_loop(
+            paper_md=paper,
+            results=results,
+            manifest={},
+            paper_path=tmp_path / "full_paper.md",
+        )
+
+    new_paper, new_results = asyncio.run(_go())
+    assert "unsupported 57%" not in new_paper
+    assert new_results[0].decision == "auto_stripped"
+    log = json.loads((tmp_path / "full_paper.arbitration_log.json").read_text())
+    assert (
+        log["arbitrations"][0]["pipeline_effect"]
+        == "reject_deletion_treated_as_escalate"
+    )
+
+
 def test_repair_loop_granite_apply_requires_unique_before(
     monkeypatch, tmp_path: Path,
 ) -> None:
@@ -243,7 +322,7 @@ def test_repair_loop_granite_apply_requires_unique_before(
     paper = "same sentence.\n\nsame sentence.\n"
     results = [
         ap.PatchResult(
-            patch_id="P-amb", patch_type="claim", severity="P1",
+            patch_id="P-amb", patch_type="formatting", severity="P1",
             decision="flagged", reason_for_decision="ambiguous",
             before="same sentence.", after="different sentence.",
         ),
@@ -281,7 +360,7 @@ def test_repair_loop_granite_apply_fails_closed_on_post_audit(
     paper = "## Discussion\n\nbad sentence.\n"
     results = [
         ap.PatchResult(
-            patch_id="P-audit", patch_type="claim", severity="P1",
+            patch_id="P-audit", patch_type="formatting", severity="P1",
             decision="flagged", reason_for_decision="smart-gate refused",
             before="bad sentence.", after="worse sentence with 57%.",
         ),

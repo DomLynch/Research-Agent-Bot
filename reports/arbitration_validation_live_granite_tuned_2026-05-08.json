@@ -1,0 +1,136 @@
+{
+  "cases": [
+    {
+      "actual": "APPLY",
+      "confidence": 1.0,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-PATH2RICHFIX3-2026-05-08TCLASSIFIER:P02",
+      "passed": true,
+      "rationale": "The 'before' text contains testability metadata and a bracketed inferential bridge that are not part of the main paper prose. The 'after' text is empty, indicating that the before content should be removed. According to the conservative rules, if before is a platform artifact, bracketed metadata, or unattested numeric row and after is empty, APPLY."
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 0.95,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "synthesis-urolithin_a-v06-2026-05-08T14-37-21Z:P02",
+      "passed": false,
+      "rationale": "The numeric claim 'P = 0.004' for walk speed is unattested and does not appear in any source text or other table provided. Removing it would alter the content without justification, and the conservative rule dictates that we do not reject merely because after is empty; however, the presence of an unsupported numeric in the before text necessitates rejection to avoid introducing new claims."
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 1.0,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-ENDGAME-2026-05-05T20-30-00Z:P08",
+      "passed": true,
+      "rationale": "The after text introduces an untraced citation ('Li 2020'), which violates the constraint of not introducing new citations or unsupported claims. Therefore, the before text should be kept exactly as it is."
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 1.0,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-ENDGAME-2026-05-05T20-30-00Z:P09",
+      "passed": true,
+      "rationale": "The after text introduces a novel untraced citation ('Kell 2026'), which violates the constraint of not introducing new facts, numbers, estimates, claims, or citations. Therefore, the patch should be rejected to preserve the integrity of the original document."
+    },
+    {
+      "actual": "APPLY",
+      "confidence": 0.98,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-creatine-v06-Q14VALID-2026-05-06T12-19-00Z:P01",
+      "passed": false,
+      "rationale": "The 'before' text contains a typographical error ('oxic' appended to the study identifier), which corrupts the study identifier in the numeric claims table. The 'after' text corrects this by removing the erroneous suffix, resulting in a valid study identifier ('Doma 2022'). According to the conservative rules, when the before text is a platform artifact or unattested numeric row and the after text is empty or corrects an error, the APPLY action is appropriate. Here, the after text is non-empty and rectifies the error, so the before should be replaced exactly with the after."
+    },
+    {
+      "actual": "APPLY",
+      "confidence": 0.95,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-creatine-v06-Q14VALID-2026-05-06T12-19-00Z:P05",
+      "passed": false,
+      "rationale": "The 'before' text 'no significant effect on muscle_function' appears multiple times, but the 'after' text 'effect on muscle_function' is a concise simplification that retains the core meaning and aligns with the reported p-values in the paper context. The after text is a subset of the before text and does not introduce new claims, numerics, or citations, satisfying the conservative rules for applying the patch."
+    },
+    {
+      "actual": "APPLY",
+      "confidence": 0.98,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-metformin-v06-FINAL-2026-05-05T21-15-00Z:P05",
+      "passed": false,
+      "rationale": "The 'before' section contains internal pipeline audit notes and boilerplate that were not executed or relevant to the final paper. The 'after' section provides the complete, relevant paper content. According to the conservative rules, when the 'before' is a platform artifact or unexecuted boilerplate and the 'after' is the proper content, the 'before' should be deleted, which corresponds to an APPLY decision."
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 0.95,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-metformin-v06-aaa-real-2026-05-03T16-00-40Z:P01",
+      "passed": false,
+      "rationale": "The after text does not introduce new facts, numbers, estimates, claims, or citations; it merely replaces 'pattern' with 'longevity outcomes', which does not change the meaning or introduce any unsupported content. The refusal's rationale about semantic judgment does not affect the deterministic decision rules provided, which do not require semantic interpretation beyond the specified constraints. Therefore, the patch should be rejected as it does not improve or clarify the text and adheres to the conservative rule of keeping the original text when the after is not clearly an improvement."
+    },
+    {
+      "actual": "APPLY",
+      "confidence": 0.98,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-PATH2RICHFIX3-2026-05-08TCLASSIFIER:P03",
+      "passed": false,
+      "rationale": "The 'before' text is a misplaced trial description paragraph that does not belong in the pipeline list context. The 'after' text, '8. Reference extraction and claim registry assembly.', correctly represents the intended stage of the pipeline and replaces the erroneous content."
+    },
+    {
+      "actual": "REJECT",
+      "confidence": 0.9,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-metformin-v06-phd-2026-05-03T16-58-57Z:P01",
+      "passed": false,
+      "rationale": "The removal of the citation '(Owen 2000)' would leave a gap in the text without providing an alternative or justification, potentially disrupting the flow and context of the discussion on metformin's mechanistic effects. The citation, while not among the 15 allowed body citations, is referenced within the broader context of metformin's mitochondrial effects and is part of the structured claim extraction. Removing it without replacement could be seen as weakening the argument rather than clarifying it."
+    }
+  ],
+  "metrics": {
+    "agreement_rate": 0.3,
+    "by_expected": {
+      "APPLY": {
+        "agreed": 1,
+        "agreement_rate": 0.5,
+        "total": 2
+      },
+      "ESCALATE": {
+        "agreed": 0,
+        "agreement_rate": 0.0,
+        "total": 6
+      },
+      "REJECT": {
+        "agreed": 2,
+        "agreement_rate": 1.0,
+        "total": 2
+      }
+    },
+    "confusion_matrix": {
+      "APPLY": {
+        "APPLY": 1,
+        "ESCALATE": 0,
+        "REJECT": 1
+      },
+      "ESCALATE": {
+        "APPLY": 4,
+        "ESCALATE": 0,
+        "REJECT": 2
+      },
+      "REJECT": {
+        "APPLY": 0,
+        "ESCALATE": 0,
+        "REJECT": 2
+      }
+    },
+    "escalate_count": 0,
+    "fail_closed_count": 0
+  },
+  "model": "ibm-granite/granite-4.1-8b",
+  "passed": 3,
+  "total": 10
+}

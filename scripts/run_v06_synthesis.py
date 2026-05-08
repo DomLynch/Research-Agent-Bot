@@ -2543,6 +2543,14 @@ def _with_arbitration_decision(
     )
 
 
+def _granite_apply_shape_allowed(r: Any) -> tuple[bool, str]:
+    if not (r.after or "").strip():
+        return True, "deletion patch"
+    if r.patch_type in {"formatting", "citation"}:
+        return True, "public-surface patch"
+    return False, "non-deletion semantic/numeric/structure patch"
+
+
 async def _granite_arbitration_pass(
     *,
     paper_md: str,
@@ -2566,7 +2574,11 @@ async def _granite_arbitration_pass(
         ))
         entry["pipeline_effect"] = "escalated"
         if decision.verdict == "APPLY":
-            if not r.before or paper_md.count(r.before) != 1:
+            shape_ok, shape_reason = _granite_apply_shape_allowed(r)
+            entry["apply_shape_reason"] = shape_reason
+            if not shape_ok:
+                entry["pipeline_effect"] = "blocked_apply_shape"
+            elif not r.before or paper_md.count(r.before) != 1:
                 entry["pipeline_effect"] = "blocked_non_unique_before"
             else:
                 tentative = paper_md.replace(r.before, r.after or "", 1)
@@ -2592,18 +2604,21 @@ async def _granite_arbitration_pass(
                 else:
                     entry["pipeline_effect"] = "blocked_post_apply_audit"
         elif decision.verdict == "REJECT":
-            entry["pipeline_effect"] = "rejected_grok_patch"
-            updated = [
-                _with_arbitration_decision(
-                    rr,
-                    decision="rejected_by_arbitration",
-                    reason=(
-                        "GRANITE-ARBITRATION-REJECT: third reviewer "
-                        f"rejected Grok patch. {decision.rationale}"
-                    ),
-                ) if rr.patch_id == r.patch_id else rr
-                for rr in updated
-            ]
+            if not (r.after or "").strip():
+                entry["pipeline_effect"] = "reject_deletion_treated_as_escalate"
+            else:
+                entry["pipeline_effect"] = "rejected_grok_patch"
+                updated = [
+                    _with_arbitration_decision(
+                        rr,
+                        decision="rejected_by_arbitration",
+                        reason=(
+                            "GRANITE-ARBITRATION-REJECT: third reviewer "
+                            f"rejected Grok patch. {decision.rationale}"
+                        ),
+                    ) if rr.patch_id == r.patch_id else rr
+                    for rr in updated
+                ]
         log_rows.append(entry)
     if paper_path:
         _write_arbitration_log(
