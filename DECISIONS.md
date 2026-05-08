@@ -1,5 +1,14 @@
 # DECISION JOURNAL
 
+## 2026-05-08 — Raise LOC ceiling to 16,850 for BRIEFS-V1 parser
+**Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 16,650 → 16,850. Per-file 600 LOC unchanged.
+**Why:** BRIEFS-V1 starts a new product surface: cheap focused evidence briefs derived from certified full papers. Phase 1 adds `agent/briefs/question_parser.py`, a schema-first parser that converts a user question into interventions, outcome classes, population, age range, and comorbidities for later topic matching and receipt filtering. Keeping it in `agent/briefs` avoids burying product logic in scripts and keeps the later matcher/filter/writer phases on a coherent package boundary.
+**Alternatives rejected:**
+- Put the parser under `scripts/` to dodge the runtime budget — rejected; briefs are runtime product behavior, not a one-off maintenance script.
+- Trim unrelated manuscript prose strings to make room — rejected; that would alter generated paper content to hide a real capability addition.
+- Raise by a large buffer — rejected; +200 LOC is enough for Phase 1 plus small corrections without normalizing bloat.
+**Revisit if:** BRIEFS-V1 Phase 2-5 add more runtime modules; each phase must justify its own measured budget or delete equivalent dead weight.
+
 ## 2026-04-30 (Day 10.17) — Raise LOC ceiling to 12,000 for audit-quality expansion
 **Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 10,000 → 12,000. Per-file 600 LOC unchanged.
 **Why:** Three independent external reviews of the Day 10.17a artifact identified that the existing Q1-Q7 audit was a structural-compliance score, not a quality score — it passed papers at 10/10 while domain-readable failures (rejected-evidence leakage, malformed receipt IDs, unhedged causal verbs on tier-C evidence, all-orthogonal tension matrix on a paper that argues a clear cross-domain tension, internal-id-only References) shipped through. Day 10.17 closes those gaps in five focused slices: Phase 1 (Q8/Q9/Q10 validators, ~200 cloc — landed); Phase 1.5 (audit-pipeline rewiring to scan full_paper.md + full corpus, ~30 cloc — landed); Phase 2 (tension matrix cross-domain rules: mechanism vs clinical, preclinical vs human, systemic vs local — ~80 cloc); Phase 3 (DOI/PMID/author-year References upgrade with alias lookup — ~50 cloc); plus discriminating-test coverage for each. Net add ~400 cloc on top of Day 10.16's 9,808. The 12,000 ceiling covers Day 10.17 fully with ~2,000 cloc headroom — large enough to absorb writer-side hedge-discipline fixes (the c02-leak-suppression and longevity-hedge prompts that the new audit empirically demands) without re-litigating the ceiling mid-sprint.
