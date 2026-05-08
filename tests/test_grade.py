@@ -1,0 +1,92 @@
+from __future__ import annotations
+
+import dataclasses
+import sys
+from pathlib import Path
+
+import pytest
+
+REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO / "scripts"))
+
+from grade_assessment import GradeAssessment, assess_grade  # noqa: E402
+
+
+def test_low_risk_direct_rct_is_high_certainty() -> None:
+    grade = assess_grade("walk speed", {
+        "tier": "A1",
+        "directness": "direct",
+        "risk_of_bias": "low",
+        "inconsistency": "not_serious",
+        "imprecision": "not_serious",
+    })
+
+    assert grade.certainty == "high"
+    assert grade.start_certainty == "high"
+    assert grade.downgrades == ()
+
+
+def test_high_risk_of_bias_downgrades_certainty() -> None:
+    grade = assess_grade("walk speed", {
+        "tier": "A1",
+        "directness": "direct",
+        "risk_of_bias": "high",
+    })
+
+    assert grade.certainty == "moderate"
+    assert grade.downgrades == ("risk_of_bias:serious",)
+
+
+def test_indirect_evidence_is_capped() -> None:
+    grade = assess_grade("mortality", {
+        "tier": "B1",
+        "directness": "indirect",
+        "risk_of_bias": "low",
+    })
+
+    assert grade.certainty == "low"
+    assert grade.caps == ("indirect_evidence_cap:low",)
+
+
+def test_review_evidence_is_capped_like_indirect_evidence() -> None:
+    grade = assess_grade("mortality", {
+        "tier": "B1",
+        "directness": "review",
+        "risk_of_bias": "low",
+    })
+
+    assert grade.certainty == "low"
+    assert grade.caps == ("review_evidence_cap:low",)
+
+
+def test_preclinical_evidence_is_capped() -> None:
+    grade = assess_grade("healthspan", {
+        "tier": "A1",
+        "directness": "preclinical",
+        "risk_of_bias": "low",
+    })
+
+    assert grade.certainty == "low"
+    assert grade.caps == ("preclinical_evidence_cap:low",)
+
+
+def test_invalid_or_missing_fields_fail_closed() -> None:
+    grade = assess_grade("mortality", {"directness": "direct"})
+
+    assert grade.certainty == "very_low"
+    assert grade.fail_closed
+    assert grade.downgrades == ("missing_or_invalid_required_fields",)
+
+
+def test_grade_dataclass_is_frozen_and_json_friendly() -> None:
+    grade = GradeAssessment(
+        outcome="mortality",
+        certainty="high",
+        start_certainty="high",
+        downgrades=(),
+        caps=(),
+    )
+
+    assert grade.to_dict()["certainty"] == "high"
+    with pytest.raises(dataclasses.FrozenInstanceError):
+        grade.certainty = "low"  # type: ignore[misc]
