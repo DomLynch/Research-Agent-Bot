@@ -268,6 +268,23 @@ def test_claim_to_row_keeps_high_confidence_ratio_without_direction():
     assert row.value == "HR=0.72"
 
 
+def test_claim_to_row_drops_ratio_bound_to_bmi_endpoint():
+    row = _claim_to_row(
+        {
+            "claim_type": "hazard_ratio",
+            "raw_text": "HR = 2.54",
+            "numeric_values": [2.54],
+            "endpoint": "body mass index",
+            "arm": "ret",
+            "claim_role": "effect",
+            "binding_confidence": "high",
+            "direction": "positive",
+        },
+        paper_id="x",
+    )
+    assert row is None
+
+
 def test_claim_to_row_assembles_full_row():
     claim = {
         "claim_type": "sample_size",
@@ -292,6 +309,27 @@ def test_truncate_replaces_pipe_chars():
 
 def test_truncate_caps_long_strings():
     assert _truncate("x" * 100, 10) == "xxxxxxxxx…"
+
+
+def test_truncate_prefers_word_boundary():
+    assert _truncate("resistance training protocol", 16) == "resistance…"
+
+
+def test_claim_to_row_keeps_resistance_training_arm_untruncated():
+    row = _claim_to_row(
+        {
+            "claim_type": "p_value",
+            "raw_text": "p = 0.04",
+            "numeric_values": [0.04],
+            "endpoint": "muscle strength",
+            "arm": "resistance training",
+            "claim_role": "effect",
+            "binding_confidence": "high",
+        },
+        paper_id="x",
+    )
+    assert row is not None
+    assert row.arm == "resistance training"
 
 
 # ---------- quality score ------------------------------------------

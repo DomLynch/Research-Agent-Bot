@@ -74,13 +74,12 @@ def build_results_table(
     citation_tokens_by_paper_id: Mapping[str, str] | None = None,
     quarantine_path: Path | None = None,
 ) -> str:
-    md, _diag = build_results_table_with_diagnostic(
+    return build_results_table_with_diagnostic(
         quant_dir, topic=topic, max_rows=max_rows,
         accepted_paper_ids=accepted_paper_ids,
         citation_tokens_by_paper_id=citation_tokens_by_paper_id,
         quarantine_path=quarantine_path,
-    )
-    return md
+    )[0]
 
 
 def build_results_table_with_diagnostic(
@@ -259,10 +258,9 @@ def _row_is_meaningful(claim: dict[str, Any]) -> bool:
         return False
     if claim_type == "sample_size" and role != "population":
         return False
-    if (
-        claim_type in _RATIO_CLAIM_TYPES
-        and confidence != "high"
-        and not direction
+    if claim_type in _RATIO_CLAIM_TYPES and (
+        (confidence != "high" and not direction)
+        or endpoint in {"body mass index", "bmi"}
     ):
         return False
     if claim_type == "unit_value" and units in _TEMPORAL_UNITS:
@@ -341,7 +339,7 @@ def _claim_to_row(
     return EvidenceRow(
         study_label=citation,
         endpoint=_truncate(ep, 30),
-        arm=_truncate(arm or "—", 16),
+        arm=_truncate(arm or "—", 24),
         value=_truncate(value_str, 20),
         unit_or_type=_truncate(unit_str, 18),
         statistic=_truncate(statistic, 22),
@@ -592,7 +590,8 @@ def _truncate(s: str, limit: int) -> str:
     s = (s or "").strip().replace("|", "/")  # | breaks markdown tables
     if len(s) <= limit:
         return s
-    return s[: limit - 1] + "…"
+    cut = s[: limit - 1].rsplit(" ", 1)[0].rstrip(" ,;:/")
+    return f"{cut or s[: limit - 1]}…"
 
 
 def _render_md(rows: Iterable[EvidenceRow], *, topic: str) -> str:
