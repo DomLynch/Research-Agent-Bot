@@ -159,12 +159,11 @@ but code validates anchors, canon references, confidence, testability,
 and no-new-numeric discipline before rendering. D1 never counts as
 receipt evidence or raises certification floors (2026-05-06).
 
-Wave 10 — BRIEFS-V1 Phase 1 (16,650 → 16,850):
-agent/briefs/question_parser.py (~150 cloc) plus package export.
-Adds the schema-first question parser that turns focused user
-questions into structured BriefQuery objects for topic matching and
-receipt filtering. This is the first reusable surface for cheap
-question-driven briefs derived from certified papers (2026-05-08).
+Wave 10 — BRIEFS-V1 Phase 1-2 (16,650 → 16,850):
+agent/briefs/question_parser.py (~150 cloc) and topic_matcher.py
+(~42 cloc) plus package exports. Adds schema-first question parsing
+and topic-pack alias matching for cheap question-driven briefs
+derived from certified papers (2026-05-08).
 """
 from __future__ import annotations
 
