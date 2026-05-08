@@ -65,11 +65,13 @@ def compute_maturity_level(
     journal_surface_pass: bool = True,
     consecutive_aaa_count: int = 1,
 ) -> int:
-    """Pure function: returns 0-6 from manifest + unified-verdict
+    """Pure function: returns 0-5 from one run's manifest + verdict
     signals. `verdict` is the UnifiedVerdict.verdict string ("AAA",
     "Trust-Spine Pass", "SHIP-BLOCKED", etc.). Cert floors honored
     via max(default, override) — packs may RAISE but not LOWER.
+    L6 is topic-level reproducibility and is computed across runs.
     """
+    _ = consecutive_aaa_count
     n_rec = int(manifest.get("n_receipts", 0))
     n_claims = int(manifest.get("n_high_confidence_claims_total", 0))
     n_tens = int(manifest.get("n_non_orthogonal_tensions", 0))
@@ -106,8 +108,6 @@ def compute_maturity_level(
         and auto_stripped_count == 0
         and journal_surface_pass
     ):
-        if consecutive_aaa_count >= 2:
-            return 6
         return 5
     return 4
 

@@ -54,6 +54,7 @@ from typing import Any, Optional
 from agent.topic_maturity import format_maturity_label
 
 REPO = Path(__file__).resolve().parent.parent
+CERTIFICATION_GATE_VERSION = "l6-reproducibility-v1"
 
 # Old-defect scan patterns: known reviewer-detected misreads from
 # prior runs that must NOT recur.
@@ -125,6 +126,9 @@ class CertificationVerdict:
     word_count: int = 0
     cost_usd: float = 0.0
     model_stack: dict[str, str] = field(default_factory=dict)
+    topic: str | None = None
+    journal_surface_pass: bool = True
+    certification_gate_version: str = CERTIFICATION_GATE_VERSION
 
     @property
     def aaa_certified(self) -> bool:
@@ -146,6 +150,11 @@ class CertificationVerdict:
             and self.auto_stripped_patches == 0
             and self.flagged_patches == 0
         )
+
+    @property
+    def l6_eligible(self) -> bool:
+        """Topic-level L6 candidate: clean L5 plus journal surface pass."""
+        return self.l5_certified and self.journal_surface_pass
 
 
 def _read_json(path: Path) -> Optional[dict]:
@@ -301,6 +310,12 @@ def certify_run(paper_md_path: Path) -> CertificationVerdict:
             "reviewer": "Grok-4.3-Reasoning",
             "extractor": "MiMo-VL-7B-RL-2508",
         }
+    topic = manifest.get("topic") or verdict_doc.get("topic")
+    gate_version = (
+        verdict_doc.get("certification_gate_version")
+        or manifest.get("certification_gate_version")
+        or CERTIFICATION_GATE_VERSION
+    )
 
     return CertificationVerdict(
         run_id=run_dir.name,
@@ -329,43 +344,65 @@ def certify_run(paper_md_path: Path) -> CertificationVerdict:
         word_count=word_count,
         cost_usd=cost_usd,
         model_stack=model_stack,
+        topic=str(topic) if topic else None,
+        journal_surface_pass=bool(
+            verdict_doc.get(
+                "journal_surface_pass",
+                verdict_doc.get("journal_ready", True),
+            )
+        ),
+        certification_gate_version=str(gate_version),
     )
 
 
 def certify_consecutive(
     paper_md_paths: list[Path],
 ) -> dict[str, Any]:
-    """Researka Certified A2A-AAA gate: requires ≥2 consecutive AAA
-    runs (single-run certified). Returns a dict with the per-run
-    verdicts + the overall consecutive verdict."""
-    if len(paper_md_paths) < 2:
-        return {
-            "certified": False,
-            "n_runs": len(paper_md_paths),
-            "reason": (
-                f"need ≥2 consecutive AAA runs; only "
-                f"{len(paper_md_paths)} provided"
-            ),
-            "runs": [],
-        }
+    """Topic-level L6 gate over the latest chronological adjacent pair."""
     per_run = [certify_run(p) for p in paper_md_paths]
-    all_pass = all(r.aaa_certified for r in per_run)
-    all_l5 = all(r.l5_certified for r in per_run)
-    maturity_level = 6 if all_l5 else 5 if all_pass else 0
+    blockers = _l6_blockers(per_run)
+    if len(per_run) < 2:
+        return _consecutive_result(per_run, None, blockers)
+    sorted_runs = sorted(
+        zip(paper_md_paths, per_run), key=lambda x: _run_sort_key(x[0])
+    )
+    selected = [r for _, r in sorted_runs[-2:]]
+    blockers.extend(_pair_blockers(selected))
+    return _consecutive_result(per_run, selected, blockers)
+
+
+def _consecutive_result(
+    per_run: list[CertificationVerdict],
+    selected_pair: list[CertificationVerdict] | None,
+    blockers: list[str],
+) -> dict[str, Any]:
+    pair = selected_pair or []
+    structural_blocked = any(
+        b.startswith(("need >=2", "mixed topics", "mixed certification"))
+        for b in blockers
+    )
+    all_pass = (
+        bool(pair) and not structural_blocked
+        and all(r.aaa_certified for r in pair)
+    )
+    l6_ready = bool(pair) and not blockers and all(r.l6_eligible for r in pair)
+    maturity_level = 6 if l6_ready else 5 if all_pass else 0
     failures = [
-        {
-            "run_id": r.run_id,
-            "reason": _failure_reasons(r),
-        }
-        for r in per_run if not r.aaa_certified
+        {"run_id": r.run_id, "reason": _failure_reasons(r)}
+        for r in pair if not r.aaa_certified
     ]
+    gate_version = _common_gate_version(pair or per_run)
     return {
         "certified": all_pass,
         "n_runs": len(per_run),
+        "reason": blockers[0] if blockers else "",
         "n_aaa_certified": sum(r.aaa_certified for r in per_run),
         "n_l5_certified": sum(r.l5_certified for r in per_run),
         "all_aaa_consecutive": all_pass,
-        "l6_reproducibly_journal_ready": all_l5,
+        "l6_reproducibly_journal_ready": l6_ready,
+        "selected_pair": [r.run_id for r in pair],
+        "l6_blockers": blockers,
+        "certification_gate_version": gate_version,
         "maturity_level": maturity_level,
         "maturity_label": format_maturity_label(maturity_level),
         "git_sha": _git_head_sha(),
@@ -375,6 +412,63 @@ def certify_consecutive(
         "failures": failures,
         "runs": [asdict(r) for r in per_run],
     }
+
+
+def _l6_blockers(runs: list[CertificationVerdict]) -> list[str]:
+    blockers: list[str] = []
+    if len(runs) < 2:
+        blockers.append(f"need >=2 runs; only {len(runs)} provided")
+        return blockers
+    topics = {r.topic for r in runs if r.topic}
+    if len(topics) > 1:
+        blockers.append("mixed topics: " + ", ".join(sorted(topics)))
+    gate_versions = {r.certification_gate_version for r in runs}
+    if len(gate_versions) > 1:
+        blockers.append(
+            "mixed certification gates: "
+            + ", ".join(sorted(gate_versions))
+        )
+    return blockers
+
+
+def _pair_blockers(pair: list[CertificationVerdict]) -> list[str]:
+    blockers: list[str] = []
+    for r in pair:
+        prefix = f"{r.run_id}: "
+        if not r.aaa_certified:
+            blockers.append(prefix + "; ".join(_failure_reasons(r)))
+        if r.grok_unresolved_p1:
+            blockers.append(prefix + "unresolved Grok P1")
+        if r.auto_stripped_patches:
+            blockers.append(prefix + "auto-stripped patches")
+        if not r.journal_surface_pass:
+            blockers.append(prefix + "journal surface failed")
+    return blockers
+
+
+def _common_gate_version(runs: list[CertificationVerdict]) -> str:
+    versions = {r.certification_gate_version for r in runs}
+    if len(versions) == 1:
+        return next(iter(versions))
+    return CERTIFICATION_GATE_VERSION
+
+
+def _run_sort_key(path: Path) -> str:
+    run_dir = path.parent
+    for candidate in (run_dir / "manifest.json", path.with_suffix(
+        ".final_verdict.json"
+    )):
+        doc = _read_json(candidate) or {}
+        for key in ("generated_at", "timestamp_iso", "timestamp"):
+            if doc.get(key):
+                return str(doc[key])
+    import re as _re
+    match = _re.search(
+        r"20\d\d-\d\d-\d\dT\d\d[-:]\d\d[-:]\d\dZ?", run_dir.name
+    )
+    if match:
+        return match.group(0).replace("-", ":", 2)
+    return run_dir.name
 
 
 def _failure_reasons(v: CertificationVerdict) -> list[str]:

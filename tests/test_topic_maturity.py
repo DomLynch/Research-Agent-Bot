@@ -80,14 +80,14 @@ def test_l5_when_aaa_clean_no_surgery():
     ) == 5
 
 
-def test_l6_when_consecutive_clean_l5_runs():
-    """Consecutive clean L5 runs promote the topic to L6."""
+def test_single_run_maturity_caps_at_l5():
+    """L6 is topic-level reproducibility, not a single-run verdict."""
     m = {"n_receipts": 15, "n_high_confidence_claims_total": 60,
          "n_non_orthogonal_tensions": 12}
     assert compute_maturity_level(
         m, verdict="AAA", grok_unresolved_p1=0, auto_stripped_count=0,
         consecutive_aaa_count=2,
-    ) == 6
+    ) == 5
 
 
 def test_l4_when_journal_surface_gate_fails():
