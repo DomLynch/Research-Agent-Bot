@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_stream_trial_biomarker",
+  "doi": "",
+  "extracted_at": "2026-05-08T02:21:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_stream_trial_biomarker-u-239",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 239,
+      "sentence": "While they were found to be effective for primary and secondary prevention of cardiovascular disease (CVD) in middle-aged subjects, their benefits for primary prevention in older adults (aged \u226570 years) without CVD are uncertain, particularly for those with multimorbidity.",
+      "context_window": "heir benefits for primary prevention in older adults (aged \u226570 years) without CVD are uncertain, particularly for those with mul",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_stream_trial_biomarker-u-639",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 639,
+      "sentence": "To address these questions, the investigators conduct a RCT in 500 multimorbid adults \u226570 years old taking statins for primary prevention who will be randomized to statin continuation vs. statin discontinuation, and measure baseline biomarkers to determine if the risk of a composite outcome of CV events and all-cause mortality after statin discontinuation differs among those with baseline levels of previously validated blood biomarkers associated with increased risk of CV outcomes.",
+      "context_window": "the investigators conduct a RCT in 500 multimorbid adults \u226570 years old taking statins for primary prevention who will be rando",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    }
+  ]
+}

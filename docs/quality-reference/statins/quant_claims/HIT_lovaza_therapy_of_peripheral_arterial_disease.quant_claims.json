@@ -1,0 +1,84 @@
+{
+  "paper_id": "HIT_lovaza_therapy_of_peripheral_arterial_disease",
+  "doi": "",
+  "extracted_at": "2026-05-08T02:21:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_lovaza_therapy_of_peripheral_arterial_disease-u-83",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 83,
+      "sentence": "Sixty patients with mild-to-moderate PAD (ABI 0.4-0.9) and hypertriglyceridemia (\\>200 mg/dl) already treated with statins will be imaged at baseline and randomized to Lovaza and placebo for 12 months.",
+      "context_window": "d-to-moderate PAD (ABI 0.4-0.9) and hypertriglyceridemia (\\>200 mg/dl) already treated with statins will be imaged at baseline",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_lovaza_therapy_of_peripheral_arterial_disease-u-191",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 191,
+      "sentence": "Sixty patients with mild-to-moderate PAD (ABI 0.4-0.9) and hypertriglyceridemia (\\>200 mg/dl) already treated with statins will be imaged at baseline and randomized to Lovaza and placebo for 12 months.",
+      "context_window": "imaged at baseline and randomized to Lovaza and placebo for 12 months. MR imaging will be repeated at the end of the 12-month per",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_lovaza_therapy_of_peripheral_arterial_disease-pct-437",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 437,
+      "sentence": "We hypothesize that treatment of hypertriglyceridemia in patients with PAD with Lovaza will reduce atherosclerotic plaque volume in the superficial femoral artery (SFA) by 2% over 1 year compared to placebo.",
+      "context_window": "ic plaque volume in the superficial femoral artery (SFA) by 2% over 1 year compared to placebo. Secondary aims will be to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_lovaza_therapy_of_peripheral_arterial_disease-u-445",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 445,
+      "sentence": "We hypothesize that treatment of hypertriglyceridemia in patients with PAD with Lovaza will reduce atherosclerotic plaque volume in the superficial femoral artery (SFA) by 2% over 1 year compared to placebo.",
+      "context_window": "e volume in the superficial femoral artery (SFA) by 2% over 1 year compared to placebo. Secondary aims will be to show improve",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

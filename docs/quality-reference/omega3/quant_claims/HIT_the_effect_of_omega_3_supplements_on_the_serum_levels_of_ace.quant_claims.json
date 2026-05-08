@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_the_effect_of_omega_3_supplements_on_the_serum_levels_of_ace",
+  "doi": "",
+  "extracted_at": "2026-05-08T02:52:04+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_the_effect_of_omega_3_supplements_on_the_serum_levels_of_ace-pct-1644",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1644,
+      "sentence": "A meta-analysis comprising 15,806 patients, showed that omega-3 fatty acids associated with a 30% reduction in fatal myocardial infarction and sudden death, in addition to a 20% reduction in overall mortality \\[11\\].",
+      "context_window": "patients, showed that omega-3 fatty acids associated with a 30% reduction in fatal myocardial infarction and sudden death,",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_effect_of_omega_3_supplements_on_the_serum_levels_of_ace-pct-1724",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1724,
+      "sentence": "A meta-analysis comprising 15,806 patients, showed that omega-3 fatty acids associated with a 30% reduction in fatal myocardial infarction and sudden death, in addition to a 20% reduction in overall mortality \\[11\\].",
+      "context_window": "al myocardial infarction and sudden death, in addition to a 20% reduction in overall mortality \\[11\\]. To the best of our k",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

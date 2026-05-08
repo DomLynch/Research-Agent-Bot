@@ -1,0 +1,986 @@
+{
+  "paper_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende",
+  "doi": "10.1177/2054358119879896",
+  "extracted_at": "2026-05-08T02:21:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 29,
+    "percentage": 15,
+    "p_value": 2,
+    "sample_size": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-1185",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1185,
+      "sentence": "Participants were followed up with alternating face-to-face visits and telephone calls on a 6-monthly basis until 5 years following their final SHARP Study visit.",
+      "context_window": "-face visits and telephone calls on a 6-monthly basis until 5 years following their final SHARP Study visit. In addition, there",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-1509",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 years",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1509,
+      "sentence": "The SHARP-Extended Review (SHARP-ER) cohort comprised 1136 SHARP participants with a median of 4.6 years of follow-up.",
+      "context_window": ") cohort comprised 1136 SHARP participants with a median of 4.6 years of follow-up. Compared with all SHARP participants who orig",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-1769",
+      "claim_type": "percentage",
+      "raw_text": "61.5%",
+      "numeric_values": [
+        61.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1769,
+      "sentence": "Compared with all SHARP participants who originally participated in the Australian, New Zealand, and Malaysian regions, the SHARP-ER participants were younger (57.2 [48.3-66.4] vs 60.5 [50.3-70.7] years) with a lower proportion of men (61.5% vs 62.8%).",
+      "context_window": "vs 60.5 [50.3-70.7] years) with a lower proportion of men (61.5% vs 62.8%). There were a lower proportion of participants wi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-1778",
+      "claim_type": "percentage",
+      "raw_text": "62.8%",
+      "numeric_values": [
+        62.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1778,
+      "sentence": "Compared with all SHARP participants who originally participated in the Australian, New Zealand, and Malaysian regions, the SHARP-ER participants were younger (57.2 [48.3-66.4] vs 60.5 [50.3-70.7] years) with a lower proportion of men (61.5% vs 62.8%).",
+      "context_window": "[50.3-70.7] years) with a lower proportion of men (61.5% vs 62.8%). There were a lower proportion of participants with hypert",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-1851",
+      "claim_type": "percentage",
+      "raw_text": "83.7%",
+      "numeric_values": [
+        83.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1851,
+      "sentence": "There were a lower proportion of participants with hypertension (83.7% vs 85.0%) and diabetes (20.0% vs 23.5%).",
+      "context_window": "were a lower proportion of participants with hypertension (83.7% vs 85.0%) and diabetes (20.0% vs 23.5%). As a long-term fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-1860",
+      "claim_type": "percentage",
+      "raw_text": "85.0%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1860,
+      "sentence": "There were a lower proportion of participants with hypertension (83.7% vs 85.0%) and diabetes (20.0% vs 23.5%).",
+      "context_window": "ower proportion of participants with hypertension (83.7% vs 85.0%) and diabetes (20.0% vs 23.5%). As a long-term follow-up s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-1881",
+      "claim_type": "percentage",
+      "raw_text": "20.0%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1881,
+      "sentence": "There were a lower proportion of participants with hypertension (83.7% vs 85.0%) and diabetes (20.0% vs 23.5%).",
+      "context_window": "rticipants with hypertension (83.7% vs 85.0%) and diabetes (20.0% vs 23.5%). As a long-term follow-up study, the surviving c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-1890",
+      "claim_type": "percentage",
+      "raw_text": "23.5%",
+      "numeric_values": [
+        23.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1890,
+      "sentence": "There were a lower proportion of participants with hypertension (83.7% vs 85.0%) and diabetes (20.0% vs 23.5%).",
+      "context_window": "s with hypertension (83.7% vs 85.0%) and diabetes (20.0% vs 23.5%). As a long-term follow-up study, the surviving cohort of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-2233",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 2233,
+      "sentence": "The SHARP-ER study will contribute important evidence on the long-term outcomes of cholesterol-lowering therapy in patients with advanced CKD with a total of 10 years of follow-up.",
+      "context_window": "ering therapy in patients with advanced CKD with a total of 10 years of follow-up. Novel analyses of the socioeconomic impact of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-1137",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 1137,
+      "sentence": "In SHARP, compared with placebo, combination therapy with simvastatin 20 mg and ezetimibe 10 mg yielded an average LDL cholesterol reduction of 0.85 mmol/L (SE = 0.02) over a median follow-up of 4.9 years, producing a 17% proportional reduction in the key prespecified outcome of major atherosclerotic events (MAE) (nonfatal myocardial infarction or coronary death, nonhemorrhagic stroke, or any arterial revascularization procedure) (rate ratio [RR] = 0.83; 95% confidence interval [CI] = 0.74-0.94; P = .0021).",
+      "context_window": "compared with placebo, combination therapy with simvastatin 20 mg and ezetimibe 10 mg yielded an average LDL cholesterol redu",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-1157",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 1157,
+      "sentence": "In SHARP, compared with placebo, combination therapy with simvastatin 20 mg and ezetimibe 10 mg yielded an average LDL cholesterol reduction of 0.85 mmol/L (SE = 0.02) over a median follow-up of 4.9 years, producing a 17% proportional reduction in the key prespecified outcome of major atherosclerotic events (MAE) (nonfatal myocardial infarction or coronary death, nonhemorrhagic stroke, or any arterial revascularization procedure) (rate ratio [RR] = 0.83; 95% confidence interval [CI] = 0.74-0.94; P = .0021).",
+      "context_window": "o, combination therapy with simvastatin 20 mg and ezetimibe 10 mg yielded an average LDL cholesterol reduction of 0.85 mmol/L",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-1211",
+      "claim_type": "unit_value",
+      "raw_text": "0.85 mmol",
+      "numeric_values": [
+        0.85
+      ],
+      "units": "mmol",
+      "source_section": "introduction",
+      "source_offset": 1211,
+      "sentence": "In SHARP, compared with placebo, combination therapy with simvastatin 20 mg and ezetimibe 10 mg yielded an average LDL cholesterol reduction of 0.85 mmol/L (SE = 0.02) over a median follow-up of 4.9 years, producing a 17% proportional reduction in the key prespecified outcome of major atherosclerotic events (MAE) (nonfatal myocardial infarction or coronary death, nonhemorrhagic stroke, or any arterial revascularization procedure) (rate ratio [RR] = 0.83; 95% confidence interval [CI] = 0.74-0.94; P = .0021).",
+      "context_window": "imibe 10 mg yielded an average LDL cholesterol reduction of 0.85 mmol/L (SE = 0.02) over a median follow-up of 4.9 years, produci",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-1262",
+      "claim_type": "unit_value",
+      "raw_text": "4.9 years",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1262,
+      "sentence": "In SHARP, compared with placebo, combination therapy with simvastatin 20 mg and ezetimibe 10 mg yielded an average LDL cholesterol reduction of 0.85 mmol/L (SE = 0.02) over a median follow-up of 4.9 years, producing a 17% proportional reduction in the key prespecified outcome of major atherosclerotic events (MAE) (nonfatal myocardial infarction or coronary death, nonhemorrhagic stroke, or any arterial revascularization procedure) (rate ratio [RR] = 0.83; 95% confidence interval [CI] = 0.74-0.94; P = .0021).",
+      "context_window": "ction of 0.85 mmol/L (SE = 0.02) over a median follow-up of 4.9 years, producing a 17% proportional reduction in the key prespeci",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-1285",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1285,
+      "sentence": "In SHARP, compared with placebo, combination therapy with simvastatin 20 mg and ezetimibe 10 mg yielded an average LDL cholesterol reduction of 0.85 mmol/L (SE = 0.02) over a median follow-up of 4.9 years, producing a 17% proportional reduction in the key prespecified outcome of major atherosclerotic events (MAE) (nonfatal myocardial infarction or coronary death, nonhemorrhagic stroke, or any arterial revascularization procedure) (rate ratio [RR] = 0.83; 95% confidence interval [CI] = 0.74-0.94; P = .0021).",
+      "context_window": "E = 0.02) over a median follow-up of 4.9 years, producing a 17% proportional reduction in the key prespecified outcome of m",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-1526",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1526,
+      "sentence": "In SHARP, compared with placebo, combination therapy with simvastatin 20 mg and ezetimibe 10 mg yielded an average LDL cholesterol reduction of 0.85 mmol/L (SE = 0.02) over a median follow-up of 4.9 years, producing a 17% proportional reduction in the key prespecified outcome of major atherosclerotic events (MAE) (nonfatal myocardial infarction or coronary death, nonhemorrhagic stroke, or any arterial revascularization procedure) (rate ratio [RR] = 0.83; 95% confidence interval [CI] = 0.74-0.94; P = .0021).",
+      "context_window": "erial revascularization procedure) (rate ratio [RR] = 0.83; 95% confidence interval [CI] = 0.74-0.94; P = .0021). 9 Long-t",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-p-1568",
+      "claim_type": "p_value",
+      "raw_text": "P = .0021",
+      "numeric_values": [
+        0.0021
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 1568,
+      "sentence": "In SHARP, compared with placebo, combination therapy with simvastatin 20 mg and ezetimibe 10 mg yielded an average LDL cholesterol reduction of 0.85 mmol/L (SE = 0.02) over a median follow-up of 4.9 years, producing a 17% proportional reduction in the key prespecified outcome of major atherosclerotic events (MAE) (nonfatal myocardial infarction or coronary death, nonhemorrhagic stroke, or any arterial revascularization procedure) (rate ratio [RR] = 0.83; 95% confidence interval [CI] = 0.74-0.94; P = .0021).",
+      "context_window": "atio [RR] = 0.83; 95% confidence interval [CI] = 0.74-0.94; P = .0021). 9 Long-term follow-up of efficacy and safety in randomiz",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-2312",
+      "claim_type": "unit_value",
+      "raw_text": "4.9 years",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2312,
+      "sentence": "To this end, the SHARP Post-Trial Follow-Up (PTFU) study is being undertaken in many of the original countries that participated in SHARP and will determine the long-term effects of 4.9 years of median exposure to simvastatin plus ezetimibe or matching placebo among surviving SHARP participants in relation to major atherosclerotic and major vascular events (MVE); progression to end-stage renal disease (defined as the need for long-term dialysis or renal transplantation) among patients not on maintenance dialysis at randomization to simvastatin plus ezetimibe versus placebo in SHARP; and long-term safety, through assessment of site-specific incident cancers (other than nonmelanoma skin cancer) and mortality by cause.",
+      "context_window": "ipated in SHARP and will determine the long-term effects of 4.9 years of median exposure to simvastatin plus ezetimibe or matchin",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-339",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 339,
+      "sentence": "9 , 17 In brief, 9270 participants aged 40 years or older with CKD (defined as at least 1 measurement of serum creatinine of at least 150 \u03bcmol/L in men or 130 \u03bcmol/L in women) with no known history of myocardial infarction and coronary revascularization were enrolled between 2003 and 2006 in 18 countries.",
+      "context_window": "blished previously. 9 , 17 In brief, 9270 participants aged 40 years or older with CKD (defined as at least 1 measurement of ser",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-433",
+      "claim_type": "unit_value",
+      "raw_text": "150 \u03bcmol",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "\u03bcmol",
+      "source_section": "methods",
+      "source_offset": 433,
+      "sentence": "9 , 17 In brief, 9270 participants aged 40 years or older with CKD (defined as at least 1 measurement of serum creatinine of at least 150 \u03bcmol/L in men or 130 \u03bcmol/L in women) with no known history of myocardial infarction and coronary revascularization were enrolled between 2003 and 2006 in 18 countries.",
+      "context_window": "d as at least 1 measurement of serum creatinine of at least 150 \u03bcmol/L in men or 130 \u03bcmol/L in women) with no known history of m",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-454",
+      "claim_type": "unit_value",
+      "raw_text": "130 \u03bcmol",
+      "numeric_values": [
+        130.0
+      ],
+      "units": "\u03bcmol",
+      "source_section": "methods",
+      "source_offset": 454,
+      "sentence": "9 , 17 In brief, 9270 participants aged 40 years or older with CKD (defined as at least 1 measurement of serum creatinine of at least 150 \u03bcmol/L in men or 130 \u03bcmol/L in women) with no known history of myocardial infarction and coronary revascularization were enrolled between 2003 and 2006 in 18 countries.",
+      "context_window": "rement of serum creatinine of at least 150 \u03bcmol/L in men or 130 \u03bcmol/L in women) with no known history of myocardial infarction",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-737",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 737,
+      "sentence": "Participants were randomized in the ratio of 4:4:1 to a combination of simvastatin and ezetimibe, matching placebo, or simvastatin 20 mg alone ( Figure A1 ).",
+      "context_window": "simvastatin and ezetimibe, matching placebo, or simvastatin 20 mg alone ( Figure A1 ). Those allocated to simvastatin alone w",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-826",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 826,
+      "sentence": "Those allocated to simvastatin alone were re-randomized after 1 year to one of the other 2 comparison arms.",
+      "context_window": "ose allocated to simvastatin alone were re-randomized after 1 year to one of the other 2 comparison arms. After initial random",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-957",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 957,
+      "sentence": "After initial randomization, participants were followed up in study clinics at 2 and 6 months, and then every 6 months for at least 4 years.",
+      "context_window": "on, participants were followed up in study clinics at 2 and 6 months, and then every 6 months for at least 4 years. At each of t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-982",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 982,
+      "sentence": "After initial randomization, participants were followed up in study clinics at 2 and 6 months, and then every 6 months for at least 4 years.",
+      "context_window": "lowed up in study clinics at 2 and 6 months, and then every 6 months for at least 4 years. At each of these visits, information",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-1004",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1004,
+      "sentence": "After initial randomization, participants were followed up in study clinics at 2 and 6 months, and then every 6 months for at least 4 years.",
+      "context_window": "ics at 2 and 6 months, and then every 6 months for at least 4 years. At each of these visits, information was recorded on all s",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-1333",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1333,
+      "sentence": "Although SHARP participants were given the option to discover their treatment after the completion of the original SHARP study, fewer than 3% of participants exercised this option in the global SHARP cohort.",
+      "context_window": "fter the completion of the original SHARP study, fewer than 3% of participants exercised this option in the global SHARP c",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-1613",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1613,
+      "sentence": "It will assess the primary and secondary outcomes of SHARP over an additional 5 years with participating centers using a number of methods, including post-trial questionnaires and linkage to routinely collected national data sets (eg, hospital admission data, cancer and mortality data).",
+      "context_window": "primary and secondary outcomes of SHARP over an additional 5 years with participating centers using a number of methods, inclu",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-3915",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3915,
+      "sentence": "The vital status of all SHARP study participants at 18 to 24 months after their final study visit was determined through medical records, direct contact with medical staff (renal physicians and general practitioners), and death registries.",
+      "context_window": "The vital status of all SHARP study participants at 18 to 24 months after their final study visit was determined through medica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-4175",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4175,
+      "sentence": "Consenting participants were followed up with 3 face-to-face visits at 18 to 24 months, 3.5 years, and 5 years, followed by the final SHARP Study visit.",
+      "context_window": "ipants were followed up with 3 face-to-face visits at 18 to 24 months, 3.5 years, and 5 years, followed by the final SHARP Study",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-4186",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 years",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4186,
+      "sentence": "Consenting participants were followed up with 3 face-to-face visits at 18 to 24 months, 3.5 years, and 5 years, followed by the final SHARP Study visit.",
+      "context_window": "followed up with 3 face-to-face visits at 18 to 24 months, 3.5 years, and 5 years, followed by the final SHARP Study visit. In a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-4201",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4201,
+      "sentence": "Consenting participants were followed up with 3 face-to-face visits at 18 to 24 months, 3.5 years, and 5 years, followed by the final SHARP Study visit.",
+      "context_window": "th 3 face-to-face visits at 18 to 24 months, 3.5 years, and 5 years, followed by the final SHARP Study visit. In addition, ther",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-5036",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5036,
+      "sentence": "This was further verified using discharge summaries from the treating hospitals;\n\nBiochemistry: serum and urine specimens obtained as part of routine care within 3 months either side of the date of study visit to characterize progression of kidney disease;\n\nHematology: blood specimens obtained as part of routine care within 3 months either side of the date of face-to-face study visit;\n\nQuestionnaire: quality of life, health services usage, and socioeconomic impact of CKD administered using study questionnaires at visits 1 and 3.",
+      "context_window": "and urine specimens obtained as part of routine care within 3 months either side of the date of study visit to characterize prog",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-5200",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5200,
+      "sentence": "This was further verified using discharge summaries from the treating hospitals;\n\nBiochemistry: serum and urine specimens obtained as part of routine care within 3 months either side of the date of study visit to characterize progression of kidney disease;\n\nHematology: blood specimens obtained as part of routine care within 3 months either side of the date of face-to-face study visit;\n\nQuestionnaire: quality of life, health services usage, and socioeconomic impact of CKD administered using study questionnaires at visits 1 and 3.",
+      "context_window": "gy: blood specimens obtained as part of routine care within 3 months either side of the date of face-to-face study visit; Quest",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-5803",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5803,
+      "sentence": "20 The HR-QoL was measured through telephone interview by a central interviewer (blinded to SHARP study allocation) at the initial visit, followed by assessments at 3.5 and 5 years of follow-up.",
+      "context_window": "n) at the initial visit, followed by assessments at 3.5 and 5 years of follow-up. These interviews used the EuroQOL 5 dimension",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-6435",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 6435,
+      "sentence": "This included an assessment of (1) out-of-pocket expenditure on illness not covered by insurance, such as expenditure on health care, medications, investigations, and paid care; (2) economic hardship, defined as an inability to make necessary household payments, such as housing, energy, food, and health care costs, or requiring assistance to meet such costs 21 ; (3) household income in the past 12 months, measured against the median income levels obtained from National Statistical Bureau.",
+      "context_window": "ce to meet such costs 21 ; (3) household income in the past 12 months, measured against the median income levels obtained from Na",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-6903",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6903,
+      "sentence": "Where available, data linkage using registries was used as secondary ascertainment for mortality (using national death registries and Australian Institute of Health and Welfare\u2019s National Death Index 22 ) and dialysis commencement (using renal replacement therapy [RRT] registries: the Australian and New Zealand Dialysis and Transplant Registry [ANZDATA; which captures 99% of all participants commencing RRT in Australia and New Zealand] 23 and the Malaysian National Renal Registry).",
+      "context_window": "d Dialysis and Transplant Registry [ANZDATA; which captures 99% of all participants commencing RRT in Australia and New Zea",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-8592",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8592,
+      "sentence": "This included a detailed appraisal of (1) the incidence of illness-related catastrophic expenditure, assessed as out-of-pocket illness expenditure exceeding 30% of annual household income over a previous 12-month period 26 ; (2) the incidence of illness-related poverty, assessed by a change in reported household income that sees a household transition from above the prevailing national poverty line (country specific) at baseline to below, over a previous 12-month period; and (3) the incidence of economic hardship, defined as perceived economic difficulties that arise as a result of chronic illness, which alters the way people affected by illness live and manage their conditions.",
+      "context_window": "re, assessed as out-of-pocket illness expenditure exceeding 30% of annual household income over a previous 12-month period",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-9878",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9878,
+      "sentence": "Study outcomes, including economic outcomes, will be assessed according to CKD category tested by linear regression analysis and logistic, Cox, or Poisson regression analysis (to estimate odds ratios, hazard ratios, and rates, respectively, with their corresponding 95% CIs), as appropriate.",
+      "context_window": "d ratios, and rates, respectively, with their corresponding 95% CIs), as appropriate. Multivariable models will be construc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-p-10865",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10865,
+      "sentence": "A 2-sided P < .05 will be considered statistically significant.",
+      "context_window": "release 13; StataCorp, College Station, TX, USA). A 2-sided P < .05 will be considered statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-219",
+      "claim_type": "percentage",
+      "raw_text": "89.4%",
+      "numeric_values": [
+        89.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 219,
+      "sentence": "Within these sites there were a total of 1271 participants eligible for inclusion, of whom 1136 (89.4%) were included in the final SHARP-ER cohort.",
+      "context_window": "of 1271 participants eligible for inclusion, of whom 1136 (89.4%) were included in the final SHARP-ER cohort. A proportion w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-613",
+      "claim_type": "percentage",
+      "raw_text": "20.0%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 613,
+      "sentence": "Compared with the original SHARP participants in Australia, New Zealand, and Malaysia at the beginning of SHARP, SHARP-ER participants were younger (median age = 57.2 [IQR = 48.3-66.4] vs 60.5 [50.3-70.7]) and had a lower proportion with comorbid diabetes (20.0% vs 23.5%).",
+      "context_window": "3-70.7]) and had a lower proportion with comorbid diabetes (20.0% vs 23.5%). All other baseline characteristics including blo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-pct-622",
+      "claim_type": "percentage",
+      "raw_text": "23.5%",
+      "numeric_values": [
+        23.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 622,
+      "sentence": "Compared with the original SHARP participants in Australia, New Zealand, and Malaysia at the beginning of SHARP, SHARP-ER participants were younger (median age = 57.2 [IQR = 48.3-66.4] vs 60.5 [50.3-70.7]) and had a lower proportion with comorbid diabetes (20.0% vs 23.5%).",
+      "context_window": "and had a lower proportion with comorbid diabetes (20.0% vs 23.5%). All other baseline characteristics including blood pressu",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-n-1074",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1074,
+      "sentence": "SHARP = Study of Heart and Renal Protection; SHARP-ER = Study of Heart and Renal Protection-Extended Review.\n\na Other: noncompliance to study visits n = 8; physician discretion n = 7.\n\n*MAE = major atherosclerotic events; MVE = major vascular events.",
+      "context_window": "on-Extended Review. a Other: noncompliance to study visits n = 8; physician discretion n = 7. *MAE = major atherosclerotic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-n-1102",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1102,
+      "sentence": "SHARP = Study of Heart and Renal Protection; SHARP-ER = Study of Heart and Renal Protection-Extended Review.\n\na Other: noncompliance to study visits n = 8; physician discretion n = 7.\n\n*MAE = major atherosclerotic events; MVE = major vascular events.",
+      "context_window": ": noncompliance to study visits n = 8; physician discretion n = 7. *MAE = major atherosclerotic events; MVE = major vascular",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-n-1566",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1136",
+      "numeric_values": [
+        1136.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1566,
+      "sentence": "Available for all participants (n = 1136/2029).",
+      "context_window": "lomerular filtration rate. Available for all participants (n = 1136/2029). Systolic blood pressure was available for n = 1134/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-n-1625",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1134",
+      "numeric_values": [
+        1134.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1625,
+      "sentence": "Systolic blood pressure was available for n = 1134/2026 participants; diastolic blood pressure was available for n = 1133/2025.\n\neGFR calculated using the modified renal diet (MDRD) equation. eGFR was calculated for all participants not on renal replacement therapy with available data (n= 750/1303).",
+      "context_window": "(n = 1136/2029). Systolic blood pressure was available for n = 1134/2026 participants; diastolic blood pressure was available f",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-n-1696",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1133",
+      "numeric_values": [
+        1133.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1696,
+      "sentence": "Systolic blood pressure was available for n = 1134/2026 participants; diastolic blood pressure was available for n = 1133/2025.\n\neGFR calculated using the modified renal diet (MDRD) equation. eGFR was calculated for all participants not on renal replacement therapy with available data (n= 750/1303).",
+      "context_window": "26 participants; diastolic blood pressure was available for n = 1133/2025. eGFR calculated using the modified renal diet (MDRD)",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-n-1870",
+      "claim_type": "sample_size",
+      "raw_text": "n= 750",
+      "numeric_values": [
+        750.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1870,
+      "sentence": "Systolic blood pressure was available for n = 1134/2026 participants; diastolic blood pressure was available for n = 1133/2025.\n\neGFR calculated using the modified renal diet (MDRD) equation. eGFR was calculated for all participants not on renal replacement therapy with available data (n= 750/1303).",
+      "context_window": "pants not on renal replacement therapy with available data (n= 750/1303). The albumin-to-creatinine ratio was measured in mil",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-n-2001",
+      "claim_type": "sample_size",
+      "raw_text": "n = 754",
+      "numeric_values": [
+        754.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2001,
+      "sentence": "The albumin-to-creatinine ratio was measured in milligrams of albumin and grams of creatinine; it was available for n = 754/1335.",
+      "context_window": "ms of albumin and grams of creatinine; it was available for n = 754/1335. Lipid values were available for n = 757/1941.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-n-2048",
+      "claim_type": "sample_size",
+      "raw_text": "n = 757",
+      "numeric_values": [
+        757.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2048,
+      "sentence": "Lipid values were available for n = 757/1941.",
+      "context_window": "vailable for n = 754/1335. Lipid values were available for n = 757/1941.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-240",
+      "claim_type": "unit_value",
+      "raw_text": "4.9 years",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 240,
+      "sentence": "In SHARP, allocation to combination therapy with simvastatin plus ezetimibe over a median of 4.9 years reduced the incidence of MAE without an increase in any of the prespecified safety outcomes.",
+      "context_window": "on therapy with simvastatin plus ezetimibe over a median of 4.9 years reduced the incidence of MAE without an increase in any of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-1432",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1432,
+      "sentence": "The SHARP-ER study conducted in Australia, New Zealand, and Malaysia is part of this broader international initiative and followed surviving SHARP participants for a further 5 years with face-to-face visits and telephone contact at 6-monthly intervals with supplementary data linkage to administrative and health registries and benefit schemes.",
+      "context_window": "ive and followed surviving SHARP participants for a further 5 years with face-to-face visits and telephone contact at 6-monthly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-419",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 419,
+      "sentence": "Data for many of these outcomes will be available for a 10-year period (5 years of SHARP trial data and a further 5 years of follow-up with SHARP-ER), enabling analysis of recurrence of events and an unprecedented understanding of the burden of morbidity over time.",
+      "context_window": "y of these outcomes will be available for a 10-year period (5 years of SHARP trial data and a further 5 years of follow-up with",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6794650_protocol_for_the_study_of_heart_and_renal_protection_extende-u-461",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 461,
+      "sentence": "Data for many of these outcomes will be available for a 10-year period (5 years of SHARP trial data and a further 5 years of follow-up with SHARP-ER), enabling analysis of recurrence of events and an unprecedented understanding of the burden of morbidity over time.",
+      "context_window": "a 10-year period (5 years of SHARP trial data and a further 5 years of follow-up with SHARP-ER), enabling analysis of recurrenc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

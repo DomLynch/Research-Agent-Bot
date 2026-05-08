@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_personalised_hyperlipidaemia_therapies_guided_by_pharmacogen",
+  "doi": "",
+  "extracted_at": "2026-05-08T02:21:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_personalised_hyperlipidaemia_therapies_guided_by_pharmacogen-u-415",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 415,
+      "sentence": "The central hypotheses of this trial are (1) clinical pharmacists' pharmacogenomics-guided choice and titration of statins will lead to a more significant reduction in LDL-c; (2) lower incidence of myopathies with the use of statins for hyperlipidaemia management over 12 months compared to usual care by doctors alone.",
+      "context_window": "with the use of statins for hyperlipidaemia management over 12 months compared to usual care by doctors alone. Active follow-up a",
+      "claim_role": "background",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_personalised_hyperlipidaemia_therapies_guided_by_pharmacogen-u-586",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 586,
+      "sentence": "However, the participants will be followed up to 12 months to confirm the sustained LDL level attainment.",
+      "context_window": "ix months. However, the participants will be followed up to 12 months to confirm the sustained LDL level attainment.",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

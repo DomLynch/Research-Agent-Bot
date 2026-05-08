@@ -53,11 +53,21 @@ _DIRECTNESS_BONUS: dict[str, int] = {
 _CORE_CLINICAL_SIGNALS: tuple[str, ...] = (
     "randomized controlled trial", "randomised controlled trial",
     " rct ", "(rct)", "cohort study", "case-control study",
-    "meta-analysis", "systematic review",
+    "meta-analysis", "systematic review", "clinical trial",
+    " randomized ", " randomised ", "double-blind",
+    "placebo-controlled",
     "all-cause mortality", "primary prevention",
     "secondary prevention", "incident cancer",
     "incidence of", "real-world evidence", "trial emulation",
     "biobank", "registry-based",
+)
+
+_INTERVENTION_CONTEXT_SIGNALS: tuple[str, ...] = (
+    "assigned to", "randomized to", "randomised to", "received",
+    "receiving", "administered", "supplementation with",
+    "treatment with", "therapy with", "use of", "effect of",
+    "effects of", "trial of", "evaluated", "compared",
+    "versus", " vs ",
 )
 
 # "This is a mechanism paper" signals — kept for background only.
@@ -131,6 +141,32 @@ def _aliases_match(text: str, aliases: tuple[str, ...]) -> bool:
     return False
 
 
+def _intervention_alias_hits(text: str, aliases: tuple[str, ...]) -> tuple[str, ...]:
+    hits: list[str] = []
+    for alias in aliases:
+        a = alias.strip().lower()
+        if not a:
+            continue
+        variants = [a]
+        if len(a) >= 4 and a[-1].isalnum() and not a.endswith("s"):
+            variants.append(f"{a}s")
+        if a.endswith(" inhibitor"):
+            variants.append(a.removesuffix(" inhibitor") + " inhibition")
+        for variant in variants:
+            for match in re.finditer(
+                rf"(?<![a-z0-9]){re.escape(variant)}(?![a-z0-9])", text,
+            ):
+                lo = max(0, match.start() - 80)
+                hi = min(len(text), match.end() + 80)
+                context = text[lo:hi]
+                if any(signal in context for signal in _INTERVENTION_CONTEXT_SIGNALS):
+                    hits.append(a)
+                    break
+            if a in hits:
+                break
+    return tuple(dict.fromkeys(hits))
+
+
 def _signal_hits(text: str, signals: tuple[str, ...]) -> tuple[str, ...]:
     return tuple(s for s in signals if s in text)
 
@@ -168,6 +204,7 @@ def classify_paper(
     core_hits = _signal_hits(text, _CORE_CLINICAL_SIGNALS)
     mech_hits = _signal_hits(text, _MECHANISM_SIGNALS)
     exclusion_hits = _exclude_hits(text, exclude_terms)
+    intervention_hits = _intervention_alias_hits(text, topic_aliases)
 
     # Hard reject: irrelevant species/topic AND no topic alias hit
     if reject_hits and not on_topic:
@@ -190,6 +227,17 @@ def classify_paper(
             score=_CLASS_BASE_SCORE["off_thesis"],
             reason="No topic alias hit; excluded from extraction.",
             signals=mech_hits,
+        )
+
+    if not title_on_topic and intervention_hits and core_hits:
+        return CorpusClassification(
+            paper_id=paper_id, classification="adjacent_clinical",
+            score=_CLASS_BASE_SCORE["adjacent_clinical"],
+            reason=(
+                "Topic alias appears in intervention context outside "
+                "title; kept adjacent."
+            ),
+            signals=tuple(dict.fromkeys((*intervention_hits, *core_hits))),
         )
 
     if not title_on_topic:

@@ -1,0 +1,139 @@
+{
+  "paper_id": "DOI_10_1001_archneur_63_10_1402_3_fatty_acid_treatment_in_174_patients_with_mild_to_moderate",
+  "doi": "10.1001/archneur.63.10.1402",
+  "extracted_at": "2026-05-08T02:52:04+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "sample_size": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_archneur_63_10_1402_3_fatty_acid_treatment_in_174_patients_with_mild_to_moderate-u-505",
+      "claim_type": "unit_value",
+      "raw_text": "9 years",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 505,
+      "sentence": "PARTICIPANTS: Two hundred four patients with AD (age range [mean +/- SD], 74 +/- 9 years) whose conditions were stable while receiving acetylcholine esterase inhibitor treatment and who had a Mini-Mental State Examination (MMSE) score of 15 points or more were randomized to daily intake of 1.7 g of docosahexaenoic acid and 0.6 g of eicosapentaenoic acid (omega-3 fatty acid-treated group) or placebo for 6 months, after which all received omega-3 fatty acid supplementation for 6 months more.",
+      "context_window": "dred four patients with AD (age range [mean +/- SD], 74 +/- 9 years) whose conditions were stable while receiving acetylcholine",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_archneur_63_10_1402_3_fatty_acid_treatment_in_174_patients_with_mild_to_moderate-u-830",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 830,
+      "sentence": "PARTICIPANTS: Two hundred four patients with AD (age range [mean +/- SD], 74 +/- 9 years) whose conditions were stable while receiving acetylcholine esterase inhibitor treatment and who had a Mini-Mental State Examination (MMSE) score of 15 points or more were randomized to daily intake of 1.7 g of docosahexaenoic acid and 0.6 g of eicosapentaenoic acid (omega-3 fatty acid-treated group) or placebo for 6 months, after which all received omega-3 fatty acid supplementation for 6 months more.",
+      "context_window": "noic acid (omega-3 fatty acid-treated group) or placebo for 6 months, after which all received omega-3 fatty acid supplementatio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_archneur_63_10_1402_3_fatty_acid_treatment_in_174_patients_with_mild_to_moderate-u-904",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 904,
+      "sentence": "PARTICIPANTS: Two hundred four patients with AD (age range [mean +/- SD], 74 +/- 9 years) whose conditions were stable while receiving acetylcholine esterase inhibitor treatment and who had a Mini-Mental State Examination (MMSE) score of 15 points or more were randomized to daily intake of 1.7 g of docosahexaenoic acid and 0.6 g of eicosapentaenoic acid (omega-3 fatty acid-treated group) or placebo for 6 months, after which all received omega-3 fatty acid supplementation for 6 months more.",
+      "context_window": "r which all received omega-3 fatty acid supplementation for 6 months more. MAIN OUTCOME MEASURES: The primary outcome was cognit",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_archneur_63_10_1402_3_fatty_acid_treatment_in_174_patients_with_mild_to_moderate-u-1504",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1504,
+      "sentence": "At 6 months, the decline in cognitive functions as assessed by the latter 2 scales did not differ between the groups.",
+      "context_window": "ssessment Scale in the 2 randomized groups were similar. At 6 months, the decline in cognitive functions as assessed by the latt",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_archneur_63_10_1402_3_fatty_acid_treatment_in_174_patients_with_mild_to_moderate-n-1643",
+      "claim_type": "sample_size",
+      "raw_text": "n = 32",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1643,
+      "sentence": "However, in a subgroup (n = 32) with very mild cognitive dysfunction (MMSE >27 points), a significant (P<.05) reduction in MMSE decline rate was observed in the omega-3 fatty acid-treated group compared with the placebo group.",
+      "context_window": "did not differ between the groups. However, in a subgroup (n = 32) with very mild cognitive dysfunction (MMSE >27 points), a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_archneur_63_10_1402_3_fatty_acid_treatment_in_174_patients_with_mild_to_moderate-p-1722",
+      "claim_type": "p_value",
+      "raw_text": "P<.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1722,
+      "sentence": "However, in a subgroup (n = 32) with very mild cognitive dysfunction (MMSE >27 points), a significant (P<.05) reduction in MMSE decline rate was observed in the omega-3 fatty acid-treated group compared with the placebo group.",
+      "context_window": "ild cognitive dysfunction (MMSE >27 points), a significant (P<.05) reduction in MMSE decline rate was observed in the omega-3",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_archneur_63_10_1402_3_fatty_acid_treatment_in_174_patients_with_mild_to_moderate-u-1906",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1906,
+      "sentence": "A similar arrest in decline rate was observed between 6 and 12 months in this placebo subgroup when receiving omega-3 fatty acid supplementation.",
+      "context_window": "A similar arrest in decline rate was observed between 6 and 12 months in this placebo subgroup when receiving omega-3 fatty acid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

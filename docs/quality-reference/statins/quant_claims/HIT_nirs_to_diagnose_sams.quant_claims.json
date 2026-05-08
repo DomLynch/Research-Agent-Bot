@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_nirs_to_diagnose_sams",
+  "doi": "",
+  "extracted_at": "2026-05-08T02:21:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_nirs_to_diagnose_sams-u-534",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg/d",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 534,
+      "sentence": "Investigators will enroll 40 patients with a history of SAMS in an 8 wk randomized, double-blind crossover trial of simvastatin 20 mg/d and placebo separated by a 4 wk washout phase.",
+      "context_window": "wk randomized, double-blind crossover trial of simvastatin 20 mg/d and placebo separated by a 4 wk washout phase. Tissue oxyge",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

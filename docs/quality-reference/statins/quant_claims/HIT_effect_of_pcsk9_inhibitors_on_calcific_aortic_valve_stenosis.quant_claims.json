@@ -1,0 +1,138 @@
+{
+  "paper_id": "HIT_effect_of_pcsk9_inhibitors_on_calcific_aortic_valve_stenosis",
+  "doi": "",
+  "extracted_at": "2026-05-08T02:21:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4,
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_pcsk9_inhibitors_on_calcific_aortic_valve_stenosis-pct-830",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 830,
+      "sentence": "On the basis of statin therapy, PCSK9 inhibitors can further reduce LDL-C and Lp(a) levels by 50% to 60% and 20% to 30%, respectively.",
+      "context_window": "SK9 inhibitors can further reduce LDL-C and Lp(a) levels by 50% to 60% and 20% to 30%, respectively. Some studies reported",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_pcsk9_inhibitors_on_calcific_aortic_valve_stenosis-pct-837",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 837,
+      "sentence": "On the basis of statin therapy, PCSK9 inhibitors can further reduce LDL-C and Lp(a) levels by 50% to 60% and 20% to 30%, respectively.",
+      "context_window": "ibitors can further reduce LDL-C and Lp(a) levels by 50% to 60% and 20% to 30%, respectively. Some studies reported that el",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_pcsk9_inhibitors_on_calcific_aortic_valve_stenosis-pct-845",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 845,
+      "sentence": "On the basis of statin therapy, PCSK9 inhibitors can further reduce LDL-C and Lp(a) levels by 50% to 60% and 20% to 30%, respectively.",
+      "context_window": "can further reduce LDL-C and Lp(a) levels by 50% to 60% and 20% to 30%, respectively. Some studies reported that elevated p",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_pcsk9_inhibitors_on_calcific_aortic_valve_stenosis-pct-852",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 852,
+      "sentence": "On the basis of statin therapy, PCSK9 inhibitors can further reduce LDL-C and Lp(a) levels by 50% to 60% and 20% to 30%, respectively.",
+      "context_window": "ther reduce LDL-C and Lp(a) levels by 50% to 60% and 20% to 30%, respectively. Some studies reported that elevated plasma P",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_pcsk9_inhibitors_on_calcific_aortic_valve_stenosis-u-1446",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1446,
+      "sentence": "All patients will be followed for at least 2 years at 3, 6,9,12,15,18,21,24 months after randomization.",
+      "context_window": "ibitors+statins. All patients will be followed for at least 2 years at 3, 6,9,12,15,18,21,24 months after randomization. Qualit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_effect_of_pcsk9_inhibitors_on_calcific_aortic_valve_stenosis-u-1476",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1476,
+      "sentence": "All patients will be followed for at least 2 years at 3, 6,9,12,15,18,21,24 months after randomization.",
+      "context_window": "will be followed for at least 2 years at 3, 6,9,12,15,18,21,24 months after randomization. Quality of life (EQ-5D-3L including th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_effect_of_pcsk9_inhibitors_on_calcific_aortic_valve_stenosis-u-1731",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1731,
+      "sentence": "Echocardiography and computer tomography were performed and blood samples were withdrawn at baseline, at 2 years visit, and before withdrawal from the study.",
+      "context_window": "performed and blood samples were withdrawn at baseline, at 2 years visit, and before withdrawal from the study. The primary en",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

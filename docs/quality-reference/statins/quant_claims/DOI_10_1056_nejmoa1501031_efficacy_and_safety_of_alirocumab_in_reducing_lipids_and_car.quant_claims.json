@@ -1,0 +1,373 @@
+{
+  "paper_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car",
+  "doi": "10.1056/nejmoa1501031",
+  "extracted_at": "2026-05-08T02:21:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 7,
+    "p_value": 2,
+    "percentage": 11
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-u-449",
+      "claim_type": "unit_value",
+      "raw_text": "70 mg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 449,
+      "sentence": "METHODS: We conducted a randomized trial involving 2341 patients at high risk for cardiovascular events who had LDL cholesterol levels of 70 mg per deciliter (1.8 mmol per liter) or more and were receiving treatment with statins at the maximum tolerated dose (the highest dose associated with an acceptable side-effect profile), with or without other lipid-lowering therapy.",
+      "context_window": "for cardiovascular events who had LDL cholesterol levels of 70 mg per deciliter (1.8 mmol per liter) or more and were receivi",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-u-470",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 mmol",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 470,
+      "sentence": "METHODS: We conducted a randomized trial involving 2341 patients at high risk for cardiovascular events who had LDL cholesterol levels of 70 mg per deciliter (1.8 mmol per liter) or more and were receiving treatment with statins at the maximum tolerated dose (the highest dose associated with an acceptable side-effect profile), with or without other lipid-lowering therapy.",
+      "context_window": "ents who had LDL cholesterol levels of 70 mg per deciliter (1.8 mmol per liter) or more and were receiving treatment with statin",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-u-756",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 756,
+      "sentence": "Patients were randomly assigned in a 2:1 ratio to receive alirocumab (150 mg) or placebo as a 1-ml subcutaneous injection every 2 weeks for 78 weeks.",
+      "context_window": "ere randomly assigned in a 2:1 ratio to receive alirocumab (150 mg) or placebo as a 1-ml subcutaneous injection every 2 weeks",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-u-814",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 814,
+      "sentence": "Patients were randomly assigned in a 2:1 ratio to receive alirocumab (150 mg) or placebo as a 1-ml subcutaneous injection every 2 weeks for 78 weeks.",
+      "context_window": "(150 mg) or placebo as a 1-ml subcutaneous injection every 2 weeks for 78 weeks. The primary efficacy end point was the percen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-u-826",
+      "claim_type": "unit_value",
+      "raw_text": "78 weeks",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 826,
+      "sentence": "Patients were randomly assigned in a 2:1 ratio to receive alirocumab (150 mg) or placebo as a 1-ml subcutaneous injection every 2 weeks for 78 weeks.",
+      "context_window": "placebo as a 1-ml subcutaneous injection every 2 weeks for 78 weeks. The primary efficacy end point was the percentage change i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-p-1140",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1140,
+      "sentence": "RESULTS: At week 24, the difference between the alirocumab and placebo groups in the mean percentage change from baseline in calculated LDL cholesterol level was -62 percentage points (P<0.001); the treatment effect remained consistent over a period of 78 weeks.",
+      "context_window": "calculated LDL cholesterol level was -62 percentage points (P<0.001); the treatment effect remained consistent over a period of",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-u-1208",
+      "claim_type": "unit_value",
+      "raw_text": "78 weeks",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1208,
+      "sentence": "RESULTS: At week 24, the difference between the alirocumab and placebo groups in the mean percentage change from baseline in calculated LDL cholesterol level was -62 percentage points (P<0.001); the treatment effect remained consistent over a period of 78 weeks.",
+      "context_window": "; the treatment effect remained consistent over a period of 78 weeks. The alirocumab group, as compared with the placebo group,",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-pct-1322",
+      "claim_type": "percentage",
+      "raw_text": "5.9%",
+      "numeric_values": [
+        5.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1322,
+      "sentence": "The alirocumab group, as compared with the placebo group, had higher rates of injection-site reactions (5.9% vs.",
+      "context_window": "lacebo group, had higher rates of injection-site reactions (5.9% vs. 4.2%), myalgia (5.4% vs. 2.9%), neurocognitive events (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-pct-1331",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1331,
+      "sentence": "4.2%), myalgia (5.4% vs.",
+      "context_window": "oup, had higher rates of injection-site reactions (5.9% vs. 4.2%), myalgia (5.4% vs. 2.9%), neurocognitive events (1.2% vs.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-pct-1347",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1347,
+      "sentence": "4.2%), myalgia (5.4% vs.",
+      "context_window": "rates of injection-site reactions (5.9% vs. 4.2%), myalgia (5.4% vs. 2.9%), neurocognitive events (1.2% vs. 0.5%), and ophth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-pct-1356",
+      "claim_type": "percentage",
+      "raw_text": "2.9%",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1356,
+      "sentence": "2.9%), neurocognitive events (1.2% vs.",
+      "context_window": "injection-site reactions (5.9% vs. 4.2%), myalgia (5.4% vs. 2.9%), neurocognitive events (1.2% vs. 0.5%), and ophthalmologic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-pct-1386",
+      "claim_type": "percentage",
+      "raw_text": "1.2%",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1386,
+      "sentence": "2.9%), neurocognitive events (1.2% vs.",
+      "context_window": "vs. 4.2%), myalgia (5.4% vs. 2.9%), neurocognitive events (1.2% vs. 0.5%), and ophthalmologic events (2.9% vs. 1.9%). In a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-pct-1395",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1395,
+      "sentence": "0.5%), and ophthalmologic events (2.9% vs.",
+      "context_window": "), myalgia (5.4% vs. 2.9%), neurocognitive events (1.2% vs. 0.5%), and ophthalmologic events (2.9% vs. 1.9%). In a post hoc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-pct-1429",
+      "claim_type": "percentage",
+      "raw_text": "2.9%",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1429,
+      "sentence": "0.5%), and ophthalmologic events (2.9% vs.",
+      "context_window": "ognitive events (1.2% vs. 0.5%), and ophthalmologic events (2.9% vs. 1.9%). In a post hoc analysis, the rate of major advers",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-pct-1438",
+      "claim_type": "percentage",
+      "raw_text": "1.9%",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1438,
+      "sentence": "1.9%).",
+      "context_window": "events (1.2% vs. 0.5%), and ophthalmologic events (2.9% vs. 1.9%). In a post hoc analysis, the rate of major adverse cardiov",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-pct-1711",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1711,
+      "sentence": "In a post hoc analysis, the rate of major adverse cardiovascular events (death from coronary heart disease, nonfatal myocardial infarction, fatal or nonfatal ischemic stroke, or unstable angina requiring hospitalization) was lower with alirocumab than with placebo (1.7% vs.",
+      "context_window": "spitalization) was lower with alirocumab than with placebo (1.7% vs. 3.3%; hazard ratio, 0.52; 95% confidence interval, 0.31",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-pct-1720",
+      "claim_type": "percentage",
+      "raw_text": "3.3%",
+      "numeric_values": [
+        3.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1720,
+      "sentence": "3.3%; hazard ratio, 0.52; 95% confidence interval, 0.31 to 0.90; nominal P=0.02).",
+      "context_window": "tion) was lower with alirocumab than with placebo (1.7% vs. 3.3%; hazard ratio, 0.52; 95% confidence interval, 0.31 to 0.90;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-pct-1746",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1746,
+      "sentence": "3.3%; hazard ratio, 0.52; 95% confidence interval, 0.31 to 0.90; nominal P=0.02).",
+      "context_window": "cumab than with placebo (1.7% vs. 3.3%; hazard ratio, 0.52; 95% confidence interval, 0.31 to 0.90; nominal P=0.02). CONCLUS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-p-1793",
+      "claim_type": "p_value",
+      "raw_text": "P=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1793,
+      "sentence": "3.3%; hazard ratio, 0.52; 95% confidence interval, 0.31 to 0.90; nominal P=0.02).",
+      "context_window": "ratio, 0.52; 95% confidence interval, 0.31 to 0.90; nominal P=0.02). CONCLUSIONS: Over a period of 78 weeks, alirocumab, when",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_alirocumab_in_reducing_lipids_and_car-u-1832",
+      "claim_type": "unit_value",
+      "raw_text": "78 weeks",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1832,
+      "sentence": "CONCLUSIONS: Over a period of 78 weeks, alirocumab, when added to statin therapy at the maximum tolerated dose, significantly reduced LDL cholesterol levels.",
+      "context_window": ".31 to 0.90; nominal P=0.02). CONCLUSIONS: Over a period of 78 weeks, alirocumab, when added to statin therapy at the maximum to",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

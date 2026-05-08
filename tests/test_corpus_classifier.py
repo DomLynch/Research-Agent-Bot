@@ -224,6 +224,19 @@ def test_core_requires_topic_alias_in_title():
     assert c.classification == "off_thesis"
 
 
+def test_acronym_trial_title_kept_when_abstract_names_intervention_arm():
+    p = _paper(
+        title="ACRONYM: A Study of Cardiovascular Events in Diabetes",
+        abstract=(
+            "Participants were randomized to omega-3 fatty acid "
+            "supplementation with placebo control in a clinical trial."
+        ),
+    )
+    c = classify_paper(p, topic_aliases=("omega-3",))
+    assert c.classification == "adjacent_clinical"
+    assert "intervention context" in c.reason
+
+
 def test_alias_match_ignores_target_of_eponym_context():
     p = _paper(
         title="Branched-chain amino acids signal through mammalian target of rapamycin",

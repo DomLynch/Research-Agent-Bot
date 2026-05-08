@@ -1,0 +1,193 @@
+{
+  "paper_id": "DOI_10_1056_nejmoa0706628_effects_of_torcetrapib_in_patients_at_high_risk_for_coronary",
+  "doi": "10.1056/nejmoa0706628",
+  "extracted_at": "2026-05-08T02:21:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 4,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1056_nejmoa0706628_effects_of_torcetrapib_in_patients_at_high_risk_for_coronary-u-789",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 789,
+      "sentence": "RESULTS: At 12 months in patients who received torcetrapib, there was an increase of 72.1% in high-density lipoprotein cholesterol and a decrease of 24.9% in low-density lipoprotein cholesterol, as compared with baseline (P<0.001 for both comparisons), in addition to an increase of 5.4 mm Hg in systolic blood pressure, a decrease in serum potassium, and increases in serum sodium, bicarbonate, and aldosterone (P<0.001 for all comparisons).",
+      "context_window": "stroke, or hospitalization for unstable angina. RESULTS: At 12 months in patients who received torcetrapib, there was an increase",
+      "claim_role": "protocol",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0706628_effects_of_torcetrapib_in_patients_at_high_risk_for_coronary-pct-862",
+      "claim_type": "percentage",
+      "raw_text": "72.1%",
+      "numeric_values": [
+        72.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 862,
+      "sentence": "RESULTS: At 12 months in patients who received torcetrapib, there was an increase of 72.1% in high-density lipoprotein cholesterol and a decrease of 24.9% in low-density lipoprotein cholesterol, as compared with baseline (P<0.001 for both comparisons), in addition to an increase of 5.4 mm Hg in systolic blood pressure, a decrease in serum potassium, and increases in serum sodium, bicarbonate, and aldosterone (P<0.001 for all comparisons).",
+      "context_window": "patients who received torcetrapib, there was an increase of 72.1% in high-density lipoprotein cholesterol and a decrease of 2",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0706628_effects_of_torcetrapib_in_patients_at_high_risk_for_coronary-pct-926",
+      "claim_type": "percentage",
+      "raw_text": "24.9%",
+      "numeric_values": [
+        24.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 926,
+      "sentence": "RESULTS: At 12 months in patients who received torcetrapib, there was an increase of 72.1% in high-density lipoprotein cholesterol and a decrease of 24.9% in low-density lipoprotein cholesterol, as compared with baseline (P<0.001 for both comparisons), in addition to an increase of 5.4 mm Hg in systolic blood pressure, a decrease in serum potassium, and increases in serum sodium, bicarbonate, and aldosterone (P<0.001 for all comparisons).",
+      "context_window": "% in high-density lipoprotein cholesterol and a decrease of 24.9% in low-density lipoprotein cholesterol, as compared with ba",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0706628_effects_of_torcetrapib_in_patients_at_high_risk_for_coronary-p-999",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 999,
+      "sentence": "RESULTS: At 12 months in patients who received torcetrapib, there was an increase of 72.1% in high-density lipoprotein cholesterol and a decrease of 24.9% in low-density lipoprotein cholesterol, as compared with baseline (P<0.001 for both comparisons), in addition to an increase of 5.4 mm Hg in systolic blood pressure, a decrease in serum potassium, and increases in serum sodium, bicarbonate, and aldosterone (P<0.001 for all comparisons).",
+      "context_window": "density lipoprotein cholesterol, as compared with baseline (P<0.001 for both comparisons), in addition to an increase of 5.4 mm",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0706628_effects_of_torcetrapib_in_patients_at_high_risk_for_coronary-u-1060",
+      "claim_type": "unit_value",
+      "raw_text": "5.4 mm",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1060,
+      "sentence": "RESULTS: At 12 months in patients who received torcetrapib, there was an increase of 72.1% in high-density lipoprotein cholesterol and a decrease of 24.9% in low-density lipoprotein cholesterol, as compared with baseline (P<0.001 for both comparisons), in addition to an increase of 5.4 mm Hg in systolic blood pressure, a decrease in serum potassium, and increases in serum sodium, bicarbonate, and aldosterone (P<0.001 for all comparisons).",
+      "context_window": "<0.001 for both comparisons), in addition to an increase of 5.4 mm Hg in systolic blood pressure, a decrease in serum potassiu",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0706628_effects_of_torcetrapib_in_patients_at_high_risk_for_coronary-p-1190",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1190,
+      "sentence": "RESULTS: At 12 months in patients who received torcetrapib, there was an increase of 72.1% in high-density lipoprotein cholesterol and a decrease of 24.9% in low-density lipoprotein cholesterol, as compared with baseline (P<0.001 for both comparisons), in addition to an increase of 5.4 mm Hg in systolic blood pressure, a decrease in serum potassium, and increases in serum sodium, bicarbonate, and aldosterone (P<0.001 for all comparisons).",
+      "context_window": "nd increases in serum sodium, bicarbonate, and aldosterone (P<0.001 for all comparisons). There was also an increased risk of c",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0706628_effects_of_torcetrapib_in_patients_at_high_risk_for_coronary-pct-1299",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1299,
+      "sentence": "There was also an increased risk of cardiovascular events (hazard ratio, 1.25; 95% confidence interval [CI], 1.09 to 1.44; P=0.001) and death from any cause (hazard ratio, 1.58; 95% CI, 1.14 to 2.19; P=0.006).",
+      "context_window": "ncreased risk of cardiovascular events (hazard ratio, 1.25; 95% confidence interval [CI], 1.09 to 1.44; P=0.001) and death",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0706628_effects_of_torcetrapib_in_patients_at_high_risk_for_coronary-p-1343",
+      "claim_type": "p_value",
+      "raw_text": "P=0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1343,
+      "sentence": "There was also an increased risk of cardiovascular events (hazard ratio, 1.25; 95% confidence interval [CI], 1.09 to 1.44; P=0.001) and death from any cause (hazard ratio, 1.58; 95% CI, 1.14 to 2.19; P=0.006).",
+      "context_window": "rd ratio, 1.25; 95% confidence interval [CI], 1.09 to 1.44; P=0.001) and death from any cause (hazard ratio, 1.58; 95% CI, 1.14",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0706628_effects_of_torcetrapib_in_patients_at_high_risk_for_coronary-pct-1398",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1398,
+      "sentence": "There was also an increased risk of cardiovascular events (hazard ratio, 1.25; 95% confidence interval [CI], 1.09 to 1.44; P=0.001) and death from any cause (hazard ratio, 1.58; 95% CI, 1.14 to 2.19; P=0.006).",
+      "context_window": ".44; P=0.001) and death from any cause (hazard ratio, 1.58; 95% CI, 1.14 to 2.19; P=0.006). Post hoc analyses showed an inc",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0706628_effects_of_torcetrapib_in_patients_at_high_risk_for_coronary-p-1420",
+      "claim_type": "p_value",
+      "raw_text": "P=0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1420,
+      "sentence": "There was also an increased risk of cardiovascular events (hazard ratio, 1.25; 95% confidence interval [CI], 1.09 to 1.44; P=0.001) and death from any cause (hazard ratio, 1.58; 95% CI, 1.14 to 2.19; P=0.006).",
+      "context_window": "h from any cause (hazard ratio, 1.58; 95% CI, 1.14 to 2.19; P=0.006). Post hoc analyses showed an increased risk of death in pa",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

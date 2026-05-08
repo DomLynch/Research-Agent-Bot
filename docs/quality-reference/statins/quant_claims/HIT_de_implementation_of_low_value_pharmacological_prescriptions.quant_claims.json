@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_de_implementation_of_low_value_pharmacological_prescriptions",
+  "doi": "",
+  "extracted_at": "2026-05-08T02:21:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_de_implementation_of_low_value_pharmacological_prescriptions-pct-799",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 799,
+      "sentence": "In order to prevent CVD, one of the leading causes of morbidity and death worldwide, there is general agreement on the indication of lipid-lowering treatment, mainly with statins, in patients with a cardiovascular risk (CVR) measurement greater than 10% over 10 years or in secondary prevention.",
+      "context_window": "s with a cardiovascular risk (CVR) measurement greater than 10% over 10 years or in secondary prevention. Whereas, for prim",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_de_implementation_of_low_value_pharmacological_prescriptions-u-808",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 808,
+      "sentence": "In order to prevent CVD, one of the leading causes of morbidity and death worldwide, there is general agreement on the indication of lipid-lowering treatment, mainly with statins, in patients with a cardiovascular risk (CVR) measurement greater than 10% over 10 years or in secondary prevention.",
+      "context_window": "cardiovascular risk (CVR) measurement greater than 10% over 10 years or in secondary prevention. Whereas, for primary prevention",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_de_implementation_of_low_value_pharmacological_prescriptions-pct-905",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 905,
+      "sentence": "Whereas, for primary prevention in patients with low CVR (\\<10%), preventive activities should be focused on the promotion of healthy lifestyles through optimizing diet, increasing physical activity, and stopping smoking.",
+      "context_window": "Whereas, for primary prevention in patients with low CVR (\\<10%), preventive activities should be focused on the promotion",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

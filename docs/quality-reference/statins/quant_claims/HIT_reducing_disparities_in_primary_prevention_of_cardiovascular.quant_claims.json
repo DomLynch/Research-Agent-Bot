@@ -1,0 +1,84 @@
+{
+  "paper_id": "HIT_reducing_disparities_in_primary_prevention_of_cardiovascular",
+  "doi": "",
+  "extracted_at": "2026-05-08T02:21:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_reducing_disparities_in_primary_prevention_of_cardiovascular-pct-874",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 874,
+      "sentence": "Aim 1: Conduct a randomized controlled trial among individuals with 10-year risk for myocardial infarction or coronary death of 10% or higher to determine if the population health management intervention, compared to usual care, results in higher rates of documented statin treatment discussions within 6 months (primary process outcome), higher rates of statin prescribing within 6 months (secondary process outcome), and higher rates of significant low-density lipoprotein cholesterol (LDL-C) lowering defined as a follow up LDL-C \u226530 mg/dL lower than baseline (primary clinical outcome).",
+      "context_window": "10-year risk for myocardial infarction or coronary death of 10% or higher to determine if the population health management",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_reducing_disparities_in_primary_prevention_of_cardiovascular-u-1049",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1049,
+      "sentence": "Aim 1: Conduct a randomized controlled trial among individuals with 10-year risk for myocardial infarction or coronary death of 10% or higher to determine if the population health management intervention, compared to usual care, results in higher rates of documented statin treatment discussions within 6 months (primary process outcome), higher rates of statin prescribing within 6 months (secondary process outcome), and higher rates of significant low-density lipoprotein cholesterol (LDL-C) lowering defined as a follow up LDL-C \u226530 mg/dL lower than baseline (primary clinical outcome).",
+      "context_window": "her rates of documented statin treatment discussions within 6 months (primary process outcome), higher rates of statin prescribi",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_reducing_disparities_in_primary_prevention_of_cardiovascular-u-1127",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1127,
+      "sentence": "Aim 1: Conduct a randomized controlled trial among individuals with 10-year risk for myocardial infarction or coronary death of 10% or higher to determine if the population health management intervention, compared to usual care, results in higher rates of documented statin treatment discussions within 6 months (primary process outcome), higher rates of statin prescribing within 6 months (secondary process outcome), and higher rates of significant low-density lipoprotein cholesterol (LDL-C) lowering defined as a follow up LDL-C \u226530 mg/dL lower than baseline (primary clinical outcome).",
+      "context_window": "process outcome), higher rates of statin prescribing within 6 months (secondary process outcome), and higher rates of significan",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_reducing_disparities_in_primary_prevention_of_cardiovascular-u-1280",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg/dL",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1280,
+      "sentence": "Aim 1: Conduct a randomized controlled trial among individuals with 10-year risk for myocardial infarction or coronary death of 10% or higher to determine if the population health management intervention, compared to usual care, results in higher rates of documented statin treatment discussions within 6 months (primary process outcome), higher rates of statin prescribing within 6 months (secondary process outcome), and higher rates of significant low-density lipoprotein cholesterol (LDL-C) lowering defined as a follow up LDL-C \u226530 mg/dL lower than baseline (primary clinical outcome).",
+      "context_window": "cholesterol (LDL-C) lowering defined as a follow up LDL-C \u226530 mg/dL lower than baseline (primary clinical outcome). Aim 2: Inte",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}
