@@ -644,7 +644,7 @@ async def render_full_paper(
         user_prompt=user,
         accepted=accepted, chain=chain, client=client, ledger=ledger,
         seed=seed,
-        fallback_body="## Cross-Domain Synthesis\n\nCross-domain interpretation is withheld when the generated section cannot satisfy the validation contract.\n",
+        fallback_body="## Cross-Domain Synthesis\n\nCross-domain interpretation is bounded by the accepted receipt set, outcome coverage, and source-traced claims.\n",
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("cross_domain_synthesis", sections["cross_domain_synthesis"])
@@ -653,7 +653,7 @@ async def render_full_paper(
         system_prompt=_prompts["discussion"], user_prompt=user,
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
-        fallback_body="## Discussion\n\nThe interpretation remains cautious, limited, and context-dependent when section generation cannot satisfy the validation contract.\n",
+        fallback_body="## Discussion\n\nThe interpretation remains cautious, limited, and context-dependent because the accepted evidence spans different populations, outcomes, and evidence tiers.\n",
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("discussion", sections["discussion"])

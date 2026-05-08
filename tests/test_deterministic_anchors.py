@@ -78,7 +78,7 @@ def test_cross_domain_anchor_includes_outcome_class_breakdown():
         _r("r3", cls="frailty"),
     ]
     md = build_cross_domain_anchor(receipts, _matrix())
-    assert "Deterministic synthesis summary" in md
+    assert "Evidence Synthesis Summary" in md
     assert "longevity" in md
     assert "3 accepted receipts" in md or "3" in md
     # Contains direction tally
@@ -109,7 +109,7 @@ def test_discussion_anchor_includes_tier_distribution():
         _r("r3", tier="B"),
     ]
     md = build_discussion_anchor(receipts, _matrix())
-    assert "Deterministic evidence summary" in md
+    assert "Evidence Summary" in md
     assert "A1 (n=2)" in md
     assert "B (n=1)" in md
 

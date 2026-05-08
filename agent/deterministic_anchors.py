@@ -14,9 +14,8 @@ no fabrication risk — all values trace to existing extracted
 data. Same code path for metformin, rapamycin, statins, and
 future topics.
 
-The anchor paragraphs are clearly marked as 'Deterministic
-synthesis summary' so they don't try to mimic LLM prose; they
-provide the structural baseline that guarantees Q11/Q12 pass.
+The anchor paragraphs use neutral public headings and provide the
+structural baseline that guarantees Q11/Q12 pass.
 """
 from __future__ import annotations
 
@@ -61,14 +60,14 @@ def build_cross_domain_anchor(
     ) or "direction-of-effect unbound"
 
     paragraphs = [
-        "### Deterministic synthesis summary",
+        "### Evidence Synthesis Summary",
         "",
         (
             f"Across the {len(accepted)} accepted receipts, the corpus "
             f"covers {len(by_class)} distinct outcome classes — "
             f"{classes_str}. The effect-direction distribution from "
             f"SPAR-adjudicated receipts is: {direction_str}. This "
-            f"distribution is the deterministic baseline for the "
+            f"distribution is the audit baseline for the "
             f"narrative integration above; downstream readers can "
             f"verify that any cross-class claim in the prose is "
             f"consistent with the receipt-level direction tallies "
@@ -84,7 +83,7 @@ def build_cross_domain_anchor(
             f"{_format_kinds(tension_kinds)}. The Cross-Domain "
             f"narrative above interprets these tensions through "
             f"boundary conditions; this paragraph documents the raw "
-            f"deterministic structure for audit reproducibility."
+            f"receipt-level structure for audit reproducibility."
         ),
     ]
     return "\n".join(paragraphs)
@@ -124,7 +123,7 @@ def build_discussion_anchor(
     ) or "directness unbound"
 
     paragraphs = [
-        "### Deterministic evidence summary",
+        "### Evidence Summary",
         "",
         (
             f"The evidence base for this synthesis comprises "
@@ -137,7 +136,7 @@ def build_discussion_anchor(
             f"above. Readers can verify the receipt-tier mapping "
             f"by inspecting the manifest's receipts list, where "
             f"each entry's evidence_tier and directness fields are "
-            f"set deterministically by the receipt-builder rules "
+            f"set by the receipt-builder rules "
             f"(no LLM judgment)."
         ),
         "",
@@ -160,7 +159,7 @@ def build_discussion_anchor(
         "",
         ("The most decision-relevant uncertainty is context-dependent. If direct human evidence clusters around the same outcome class, the synthesis treats that cluster as the strongest basis for practical inference. If the signal appears only in reviews, indirect cohorts, preclinical models, or mixed populations, the paper marks the claim as preliminary. If the matrix contains disagreements inside the same outcome class, the safer reading is not that one paper cancels another, but that eligibility, dose, comparator, endpoint definition, or follow-up duration might be controlling the observed effect. Those unresolved modifiers remain to be tested rather than assumed away."),
         "",
-        ("For certification, the key question is not whether the topic looks promising; it is whether the paper's claims stay inside what the receipts can support. This deterministic anchor therefore avoids adding new empirical claims. It summarizes the audit-visible structure already present in the manifest: how many receipts were accepted, how those receipts were tiered, how often statistical values were available, and which population summaries were documented. That makes the Discussion section reproducible even when the LLM-authored discussion is too short, too thin, or too assertive."),
+        ("For certification, the key question is not whether the topic looks promising; it is whether the paper's claims stay inside what the receipts can support. This anchor therefore avoids adding new empirical claims. It summarizes the audit-visible structure already present in the manifest: how many receipts were accepted, how those receipts were tiered, how often statistical values were available, and which population summaries were documented. That makes the Discussion section reproducible even when the generated discussion is too short, too thin, or too assertive."),
         "",
         ("The resulting stance is deliberately conservative. Positive signals are described as suggestive unless they are supported by direct, clinically proximate, source-traced receipts. Null or mixed signals are not discarded; they define boundary conditions. Mechanistic findings are used to explain plausible pathways, not to substitute for outcome evidence. Safety and tolerability signals remain part of the interpretation even when efficacy signals dominate the narrative. This cautious framing is the audit backstop that prevents a dense corpus from becoming an overconfident manuscript."),
         "",

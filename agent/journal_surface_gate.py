@@ -25,6 +25,10 @@ _PLACEHOLDER_PATTERNS = (
     "this synthesis aims to contribute to the field by",
     "the evidence base is limited to accepted receipts",
     "the conclusion is limited to claims that survive receipt qualification",
+    "section generation cannot satisfy the validation contract",
+    "generated section cannot satisfy the validation contract",
+    "deterministic evidence summary",
+    "deterministic synthesis summary",
 )
 _REQUIRED_SECTIONS = {
     "Abstract": 150,

@@ -12,3 +12,4 @@ def test_full_paper_fallbacks_do_not_emit_pipeline_error_placeholders() -> None:
     src = inspect.getsource(paper_writer)
     assert "failed scoped validation" not in src
     assert "failed validation" not in src
+    assert "cannot satisfy the validation contract" not in src

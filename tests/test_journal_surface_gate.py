@@ -96,6 +96,17 @@ def test_conclusion_fallback_prose_blocks_journal_surface():
     assert report.issues[0].code == "placeholder_prose"
 
 
+def test_validation_contract_meta_prose_blocks_journal_surface():
+    paper = (
+        "## Discussion\n\n"
+        "The interpretation remains cautious when section generation "
+        "cannot satisfy the validation contract.\n"
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert report.issues[0].code == "placeholder_prose"
+
+
 def test_missing_cross_domain_blocks_journal_surface():
     paper = _paper(
         "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
