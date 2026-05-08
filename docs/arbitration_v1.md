@@ -8,8 +8,10 @@ existing patch should `APPLY`, `REJECT`, or `ESCALATE`.
 - `OPENROUTER_API_KEY` enables calls and supplies the OpenRouter key.
 - `OPENROUTER_BASE_URL` defaults to `https://openrouter.ai/api/v1`.
 - `GRANITE_ARBITRATOR_MODEL` defaults to `ibm-granite/granite-4.1-8b`.
+  IBM Granite 4.1 8B via OpenRouter is the preferred V1 arbitrator.
 
-No live network calls are required for tests. Unit tests use `httpx.MockTransport`.
+No keys are committed. No live network calls are required for tests. Unit tests
+use `httpx.MockTransport`.
 
 ## Contract
 
@@ -30,3 +32,12 @@ No live network calls are required for tests. Unit tests use `httpx.MockTranspor
 - No new facts, numerics, estimates, claims, or citations.
 - No pipeline integration in v1.
 - No secret, token, hidden prompt, or source leakage.
+
+## Validation Harness
+
+`scripts/arbitration_validation_harness.py` runs offline fixtures where each
+case contains a model response and either `human_consensus_verdict`,
+`consensus_verdict`, or `expected_verdict`. It reports agreement rate,
+fail-closed count, escalation count, per-verdict agreement, and a confusion
+matrix. This is a benchmark harness only; it does not prove clinical validity
+without externally reviewed consensus fixtures.

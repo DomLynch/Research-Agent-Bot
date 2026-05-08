@@ -46,11 +46,11 @@ def test_build_report_is_dry_and_stable(tmp_path: Path) -> None:
         assert row["ok"] is True
         assert row["generated_excluded"] is True
         assert row["reader_generated_excluded"] is True
-        assert row["osf_keys_match"] is True
+        assert row["snapshot_keys_match"] is True
         assert row["dw_keys_match"] is True
         assert all(row["inner_idempotency_stable"].values())
         assert row["secret_scan"]["passed"] is True
-        assert row["live_gate"] == {"cli_flag": "--live", "env_var": "OSF_PUBLISH_LIVE"}
+        assert row["live_gate"] == {"cli_flag": "--live", "service": "sibling osf-publisher"}
 
 
 def test_write_outputs_renders_matrix(tmp_path: Path) -> None:

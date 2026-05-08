@@ -95,6 +95,14 @@ def write_report(static_root: Path, out_dir: Path) -> tuple[Path, Path]:
     return json_path, md_path
 
 
+def build_run_bundle_report(run_dirs: list[Path]) -> dict[str, Any]:
+    rows = [_run_bundle_row(path) for path in sorted(run_dirs)]
+    return {
+        "runs": rows,
+        "must_build": sorted({item for row in rows for item in row["missing"]}),
+    }
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("static_root", type=Path)
@@ -132,6 +140,30 @@ def _row(path: Path, static_root: Path) -> ReaderRow:
         readiness_score=score,
         **checks,
     )
+
+
+def _run_bundle_row(path: Path) -> dict[str, Any]:
+    manifest = _read_json(path / "manifest.json")
+    audit = _read_json(path / "full_paper.audit.json")
+    required = {
+        "topic": bool(manifest.get("topic")),
+        "title_or_thesis": bool(manifest.get("title") or manifest.get("thesis")),
+        "generated_at": bool(manifest.get("generated_at")),
+        "paper": (path / "full_paper.md").exists(),
+        "audit": bool(audit),
+        "audit_p1_pass": audit.get("p1_pass") is True,
+        "receipt_count": isinstance(manifest.get("n_receipts"), int),
+        "tension_count": isinstance(manifest.get("n_non_orthogonal_tensions"), int),
+        "verdict": (path / "full_paper.final_verdict.md").exists(),
+        "certification": (path / "full_paper.certification.md").exists(),
+    }
+    missing = tuple(name for name, ok in required.items() if not ok)
+    return {
+        "run": path.name,
+        "topic": manifest.get("topic") or "",
+        "ready_for_reader_export": not missing,
+        "missing": missing,
+    }
 
 
 def _parse(path: Path) -> _Parser:

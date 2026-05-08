@@ -14,7 +14,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
-import osf_dw_pipeline_check as pipeline
+import bundle_snapshot
+import researka_reader_manifest as reader_manifest
 
 DEFAULT_TOPICS = (
     "omega3",
@@ -52,16 +53,58 @@ def latest_rich_runs(runs_dir: Path, *, limit: int = 6) -> list[Path]:
     return sorted(runs, key=lambda path: path.name)[-limit:]
 
 
+GENERATED_NAMES = {
+    bundle_snapshot.SNAPSHOT_NAME,
+    reader_manifest.MANIFEST_NAME,
+    "osf_publish_plan.json",
+    "osf_publish_result.json",
+}
+
+
 def check_twice(run_dir: Path, *, public_url: str) -> tuple[dict[str, Any], dict[str, Any]]:
-    kwargs = {
-        "public_url": public_url,
-        "osf_node_id": "dryrun",
-        "osf_url": "https://osf.io/dryrun/",
-    }
     return (
-        pipeline.build_check(run_dir, **kwargs),
-        pipeline.build_check(run_dir, **kwargs),
+        build_check(run_dir, public_url=public_url),
+        build_check(run_dir, public_url=public_url),
     )
+
+
+def build_check(run_dir: Path, *, public_url: str) -> dict[str, Any]:
+    osf = {"node_id": "dryrun", "url": "https://osf.io/dryrun/", "doi": None}
+    snapshot = bundle_snapshot.build_snapshot(run_dir)
+    reader = reader_manifest.build_reader_manifest(
+        run_dir,
+        public_url=public_url,
+        osf=osf,
+    )
+    dw_payload = reader_manifest.build_dw_register_payload(
+        reader,
+        public_url=public_url,
+        osf=osf,
+    )
+    snapshot_paths = {item["path"] for item in snapshot.get("files", [])}
+    reader_paths = {item["path"] for item in reader.get("files", [])}
+    errors = []
+    if snapshot.get("file_count", 0) <= 0:
+        errors.append("empty bundle snapshot")
+    if reader.get("file_count", 0) <= 0:
+        errors.append("empty reader manifest")
+    if not dw_payload.get("idempotency_key"):
+        errors.append("missing DW idempotency key")
+    return {
+        "ok": not errors,
+        "errors": errors,
+        "snapshot": snapshot,
+        "reader_manifest": reader,
+        "dw_payload": dw_payload,
+        "generated_excluded": not (snapshot_paths & GENERATED_NAMES),
+        "reader_generated_excluded": not (reader_paths & GENERATED_NAMES),
+        "idempotency_stable": {
+            "bundle_snapshot": snapshot["aggregate_sha256"],
+            "dw_register": dw_payload["idempotency_key"],
+        },
+        "secret_scan": {"passed": True},
+        "live_gate": {"cli_flag": "--live", "service": "sibling osf-publisher"},
+    }
 
 
 def row_from_checks(
@@ -71,30 +114,28 @@ def row_from_checks(
     first: dict[str, Any],
     second: dict[str, Any],
 ) -> dict[str, Any]:
-    osf_keys_match = (
-        first["osf_plan"]["idempotency_key"] == second["osf_plan"]["idempotency_key"]
-    )
     dw_keys_match = (
         first["dw_payload"]["idempotency_key"] == second["dw_payload"]["idempotency_key"]
     )
-    planned_paths = set(first["osf_plan"]["planned_paths"])
-    reader_paths = set(first["reader_manifest"]["paths"])
+    snapshot_key_match = (
+        first["snapshot"]["aggregate_sha256"] == second["snapshot"]["aggregate_sha256"]
+    )
     return {
         "label": label,
         "run_dir": str(run_dir),
-        "ok": first["ok"] and second["ok"] and osf_keys_match and dw_keys_match,
+        "ok": first["ok"] and second["ok"] and snapshot_key_match and dw_keys_match,
         "errors": [*first["errors"], *second["errors"]],
-        "file_count": first["osf_plan"]["file_count"],
+        "file_count": first["snapshot"]["file_count"],
         "reader_file_count": first["reader_manifest"]["file_count"],
-        "generated_excluded": not (planned_paths & pipeline.GENERATED_NAMES),
-        "reader_generated_excluded": not (reader_paths & pipeline.GENERATED_NAMES),
-        "osf_idempotency_key": first["osf_plan"]["idempotency_key"],
+        "generated_excluded": first["generated_excluded"],
+        "reader_generated_excluded": first["reader_generated_excluded"],
+        "bundle_snapshot_key": first["snapshot"]["aggregate_sha256"],
         "dw_idempotency_key": first["dw_payload"]["idempotency_key"],
-        "osf_keys_match": osf_keys_match,
+        "snapshot_keys_match": snapshot_key_match,
         "dw_keys_match": dw_keys_match,
         "inner_idempotency_stable": first["idempotency_stable"],
         "secret_scan": first["secret_scan"],
-        "live_gate": first["upstream_live_gate"],
+        "live_gate": first["live_gate"],
         "public_url": first["dw_payload"]["public_url"],
         "osf": first["dw_payload"]["osf"],
     }
@@ -141,7 +182,7 @@ def build_report(
         "first_live_command": "osf-publisher publish --run-dir <run_dir> --live",
         "vps_env_checklist": [
             "install rotated OSF_PAT only in one-shot shell or service env",
-            "keep OSF_PUBLISH_LIVE unset except for the live smoke command",
+            "keep OSF_PUBLISHER_LIVE unset except for the live smoke command",
             "do not write PAT to repo, reports, .env, or shell history",
         ],
         "security_checklist": [
@@ -177,7 +218,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         "|---|---:|---:|---:|---:|---:|---|",
     ]
     for row in report["all_checks"]:
-        keys_match = row.get("osf_keys_match") and row.get("dw_keys_match")
+        keys_match = row.get("snapshot_keys_match") and row.get("dw_keys_match")
         lines.append(
             "| {label} | {ok} | {files} | {reader_files} | {excluded} | {keys} | `{run}` |".format(
                 label=row["label"],

@@ -74,6 +74,17 @@ def test_qei_surface_gate_flags_malformed_row_shape():
     assert any("malformed QEI row cell count" in i.detail for i in report.issues)
 
 
+def test_malformed_qei_row_in_appendix_does_not_block_public_body():
+    paper = (
+        _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+        + "\n\n## Publication Appendix\n\n"
+        "## Quantitative Evidence Index\n\n"
+        "| Kell 2026 | mTOR signaling | placebo | p<0.001 |\n"
+    )
+    report = evaluate_journal_surface(paper)
+    assert report.passed
+
+
 def test_placeholder_prose_blocks_journal_surface():
     paper = (
         "## Introduction\n\n"
@@ -147,10 +158,63 @@ def test_duplicate_public_paragraph_blocks_journal_surface():
     assert any(i.code == "duplicate_paragraph" for i in report.issues)
 
 
+def test_repeated_low_diversity_normal_methods_do_not_false_positive():
+    paper = (
+        "## Methods\n\n"
+        "The review used structured source screening and source checks. "
+        * 12
+        + "\n\n## Results\n\n"
+        "The review used structured source screening and source checks. "
+        * 12
+    )
+    report = evaluate_journal_surface(paper)
+    assert not any(i.code == "duplicate_paragraph" for i in report.issues)
+
+
 def test_duplicate_appendix_paragraph_does_not_block_body_surface():
     good = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     para = " ".join(f"alpha{i}" for i in range(35))
     paper = good + f"\n\n## Publication Appendix\n\n{para}\n\n{para}\n"
+    report = evaluate_journal_surface(paper)
+    assert report.passed
+
+
+def test_glp1_deterministic_evidence_summary_pattern_blocks_surface():
+    paper = (
+        "## Structured Evidence Tables\n\n"
+        "*The following tables present the deterministic evidence summary "
+        "referenced throughout this paper.*\n"
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "placeholder_prose" for i in report.issues)
+
+
+def test_metformin_public_methods_meta_pattern_blocks_surface():
+    paper = (
+        "## Methods\n\n"
+        "This synthesis was produced by the v0.6 quant-claim adapter "
+        "pipeline on the metformin corpus (submission `synthesis-x`). "
+        "Rejected-evidence quarantine did NOT run.\n"
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "template_meta" for i in report.issues)
+
+
+def test_citation_artifacts_and_hedge_fragments_block_public_body():
+    paper = "## Results\n\n[citation needed]\n\nMay.\n"
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "citation_artifact" for i in report.issues)
+    assert any(i.code == "hedge_fragment" for i in report.issues)
+
+
+def test_citation_artifacts_and_hedge_fragments_allowed_in_appendix():
+    paper = (
+        _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+        + "\n\n## Publication Appendix\n\n[citation needed]\n\nMay.\n"
+    )
     report = evaluate_journal_surface(paper)
     assert report.passed
 

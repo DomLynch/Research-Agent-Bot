@@ -7,85 +7,73 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
-import final_checkpoint_report as report  # noqa: E402
+import final_checkpoint_report as checkpoint  # noqa: E402
 
 
-def _status(**local_overrides: object) -> dict:
-    local = {
-        "head": "abc1234",
-        "origin_main": "abc1234",
-        "dirty_count": 0,
-        "ahead": 0,
-        "behind": 0,
-        "state": "synced",
+def test_checkpoint_combines_local_github_vps_and_l6(
+    tmp_path: Path, monkeypatch
+) -> None:
+    l6 = tmp_path / "l6.json"
+    l6.write_text(
+        json.dumps(
+            {
+                "topics": [
+                    {"topic": "alpha", "status": "confirmed_l6"},
+                    {"topic": "beta", "status": "blocked"},
+                    {"topic": "gamma", "status": "needs_rerun"},
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    def fake_run(cmd: list[str], cwd: Path, timeout_s: int) -> dict:
+        text = " ".join(cmd)
+        if "rev-parse --short HEAD" in text:
+            return {"returncode": 0, "stdout": "abc123\n", "stderr": ""}
+        if "branch --show-current" in text:
+            return {"returncode": 0, "stdout": "main\n", "stderr": ""}
+        if "status --short" in text:
+            return {"returncode": 0, "stdout": " M x.py\n?? y.py\n", "stderr": ""}
+        if "remote get-url origin" in text:
+            return {"returncode": 0, "stdout": "git@example/repo\n", "stderr": ""}
+        if "rev-parse HEAD" in text:
+            return {"returncode": 0, "stdout": "abcdef\n", "stderr": ""}
+        if "ls-remote" in text:
+            return {
+                "returncode": 0,
+                "stdout": "abcdef\trefs/heads/main\n",
+                "stderr": "",
+            }
+        return {"returncode": 0, "stdout": "vps ok\n", "stderr": ""}
+
+    monkeypatch.setattr(checkpoint, "_run", fake_run)
+    report = checkpoint.build_checkpoint(
+        repo=tmp_path,
+        l6_report=l6,
+        vps_cmd=["ssh", "host", "true"],
+    )
+    assert report["local"]["dirty_count"] == 2
+    assert report["github"]["matches_local_head"] is True
+    assert report["vps"]["status"] == "ok"
+    assert report["l6"]["confirmed_l6"] == ["alpha"]
+
+
+def test_checkpoint_markdown_is_observational(tmp_path: Path) -> None:
+    report = {
+        "generated_at": "now",
+        "local": {"branch": "main", "head": "abc", "dirty_count": 0},
+        "github": {
+            "remote": "origin",
+            "remote_head": "abc",
+            "matches_local_head": True,
+            "status": "ok",
+        },
+        "vps": {"status": "not_configured"},
+        "l6": {"confirmed_l6": ["alpha"], "blocked": [], "needs_rerun": []},
     }
-    local.update(local_overrides)
-    return {"local": local, "vps": []}
-
-
-def test_parse_test_summary_pytest_and_ruff() -> None:
-    assert report.parse_test_summary("23 passed in 0.05s")["ok"] is True
-    assert report.parse_test_summary("1 failed, 2 passed")["ok"] is False
-    assert report.parse_test_summary("2 errors, 1 passed")["errors"] == 2
-    assert report.parse_test_summary("All checks passed!\n1 failed")["ok"] is False
-    assert report.parse_test_summary("All checks passed!")["ruff_clean"] is True
-
-
-def test_clean_checkpoint_passes() -> None:
-    result = report.build_report(
-        {
-            **_status(),
-            "vps": [
-                {
-                    "path": "/opt/research-agent-bot",
-                    "head": "abc1234",
-                    "dirty_count": 0,
-                    "service": "active",
-                    "http": "503",
-                }
-            ],
-        },
-        "ruff All checks passed!\n23 passed",
-    )
-    assert result["ready"] is True
-    assert "Verdict:** PASS" in report.render_markdown(result)
-
-
-def test_dirty_checkpoint_blocks() -> None:
-    result = report.build_report(_status(dirty_count=3, state="dirty"), "23 passed")
-    assert result["ready"] is False
-    assert result["local"]["dirty_category"] == "light_dirty"
-
-
-def test_stringified_counts_are_supported() -> None:
-    result = report.build_report(_status(dirty_count="0", ahead="0", behind="0"), "23 passed")
-    assert result["ready"] is True
-
-
-def test_ahead_behind_and_diverged_block() -> None:
-    assert report.build_report(_status(ahead=1, state="ahead"), "23 passed")["ready"] is False
-    assert report.build_report(_status(behind=1, state="behind"), "23 passed")["ready"] is False
-    assert report.build_report(_status(ahead=1, behind=1, state="diverged"), "23 passed")["ready"] is False
-
-
-def test_vps_mismatch_blocks() -> None:
-    result = report.build_report(
-        {
-            **_status(),
-            "vps": [{"path": "/opt/research-agent-bot", "head": "def5678", "dirty_count": 0}],
-        },
-        "23 passed",
-    )
-    assert result["ready"] is False
-    assert result["vps"][0]["state"] == "sha_mismatch"
-
-
-def test_cli_writes_markdown_without_network(tmp_path: Path) -> None:
-    status = tmp_path / "tri.json"
-    status.write_text(json.dumps(_status()), encoding="utf-8")
-    tests = tmp_path / "tests.txt"
-    tests.write_text("23 passed", encoding="utf-8")
-    out = tmp_path / "report.md"
-
-    assert report.main(["--tri-sync-json", str(status), "--test-output", str(tests), "--out", str(out)]) == 0
-    assert "# Final Checkpoint Report" in out.read_text(encoding="utf-8")
+    out = tmp_path / "reports" / "l6_final_checkpoint.md"
+    checkpoint.write_checkpoint(report, out)
+    text = out.read_text(encoding="utf-8")
+    assert "Final Checkpoint Report" in text
+    assert "does not deploy, push, promote" in text

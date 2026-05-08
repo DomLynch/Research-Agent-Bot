@@ -23,6 +23,8 @@ _PLACEHOLDER_PATTERNS = (
     "this paper evaluates the topic through accepted receipts", "the background is limited to corpus-supported context", "this synthesis aims to contribute to the field by",
     "the evidence base is limited to accepted receipts", "the conclusion is limited to claims that survive receipt qualification", "section generation cannot satisfy the validation contract",
     "generated section cannot satisfy the validation contract", "deterministic evidence summary", "deterministic synthesis summary", "llm proposes, code disposes", "no llm authorship",
+    "accepted receipts contain source-traced quantitative evidence",
+    "fallback stub used", "conservative placeholder",
 )
 _META_PATTERNS = (
     "this synthesis was produced by", "submission `synthesis-", "final-layer reviewer",
@@ -31,27 +33,23 @@ _META_PATTERNS = (
 )
 _REQUIRED_SECTIONS = {"Abstract": 150, "Introduction": 400, "Background": 300, "Methods": 300, "Results": 500, "Cross-Domain Synthesis": 850, "Discussion": 800, "Limitations": 250, "Conclusion": 250}
 _APPENDIX_CUTOFF_RE = re.compile(r"^##\s+(?:Publication Appendix|Researka Submitter Block|Data and Code Availability|Search Provenance|AI(?:-Use)? Disclosure|Accountability|References)\b", flags=re.M)
+_CITATION_ARTIFACT_RE = re.compile(r"\[(?:citation needed|source|ref|pmid|doi|TODO)[^\]]*\]|(?:^|\s)(?:PMID|DOI):?\s*$|<\s*(?:citation|ref)[^>]*>", re.IGNORECASE | re.MULTILINE)
+_HEDGE_FRAGMENT_RE = re.compile(r"^(?:may|might|could|appears|suggests|uncertain|preliminary|context[- ]dependent|not definitive|requires confirmation)\.?$", re.IGNORECASE)
 
 
 def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
     issues: list[SurfaceIssue] = []
     body_md = _journal_body(paper_md)
     low = body_md.lower()
-    for pat in _PLACEHOLDER_PATTERNS:
-        if pat in low:
-            issues.append(SurfaceIssue("placeholder_prose", pat))
-    for pat in _META_PATTERNS:
-        if pat in low:
-            issues.append(SurfaceIssue("template_meta", pat))
-    for msg in _duplicate_paragraph_issue_messages(body_md):
-        issues.append(SurfaceIssue("duplicate_paragraph", msg))
-    for msg in _section_issue_messages(body_md):
-        issues.append(SurfaceIssue("structure_surface", msg))
-    for msg in _qei_shape_issue_messages(body_md):
-        issues.append(SurfaceIssue("qei_surface", msg))
+    issues.extend(SurfaceIssue("placeholder_prose", pat) for pat in _PLACEHOLDER_PATTERNS if pat in low)
+    issues.extend(SurfaceIssue("template_meta", pat) for pat in _META_PATTERNS if pat in low)
+    issues.extend(SurfaceIssue("duplicate_paragraph", msg) for msg in _duplicate_paragraph_issue_messages(body_md))
+    issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _citation_artifact_issue_messages(body_md))
+    issues.extend(SurfaceIssue("hedge_fragment", msg) for msg in _hedge_fragment_issue_messages(body_md))
+    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _section_issue_messages(body_md))
+    issues.extend(SurfaceIssue("qei_surface", msg) for msg in _qei_shape_issue_messages(body_md))
     for row in _extract_qei_rows(body_md):
-        for msg in qei_row_issue_messages(row):
-            issues.append(SurfaceIssue("qei_surface", msg))
+        issues.extend(SurfaceIssue("qei_surface", msg) for msg in qei_row_issue_messages(row))
     return SurfaceReport(passed=not issues, issues=tuple(issues))
 
 
@@ -152,6 +150,19 @@ def _duplicate_paragraph_issue_messages(paper_md: str) -> tuple[str, ...]:
                 issues.append(
                     f"duplicate paragraphs {left[0]},{right[0]} token_overlap={overlap:.2f}"
                 )
+    return tuple(issues)
+
+
+def _citation_artifact_issue_messages(paper_md: str) -> tuple[str, ...]:
+    return tuple(f"citation artifact: {m.group(0).strip()}" for m in _CITATION_ARTIFACT_RE.finditer(paper_md))
+
+
+def _hedge_fragment_issue_messages(paper_md: str) -> tuple[str, ...]:
+    issues: list[str] = []
+    for idx, paragraph in enumerate(re.split(r"\n\s*\n", paper_md), start=1):
+        text = re.sub(r"\s+", " ", paragraph.strip())
+        if text and len(re.findall(r"[a-z0-9]+", text.lower())) <= 4 and _HEDGE_FRAGMENT_RE.match(text):
+            issues.append(f"standalone hedge fragment paragraph {idx}: {text}")
     return tuple(issues)
 
 

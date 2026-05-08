@@ -946,6 +946,22 @@ def test_apply_fixes_idempotent_for_citation_order() -> None:
     assert cite_log == []
 
 
+def test_apply_fixes_preserves_valid_author_year_token() -> None:
+    """Plain `Author YYYY` body citations are already valid tokens."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Discussion\n\n"
+        "Konopka 2019 reported a mechanistic endpoint, and Walton 2019 "
+        "reported a clinical endpoint.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert out.strip() == paper.strip()
+    assert not [e for e in log if e["fix_type"] == "broken_citation_order"]
+
+
 def test_polish_catches_duplicate_citation_year() -> None:
     """C08: `Author et al. YYYY (YYYY)` is a duplicate year artifact."""
     paper = (

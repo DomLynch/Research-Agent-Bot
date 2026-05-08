@@ -58,6 +58,7 @@ def test_malformed_outputs_fail_closed_to_escalate() -> None:
         {"verdict": "maybe", "rationale": "bad", "confidence": 0.5},
         {"verdict": "APPLY", "rationale": "", "confidence": 0.5},
         {"verdict": "APPLY", "rationale": "bad confidence", "confidence": 2},
+        {"verdict": "APPLY", "rationale": "extra key", "confidence": 0.5, "note": "x"},
         {
             "verdict": "APPLY",
             "rationale": "rewrites are forbidden",

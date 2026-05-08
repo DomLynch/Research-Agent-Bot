@@ -32,7 +32,7 @@ It writes:
 2. Local: export the rotated PAT only in the shell that runs the live smoke.
 3. VPS: install the rotated PAT only in the service environment or one-shot
    command environment.
-4. Keep `OSF_PUBLISH_LIVE=1` unset by default.
+4. Keep `OSF_PUBLISHER_LIVE=1` unset by default.
 5. Run dry readiness first:
 
 ```bash
@@ -50,7 +50,7 @@ Do not echo the PAT. Do not write it to `.env`, reports, logs, or shell history.
 ## VPS Env Checklist
 
 - `OSF_PAT` is present only for the sibling publisher live smoke process.
-- `OSF_PUBLISH_LIVE=1` is present only on the live smoke command.
+- `OSF_PUBLISHER_LIVE=1` is present only on the live smoke command.
 - `DW_API_TOKEN` is only needed when the sibling publisher writes the registry
   record back to DW.
 - Shell history is disabled or the PAT is injected outside the command line.

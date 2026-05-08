@@ -22,3 +22,11 @@ peer review, regulatory review, or editorial accountability.
 This artifact may have been screened by AI reviewer systems for evidence
 support and patch arbitration. These systems are advisory and judge-only; final
 responsibility remains with the human operator.
+
+## Methodological Boundary
+
+Do not describe Granite arbitration as equivalent to Cochrane human
+dual-review. The current defensible claim is narrower: an AI reviewer and
+judge-only arbitrator can produce logged disagreement decisions, and those
+decisions can be benchmarked against human-consensus fixtures. Human review,
+peer review, and formal systematic-review compliance remain separate evidence.

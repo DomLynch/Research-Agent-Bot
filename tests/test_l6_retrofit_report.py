@@ -10,11 +10,27 @@ sys.path.insert(0, str(REPO / "scripts"))
 import l6_retrofit_report as retrofit  # noqa: E402
 
 
-def _run(tmp_path: Path, name: str, topic: str, maturity: int) -> Path:
+def _run(
+    tmp_path: Path,
+    name: str,
+    topic: str,
+    maturity: int,
+    *,
+    receipt_id: str = "same",
+    extractor: str = "v1",
+) -> Path:
     run = tmp_path / "runs" / name
     run.mkdir(parents=True)
     (run / "manifest.json").write_text(
-        json.dumps({"topic": topic, "generated_at": name}),
+        json.dumps(
+            {
+                "topic": topic,
+                "generated_at": name,
+                "extractor_version": extractor,
+                "writer_path": "writer",
+                "receipts": [{"receipt_id": receipt_id}],
+            }
+        ),
         encoding="utf-8",
     )
     (run / "full_paper.final_verdict.json").write_text(
@@ -84,6 +100,26 @@ def test_adjacent_l5_pair_is_candidate_only_without_real_gate(tmp_path: Path) ->
     assert topic["candidate_pairs"] == [["a1", "a2"]]
 
 
+def test_same_topic_different_corpus_does_not_form_l6_pair(tmp_path: Path) -> None:
+    runs = [
+        _run(tmp_path, "a1", "alpha", 5, receipt_id="corpus-a"),
+        _run(tmp_path, "a2", "alpha", 5, receipt_id="corpus-b"),
+    ]
+    report = retrofit.build_report(runs)
+    assert report["counts"]["needs_rerun"] == 2
+    assert all(t["candidate_pairs"] == [] for t in report["topics"])
+
+
+def test_same_topic_different_code_does_not_form_l6_pair(tmp_path: Path) -> None:
+    runs = [
+        _run(tmp_path, "a1", "alpha", 5, extractor="v1"),
+        _run(tmp_path, "a2", "alpha", 5, extractor="v2"),
+    ]
+    report = retrofit.build_report(runs)
+    assert report["counts"]["needs_rerun"] == 2
+    assert all(t["candidate_pairs"] == [] for t in report["topics"])
+
+
 def test_real_gate_can_confirm_l6(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.chdir(tmp_path)
     runs = [_run(tmp_path, "a1", "alpha", 5), _run(tmp_path, "a2", "alpha", 5)]
@@ -117,6 +153,27 @@ def test_latest_l5_without_pair_needs_rerun(tmp_path: Path) -> None:
     runs = [_run(tmp_path, "a1", "alpha", 3), _run(tmp_path, "a2", "alpha", 5)]
     report = retrofit.build_report(runs)
     assert _topic(report, "alpha")["status"] == "needs_rerun"
+
+
+def test_three_run_sequence_tracks_two_adjacent_pairs(tmp_path: Path) -> None:
+    runs = [
+        _run(tmp_path, "a1", "alpha", 5),
+        _run(tmp_path, "a2", "alpha", 5),
+        _run(tmp_path, "a3", "alpha", 5),
+    ]
+    report = retrofit.build_report(runs)
+    assert _topic(report, "alpha")["candidate_pairs"] == [["a1", "a2"], ["a2", "a3"]]
+
+
+def test_broken_sequence_resets_candidate_pairs(tmp_path: Path) -> None:
+    runs = [
+        _run(tmp_path, "a1", "alpha", 5),
+        _run(tmp_path, "a2", "alpha", 3),
+        _run(tmp_path, "a3", "alpha", 5),
+    ]
+    report = retrofit.build_report(runs)
+    assert _topic(report, "alpha")["status"] == "needs_rerun"
+    assert _topic(report, "alpha")["candidate_pairs"] == []
 
 
 def test_no_l5_data_is_no_data(tmp_path: Path) -> None:

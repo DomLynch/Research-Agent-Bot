@@ -87,6 +87,8 @@ def test_deep_audit_marks_thin_and_grok_for_corpus_tuning(tmp_path: Path) -> Non
 
     assert {row["topic"] for row in data["corpus_tune_first"]} == {"thin", "grok"}
     assert all("--max-per-source 35" in row["tune_command"] for row in data["corpus_tune_first"])
+    buckets = {row["topic"]: row["failure_bucket"] for row in data["topics"]}
+    assert buckets == {"grok": "grok", "thin": "thin_corpus"}
 
 
 def test_deep_audit_marks_l6_rerun_and_rich_monitor(tmp_path: Path) -> None:
@@ -119,6 +121,56 @@ def test_deep_audit_blocks_rich_topic_with_grok_failure(tmp_path: Path) -> None:
 
     assert data["topics"][0]["bucket"] == "corpus_tune_first"
     assert data["topics"][0]["latest_rich_failure"] == "grok"
+
+
+def test_deep_audit_reads_queue_manifest_order(tmp_path: Path) -> None:
+    packs = tmp_path / "packs"
+    runs = tmp_path / "runs"
+    packs.mkdir()
+    runs.mkdir()
+    _pack(packs, "alpha")
+    _pack(packs, "beta")
+    manifest = tmp_path / "queue.json"
+    manifest.write_text(json.dumps({
+        "queue": [{"topic": "beta"}, {"topic": "missing"}],
+    }), encoding="utf-8")
+
+    data = build_report(packs, runs, queue_manifest=manifest)
+    by_topic = {row["topic"]: row for row in data["topics"]}
+
+    assert by_topic["beta"]["queue_manifest_order"] == 1
+    assert by_topic["alpha"]["queue_manifest_order"] == ""
+    assert data["queue_manifest"]["missing_from_packs"] == ["missing"]
+
+
+def test_deep_audit_reads_markdown_queue_manifest(tmp_path: Path) -> None:
+    packs = tmp_path / "packs"
+    runs = tmp_path / "runs"
+    packs.mkdir()
+    runs.mkdir()
+    _pack(packs, "alpha")
+    _pack(packs, "beta")
+    manifest = tmp_path / "queue.md"
+    manifest.write_text(
+        "\n".join([
+            "## Evidence Richness",
+            "| topic | runs |",
+            "| --- | --- |",
+            "| alpha | 4 |",
+            "## Next Queue",
+            "| topic | status |",
+            "| --- | --- |",
+            "| beta | ready |",
+            "| alpha | ready |",
+        ]),
+        encoding="utf-8",
+    )
+
+    data = build_report(packs, runs, queue_manifest=manifest)
+    by_topic = {row["topic"]: row for row in data["topics"]}
+
+    assert by_topic["beta"]["queue_manifest_order"] == 1
+    assert by_topic["alpha"]["queue_manifest_order"] == 2
 
 
 def test_deep_audit_reports_rich_baseline_regression(tmp_path: Path) -> None:

@@ -12,16 +12,24 @@ PASSING_FAILURES = {"pass", "unknown", "not-run"}
 BLOCKING_FAILURES = {"js", "grok", "corpus-thin"}
 
 
-def build_report(topic_pack_dir: Path, runs_dir: Path) -> dict[str, Any]:
+def build_report(
+    topic_pack_dir: Path,
+    runs_dir: Path,
+    *,
+    queue_manifest: Path | None = None,
+) -> dict[str, Any]:
     packs = _load_packs(topic_pack_dir)
     runs = _load_runs(runs_dir)
+    queue = _load_queue_manifest(queue_manifest)
     summaries = []
     for topic in sorted(packs):
         topic_runs = sorted(runs.get(topic, []), key=lambda row: row["run_dir"])
         latest = topic_runs[-1] if topic_runs else {}
         latest_rich = _latest([row for row in topic_runs if row["is_rich"]])
         baseline = _oldest_acceptable([row for row in topic_runs if not row["is_rich"]])
-        summaries.append(_topic_summary(topic, packs[topic], topic_runs, latest, latest_rich, baseline))
+        summaries.append(_topic_summary(
+            topic, packs[topic], topic_runs, latest, latest_rich, baseline, queue,
+        ))
     run_now = _by_priority(summaries, "run_now")
     corpus_tune = _by_priority(summaries, "corpus_tune_first")
     l6_reruns = _by_priority(summaries, "l6_rerun")
@@ -32,6 +40,11 @@ def build_report(topic_pack_dir: Path, runs_dir: Path) -> dict[str, Any]:
             "run_dirs": sum(len(items) for items in runs.values()),
             "mapped_topics": sorted(set(packs) & set(runs)),
             "run_topics_without_pack": sorted(set(runs) - set(packs)),
+        },
+        "queue_manifest": {
+            "path": queue["path"],
+            "topics": queue["topics"],
+            "missing_from_packs": sorted(set(queue["topics"]) - set(packs)),
         },
         "topics": sorted(summaries, key=lambda row: row["topic"]),
         "run_now": run_now,
@@ -55,6 +68,8 @@ def rows_to_markdown(data: dict[str, Any]) -> str:
         f"- run dirs: {data['inventory']['run_dirs']}",
         f"- mapped topics: {len(data['inventory']['mapped_topics'])}",
         f"- run topics without pack: {', '.join(data['inventory']['run_topics_without_pack']) or 'none'}",
+        f"- queue manifest topics: {len(data['queue_manifest']['topics'])}",
+        f"- queue topics without pack: {', '.join(data['queue_manifest']['missing_from_packs']) or 'none'}",
         "",
         "## First 10 Run-Now Topics",
         "",
@@ -105,15 +120,16 @@ def rows_to_markdown(data: dict[str, Any]) -> str:
         "",
         "## All Topics",
         "",
-        "| topic | bucket | status | aliases | queries | canonical trials | latest failure | latest rich failure | rich delta |",
-        "| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |",
+        "| topic | bucket | status | aliases | queries | canonical trials | latest failure | failure bucket | latest rich failure | rich delta |",
+        "| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- | --- |",
     ])
     for row in data["topics"]:
         delta = f"maturity {row['maturity_delta']}, receipts {row['receipt_delta']}"
         lines.append(
             f"| `{row['topic']}` | {row['bucket']} | {row['status']} | "
             f"{row['aliases']} | {row['search_queries']} | {row['canonical_trials']} | "
-            f"{row['latest_failure']} | {row['latest_rich_failure']} | {delta} |"
+            f"{row['latest_failure']} | {row['failure_bucket']} | "
+            f"{row['latest_rich_failure']} | {delta} |"
         )
     return "\n".join(lines) + "\n"
 
@@ -122,11 +138,16 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--topic-pack-dir", type=Path, default=Path("topic_packs"))
     parser.add_argument("--runs-dir", type=Path, default=Path("runs"))
+    parser.add_argument("--queue-manifest", type=Path)
     parser.add_argument("--format", choices=("json", "markdown"), default="markdown")
     parser.add_argument("--json-out", type=Path)
     parser.add_argument("--markdown-out", type=Path)
     args = parser.parse_args(argv)
-    data = build_report(args.topic_pack_dir, args.runs_dir)
+    data = build_report(
+        args.topic_pack_dir,
+        args.runs_dir,
+        queue_manifest=args.queue_manifest,
+    )
     json_text = rows_to_json(data)
     markdown_text = rows_to_markdown(data)
     if args.json_out:
@@ -168,6 +189,57 @@ def _load_runs(root: Path) -> dict[str, list[dict[str, Any]]]:
     return out
 
 
+def _load_queue_manifest(path: Path | None) -> dict[str, Any]:
+    if path is None:
+        return {"path": "", "topics": [], "order": {}}
+    if not path.exists() and path.suffix == ".json":
+        markdown = path.with_suffix(".md")
+        if markdown.exists():
+            path = markdown
+    if path.suffix == ".md":
+        topics = _topics_from_queue_markdown(path)
+        return {
+            "path": str(path),
+            "topics": topics,
+            "order": {topic: idx + 1 for idx, topic in enumerate(topics)},
+        }
+    data = _read_json(path)
+    topics = []
+    for key in ("queue", "topics", "run_now"):
+        items = data.get(key)
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            topic = item.get("topic") if isinstance(item, dict) else item
+            if isinstance(topic, str) and topic not in topics:
+                topics.append(topic)
+    return {
+        "path": str(path),
+        "topics": topics,
+        "order": {topic: idx + 1 for idx, topic in enumerate(topics)},
+    }
+
+
+def _topics_from_queue_markdown(path: Path) -> list[str]:
+    topics = []
+    in_queue = False
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("## "):
+            in_queue = "Next Queue" in line or "Next 18 Topic Queue" in line
+            continue
+        if not in_queue:
+            continue
+        if not line.startswith("|") or "---" in line:
+            continue
+        cells = [cell.strip().strip("`") for cell in line.strip("|").split("|")]
+        if not cells or cells[0] in {"topic", "order", "rank"}:
+            continue
+        topic = cells[1] if cells[0].isdigit() and len(cells) > 1 else cells[0]
+        if re.fullmatch(r"[a-z0-9_]+", topic) and topic not in topics:
+            topics.append(topic)
+    return topics
+
+
 def _topic_summary(
     topic: str,
     pack: dict[str, Any],
@@ -175,6 +247,7 @@ def _topic_summary(
     latest: dict[str, Any],
     latest_rich: dict[str, Any],
     baseline: dict[str, Any],
+    queue: dict[str, Any],
 ) -> dict[str, Any]:
     bottlenecks = _pack_bottlenecks(pack)
     latest_failure = str(latest.get("failure_class", "not-run"))
@@ -190,6 +263,7 @@ def _topic_summary(
         "bucket": bucket,
         "status": _status(bucket),
         "priority": priority,
+        "queue_manifest_order": queue["order"].get(topic, ""),
         "aliases": pack["aliases"],
         "search_queries": pack["search_queries"],
         "canonical_trials": pack["canonical_trials"],
@@ -204,6 +278,7 @@ def _topic_summary(
         "baseline_run": baseline.get("run_dir", ""),
         "latest_failure": latest_failure,
         "latest_rich_failure": latest_rich_failure,
+        "failure_bucket": _failure_bucket(latest_failure),
         "latest_verdict": latest.get("verdict", "unknown"),
         "latest_maturity": latest.get("maturity_level", 0),
         "latest_receipts": latest.get("receipts", 0),
@@ -337,6 +412,19 @@ def _failure(
     if final or audit:
         return "pass" if verdict in {"AAA", "PASS", "TRUST-SPINE PASS"} else "verdict"
     return "unknown"
+
+
+def _failure_bucket(failure: str) -> str:
+    return {
+        "js": "surface_gate",
+        "grok": "grok",
+        "corpus-thin": "thin_corpus",
+        "verdict": "writer_or_verdict",
+        "backfill": "backfill",
+        "pass": "none",
+        "unknown": "unknown",
+        "not-run": "not_run",
+    }.get(failure, "unknown")
 
 
 def _next_command(topic: str, bucket: str) -> str:

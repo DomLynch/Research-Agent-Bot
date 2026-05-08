@@ -28,3 +28,5 @@ Release `PASS` requires:
 - endpoint is expected; `503` is valid for the paused dashboard stub
 - no secret scan hits
 - no large generated file warnings
+- no OSF auth/API placement warnings inside bot runtime or bot-side publisher
+  scripts; live OSF publishing belongs in the sibling publisher service

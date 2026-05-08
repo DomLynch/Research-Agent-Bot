@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -25,7 +26,7 @@ def build_report(
     groups: dict[str, list[Path]] = {}
     for run_dir in run_dirs:
         if run_dir.is_dir():
-            groups.setdefault(_topic_for_run(run_dir), []).append(run_dir)
+            groups.setdefault(_cohort_key(run_dir), []).append(run_dir)
     topics = [
         _topic_status(
             topic,
@@ -59,12 +60,13 @@ def render_markdown(report: Mapping[str, Any]) -> str:
         "L6 is confirmed only when the real consecutive certification gate "
         "returns `l6_reproducibly_journal_ready=true`.",
         "",
-        "| Topic | Status | Runs | L5+ | Candidate pairs | Confirmed pair | Reason |",
-        "|---|---|---:|---:|---:|---|---|",
+        "| Topic | Cohort | Status | Runs | L5+ | Candidate pairs | Confirmed pair | Reason |",
+        "|---|---|---|---:|---:|---:|---|---|",
     ]
     for topic in report["topics"]:
         lines.append(
-            f"| {topic['topic']} | {topic['status']} | {topic['n_runs']} | "
+            f"| {topic['topic']} | {_short(topic.get('cohort', ''))} | "
+            f"{topic['status']} | {topic['n_runs']} | "
             f"{topic['n_l5_or_higher']} | {len(topic['candidate_pairs'])} | "
             f"{', '.join(topic.get('confirmed_pair') or [])} | "
             f"{topic.get('reason', '')} |"
@@ -81,12 +83,14 @@ def render_markdown(report: Mapping[str, Any]) -> str:
                 f"{'; '.join(blockers) or 'not L6-ready under clean L5 gate'}"
             )
     lines += ["", "## Next Reruns", ""]
+    reruns = []
     for topic in report["topics"]:
         if topic["status"] == "needs_rerun":
-            lines.append(
-                f"- `{topic['topic']}`: "
-                f"`python3 scripts/run_v06_synthesis.py --topic {topic['topic']}`"
-            )
+            reruns.append(topic["topic"])
+    for topic in sorted(set(reruns)):
+        lines.append(
+            f"- `{topic}`: `python3 scripts/run_v06_synthesis.py --topic {topic}`"
+        )
     return "\n".join(lines).rstrip() + "\n"
 
 
@@ -119,7 +123,7 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _topic_status(
-    topic: str,
+    cohort: str,
     run_dirs: Sequence[Path],
     *,
     run_cert: bool,
@@ -128,6 +132,7 @@ def _topic_status(
     cert_runner: CertRunner,
 ) -> dict[str, Any]:
     rows = [_row(p) for p in sorted(run_dirs, key=_run_sort_key)]
+    topic = rows[-1]["topic"] if rows else cohort
     pairs = _candidate_pairs(rows)
     certs = []
     if run_cert:
@@ -140,6 +145,9 @@ def _topic_status(
     status, reason = _status(rows, pairs, certs, confirmed)
     return {
         "topic": topic,
+        "cohort": cohort,
+        "corpus_signature": rows[-1]["corpus_signature"] if rows else "",
+        "code_signature": rows[-1]["code_signature"] if rows else "",
         "status": status,
         "reason": reason,
         "n_runs": len(rows),
@@ -265,8 +273,10 @@ def _run_consecutive_cert(
 
 def _row(run_dir: Path) -> dict[str, Any]:
     final = _read_json(run_dir / "full_paper.final_verdict.json")
+    manifest = _read_json(run_dir / "manifest.json")
     return {
         "run_dir": run_dir.name,
+        "topic": _topic_for_run(run_dir),
         "generated_at": _generated_at(run_dir),
         "verdict": str(final.get("verdict") or final.get("final_verdict") or "missing"),
         "maturity_level": _maturity_level(final),
@@ -276,6 +286,8 @@ def _row(run_dir: Path) -> dict[str, Any]:
         "grok_unresolved_p1": int(final.get("grok_unresolved_p1", 0) or 0),
         "stage2_p1": int(final.get("stage2_p1", 0) or 0),
         "stage2_p2": int(final.get("stage2_p2", 0) or 0),
+        "corpus_signature": _corpus_signature(manifest),
+        "code_signature": _code_signature(manifest, final),
         "has_final_verdict": bool(final),
         "has_full_paper_md": (run_dir / "full_paper.md").exists(),
     }
@@ -324,6 +336,45 @@ def _topic_for_run(run_dir: Path) -> str:
     return match.group(1) if match else run_dir.name
 
 
+def _cohort_key(run_dir: Path) -> str:
+    manifest = _read_json(run_dir / "manifest.json")
+    final = _read_json(run_dir / "full_paper.final_verdict.json")
+    topic = _topic_for_run(run_dir)
+    return "|".join(
+        (topic, _corpus_signature(manifest), _code_signature(manifest, final))
+    )
+
+
+def _corpus_signature(manifest: Mapping[str, Any]) -> str:
+    receipts = manifest.get("receipts")
+    if isinstance(receipts, list) and receipts:
+        ids = sorted(str(r.get("receipt_id", r)) for r in receipts)
+        return "receipts:" + hashlib.sha1("\n".join(ids).encode()).hexdigest()[:12]
+    return "counts:" + "|".join(
+        str(manifest.get(key, 0))
+        for key in (
+            "n_receipts",
+            "n_high_confidence_claims_total",
+            "n_non_orthogonal_tensions",
+        )
+    )
+
+
+def _code_signature(
+    manifest: Mapping[str, Any],
+    final: Mapping[str, Any],
+) -> str:
+    return "|".join(
+        str(x or "unknown")
+        for x in (
+            manifest.get("extractor_version"),
+            manifest.get("writer_path"),
+            final.get("certification_gate_version"),
+            final.get("certification_track"),
+        )
+    )
+
+
 def _generated_at(run_dir: Path) -> str:
     for name in ("manifest.json", "full_paper.final_verdict.json"):
         data = _read_json(run_dir / name)
@@ -369,6 +420,13 @@ def _counts(topics: Sequence[Mapping[str, Any]]) -> dict[str, int]:
         "needs_rerun": sum(t["status"] == "needs_rerun" for t in topics),
         "no_data": sum(t["status"] == "no_data" for t in topics),
     }
+
+
+def _short(value: str) -> str:
+    parts = value.split("|")
+    if len(parts) < 3:
+        return value[:24]
+    return f"{parts[1].replace('receipts:', 'r:')} / {parts[2][:18]}"
 
 
 if __name__ == "__main__":

@@ -17,6 +17,38 @@ DW gates pass.
 - topic index exists at `/reader/<topic>/`.
 - version index lists every immutable run for the topic.
 
+## Minimum Public Page Metadata
+
+- topic
+- run id
+- title or thesis
+- generated date
+- paper path
+- audit score and audit P1 status
+- receipt count
+- tension count
+- final verdict path
+- certification path when available
+- canonical public URL after publication
+
+## Trust Panel JSON Summary Draft
+
+```json
+{
+  "run_id": "synthesis-topic-v06-...",
+  "topic": "topic",
+  "audit": {"score_out_of_10": 10.0, "p1_pass": true},
+  "quality_gate": {"passed": true, "errors": []},
+  "bundle": {"manifest_path": "bundle_manifest.json", "sha256_verified": true},
+  "citations": {"bibtex": "citation.bib", "csl_json": "citation.csl.json"},
+  "dw": {"status": "not_checked", "report_path": null},
+  "osf": {"doi": null, "status": "not_checked"}
+}
+```
+
+`dw` and `osf` fields are placeholders until independent verifiers populate
+them. The reader must not infer those statuses.
+
 ## Route Shape
 
 - `/reader/` collection index
@@ -51,6 +83,23 @@ V2 needs lightweight BibTeX and CSL-JSON generated from manifest metadata.
 Required fields: title/topic, generated date, canonical URL, publisher
 `Researka`, and run id. DOI/OSF fields should be blank unless a verifier
 provides them.
+
+Checklist:
+
+- BibTeX file exists and has one stable entry id.
+- CSL-JSON file exists and parses as a list or object.
+- Both exports include topic/title, run id, generated date, publisher, and URL.
+- DOI is omitted unless OSF/DOI verification provides it.
+
+## Topic and Version Indexes
+
+Checklist:
+
+- `/reader/index.json` contains every public-ready bundle.
+- `/reader/<topic>/index.html` links to the latest ready bundle.
+- `/reader/<topic>/versions.html` lists every immutable run id for that topic.
+- Index links are relative and covered by the static quality gate.
+
 
 ## Bundle Integrity
 

@@ -8,7 +8,11 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
-from reader_publication_deep_report import build_report, write_report  # noqa: E402
+from reader_publication_deep_report import (  # noqa: E402
+    build_report,
+    build_run_bundle_report,
+    write_report,
+)
 
 
 def _reader(root: Path, run: str, topic: str = "alpha") -> Path:
@@ -103,3 +107,49 @@ def test_write_report_outputs_json_and_markdown(tmp_path: Path) -> None:
 
     assert json.loads(json_path.read_text())["readers"][0]["run"] == "run-1"
     assert "Deep Reader Publication Report" in md_path.read_text()
+
+
+def test_run_bundle_report_inventory_marks_missing_public_metadata(tmp_path: Path) -> None:
+    run = tmp_path / "run-a"
+    run.mkdir()
+    (run / "manifest.json").write_text(
+        json.dumps({"topic": "alpha", "n_receipts": 2}),
+        encoding="utf-8",
+    )
+    (run / "full_paper.audit.json").write_text(
+        json.dumps({"p1_pass": False}),
+        encoding="utf-8",
+    )
+
+    row = build_run_bundle_report([run])["runs"][0]
+
+    assert row["ready_for_reader_export"] is False
+    assert "title_or_thesis" in row["missing"]
+    assert "audit_p1_pass" in row["missing"]
+
+
+def test_run_bundle_report_accepts_minimum_public_metadata(tmp_path: Path) -> None:
+    run = tmp_path / "run-b"
+    run.mkdir()
+    (run / "manifest.json").write_text(
+        json.dumps({
+            "topic": "alpha",
+            "thesis": "claim",
+            "generated_at": "2026-05-08",
+            "n_receipts": 2,
+            "n_non_orthogonal_tensions": 1,
+        }),
+        encoding="utf-8",
+    )
+    (run / "full_paper.audit.json").write_text(
+        json.dumps({"p1_pass": True}),
+        encoding="utf-8",
+    )
+    (run / "full_paper.md").write_text("# Paper", encoding="utf-8")
+    (run / "full_paper.final_verdict.md").write_text("pass", encoding="utf-8")
+    (run / "full_paper.certification.md").write_text("cert", encoding="utf-8")
+
+    row = build_run_bundle_report([run])["runs"][0]
+
+    assert row["ready_for_reader_export"] is True
+    assert row["missing"] == ()

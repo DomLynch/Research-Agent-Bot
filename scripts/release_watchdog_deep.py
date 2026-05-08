@@ -18,6 +18,23 @@ SECRET_PATTERNS = {
     "private_key": re.compile(r"BEGIN (?:RSA |OPENSSH |EC |DSA )?PRIVATE KEY"),
     "openai_key": re.compile(r"\bsk-[A-Za-z0-9_-]{20,}"),
 }
+OSF_PLACEMENT_PATTERNS = {
+    "osf_pat": re.compile(r"\bOSF_PAT\b"),
+    "osf_api": re.compile(r"api\.osf\.io|files\.osf\.io"),
+    "osf_live_gate": re.compile(r"\bOSF_PUBLISHER_LIVE\b"),
+}
+OSF_ALLOWED_PREFIXES = (
+    "docs/",
+    "reports/",
+    "tests/",
+    "scripts/osf_live_readiness.py",
+    "scripts/release_watchdog",
+    "scripts/arbitration",
+    "scripts/bundle_snapshot.py",
+    "scripts/dw_register_public_bundle.py",
+    "scripts/export_public_bundle.py",
+    "scripts/researka_reader_manifest.py",
+)
 
 
 def read_text(path: Path | None) -> str:
@@ -122,6 +139,29 @@ def scan_secrets(repo: Path, roots: list[str]) -> list[dict[str, str]]:
     return hits
 
 
+def scan_osf_placement(
+    repo: Path, roots: tuple[str, ...] = ("agent", "scripts")
+) -> list[dict[str, str]]:
+    warnings = []
+    for root in roots:
+        base = repo / root
+        paths = [base] if base.is_file() else list(base.rglob("*")) if base.exists() else []
+        for path in paths:
+            if not should_scan(path):
+                continue
+            rel = str(path.relative_to(repo))
+            if rel.startswith(OSF_ALLOWED_PREFIXES):
+                continue
+            names = [
+                name
+                for name, pattern in OSF_PLACEMENT_PATTERNS.items()
+                if pattern.search(read_text(path))
+            ]
+            if names:
+                warnings.append({"path": rel, "patterns": ",".join(names)})
+    return warnings
+
+
 def sha_summary(sha_text: str, tri_sync: dict[str, Any]) -> dict[str, Any]:
     kv = parse_kv(sha_text)
     local_full = kv.get("local_full")
@@ -171,6 +211,7 @@ def build_report(
     shas = sha_summary(sha_text, tri_sync)
     large = large_file_warnings(repo, rows, large_limit)
     secrets = scan_secrets(repo, secret_roots)
+    osf_placement = scan_osf_placement(repo)
     vps = vps_warnings(tri_sync)
     blockers = []
     if rows:
@@ -185,6 +226,8 @@ def build_report(
         blockers.append("secret scan hit(s)")
     if large:
         blockers.append("large staged/untracked file warning(s)")
+    if osf_placement:
+        blockers.append("OSF code placement warning(s)")
     return {
         "verdict": "PASS" if not blockers else "BLOCKED",
         "blockers": blockers,
@@ -194,6 +237,7 @@ def build_report(
         "lane_counts": lane_counts(rows),
         "large_files": large,
         "secret_hits": secrets,
+        "osf_placement_warnings": osf_placement,
         "sha": shas,
         "vps_warnings": vps,
         "endpoint_semantics": "503 is acceptable for the paused dashboard stub.",
@@ -223,6 +267,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"- VPS SHA prefix match: `{report['sha']['vps_match']}`",
         f"- Secret hits: `{len(report['secret_hits'])}`",
         f"- Large file warnings: `{len(report['large_files'])}`",
+        f"- OSF placement warnings: `{len(report['osf_placement_warnings'])}`",
         "",
         "## Recovery Commands",
         "",

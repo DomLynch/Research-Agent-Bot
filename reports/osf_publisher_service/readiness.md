@@ -5,6 +5,12 @@ Dry-run scaffold ready: yes.
 Live-ready: no. It is ready for a first dry deployment, not a real OSF/DW
 publication.
 
+Latest local checks:
+
+- pytest: 20 passed
+- ruff: clean
+- scoped secret scan: clean
+
 ## Architecture
 
 `research-agent-bot -> Derivation Web -> osf-publisher -> OSF -> Derivation Web`

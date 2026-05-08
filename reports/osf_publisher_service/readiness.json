@@ -3,6 +3,11 @@
   "architecture": "research-agent-bot -> DW -> osf-publisher -> OSF -> DW",
   "dry_run_ready": true,
   "live_ready": false,
+  "tested": {
+    "pytest": "20 passed",
+    "ruff": "clean",
+    "secret_scan": "clean"
+  },
   "blockers": [
     "No live OSF call performed",
     "No live DW write-back performed",

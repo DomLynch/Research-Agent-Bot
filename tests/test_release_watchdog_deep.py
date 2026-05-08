@@ -42,6 +42,28 @@ def test_secret_scan_catches_bare_pat_shape(tmp_path: Path) -> None:
     ]
 
 
+def test_osf_placement_warns_on_runtime_secret_use(tmp_path: Path) -> None:
+    (tmp_path / "agent").mkdir()
+    (tmp_path / "agent" / "bad.py").write_text(
+        'token = os.environ["OSF_PAT"]\nbase = "https://api.osf.io/v2"\n',
+        encoding="utf-8",
+    )
+    assert deep.scan_osf_placement(tmp_path) == [
+        {"path": "agent/bad.py", "patterns": "osf_pat,osf_api"}
+    ]
+
+
+def test_osf_placement_rejects_bot_side_publisher_surface(tmp_path: Path) -> None:
+    (tmp_path / "scripts").mkdir()
+    (tmp_path / "scripts" / "osf_publish.py").write_text(
+        'token = os.environ["OSF_PAT"]\nbase = "https://api.osf.io/v2"\n',
+        encoding="utf-8",
+    )
+    assert deep.scan_osf_placement(tmp_path) == [
+        {"path": "scripts/osf_publish.py", "patterns": "osf_pat,osf_api"}
+    ]
+
+
 def test_large_file_warning(tmp_path: Path) -> None:
     path = tmp_path / "big.bin"
     path.write_bytes(b"x" * 12)
@@ -51,13 +73,13 @@ def test_large_file_warning(tmp_path: Path) -> None:
     ]
 
 
-def test_sha_and_vps_503_acceptance() -> None:
+def test_sha_and_vps_503_acceptance(tmp_path: Path) -> None:
     tri = {
         "local": {"head": "abc12345"},
         "vps": [{"path": "/opt/research-agent-bot", "head": "abc12345", "dirty_count": 0, "service": "active", "http": "503"}],
     }
     report = deep.build_report(
-        repo=Path("."),
+        repo=tmp_path,
         status_text="",
         sha_text="local_full=abc123456789\norigin_full=abc123456789\n",
         tri_sync=tri,
@@ -65,6 +87,7 @@ def test_sha_and_vps_503_acceptance() -> None:
     )
     assert report["verdict"] == "PASS"
     assert report["sha"]["vps_match"] is True
+    assert report["osf_placement_warnings"] == []
 
 
 def test_sha_mismatch_blocks() -> None:
