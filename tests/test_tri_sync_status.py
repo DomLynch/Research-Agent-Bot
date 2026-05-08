@@ -67,5 +67,5 @@ def test_remote_probe_command_is_read_only() -> None:
     command = tri._remote_probe_command("/opt/research-agent-bot")
     forbidden = ("pull", "fetch", "reset", "checkout", "restart", "systemctl restart")
     assert all(word not in command for word in forbidden)
-    assert "git rev-parse --short HEAD" in command
+    assert "git rev-parse --short=8 HEAD" in command
     assert "git status --porcelain" in command

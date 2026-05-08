@@ -90,8 +90,8 @@ def _run_or_none(args: list[str], *, cwd: Path) -> str | None:
 
 def local_status(repo: Path) -> dict[str, Any]:
     repo = repo.resolve()
-    head = _run_or_none(["git", "rev-parse", "--short", "HEAD"], cwd=repo)
-    origin = _run_or_none(["git", "rev-parse", "--short", "origin/main"], cwd=repo)
+    head = _run_or_none(["git", "rev-parse", "--short=8", "HEAD"], cwd=repo)
+    origin = _run_or_none(["git", "rev-parse", "--short=8", "origin/main"], cwd=repo)
     porcelain = _run_or_none(["git", "status", "--porcelain"], cwd=repo) or ""
     counts = _run_or_none(
         ["git", "rev-list", "--left-right", "--count", "HEAD...origin/main"],
@@ -122,7 +122,7 @@ def _remote_probe_command(path: str) -> str:
         [
             f"cd {qpath} || exit 2",
             "printf 'path=%s\\n' \"$PWD\"",
-            "printf 'head='; git rev-parse --short HEAD || true",
+            "printf 'head='; git rev-parse --short=8 HEAD || true",
             "printf 'dirty='; git status --porcelain | wc -l | tr -d ' '",
             f"printf 'service='; systemctl is-active {SERVICE} || true",
             f"printf 'http='; curl -s -o /dev/null -w '%{{http_code}}' {LOCAL_HTTP} || true; printf '\\n'",
