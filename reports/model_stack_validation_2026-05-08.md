@@ -24,7 +24,10 @@ The arbitrator remains judge-only: `APPLY`, `REJECT`, or `ESCALATE`.
 | Live Mistral mixed sample | 5/6 pass |
 | Mixed-sample miss | expected REJECT, returned conservative ESCALATE |
 | Live DeepSeek reviewer smoke | HTTP 200; parsed `{"patches":[]}` |
+| Live DeepSeek reviewer function | OK; 0 patches on synthetic smoke |
+| DeepSeek smoke cost | $0.00119 |
 | DeepSeek model resolved | `deepseek/deepseek-v4-pro-20260423` |
+| Live DeepSeek reviewer path | 0 patches; `$0.00119` |
 
 ## Coverage
 
@@ -33,6 +36,12 @@ omega-3, and senolytics. Cases cover safe deletion, numeric simplification,
 duplicate-prose removal, semantic replacement escalation, explicit reject, bad
 JSON, invalid verdict, rewrite attempt, low-confidence APPLY, and transport
 failure.
+
+Historical IBM Granite live runs on the earlier 10-case fixture scored 2/10 and
+3/10. That comparison is not perfectly controlled because the benchmark and
+prompt have since been hardened, but the current live Mistral mixed sample is
+materially better and its only miss was conservative escalation rather than
+unsafe application.
 
 ## Evidence Files
 
@@ -43,6 +52,8 @@ failure.
 - `reports/model_stack_validation_2026-05-08.live_mistral.json`
 - `reports/model_stack_validation_2026-05-08.live_mistral_mixed.json`
 - `reports/model_stack_validation_2026-05-08.live_deepseek.json`
+- `reports/model_stack_validation_2026-05-08.live_deepseek_review.json`
+- `reports/model_stack_validation_2026-05-08.live_deepseek_review.json`
 
 ## Tests
 
@@ -67,3 +78,7 @@ used as a broad semantic authority and does not silently inflate L5: all
 decisions are logged in arbitration-log-compatible shape and unsafe classes
 fail closed. The mixed live sample shows one miss, but it was conservative
 escalation rather than unsafe patch application.
+
+Recommendation: keep Mistral live for arbitration under the current fail-closed
+contract. Do not use it to override smart-gate refusals without the persisted
+arbitration log and post-apply audit.
