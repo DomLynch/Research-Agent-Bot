@@ -612,7 +612,7 @@ def compose_appendix(
             verdict=verdict,
         ),
     ]
-    return "\n\n".join(b.rstrip() for b in blocks) + "\n"
+    return "## Publication Appendix\n\n" + "\n\n".join(b.rstrip() for b in blocks) + "\n"
 
 
 # Convenience: detect the splice point in an existing paper

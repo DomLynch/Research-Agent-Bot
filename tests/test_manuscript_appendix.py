@@ -283,6 +283,7 @@ def test_compose_appendix_assembles_all_four_sections() -> None:
         run_id="r1",
         git_sha="abc1234",
     )
+    assert md.startswith("## Publication Appendix")
     sp_pos = md.find("## Search Provenance and Selection")
     ai_pos = md.find("## AI-Use Disclosure")
     sb_pos = md.find("## Researka Submitter Block")
