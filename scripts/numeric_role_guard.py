@@ -667,6 +667,57 @@ def _check_editorial_numeric_contract(
     return None
 
 
+def _check_unanchored_hedged_numeric_contract(
+    sentence: str,
+    citation_role_index: dict[str, dict[str, set[str]]],
+) -> NumericIssue | None:
+    """Path A for citationless prose: approximate numeric claims are
+    allowed only when every numeric is present in the registry.
+
+    Abstracts often omit citations, but they still cannot introduce
+    rounded values that Q2 cannot trace. This narrow check only fires
+    for hedge-bearing sentences ("approximately", "roughly", etc.)
+    with no citation token, which is the high-risk editorial-summary
+    case.
+    """
+    if not citation_role_index:
+        return None
+    if _CITATION_TOKEN_RE.search(sentence):
+        return None
+    registered = {
+        variant
+        for slot in citation_role_index.values()
+        for raw, roles in slot.items()
+        if roles - {"unknown", "background", "protocol", "population_descriptor"}
+        for variant in _numeric_variants(raw)
+    }
+    for m in _DRIFT_NUMERIC_RE.finditer(sentence):
+        raw = m.group(1)
+        before = sentence[max(0, m.start() - 32):m.start()]
+        if not _HEDGE_WORD_RE.search(before):
+            continue
+        try:
+            f = float(raw)
+        except (TypeError, ValueError):
+            continue
+        if 1900 <= f <= 2100 and "." not in raw:
+            continue
+        if not (_numeric_variants(raw) & registered):
+            return NumericIssue(
+                sentence=sentence,
+                issue_type="numeric_claim_contract",
+                severity="P1",
+                detail=(
+                    "Citationless approximate numeric sentence contains "
+                    f"unregistered value '{raw}'."
+                ),
+                suggested_fix=(
+                    "Use exact registry values or strip the sentence."
+                ),
+            )
+    return None
+
+
 _DRIFT_PROXIMITY_WINDOW = 180  # chars; any citation within this distance is candidate
 
 # Slice 7 P1b: prose-role classifier. Each prose numeric belongs
@@ -994,6 +1045,12 @@ def scan_paper(
     body_for_drift = _strip_references_section(prose_md)
     drift_sentences = set(_split_sentences(body_for_drift))
     for sentence in _split_sentences(prose_md):
+        unanchored_contract = _check_unanchored_hedged_numeric_contract(
+            sentence, citation_role_index,
+        )
+        if unanchored_contract:
+            issues.append(unanchored_contract)
+            continue
         contract_issue = _check_editorial_numeric_contract(
             sentence, citation_role_index,
         )

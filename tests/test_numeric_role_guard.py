@@ -434,6 +434,31 @@ def test_numeric_contract_allows_hedge_with_inline_canonical_value():
     ]
 
 
+def test_numeric_contract_blocks_unanchored_hedged_unregistered_value(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_weight.quant_claims.json").write_text(
+        '{"paper_id":"PMC_weight","claims":[{'
+        '"numeric_values":[93,90.8,0.001],'
+        '"binding_confidence":"high","claim_role":"effect"},{'
+        '"numeric_values":[91],'
+        '"binding_confidence":"high","claim_role":"unknown"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_weight",
+        "citation_token": "Weight 2024",
+    }]}
+    paper = (
+        "Short-term caloric restriction lowered body weight from "
+        "approximately 93 to 91 kg (P < 0.001)."
+    )
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    found = [i for i in issues if i.issue_type == "numeric_claim_contract"]
+    assert found and "91" in found[0].detail
+
+
 def test_numeric_contract_blocks_editorial_fraction_without_exact_value():
     bg_lit = {
         "smith_response": {
