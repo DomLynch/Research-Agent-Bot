@@ -42,6 +42,28 @@ def test_static_reader_rejects_absolute_or_scheme_links(tmp_path: Path) -> None:
     assert "../outside" not in html
 
 
+def test_static_reader_does_not_copy_unsafe_artifact_paths(tmp_path: Path) -> None:
+    run = tmp_path / "run"
+    out = tmp_path / "site"
+    run.mkdir()
+    (run / "researka_reader_manifest.json").write_text(
+        json.dumps({
+            "topic": "alpha",
+            "artifacts": [
+                {"label": "bad", "path": "../outside.txt"},
+                {"label": "ok", "path": "paper.md"},
+            ],
+        }),
+        encoding="utf-8",
+    )
+    (run / "paper.md").write_text("# Paper", encoding="utf-8")
+
+    export_static_reader(run, out)
+
+    assert (out / "paper.md").exists()
+    assert not (tmp_path / "outside.txt").exists()
+
+
 def test_static_reader_exports_from_run_dir(tmp_path: Path) -> None:
     run = tmp_path / "run"
     out = tmp_path / "site"

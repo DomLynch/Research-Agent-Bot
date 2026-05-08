@@ -16,7 +16,8 @@ It never writes into run directories.
 `scripts/export_static_reader.py` accepts either a run directory or a
 `researka_reader_manifest.json` file and writes static `index.html` plus a
 minimal `versions.html` scaffold. It is separate from Decentralized Web export
-and does not publish, deploy, register, or mutate bundles.
+and the DW verifier; it does not publish, deploy, register, verify CIDs, or
+mutate source run bundles.
 
 The reader uses only the Python standard library. It renders a safe minimal
 Markdown subset, escapes HTML, blocks absolute/scheme/traversal links, emits a

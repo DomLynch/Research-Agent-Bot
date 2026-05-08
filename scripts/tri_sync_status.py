@@ -61,6 +61,15 @@ def parse_key_values(text: str) -> dict[str, str]:
     return data
 
 
+def parse_int(text: str | None) -> int | None:
+    if text is None:
+        return None
+    try:
+        return int(text.strip())
+    except ValueError:
+        return None
+
+
 def _run(args: list[str], *, cwd: Path) -> str:
     return subprocess.run(
         args,
@@ -151,7 +160,7 @@ def probe_vps(
         return {
             "path": data.get("path", path),
             "head": data.get("head"),
-            "dirty_count": int(data.get("dirty", "0") or 0),
+            "dirty_count": parse_int(data.get("dirty")),
             "service": data.get("service"),
             "http": data.get("http"),
             "error": None,
