@@ -80,8 +80,8 @@ silently inflate from L4 to L5 because a third model was consulted.
 
 ## Validation State
 
-Current internal Granite validation showed low raw agreement on unconstrained
-semantic arbitration cases. The implemented value is therefore narrow:
-deterministic wrapping plus logged third-reviewer signal, not broad semantic
-override authority. External validation against human-consensus fixtures remains
-planned.
+Prior IBM Granite validation showed low raw agreement on unconstrained semantic
+arbitration cases, so the default arbitrator moved to Mistral Small 4. The
+implemented value remains narrow: deterministic wrapping plus logged
+third-reviewer signal, not broad semantic override authority. External
+validation against human-consensus fixtures remains planned.

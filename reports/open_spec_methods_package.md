@@ -15,7 +15,7 @@
 
 - `docs/bundle_schema_v1.md`: 19-file bundle, optional files, hashes, run
   provenance.
-- `docs/arbitration_v2.md`: writer/reviewer/arbitrator roles, Granite
+- `docs/arbitration_v2.md`: writer/reviewer/arbitrator roles, Mistral
   judge-only constraint, fail-closed audit log.
 - `docs/verdict_l0_l8_spec_v1.md`: exact L0-L8 maturity criteria.
 - `docs/jsonld_citation_spec_v1.md`: Schema.org, BibTeX, CSL-JSON, OSF mapping.
