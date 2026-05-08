@@ -5,6 +5,7 @@ import argparse
 import html
 import json
 import re
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -14,6 +15,7 @@ def export_static_reader(source: Path, out_dir: Path) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
     index = out_dir / "index.html"
     index.write_text(render_index(manifest, base), encoding="utf-8")
+    _copy_linked_artifacts(manifest, base, out_dir)
     (out_dir / "versions.html").write_text(render_versions([manifest]), encoding="utf-8")
     return index
 
@@ -122,6 +124,20 @@ def _safe_child(base: Path, name: str) -> Path | None:
     except ValueError:
         return None
     return path
+
+
+def _copy_linked_artifacts(manifest: dict[str, Any], base: Path, out_dir: Path) -> None:
+    for _, href in _links(manifest, base):
+        safe = _safe_href(href)
+        if safe == "#":
+            continue
+        rel = safe.split("#", 1)[0].split("?", 1)[0]
+        source = _safe_child(base, rel)
+        if source is None or not source.is_file():
+            continue
+        target = out_dir / rel
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source, target)
 
 
 def _render_paper(base: Path) -> str:
