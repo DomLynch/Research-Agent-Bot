@@ -26,11 +26,14 @@ GRANITE_ARBITRATOR_ENABLED=1 GRANITE_ARBITRATOR_TIMEOUT_SEC=60 .venv/bin/python 
 GRANITE_ARBITRATOR_ENABLED=1 GRANITE_ARBITRATOR_TIMEOUT_SEC=60 .venv/bin/python scripts/run_v06_synthesis.py --topic intermittent_fasting --out-dir runs/synthesis-intermittent_fasting-v06-LANEA-2026-05-08T2
 ```
 
+`GRANITE_*` variables are legacy compatibility aliases. Current arbitration
+defaults route through the Mistral bounded judge.
+
 Dry-run triage also checked: `senolytics`, `vitamin_d`, `aerobic_exercise`, `collagen_peptides`, `aspirin`, `resistance_training`, `intermittent_fasting`, `protein_nutrition`.
 
 ## Results
 
-| Topic | Run dir | Verdict | Maturity | Stage-1 | JS | Receipts | Claims | Tensions | Patches | Granite | Public leakage |
+| Topic | Run dir | Verdict | Maturity | Stage-1 | JS | Receipts | Claims | Tensions | Patches | Mistral path | Public leakage |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | sleep_health | none | pre-render fail | none | n/a | n/a | 0 | 0 | 0 | n/a | n/a | n/a |
 | spermidine | `runs/synthesis-spermidine-v06-LANEA-2026-05-08T1` | Trust-Spine Pass | L2 | 14/14, 10.0 | pass | 2 | 22 | 0 | 7 proposed, 3 applied, 0 flagged, 0 strips | 0 | clean |
@@ -63,7 +66,7 @@ Recommended next fix: expand beyond supplementation trials into taurine abundanc
 
 Corpus and numeric density blocker. The run had only 1 receipt, 2 claims, 0 tensions. Stage-1 failed Q9 numeric density: 2.1 numerics/1000 words, threshold 8.0.
 
-Granite did fire once on a P1 numeric patch. It returned `REJECT`, but the pipeline treated deletion-reject as escalation and still auto-stripped the unsafe region. This is the correct no-fake-L5 behavior: Granite was logged, but did not silently override the trust spine.
+The arbitration path fired once on a P1 numeric patch. It returned `REJECT`, but the pipeline treated deletion-reject as escalation and still auto-stripped the unsafe region. This is the correct no-fake-L5 behavior: the third-layer judgment was logged, but did not silently override the trust spine.
 
 Recommended next fix: retrieval expansion should prioritize sauna cohort mortality papers, Finnish sauna studies, passive heat therapy RCTs, vascular-function studies, and cardiometabolic heat-acclimation endpoints.
 
@@ -77,7 +80,7 @@ Recommended next fix: the current topic pack excludes much transplant/oncology n
 
 Rich corpus, still not AAA. The run built 76 receipts, 1038 claims, and 1755 tensions, but stayed L3 because Stage-1 failed Q9 numeric density: 7.3 numerics/1000 words, threshold 8.0.
 
-Patch log had two flagged patches, but both were non-P1: P2 citation ambiguity and P3 capitalization ambiguity. Granite did not fire because there was no flagged P1 after smart-gate. Public leakage checks were clean: no underscore slug artifacts, malformed `000 mg` numerics, duplicate QEI headings, or template/meta leakage in the manuscript body.
+Patch log had two flagged patches, but both were non-P1: P2 citation ambiguity and P3 capitalization ambiguity. Arbitration did not fire because there was no flagged P1 after smart-gate. Public leakage checks were clean: no underscore slug artifacts, malformed `000 mg` numerics, duplicate QEI headings, or template/meta leakage in the manuscript body.
 
 Recommended next fix: this is a manuscript-density/QEI selection issue, not a corpus issue. The rich corpus is already present; improve numeric surfacing without weakening traceability.
 
@@ -113,6 +116,6 @@ Lane A did not add new AAA topics. It did identify the split cleanly:
 
 1. `sleep_health`, `spermidine`, `taurine`, `sauna_heat_therapy`, `everolimus`, `senolytics`, `vitamin_d`, `aerobic_exercise`, `collagen_peptides`, and `aspirin` need retrieval/classifier survival work before more full renders.
 2. `intermittent_fasting`, `resistance_training`, and `protein_nutrition` are already rich enough; their next work is manuscript-gate and numeric-density stabilization.
-3. Granite is wired into the run path and logged when a flagged P1 exists. In the sauna run it added a third-reviewer judgment without inflating certification.
+3. The Mistral arbitration path is wired into the run path and logged when a flagged P1 exists. In the sauna run it added a third-reviewer judgment without inflating certification.
 
 Open risk: this lane used the current dirty working tree, including other workers' uncommitted topic-pack and compiler changes. The report should be treated as a sprint diagnostic, not a clean-baseline benchmark.

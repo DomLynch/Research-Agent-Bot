@@ -15,7 +15,7 @@ Lane accounting: wide-basket lane 62 protein_nutrition synthesis-quality check. 
 | Maturity | L4 — analytically certified |
 | Journal ready | no |
 | Journal surface | fail |
-| Grok unresolved P1 | 0 |
+| Reviewer unresolved P1 | 0 |
 | Review auto-strips | 0 |
 | Consistency issues | 0 |
 | Numeric quarantine | 9 |
@@ -27,7 +27,7 @@ Lane accounting: wide-basket lane 62 protein_nutrition synthesis-quality check. 
 |---|---|---|
 | Manifest consistency | `manifest.json`, `full_paper.audit.json`, `full_paper.final_verdict.json` present | Complete artifact set |
 | Trust spine | Stage-1 14/14, stage-2 P1=0/P2=0, score 10.0/10 | Pass |
-| Grok layer | 5 patches proposed; applied=2, rejected=1, flagged=2, auto_stripped=0 | No unresolved P1 |
+| Reviewer layer | 5 patches proposed; applied=2, rejected=1, flagged=2, auto_stripped=0 | No unresolved P1 |
 | Journal surface | duplicate paragraph 46/47; Methods surface 134/300; Conclusion surface 240/250 | Blocks publication |
 | Numerics | audit says 173/173 traced; 9 numeric claims quarantined | No unsafe numeric promotion found |
 | Citation artifacts | placeholder scan for TODO/PLACEHOLDER/citation-needed patterns clean | No template/citation placeholder found |
@@ -45,7 +45,7 @@ Lane accounting: wide-basket lane 62 protein_nutrition synthesis-quality check. 
 
 Protein is evidence-rich and analytically certified, but not publication-ready. The blocker is surface quality, not corpus depth: duplicate paragraph plus section-surface length failures.
 
-Minimal universal fix proposal, if code changes are later authorized: make the journal-surface section-length rule and writer agree on whether subsections count toward a parent section, then add a generic final de-duplication pass after Grok patch application. Do not add protein-specific exemptions.
+Minimal universal fix proposal, if code changes are later authorized: make the journal-surface section-length rule and writer agree on whether subsections count toward a parent section, then add a generic final de-duplication pass after reviewer patch application. Do not add protein-specific exemptions.
 
 ## Next Validation
 

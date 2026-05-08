@@ -32,7 +32,7 @@ Candidate pairs are deliberately conservative:
 - same code signature
 - adjacent in generated-time order
 - both clean L5 or higher
-- zero unresolved Grok P1
+- zero unresolved reviewer P1
 - zero auto-stripped patches
 - zero flagged patches
 

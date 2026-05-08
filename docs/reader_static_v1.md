@@ -6,7 +6,7 @@ researka.io reader or public site.
 ## Basket Stability Matrix
 
 `scripts/basket_stability_matrix.py` reads run directories and emits CSV or
-JSON rows with topic, maturity, receipt count, tension count, verdict, Grok
+JSON rows with topic, maturity, receipt count, tension count, verdict, reviewer
 flags, auto-strips, JavaScript check status, and quarantine counts.
 
 It never writes into run directories.

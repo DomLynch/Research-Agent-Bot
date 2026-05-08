@@ -27,7 +27,7 @@ same topic, the latest sorted baseline row wins.
 
 Treat a next basket rerun as ready only when:
 
-- no run has a JS or repeated Grok failure;
+- no run has a JS or repeated reviewer failure;
 - L5 topics either have a consecutive L5 pair or are explicitly queued for rerun;
 - corpus-rich runs do not regress maturity or receipt count against the baseline;
 - corpus-thin is backed by explicit corpus gaps, low receipts, or low high-confidence claims;

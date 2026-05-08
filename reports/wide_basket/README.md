@@ -142,9 +142,9 @@ python scripts/run_v06_synthesis.py --topic spermidine --dry-run
 
 ## L6 Rerun Plan
 
-- `glp1`: rerun latest rich path after confirming no JS/Grok drift; current latest rich `synthesis-glp1-v06-PATH2RICHFIX5-2026-05-08T08-10-00Z` is L5 but not L6 by local consecutive-run heuristic.
-- `metformin`: rerun latest rich path after confirming no JS/Grok drift; current latest rich `synthesis-metformin-v06-PATH2RICHFIX5-2026-05-08TCLASSIFIER` is L5 but not L6 by local consecutive-run heuristic.
-- `rapamycin`: rerun latest rich path after confirming no JS/Grok drift; current latest rich `synthesis-rapamycin-v06-PATH2RICHFIX4-2026-05-08TCLASSIFIER` is L5 but not L6 by local consecutive-run heuristic.
+- `glp1`: rerun latest rich path after confirming no JS/reviewer drift; current latest rich `synthesis-glp1-v06-PATH2RICHFIX5-2026-05-08T08-10-00Z` is L5 but not L6 by local consecutive-run heuristic.
+- `metformin`: rerun latest rich path after confirming no JS/reviewer drift; current latest rich `synthesis-metformin-v06-PATH2RICHFIX5-2026-05-08TCLASSIFIER` is L5 but not L6 by local consecutive-run heuristic.
+- `rapamycin`: rerun latest rich path after confirming no JS/reviewer drift; current latest rich `synthesis-rapamycin-v06-PATH2RICHFIX4-2026-05-08TCLASSIFIER` is L5 but not L6 by local consecutive-run heuristic.
 
 ## Publication And OSF Cross-Reference
 
@@ -170,7 +170,7 @@ These are not queued because no topic pack exists locally:
 
 - Reseed each needs-corpus topic with a higher `--max-per-source` before synthesis.
 - For aspirin and nad_precursors, check whether low receipt count is from filter strictness vs missing canonical role overrides.
-- For senolytics and vitamin_d, inspect Grok failures before widening corpus; a wider corpus may not fix role/verdict issues.
+- For senolytics and vitamin_d, inspect reviewer failures before widening corpus; a wider corpus may not fix role/verdict issues.
 
 ## No-Topic-Hardcoding Audit
 

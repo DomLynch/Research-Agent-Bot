@@ -20,7 +20,7 @@ worth sending through the real consecutive certification gate.
 ## Outputs
 
 - `campaign_inventory.json`: all 2+ run topics, verdict fields, maturity
-  levels, journal-surface status, Grok fields, missing-verdict sample.
+  levels, journal-surface status, reviewer fields, missing-verdict sample.
 - `l6_batch_report.json` / `.md`: pure final-verdict L5 streak triage.
 - `per_topic_batch/*.json` / `.md`: the same triage split by eligible topic.
 - `cert_outputs/*.json`: raw consecutive certification stdout per candidate.

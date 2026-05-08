@@ -12,6 +12,9 @@ Long-horizon worker lane for statins only. No shared Python edits were made in t
 GRANITE_ARBITRATOR_ENABLED=1 .venv/bin/python scripts/run_v06_synthesis.py --topic statins --out-dir runs/synthesis-statins-v06-PATH2RICH-2026-05-08TSTATINS-WORKER
 ```
 
+`GRANITE_ARBITRATOR_ENABLED` is a legacy env alias. The current third-layer
+default is the bounded Mistral arbitration path when arbitration is enabled.
+
 ## Corpus Funnel
 
 | Stage | Count |
@@ -67,8 +70,8 @@ Stage audits:
 | Numeric traceability | 152/152, 100% |
 | Stage-2 consistency | 0 P1, 0 P2 |
 | Journal surface | pass, 0 issues |
-| Grok unresolved P1 | 0 |
-| Grok auto-strips | 0 |
+| Reviewer unresolved P1 | 0 |
+| Reviewer auto-strips | 0 |
 
 Final-layer review:
 
@@ -78,7 +81,7 @@ Final-layer review:
 | Applied | 4 |
 | Rejected | 1 |
 | Flagged | 1 |
-| Arbitrated by Granite | 0 |
+| Arbitrated by Mistral path | 0 |
 | Auto-stripped | 0 |
 
 The flagged patch was P05, a P2 numeric deletion that passed the simplification gate but was not applied because post-apply audit regressed Stage-2 issue count from 0 to 1. This did not create an unresolved P1 and did not block the unified L5 verdict.

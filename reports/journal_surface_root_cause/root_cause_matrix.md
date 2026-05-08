@@ -41,7 +41,7 @@ artifact debt and live code risk.
 
 | Class | Evidence | Root cause | Current code risk |
 |---|---|---|---|
-| Public-body meta prose | Latest 7 all include `This synthesis was produced by`, `submission`, `Final-layer reviewer`, `Grok`, `SPAR`, and `Rejected-evidence quarantine did NOT run` before appendix. | `scripts/run_mode_contract.py:184-249` renders operational provenance into `## Methods`. | High. Current renderer still emits these strings. |
+| Public-body meta prose | Latest 7 all include `This synthesis was produced by`, `submission`, `Final-layer reviewer`, legacy reviewer labels, `SPAR`, and `Rejected-evidence quarantine did NOT run` before appendix. | `scripts/run_mode_contract.py:184-249` renders operational provenance into `## Methods`. | High. Current renderer still emits these strings. |
 | Appendix boundary | omega3 has `## Publication Appendix` at line 936; GLP1 has `## Search Provenance and Selection` at line 788 with no wrapper. | `agent/manuscript_appendix.py:615` creates wrapper, but `scripts/run_v06_synthesis.py:2331-2380` splices appendix best-effort after previous paper write. Some artifacts contain bare appendix subsections. | Medium. Gate cutoffs catch `Search Provenance`, but public manuscripts may still lack a visible appendix wrapper. |
 | Duplicate paragraphs | Latest examples: omega3 duplicate paragraphs line 45/67 and 255/266; GLP1 has 10 duplicate hits. | Backfill text from `scripts/apply_consistency_fixes.py:1873-1984` can be inserted into multiple sections; picked thesis is also repeated by `agent/paper_writer_deterministic.py:443-447`. | High. No universal duplicate paragraph gate exists in `agent/journal_surface_gate.py`. |
 | Placeholder/backfill prose | `deterministic evidence summary` persists in statins/metformin/rapamycin latest; GLP1 L3 has it at line 263. | `scripts/apply_consistency_fixes.py:394-395` tries to normalize, but table intro text can still survive; deterministic section/table prose appears post-repair. | Medium. Gate catches some placeholder phrases, but not all table-intro variants. |
@@ -82,7 +82,7 @@ artifact debt and live code risk.
 
 | Priority | File | Fix | Expected LOC |
 |---|---|---|---:|
-| P1 | `scripts/run_mode_contract.py` | Rewrite public Methods text to clinical-methods style; move model names, submission id, SPAR/Grok/quarantine absence, and patch mechanics to appendix/report only. Extend `validate_rendered` blocked list with observed phrases. | 25-45 |
+| P1 | `scripts/run_mode_contract.py` | Rewrite public Methods text to clinical-methods style; move model names, submission id, SPAR/reviewer/quarantine absence, and patch mechanics to appendix/report only. Extend `validate_rendered` blocked list with observed phrases. | 25-45 |
 | P1 | `agent/journal_surface_gate.py` | Add public-body checks from batch audit: meta/template phrase scan and duplicate paragraph overlap. Keep appendix-only allowance. | 35-55 |
 | P2 | `scripts/run_v06_synthesis.py` or `agent/manuscript_appendix.py` | Enforce `## Publication Appendix` wrapper before bare `Search Provenance`/AI/Data sections; fail closed if splice produces bare appendix sections. | 15-30 |
 | P2 | `scripts/apply_consistency_fixes.py` | Make backfill insertion idempotent across the whole manuscript, not per-section only; never insert the same paragraph twice. | 20-40 |
@@ -112,7 +112,7 @@ can affect maturity, but the L3 trigger is a deterministic surface-gap class.
 
 ## False-Positive Risk
 
-- Meta phrase scan: medium. `SPAR`/`Grok` are valid in appendix, not public body.
+- Meta phrase scan: medium. `SPAR`/`reviewer` are valid in appendix, not public body.
   Word-boundary matching reduces accidental hits.
 - Duplicate paragraphs: medium. Repeated table captions or required disclosures can
   be legitimate; restrict to public body and long paragraphs, and exempt tables.

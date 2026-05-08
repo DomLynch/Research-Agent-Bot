@@ -9,7 +9,7 @@ No topic-specific Python and no manuscript/run artifact edits.
 
 | File | Change |
 |---|---|
-| `scripts/run_mode_contract.py` | Rewrote public Methods to remove submission IDs, model names, SPAR/Grok/quarantine absence prose, and patch mechanics. Extended blocked-phrase validation. |
+| `scripts/run_mode_contract.py` | Rewrote public Methods to remove submission IDs, model names, SPAR/reviewer/quarantine absence prose, and patch mechanics. Extended blocked-phrase validation. |
 | `agent/journal_surface_gate.py` | Added appendix-aware template/meta phrase checks and long duplicate paragraph detection scoped to public body. |
 | `agent/manuscript_appendix.py` | Wrapped inserted or historical bare Search Provenance sections under `## Publication Appendix`. |
 | `scripts/apply_consistency_fixes.py` | Made named analytical backfill blocks document-global idempotent where low risk. |
@@ -30,7 +30,7 @@ dirs. A fresh smoke copy is stored at
 
 New/rerun manuscripts should satisfy:
 
-- Public Methods contains no `submission`, model names, `SPAR`, `Grok`,
+- Public Methods contains no `submission`, model names, `SPAR`, reviewer labels,
   `patches are auto-applied`, or quarantine absence prose.
 - Appendix/provenance material is under `## Publication Appendix` or cut from
   public-body gates.

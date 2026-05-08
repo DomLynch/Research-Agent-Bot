@@ -20,7 +20,7 @@ The 10 benchmark cases cover all three verdict classes:
 | REJECT | 2 |
 | ESCALATE | 6 |
 
-All 10 benchmark rows include: `before`, `after`, Grok rationale, smart-gate reason, expected verdict, manual judgment reason, model response, and source run. All referenced source run directories exist locally.
+All 10 benchmark rows include: `before`, `after`, reviewer rationale, smart-gate reason, expected verdict, manual judgment reason, model response, and source run. All referenced source run directories exist locally.
 
 ## Commands Run
 

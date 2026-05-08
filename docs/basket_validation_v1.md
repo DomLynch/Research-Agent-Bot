@@ -20,7 +20,7 @@ python scripts/basket_stability_matrix.py runs/<new-run> \
   --format json
 ```
 
-Columns include verdict, maturity level, L5 flag, consecutive L5 streak, L6 candidate flag, receipts, tensions, Grok flags, JS pass, quarantine count, and baseline deltas.
+Columns include verdict, maturity level, L5 flag, consecutive L5 streak, L6 candidate flag, receipts, tensions, reviewer flags, JS pass, quarantine count, and baseline deltas.
 
 CSV and JSON exports are deterministic for fixture tests and offline review:
 

@@ -33,7 +33,7 @@ Tuning used the existing universal corpus seeding path for the collagen topic pa
 | Maturity | L2 — partial |
 | Journal ready | no |
 | Journal surface | pass |
-| Grok unresolved P1 | 0 |
+| Reviewer unresolved P1 | 0 |
 | Review auto-strips | 0 |
 | Consistency issues | 0 |
 | Numeric quarantine | 16 |
@@ -45,7 +45,7 @@ Tuning used the existing universal corpus seeding path for the collagen topic pa
 |---|---|---|
 | Manifest consistency | Complete manifest/audit/verdict/surface/patch/quarantine set | Pass |
 | Trust spine | Stage-1 14/14, stage-2 P1=0/P2=0, score 10.0/10 | Pass |
-| Grok layer | 5 patches proposed; applied=3, rejected=0, flagged=2, auto_stripped=0 | No unresolved P1 |
+| Reviewer layer | 5 patches proposed; applied=3, rejected=0, flagged=2, auto_stripped=0 | No unresolved P1 |
 | Journal surface | `passed=true`, no issues | Pass |
 | Corpus floor | high-confidence claims 46/50 | Blocks AAA/L4+ |
 | Numerics | audit says 39/39 traced; 16 numeric claims quarantined | No unsafe numeric promotion found |

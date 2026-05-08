@@ -7,7 +7,7 @@ No paper was rerendered.
 
 ## Run Evidence
 
-| Run | Generated | Verdict | Level | JS | Grok P1 | Receipts | Claims | Tensions |
+| Run | Generated | Verdict | Level | JS | Reviewer P1 | Receipts | Claims | Tensions |
 |---|---:|---|---:|---|---:|---:|---:|---:|
 | `synthesis-rapamycin-v06-PATHA8-2026-05-07T09-02-06Z` | `2026-05-07T09:19:20+00:00` | AAA | 5 | true | 0 | 16 | 72 | 31 |
 | `synthesis-rapamycin-v06-PATHA9-2026-05-07T09-20-53Z` | `2026-05-07T09:37:57+00:00` | AAA | 5 | true | 0 | 16 | 72 | 31 |
@@ -43,7 +43,7 @@ Pairwise retrofit gate:
   31 non-orthogonal tensions.
 - Same code signature: all three report `extractor_version=v0.6.0` and
   `writer_path=agent.paper_writer.render_full_paper (production)`.
-- Cleanness: all three are AAA/L5, JS pass true, Grok unresolved P1 = 0,
+- Cleanness: all three are AAA/L5, JS pass true, reviewer unresolved P1 = 0,
   Stage-2 P1 = 0, Stage-2 P2 = 0.
 
 ## Audit Pass 2

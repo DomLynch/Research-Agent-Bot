@@ -29,7 +29,7 @@ Result:
 
 ## Run-Level Evidence
 
-| Run | Verdict | Maturity | Receipts | Claims | Tensions | Grok P1 | Auto-strips | Flagged | JS pass |
+| Run | Verdict | Maturity | Receipts | Claims | Tensions | Reviewer P1 | Auto-strips | Flagged | JS pass |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---|
 | PATHA8 | AAA | 6 | 16 | 72 | 31 | 0 | 0 | 0 | true |
 | PATHA9 | AAA | 6 | 16 | 72 | 31 | 0 | 0 | 0 | true |

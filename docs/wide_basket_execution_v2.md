@@ -15,13 +15,13 @@ The audit reads:
 - `topic_packs/*.toml` for aliases, search queries, canonical trials,
   retrieval scope/exclusion terms, and expected evidence slots;
 - `runs/synthesis-*` for verdict, maturity, receipts, claims, tensions,
-  JS pass, Grok flags, strips, quarantine counts, and local L6 status.
+  JS pass, reviewer flags, strips, quarantine counts, and local L6 status.
 
 ## Execution Buckets
 
 - `run_now`: no rich rerun yet, no blocking latest local artifact, and no low
   search-query pack bottleneck.
-- `corpus_tune_first`: latest local or latest rich artifact is JS/Grok/thin
+- `corpus_tune_first`: latest local or latest rich artifact is JS/reviewer/thin
   blocked, or the pack is structurally under-specified.
 - `l6_rerun`: latest rich artifact is L5 and pass-like, but not locally L6.
 - `rich_monitor`: latest rich artifact is already pass-like and locally stable.
@@ -31,7 +31,7 @@ The audit reads:
 - `manifest.json` exists.
 - receipts are at least 10.
 - JS/journal-surface status is not false.
-- Grok unresolved flags are 0.
+- reviewer unresolved flags are 0.
 - dry-run artifacts complete before any live synthesis is considered.
 
 ## Command Shape

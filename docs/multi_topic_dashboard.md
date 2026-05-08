@@ -42,7 +42,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 15,045
 - **LLM cost:** $0.188
 - **Patches applied:** 8 (0 via repair loop)
@@ -59,7 +59,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 12,583
 - **LLM cost:** $0.156
 - **Patches applied:** 7 (2 via repair loop)
@@ -77,7 +77,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 14,414
 - **LLM cost:** $0.165
 - **Patches applied:** 15 (2 via repair loop)
@@ -92,7 +92,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 19,809
 - **LLM cost:** $0.254
 - **Patches applied:** 9 (1 via repair loop)
@@ -107,7 +107,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 19,576
 - **LLM cost:** $0.243
 - **Patches applied:** 8 (0 via repair loop)
@@ -122,7 +122,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 26,967
 - **LLM cost:** $0.258
 - **Patches applied:** 22 (1 via repair loop)
@@ -137,7 +137,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 57,960
 - **LLM cost:** $0.540
 - **Patches applied:** 8 (0 via repair loop)
@@ -152,7 +152,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 15,993
 - **LLM cost:** $0.211
 - **Patches applied:** 7 (0 via repair loop)
@@ -167,7 +167,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 10,210
 - **LLM cost:** $0.116
 - **Patches applied:** 5 (0 via repair loop)
@@ -188,7 +188,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 9,892
 - **LLM cost:** $0.146
 - **Patches applied:** 10 (0 via repair loop)
@@ -206,7 +206,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 8,559
 - **LLM cost:** $0.136
 - **Patches applied:** 15 (4 via repair loop)
@@ -226,7 +226,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 11,403
 - **LLM cost:** $0.143
 - **Patches applied:** 14 (3 via repair loop)
@@ -244,7 +244,7 @@
 - **Stage-1 audit:** 11/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 8,716
 - **LLM cost:** $0.122
 - **Patches applied:** 9 (0 via repair loop)
@@ -265,7 +265,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 10,066
 - **LLM cost:** $0.152
 - **Patches applied:** 10 (0 via repair loop)
@@ -285,7 +285,7 @@
 - **Stage-1 audit:** 12/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 3
+- **Reviewer unresolved P1:** 3
 - **Word count:** 9,806
 - **LLM cost:** $0.122
 - **Patches applied:** 4 (0 via repair loop)
@@ -306,7 +306,7 @@
 - **Stage-1 audit:** 10/13
 - **Stage-2 consistency:** P1=1 P2=1
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 8,308
 - **LLM cost:** $0.159
 - **Patches applied:** 8 (0 via repair loop)
@@ -327,7 +327,7 @@
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
+- **Reviewer unresolved P1:** 0
 - **Word count:** 7,553
 - **LLM cost:** $0.236
 - **Patches applied:** 4 (0 via repair loop)
@@ -342,7 +342,7 @@
 - **Stage-1 audit:** 10/13
 - **Stage-2 consistency:** P1=1 P2=0
 - **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 1
+- **Reviewer unresolved P1:** 1
 - **Word count:** 6,462
 - **LLM cost:** $0.178
 - **Patches applied:** 3 (0 via repair loop)

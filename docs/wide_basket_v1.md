@@ -22,9 +22,9 @@ The script derives:
 
 ## Status Rubric
 
-- `ready`: topic pack has sufficient corpus queries and no local JS/Grok/thin
+- `ready`: topic pack has sufficient corpus queries and no local JS/reviewer/thin
   corpus block on the latest run.
-- `needs corpus tuning`: latest local run is JS/Grok/corpus-thin blocked, or the
+- `needs corpus tuning`: latest local run is JS/reviewer/corpus-thin blocked, or the
   pack has too few corpus search queries.
 - `needs-pack`: advisory only; not emitted into the queue JSON unless a topic
   pack exists.

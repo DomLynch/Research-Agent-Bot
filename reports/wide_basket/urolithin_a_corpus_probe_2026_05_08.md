@@ -46,7 +46,7 @@ Full synthesis was run locally at `runs/synthesis-urolithin_a-v06-2026-05-08T12-
 | Maturity | L4 — Analytically Certified |
 | Stage-1 audit | 14/14, score 10.0 |
 | Stage-2 consistency | P1=0, P2=0 |
-| Grok unresolved P1 | 0 |
+| Reviewer unresolved P1 | 0 |
 | Auto-stripped | 2 |
 | Journal surface | fail |
 | Final words | 14,414 |

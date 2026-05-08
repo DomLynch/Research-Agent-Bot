@@ -8,8 +8,9 @@ deploys.
 
 ## Decision
 
-Granite is wired and useful only as a bounded third-reviewer signal. It is not
-safe as an unconstrained semantic reviewer.
+The legacy Granite path was useful only as a bounded third-reviewer signal. It
+is not safe as an unconstrained semantic reviewer. The current default third
+layer is Mistral Small under the same boundary.
 
 The live wrapper currently enforces the right boundary:
 
@@ -18,7 +19,7 @@ The live wrapper currently enforces the right boundary:
 - malformed JSON fails closed to `ESCALATE`
 - disabled config makes no network call
 - timeout/network failure fails closed to `ESCALATE`
-- `APPLY` can only use Grok's exact `after` text or exact deletion, then must
+- `APPLY` can only use the reviewer's exact `after` text or exact deletion, then must
   pass deterministic post-apply audit
 - non-deletion semantic/numeric/structure rewrites are blocked
 - non-unique `before` targets are blocked except bounded delete-all cases
@@ -87,9 +88,9 @@ Additional no-network timeout smoke:
 | `synthesis-statins-v06-PATH2RICH4-2026-05-08TSTRICT` | AAA / L5 | 3 | 3 APPLY | 3 blocked non-unique-before |
 | `synthesis-metformin-v06-PATH2RICH6-2026-05-08TSTRICT` | AAA / L4 | 0 | none | none |
 
-Interpretation: Granite fired on real runs, but the deterministic wrapper
-blocked unsafe model APPLY decisions. I found no evidence that Granite silently
-inflated a verdict by overriding the smart-gate.
+Interpretation: the legacy Granite path fired on real runs, but the deterministic
+wrapper blocked unsafe model APPLY decisions. I found no evidence that the
+third-layer path silently inflated a verdict by overriding the smart-gate.
 
 ## Provenance
 
@@ -116,15 +117,15 @@ Recommended small fix later:
 
 ## Value-Add Assessment
 
-Granite adds real value in three narrow ways:
+The bounded third-layer path adds real value in three narrow ways:
 
-1. It records a third-reviewer opinion when Grok and the smart-gate disagree.
+1. It records a third-reviewer opinion when the reviewer and the smart-gate disagree.
 2. It can safely resolve exact public-surface patches/deletions when the
    deterministic wrapper and post-apply audit permit it.
 3. It gives an auditable rationale for why a contested patch was applied,
    rejected, escalated, or blocked by wrapper policy.
 
-Granite does not yet add reliable broad semantic judgment:
+The legacy Granite path did not add reliable broad semantic judgment:
 
 - Previous live raw Granite benchmark: 2/10 agreement, no escalations.
 - Previous live tuned Granite benchmark: 3/10 agreement, still over-decided.
@@ -139,7 +140,7 @@ errors. That prevents a model APPLY from becoming silent manuscript surgery.
 
 Pass 2: Existing live arbitration logs show blocked APPLY decisions, not silent
 applications. Runs that reached L5 either had no arbitration or had logged,
-blocked arbitration entries. I found no evidence of Granite-driven fake L5.
+blocked arbitration entries. I found no evidence of third-layer-driven fake L5.
 
 Remaining risk: final verdict JSON should expose arbitration provenance directly
 so external readers do not need to inspect `review_patch_log` to see that a
@@ -147,8 +148,8 @@ third model was involved.
 
 ## Bottom Line
 
-Granite is live-gated, logged, and bounded. It is adding audit-trail value and
-limited repair value, but it should stay conservative: judge only, never
-rewrite, fail closed, and no L5 credit without persisted arbitration provenance.
-The active default has since moved to Mistral Small 4 under the same bounded
-judge-only contract.
+The current Mistral arbitration path is live-gated, logged, and bounded. It adds
+audit-trail value and limited repair value, but it should stay conservative:
+judge only, never rewrite, fail closed, and no L5 credit without persisted
+arbitration provenance. Granite remains a legacy report/model path, not the
+current default.

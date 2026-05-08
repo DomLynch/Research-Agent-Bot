@@ -22,9 +22,9 @@ trust events that require stronger validation evidence before public claims.
 L5 is not a reward for good prose. It requires a clean single-run trust event.
 The following block L5:
 
-- Grok or reviewer unresolved P1
+- reviewer unresolved P1
 - flagged review patches that remain unresolved after repair/arbitration
-- Grok auto-strip or equivalent surgery
+- reviewer auto-strip or equivalent surgery
 - journal-surface failure
 - malformed public numerics or leaked internal labels
 - missing final verdict artifact
