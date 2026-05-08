@@ -22,6 +22,17 @@ python scripts/basket_stability_matrix.py runs/<new-run> \
 
 Columns include verdict, maturity level, L5 flag, consecutive L5 streak, L6 candidate flag, receipts, tensions, Grok flags, JS pass, quarantine count, and baseline deltas.
 
+CSV and JSON exports are deterministic for fixture tests and offline review:
+
+```bash
+python scripts/basket_stability_matrix.py runs/<run-a> runs/<run-b> \
+  --group-runs \
+  --json-out /tmp/basket_stability.json \
+  --csv-out /tmp/basket_stability.csv
+```
+
+Regression means maturity level dropped or receipt count dropped against the topic-matched baseline. It is a triage signal, not a certification verdict.
+
 ## Failure Triage
 
 ```bash
