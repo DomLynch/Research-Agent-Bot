@@ -16,7 +16,11 @@ The manifest contains relative paths, sizes, sha256 hashes, file count, total si
 
 Schema: `researka.reader_manifest.v1`.
 
-Derivation Web registration is a follow-up step, not part of the OSF publisher. The OSF publisher writes OSF artifacts; it does not call Derivation Web. DW is append-only, so outbound registration is a separate explicit CLI step after the public bundle and reader manifest exist.
+Derivation Web registration is a follow-up step performed by a sibling
+publisher process, not by `research-agent-bot` runtime and not by DW itself.
+The publisher creates the OSF record, then writes a registry-record step back
+to DW through DW's public append-only API. Local CLIs in this repo only expose
+the payload shape and dry-run contract.
 
 Dry-run payload:
 
