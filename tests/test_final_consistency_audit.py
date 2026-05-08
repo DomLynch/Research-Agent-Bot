@@ -1028,6 +1028,25 @@ def test_apply_fixes_removes_consecutive_duplicate_paragraphs() -> None:
     assert any(e["fix_type"] == "duplicate_paragraph" for e in log)
 
 
+def test_apply_fixes_removes_duplicate_backstop_subsection() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    block = (
+        "### Evidence-context framing\n\n"
+        "The section should be read as a map of the evidence context, not "
+        "as an additional source of unverified claims. It separates direct "
+        "clinical evidence from mechanistic evidence so later sections can "
+        "interpret the accepted corpus conservatively."
+    )
+    paper = f"## Background\n\n{block}\n\n{block}\n\n## Results\n\nUnique result.\n"
+    out, log = fixer.apply_fixes(paper, [])
+    assert out.count("### Evidence-context framing") == 1
+    assert out.count("The section should be read as a map") == 1
+    assert any(e["fix_type"] == "duplicate_subsection" for e in log)
+
+
 def test_apply_fixes_strips_extra_methods_step() -> None:
     import sys as _sys
     from pathlib import Path as _Path

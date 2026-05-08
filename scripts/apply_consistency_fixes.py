@@ -123,6 +123,41 @@ def _strip_consecutive_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:
     return cleaned, n
 
 
+def _strip_duplicate_subsections(paper_md: str) -> tuple[str, int]:
+    parts = re.split(r"(^###\s+.+?$)", paper_md, flags=re.MULTILINE)
+    out: list[str] = []
+    seen: list[set[str]] = []
+    n = 0
+    i = 0
+    while i < len(parts):
+        heading = parts[i]
+        if not heading.startswith("###"):
+            out.append(heading)
+            i += 1
+            continue
+        body = parts[i + 1] if i + 1 < len(parts) else ""
+        body_for_key, sep, tail = body.partition("\n## ")
+        norm = re.sub(r"\s+", " ", f"{heading}\n{body_for_key}".strip()).lower()
+        tokens = _paragraph_token_set(norm)
+        is_body_subsection = len(norm.split()) >= 20 and tokens and "\n|" not in body_for_key
+        is_duplicate = is_body_subsection and any(
+            len(tokens & prior) / min(len(tokens), len(prior)) >= 0.82
+            for prior in seen
+        )
+        if is_duplicate:
+            n += 1
+            if sep:
+                out.append("\n## " + tail)
+            i += 2
+            continue
+        if is_body_subsection:
+            seen.append(tokens)
+        out.extend([heading, body])
+        i += 2
+    cleaned = re.sub(r"\n{3,}", "\n\n", "".join(out))
+    return cleaned, n
+
+
 def _strip_fuzzy_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:
     """Remove later body paragraphs that substantially repeat earlier
     body paragraphs. This catches LLM stutter across sections while
@@ -726,6 +761,17 @@ def apply_fixes(
             "description": (
                 "stripped Inferential Bridge claims missing required "
                 "Q14 tags or containing untraced numerics"
+            ),
+        })
+
+    new_md, n_dup_subsections = _strip_duplicate_subsections(new_md)
+    if n_dup_subsections:
+        log.append({
+            "fix_type": "duplicate_subsection",
+            "n_changes": n_dup_subsections,
+            "description": (
+                "removed repeated markdown subsections produced by "
+                "section backstops or repair loops"
             ),
         })
 
@@ -1403,6 +1449,16 @@ def apply_fixes(
         log.extend(depth_log)
         new_md, hedge_log = _ensure_discussion_hedge_density(new_md)
         log.extend(hedge_log)
+        new_md, n_dup_subsections = _strip_duplicate_subsections(new_md)
+        if n_dup_subsections:
+            log.append({
+                "fix_type": "duplicate_subsection_restrip_post_depth",
+                "n_changes": n_dup_subsections,
+                "description": (
+                    "re-removed repeated markdown subsections after "
+                    "depth restoration"
+                ),
+            })
 
     new_md, n_meta_phrase = _normalize_public_meta_phrases(new_md)
     if n_meta_phrase:
