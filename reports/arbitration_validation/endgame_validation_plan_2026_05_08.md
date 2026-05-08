@@ -56,7 +56,7 @@ general human-consensus performance.
 1. Build a locked human-consensus fixture set from 50 to 100 historical patch
    decisions.
 2. Label each case as `APPLY`, `REJECT`, or `ESCALATE` with rationale.
-3. Run Granite offline or with recorded responses through
+3. Run the current Mistral arbitration path offline or with recorded responses through
    `scripts/arbitration_validation_harness.py`.
 4. Report agreement rate, per-class agreement, confusion matrix, fail-closed
    count, and escalation count.
@@ -67,6 +67,6 @@ general human-consensus performance.
 
 ## Blockers
 
-- No live Granite validation run was performed in this lane.
+- No live Mistral validation run was performed in this lane.
 - No external human-consensus benchmark exists yet.
 - Arbitration is not integrated into the paper pipeline in this lane.

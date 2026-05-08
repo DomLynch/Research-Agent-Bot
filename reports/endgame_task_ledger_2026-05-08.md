@@ -4,9 +4,9 @@
 
 | Item | State |
 |---|---|
-| Current local HEAD | `32ee6475` |
+| Pre-final local HEAD | `c50b555b` |
 | Branch | `main` |
-| Dirty state before this ledger | clean except two existing untracked final-audit reports |
+| Working-tree caveat | this ledger update and stale wording audit are text-only uncommitted diffs |
 | Active synthesis processes at ledger time | none found |
 | Source reports read | `basket_status_2026-05-08.md`, `targeted_regression_cases_2026-05-08.md`, `model_stack_validation_2026-05-08.md`, `model_stack_switch_2026-05-08.md`, `final_model_stack_audit_2026-05-08.md`, `final_dirty_state_audit_2026-05-08.md`, `osf_publisher_service/readiness.md`, `open_spec_methods_package.md`, `spec_validation_2026_05_08.md`, `topic_pack_generator_probe_2026-05-08.md` |
 
@@ -64,8 +64,8 @@ Confirmed strong current topics include: caloric_restriction, creatine, GLP-1, m
 
 ## Remaining Blockers
 
-1. Fresh tri-sync evidence for current HEAD `32ee6475` is still required before a deploy-ready claim.
-2. Existing untracked final-audit reports need owner review before commit.
+1. Fresh tri-sync evidence for the final committed HEAD is still required before a deploy-ready claim.
+2. Final-audit reports are tracked, but the final post-commit tri-sync check must still be recorded by the main lane.
 3. OSF publisher is dry-run ready only; no live OSF call or live provenance write-back has been verified.
 4. Bundle Schema 1.0 public bundle validation is fail-closed because sample synthesis dirs lack the public bundle files.
 5. Several basket topics remain thin, missing recent rich runs, or surface-blocked: acarbose, aerobic_exercise, aspirin, collagen_peptides, everolimus, intermittent_fasting, protein_nutrition, resistance_training, sauna_heat_therapy, senolytics, sleep_health, spermidine, taurine, vitamin_d, zone2_training.
