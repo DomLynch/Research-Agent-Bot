@@ -131,6 +131,12 @@ class StudyAssessment:
             raise ValueError(
                 f"invalid tool {self.tool!r}; must be one of {sorted(_VALID_TOOLS)}"
             )
+        expected_tool = DEFAULT_TOOL_FOR_DESIGN[self.design]
+        if self.tool != expected_tool:
+            raise ValueError(
+                f"incompatible design/tool pair: design={self.design!r} "
+                f"requires tool={expected_tool!r}, got {self.tool!r}"
+            )
         if self.overall_rating not in VALID_RATINGS:
             raise ValueError(
                 f"invalid overall_rating {self.overall_rating!r}; "

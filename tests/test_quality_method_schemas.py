@@ -100,6 +100,16 @@ def test_invalid_design_raises() -> None:
                         _all_low("rob2"), "low")
 
 
+@pytest.mark.parametrize("design,tool", [
+    ("rct", "syrcle"),
+    ("animal", "rob2"),
+    ("observational", "rob2"),
+])
+def test_incompatible_design_tool_pair_raises(design, tool) -> None:
+    with pytest.raises(ValueError, match="incompatible design/tool pair"):
+        StudyAssessment("X", design, tool, _all_low(tool), "low")
+
+
 def test_empty_study_id_raises() -> None:
     with pytest.raises(ValueError, match="study_id"):
         StudyAssessment("", "rct", "rob2", _all_low("rob2"), "low")
