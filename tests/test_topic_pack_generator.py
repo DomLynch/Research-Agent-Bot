@@ -8,9 +8,11 @@ import pytest
 from agent.topic_pack import load_topic_pack
 from agent.topic_pack_generator import (
     RetrievalCounts,
+    classify_topic,
     classify_topic_tier,
     generate_candidate_topic_pack,
     precursor_terms,
+    run_adaptive_expansion,
     suggest_adaptive_expansion,
     validate_candidate_pack,
 )
@@ -24,6 +26,7 @@ def test_generates_mainstream_biomedical_candidate() -> None:
     data = pack.to_topic_pack_dict()
 
     assert pack.status == "proceed"
+    assert pack.domain == "biomedical"
     assert pack.tier == "mainstream"
     assert pack.validation_errors == ()
     assert data["topic"] == "metformin"
@@ -51,12 +54,26 @@ def test_precursor_expansion_for_urolithin_a() -> None:
 def test_pseudo_topic_stops_and_cannot_be_forced_to_proceed() -> None:
     pack = generate_candidate_topic_pack("homeopathy longevity detox")
 
+    assert pack.domain == "biomedical"
     assert pack.tier == "pseudo"
     assert pack.status == "stop"
     assert pack.candidate_cap == 0
     unsafe = replace(pack, status="proceed")
 
     assert "pseudo tier cannot proceed" in validate_candidate_pack(unsafe)
+
+
+def test_out_of_scope_topic_stops_before_retrieval() -> None:
+    pack = generate_candidate_topic_pack("best javascript UI library 2026")
+    classification = classify_topic("best javascript UI library 2026")
+    unsafe = replace(pack, status="proceed")
+
+    assert pack.domain == "out_of_scope"
+    assert pack.tier == "out_of_scope"
+    assert pack.status == "stop"
+    assert classification.accept_decision == "stop"
+    assert "out_of_scope tier cannot proceed" in validate_candidate_pack(unsafe)
+    assert "out_of_scope domain cannot proceed" in validate_candidate_pack(unsafe)
 
 
 def test_contested_topic_proceeds_with_low_candidate_cap() -> None:
@@ -80,6 +97,24 @@ def test_adaptive_expansion_uses_counts_without_network() -> None:
     assert "safety" in thin.additional_terms
     assert enough.status == "enough"
     assert enough.additional_terms == ()
+
+
+def test_adaptive_expansion_loop_updates_pack_once_without_network() -> None:
+    pack = generate_candidate_topic_pack("magnesium sleep")
+    result = run_adaptive_expansion(
+        pack,
+        (
+            RetrievalCounts(unique_candidates=12),
+            RetrievalCounts(unique_candidates=12),
+        ),
+    )
+
+    assert result.rounds_applied == 1
+    assert result.status == "stop"
+    assert result.reason == "no new expansion terms"
+    assert "randomized controlled trial" in result.pack.topic_terms
+    assert result.pack.validation_errors == ()
+    assert result.pack is not pack
 
 
 def test_generated_pack_is_compatible_with_biomedical_default() -> None:
@@ -119,3 +154,4 @@ def test_tier_labels_are_deterministic() -> None:
     assert classify_topic_tier("urolithin A mitophagy") == "emerging"
     assert classify_topic_tier("young blood protocol") == "contested"
     assert classify_topic_tier("crystal healing longevity") == "pseudo"
+    assert classify_topic_tier("crypto trading bot") == "out_of_scope"

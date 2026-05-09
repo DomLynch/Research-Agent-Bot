@@ -5,7 +5,10 @@ import re
 from dataclasses import dataclass, replace
 from typing import Literal
 
-TopicTier = Literal["mainstream", "adjacent", "emerging", "contested", "pseudo"]
+TopicTier = Literal[
+    "mainstream", "adjacent", "emerging", "contested", "pseudo", "out_of_scope",
+]
+TopicDomain = Literal["biomedical", "out_of_scope"]
 GenerationStatus = Literal["proceed", "stop"]
 ExpansionStatus = Literal["enough", "expand", "stop"]
 
@@ -55,6 +58,7 @@ _CAP_BY_TIER = {
     "emerging": 250,
     "contested": 150,
     "pseudo": 0,
+    "out_of_scope": 0,
 }
 _MAINSTREAM = {
     "metformin", "statin", "statins", "omega3", "omega-3",
@@ -71,6 +75,11 @@ _CONTESTED = {
 _PSEUDO = {
     "homeopathy", "crystal healing", "quantum healing", "alkaline water",
     "aura cleansing", "detox foot bath", "scalar energy",
+}
+_OUT_OF_SCOPE = {
+    "ui library", "javascript", "trading bot", "crypto", "forex",
+    "stock market", "restaurant", "travel itinerary", "marketing funnel",
+    "sales crm", "real estate", "recipe", "sports betting",
 }
 _PRECURSORS = {
     "urolithin a": (
@@ -103,9 +112,26 @@ class AdaptiveExpansionPlan:
 
 
 @dataclass(frozen=True, slots=True)
+class AdaptiveExpansionResult:
+    pack: "GeneratedTopicPack"
+    rounds_applied: int
+    status: ExpansionStatus
+    reason: str
+
+
+@dataclass(frozen=True, slots=True)
+class TopicClassification:
+    domain: TopicDomain
+    tier: TopicTier
+    accept_decision: GenerationStatus
+    reason: str
+
+
+@dataclass(frozen=True, slots=True)
 class GeneratedTopicPack:
     topic: str
     slug: str
+    domain: TopicDomain
     tier: TopicTier
     status: GenerationStatus
     stop_reason: str | None
@@ -170,16 +196,18 @@ def generate_candidate_topic_pack(
     seed_terms: tuple[str, ...] = (),
 ) -> GeneratedTopicPack:
     topic = _clean_topic(topic_name)
-    tier = classify_topic_tier(topic, seed_terms)
-    status: GenerationStatus = "stop" if tier == "pseudo" else "proceed"
+    classification = classify_topic(topic, seed_terms)
     aliases = _dedupe((topic, topic.replace("-", " "), *seed_terms))
     topic_terms = _dedupe((topic, *seed_terms, *precursor_terms(topic, seed_terms)))
     pack = GeneratedTopicPack(
         topic=topic,
         slug=slugify(topic),
-        tier=tier,
-        status=status,
-        stop_reason="pseudo or out-of-scope biomedical topic" if status == "stop" else None,
+        domain=classification.domain,
+        tier=classification.tier,
+        status=classification.accept_decision,
+        stop_reason=(
+            classification.reason if classification.accept_decision == "stop" else None
+        ),
         aliases=aliases,
         topic_terms=topic_terms,
         scope_terms=_SCOPE_TERMS,
@@ -187,23 +215,41 @@ def generate_candidate_topic_pack(
         exclude_terms=_EXCLUDE_TERMS,
         background_allow=_BACKGROUND_ALLOW,
         corpus_search_queries=_queries(topic_terms),
-        candidate_cap=_CAP_BY_TIER[tier],
+        candidate_cap=_CAP_BY_TIER[classification.tier],
         validation_errors=(),
     )
     return _with_validation(pack)
 
 
-def classify_topic_tier(topic_name: str, seed_terms: tuple[str, ...] = ()) -> TopicTier:
+def classify_topic(topic_name: str, seed_terms: tuple[str, ...] = ()) -> TopicClassification:
     text = " ".join((topic_name, *seed_terms)).lower()
     if _contains_any(text, _PSEUDO):
-        return "pseudo"
+        return TopicClassification(
+            "biomedical", "pseudo", "stop", "pseudo biomedical claim"
+        )
+    if _contains_any(text, _OUT_OF_SCOPE):
+        return TopicClassification(
+            "out_of_scope", "out_of_scope", "stop", "out-of-scope topic"
+        )
     if _contains_any(text, _CONTESTED):
-        return "contested"
+        return TopicClassification(
+            "biomedical", "contested", "proceed", "contested biomedical topic"
+        )
     if _contains_any(text, _MAINSTREAM):
-        return "mainstream"
+        return TopicClassification(
+            "biomedical", "mainstream", "proceed", "mainstream biomedical topic"
+        )
     if _contains_any(text, _EMERGING):
-        return "emerging"
-    return "adjacent"
+        return TopicClassification(
+            "biomedical", "emerging", "proceed", "emerging biomedical topic"
+        )
+    return TopicClassification(
+        "biomedical", "adjacent", "proceed", "adjacent biomedical topic"
+    )
+
+
+def classify_topic_tier(topic_name: str, seed_terms: tuple[str, ...] = ()) -> TopicTier:
+    return classify_topic(topic_name, seed_terms).tier
 
 
 def precursor_terms(topic_name: str, seed_terms: tuple[str, ...] = ()) -> tuple[str, ...]:
@@ -219,7 +265,7 @@ def suggest_adaptive_expansion(
     pack: GeneratedTopicPack,
     counts: RetrievalCounts,
     *,
-    floor: int = 50,
+    floor: int = 60,
 ) -> AdaptiveExpansionPlan:
     if pack.status == "stop":
         return AdaptiveExpansionPlan("stop", (), "pack is stopped")
@@ -229,7 +275,46 @@ def suggest_adaptive_expansion(
         return AdaptiveExpansionPlan("enough", (), "candidate floor met")
     terms = _dedupe((*precursor_terms(pack.topic, pack.topic_terms), *_ADAPTIVE_TERMS))
     terms = tuple(t for t in terms if t.lower() not in {x.lower() for x in pack.topic_terms})
+    if not terms:
+        return AdaptiveExpansionPlan("stop", (), "no new expansion terms")
     return AdaptiveExpansionPlan("expand", terms, "candidate floor not met")
+
+
+def expand_topic_pack(
+    pack: GeneratedTopicPack,
+    additional_terms: tuple[str, ...],
+) -> GeneratedTopicPack:
+    topic_terms = _dedupe((*pack.topic_terms, *additional_terms))
+    expanded = replace(
+        pack,
+        topic_terms=topic_terms,
+        corpus_search_queries=_queries(topic_terms),
+        validation_errors=(),
+    )
+    return _with_validation(expanded)
+
+
+def run_adaptive_expansion(
+    pack: GeneratedTopicPack,
+    observed_counts: tuple[RetrievalCounts, ...],
+    *,
+    floor: int = 60,
+    max_rounds: int = 3,
+) -> AdaptiveExpansionResult:
+    current = pack
+    rounds = 0
+    last_plan = AdaptiveExpansionPlan("stop", (), "no retrieval counts supplied")
+    for counts in observed_counts[:max_rounds]:
+        last_plan = suggest_adaptive_expansion(current, counts, floor=floor)
+        if last_plan.status != "expand":
+            return AdaptiveExpansionResult(
+                current, rounds, last_plan.status, last_plan.reason
+            )
+        current = expand_topic_pack(current, last_plan.additional_terms)
+        rounds += 1
+    if rounds == max_rounds:
+        return AdaptiveExpansionResult(current, rounds, "stop", "max rounds reached")
+    return AdaptiveExpansionResult(current, rounds, last_plan.status, last_plan.reason)
 
 
 def validate_candidate_pack(pack: GeneratedTopicPack) -> tuple[str, ...]:
@@ -247,6 +332,10 @@ def validate_candidate_pack(pack: GeneratedTopicPack) -> tuple[str, ...]:
         errors.append("retrieval.topic_terms must be non-empty")
     if pack.tier == "pseudo" and pack.status == "proceed":
         errors.append("pseudo tier cannot proceed")
+    if pack.tier == "out_of_scope" and pack.status == "proceed":
+        errors.append("out_of_scope tier cannot proceed")
+    if pack.domain == "out_of_scope" and pack.status == "proceed":
+        errors.append("out_of_scope domain cannot proceed")
     if pack.species:
         errors.append("generated biomedical packs must not hard-filter species")
     if pack.status == "proceed" and pack.candidate_cap <= 0:

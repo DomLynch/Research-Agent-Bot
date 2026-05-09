@@ -1,36 +1,56 @@
-# Topic Pack Generator v1 Activation Requirements
+# Topic Pack Generator v1
 
-Status: activation spec. Current implementation is dry-run only:
-`agent/topic_pack_generator.py`. Background design is in
-`docs/topic_pack_generation_v1.md`.
+Status: local V1 slice. The generator can create, adapt, validate, and persist
+generated topic-pack records. It does not yet run retrieval or full synthesis
+for generated packs.
 
-## Current Scaffold
+## Implemented
 
-Implemented today:
+- `agent/topic_pack_generator.py`
+  - deterministic generation from a free-text topic
+  - tiering: `mainstream`, `adjacent`, `emerging`, `contested`, `pseudo`,
+    `out_of_scope`
+  - strict `proceed` / `stop` decision
+  - pseudo and out-of-scope topics stop before retrieval
+  - precursor expansion for known topic families
+  - deterministic adaptive expansion from observed candidate counts
+  - TOML-style dict compatible with current `TopicPack` fields
+- `agent/topic_pack_store.py`
+  - immutable JSON records in `topic_packs_db/<slug>/vN.json`
+  - `latest.json` pointer per topic
+  - `topic_pack_id`, version, hash, parent lineage, candidate count
+  - stopped or invalid packs cannot persist
+- `scripts/synthesize.py`
+  - safe front door for topic-name submission
+  - emits JSON status
+  - optional `--persist` writes a generated-pack record
+  - does not silently call full synthesis for generated topics
 
-- deterministic tiering: `mainstream`, `adjacent`, `emerging`, `contested`,
-  `pseudo`
-- strict `proceed` / `stop` status
-- pseudo topics stop before retrieval
-- generated TOML-style dict compatible with current `TopicPack` fields
-- pure adaptive expansion over observed retrieval counts
-- no writes to `topic_packs/`
-- no DB writes
-- no retrieval, LLM, synthesis, or public API integration
+## CLI
 
-## V1 Activation Gate
+```bash
+python scripts/synthesize.py \
+  --topic "vitamin K2 cardiovascular" \
+  --candidate-count 20 \
+  --candidate-count 80 \
+  --persist
+```
+
+Output includes `status`, `slug`, `tier`, `topic_terms`,
+`corpus_search_queries`, and, when persisted, `topic_pack_id`,
+`topic_pack_version`, and `topic_pack_hash`.
+
+## Still Gated
 
 The generator can become an active V1 path only after these are true:
 
-1. Generated packs are persisted as versioned records, not silent TOML edits.
-2. Every run records `topic_pack_id`, `topic_pack_version`, and
+1. Every generated-pack run records `topic_pack_id`, `topic_pack_version`, and
    `topic_pack_hash`.
-3. Existing curated TOML packs are imported as immutable version `1`.
-4. Generated packs pass the same loader/schema checks as curated packs.
-5. Dry-run retrieval benchmarking covers at least 25 known basket topics.
-6. Pseudo/out-of-scope topics fail closed before retrieval.
-7. Generated packs cannot lower certification floors.
-8. Generated packs cannot bypass audit, reviewer, journal-surface,
+2. Existing curated TOML packs are imported as immutable version `1`.
+3. Generated packs pass the same loader/schema checks as curated packs.
+4. Dry-run retrieval benchmarking covers at least 25 known basket topics.
+5. Generated packs cannot lower certification floors.
+6. Generated packs cannot bypass audit, reviewer, journal-surface,
    arbitration, maturity, or L6 gates.
 
 ## Required Benchmarks
@@ -87,18 +107,23 @@ Run manifest additions:
 - If generated pack provenance is missing, do not synthesize.
 - If a generated pack is retuned, old runs stay pinned to the old hash.
 - If topic tier is `pseudo`, status must be `stop`.
+- If topic tier is `out_of_scope`, status must be `stop`.
 - If candidate count remains thin, output may be SCOP/AAA-SCOP only after that
   track is separately wired and tested; never full AAA by default.
 
-## Tests To Add Before Activation
+## Tests
 
-- CLI emits stable JSON for fixed inputs.
-- Generated pack imports through the same loader as TOML.
-- DB versioning refuses duplicate `(topic_name, version)`.
-- Run manifest pins pack identity and hash.
-- Pack retune creates version `n+1` without mutating `n`.
-- Generated pack cannot reduce global cert floors.
-- Pseudo and contested examples fail or disclose as specified.
+- `tests/test_topic_pack_generator.py`
+- `tests/test_topic_pack_store.py`
+- `tests/test_synthesize_cli.py`
+
+Fresh-topic coverage:
+
+- vitamin K2 cardiovascular
+- magnesium glycinate sleep
+- alpha-lipoic acid neuropathy
+- lithium orotate mood
+- glycine sleep
 
 ## Open Risks
 
@@ -106,3 +131,5 @@ Run manifest additions:
 - Candidate count alone can hide off-thesis retrieval.
 - Generated aliases can over-broaden topics and inflate receipts.
 - Activation needs provenance UI before user-submitted topics are safe.
+- Full synthesis is intentionally not wired for generated packs until corpus
+  and run-manifest provenance are pinned.
