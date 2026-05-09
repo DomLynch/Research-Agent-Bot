@@ -8,7 +8,19 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 19,300 LOC (raised 2026-05-09 from 18,500 by
+Current ceiling: 19,750 LOC (raised 2026-05-09 from 19,300 by
+final-gate/effect-normalizer primitives). Earlier waves:
+
+Wave 13 — Final-gate + effect normalization (19,300 → 19,750):
+agent/effect_normalizer.py adds fail-closed conversion from raw continuous
+and binary study reports into normalized EffectRow inputs; agent/final_gate.py
+adds deterministic aggregation of existing audit, journal-surface, reviewer-P1,
+numeric-trace, citation, RoB, GRADE, tension, corpus-depth, and template-language
+signals. These make Phases 5 and 8 executable rather than prose-only. The
+measured gate is 19,543 cloc at the time of raise, leaving ~200 cloc headroom
+after the merge-review fixes (2026-05-09).
+
+Prior ceiling: 19,300 LOC (raised 2026-05-09 from 18,500 by
 world-class paper primitives). Earlier waves:
 
 Wave 12 — World-class paper primitives (18,500 → 19,300):
@@ -193,7 +205,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 19300
+TOTAL_LIMIT = 19750
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
