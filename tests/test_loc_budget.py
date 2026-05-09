@@ -8,7 +8,19 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 18,500 LOC (raised 2026-05-09 from 17,200 by
+Current ceiling: 19,300 LOC (raised 2026-05-09 from 18,500 by
+world-class paper primitives). Earlier waves:
+
+Wave 12 — World-class paper primitives (18,500 → 19,300):
+agent/template_language.py adds deterministic AI-template prose detection;
+agent/risk_of_bias_schema.py and agent/grade_schema.py add formal RoB/GRADE
+data contracts; agent/field_engagement.py adds named-framework engagement;
+agent/meta_analysis.py adds fixed-effect and DerSimonian-Laird pooling;
+agent/tension_elaboration.py adds deterministic cross-paper tension planning.
+All are stdlib-only, sub-300 cloc modules except existing near-cap files,
+and convert Phases 3-7 from docs into executable primitives (2026-05-09).
+
+Prior ceiling: 18,500 LOC (raised 2026-05-09 from 17,200 by
 generated topic-pack V1 + cross-topic meta-synthesis V1). Earlier waves:
 
 Wave 1 — multi-topic refactor (12,000 → 13,500): added 9 source-client
@@ -181,7 +193,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 18500
+TOTAL_LIMIT = 19300
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
