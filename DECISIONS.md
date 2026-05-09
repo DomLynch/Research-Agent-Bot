@@ -552,3 +552,17 @@ The final hardening moves fix the actual failure modes, not the score display.
 - chase broader PDF parsing before fixing excerpt/numeric grounding — rejected; the benchmark showed the immediate leverage was in what the drafter says from the evidence already in hand.
 
 **Revisit if:** `glp1_cv_mace`, `creatine_cognition`, or `senolytics` remain regressed after adding a validator-driven rewrite loop for medium-severity `missing_numeric` findings.
+
+---
+
+## 2026-05-09 — LOC budget raise for executable world-class paper primitives
+**Decision:** Raise `agent/` cloc ceiling from 18,500 to 19,300.
+**Why:** Phase 3-7 work moved from docs into executable, tested primitives:
+template-language gating, RoB/GRADE schemas, named-framework engagement,
+fixed/random-effects meta-analysis, and deterministic tension planning.
+These are load-bearing for publication-grade papers and stay stdlib-only.
+**Alternatives rejected:** Compressing working modules to chase the old ceiling
+would hide complexity rather than remove it; moving runtime primitives to
+`scripts/` would make ownership worse.
+**Revisit if:** These primitives are not wired into a successful rapamycin
+WORLDCLASS run; then delete or archive unused pieces.
