@@ -1,7 +1,8 @@
 """Deterministic meta-analysis scaffold.
 
 Fixed-effect inverse-variance pooling only. Fails closed unless at least
-two compatible, non-high-RoB numeric effect sizes are present.
+THREE compatible, non-high-RoB numeric effect sizes are present (Fix #56:
+raised from 2 to 3 — pooling two studies is misleading scaffold output).
 """
 from __future__ import annotations
 
@@ -41,10 +42,12 @@ def pool_fixed_effect(
     measures = {row[1] for row in effects}
     if any(reason == "high_risk_of_bias" for reason in invalid):
         return _closed(outcome, measures, "high_risk_of_bias_excluded")
-    if len(effects) < 2:
-        return _closed(outcome, measures, "insufficient_compatible_effect_sizes")
-    if len(measures) != 1:
+    # Fix #56: check mixed measures before count — mixed-measure failure
+    # is data-quality, not data-quantity, and should surface either way.
+    if effects and len(measures) != 1:
         return _closed(outcome, measures, "mixed_effect_measures")
+    if len(effects) < 3:
+        return _closed(outcome, measures, "insufficient_compatible_effect_sizes")
 
     weights = [1 / (se * se) for _, _, effect, se in effects]
     pooled = sum(w * row[2] for w, row in zip(weights, effects)) / sum(weights)

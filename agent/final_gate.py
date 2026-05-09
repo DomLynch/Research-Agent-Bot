@@ -12,18 +12,30 @@ The gate distinguishes:
   - failures (P1) — block the cert. Result.passed = False.
   - warnings (P2) — emitted with the result but do not block. Caller can
     promote to failures by tightening thresholds.
+
+Fix #56: the gate ALSO surfaces formal-SR-methods status independently
+of paper_quality_gate. With automated screening RoB (no source-text),
+formal_sr_methods="PARTIAL" — paper_quality_gate can still PASS, but
+the report flags this honestly. With source-text Cochrane RoB,
+formal_sr_methods="FULL".
 """
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Literal
 
 __all__ = [
     "GateThresholds",
     "GateInputs",
     "GateResult",
     "DEFAULT_THRESHOLDS",
+    "RobMethodStatus",
+    "FormalSrMethodsStatus",
     "evaluate_final_gate",
 ]
+
+RobMethodStatus = Literal["automated_screening", "source_text_full_cochrane"]
+FormalSrMethodsStatus = Literal["PARTIAL", "FULL"]
 
 
 @dataclass(frozen=True, slots=True)
@@ -91,6 +103,7 @@ class GateInputs:
     n_receipts: int
     unresolved_reviewer_p1_count: int
     template_language_blocking: bool
+    rob_method_status: RobMethodStatus = "automated_screening"
 
     def __post_init__(self) -> None:
         for name in ("numeric_coverage", "rob_coverage", "grade_coverage"):

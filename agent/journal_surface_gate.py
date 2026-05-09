@@ -140,7 +140,7 @@ def _section_issue_messages(paper_md: str) -> tuple[str, ...]:
 
 
 def _duplicate_paragraph_issue_messages(paper_md: str) -> tuple[str, ...]:
-    paras = []
+    paras: list[tuple[int, set[str]]] = []
     for para in re.split(r"\n\s*\n", paper_md):
         text = para.strip()
         if not text or text.startswith(("#", "|", "_Cited:")):
