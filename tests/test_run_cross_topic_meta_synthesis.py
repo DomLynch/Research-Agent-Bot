@@ -72,6 +72,28 @@ def test_select_best_runs_uses_timestamp_not_lexical_suffix(tmp_path: Path) -> N
     assert select_best_runs(tmp_path) == (later,)
 
 
+def test_select_best_runs_excludes_benchmark_variants(tmp_path: Path) -> None:
+    _write_run(
+        tmp_path,
+        "synthesis-rapamycin-v06-PATHA10-2026-05-07T09-38-47Z",
+        track="AAA-CLIN",
+        audit_total=14,
+    )
+    brief = _write_run(
+        tmp_path,
+        "synthesis-rapamycin_clinical_brief-v06-BENCHMARK-2026-05-09T00-00-00Z",
+        track="AAA-CLIN",
+        audit_total=14,
+        receipts=40,
+    )
+
+    selected = select_best_runs(tmp_path)
+
+    assert brief not in selected
+    assert len(selected) == 1
+    assert selected[0].name.startswith("synthesis-rapamycin-v06-")
+
+
 def _write_run(
     root: Path,
     name: str,

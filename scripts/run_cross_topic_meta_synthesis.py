@@ -20,6 +20,8 @@ VALID_CERTIFICATION_TRACKS = frozenset({
     "AAA-MECH",
     "AAA-SCOP",
 })
+AUTO_SELECT_TOPIC_SUFFIX_EXCLUDES = ("_clinical_brief",)
+AUTO_SELECT_RUN_LABEL_EXCLUDES = ("benchmark",)
 
 
 def select_best_runs(runs_root: Path) -> tuple[Path, ...]:
@@ -106,6 +108,12 @@ def _rank(summary, path: Path) -> tuple[int, int, int, str, str]:
 
 def _is_auto_selectable(summary, path: Path) -> bool:
     if summary.eligibility == "excluded":
+        return False
+    topic_lc = summary.topic.lower()
+    run_lc = path.name.lower()
+    if topic_lc.endswith(AUTO_SELECT_TOPIC_SUFFIX_EXCLUDES):
+        return False
+    if any(label in run_lc for label in AUTO_SELECT_RUN_LABEL_EXCLUDES):
         return False
     if summary.certification_track not in VALID_CERTIFICATION_TRACKS:
         return False

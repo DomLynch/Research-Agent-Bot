@@ -8,7 +8,29 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 19,750 LOC (raised 2026-05-09 from 19,300 by
+Current ceiling: 21,250 LOC (raised 2026-05-09 from 20,750 by
+publication scoring and hazard-ratio normalization). Earlier waves:
+
+Wave 15 - Publication scorer + HR normalizer (20,750 -> 21,250):
+agent/publication_scorer.py adds a deterministic panel-rubric scorecard for
+publication readiness, and agent/effect_normalizer.py adds fail-closed hazard
+ratio plus confidence-interval conversion into log_HR EffectRow inputs. Both
+are stdlib-only and directly support Phase 5/8 integration. The measured gate
+is 20,911 cloc at the time of raise, leaving about 300 cloc headroom after
+the final Claude-lane integration (2026-05-09).
+
+Prior ceiling: 20,750 LOC (raised 2026-05-09 from 19,750 by wired
+Phase 3-8 adapters). Earlier waves:
+
+Wave 14 - Wired Phase 3-8 adapters (19,750 -> 20,750):
+agent/framework_section.py becomes the canonical deterministic field-framework
+renderer; agent/quality_methods_bundle.py composes RoB/GRADE coverage;
+agent/forest_plot_svg.py emits dependency-free forest plot SVG; agent/
+template_gate_adapter.py maps prose-template hits into gate signals; and
+agent/final_gate_mapper.py maps artifact dictionaries into final-gate inputs.
+The duplicate framework renderer was deleted before accepting the raise.
+
+Prior ceiling: 19,750 LOC (raised 2026-05-09 from 19,300 by
 final-gate/effect-normalizer primitives). Earlier waves:
 
 Wave 13 — Final-gate + effect normalization (19,300 → 19,750):
@@ -205,7 +227,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 20750
+TOTAL_LIMIT = 21250
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

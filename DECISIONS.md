@@ -1,5 +1,21 @@
 # DECISION JOURNAL
 
+## 2026-05-09 — LOC budget raise for publication scoring and HR normalization
+**Decision:** Raise `agent/` cloc ceiling from 20,750 to 21,250.
+**Why:** Claude's final integration lane added two runtime primitives that are
+load-bearing for the remaining publication-quality sprint: a deterministic
+publication-readiness scorecard and hazard-ratio confidence-interval
+normalization into `log_HR` effect rows. Both are stdlib-only, tested, and feed
+Phase 5/8 gates rather than adding prose-only surface area. Measured runtime
+cloc is 20,911, leaving roughly 300 cloc of headroom.
+**Alternatives rejected:** Dropping the scorer would lose the panel rubric as
+an executable gate; dropping HR normalization would leave common survival
+outcomes outside the meta-analysis path. Hiding either in `scripts/` would dodge
+the package budget rather than reduce complexity.
+**Revisit if:** The scorer is not wired into the final paper gate or HR rows are
+not used by the next meta-analysis activation; unused primitives should be
+deleted before any further budget raise.
+
 ## 2026-05-09 — LOC budget raise for wired Phase 3-8 adapters
 **Decision:** Raise `agent/` cloc ceiling from 19,750 to 20,750.
 **Why:** Claude's adapter lane moved remaining world-class primitives from
