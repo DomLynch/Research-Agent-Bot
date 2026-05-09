@@ -39,7 +39,16 @@ asyncio_mode = "strict"
 include = ["agent", "agent.*"]
 
 [tool.mypy]
-# tests_legacy/ contains pre-V1 archaeology kept on disk for git history.
-# It mirrors test_evidence_cards.py from the live suite under the same
-# module name; mypy raises Duplicate-module without an explicit exclude.
+# tests_legacy/ + agent_legacy/ are pre-V1 archaeology on disk for git
+# history; they shadow live-suite module names and would raise
+# Duplicate-module on a flat walk.
+# scripts/ is imported via sys.path hacks (`import grok_reviewer`)
+# AND walked as the `scripts` package, so a flat walk finds every
+# scripts/*.py twice. Explicit-package-bases + mypy_path sequencing
+# (".", which prefers the in-tree top-level `scripts` package over
+# the auto-discovered `<file>` form) is the standard fix per
+# https://mypy.readthedocs.io/en/stable/running_mypy.html#mapping-file-paths-to-modules
 exclude = ["^tests_legacy/", "^agent_legacy/"]
+explicit_package_bases = true
+namespace_packages = true
+mypy_path = "."
