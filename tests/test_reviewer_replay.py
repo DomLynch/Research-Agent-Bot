@@ -91,7 +91,7 @@ def test_live_provider_requires_explicit_allow_live() -> None:
         reviewer_replay.asyncio.run(
             reviewer_replay.run_live(
                 fixture,
-                model="deepseek/deepseek-v4-pro",
+                model="google/gemini-3.1-flash-lite:exacto",
                 fallback_model="mistralai/mistral-small-2603",
                 limit=1,
                 allow_live=False,
@@ -106,7 +106,7 @@ def test_live_provider_rejects_grok_fallback() -> None:
         reviewer_replay.asyncio.run(
             reviewer_replay.run_live(
                 fixture,
-                model="deepseek/deepseek-v4-pro",
+                model="google/gemini-3.1-flash-lite:exacto",
                 fallback_model="x-ai/grok-4.3",
                 limit=1,
                 allow_live=True,
@@ -117,7 +117,7 @@ def test_live_provider_rejects_grok_fallback() -> None:
 def test_live_provider_skips_timeout(monkeypatch) -> None:
     async def slow_review(*args, **kwargs):
         await reviewer_replay.asyncio.sleep(0.05)
-        return [], {}, "deepseek/deepseek-v4-pro", 0.0
+        return [], {}, "google/gemini-3.1-flash-lite:exacto", 0.0
 
     monkeypatch.setattr(reviewer_replay, "review_with_grok", slow_review)
     fixture = reviewer_replay.load_fixture(FIXTURE)
@@ -125,7 +125,7 @@ def test_live_provider_skips_timeout(monkeypatch) -> None:
     result = reviewer_replay.asyncio.run(
         reviewer_replay.run_live(
             fixture,
-            model="deepseek/deepseek-v4-pro",
+            model="google/gemini-3.1-flash-lite:exacto",
             fallback_model="mistralai/mistral-small-2603",
             limit=1,
             allow_live=True,

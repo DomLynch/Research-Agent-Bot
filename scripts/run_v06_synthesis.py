@@ -2181,7 +2181,7 @@ async def _run_post_paper_pipeline(
     methods_md: str = "",
 ) -> str:
     """Layer 1 deterministic audit + auto-fix → final-layer LLM review
-    (DeepSeek → Mistral fallback) → auto-apply patches → final audit.
+    (Gemini Exacto → Mistral fallback) → auto-apply patches → final audit.
 
     Each step's artifact is written to disk so a human can retroactively
     review what changed and why. Returns the final paper text."""
@@ -2225,15 +2225,15 @@ async def _run_post_paper_pipeline(
     audit_md = _audit_v06._format_summary(audit_report)
     paper_path.with_suffix(".audit.md").write_text(audit_md)
 
-    # Stage 3: Final-layer LLM review (DeepSeek primary, Mistral fallback).
+    # Stage 3: Final-layer LLM review (Gemini Exacto primary, Mistral fallback).
     print(
-        "[pipeline] Stage 3/5 — final-layer review (DeepSeek → Mistral fallback)...",
+        "[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...",
         file=sys.stderr,
     )
     try:
-        # Fix #11: pass citation_registry so Grok sees clean Author-Year
+        # Fix #11: pass citation_registry so the reviewer sees clean Author-Year
         # tokens in the "allowed body citations" list, not internal
-        # receipt_id handles. Pre-fix Grok was reverting clean citations
+        # receipt_id handles. Pre-fix reviewer behavior reverted clean citations
         # to long PMC handles because the prompt asked for "receipt-key
         # consistency" — exactly the bug the third reviewer warned about.
         patches, _raw, model_used, cost = await _final_reviewer.review_with_grok(

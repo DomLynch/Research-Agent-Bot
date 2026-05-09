@@ -24,8 +24,8 @@ Output:
   - <paper>.review_patches.json — list of TypedPatch records
   - <paper>.review_summary.md   — human-readable review notes
 
-Default primary: DeepSeek V4 Pro via OpenRouter. Mistral Small 4 is the
-cheap fallback.
+Default primary: Gemini 3.1 Flash Lite Exacto via OpenRouter with high
+thinking. Mistral Small is the cheap fallback.
 """
 from __future__ import annotations
 
@@ -58,7 +58,7 @@ PATCH_TYPES = (
 
 @dataclass(frozen=True, slots=True)
 class TypedPatch:
-    """One Grok-proposed edit with provenance metadata."""
+    """One reviewer-proposed edit with provenance metadata."""
     id: str
     patch_type: str       # one of PATCH_TYPES
     severity: str         # P1 | P2 | P3
@@ -74,12 +74,15 @@ def _build_grok_prompt(
     paper_md: str, manifest: dict, audit: dict,
     citation_registry: dict | None = None,
 ) -> tuple[str, str]:
-    """System + user messages for Grok. The system prompt enumerates
-    the patch type contract so Grok produces correctly-typed output.
+    """System + user messages for the final-layer reviewer.
+
+    The system prompt enumerates the patch type contract so the model
+    produces correctly-typed output.
 
     Fix #11: when citation_registry is provided, the user prompt
-    shows Grok the ALLOWED BODY CITATIONS (Author-Year tokens) instead
-    of internal receipt_id handles. Pre-fix Grok was reverting clean
+    shows the reviewer the ALLOWED BODY CITATIONS (Author-Year tokens)
+    instead of internal receipt_id handles. Pre-fix reviewer behavior
+    was reverting clean
     Author-Year citations back to long PMC handles because the prompt
     said 'use ONLY these for citations' next to the receipt_ids."""
     system = (
@@ -150,7 +153,7 @@ def _build_grok_prompt(
     # Fix #11: derive (body_citation, outcome, effect, tier) per receipt.
     # When citation_registry present, body_citation is the clean
     # Author-Year token (Walton 2019, Shadyab 2025). When absent (legacy
-    # callers), fall back to receipt_id but warn Grok in the heading.
+    # callers), fall back to receipt_id but warn the reviewer in the heading.
     receipts = manifest.get("receipts", [])
     if citation_registry:
         receipt_lines = []
@@ -172,7 +175,7 @@ def _build_grok_prompt(
         ]
         receipt_header = "## Receipt list (use ONLY these for citations)"
 
-    # Reviewer wave 10 (2026-05-05) — Grok bg-lit awareness fix:
+    # Reviewer wave 10 (2026-05-05) — background-literature awareness fix:
     # The pipeline allows TWO citation pools in body prose:
     #   1. Receipts (above) — primary corpus evidence
     #   2. Background-literature registry — pre-vetted clinical
@@ -180,9 +183,9 @@ def _build_grok_prompt(
     #      Bohannon 1997, Anisimov 2008, Owen 2000, etc.) admissible
     #      ONLY when the citation_token appears in the same sentence
     #      as the threshold value.
-    # Pre-fix Grok only saw pool #1 and flagged every bg-lit citation
+    # Pre-fix reviewer only saw pool #1 and flagged every bg-lit citation
     # as 'unauthorized', generating dozens of false-positive P1 patches
-    # (rapamycin publication run had 19 unresolved). Now Grok sees
+    # (rapamycin publication run had 19 unresolved). Now the reviewer sees
     # both pools and only flags citations not in EITHER.
     bglit_lines: list[str] = []
     seen_background_entries: set[tuple[str, str]] = set()
@@ -215,7 +218,7 @@ def _build_grok_prompt(
         # Pool 2 (Slice 7 step 3 fix): topic-pack [[background_literature]]
         # entries (rapamycin pack has Harrison 2009 / Lamming 2012 /
         # Mannick 2014 / Kahan 2000 / Kennedy 2014 / López-Otín 2013).
-        # Without this, Grok flagged every legitimate canon citation
+        # Without this, the reviewer flagged every legitimate canon citation
         # as 'unauthorized' on calibrated rapamycin runs.
         topic = (manifest.get("topic")
                  if isinstance(manifest, dict) else None)
@@ -283,7 +286,7 @@ def _build_grok_prompt(
 # transparency / retroactive audit, not budgeting.
 _PRICING_PER_MTOK: dict[str, tuple[float, float]] = {
     "x-ai/grok-4.3": (3.00, 15.00),
-    "deepseek/deepseek-v4-pro": (0.435, 0.87),
+    "google/gemini-3.1-flash-lite:exacto": (0.25, 1.50),
     "mistralai/mistral-small-2603": (0.15, 0.60),
 }
 
@@ -296,10 +299,10 @@ async def _call_one(
     url = base_url.rstrip("/") + "/chat/completions"
     payload = {
         "model": model,
-        # Fix #50: 0.1 → 0.5. Reviewer needs full reasoning
-        # variance to catch nuanced issues. Trust-spine gates
+        # Fix #50: 0.1 → 0.5. Reviewer needs variance to catch
+        # nuanced issues. Trust-spine gates
         # (smart-gate Fix #39, post-apply audit guard, Fix #46
-        # auto-strip) catch unsafe patches downstream — Grok
+        # auto-strip) catch unsafe patches downstream — the reviewer
         # should think freely.
         "temperature": 0.5,
         "messages": [
@@ -309,6 +312,8 @@ async def _call_one(
         "max_tokens": 12000,
         "response_format": {"type": "json_object"},
     }
+    if model.startswith("google/gemini-3.1"):
+        payload["reasoning"] = {"effort": "high", "exclude": True}
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
@@ -343,7 +348,11 @@ async def _call_with_fallback(
     """Try primary first; on any HTTP/parse failure, fall back. Returns
     (parsed_json, model_used, cost_usd_estimate). The fallback only
     fires on primary-model outage or invalid JSON."""
-    import httpx
+    try:
+        import httpx
+        transport_errors: tuple[type[BaseException], ...] = (httpx.HTTPError,)
+    except ModuleNotFoundError:
+        transport_errors = ()
     for model in (primary_model, fallback_model):
         try:
             parsed, in_tok, out_tok = await _call_one(
@@ -351,7 +360,7 @@ async def _call_with_fallback(
             )
             cost = _estimate_cost(model, in_tok, out_tok)
             return parsed, model, cost
-        except (httpx.HTTPError, ValueError, KeyError, json.JSONDecodeError) as exc:
+        except (*transport_errors, ValueError, KeyError, json.JSONDecodeError) as exc:
             print(
                 f"final_layer_reviewer: {model} failed "
                 f"({type(exc).__name__}); "
@@ -365,7 +374,7 @@ async def _call_with_fallback(
 
 
 def _normalize_patch(p_raw: dict, idx: int) -> TypedPatch | None:
-    """Coerce a raw Grok-emitted dict into a TypedPatch. Returns None
+    """Coerce a raw reviewer-emitted dict into a TypedPatch. Returns None
     if the dict can't be salvaged (missing required fields)."""
     pt = (p_raw.get("patch_type") or "").strip().lower()
     if pt not in PATCH_TYPES:
@@ -396,8 +405,8 @@ def _build_repair_prompt(
     flagged: list[tuple[Any, str]],
     paper_md: str,
 ) -> tuple[str, str]:
-    """Fix #49: build a focused repair-prompt for Grok. Each entry in
-    `flagged` is (rejected_patch, rejection_reason). Grok is asked
+    """Fix #49: build a focused repair-prompt for the reviewer. Each entry in
+    `flagged` is (rejected_patch, rejection_reason). The reviewer is asked
     to propose a SHORTER alternative that passes the smart-gate, OR
     explicitly state 'no safe fix possible' so the pipeline can
     auto-strip the offending region."""
@@ -450,7 +459,7 @@ async def repair_flagged_patches(
     flagged: list[tuple[Any, str]],
     paper_md: str,
     *,
-    model: str = "deepseek/deepseek-v4-pro",
+    model: str = "google/gemini-3.1-flash-lite:exacto",
     fallback_model: str = "mistralai/mistral-small-2603",
     api_key: str | None = None,
     base_url: str = "https://openrouter.ai/api/v1",
@@ -469,9 +478,12 @@ async def repair_flagged_patches(
     if not api_key:
         return []  # silently skip if no key
     system, user = _build_repair_prompt(flagged, paper_md)
-    import httpx
     own_client = client is None
-    c = client or httpx.AsyncClient(timeout=300.0)
+    if own_client:
+        import httpx
+        c = httpx.AsyncClient(timeout=300.0)
+    else:
+        c = client
     try:
         raw, _model_used, _cost = await _call_with_fallback(
             system, user, model, fallback_model, api_key, base_url, c,
@@ -482,7 +494,7 @@ async def repair_flagged_patches(
     out: list[TypedPatch] = []
     for idx, p_raw in enumerate(raw.get("patches") or []):
         if (p_raw.get("patch_type") or "").lower() == "unfixable":
-            continue  # Grok admits no safe fix; caller may auto-strip
+            continue  # Reviewer admits no safe fix; caller may auto-strip
         np = _normalize_patch(p_raw, idx)
         if np is not None:
             out.append(np)
@@ -491,7 +503,7 @@ async def repair_flagged_patches(
 
 async def review_with_grok(
     paper_md: str, manifest: dict, audit: dict,
-    *, model: str = "deepseek/deepseek-v4-pro",
+    *, model: str = "google/gemini-3.1-flash-lite:exacto",
     fallback_model: str = "mistralai/mistral-small-2603",
     escalation_model: str | None = None,
     api_key: str | None = None,
@@ -500,8 +512,9 @@ async def review_with_grok(
     citation_registry: dict | None = None,
 ) -> tuple[list[TypedPatch], dict, str, float]:
     """Run the final-layer review. Returns (patches, raw_response,
-    model_used, cost_usd). DeepSeek V4 Pro is the primary; Mistral Small
-    is the fallback that only fires on primary outage or invalid JSON."""
+    model_used, cost_usd). Gemini 3.1 Flash Lite Exacto is the primary;
+    Mistral Small is the fallback that only fires on primary outage or
+    invalid JSON."""
     api_key = api_key or os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
         raise RuntimeError(
@@ -510,9 +523,12 @@ async def review_with_grok(
     system, user = _build_grok_prompt(
         paper_md, manifest, audit, citation_registry=citation_registry,
     )
-    import httpx
     own_client = client is None
-    c = client or httpx.AsyncClient(timeout=300.0)
+    if own_client:
+        import httpx
+        c = httpx.AsyncClient(timeout=300.0)
+    else:
+        c = client
     try:
         raw, model_used, cost = await _call_with_fallback(
             system, user, model, fallback_model, api_key, base_url, c,
@@ -564,7 +580,7 @@ def _needs_low_patch_escalation(
 def _format_summary(
     patches: list[TypedPatch],
     cost_usd: float = 0.0,
-    model_used: str = "deepseek/deepseek-v4-pro",
+    model_used: str = "google/gemini-3.1-flash-lite:exacto",
 ) -> str:
     if not patches:
         return (
@@ -607,9 +623,9 @@ def main(argv: list[str] | None = None) -> int:
         "--model",
         default=os.environ.get(
             "FINAL_LAYER_REVIEWER_MODEL",
-            os.environ.get("GROK_MODEL", "deepseek/deepseek-v4-pro"),
+            "google/gemini-3.1-flash-lite:exacto",
         ),
-        help="OpenRouter model id (default: deepseek/deepseek-v4-pro)",
+        help="OpenRouter model id (default: google/gemini-3.1-flash-lite:exacto)",
     )
     args = parser.parse_args(argv)
     paper_path = Path(args.paper_md).resolve()

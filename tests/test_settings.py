@@ -96,7 +96,7 @@ def test_load_settings_defaults_when_unset(
     assert s.mimo_model == "mimo-v2.5-pro"
     assert s.judge_model == "google/gemma-4-31b-it"
     assert s.fallback_model == "mistralai/mistral-small-2603"
-    assert s.final_layer_reviewer_model == "deepseek/deepseek-v4-pro"
+    assert s.final_layer_reviewer_model == "google/gemini-3.1-flash-lite:exacto"
 
 
 def test_load_settings_reads_dotenv(isolated_dotenv: Path) -> None:

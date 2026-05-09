@@ -10,14 +10,17 @@ Researka/public reader/provenance is downstream. This repo's job is the research
 agent and paper engine.
 
 ## Current State - 2026-05-09
-- MacBook, GitHub `main`, VPS `/opt`, and VPS `/root` are synced at `05b962f5`
-  before the current qualification-rescue branch.
+- Last pre-switch clean baseline: `415621b2`.
+- Current branch target: Gemini Exacto reviewer switch; verify the exact deployed
+  commit with `git rev-parse --short HEAD` after deploy.
 - Service: `research-agent-bot.service`.
 - Live endpoint: deploy-safe paused dashboard, HTTP 503 by design.
 - Basket: 18 full AAA/L5+ primary topics plus 1 scoped topic in cross-topic V1.
 - Flagship: rapamycin AAA/L6 reproducibly journal-ready baseline; current
   paper-quality sprint has lifted runner-admitted receipts from 16 to 34 via
   source-validated vocabulary and qualification fixes.
+- Current reviewer target: `google/gemini-3.1-flash-lite:exacto` with high
+  thinking; Mistral Small remains bounded fallback/arbitrator.
 - Generated topic-pack V1 shipped but full generated-pack synthesis remains gated.
 - Cross-topic meta-synthesis V1 shipped; auto-selection must use only fully
   certified 14/14 runs.

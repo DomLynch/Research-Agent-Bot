@@ -14,11 +14,12 @@ from a certified AAA/L6 artifact to candidate-publication quality.
 
 ## Current Truth - 2026-05-09
 ```text
-Current deployed baseline before qualification-rescue branch: 05b962f5
-Local/GitHub/VPS state before this branch: synced and clean
+Last pre-switch clean baseline: 415621b2
+Current branch target: Gemini Exacto reviewer switch
+Final deployed commit: verify with git rev-parse --short HEAD after deploy
 Service: research-agent-bot.service active
 Endpoint: HTTP 503 safe paused dashboard
-Full pytest at current branch validation: 2369 passed, 5 warnings
+Full pytest at current branch validation: 2370 passed, 5 warnings
 Ruff: clean
 ```
 
@@ -44,8 +45,8 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   immutable pack records, safe `scripts/synthesize.py`.
 - AAA-SCOP track: scoped certification for thin but useful topics without
   inflating full AAA/L5.
-- Reviewer/arbitrator stack: MiMo writer/extractor, DeepSeek reviewer with guarded
-  fallback, Mistral-small bounded arbitrator.
+- Reviewer/arbitrator stack: MiMo writer/extractor, Gemini Exacto reviewer with
+  high thinking, Mistral-small bounded fallback/arbitrator.
 - Cross-topic meta-synthesis V1: read-only certified-run aggregation, convergence
   detector, contradiction detector, deterministic renderer.
 - Rapamycin: AAA/L6 reproducibly journal-ready flagship.
@@ -62,7 +63,8 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
    after source-validated qualification rescue; it still lacks publication-grade
    corpus depth, formal RoB/GRADE, quantitative pooling, named framework
    engagement, and final senior-researcher prose gates.
-5. DeepSeek reviewer recall is not proven Grok-equivalent; fallback guard remains
+5. Gemini Exacto is the selected reviewer but still needs replay validation
+   before being called Grok-equivalent; fallback/escalation guards remain
    required for production-critical paper runs.
 
 ## Active Plan

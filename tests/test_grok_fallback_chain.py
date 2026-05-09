@@ -1,4 +1,4 @@
-"""Tests for the DeepSeek → Mistral Small fallback chain in
+"""Tests for the Gemini Exacto → Mistral Small fallback chain in
 scripts/grok_reviewer.py. NEVER skip the final-layer review."""
 from __future__ import annotations
 
@@ -7,8 +7,6 @@ import json
 import sys
 from pathlib import Path
 from unittest.mock import AsyncMock, MagicMock
-
-import httpx
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import grok_reviewer  # noqa: E402
@@ -31,26 +29,28 @@ def test_primary_used_when_available() -> None:
     """When the primary responds normally, Mistral is never called."""
     client = MagicMock()
     client.post = AsyncMock(return_value=_mock_chat_response(
-        "deepseek/deepseek-v4-pro", {"patches": []},
+        "google/gemini-3.1-flash-lite:exacto", {"patches": []},
     ))
     parsed, model_used, cost = asyncio.run(
         grok_reviewer._call_with_fallback(
-            "sys", "user", "deepseek/deepseek-v4-pro",
+            "sys", "user", "google/gemini-3.1-flash-lite:exacto",
             "mistralai/mistral-small-2603",
             "test-key", "https://openrouter.ai/api/v1", client,
         )
     )
-    assert model_used == "deepseek/deepseek-v4-pro"
+    assert model_used == "google/gemini-3.1-flash-lite:exacto"
     assert client.post.call_count == 1
+    payload = client.post.call_args.kwargs["json"]
+    assert payload["reasoning"] == {"effort": "high", "exclude": True}
     assert cost > 0
 
 
 def test_low_patch_long_paper_can_escalate_to_grok() -> None:
-    """DeepSeek can be cheap-first, but a suspiciously clean long paper can
+    """Gemini Exacto can be primary, but a suspiciously clean long paper can
     escalate to a stronger reviewer when explicitly configured."""
     client = MagicMock()
     client.post = AsyncMock(side_effect=[
-        _mock_chat_response("deepseek/deepseek-v4-pro", {"patches": []}),
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": []}),
         _mock_chat_response(
             "x-ai/grok-4.3",
             {
@@ -74,7 +74,7 @@ def test_low_patch_long_paper_can_escalate_to_grok() -> None:
             "word " * 10_001,
             {"receipts": []},
             {"p1_pass": True, "score_out_of_10": 10},
-            model="deepseek/deepseek-v4-pro",
+            model="google/gemini-3.1-flash-lite:exacto",
             fallback_model="mistralai/mistral-small-2603",
             escalation_model="x-ai/grok-4.3",
             api_key="test-key",
@@ -82,7 +82,7 @@ def test_low_patch_long_paper_can_escalate_to_grok() -> None:
         )
     )
 
-    assert model_used == "deepseek/deepseek-v4-pro→x-ai/grok-4.3"
+    assert model_used == "google/gemini-3.1-flash-lite:exacto→x-ai/grok-4.3"
     assert client.post.call_count == 2
     assert len(patches) == 1
     assert patches[0].severity == "P1"
@@ -92,7 +92,7 @@ def test_low_patch_long_paper_can_escalate_to_grok() -> None:
 def test_low_patch_short_paper_does_not_escalate_to_grok() -> None:
     client = MagicMock()
     client.post = AsyncMock(return_value=_mock_chat_response(
-        "deepseek/deepseek-v4-pro", {"patches": []},
+        "google/gemini-3.1-flash-lite:exacto", {"patches": []},
     ))
 
     patches, _raw, model_used, _cost = asyncio.run(
@@ -100,7 +100,7 @@ def test_low_patch_short_paper_does_not_escalate_to_grok() -> None:
             "short clean paper",
             {"receipts": []},
             {"p1_pass": True, "score_out_of_10": 10},
-            model="deepseek/deepseek-v4-pro",
+            model="google/gemini-3.1-flash-lite:exacto",
             fallback_model="mistralai/mistral-small-2603",
             escalation_model="x-ai/grok-4.3",
             api_key="test-key",
@@ -108,7 +108,7 @@ def test_low_patch_short_paper_does_not_escalate_to_grok() -> None:
         )
     )
 
-    assert model_used == "deepseek/deepseek-v4-pro"
+    assert model_used == "google/gemini-3.1-flash-lite:exacto"
     assert patches == []
     assert client.post.call_count == 1
 
@@ -117,14 +117,14 @@ def test_mistral_fallback_when_primary_fails() -> None:
     """When primary throws (HTTP error / parse failure), Mistral is the
     next call. Pipeline never silently skips final-layer review."""
     client = MagicMock()
-    grok_failure = httpx.HTTPError("OpenRouter 503")
+    grok_failure = ValueError("invalid primary JSON")
     mistral_success = _mock_chat_response(
         "mistralai/mistral-small-2603", {"patches": []},
     )
     client.post = AsyncMock(side_effect=[grok_failure, mistral_success])
     parsed, model_used, cost = asyncio.run(
         grok_reviewer._call_with_fallback(
-            "sys", "user", "deepseek/deepseek-v4-pro",
+            "sys", "user", "google/gemini-3.1-flash-lite:exacto",
             "mistralai/mistral-small-2603",
             "test-key", "https://openrouter.ai/api/v1", client,
         )
@@ -139,10 +139,10 @@ def test_both_failures_raises() -> None:
     """If BOTH primary and fallback fail, raise so the pipeline can record
     the gap rather than silently skip review."""
     client = MagicMock()
-    client.post = AsyncMock(side_effect=httpx.HTTPError("OpenRouter down"))
+    client.post = AsyncMock(side_effect=ValueError("invalid provider response"))
     try:
         asyncio.run(grok_reviewer._call_with_fallback(
-            "sys", "user", "deepseek/deepseek-v4-pro",
+            "sys", "user", "google/gemini-3.1-flash-lite:exacto",
             "mistralai/mistral-small-2603",
             "test-key", "https://openrouter.ai/api/v1", client,
         ))
@@ -230,11 +230,11 @@ def test_prompt_falls_back_to_receipt_ids_without_registry() -> None:
 def test_cost_estimate_is_real_not_zero() -> None:
     """Pre-fix cost was a hardcoded 0.0 placeholder. Verify the cost
     function actually computes something for known models."""
-    deepseek_cost = grok_reviewer._estimate_cost(
-        "deepseek/deepseek-v4-pro", 1_000_000, 100_000,
+    gemini_cost = grok_reviewer._estimate_cost(
+        "google/gemini-3.1-flash-lite:exacto", 1_000_000, 100_000,
     )
-    # DeepSeek V4 Pro: $0.435/Mtok in, $0.87/Mtok out.
-    assert 0.50 < deepseek_cost < 0.60, f"unexpected deepseek cost: {deepseek_cost}"
+    # Gemini 3.1 Flash Lite: $0.25/Mtok in, $1.50/Mtok out → $0.25 + $0.15 = $0.40
+    assert 0.39 < gemini_cost < 0.41, f"unexpected Gemini cost: {gemini_cost}"
     grok_cost = grok_reviewer._estimate_cost("x-ai/grok-4.3", 1_000_000, 100_000)
     # Grok 4.3: $3/Mtok in, $15/Mtok out → $3 + $1.5 = $4.50
     assert 4.0 < grok_cost < 5.0, f"unexpected grok cost: {grok_cost}"

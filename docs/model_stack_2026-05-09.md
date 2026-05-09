@@ -5,7 +5,7 @@
 Use this stack for the current synthesis/review path:
 
 1. Writer / extractor: `mimo-v2.5-pro`
-2. Final-layer reviewer: `deepseek/deepseek-v4-pro`
+2. Final-layer reviewer: `google/gemini-3.1-flash-lite:exacto`
 3. Fallback + bounded arbitrator: `mistralai/mistral-small-2603`
 
 `scripts/grok_reviewer.py` and `scripts/granite_arbitrator.py` keep legacy
@@ -18,11 +18,11 @@ Committed defaults:
 
 - `agent/settings.py`: `MIMO_MODEL` defaults to `mimo-v2.5-pro`.
 - `agent/settings.py`: `FINAL_LAYER_REVIEWER_MODEL` defaults to
-  `deepseek/deepseek-v4-pro`.
+  `google/gemini-3.1-flash-lite:exacto`.
 - `agent/settings.py`: `FALLBACK_MODEL` defaults to
   `mistralai/mistral-small-2603`.
-- `scripts/grok_reviewer.py`: `review_with_grok(...)` defaults to DeepSeek
-  with Mistral fallback.
+- `scripts/grok_reviewer.py`: `review_with_grok(...)` defaults to Gemini
+  3.1 Flash Lite Exacto with high thinking and Mistral fallback.
 - `scripts/run_v06_synthesis.py`: arbitration model defaults to Mistral when
   `ARBITRATOR_ENABLED` is explicitly enabled.
 
@@ -34,15 +34,14 @@ Committed validation:
 - Live Mistral ordered sample: `5/5` pass.
 - Live Mistral mixed sample: `5/6` pass; the miss was conservative
   `ESCALATE` on an expected `REJECT`.
-- Live DeepSeek smoke: HTTP 200, parsed `{"patches":[]}`.
-- Live DeepSeek reviewer function: OK, `0` patches on synthetic smoke,
-  cost `$0.00119`.
-- DeepSeek replay spot-check: 3 known-defect snippets, 2/3 surfaced an issue;
-  unsupported numeric recall remains unproven.
-- DeepSeek 15-case live replay: 12/15 cases timed out at 30 seconds; 3/15
-  evaluated; 0/3 passed expected severity/type recall. This is not adequate
-  evidence to trust DeepSeek as the sole replacement for Grok on reviewer
-  recall.
+- OpenRouter lists Gemini 3.1 Flash Lite Exacto as
+  `google/gemini-3.1-flash-lite:exacto`, released 2026-05-07, with
+  1,048,576-token context and thinking levels including `high`.
+- DeepSeek replay evidence was not adequate for primary reviewer status:
+  12/15 live replay cases timed out at 30 seconds and 0/3 evaluated cases
+  passed expected severity/type recall.
+- Kimi K2.6 was considered but not shipped as the current default after the
+  user redirected to Gemini Exacto.
 - Arbitrator comparison after the ambiguous-target prompt change:
   Mistral Small 7/10, IBM Granite 4/10, Mistral Medium 3/10. Mistral Small
   stays default; Medium and Granite do not beat it on current evidence.
@@ -65,13 +64,14 @@ Evidence files:
 The local pricing table in `scripts/grok_reviewer.py` records:
 
 - Grok 4.3: `$3.00` input / `$15.00` output per million tokens.
-- DeepSeek V4 Pro: `$0.435` input / `$0.87` output per million tokens.
+- Gemini 3.1 Flash Lite Exacto: `$0.25` input / `$1.50` output per million
+  tokens.
 - Mistral Small 2603: `$0.15` input / `$0.60` output per million tokens.
 
-DeepSeek is the final reviewer because it is materially cheaper than Grok while
-still producing structured patch JSON in live smoke checks. Mistral is the
-arbitrator/fallback because the arbitration task is narrow: judge an existing
-patch, do not write new prose.
+Gemini Exacto is the final reviewer because the requested model supports a
+quality-first Exacto route, large context, and high thinking while remaining
+cheaper than Grok. Mistral is the arbitrator/fallback because the arbitration
+task is narrow: judge an existing patch, do not write new prose.
 
 ## Safety Boundary
 
@@ -103,10 +103,10 @@ Conservative `ESCALATE` blocks clean certification rather than upgrading it.
 
 ## Known Limits
 
-- DeepSeek has smoke validation and a bounded 15-case replay, but the live
-  replay timed out on 12/15 cases and passed 0/3 evaluated cases.
-- The replay spot-check missed one unsupported numeric snippet, so numeric
-  review recall still depends on deterministic numeric gates.
+- Gemini Exacto is newly selected and still needs a reviewer replay before it
+  can be called Grok-equivalent.
+- DeepSeek is demoted because reviewer recall/latency validation was weak.
+- Numeric review recall still depends on deterministic numeric gates.
 - Mistral mixed-sample live validation is small (`6` cases).
 - Legacy names (`grok_*`, `granite_*`) remain in code and JSON fields.
 - `ARBITRATOR_ENABLED` is an explicit runtime gate; default model is Mistral
@@ -114,8 +114,6 @@ Conservative `ESCALATE` blocks clean certification rather than upgrading it.
 
 ## Rollback / Fallback Plan
 
-Keep DeepSeek as a low-cost reviewer candidate only behind measured validation.
-For production-critical L5 runs, use Grok as fallback when DeepSeek times out,
-returns zero patches on a long manuscript, or fails a replay threshold. Do not
-claim DeepSeek is Grok-equivalent until a replay set clears the agreed recall
-bar with acceptable latency.
+Keep Grok as an explicit escalation model for suspiciously clean long papers
+or failed replay thresholds. Do not claim Gemini Exacto is Grok-equivalent
+until a replay set clears the agreed recall bar with acceptable latency.
