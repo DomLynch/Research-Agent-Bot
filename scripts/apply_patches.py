@@ -424,6 +424,37 @@ def _is_safe_simplification(
     )
 
 
+def _is_safe_structure_deletion(
+    before: str, after: str, severity: str,
+) -> tuple[bool, str]:
+    """Allow the narrow structure edit that deterministic checks can prove.
+
+    Full structure edits stay flag-only. The only auto-applied structure
+    patch is a P3 deletion of one prose sentence. The main apply loop still
+    requires an exact single match, token-boundary safety, and post-apply
+    audit stability before the deletion lands.
+    """
+    if severity != "P3":
+        return False, "only P3 structure cleanup can auto-apply"
+    if after.strip():
+        return False, "structure replacements remain semantic/flag-only"
+    stripped = before.strip()
+    if not stripped:
+        return False, "empty structure deletion"
+    if "\n" in stripped:
+        return False, "multi-line structure edits remain flag-only"
+    if stripped.startswith("#") or "|" in stripped or "```" in stripped:
+        return False, "heading/table/code structure edits remain flag-only"
+    if len(stripped.split()) > 40:
+        return False, "long structure deletion remains flag-only"
+    if not re.search(r"[.!?]$", stripped):
+        return False, "structure deletion must target a complete sentence"
+    return True, (
+        f"safe P3 single-sentence structure deletion "
+        f"({len(stripped.split())} words)"
+    )
+
+
 def _is_safe_citation_attribution_patch(
     before: str, after: str, receipt_ids: set[str],
 ) -> tuple[bool, str]:
@@ -852,6 +883,7 @@ def apply_patches(
         # Skipped for non-claim/numeric patches (formatting/citation
         # already pass deterministic verifiers; no audit-regression
         # risk).
+        applied_reason = full_reason
         if ptype in ("claim", "numeric", "structure"):
             tentative_md = _apply_text_patch(new_md, before, after)
             audit_safe, audit_msg = _post_apply_audit_safe(
@@ -870,12 +902,15 @@ def apply_patches(
                 ))
                 continue
             new_md = tentative_md
+            applied_reason = (
+                f"{full_reason}; post-apply audit: {audit_msg}"
+            )
         else:
             new_md = _apply_text_patch(new_md, before, after)
         results.append(PatchResult(
             patch_id=pid, patch_type=ptype, severity=sev,
             decision="applied",
-            reason_for_decision=full_reason,
+            reason_for_decision=applied_reason,
             before=before, after=after,
         ))
     new_md, restored = _restore_required_section_headings(
