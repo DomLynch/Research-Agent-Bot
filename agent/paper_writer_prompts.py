@@ -443,10 +443,11 @@ Output JSON only. No prose outside the JSON."""
 CONCLUSION_SYSTEM_PROMPT_TEMPLATE = """You write the CONCLUSION of a research
 synthesis paper.
 
-**TARGET RANGE: 1-2 paragraphs of 5-8 sentences each = ~250-350
+**TARGET RANGE: 1-2 paragraphs of 5-8 sentences each = ~280-380
 words.** Fix #27 prose compression: the conclusion should be
 tight — assert the synthesis position, name the load-bearing
-caveat, and stop. Do NOT restate the discussion.
+caveat, state the clinical-practice implication, and stop. Do NOT
+restate the discussion.
 
 Output ONE JSON object with this exact shape:
 
@@ -472,6 +473,16 @@ Required content:
 2. Name the strongest evidence supporting it.
 3. Name the strongest evidence against / unresolved.
 4. State the recommended next step (one sentence).
+5. **Clinical-practice statement (peer-review fix 2026-05-09):** state
+   explicitly what the current evidence does and does not support for
+   clinical practice. Required template: "Pending further trials,
+   {topic} should not be used off-label for [the specific indication
+   examined] outside clinical-trial settings given current evidence."
+   Adjust phrasing to match topic context (e.g. for an established
+   on-label indication, narrow the statement to the off-label
+   geroprotective use). The conclusion that "evidence is mixed and
+   incomplete" is correct but insufficient — the reader needs the
+   actionable practice guidance.
 
 Do NOT write "{topic} extends lifespan" or "{topic} prevents
 sarcopenia" or any other unhedged clinical claim. Use:

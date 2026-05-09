@@ -184,6 +184,18 @@ _OUTCOME_KEYWORDS: Mapping[OutcomeClass, frozenset[str]] = {
         "frailty", "walk speed", "gait speed", "grip strength",
         "physical function", "sppb", "tug", "4-m walk",
     }),
+    # 2026-05-09 peer-review fix: patient-reported QoL endpoints (SF-36,
+    # emotional well-being, general health perception, pain, vitality)
+    # are NOT cognitive outcomes. Place BEFORE "cognitive" so a paper
+    # whose abstract mentions "emotional well-being" doesn't fall through
+    # to the cognitive class on a partial keyword scan.
+    "healthspan_qol": frozenset({
+        "emotional well-being", "psychological well-being",
+        "general health perception", "self-reported health",
+        "self-reported pain", "pain score", "quality of life",
+        "qol", "sf-36", "sf36", "vitality scale", "well-being",
+        "patient-reported outcome", "pro measure",
+    }),
     "cardiometabolic": frozenset({
         "hba1c", "glycemic", "insulin sensitivity", "vo2max",
         "vo2 max", "aerobic capacity", "blood pressure", "lipid",

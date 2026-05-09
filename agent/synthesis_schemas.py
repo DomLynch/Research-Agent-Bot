@@ -66,6 +66,11 @@ OutcomeClass = Literal[
     "cardiometabolic",      # CV mortality, glycemic control, lipids
     "cognitive",            # MMSE, dementia incidence, cognitive decline
     "frailty",              # walk speed, grip strength, frailty index
+    "healthspan_qol",       # SF-36 / general health / emotional well-being /
+                            # pain / vitality — patient-reported QoL outcomes
+                            # that are NOT cognitive (added 2026-05-09 per
+                            # peer-review fix; previous bot output mis-routed
+                            # PEARL "emotional well-being" → "cognitive").
     "longevity",            # all-cause mortality, exceptional longevity
     "immune",               # vaccine response, RTI incidence, T-cell function
     "ophthalmologic",       # AMD, diabetic retinopathy

@@ -155,6 +155,58 @@ def test_unit_value_m_per_s_extracted() -> None:
     assert unit_claims[0].numeric_values == (0.57,)
 
 
+def test_unit_value_hba1c_mmol_per_mol_extracted_in_full() -> None:
+    """2026-05-09 peer-review fix: HbA1c is reported in 'mmol/mol' (NGSP) or
+    '%' (DCCT). The pre-fix regex truncated 'mmol/mol' to bare 'mmol' because
+    the composite unit was missing from the alternation. The reviewer panel
+    flagged this as Bug 1: 'Stanfield 2026: HbA1c: 60 mmol' is dimensionally
+    impossible."""
+    text = "Baseline HbA1c was 60 mmol/mol in the treatment arm."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    unit_claims = [
+        c for c in claims if c.claim_type == "unit_value" and c.units == "mmol/mol"
+    ]
+    assert len(unit_claims) == 1
+    assert unit_claims[0].numeric_values == (60.0,)
+    # Sanity: the bare-mmol fallback must NOT also fire on the same span
+    bare_mmol = [
+        c for c in claims if c.claim_type == "unit_value" and c.units == "mmol"
+    ]
+    assert bare_mmol == []
+
+
+def test_unit_value_glucose_mmol_per_l_extracted_in_full() -> None:
+    """Glucose / lipid / electrolyte composites use 'mmol/L'."""
+    text = "Fasting glucose decreased to 5.5 mmol/L at week 12."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    unit_claims = [
+        c for c in claims if c.claim_type == "unit_value" and c.units == "mmol/L"
+    ]
+    assert len(unit_claims) == 1
+    assert unit_claims[0].numeric_values == (5.5,)
+
+
+def test_unit_value_micromolar_creatinine_extracted_in_full() -> None:
+    """Creatinine reported in 'μmol/L'."""
+    text = "Serum creatinine fell from 102 μmol/L to 88 μmol/L over 8 weeks."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    unit_claims = [
+        c for c in claims if c.claim_type == "unit_value" and c.units == "μmol/L"
+    ]
+    assert len(unit_claims) == 2
+    assert {c.numeric_values[0] for c in unit_claims} == {102.0, 88.0}
+
+
+def test_bare_mmol_still_extracts_when_no_compound_unit_follows() -> None:
+    """Regression: standalone 'mmol' (rare in clinical text but valid) must
+    still match — the composite-units fix must not break the bare fallback."""
+    text = "Total ceramide was 12 mmol per kilogram of tissue."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    bare = [c for c in claims if c.claim_type == "unit_value" and c.units == "mmol"]
+    assert len(bare) == 1
+    assert bare[0].numeric_values == (12.0,)
+
+
 def test_p_value_with_pdf_no_break_space_separator() -> None:
     """PDF text often has non-breaking spaces (U+00A0) inside 'p = 0.05'.
     Must still match — pre-fix would miss these silently."""

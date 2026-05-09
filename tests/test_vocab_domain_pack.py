@@ -268,6 +268,7 @@ def test_runner_uses_active_rapamycin_vocab_for_outcome_and_polarity() -> None:
     runner._set_topic("rapamycin")
     assert runner._outcome_class_for_endpoint("autophagy") == "longevity"
     assert runner._outcome_class_for_endpoint("lean tissue mass") == "muscle_function"
+    assert runner._outcome_class_for_endpoint("emotional well-being") == "healthspan_qol"
     assert runner._polarity_for_endpoint("respiratory infection rate") == -1
     assert runner._polarity_for_endpoint("pathogen survival") == 1
     assert runner._polarity_for_endpoint("influenza vaccine response") == 1

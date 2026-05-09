@@ -1335,6 +1335,8 @@ def test_apply_fixes_backfills_public_bookend_sections() -> None:
     assert fixer._section_word_count(fixed, "Background") >= 300
     assert fixer._section_word_count(fixed, "Limitations") >= 250
     assert fixer._section_word_count(fixed, "Conclusion") >= 250
+    assert "The synthesis supports a bounded conclusion" not in fixed
+    assert "### Closing interpretation" not in fixed
     assert [
         e for e in log
         if e["fix_type"] == "analytical_depth_backfill"

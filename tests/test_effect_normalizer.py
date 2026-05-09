@@ -1,4 +1,4 @@
-"""Tests for agent.effect_normalizer — raw study reports → EffectRow."""
+"""Tests for agent.effect_normalizer from raw study reports to EffectRow."""
 from __future__ import annotations
 
 import math
@@ -69,7 +69,7 @@ def test_raw_binary_rejects_negative_events() -> None:
 
 
 def test_normalize_md_textbook() -> None:
-    """mean_t=10±2 (n=50) vs mean_c=8±2 (n=50) → diff=2, SE=0.4."""
+    """mean_t=10 +/- 2 (n=50) vs mean_c=8 +/- 2 (n=50) -> diff=2, SE=0.4."""
     r = normalize_md(RawContinuous("S", 10.0, 2.0, 50, 8.0, 2.0, 50))
     assert r.effect == pytest.approx(2.0)
     assert r.se == pytest.approx(0.4)
@@ -99,7 +99,7 @@ def test_normalize_md_allows_one_zero_sd_other_nonzero() -> None:
 
 
 def test_normalize_log_rr_textbook() -> None:
-    """events 20/100 vs 10/100 → log(2) ≈ 0.6931, SE = sqrt(0.13)."""
+    """events 20/100 vs 10/100 -> log(2) ~= 0.6931, SE = sqrt(0.13)."""
     r = normalize_log_rr(RawBinary("S", 20, 100, 10, 100))
     assert r.effect == pytest.approx(math.log(2))
     assert r.se == pytest.approx(math.sqrt(0.13))
@@ -114,7 +114,7 @@ def test_normalize_log_rr_zero_event_arm_rejected() -> None:
 
 
 def test_normalize_log_rr_full_event_rate_rejected() -> None:
-    with pytest.raises(ValueError, match="≥1"):
+    with pytest.raises(ValueError, match=">=1"):
         normalize_log_rr(RawBinary("S", 100, 100, 10, 100))
 
 
@@ -122,7 +122,7 @@ def test_normalize_log_rr_full_event_rate_rejected() -> None:
 
 
 def test_normalize_log_or_textbook() -> None:
-    """events 20/100 vs 10/100 → log(2.25) ≈ 0.8109, SE ≈ 0.4167."""
+    """events 20/100 vs 10/100 -> log(2.25) ~= 0.8109, SE ~= 0.4167."""
     r = normalize_log_or(RawBinary("S", 20, 100, 10, 100))
     assert r.effect == pytest.approx(math.log(2.25))
     assert r.se == pytest.approx(math.sqrt(1 / 20 + 1 / 80 + 1 / 10 + 1 / 90))
@@ -234,7 +234,7 @@ def test_raw_hr_rejects_invalid_ci_level() -> None:
 
 
 def test_normalize_log_hr_textbook_protective_effect() -> None:
-    """HR=0.75, 95%CI=[0.60, 0.94] → log_HR=ln(0.75)≈-0.288, SE≈0.114."""
+    """HR=0.75, 95%CI=[0.60, 0.94] -> log_HR=ln(0.75) ~= -0.288, SE ~= 0.114."""
     r = normalize_log_hr(RawHazardRatio("S", 0.75, 0.60, 0.94, n=200))
     assert r.effect == pytest.approx(math.log(0.75))
     expected_se = (math.log(0.94) - math.log(0.60)) / (2 * 1.95996)
@@ -250,7 +250,7 @@ def test_normalize_log_hr_harmful_effect_yields_positive_log() -> None:
 
 
 def test_normalize_log_hr_at_ninety_percent_ci_level() -> None:
-    """Custom CI level: 90% uses smaller z than 95% → larger inferred SE
+    """Custom CI level: 90% uses smaller z than 95%, so larger inferred SE
     for the same bounds."""
     r95 = normalize_log_hr(RawHazardRatio("S", 0.80, 0.65, 0.99, n=200, ci_level=0.95))
     r90 = normalize_log_hr(RawHazardRatio("S", 0.80, 0.65, 0.99, n=200, ci_level=0.90))
@@ -258,7 +258,7 @@ def test_normalize_log_hr_at_ninety_percent_ci_level() -> None:
 
 
 def test_normalize_log_hr_unit_hr_yields_zero_effect() -> None:
-    """HR = 1 (null) → log_HR = 0."""
+    """HR = 1 (null) -> log_HR = 0."""
     r = normalize_log_hr(RawHazardRatio("S", 1.0, 0.85, 1.18, n=500))
     assert r.effect == pytest.approx(0.0)
 

@@ -404,5 +404,6 @@ def test_section_backstop_handles_plural_topic_names() -> None:
         orch._ACTIVE_MANIFEST = old_manifest
         orch._ACTIVE_TOPIC = old_topic
 
-    assert "the evidence base for nad precursors has enough" in backstop
+    assert "Nad Precursors has a biologically plausible" in backstop
+    assert "off-label for geroprotection" in backstop
     assert "In conclusion, nad precursors has enough" not in backstop

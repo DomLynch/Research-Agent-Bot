@@ -205,7 +205,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 19750
+TOTAL_LIMIT = 20750
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

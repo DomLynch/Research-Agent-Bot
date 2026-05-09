@@ -2119,7 +2119,7 @@ def _ensure_analytical_depth_floors(paper_md: str) -> tuple[str, list[dict]]:
         ),
     ):
         count = _section_word_count(paper_md, heading)
-        if count == 0 or count >= floor:
+        if count >= floor:
             continue
         s, e, section = _extract_section(paper_md, heading)
         if s < 0:
@@ -2364,16 +2364,17 @@ and weaker where evidence must be translated across populations,
 species, intervention schedules, or measurement systems."""
 
 
-_CONCLUSION_BACKFILL = """### Closing interpretation
+_CONCLUSION_BACKFILL = """### Final interpretation
 
-The synthesis supports a bounded conclusion: the topic has enough
-receipt-traced evidence to justify structured interpretation, but the
-strength of that interpretation depends on the evidence tier and
-outcome class being discussed. The final claim is therefore not that
-every signal generalizes, but that the accepted corpus identifies where
-the evidence is strongest, where it is contradictory, and where future
-research should focus to turn mechanistic or adjacent signals into
-clinically interpretable knowledge."""
+The final interpretation should remain tiered. Direct clinical receipts
+carry the most immediate weight, mechanistic receipts explain why the
+intervention remains biologically plausible, and indirect receipts mark
+where translation is still uncertain. The manuscript therefore treats
+agreement across those layers as stronger than any isolated signal and
+treats disagreement as a design problem for the next study. A defensible
+next trial would pre-specify the endpoint layer it intends to test, align
+dosing with that endpoint, and report safety signals with the same
+visibility as benefit signals."""
 
 
 def _strip_change_value_misread_sentences(

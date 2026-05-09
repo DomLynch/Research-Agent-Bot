@@ -47,6 +47,9 @@ sys.path.insert(0, str(REPO_ROOT))
 from agent.llm_client import (  # noqa: E402
     CallSpec, CostLedger, configured_attempts_for_url,
 )
+from agent.framework_section import (  # noqa: E402
+    build_framework_engagement_records,
+)
 from agent.paper_writer import render_full_paper  # noqa: E402
 from agent.paper_writer_helpers import (  # noqa: E402
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
@@ -55,6 +58,7 @@ from agent.paper_writer_claim_repair import repair_claim_strength  # noqa: E402
 from agent.paper_writer_deterministic import (  # noqa: E402
     build_what_this_adds_section,
 )
+from agent.outcome_class_remap import remap_outcome_class  # noqa: E402
 from agent.synthesis_schemas import (  # noqa: E402
     ReceiptSummary, SynthesisSection, SynthesisThesis, Tension,
     TensionMatrix,
@@ -489,11 +493,11 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         ],
         "Conclusion": [
             (
-                f"In conclusion, the evidence base for {topic} has enough "
-                "accepted evidence to support "
-                "a structured, receipt-bound synthesis, but the evidence should "
-                "be read through its tiered profile rather than through a single "
-                "headline claim."
+                f"The final interpretation is deliberately tiered. {topic.title()} "
+                "has a biologically plausible geroscience rationale and selected "
+                "clinical signals, but the corpus does not support treating "
+                "mechanistic target engagement, intermediate biomarkers, and "
+                "patient-relevant outcomes as interchangeable evidence."
             ),
             (
                 f"The strongest interpretation is that positive signals in {pos} "
@@ -503,10 +507,21 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "public-health claims."
             ),
             (
-                f"Future work should prioritize studies that connect the "
+                "Pending further trials, the intervention should not be used "
+                "off-label for geroprotection or anti-aging purposes outside "
+                "clinical-trial settings given current evidence. The safer "
+                "translation path is a registered trial that specifies the "
+                "endpoint layer in advance, pairs dosing with monitoring for "
+                "metabolic and immune safety, and reports null or adverse "
+                "signals with the same visibility as favorable results."
+            ),
+            (
+                f"Future work should prioritize studies that connect "
                 f"mechanistic receipts ({mech_refs}) to direct clinical outcomes "
                 f"represented by {direct_refs}. Until that bridge is stronger, "
-                f"{topic} remains a promising but bounded geroscience case."
+                f"{topic} remains a promising but bounded geroscience case whose "
+                "most useful contribution is to define the next trial rather "
+                "than to justify current clinical adoption."
             ),
         ],
     }
@@ -954,11 +969,12 @@ def _infer_outcome_class(endpoint: str) -> str:
 
 
 def _outcome_class_for_endpoint(endpoint: str) -> str:
-    return (
+    raw = (
         _ENDPOINT_TO_OUTCOME_CLASS.get(endpoint)
         or _domain_outcome_class(endpoint)
         or _infer_outcome_class(endpoint)
     )
+    return remap_outcome_class(endpoint, raw)
 
 
 def _polarity_for_endpoint(endpoint: str) -> int:
@@ -2011,6 +2027,15 @@ async def _run(
         }
         for r in receipts
     ]
+    field_engagement = tuple(
+        dataclasses.asdict(item)
+        for item in build_framework_engagement_records(
+            writer_receipts, _bglit.load_registry().values(),
+        )
+    )
+    (out_dir / "field_engagement.json").write_text(
+        json.dumps(field_engagement, indent=2),
+    )
     qei_citation_tokens = {
         rid: entry.body_citation
         for rid, entry in citation_registry.items()
@@ -2130,6 +2155,7 @@ async def _run(
         "thesis": thesis.text,
         "receipts": manifest_receipts,
         "receipt_funnel": receipt_funnel,
+        "field_engagement_path": "field_engagement.json",
     }
     full_paper_md = _restore_rendered_section_contract(
         full_paper_md, sections,
@@ -2162,6 +2188,7 @@ async def _run(
         "thesis": thesis.text,
         "receipts": manifest_receipts,
         "receipt_funnel": receipt_funnel,
+        "field_engagement_path": "field_engagement.json",
         "section_words": section_words,
         "total_words": word_count,
         "claim_strength_repairs": len(repair_log),

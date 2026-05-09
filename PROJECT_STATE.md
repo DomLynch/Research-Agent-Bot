@@ -59,7 +59,7 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
    branch fixes auto-selection to require explicit cert track and 14/14 audit.
 3. Cross-topic labels remain coarse; V2 detector work is not part of this paper
    sprint unless it directly improves rapamycin.
-4. Rapamycin has certification strength and now 34 runner-admitted receipts
+4. Rapamycin has certification strength and now 40 runner-admitted receipts
    after source-validated qualification rescue; it still lacks publication-grade
    corpus depth, formal RoB/GRADE, quantitative pooling, named framework
    engagement, and final senior-researcher prose gates.
@@ -72,8 +72,8 @@ Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
 
 Priority order:
 1. Keep release-green state clean and deployed.
-2. Continue rapamycin corpus qualification from 34 runner-admitted receipts
-   toward the >=40 minimum / 50+ target.
+2. Continue rapamycin corpus qualification from 40 runner-admitted receipts
+   toward the 50+ stretch target.
 3. Only then activate RoB/GRADE, meta-analysis, field engagement, tension
    elaboration, and template-language gates on the richer corpus.
 
@@ -91,7 +91,7 @@ ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 \
 - `select_best_runs()` excludes stale runs missing certification track or complete
   14/14 audit.
 - Meta-synthesis artifact regenerated from corrected run set.
-- LOC budget documented in `DECISIONS.md` and enforced at 18,500 cloc.
+- LOC budget documented in `DECISIONS.md` and enforced at 20,750 cloc.
 - `AGENTS.md`, `PROJECT_STATE.md`, and active task plan match current mission.
 - Full suite and ruff pass.
 - Commit pushed and VPS paths synced clean.

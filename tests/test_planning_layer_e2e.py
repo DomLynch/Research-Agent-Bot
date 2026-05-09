@@ -78,11 +78,11 @@ def test_stage1_framework_section_renders_known_authors() -> None:
         receipts=_RECEIPTS, citation_registry=_REGISTRY
     )
     assert "## Engagement with Established Frameworks" in md
-    # Mannick has the only positive immune (primary domain) → support
+    # Mannick has the only positive immune (primary domain), so support.
     assert "supports the Mannick framework" in md
-    # Lopez-Otin has hallmarks (primary domain) + supports direction → support
+    # Lopez-Otin has hallmarks (primary domain) plus supports direction.
     assert "supports the Lopez-Otin framework" in md
-    # Lamming primary domain is cardiometabolic, direction null → challenge
+    # Lamming primary domain is cardiometabolic, direction null, so challenge.
     assert "challenges the Lamming framework" in md
 
 
@@ -168,11 +168,11 @@ def test_stage5_template_gate_dirty_paper_blocks() -> None:
     assert report.p2_count >= 1
 
 
-# ---- Stage 6: full chain → final gate (PASS) -----------------------------
+# ---- Stage 6: full chain to final gate (PASS) ----------------------------
 
 
 def test_e2e_clean_inputs_yield_passing_final_gate() -> None:
-    """All-green synthetic corpus → final gate PASS, no failures."""
+    """All-green synthetic corpus gives final gate PASS, no failures."""
     receipts = _RECEIPTS
     paper_text = (
         "Engagement section: Mannick 2018 supports immune-aging.\n"
@@ -203,12 +203,12 @@ def test_e2e_clean_inputs_yield_passing_final_gate() -> None:
         numeric_coverage=1.0, citation_registry_complete=True,
         n_tensions=3, n_receipts=len(receipts),
     )
-    # Use relaxed thresholds — synthetic 5-receipt corpus is below the
+    # Use relaxed thresholds; synthetic 5-receipt corpus is below the
     # default 10-receipt floor. This mimics the AAA-SCOP track.
     custom = GateThresholds(min_receipts=3, warn_below_receipts=10)
     result = evaluate_final_gate(inputs, thresholds=custom)
     assert result.passed, f"unexpected fail: {result.summary}"
-    # n_receipts=5 < warn_below=10 → P2 warning (non-blocking)
+    # n_receipts=5 < warn_below=10, so P2 warning (non-blocking).
     assert any("below recommended" in w for w in result.warnings)
 
 
@@ -237,7 +237,7 @@ def test_e2e_dirty_template_blocks_final_gate() -> None:
 
 
 def test_e2e_missing_rob_blocks_on_coverage() -> None:
-    """No RoB → rob_coverage=0.0 → blocks gate (default min_rob_coverage=0.8)."""
+    """No RoB means rob_coverage=0.0 and blocks the default gate."""
     paper = "Clean paper text.\n"
     template_report = evaluate_template_gate(paper)
     quality_bundle = build_quality_methods_bundle(
@@ -259,7 +259,7 @@ def test_e2e_missing_rob_blocks_on_coverage() -> None:
 
 
 def test_e2e_audit_failure_blocks() -> None:
-    """audit_gates_passed=False (Q1-Q14 fail) → final gate FAIL."""
+    """audit_gates_passed=False (Q1-Q14 fail) gives final gate FAIL."""
     paper = "Clean paper text.\n"
     template_report = evaluate_template_gate(paper)
     quality_bundle = build_quality_methods_bundle(
@@ -267,7 +267,7 @@ def test_e2e_audit_failure_blocks() -> None:
         receipt_count=3, outcome_count=2,
     )
     inputs = build_gate_inputs_from_artifacts(
-        audit={"pass_count": 13, "total_count": 14},  # 13/14 — not clean
+        audit={"pass_count": 13, "total_count": 14},  # 13/14, not clean.
         journal_surface={"pass": True},
         reviewer_patches=None,
         template_gate=template_report,
@@ -285,7 +285,7 @@ def test_e2e_audit_failure_blocks() -> None:
 
 
 def test_e2e_deterministic_outputs() -> None:
-    """Same inputs → same outputs across the chain."""
+    """Same inputs give same outputs across the chain."""
     md1 = build_framework_section(_RECEIPTS,
                                   citation_registry=_REGISTRY)
     md2 = build_framework_section(_RECEIPTS,

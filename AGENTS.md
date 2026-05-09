@@ -17,7 +17,7 @@ agent and paper engine.
 - Live endpoint: deploy-safe paused dashboard, HTTP 503 by design.
 - Basket: 18 full AAA/L5+ primary topics plus 1 scoped topic in cross-topic V1.
 - Flagship: rapamycin AAA/L6 reproducibly journal-ready baseline; current
-  paper-quality sprint has lifted runner-admitted receipts from 16 to 34 via
+  paper-quality sprint has lifted runner-admitted receipts from 16 to 40 via
   source-validated vocabulary and qualification fixes.
 - Current reviewer target: `google/gemini-3.1-flash-lite:exacto` with high
   thinking; Mistral Small remains bounded fallback/arbitrator.
@@ -46,7 +46,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Python >= 3.11.
 - Runtime dependency discipline: prefer stdlib and existing deps; justify any new
   dependency in `DECISIONS.md`.
-- Current runtime LOC ceiling: 18,500 cloc in `agent/`; per-file hard cap: 600.
+- Current runtime LOC ceiling: 20,750 cloc in `agent/`; per-file hard cap: 600.
 - Soft budgets: file ~300 cloc, function ~50 cloc.
 - All cross-stage objects should be explicit dataclasses or schema-shaped dicts.
 - No imports from `agent_legacy/` or `agent_archived/`.

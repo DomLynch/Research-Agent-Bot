@@ -1,5 +1,22 @@
 # DECISION JOURNAL
 
+## 2026-05-09 — LOC budget raise for wired Phase 3-8 adapters
+**Decision:** Raise `agent/` cloc ceiling from 19,750 to 20,750.
+**Why:** Claude's adapter lane moved remaining world-class primitives from
+isolated tests toward orchestrator-ready runtime surfaces: canonical
+framework-section rendering, RoB/GRADE bundle coverage, stdlib SVG forest plots,
+template-language gate reports, and final-gate artifact mapping. Codex removed
+the duplicate framework-section module before accepting the raise. Measured
+runtime cloc is 20,467, leaving about 280 cloc of headroom rather than a broad
+bloat allowance.
+**Alternatives rejected:** Keeping duplicate framework renderers was rejected
+and deleted. Moving runtime adapters into `scripts/` would hide paper-quality
+ownership from the package budget. Compressing the modules further would mostly
+remove validation clarity, not behavior.
+**Revisit if:** Any adapter remains unwired after the rapamycin WORLDCLASS
+rerender; unwired primitives should be archived or deleted before the next
+budget increase.
+
 ## 2026-05-09 — LOC budget raise for final-gate and effect-normalizer primitives
 **Decision:** Raise `agent/` cloc ceiling from 19,300 to 19,750.
 **Why:** Claude's latest implementation added two runtime primitives that are

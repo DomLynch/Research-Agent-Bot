@@ -231,3 +231,49 @@ def test_discussion_and_cross_domain_prompts_demand_900_word_floor() -> None:
             f"{name} prompt no longer requires per-paragraph "
             "tension adjudication"
         )
+
+
+def test_conclusion_prompt_demands_clinical_practice_statement() -> None:
+    """2026-05-09 peer-review fix (Bug 3): the panel found the conclusion
+    correctly hedged "evidence is mixed and incomplete" but did not state
+    the actionable clinical-practice implication. The prompt now requires
+    an off-label-use statement."""
+    from agent.paper_writer_prompts import CONCLUSION_SYSTEM_PROMPT
+    assert "clinical-practice" in CONCLUSION_SYSTEM_PROMPT.lower(), (
+        "Conclusion prompt no longer demands a clinical-practice "
+        "statement (peer-review fix 2026-05-09 regression)"
+    )
+    assert "off-label" in CONCLUSION_SYSTEM_PROMPT.lower(), (
+        "Conclusion prompt no longer references off-label-use guidance"
+    )
+    assert "Pending further trials" in CONCLUSION_SYSTEM_PROMPT, (
+        "Conclusion prompt no longer carries the canonical "
+        "'Pending further trials' phrase template"
+    )
+
+
+def test_conclusion_prompt_lists_required_content_item_5() -> None:
+    """The required-content list must enumerate the new clinical-practice
+    requirement as item 5 — older runs had only 4 items."""
+    from agent.paper_writer_prompts import CONCLUSION_SYSTEM_PROMPT
+    # The literal "5." marker for required content is load-bearing —
+    # the writer LLM keys off the numbered list.
+    assert "5." in CONCLUSION_SYSTEM_PROMPT
+    # Sanity: the prior 4 items must still be present.
+    for marker in ("1.", "2.", "3.", "4."):
+        assert marker in CONCLUSION_SYSTEM_PROMPT
+
+
+def test_conclusion_prompt_word_target_accommodates_extra_clause() -> None:
+    """Adding the clinical-practice clause bumped target from
+    250-350 → 280-380 words. The prompt's word target should reflect this."""
+    from agent.paper_writer_prompts import CONCLUSION_SYSTEM_PROMPT
+    assert "280-380" in CONCLUSION_SYSTEM_PROMPT or "280" in CONCLUSION_SYSTEM_PROMPT
+
+
+def test_conclusion_prompt_retains_overclaim_guard() -> None:
+    """Regression: the new clause must not weaken the existing overclaim
+    guard (no unhedged 'extends lifespan' or similar)."""
+    from agent.paper_writer_prompts import CONCLUSION_SYSTEM_PROMPT
+    assert "extends lifespan" in CONCLUSION_SYSTEM_PROMPT  # in the do-NOT list
+    assert "unhedged clinical claim" in CONCLUSION_SYSTEM_PROMPT.lower()

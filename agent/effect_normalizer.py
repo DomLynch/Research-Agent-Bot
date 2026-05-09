@@ -1,4 +1,4 @@
-"""Effect-size normalization primitives — raw study reports → EffectRow.
+"""Effect-size normalization primitives from raw study reports to EffectRow.
 
 Phase 5 upstream complement to `agent.meta_analysis`. Stdlib-only.
 
@@ -90,7 +90,7 @@ class RawHazardRatio:
     log-scale CI is symmetric under the normal approximation, which lets
     us back-calculate SE(log_HR) without raw event counts.
 
-    Tolerance for "log-symmetric" is loose — published CIs are often
+    Tolerance for "log-symmetric" is loose; published CIs are often
     rounded; this dataclass validates monotonicity and positivity but does
     not reject mild log-asymmetry."""
 
@@ -110,7 +110,7 @@ class RawHazardRatio:
                 raise ValueError(f"{name} must be a positive finite number, got {v}")
         if self.ci_lower > self.ci_upper:
             raise ValueError(
-                f"ci_lower ({self.ci_lower}) must be ≤ ci_upper ({self.ci_upper})"
+                f"ci_lower ({self.ci_lower}) must be <= ci_upper ({self.ci_upper})"
             )
         # Sanity: HR should fall within (or near) its CI. Allow 1% slack
         # for rounded report tables.
@@ -155,7 +155,7 @@ def normalize_log_rr(raw: RawBinary) -> EffectRow:
     p_c = raw.events_c / raw.n_c
     if p_t >= 1.0 or p_c >= 1.0:
         raise ValueError(
-            f"event proportion ≥1 in {raw.study_id!r}; "
+            f"event proportion >=1 in {raw.study_id!r}; "
             "log RR undefined under saturation"
         )
     log_rr = math.log(p_t / p_c)
@@ -192,15 +192,15 @@ def normalize_log_or(raw: RawBinary) -> EffectRow:
 
 
 def normalize_log_hr(raw: RawHazardRatio) -> EffectRow:
-    """Convert HR + 95% CI → log_HR + SE under the log-normal CI assumption.
+    """Convert HR + 95% CI to log_HR + SE under the log-normal CI assumption.
 
     Math:
       log_HR     = ln(HR)
-      SE(log_HR) = (ln(CI_upper) - ln(CI_lower)) / (2 · z_{ci_level})
-      where z_{0.95} ≈ 1.95996 (two-tailed 95%).
+      SE(log_HR) = (ln(CI_upper) - ln(CI_lower)) / (2 * z_{ci_level})
+      where z_{0.95} ~= 1.95996 (two-tailed 95%).
 
     This is the standard back-calculation when only HR + bracketed CI is
-    reported — exact under the normal approximation that virtually every
+    reported; exact under the normal approximation that virtually every
     survival-analysis paper uses for CI reporting.
     """
     log_hr = math.log(raw.hr)
@@ -208,7 +208,7 @@ def normalize_log_hr(raw: RawHazardRatio) -> EffectRow:
     se = (math.log(raw.ci_upper) - math.log(raw.ci_lower)) / (2.0 * z)
     if se <= 0.0 or not math.isfinite(se):
         raise ValueError(
-            f"computed log_HR SE is non-positive for {raw.study_id!r} — "
+            f"computed log_HR SE is non-positive for {raw.study_id!r}; "
             "check CI bounds"
         )
     return EffectRow(
@@ -231,11 +231,11 @@ def normalize_record(record: dict) -> EffectRow:
     """Dispatch normalizer based on which fields the record carries.
 
     Detection order:
-      1. effect + se present → passthrough.
-      2. mean_t/sd_t/n_t + mean_c/sd_c/n_c → normalize_md.
-      3. hr + ci_lower + ci_upper → normalize_log_hr.
-      4. events_t + events_c with metric="log_OR" → normalize_log_or.
-      5. events_t + events_c (default or metric="log_RR") → normalize_log_rr.
+      1. effect + se present -> passthrough.
+      2. mean_t/sd_t/n_t + mean_c/sd_c/n_c -> normalize_md.
+      3. hr + ci_lower + ci_upper -> normalize_log_hr.
+      4. events_t + events_c with metric="log_OR" -> normalize_log_or.
+      5. events_t + events_c (default or metric="log_RR") -> normalize_log_rr.
 
     Records with ambiguous shapes raise ValueError."""
     study_id = str(record.get("study_id", "")).strip()

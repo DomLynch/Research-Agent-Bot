@@ -43,7 +43,7 @@ def test_inputs_reject_out_of_range_coverage(field, bad) -> None:
 
 
 def test_inputs_reject_negative_counts() -> None:
-    with pytest.raises(ValueError, match="must be ≥0"):
+    with pytest.raises(ValueError, match="must be >=0"):
         _green_inputs(n_receipts=-1)
 
 
@@ -74,7 +74,7 @@ def test_aaa4_baseline_yields_revise() -> None:
 
 
 def test_template_language_blocking_demotes_to_revise() -> None:
-    """All other gates green but template gate trips → REVISE due overclaim."""
+    """All other gates green but template gate trips to REVISE due overclaim."""
     inputs = _green_inputs(template_language_blocking=True)
     r = score_publication(inputs)
     assert r.verdict in ("revise", "reject")

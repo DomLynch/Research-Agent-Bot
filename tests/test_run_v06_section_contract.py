@@ -195,7 +195,8 @@ def test_restore_required_section_body_compiles_safe_fallback() -> None:
     assert "Too short." not in out
     assert "compiled from" not in out
     assert "compiler" not in out
-    assert "receipt-bound synthesis" in out
+    assert "off-label for geroprotection" in out
+    assert "receipt-bound synthesis" not in out
 
 
 def test_restore_public_surface_floors_without_typed_sections() -> None:

@@ -319,6 +319,10 @@ _UNIT_VALUE_RE = re.compile(
     # positive). Order is load-bearing — first match wins.
     r"(mg/kg/day|mg/kg/d|g/kg/day|g/kg/d|kg/day|mg/day|μg/day|ug/day|μg/d|"
     r"mL/min|kg/m2|mg/dL|mg/d|ng/mL|μg/L|ug/L|IU/L|mmHg|bpm|"
+    # 2026-05-09 peer-review fix: composite molar units must come BEFORE
+    # bare "mmol" so HbA1c "60 mmol/mol" (NGSP) and glucose "5.5 mmol/L"
+    # match the full unit instead of being truncated to "mmol".
+    r"mmol/mol|mmol/L|μmol/L|µmol/L|umol/L|nmol/L|"
     r"m/s|kg|mg|mmol|μmol|µmol|umol|"
     r"mL|months?|weeks?|days?|years?|cm|mm)"
     r"\b",

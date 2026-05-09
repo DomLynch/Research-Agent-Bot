@@ -55,17 +55,16 @@ horizon is rapamycin paper quality, not Researka platform engineering.
 19. Re-run extraction with target >=60 successful extraction candidates. Status:
     partially satisfied; quant artifacts exist for 287 files.
 20. Re-run classification with target >=40 on-thesis receipts. Status:
-    in progress; runner-admitted receipts are now 34, up from the 16 ceiling.
+    done; runner-admitted receipts are now 40, up from the 16 ceiling.
 21. If receipts stay <40, fix the actual bottleneck before moving on. Status:
-    in progress via `scripts/qualification_rescue.py`; current result is valid
-    but still below the >=40 minimum / 50+ target.
+    closed; the >=40 minimum is met, while 50+ remains the stretch target.
 21a. Add source-validated LLM qualification rescue for empty/partial candidates.
      Status: done; LLM proposes, code validates exact sentence/raw numeric
      surface/endpoint/arm/direction before artifact mutation.
 21b. Harden rapamycin domain vocabulary for rescued endpoint and arm terms.
      Status: done; includes RAPA/eRapa/RPM aliases and high-signal endpoints.
-21c. Re-run runner dry-run after rescue. Status: done; accepted=34,
-     outside_scope=133, partial_only=22, partial_none_only=43, none_only=6.
+21c. Re-run runner dry-run after rescue. Status: done; accepted=40,
+     outside_scope=133, partial_only=19, partial_none_only=40, none_only=6.
 21d. Continue qualification only where exact source text supports high-confidence
      claims; do not inflate receipts from narrative-only or protocol numerics.
 
