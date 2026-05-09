@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8252888_geft_inhibits_autophagy_and_apoptosis_in_rhabdomyosarcoma_vi",
   "doi": "10.3389/fonc.2021.656608",
-  "extracted_at": "2026-05-05T15:22:46+00:00",
+  "extracted_at": "2026-05-09T10:18:26+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "p_value": 78,
@@ -456,7 +456,7 @@
       "context_window": "00 \u03bcM/mL, mTOR inhibitor) were added when the cells grew to 50% confluency. After 48 h, the cells were fixed with 500 \u03bcL of",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1413,7 +1413,7 @@
       "sentence": "The Western blot results showed that the expression of autophagy-related proteins, namely, Beclin1 and LC3 in RMS cells decreased after stable transformation of GEFT ( P < 0.001 and P < 0.05).",
       "context_window": "n RMS cells decreased after stable transformation of GEFT ( P < 0.001 and P < 0.05). When autophagy inhibitors, namely, CQ and Ba",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1431,7 +1431,7 @@
       "sentence": "The Western blot results showed that the expression of autophagy-related proteins, namely, Beclin1 and LC3 in RMS cells decreased after stable transformation of GEFT ( P < 0.001 and P < 0.05).",
       "context_window": "creased after stable transformation of GEFT ( P < 0.001 and P < 0.05). When autophagy inhibitors, namely, CQ and BafA-1, were ad",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1449,7 +1449,7 @@
       "sentence": "When autophagy inhibitors, namely, CQ and BafA-1, were added, the expression of Beclin1 and LC3 proteins decreased after stable transformation of GEFT ( P < 0.001 and P < 0.05; Figures 2A, B ).",
       "context_window": "C3 proteins decreased after stable transformation of GEFT ( P < 0.001 and P < 0.05; Figures 2A, B ). In addition, the Western blo",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1467,7 +1467,7 @@
       "sentence": "When autophagy inhibitors, namely, CQ and BafA-1, were added, the expression of Beclin1 and LC3 proteins decreased after stable transformation of GEFT ( P < 0.001 and P < 0.05; Figures 2A, B ).",
       "context_window": "creased after stable transformation of GEFT ( P < 0.001 and P < 0.05; Figures 2A, B ). In addition, the Western blot results dem",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1539,7 +1539,7 @@
       "sentence": "GEFT affects the autophagy and apoptosis in RMS cells. (A) Western blotting was used to detect the expression of Beclin1 and LC3 protein in RH30 cells for control groups, control+CQ groups, transfected with GEFT, transfected with GEFT+CQ. (B) Western blotting was used to detect the expression levels of Beclin1 and LC3 protein in RD cells for control groups, control+BafA-1 groups, transfected with GEFT groups, transfected with GEFT+ BafA-1 groups. (C) Western blotting was used to detect the expression levels of GEFT, Bax, Bcl-2, Caspase-3, and Cleaved-PARP proteins in RH30 and RD cells transfected with the GEFT and control groups. (D) Apoptosis of RH30 and RD cells transfected with GEFT and control group was detected by flow cytometry. (E) Apoptosis of RH30 and RD cells transfected with the GEFT and control groups was detected by TUNEL. *** P < 0.001 and * P < 0.05.",
       "context_window": "with the GEFT and control groups was detected by TUNEL. *** P < 0.001 and * P < 0.05. GEFT can promote the invasion and migratio",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
@@ -1557,7 +1557,7 @@
       "sentence": "GEFT affects the autophagy and apoptosis in RMS cells. (A) Western blotting was used to detect the expression of Beclin1 and LC3 protein in RH30 cells for control groups, control+CQ groups, transfected with GEFT, transfected with GEFT+CQ. (B) Western blotting was used to detect the expression levels of Beclin1 and LC3 protein in RD cells for control groups, control+BafA-1 groups, transfected with GEFT groups, transfected with GEFT+ BafA-1 groups. (C) Western blotting was used to detect the expression levels of GEFT, Bax, Bcl-2, Caspase-3, and Cleaved-PARP proteins in RH30 and RD cells transfected with the GEFT and control groups. (D) Apoptosis of RH30 and RD cells transfected with GEFT and control group was detected by flow cytometry. (E) Apoptosis of RH30 and RD cells transfected with the GEFT and control groups was detected by TUNEL. *** P < 0.001 and * P < 0.05.",
       "context_window": "d control groups was detected by TUNEL. *** P < 0.001 and * P < 0.05. GEFT can promote the invasion and migration of RMS cells",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
@@ -1990,7 +1990,7 @@
       "context_window": "Rapamycin group also increased after adding CQ and BafA-1 ( P < 0.001 and P < 0.001, Figures 6A, B ). In addition, immunofluoresc",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2008,7 +2008,7 @@
       "context_window": "p also increased after adding CQ and BafA-1 ( P < 0.001 and P < 0.001, Figures 6A, B ). In addition, immunofluorescence showed th",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2026,7 +2026,7 @@
       "context_window": "S cells increased compared with that of the control group ( P < 0.05, Figure 6D ). The expression of mTOR, Bax, Caspase3, and Cl",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -2044,7 +2044,7 @@
       "context_window": "gnificantly lower than that in the normal untreated group ( P < 0.001 and P < 0.001, Figure 6E ). Rapamycin could significantly p",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2062,7 +2062,7 @@
       "context_window": "wer than that in the normal untreated group ( P < 0.001 and P < 0.001, Figure 6E ). Rapamycin could significantly promote apoptos",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2080,7 +2080,7 @@
       "context_window": "apoptosis rate was lower than that of the Rapamycin group ( P < 0.001, Figure 6F ). Inhibiting mTOR-promoting autophagy and apop",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2098,9 +2098,9 @@
       "context_window": "fA-1, GEFT+Rapamycin and GEFT+ Rapamycin+BafA-1 groups. *** P < 0.001, * P < 0.05. Previous results revealed that GEFT-Rac1/Cdc4",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8252888_geft_inhibits_autophagy_and_apoptosis_in_rhabdomyosarcoma_vi-p-15866",
@@ -2116,9 +2116,9 @@
       "context_window": "pamycin and GEFT+ Rapamycin+BafA-1 groups. *** P < 0.001, * P < 0.05. Previous results revealed that GEFT-Rac1/Cdc42 accelerate",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8252888_geft_inhibits_autophagy_and_apoptosis_in_rhabdomyosarcoma_vi-p-16396",

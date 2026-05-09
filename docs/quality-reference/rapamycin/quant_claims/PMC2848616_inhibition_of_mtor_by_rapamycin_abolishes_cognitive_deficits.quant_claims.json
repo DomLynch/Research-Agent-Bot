@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC2848616_inhibition_of_mtor_by_rapamycin_abolishes_cognitive_deficits",
   "doi": "10.1371/journal.pone.0009979",
-  "extracted_at": "2026-05-06T20:10:57+00:00",
+  "extracted_at": "2026-05-09T10:18:20+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "p_value": 19,
@@ -97,7 +97,7 @@
       "context_window": "ween day number and treatment for control-treated animals ( P = 0.91), a significant interaction was observed between day number",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -133,7 +133,7 @@
       "context_window": "parisons test applied to a significant effect of genotype ( P <0.0001) in one-way ANOVA], memory in rapamycin-fed PDAPP mice was",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -150,10 +150,10 @@
       "sentence": "A trend to improved retention was observed in rapamycin-treated non-Tg mice, but this difference did not reach statistical significance. c and d, Rapamycin treatment does not affect non-cognitive components of behavior. c , Although transgenic groups spent more time engaged in thigmotactic swim, as described [31] (** P <0.001, Bonferroni's post hoc test applied to a significant effect of genotype [ F (3,440) = 15.04, P <0.0001, two-way ANOVA], no significant difference in percent time spent in thigmotactic swim was observed between transgenic groups. d , No significant difference in floating was observed between groups.",
       "context_window": "re time engaged in thigmotactic swim, as described [31] (** P <0.001, Bonferroni's post hoc test applied to a significant effect",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2848616_inhibition_of_mtor_by_rapamycin_abolishes_cognitive_deficits-p-7071",
@@ -168,10 +168,10 @@
       "sentence": "A trend to improved retention was observed in rapamycin-treated non-Tg mice, but this difference did not reach statistical significance. c and d, Rapamycin treatment does not affect non-cognitive components of behavior. c , Although transgenic groups spent more time engaged in thigmotactic swim, as described [31] (** P <0.001, Bonferroni's post hoc test applied to a significant effect of genotype [ F (3,440) = 15.04, P <0.0001, two-way ANOVA], no significant difference in percent time spent in thigmotactic swim was observed between transgenic groups. d , No significant difference in floating was observed between groups.",
       "context_window": "ed to a significant effect of genotype [ F (3,440) = 15.04, P <0.0001, two-way ANOVA], no significant difference in percent time",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2848616_inhibition_of_mtor_by_rapamycin_abolishes_cognitive_deficits-p-7676",
@@ -187,7 +187,7 @@
       "context_window": "-transgenic ( a ) and transgenic PDAPP ( b ) mice ( c , **, P = 0.006 and *, P = 0.01 respectively). d , rapamycin did not alter",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -205,7 +205,7 @@
       "context_window": "and transgenic PDAPP ( b ) mice ( c , **, P = 0.006 and *, P = 0.01 respectively). d , rapamycin did not alter A\u03b2 40 levels but",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -223,7 +223,7 @@
       "context_window": "uble A\u03b2 42 levels in the brains of transgenic PDAPP mice *, P = 0.02. Homogenates were measured at 100 mg brain tissue/ml. e , r",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -258,10 +258,10 @@
       "sentence": "Data are means \u00b1 SEM.\n\na, f and h , representative immunoblots of hippocampal lysates from control- and rapamycin-treated transgenic PDAPP mice and non-transgenic littermate controls. b, g and i , quantitative analyses. a and b , LC3-II levels are decreased in hippocampi of rapamycin-treated transgenic PDAPP mice (*, P = 0.0009), but not in hippocampi of rapamycin-treated non-transgenic littermates. c and d , representative epifluorescent ( c , 200\u00d7) and higher-magnification confocal ( d , 600\u00d7) images of hippocampal CA1 ( e , green box, region of epifluorescent images; blue box, region of confocal images) in control- and rapamycin-fed transgenic PDAPP mice stained with an anti-LC3 antibody.",
       "context_window": "n hippocampi of rapamycin-treated transgenic PDAPP mice (*, P = 0.0009), but not in hippocampi of rapamycin-treated non-transgenic",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "control",
+      "endpoint": "autophagy",
+      "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2848616_inhibition_of_mtor_by_rapamycin_abolishes_cognitive_deficits-p-9322",
@@ -276,10 +276,10 @@
       "sentence": "An increase in LC3-immunoreactive puncta was observed in CA1 projections of transgenic PDAPP mice following rapamycin administration. f and g , levels of the autophagic substrate p62SQSTM are decreased (*, P = 0.0015) in hippocampi of rapamycin-treated PDAPP transgenic mice. f , representative Western blots; g , quantitative analyses of p62SQSTM levels. h and i , Levels of phosphorylated (activated) p70 were decreased in brains of rapamycin-treated PDAPP and non-transgenic mice (*, P = 0.001 and P = 0.04 respectively).",
       "context_window": "vels of the autophagic substrate p62SQSTM are decreased (*, P = 0.0015) in hippocampi of rapamycin-treated PDAPP transgenic mice.",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2848616_inhibition_of_mtor_by_rapamycin_abolishes_cognitive_deficits-p-9603",
@@ -294,10 +294,10 @@
       "sentence": "An increase in LC3-immunoreactive puncta was observed in CA1 projections of transgenic PDAPP mice following rapamycin administration. f and g , levels of the autophagic substrate p62SQSTM are decreased (*, P = 0.0015) in hippocampi of rapamycin-treated PDAPP transgenic mice. f , representative Western blots; g , quantitative analyses of p62SQSTM levels. h and i , Levels of phosphorylated (activated) p70 were decreased in brains of rapamycin-treated PDAPP and non-transgenic mice (*, P = 0.001 and P = 0.04 respectively).",
       "context_window": "ains of rapamycin-treated PDAPP and non-transgenic mice (*, P = 0.001 and P = 0.04 respectively). Significance of differences bet",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2848616_inhibition_of_mtor_by_rapamycin_abolishes_cognitive_deficits-p-9617",
@@ -312,10 +312,10 @@
       "sentence": "An increase in LC3-immunoreactive puncta was observed in CA1 projections of transgenic PDAPP mice following rapamycin administration. f and g , levels of the autophagic substrate p62SQSTM are decreased (*, P = 0.0015) in hippocampi of rapamycin-treated PDAPP transgenic mice. f , representative Western blots; g , quantitative analyses of p62SQSTM levels. h and i , Levels of phosphorylated (activated) p70 were decreased in brains of rapamycin-treated PDAPP and non-transgenic mice (*, P = 0.001 and P = 0.04 respectively).",
       "context_window": "cin-treated PDAPP and non-transgenic mice (*, P = 0.001 and P = 0.04 respectively). Significance of differences between group me",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2848616_inhibition_of_mtor_by_rapamycin_abolishes_cognitive_deficits-n-517",
@@ -331,7 +331,7 @@
       "context_window": ", Novato, CA. Experimental groups were: control-fed non-Tg, n = 10; rapamycin-fed non-Tg, n = 10; control-fed Tg, n = 12; rapa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -349,7 +349,7 @@
       "context_window": "ups were: control-fed non-Tg, n = 10; rapamycin-fed non-Tg, n = 10; control-fed Tg, n = 12; rapamycin-fed Tg, n = 12, all anim",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -367,7 +367,7 @@
       "context_window": "n-Tg, n = 10; rapamycin-fed non-Tg, n = 10; control-fed Tg, n = 12; rapamycin-fed Tg, n = 12, all animals were males and 7 mon",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -385,7 +385,7 @@
       "context_window": "d non-Tg, n = 10; control-fed Tg, n = 12; rapamycin-fed Tg, n = 12, all animals were males and 7 month-old at the time of test",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -403,7 +403,7 @@
       "context_window": "= 12; rapamycin-fed Tg, n = 12, all animals were males and 7 month-old at the time of testing. Rapamycin was administered for",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -511,7 +511,7 @@
       "context_window": "cant effect of week # on food consumption by two-way ANOVA, P = 0.108). Food consumption was higher for rapamycin-fed animals (by",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -567,7 +567,7 @@
       "context_window": "- and rapamycin-fed groups was not significantly different (25.59\u00b10.43 to 26.89\u00b10.44 for control-fed and 26.77\u00b10.48 to 28.11\u00b10.53",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -586,7 +586,7 @@
       "context_window": "n-fed groups was not significantly different (25.59\u00b10.43 to 26.89\u00b10.44 for control-fed and 26.77\u00b10.48 to 28.11\u00b10.53 for rapamycin-",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -605,7 +605,7 @@
       "context_window": "tly different (25.59\u00b10.43 to 26.89\u00b10.44 for control-fed and 26.77\u00b10.48 to 28.11\u00b10.53 for rapamycin-fed animals) although body weig",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -624,7 +624,7 @@
       "context_window": "(25.59\u00b10.43 to 26.89\u00b10.44 for control-fed and 26.77\u00b10.48 to 28.11\u00b10.53 for rapamycin-fed animals) although body weight increased m",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -642,7 +642,7 @@
       "context_window": "body weight increased moderately for both groups during the 13 week treatment, possibly as a result of the change in base chow",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -660,7 +660,7 @@
       "context_window": "sult of the change in base chow composition (increases were 5% and 11% for rapamycin-fed transgenic and non-transgenic gro",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -678,7 +678,7 @@
       "context_window": "the change in base chow composition (increases were 5% and 11% for rapamycin-fed transgenic and non-transgenic groups resp",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -696,7 +696,7 @@
       "context_window": "d transgenic and non-transgenic groups respectively; 10 and 15% for control-fed transgenic and non-transgenic groups respec",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "high"
     },

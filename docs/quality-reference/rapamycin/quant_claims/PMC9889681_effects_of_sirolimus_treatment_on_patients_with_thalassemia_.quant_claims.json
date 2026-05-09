@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9889681_effects_of_sirolimus_treatment_on_patients_with_thalassemia_",
   "doi": "10.1111/jcmm.17655",
-  "extracted_at": "2026-05-06T20:10:58+00:00",
+  "extracted_at": "2026-05-09T10:18:28+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 8,
@@ -23,7 +23,7 @@
       "sentence": "The results of the trial were obtained in 8 patients with \u03b2 + /\u03b2 + and \u03b2 + /\u03b2 0 genotypes, treated with a starting dosage of 1 mg/day Sirolimus for 24-48 weeks.",
       "context_window": "+ and \u03b2 + /\u03b2 0 genotypes, treated with a starting dosage of 1 mg/day Sirolimus for 24-48 weeks. 40 The first finding of the stud",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "",
       "binding_confidence": "partial"
@@ -41,7 +41,7 @@
       "sentence": "The results of the trial were obtained in 8 patients with \u03b2 + /\u03b2 + and \u03b2 + /\u03b2 0 genotypes, treated with a starting dosage of 1 mg/day Sirolimus for 24-48 weeks.",
       "context_window": "treated with a starting dosage of 1 mg/day Sirolimus for 24-48 weeks. 40 The first finding of the study was that expression of \u03b3",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "",
       "binding_confidence": "partial"
@@ -59,7 +59,7 @@
       "sentence": "Characteristics of the nine transfusion\u2010dependent patients included in the study\n\nThe investigational drug in the form of coated tablets (0.5 mg Sirolimus) has been provided to the patients in adequately labelled blisters.",
       "context_window": "dy The investigational drug in the form of coated tablets (0.5 mg Sirolimus) has been provided to the patients in adequately",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "",
       "binding_confidence": "partial"
@@ -77,7 +77,7 @@
       "sentence": "The starting Sirolimus dosage was 1 mg/day.",
       "context_window": "uately labelled blisters. The starting Sirolimus dosage was 1 mg/day. All other standard treatments, including blood transfusion",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "",
       "binding_confidence": "partial"
@@ -185,7 +185,7 @@
       "sentence": "Therefore, 6 months of chronic therapy with Sirolimus in Thalassemia patients did not perturb the percentages of different lymphoid and myeloid immune cells, with the exception of a slight and transient increase of CD8 + T cells after 3 months of therapy.",
       "context_window": "ged during therapeutic treatment with Sirolimus. Therefore, 6 months of chronic therapy with Sirolimus in Thalassemia patients d",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -203,7 +203,7 @@
       "sentence": "Therefore, 6 months of chronic therapy with Sirolimus in Thalassemia patients did not perturb the percentages of different lymphoid and myeloid immune cells, with the exception of a slight and transient increase of CD8 + T cells after 3 months of therapy.",
       "context_window": "n of a slight and transient increase of CD8 + T cells after 3 months of therapy. Moreover, we did not observe permanent alterati",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -293,7 +293,7 @@
       "sentence": "56 To investigate whether Sirolimus treatment affected autophagy levels in different T\u2010cell subsets, PBMCs isolated at Day 0 or after at least 90 days after treatment with Sirolimus were analysed for the contents of autophagic vesicles by flow cytometry.",
       "context_window": "t T\u2010cell subsets, PBMCs isolated at Day 0 or after at least 90 days after treatment with Sirolimus were analysed for the conten",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "",
       "binding_confidence": "partial"
@@ -311,10 +311,10 @@
       "sentence": "Autophagy levels of memory T cells subset tested. (Day 0 N = 9, \u226590 Days N = 9). * p < .05, ** p < .01.",
       "context_window": ". Autophagy levels of memory T cells subset tested. (Day 0 N = 9, \u226590 Days N = 9). * p < .05, ** p < .01. CM, central memory",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889681_effects_of_sirolimus_treatment_on_patients_with_thalassemia_-n-4470",
@@ -329,10 +329,10 @@
       "sentence": "Autophagy levels of memory T cells subset tested. (Day 0 N = 9, \u226590 Days N = 9). * p < .05, ** p < .01.",
       "context_window": "els of memory T cells subset tested. (Day 0 N = 9, \u226590 Days N = 9). * p < .05, ** p < .01. CM, central memory; EM, effector m",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889681_effects_of_sirolimus_treatment_on_patients_with_thalassemia_-p-4480",
@@ -347,10 +347,10 @@
       "sentence": "Autophagy levels of memory T cells subset tested. (Day 0 N = 9, \u226590 Days N = 9). * p < .05, ** p < .01.",
       "context_window": "ory T cells subset tested. (Day 0 N = 9, \u226590 Days N = 9). * p < .05, ** p < .01. CM, central memory; EM, effector memory; EMRA,",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889681_effects_of_sirolimus_treatment_on_patients_with_thalassemia_-p-4492",
@@ -365,10 +365,10 @@
       "sentence": "Autophagy levels of memory T cells subset tested. (Day 0 N = 9, \u226590 Days N = 9). * p < .05, ** p < .01.",
       "context_window": "subset tested. (Day 0 N = 9, \u226590 Days N = 9). * p < .05, ** p < .01. CM, central memory; EM, effector memory; EMRA, effector me",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889681_effects_of_sirolimus_treatment_on_patients_with_thalassemia_-n-5710",
@@ -455,7 +455,7 @@
       "sentence": "The data obtained indicate that after three or more months of Sirolimus treatment, each patient showed a marked increase in the number of epitope\u2010specific memory CD8 + T cells releasing IFN\u2010\u03b3 following stimulation with CEF peptide pool ( p = .031).",
       "context_window": "leasing IFN\u2010\u03b3 following stimulation with CEF peptide pool ( p = .031). CD8 + memory T cells IFN\u2010\u03b3 release after stimulation wit",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -473,7 +473,7 @@
       "sentence": "Data are presented as absolute values (A) or relatively to the starting point of each singular patient before drug administration (B). (Day 0 N = 6, \u226590 Days N = 6). * p < .05, ** p < .01\n\nIn order to better characterize potential systemic effects of Sirolimus treatment on the immune compartment, components of the secretome present in the plasma samples of Sirolimus\u2010treated patients were analysed by Bioplex technology, that allows the parallel analysis of 27 secreted proteins (interleukins, chemokines, growth factors).",
       "context_window": "ach singular patient before drug administration (B). (Day 0 N = 6, \u226590 Days N = 6). * p < .05, ** p < .01 In order to better",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "",
       "binding_confidence": "partial"
@@ -491,7 +491,7 @@
       "sentence": "Data are presented as absolute values (A) or relatively to the starting point of each singular patient before drug administration (B). (Day 0 N = 6, \u226590 Days N = 6). * p < .05, ** p < .01\n\nIn order to better characterize potential systemic effects of Sirolimus treatment on the immune compartment, components of the secretome present in the plasma samples of Sirolimus\u2010treated patients were analysed by Bioplex technology, that allows the parallel analysis of 27 secreted proteins (interleukins, chemokines, growth factors).",
       "context_window": "ient before drug administration (B). (Day 0 N = 6, \u226590 Days N = 6). * p < .05, ** p < .01 In order to better characterize po",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "",
       "binding_confidence": "partial"
@@ -509,7 +509,7 @@
       "sentence": "Data are presented as absolute values (A) or relatively to the starting point of each singular patient before drug administration (B). (Day 0 N = 6, \u226590 Days N = 6). * p < .05, ** p < .01\n\nIn order to better characterize potential systemic effects of Sirolimus treatment on the immune compartment, components of the secretome present in the plasma samples of Sirolimus\u2010treated patients were analysed by Bioplex technology, that allows the parallel analysis of 27 secreted proteins (interleukins, chemokines, growth factors).",
       "context_window": "e drug administration (B). (Day 0 N = 6, \u226590 Days N = 6). * p < .05, ** p < .01 In order to better characterize potential syst",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "",
       "binding_confidence": "partial"
@@ -527,7 +527,7 @@
       "sentence": "Data are presented as absolute values (A) or relatively to the starting point of each singular patient before drug administration (B). (Day 0 N = 6, \u226590 Days N = 6). * p < .05, ** p < .01\n\nIn order to better characterize potential systemic effects of Sirolimus treatment on the immune compartment, components of the secretome present in the plasma samples of Sirolimus\u2010treated patients were analysed by Bioplex technology, that allows the parallel analysis of 27 secreted proteins (interleukins, chemokines, growth factors).",
       "context_window": "istration (B). (Day 0 N = 6, \u226590 Days N = 6). * p < .05, ** p < .01 In order to better characterize potential systemic effects",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "",
       "binding_confidence": "partial"
@@ -563,7 +563,7 @@
       "sentence": "Content of IL\u20101\u03b2 (A), IL\u201013 (B), G\u2010CSF (C), IP\u201010 (D) and MCP\u20101(MCAF) (E) in plasma samples isolated at Day 0 and after 90 or more days from the beginning of sirolimus intake by treated patients. (A) N = 7; (B) N = 5; (C and D) N = 9; (E) N = 7.",
       "context_window": "the beginning of sirolimus intake by treated patients. (A) N = 7; (B) N = 5; (C and D) N = 9; (E) N = 7. The Bioplex method",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -581,7 +581,7 @@
       "sentence": "Content of IL\u20101\u03b2 (A), IL\u201013 (B), G\u2010CSF (C), IP\u201010 (D) and MCP\u20101(MCAF) (E) in plasma samples isolated at Day 0 and after 90 or more days from the beginning of sirolimus intake by treated patients. (A) N = 7; (B) N = 5; (C and D) N = 9; (E) N = 7.",
       "context_window": "ing of sirolimus intake by treated patients. (A) N = 7; (B) N = 5; (C and D) N = 9; (E) N = 7. The Bioplex method and the com",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -599,7 +599,7 @@
       "sentence": "Content of IL\u20101\u03b2 (A), IL\u201013 (B), G\u2010CSF (C), IP\u201010 (D) and MCP\u20101(MCAF) (E) in plasma samples isolated at Day 0 and after 90 or more days from the beginning of sirolimus intake by treated patients. (A) N = 7; (B) N = 5; (C and D) N = 9; (E) N = 7.",
       "context_window": "intake by treated patients. (A) N = 7; (B) N = 5; (C and D) N = 9; (E) N = 7. The Bioplex method and the complete set of the",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -617,7 +617,7 @@
       "sentence": "Content of IL\u20101\u03b2 (A), IL\u201013 (B), G\u2010CSF (C), IP\u201010 (D) and MCP\u20101(MCAF) (E) in plasma samples isolated at Day 0 and after 90 or more days from the beginning of sirolimus intake by treated patients. (A) N = 7; (B) N = 5; (C and D) N = 9; (E) N = 7.",
       "context_window": "reated patients. (A) N = 7; (B) N = 5; (C and D) N = 9; (E) N = 7. The Bioplex method and the complete set of the analysed pr",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -635,7 +635,7 @@
       "sentence": "The Bioplex method and the complete set of the analysed proteins related to this Figure can be found in the Supplementary Materials ( SM1 and Figure S3 , respectively). * p < .05, ** p < .01\n\nTogether, these data suggest that Sirolimus could systemically restore the cytokine milieu of \u03b2\u2010Thalassemia patients dampening Th2 responses and immune suppression environments without provoking excessive inflammation levels.",
       "context_window": "plementary Materials ( SM1 and Figure S3 , respectively). * p < .05, ** p < .01 Together, these data suggest that Sirolimus co",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "",
       "binding_confidence": "partial"
@@ -653,7 +653,7 @@
       "sentence": "The Bioplex method and the complete set of the analysed proteins related to this Figure can be found in the Supplementary Materials ( SM1 and Figure S3 , respectively). * p < .05, ** p < .01\n\nTogether, these data suggest that Sirolimus could systemically restore the cytokine milieu of \u03b2\u2010Thalassemia patients dampening Th2 responses and immune suppression environments without provoking excessive inflammation levels.",
       "context_window": "aterials ( SM1 and Figure S3 , respectively). * p < .05, ** p < .01 Together, these data suggest that Sirolimus could systemic",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "",
       "binding_confidence": "partial"
@@ -689,7 +689,7 @@
       "sentence": "73\n\nOf interest is also the decrease of IL\u201013 (Figure 7B , p = .043) and IP\u201010 (Figure 7D , p = .008) in Sirolimus\u2010treated patients.",
       "context_window": "73 Of interest is also the decrease of IL\u201013 (Figure 7B , p = .043) and IP\u201010 (Figure 7D , p = .008) in Sirolimus\u2010treated pati",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -707,7 +707,7 @@
       "sentence": "73\n\nOf interest is also the decrease of IL\u201013 (Figure 7B , p = .043) and IP\u201010 (Figure 7D , p = .008) in Sirolimus\u2010treated patients.",
       "context_window": "ease of IL\u201013 (Figure 7B , p = .043) and IP\u201010 (Figure 7D , p = .008) in Sirolimus\u2010treated patients. Concerning IL\u201013, it has be",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "sirolimus",
       "direction": "decrease",
       "binding_confidence": "partial"

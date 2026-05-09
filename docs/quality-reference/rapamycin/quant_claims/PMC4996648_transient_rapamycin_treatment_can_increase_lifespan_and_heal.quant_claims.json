@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal",
   "doi": "10.7554/eLife.16351",
-  "extracted_at": "2026-05-06T20:10:55+00:00",
+  "extracted_at": "2026-05-09T10:18:22+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 139,
@@ -23,7 +23,7 @@
       "sentence": "Here we show that 3 months of rapamycin treatment is sufficient to increase life expectancy by up to 60% and improve measures of healthspan in middle-aged mice.",
       "context_window": "f action in the context of healthy aging. Here we show that 3 months of rapamycin treatment is sufficient to increase life expec",
       "claim_role": "protocol",
-      "endpoint": "healthspan",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -276,9 +276,9 @@
       "context_window": "ales, 20 females) were i.p. injected with vehicle solution (5% PEG-400/5% Tween-20) for 3 months. For the feeding model, e",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-pct-3186",
@@ -294,9 +294,9 @@
       "context_window": "males) were i.p. injected with vehicle solution (5% PEG-400/5% Tween-20) for 3 months. For the feeding model, encapsulated",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-3203",
@@ -312,9 +312,9 @@
       "context_window": "injected with vehicle solution (5% PEG-400/5% Tween-20) for 3 months. For the feeding model, encapsulated rapamycin was obtained",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-pct-3414",
@@ -384,7 +384,7 @@
       "context_window": "t from the start point, sample size was as follows: vehicle N = 19, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 17, 17, 17",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -402,7 +402,7 @@
       "context_window": ", 17, 16, 16, 16, 16, 14, 13, 13, 13, 13, 13, 13; rapamycin N = 20, 19, 19, 19, 19, 19, 19, 19, 19, 19, 18, 18, 18, 17, 17, 17",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -420,7 +420,7 @@
       "context_window": "t from the start point, sample size was as follows: vehicle N = 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -438,7 +438,7 @@
       "context_window": ", 18, 17, 17, 17, 16, 15, 15, 13, 12, 11 vehicle; rapamycin N = 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -942,7 +942,7 @@
       "context_window": "and vehicle treatment. Data are indicated as mean \u00b1 s.e.m. *p<0.05. **p<0.01. ( B ) Survival of control and rapamycin-treated",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -960,7 +960,7 @@
       "context_window": "e treatment. Data are indicated as mean \u00b1 s.e.m. *p<0.05. **p<0.01. ( B ) Survival of control and rapamycin-treated male mice",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -978,7 +978,7 @@
       "context_window": "rapamycin-treated male mice following the end of treatment. p=0.02. N=18 vehicle injected, N=17 rapamycin. DOI: http://dx.doi.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -996,7 +996,7 @@
       "context_window": "n-treated male mice following the end of treatment. p=0.02. N=18 vehicle injected, N=17 rapamycin. DOI: http://dx.doi.org/10",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1014,7 +1014,7 @@
       "context_window": "lowing the end of treatment. p=0.02. N=18 vehicle injected, N=17 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.003 1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1176,7 +1176,7 @@
       "context_window": "ed in this cohort prior to receipt from NIA (dashed lines). N=18 vehicle injected, N=17 rapamycin. DOI: http://dx.doi.org/10",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1194,7 +1194,7 @@
       "context_window": "to receipt from NIA (dashed lines). N=18 vehicle injected, N=17 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.006 1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1212,7 +1212,7 @@
       "context_window": "Lifespan curve of male mice injected with either vehicle or 8 mg/kg/day rapamycin including deaths during the treatment period from",
       "claim_role": "duration",
       "endpoint": "lifespan",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1230,7 +1230,7 @@
       "context_window": "hs during the treatment period from non-age-related causes. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1248,7 +1248,7 @@
       "context_window": "period from non-age-related causes. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.007 1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1284,7 +1284,7 @@
       "context_window": "rcent life expectancy increase Vehicle M 231 235 Rapamycin (8mg/kg/day) M 372 61 358 53 Vehicle F 161 177 Rapamycin (8mg/kg/day) F",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1302,7 +1302,7 @@
       "context_window": "n (8mg/kg/day) M 372 61 358 53 Vehicle F 161 177 Rapamycin (8mg/kg/day) F 161 0 171 -3 Eudragit M 193 199 Rapamycin (126 ppm) M 27",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1338,7 +1338,7 @@
       "context_window": "Percent mean lifespan increase Vehicle M 925 929 Rapamycin (8mg/kg/day) M 1054 14 1050 13 Vehicle F 847 858 Rapamycin (8mg/kg/day)",
       "claim_role": "dose",
       "endpoint": "lifespan",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1356,7 +1356,7 @@
       "context_window": "(8mg/kg/day) M 1054 14 1050 13 Vehicle F 847 858 Rapamycin (8mg/kg/day) F 847 0 853 -1 Eudragit M 914 912 Rapamycin (126 ppm) M 10",
       "claim_role": "dose",
       "endpoint": "lifespan",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1374,7 +1374,7 @@
       "context_window": "and vehicle treatment. Data are indicated as mean \u00b1 s.e.m. *p<0.05. **p<0.01. ( B ) Survival of control and rapamycin-treated",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1392,7 +1392,7 @@
       "context_window": "e treatment. Data are indicated as mean \u00b1 s.e.m. *p<0.05. **p<0.01. ( B ) Survival of control and rapamycin-treated male mice",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1410,7 +1410,7 @@
       "context_window": "rapamycin-treated male mice following the end of treatment. p=0.02. N=18 vehicle injected, N=17 rapamycin. DOI: http://dx.doi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1428,7 +1428,7 @@
       "context_window": "n-treated male mice following the end of treatment. p=0.02. N=18 vehicle injected, N=17 rapamycin. DOI: http://dx.doi.org/1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1446,7 +1446,7 @@
       "context_window": "lowing the end of treatment. p=0.02. N=18 vehicle injected, N=17 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.003",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1680,7 +1680,7 @@
       "context_window": "ed in this cohort prior to receipt from NIA (dashed lines). N=18 vehicle injected, N=17 rapamycin. DOI: http://dx.doi.org/10",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1698,7 +1698,7 @@
       "context_window": "to receipt from NIA (dashed lines). N=18 vehicle injected, N=17 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.006",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1716,7 +1716,7 @@
       "context_window": "ed in this cohort prior to receipt from NIA (dashed lines). N=18 vehicle injected, N=17 rapamycin. DOI: http://dx.doi.org/1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1734,7 +1734,7 @@
       "context_window": "to receipt from NIA (dashed lines). N=18 vehicle injected, N=17 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.006",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1752,7 +1752,7 @@
       "context_window": "Lifespan curve of male mice injected with either vehicle or 8 mg/kg/day rapamycin including deaths during the treatment period from",
       "claim_role": "duration",
       "endpoint": "lifespan",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1770,7 +1770,7 @@
       "context_window": "hs during the treatment period from non-age-related causes. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1788,7 +1788,7 @@
       "context_window": "period from non-age-related causes. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.007",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1806,7 +1806,7 @@
       "context_window": "Lifespan curve of male mice injected with either vehicle or 8 mg/kg/day rapamycin including deaths during the treatment period from",
       "claim_role": "duration",
       "endpoint": "lifespan",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1824,7 +1824,7 @@
       "context_window": "hs during the treatment period from non-age-related causes. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1842,7 +1842,7 @@
       "context_window": "period from non-age-related causes. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.007",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1932,7 +1932,7 @@
       "context_window": "ell tumors ( Figure 3A,B and Figure 3-figure supplement 1 , p=0.002). Additionally, an uncommon variant of lymphoma with plasma",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1968,7 +1968,7 @@
       "context_window": "hematopoietic neoplasia (1 pituitary adenoma) ( Figure 3D , p=0.004). 10.7554/eLife.16351.010 Figure 2. Rapamycin injection at",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2022,7 +2022,7 @@
       "context_window": "and vehicle treatment. Data are indicated as mean \u00b1 s.e.m. *p<0.05, **p<0.01 ( B ) Survival of control and rapamycin-treated f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2040,7 +2040,7 @@
       "context_window": "e treatment. Data are indicated as mean \u00b1 s.e.m. *p<0.05, **p<0.01 ( B ) Survival of control and rapamycin-treated female mice",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2058,7 +2058,7 @@
       "context_window": "pamycin-treated female mice following the end of treatment. p=0.261. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2076,7 +2076,7 @@
       "context_window": "reated female mice following the end of treatment. p=0.261. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2094,7 +2094,7 @@
       "context_window": "owing the end of treatment. p=0.261. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.010 1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2166,7 +2166,7 @@
       "context_window": "lines). Gray box approximately indicates treatment period. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2184,7 +2184,7 @@
       "context_window": "ximately indicates treatment period. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.011 1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2346,7 +2346,7 @@
       "context_window": "and vehicle treatment. Data are indicated as mean \u00b1 s.e.m. *p<0.05, **p<0.01 ( B ) Survival of control and rapamycin-treated f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2364,7 +2364,7 @@
       "context_window": "e treatment. Data are indicated as mean \u00b1 s.e.m. *p<0.05, **p<0.01 ( B ) Survival of control and rapamycin-treated female mice",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2382,7 +2382,7 @@
       "context_window": "pamycin-treated female mice following the end of treatment. p=0.261. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2400,7 +2400,7 @@
       "context_window": "reated female mice following the end of treatment. p=0.261. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2418,7 +2418,7 @@
       "context_window": "owing the end of treatment. p=0.261. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.010",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2490,7 +2490,7 @@
       "context_window": "lines). Gray box approximately indicates treatment period. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2508,7 +2508,7 @@
       "context_window": "ximately indicates treatment period. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.011",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2526,7 +2526,7 @@
       "context_window": "lines). Gray box approximately indicates treatment period. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2544,7 +2544,7 @@
       "context_window": "ximately indicates treatment period. N=20 vehicle injected, N=20 rapamycin. DOI: http://dx.doi.org/10.7554/eLife.16351.011",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2760,7 +2760,7 @@
       "context_window": "Percent life expectancy increase Vehicle 188 204 Rapamycin (8mg/kg/day) 231 22 257 26 Eudragit 190 188 Rapamycin (126 ppm) 270 42",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2778,7 +2778,7 @@
       "context_window": "life expectancy for mice receiving rapamycin by injection (8 mg/kg/day) or feeding (128 ppm). DOI: http://dx.doi.org/10.7554/eLif",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2796,9 +2796,9 @@
       "context_window": "aining eRapa or the encapsulation control eudragit diet for 90 days starting at 20-21 months of age and then returned to a stan",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-25548",
@@ -2814,9 +2814,9 @@
       "context_window": "apsulation control eudragit diet for 90 days starting at 20-21 months of age and then returned to a standard chow diet. In contra",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-25659",
@@ -2994,7 +2994,7 @@
       "context_window": "mycin-treated mice following the end of treatment. p=0.002. N=38 vehicle injected, N=37 rapamycin. ( C ). Survival of ( D )",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3012,7 +3012,7 @@
       "context_window": "owing the end of treatment. p=0.002. N=38 vehicle injected, N=37 rapamycin. ( C ). Survival of ( D ) male, and ( F ) female",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3030,7 +3030,7 @@
       "context_window": "apamycin-treated mice following the end of treatment. ( D ) N=20 eudragit males, N=19 126 ppm eRapa males. ( F ) N=18 eudrag",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3048,7 +3048,7 @@
       "context_window": "following the end of treatment. ( D ) N=20 eudragit males, N=19 126 ppm eRapa males. ( F ) N=18 eudragit females, N=18 eRap",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3066,7 +3066,7 @@
       "context_window": "( D ) N=20 eudragit males, N=19 126 ppm eRapa males. ( F ) N=18 eudragit females, N=18 eRapa females. ( G ) Forelimb grip s",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3084,7 +3084,7 @@
       "context_window": "les, N=19 126 ppm eRapa males. ( F ) N=18 eudragit females, N=18 eRapa females. ( G ) Forelimb grip strength tests measured",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3102,7 +3102,7 @@
       "context_window": "eatment initiation (baseline), upon cessation of treatment (3 months), and 3 months after the drug withdrawal (6 months). ( H )",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3120,7 +3120,7 @@
       "context_window": "ion (baseline), upon cessation of treatment (3 months), and 3 months after the drug withdrawal (6 months). ( H ) Rotarod perform",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3138,7 +3138,7 @@
       "context_window": "eatment (3 months), and 3 months after the drug withdrawal (6 months). ( H ) Rotarod performance tested prior to treatment initi",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3156,7 +3156,7 @@
       "context_window": "eatment initiation (baseline), upon cessation of treatment (3 months), and 3 months after the drug withdrawal (6 months). Data a",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3174,7 +3174,7 @@
       "context_window": "ion (baseline), upon cessation of treatment (3 months), and 3 months after the drug withdrawal (6 months). Data are plotted with",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3192,7 +3192,7 @@
       "context_window": "eatment (3 months), and 3 months after the drug withdrawal (6 months). Data are plotted with box-whisker plots, showing median,",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3336,9 +3336,9 @@
       "context_window": "rom NIA. Gray box approximately indicates treatment period. N=38 vehicle injected, N=370 eRapa. ( B , C ) Sex-segregated sur",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-29082",
@@ -3354,9 +3354,9 @@
       "context_window": "ximately indicates treatment period. N=38 vehicle injected, N=370 eRapa. ( B , C ) Sex-segregated survival plots of male ( B",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-29205",
@@ -3372,9 +3372,9 @@
       "context_window": "B ) and female ( C ) mice fed 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-29229",
@@ -3390,9 +3390,9 @@
       "context_window": "e fed 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves start at age=0 to represe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-29458",
@@ -3588,7 +3588,7 @@
       "context_window": ") Percent mean lifespan increase Vehicle 874 892 Rapamycin (8mg/kg/day) 922 5 944 5 Eudragit 885 899 Rapamycin (126 ppm) 996 13 96",
       "claim_role": "dose",
       "endpoint": "lifespan",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3606,7 +3606,7 @@
       "context_window": "ed weekly after starting rapamycin and eudragit treatment. *p<0.05. Survival of ( B ) sex-pooled control and rapamycin-treated",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3642,7 +3642,7 @@
       "context_window": "mycin-treated mice following the end of treatment. p=0.002. N=38 vehicle injected, N=37 rapamycin. ( C ). Survival of ( D )",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3660,7 +3660,7 @@
       "context_window": "owing the end of treatment. p=0.002. N=38 vehicle injected, N=37 rapamycin. ( C ). Survival of ( D ) male, and ( F ) female",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3678,7 +3678,7 @@
       "context_window": "apamycin-treated mice following the end of treatment. ( D ) N=20 eudragit males, N=19 126 ppm eRapa males. ( F ) N=18 eudrag",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3696,7 +3696,7 @@
       "context_window": "following the end of treatment. ( D ) N=20 eudragit males, N=19 126 ppm eRapa males. ( F ) N=18 eudragit females, N=18 eRap",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3714,7 +3714,7 @@
       "context_window": "( D ) N=20 eudragit males, N=19 126 ppm eRapa males. ( F ) N=18 eudragit females, N=18 eRapa females. ( G ) Forelimb grip s",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3732,7 +3732,7 @@
       "context_window": "les, N=19 126 ppm eRapa males. ( F ) N=18 eudragit females, N=18 eRapa females. ( G ) Forelimb grip strength tests measured",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3750,7 +3750,7 @@
       "context_window": "eatment initiation (baseline), upon cessation of treatment (3 months), and 3 months after the drug withdrawal (6 months). ( H )",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3768,7 +3768,7 @@
       "context_window": "ion (baseline), upon cessation of treatment (3 months), and 3 months after the drug withdrawal (6 months). ( H ) Rotarod perform",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3786,7 +3786,7 @@
       "context_window": "eatment (3 months), and 3 months after the drug withdrawal (6 months). ( H ) Rotarod performance tested prior to treatment initi",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3804,7 +3804,7 @@
       "context_window": "eatment initiation (baseline), upon cessation of treatment (3 months), and 3 months after the drug withdrawal (6 months). Data a",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3822,7 +3822,7 @@
       "context_window": "ion (baseline), upon cessation of treatment (3 months), and 3 months after the drug withdrawal (6 months). Data are plotted with",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3840,7 +3840,7 @@
       "context_window": "eatment (3 months), and 3 months after the drug withdrawal (6 months). Data are plotted with box-whisker plots, showing median,",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4002,9 +4002,9 @@
       "context_window": "rom NIA. Gray box approximately indicates treatment period. N=38 vehicle injected, N=370 eRapa. ( B , C ) Sex-segregated sur",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-32763",
@@ -4020,9 +4020,9 @@
       "context_window": "ximately indicates treatment period. N=38 vehicle injected, N=370 eRapa. ( B , C ) Sex-segregated survival plots of male ( B",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-32886",
@@ -4038,9 +4038,9 @@
       "context_window": "B ) and female ( C ) mice fed 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-32910",
@@ -4056,9 +4056,9 @@
       "context_window": "e fed 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves start at age=0 to represe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-33139",
@@ -4182,9 +4182,9 @@
       "context_window": "rom NIA. Gray box approximately indicates treatment period. N=38 vehicle injected, N=370 eRapa. ( B , C ) Sex-segregated sur",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-33636",
@@ -4200,9 +4200,9 @@
       "context_window": "ximately indicates treatment period. N=38 vehicle injected, N=370 eRapa. ( B , C ) Sex-segregated survival plots of male ( B",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-33759",
@@ -4218,9 +4218,9 @@
       "context_window": "B ) and female ( C ) mice fed 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-33783",
@@ -4236,9 +4236,9 @@
       "context_window": "e fed 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves start at age=0 to represe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-34012",
@@ -4595,7 +4595,7 @@
       "sentence": "Distance based permutation multivariate analysis of variance (MANOVA) ( Anderson, 2001 ) indicated that rapamycin treatment induced a significant change in the composition of fecal microbiome (p=0.018 for injection cohorts. p=0.015 for feeding cohorts.p=0.005 for pooled cohorts), even after accounting for delivery method and batch effects ( Figure 6-figure supplements 1 - 3 ).",
       "context_window": "significant change in the composition of fecal microbiome (p=0.018 for injection cohorts. p=0.015 for feeding cohorts.p=0.005",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4613,7 +4613,7 @@
       "sentence": "Distance based permutation multivariate analysis of variance (MANOVA) ( Anderson, 2001 ) indicated that rapamycin treatment induced a significant change in the composition of fecal microbiome (p=0.018 for injection cohorts. p=0.015 for feeding cohorts.p=0.005 for pooled cohorts), even after accounting for delivery method and batch effects ( Figure 6-figure supplements 1 - 3 ).",
       "context_window": "osition of fecal microbiome (p=0.018 for injection cohorts. p=0.015 for feeding cohorts.p=0.005 for pooled cohorts), even after",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4631,7 +4631,7 @@
       "sentence": "Distance based permutation multivariate analysis of variance (MANOVA) ( Anderson, 2001 ) indicated that rapamycin treatment induced a significant change in the composition of fecal microbiome (p=0.018 for injection cohorts. p=0.015 for feeding cohorts.p=0.005 for pooled cohorts), even after accounting for delivery method and batch effects ( Figure 6-figure supplements 1 - 3 ).",
       "context_window": "(p=0.018 for injection cohorts. p=0.015 for feeding cohorts.p=0.005 for pooled cohorts), even after accounting for delivery met",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4830,7 +4830,7 @@
       "context_window": "vehicle-injected male animals at 3 months of the treatment. N = 13 Vehicle, N = 19 Rapamycin. ( B ) Weight of fecal pellets co",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4848,7 +4848,7 @@
       "context_window": "male animals at 3 months of the treatment. N = 13 Vehicle, N = 19 Rapamycin. ( B ) Weight of fecal pellets collected from rap",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4866,7 +4866,7 @@
       "context_window": "lected from rapamycin-injected and vehicle-injected animals 1 month after cessation of the treatment. N = 71 vehicle female, N",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4884,7 +4884,7 @@
       "context_window": "-injected animals 1 month after cessation of the treatment. N = 71 vehicle female, N = 90 rapamycin female, N = 47 vehicle mal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4902,7 +4902,7 @@
       "context_window": "th after cessation of the treatment. N = 71 vehicle female, N = 90 rapamycin female, N = 47 vehicle male, N = 36 rapamycin mal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4920,7 +4920,7 @@
       "context_window": "treatment. N = 71 vehicle female, N = 90 rapamycin female, N = 47 vehicle male, N = 36 rapamycin male. ( C ) Weight of fecal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4938,7 +4938,7 @@
       "context_window": "hicle female, N = 90 rapamycin female, N = 47 vehicle male, N = 36 rapamycin male. ( C ) Weight of fecal pellets collected fro",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4956,7 +4956,7 @@
       "context_window": "lected from rapamycin-injected and vehicle-injected animals 4 months after cessation of the treatment. N = 22 vehicle female, N",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4974,7 +4974,7 @@
       "context_window": "injected animals 4 months after cessation of the treatment. N = 22 vehicle female, N = 21 rapamycin female, N = 23 vehicle mal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4992,7 +4992,7 @@
       "context_window": "hs after cessation of the treatment. N = 22 vehicle female, N = 21 rapamycin female, N = 23 vehicle male, N = 22 rapamycin mal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5010,7 +5010,7 @@
       "context_window": "treatment. N = 22 vehicle female, N = 21 rapamycin female, N = 23 vehicle male, N = 22 rapamycin male. Data are indicated as",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5028,7 +5028,7 @@
       "context_window": "hicle female, N = 21 rapamycin female, N = 23 vehicle male, N = 22 rapamycin male. Data are indicated as mean \u00b1 s.e.m. *p<0.05",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5280,7 +5280,7 @@
       "context_window": "vehicle-injected male animals at 3 months of the treatment. N = 13 Vehicle, N = 19 Rapamycin. ( B ) Weight of fecal pellets co",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5298,7 +5298,7 @@
       "context_window": "male animals at 3 months of the treatment. N = 13 Vehicle, N = 19 Rapamycin. ( B ) Weight of fecal pellets collected from rap",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5316,7 +5316,7 @@
       "context_window": "lected from rapamycin-injected and vehicle-injected animals 1 month after cessation of the treatment. N = 71 vehicle female, N",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5334,7 +5334,7 @@
       "context_window": "-injected animals 1 month after cessation of the treatment. N = 71 vehicle female, N = 90 rapamycin female, N = 47 vehicle mal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5352,7 +5352,7 @@
       "context_window": "th after cessation of the treatment. N = 71 vehicle female, N = 90 rapamycin female, N = 47 vehicle male, N = 36 rapamycin mal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5370,7 +5370,7 @@
       "context_window": "treatment. N = 71 vehicle female, N = 90 rapamycin female, N = 47 vehicle male, N = 36 rapamycin male. ( C ) Weight of fecal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5388,7 +5388,7 @@
       "context_window": "hicle female, N = 90 rapamycin female, N = 47 vehicle male, N = 36 rapamycin male. ( C ) Weight of fecal pellets collected fro",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5406,7 +5406,7 @@
       "context_window": "lected from rapamycin-injected and vehicle-injected animals 4 months after cessation of the treatment. N = 22 vehicle female, N",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5424,7 +5424,7 @@
       "context_window": "injected animals 4 months after cessation of the treatment. N = 22 vehicle female, N = 21 rapamycin female, N = 23 vehicle mal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5442,7 +5442,7 @@
       "context_window": "hs after cessation of the treatment. N = 22 vehicle female, N = 21 rapamycin female, N = 23 vehicle male, N = 22 rapamycin mal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5460,7 +5460,7 @@
       "context_window": "treatment. N = 22 vehicle female, N = 21 rapamycin female, N = 23 vehicle male, N = 22 rapamycin male. Data are indicated as",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5478,7 +5478,7 @@
       "context_window": "hicle female, N = 21 rapamycin female, N = 23 vehicle male, N = 22 rapamycin male. Data are indicated as mean \u00b1 s.e.m. *p<0.05",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5568,7 +5568,7 @@
       "context_window": "vehicle-injected male animals at 3 months of the treatment. N = 13 Vehicle, N = 19 Rapamycin. ( B ) Weight of fecal pellets co",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5586,7 +5586,7 @@
       "context_window": "male animals at 3 months of the treatment. N = 13 Vehicle, N = 19 Rapamycin. ( B ) Weight of fecal pellets collected from rap",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5604,7 +5604,7 @@
       "context_window": "lected from rapamycin-injected and vehicle-injected animals 1 month after cessation of the treatment. N = 71 vehicle female, N",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5622,7 +5622,7 @@
       "context_window": "-injected animals 1 month after cessation of the treatment. N = 71 vehicle female, N = 90 rapamycin female, N = 47 vehicle mal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5640,7 +5640,7 @@
       "context_window": "th after cessation of the treatment. N = 71 vehicle female, N = 90 rapamycin female, N = 47 vehicle male, N = 36 rapamycin mal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5658,7 +5658,7 @@
       "context_window": "treatment. N = 71 vehicle female, N = 90 rapamycin female, N = 47 vehicle male, N = 36 rapamycin male. ( C ) Weight of fecal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5676,7 +5676,7 @@
       "context_window": "hicle female, N = 90 rapamycin female, N = 47 vehicle male, N = 36 rapamycin male. ( C ) Weight of fecal pellets collected fro",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5694,7 +5694,7 @@
       "context_window": "lected from rapamycin-injected and vehicle-injected animals 4 months after cessation of the treatment. N = 22 vehicle female, N",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5712,7 +5712,7 @@
       "context_window": "injected animals 4 months after cessation of the treatment. N = 22 vehicle female, N = 21 rapamycin female, N = 23 vehicle mal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5730,7 +5730,7 @@
       "context_window": "hs after cessation of the treatment. N = 22 vehicle female, N = 21 rapamycin female, N = 23 vehicle male, N = 22 rapamycin mal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5748,7 +5748,7 @@
       "context_window": "treatment. N = 22 vehicle female, N = 21 rapamycin female, N = 23 vehicle male, N = 22 rapamycin male. Data are indicated as",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5766,7 +5766,7 @@
       "context_window": "hicle female, N = 21 rapamycin female, N = 23 vehicle male, N = 22 rapamycin male. Data are indicated as mean \u00b1 s.e.m. *p<0.05",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5837,7 +5837,7 @@
       "sentence": "The increase in SFB following rapamycin treatment was confirmed by real-time PCR of DNA from fecal samples obtained from both mice receiving injections or encapsulated rapamycin ( Figure 6B , Figure 6-figure supplement 2B ), as well as by semi-quantitative histological scoring of the small intestine in an independent cohort of mice obtained from the Harrison Lab at the Jackson Laboratory and injected with 8 mg/kg/day of for 3 months at the University of Washington ( Figure 6C,D , Figure 6-figure supplement 2C ).",
       "context_window": "he Harrison Lab at the Jackson Laboratory and injected with 8 mg/kg/day of for 3 months at the University of Washington ( Figure 6C",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -5855,7 +5855,7 @@
       "sentence": "The increase in SFB following rapamycin treatment was confirmed by real-time PCR of DNA from fecal samples obtained from both mice receiving injections or encapsulated rapamycin ( Figure 6B , Figure 6-figure supplement 2B ), as well as by semi-quantitative histological scoring of the small intestine in an independent cohort of mice obtained from the Harrison Lab at the Jackson Laboratory and injected with 8 mg/kg/day of for 3 months at the University of Washington ( Figure 6C,D , Figure 6-figure supplement 2C ).",
       "context_window": "the Jackson Laboratory and injected with 8 mg/kg/day of for 3 months at the University of Washington ( Figure 6C,D , Figure 6-fi",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -6269,10 +6269,10 @@
       "sentence": "This work extends prior evidence indicating that short-term rapamycin treatment can improve health in mice, including one experiment suggesting that 4 mg/kg rapamycin every other day for 6 weeks enhanced survival until around 30 months of age in a small cohort ( Chen et al., 2009 ), and studies reporting improvements in cardiac ( Dai et al., 2014 ; Flynn et al., 2013 ) and immune ( Chen et al., 2009 ) function following transient treatment with rapamycin.",
       "context_window": "ve health in mice, including one experiment suggesting that 4 mg/kg rapamycin every other day for 6 weeks enhanced survival",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-501",
@@ -6287,7 +6287,7 @@
       "sentence": "This work extends prior evidence indicating that short-term rapamycin treatment can improve health in mice, including one experiment suggesting that 4 mg/kg rapamycin every other day for 6 weeks enhanced survival until around 30 months of age in a small cohort ( Chen et al., 2009 ), and studies reporting improvements in cardiac ( Dai et al., 2014 ; Flynn et al., 2013 ) and immune ( Chen et al., 2009 ) function following transient treatment with rapamycin.",
       "context_window": "iment suggesting that 4 mg/kg rapamycin every other day for 6 weeks enhanced survival until around 30 months of age in a small",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -6305,7 +6305,7 @@
       "sentence": "This work extends prior evidence indicating that short-term rapamycin treatment can improve health in mice, including one experiment suggesting that 4 mg/kg rapamycin every other day for 6 weeks enhanced survival until around 30 months of age in a small cohort ( Chen et al., 2009 ), and studies reporting improvements in cardiac ( Dai et al., 2014 ; Flynn et al., 2013 ) and immune ( Chen et al., 2009 ) function following transient treatment with rapamycin.",
       "context_window": "every other day for 6 weeks enhanced survival until around 30 months of age in a small cohort ( Chen et al., 2009 ), and studies",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"

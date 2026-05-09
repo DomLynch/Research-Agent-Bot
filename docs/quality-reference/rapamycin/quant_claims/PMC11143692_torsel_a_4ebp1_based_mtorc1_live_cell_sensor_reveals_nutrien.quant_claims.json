@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11143692_torsel_a_4ebp1_based_mtorc1_live_cell_sensor_reveals_nutrien",
   "doi": "10.1186/s13578-024-01250-4",
-  "extracted_at": "2026-05-05T15:22:50+00:00",
+  "extracted_at": "2026-05-09T10:18:16+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 25,
@@ -493,7 +493,7 @@
       "context_window": "paired Student\u2019s t-test. ns, no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001 Design and characterization of",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -511,7 +511,7 @@
       "context_window": "t\u2019s t-test. ns, no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001 Design and characterization of TORSEL. ( A",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -529,7 +529,7 @@
       "context_window": ", no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001 Design and characterization of TORSEL. ( A ) Schematic dia",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -564,7 +564,7 @@
       "sentence": "Statistical analysis was performed using two-tailed unpaired Student\u2019s t-test. ns, no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001\n\nTo determine whether TORSEL puncta formation is determined by the specific regulation of 4EBP1 phosphorylation by mTORC1, phosphomimetic and nonphosphorylatable mutants of 4EBP1 with corresponding mutations in TORSEL at four major mTORC1 sites (Thr37, Thr46, Ser65, and Thr70) were generated and expressed by the Tet-On expression system [ 33 , 34 ] (Fig.",
       "context_window": "paired Student\u2019s t-test. ns, no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001 To determine whether TORSEL pu",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "4E-BP1 phosphorylation",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -582,7 +582,7 @@
       "sentence": "Statistical analysis was performed using two-tailed unpaired Student\u2019s t-test. ns, no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001\n\nTo determine whether TORSEL puncta formation is determined by the specific regulation of 4EBP1 phosphorylation by mTORC1, phosphomimetic and nonphosphorylatable mutants of 4EBP1 with corresponding mutations in TORSEL at four major mTORC1 sites (Thr37, Thr46, Ser65, and Thr70) were generated and expressed by the Tet-On expression system [ 33 , 34 ] (Fig.",
       "context_window": "t\u2019s t-test. ns, no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001 To determine whether TORSEL puncta formatio",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "4E-BP1 phosphorylation",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -600,7 +600,7 @@
       "sentence": "Statistical analysis was performed using two-tailed unpaired Student\u2019s t-test. ns, no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001\n\nTo determine whether TORSEL puncta formation is determined by the specific regulation of 4EBP1 phosphorylation by mTORC1, phosphomimetic and nonphosphorylatable mutants of 4EBP1 with corresponding mutations in TORSEL at four major mTORC1 sites (Thr37, Thr46, Ser65, and Thr70) were generated and expressed by the Tet-On expression system [ 33 , 34 ] (Fig.",
       "context_window": ", no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001 To determine whether TORSEL puncta formation is determined",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "4E-BP1 phosphorylation",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -960,7 +960,7 @@
       "sentence": "The red-highlighted inhibitors inhibit mTORC1; red dots denote known PI3K/AKT/mTOR inhibitors; cyan dots denote inhibitors that target mTORC1 upstream signaling as referenced in published literature summarized in Table S4 ; gray dots indicate no or weak inhibitory activity; and the dotted line shows the 30% threshold for screening. ( K ) IB validation of mTORC1 inhibition by positive hits targeting mTORC1 upstream in 293T cells. ( L ) Flow diagram of TORSEL delivery in mouse liver tissue (HDI: hydrodynamic injection, FS: frozen sectioning). ( M ) Representative images from frozen sections of mouse livers expressing TORSEL (left) and quantified punctate cells (right).",
       "context_window": "or weak inhibitory activity; and the dotted line shows the 30% threshold for screening. ( K ) IB validation of mTORC1 inhi",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "mTOR inhibition",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1392,7 +1392,7 @@
       "sentence": "The red-highlighted inhibitors inhibit mTORC1; red dots denote known PI3K/AKT/mTOR inhibitors; cyan dots denote inhibitors that target mTORC1 upstream signaling as referenced in published literature summarized in Table S4 ; gray dots indicate no or weak inhibitory activity; and the dotted line shows the 30% threshold for screening. ( K ) IB validation of mTORC1 inhibition by positive hits targeting mTORC1 upstream in 293T cells. ( L ) Flow diagram of TORSEL delivery in mouse liver tissue (HDI: hydrodynamic injection, FS: frozen sectioning). ( M ) Representative images from frozen sections of mouse livers expressing TORSEL (left) and quantified punctate cells (right).",
       "context_window": "or weak inhibitory activity; and the dotted line shows the 30% threshold for screening. ( K ) IB validation of mTORC1 inhi",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "mTOR inhibition",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1573,7 +1573,7 @@
       "context_window": "s performed using two-tailed unpaired Student\u2019s t-test. *** P < 0.001 Modulation of TORSEL by protein phosphatases. ( A ) Diagra",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1752,7 +1752,7 @@
       "sentence": "Statistical analysis was performed using two-tailed unpaired Student\u2019s t-test. ns, no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001\n\nAA sensor induction by HDACis contributes to mTORC1 inhibition. ( A ) Gene expression profiling of panobinostat-treated 293T cells.",
       "context_window": "paired Student\u2019s t-test. ns, no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001 AA sensor induction by HDACis",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "mTOR inhibition",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1770,7 +1770,7 @@
       "sentence": "Statistical analysis was performed using two-tailed unpaired Student\u2019s t-test. ns, no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001\n\nAA sensor induction by HDACis contributes to mTORC1 inhibition. ( A ) Gene expression profiling of panobinostat-treated 293T cells.",
       "context_window": "t\u2019s t-test. ns, no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001 AA sensor induction by HDACis contributes t",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "mTOR inhibition",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1788,7 +1788,7 @@
       "sentence": "Statistical analysis was performed using two-tailed unpaired Student\u2019s t-test. ns, no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001\n\nAA sensor induction by HDACis contributes to mTORC1 inhibition. ( A ) Gene expression profiling of panobinostat-treated 293T cells.",
       "context_window": ", no statistical significance, * P < 0.05, ** P < 0.01, *** P < 0.001 AA sensor induction by HDACis contributes to mTORC1 inhibi",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "mTOR inhibition",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"

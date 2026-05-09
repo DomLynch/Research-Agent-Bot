@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni",
   "doi": "10.1111/acel.12496",
-  "extracted_at": "2026-05-05T15:22:46+00:00",
+  "extracted_at": "2026-05-09T10:18:22+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 70,
@@ -23,7 +23,7 @@
       "context_window": "edian lifespan in males only. Metformin alone, at a dose of 0.1% in the diet, did not significantly extend lifespan. Metform",
       "claim_role": "dose",
       "endpoint": "lifespan",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -41,7 +41,7 @@
       "context_window": "the diet, did not significantly extend lifespan. Metformin (0.1%) combined with rapamycin (14 ppm) robustly extended lifespa",
       "claim_role": "unknown",
       "endpoint": "lifespan",
-      "arm": "metformin",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1103,9 +1103,9 @@
       "context_window": "a also had a higher percentage increase in median lifespan (23%) than females that had received rapamycin alone in the prev",
       "claim_role": "effect",
       "endpoint": "lifespan",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-6993",
@@ -1121,9 +1121,9 @@
       "context_window": "ed rapamycin alone in the previous C2006 and C2009 cohorts (18% and 21%, respectively), but the difference did not reach si",
       "claim_role": "effect",
       "endpoint": "lifespan",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-7001",
@@ -1139,9 +1139,9 @@
       "context_window": "ycin alone in the previous C2006 and C2009 cohorts (18% and 21%, respectively), but the difference did not reach significan",
       "claim_role": "effect",
       "endpoint": "lifespan",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-7266",
@@ -1787,7 +1787,7 @@
       "context_window": "gnificant effects on male mice at each site, ranging from a 9% increase at UM ( P = 0.003) to 26% at TJL, with an average",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1805,7 +1805,7 @@
       "context_window": "male mice at each site, ranging from a 9% increase at UM ( P = 0.003) to 26% at TJL, with an average increase of 19%, only sligh",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1823,7 +1823,7 @@
       "context_window": "each site, ranging from a 9% increase at UM ( P = 0.003) to 26% at TJL, with an average increase of 19%, only slightly less",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1841,7 +1841,7 @@
       "context_window": "UM ( P = 0.003) to 26% at TJL, with an average increase of 19%, only slightly less than the 23% increase produced by the h",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1859,7 +1859,7 @@
       "context_window": "ith an average increase of 19%, only slightly less than the 23% increase produced by the highest dose of rapamycin tested i",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1895,7 +1895,7 @@
       "context_window": "\u2010Montalvo et al ., 2013 ) at a dose of 1000 ppm, started at 54 weeks of age, leading to an increase in mean lifespan of 5.8%. Th",
       "claim_role": "protocol",
       "endpoint": "lifespan",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1913,7 +1913,7 @@
       "context_window": "54 weeks of age, leading to an increase in mean lifespan of 5.8%. This increase was deemed to be significant using the Gehan",
       "claim_role": "duration",
       "endpoint": "lifespan",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },

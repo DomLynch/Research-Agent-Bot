@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte",
   "doi": "10.18632/aging.206235",
-  "extracted_at": "2026-05-06T20:10:54+00:00",
+  "extracted_at": "2026-05-09T10:18:18+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 104,
@@ -60,7 +60,7 @@
       "sentence": "Visceral adiposity did not change significantly (\u03b7 p 2 = 0.001, p = 0.942), and changes in blood biomarkers remained within normal ranges.",
       "context_window": "eral adiposity did not change significantly (\u03b7 p 2 = 0.001, p = 0.942), and changes in blood biomarkers remained within normal ra",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -78,10 +78,10 @@
       "sentence": "Lean tissue mass (\u03b7 p 2 = 0.202, p = 0.013) and self-reported pain (\u03b7 p 2 = 0.168, p = 0.015) improved significantly for women using 10 mg rapamycin.",
       "context_window": "ined within normal ranges. Lean tissue mass (\u03b7 p 2 = 0.202, p = 0.013) and self-reported pain (\u03b7 p 2 = 0.168, p = 0.015) improved",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-896",
@@ -96,10 +96,10 @@
       "sentence": "Lean tissue mass (\u03b7 p 2 = 0.202, p = 0.013) and self-reported pain (\u03b7 p 2 = 0.168, p = 0.015) improved significantly for women using 10 mg rapamycin.",
       "context_window": "= 0.202, p = 0.013) and self-reported pain (\u03b7 p 2 = 0.168, p = 0.015) improved significantly for women using 10 mg rapamycin. Se",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "self-reported pain",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-946",
@@ -114,10 +114,10 @@
       "sentence": "Lean tissue mass (\u03b7 p 2 = 0.202, p = 0.013) and self-reported pain (\u03b7 p 2 = 0.168, p = 0.015) improved significantly for women using 10 mg rapamycin.",
       "context_window": "= 0.168, p = 0.015) improved significantly for women using 10 mg rapamycin. Self-reported emotional well-being (\u03b7 p 2 = 0.10",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "self-reported pain",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-1014",
@@ -132,10 +132,10 @@
       "sentence": "Self-reported emotional well-being (\u03b7 p 2 = 0.108, p = 0.023) and general health (\u03b7 p 2 = 0.166, p = 0.004) also improved for those using 5 mg rapamycin.",
       "context_window": "pamycin. Self-reported emotional well-being (\u03b7 p 2 = 0.108, p = 0.023) and general health (\u03b7 p 2 = 0.166, p = 0.004) also improve",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-1060",
@@ -150,10 +150,10 @@
       "sentence": "Self-reported emotional well-being (\u03b7 p 2 = 0.108, p = 0.023) and general health (\u03b7 p 2 = 0.166, p = 0.004) also improved for those using 5 mg rapamycin.",
       "context_window": "p 2 = 0.108, p = 0.023) and general health (\u03b7 p 2 = 0.166, p = 0.004) also improved for those using 5 mg rapamycin. No other sig",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-1101",
@@ -168,10 +168,10 @@
       "sentence": "Self-reported emotional well-being (\u03b7 p 2 = 0.108, p = 0.023) and general health (\u03b7 p 2 = 0.166, p = 0.004) also improved for those using 5 mg rapamycin.",
       "context_window": "th (\u03b7 p 2 = 0.166, p = 0.004) also improved for those using 5 mg rapamycin. No other significant effects were observed. Con",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-1228",
@@ -186,7 +186,7 @@
       "sentence": "Conclusions: Low-dose, intermittent rapamycin administration over 48 weeks is relatively safe in healthy, normative-aging adults, and was associated with significant improvements in lean tissue mass and pain in women.",
       "context_window": "sions: Low-dose, intermittent rapamycin administration over 48 weeks is relatively safe in healthy, normative-aging adults, and",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -492,7 +492,7 @@
       "sentence": "All assessments were performed for all randomization groups at baseline, after 24 weeks, and after 48 weeks of rapamycin treatment, and included comprehensive blood testing, DXA body composition scans, and established self-report surveys (SF36 and WOMAC scales).",
       "context_window": "e performed for all randomization groups at baseline, after 24 weeks, and after 48 weeks of rapamycin treatment, and included co",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -510,7 +510,7 @@
       "sentence": "All assessments were performed for all randomization groups at baseline, after 24 weeks, and after 48 weeks of rapamycin treatment, and included comprehensive blood testing, DXA body composition scans, and established self-report surveys (SF36 and WOMAC scales).",
       "context_window": "randomization groups at baseline, after 24 weeks, and after 48 weeks of rapamycin treatment, and included comprehensive blood te",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1266,10 +1266,10 @@
       "sentence": "Phenotypic hallmarks of biological aging were evaluated using DXA scans of body composition after 24 and 48 weeks of treatment, specifically for measures of visceral adipose tissue (VAT), bone mineral content (BMC), bone mineral density (BMD), and lean tissue mass (LTM).",
       "context_window": "evaluated using DXA scans of body composition after 24 and 48 weeks of treatment, specifically for measures of visceral adipose",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-3283",
@@ -1320,7 +1320,7 @@
       "sentence": "While the small sample sizes in this study produced predictably large 95% confidence intervals, significant p -values were nonetheless observed for measures of decreased bone mineral density (OR = 0.24, 95% CI = 0.06-0.93, p = 0.04) and for increased lean tissue mass in females (OR = 28, 95% CI = 2.42-323.7, p = 0.008).\n\n* p \u2264 0.05.",
       "context_window": "small sample sizes in this study produced predictably large 95% confidence intervals, significant p -values were nonetheles",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1338,7 +1338,7 @@
       "sentence": "While the small sample sizes in this study produced predictably large 95% confidence intervals, significant p -values were nonetheless observed for measures of decreased bone mineral density (OR = 0.24, 95% CI = 0.06-0.93, p = 0.04) and for increased lean tissue mass in females (OR = 28, 95% CI = 2.42-323.7, p = 0.008).\n\n* p \u2264 0.05.",
       "context_window": "ss observed for measures of decreased bone mineral density (OR = 0.24, 95% CI = 0.06-0.93, p = 0.04) and for increased lean tissu",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1356,7 +1356,7 @@
       "sentence": "While the small sample sizes in this study produced predictably large 95% confidence intervals, significant p -values were nonetheless observed for measures of decreased bone mineral density (OR = 0.24, 95% CI = 0.06-0.93, p = 0.04) and for increased lean tissue mass in females (OR = 28, 95% CI = 2.42-323.7, p = 0.008).\n\n* p \u2264 0.05.",
       "context_window": "for measures of decreased bone mineral density (OR = 0.24, 95% CI = 0.06-0.93, p = 0.04) and for increased lean tissue mas",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1374,7 +1374,7 @@
       "sentence": "While the small sample sizes in this study produced predictably large 95% confidence intervals, significant p -values were nonetheless observed for measures of decreased bone mineral density (OR = 0.24, 95% CI = 0.06-0.93, p = 0.04) and for increased lean tissue mass in females (OR = 28, 95% CI = 2.42-323.7, p = 0.008).\n\n* p \u2264 0.05.",
       "context_window": "reased bone mineral density (OR = 0.24, 95% CI = 0.06-0.93, p = 0.04) and for increased lean tissue mass in females (OR = 28, 95",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1392,7 +1392,7 @@
       "sentence": "While the small sample sizes in this study produced predictably large 95% confidence intervals, significant p -values were nonetheless observed for measures of decreased bone mineral density (OR = 0.24, 95% CI = 0.06-0.93, p = 0.04) and for increased lean tissue mass in females (OR = 28, 95% CI = 2.42-323.7, p = 0.008).\n\n* p \u2264 0.05.",
       "context_window": "3, p = 0.04) and for increased lean tissue mass in females (OR = 28, 95% CI = 2.42-323.7, p = 0.008). * p \u2264 0.05. Subsequent",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1410,7 +1410,7 @@
       "sentence": "While the small sample sizes in this study produced predictably large 95% confidence intervals, significant p -values were nonetheless observed for measures of decreased bone mineral density (OR = 0.24, 95% CI = 0.06-0.93, p = 0.04) and for increased lean tissue mass in females (OR = 28, 95% CI = 2.42-323.7, p = 0.008).\n\n* p \u2264 0.05.",
       "context_window": "04) and for increased lean tissue mass in females (OR = 28, 95% CI = 2.42-323.7, p = 0.008). * p \u2264 0.05. Subsequent simpl",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1428,7 +1428,7 @@
       "sentence": "While the small sample sizes in this study produced predictably large 95% confidence intervals, significant p -values were nonetheless observed for measures of decreased bone mineral density (OR = 0.24, 95% CI = 0.06-0.93, p = 0.04) and for increased lean tissue mass in females (OR = 28, 95% CI = 2.42-323.7, p = 0.008).\n\n* p \u2264 0.05.",
       "context_window": "lean tissue mass in females (OR = 28, 95% CI = 2.42-323.7, p = 0.008). * p \u2264 0.05. Subsequent simplified analysis (following m",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1446,7 +1446,7 @@
       "sentence": "While the small sample sizes in this study produced predictably large 95% confidence intervals, significant p -values were nonetheless observed for measures of decreased bone mineral density (OR = 0.24, 95% CI = 0.06-0.93, p = 0.04) and for increased lean tissue mass in females (OR = 28, 95% CI = 2.42-323.7, p = 0.008).\n\n* p \u2264 0.05.",
       "context_window": "ss in females (OR = 28, 95% CI = 2.42-323.7, p = 0.008). * p \u2264 0.05. Subsequent simplified analysis (following multiple statis",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1788,7 +1788,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "sition measures in response to rapamycin use. Females using 10 mg of rapamycin had significant improvements in lean tissue ma",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1806,7 +1806,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1824,7 +1824,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "an tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week:",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1842,7 +1842,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "d 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1860,7 +1860,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "th placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018)",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1878,7 +1878,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "(24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg g",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1896,7 +1896,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "2 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: m",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1914,7 +1914,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": ", p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.221",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1932,7 +1932,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1950,7 +1950,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: m",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1968,7 +1968,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "3-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1986,7 +1986,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "d 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026)",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -2004,7 +2004,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "s (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ). Im",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -2022,7 +2022,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": "4 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ). Improvements in vis",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -2040,7 +2040,7 @@
       "sentence": "Females using 10 mg of rapamycin had significant improvements in lean tissue mass at 24 and 48 weeks relative to both placebo (24 week: md = 3.60472 (95% CI = 0.0913-7.1182), p = 0.043; 48 week: md = 6.194 (95% CI = 0.8773-11.5105), p = 0.018) and 5mg groups (24 week: md = 3.774 (95% CI = 0.3271-7.2212), p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ).",
       "context_window": ", p = 0.028; 48 week: md = 5.565 (95% CI = 0.5311-10.5979), p = 0.026) ( A ). Improvements in visceral adiposity (measured by VAT",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -2058,7 +2058,7 @@
       "sentence": "Improvements in visceral adiposity (measured by VAT) were clear for males in the 5 mg cohort relative to the 10 mg cohort ( md = -19.520 (95% CI = -37.6513--1.3893), p = 0.031) but not placebo ( md = -11.866 (95% CI = -30.4152-6.6813), p = 0.362) at 24 weeks, but reverted to non-significance after 48 weeks ( B ).",
       "context_window": "ral adiposity (measured by VAT) were clear for males in the 5 mg cohort relative to the 10 mg cohort ( md = -19.520 (95% CI",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -2076,7 +2076,7 @@
       "sentence": "Improvements in visceral adiposity (measured by VAT) were clear for males in the 5 mg cohort relative to the 10 mg cohort ( md = -19.520 (95% CI = -37.6513--1.3893), p = 0.031) but not placebo ( md = -11.866 (95% CI = -30.4152-6.6813), p = 0.362) at 24 weeks, but reverted to non-significance after 48 weeks ( B ).",
       "context_window": "AT) were clear for males in the 5 mg cohort relative to the 10 mg cohort ( md = -19.520 (95% CI = -37.6513--1.3893), p = 0.03",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -2094,7 +2094,7 @@
       "sentence": "Improvements in visceral adiposity (measured by VAT) were clear for males in the 5 mg cohort relative to the 10 mg cohort ( md = -19.520 (95% CI = -37.6513--1.3893), p = 0.031) but not placebo ( md = -11.866 (95% CI = -30.4152-6.6813), p = 0.362) at 24 weeks, but reverted to non-significance after 48 weeks ( B ).",
       "context_window": "he 5 mg cohort relative to the 10 mg cohort ( md = -19.520 (95% CI = -37.6513--1.3893), p = 0.031) but not placebo ( md = -",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -2112,7 +2112,7 @@
       "sentence": "Improvements in visceral adiposity (measured by VAT) were clear for males in the 5 mg cohort relative to the 10 mg cohort ( md = -19.520 (95% CI = -37.6513--1.3893), p = 0.031) but not placebo ( md = -11.866 (95% CI = -30.4152-6.6813), p = 0.362) at 24 weeks, but reverted to non-significance after 48 weeks ( B ).",
       "context_window": "he 10 mg cohort ( md = -19.520 (95% CI = -37.6513--1.3893), p = 0.031) but not placebo ( md = -11.866 (95% CI = -30.4152-6.6813),",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -2130,7 +2130,7 @@
       "sentence": "Improvements in visceral adiposity (measured by VAT) were clear for males in the 5 mg cohort relative to the 10 mg cohort ( md = -19.520 (95% CI = -37.6513--1.3893), p = 0.031) but not placebo ( md = -11.866 (95% CI = -30.4152-6.6813), p = 0.362) at 24 weeks, but reverted to non-significance after 48 weeks ( B ).",
       "context_window": "7.6513--1.3893), p = 0.031) but not placebo ( md = -11.866 (95% CI = -30.4152-6.6813), p = 0.362) at 24 weeks, but reverted",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -2148,7 +2148,7 @@
       "sentence": "Improvements in visceral adiposity (measured by VAT) were clear for males in the 5 mg cohort relative to the 10 mg cohort ( md = -19.520 (95% CI = -37.6513--1.3893), p = 0.031) but not placebo ( md = -11.866 (95% CI = -30.4152-6.6813), p = 0.362) at 24 weeks, but reverted to non-significance after 48 weeks ( B ).",
       "context_window": "but not placebo ( md = -11.866 (95% CI = -30.4152-6.6813), p = 0.362) at 24 weeks, but reverted to non-significance after 48 wee",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -2166,7 +2166,7 @@
       "sentence": "Improvements in visceral adiposity (measured by VAT) were clear for males in the 5 mg cohort relative to the 10 mg cohort ( md = -19.520 (95% CI = -37.6513--1.3893), p = 0.031) but not placebo ( md = -11.866 (95% CI = -30.4152-6.6813), p = 0.362) at 24 weeks, but reverted to non-significance after 48 weeks ( B ).",
       "context_window": "bo ( md = -11.866 (95% CI = -30.4152-6.6813), p = 0.362) at 24 weeks, but reverted to non-significance after 48 weeks ( B ). Whi",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -2184,7 +2184,7 @@
       "sentence": "Improvements in visceral adiposity (measured by VAT) were clear for males in the 5 mg cohort relative to the 10 mg cohort ( md = -19.520 (95% CI = -37.6513--1.3893), p = 0.031) but not placebo ( md = -11.866 (95% CI = -30.4152-6.6813), p = 0.362) at 24 weeks, but reverted to non-significance after 48 weeks ( B ).",
       "context_window": "0.362) at 24 weeks, but reverted to non-significance after 48 weeks ( B ). While no other measures showed significant differenc",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -2346,7 +2346,7 @@
       "sentence": "As established blood biomarkers for evaluating rapamycin\u2019s longevity impacts have not yet been well established, we examined comprehensive blood work panels for overall health and longevity signals at 0 weeks, 24 weeks, and 48 weeks of the study.",
       "context_window": "ood work panels for overall health and longevity signals at 0 weeks, 24 weeks, and 48 weeks of the study. These same tests were",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "blood biomarkers",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -2364,7 +2364,7 @@
       "sentence": "As established blood biomarkers for evaluating rapamycin\u2019s longevity impacts have not yet been well established, we examined comprehensive blood work panels for overall health and longevity signals at 0 weeks, 24 weeks, and 48 weeks of the study.",
       "context_window": "panels for overall health and longevity signals at 0 weeks, 24 weeks, and 48 weeks of the study. These same tests were utilized",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "blood biomarkers",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -2382,7 +2382,7 @@
       "sentence": "As established blood biomarkers for evaluating rapamycin\u2019s longevity impacts have not yet been well established, we examined comprehensive blood work panels for overall health and longevity signals at 0 weeks, 24 weeks, and 48 weeks of the study.",
       "context_window": "rall health and longevity signals at 0 weeks, 24 weeks, and 48 weeks of the study. These same tests were utilized for safety mon",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "blood biomarkers",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3030,10 +3030,10 @@
       "sentence": "However, multi-faceted analysis of SF-36 scores (detailed in Tables 3 , 4 and Supplementary Table 9 ) suggested robustly significant improvements in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ).",
       "context_window": "ts in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.7",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-10026",
@@ -3048,10 +3048,10 @@
       "sentence": "However, multi-faceted analysis of SF-36 scores (detailed in Tables 3 , 4 and Supplementary Table 9 ) suggested robustly significant improvements in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ).",
       "context_window": "males over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-pct-10069",
@@ -3066,10 +3066,10 @@
       "sentence": "However, multi-faceted analysis of SF-36 scores (detailed in Tables 3 , 4 and Supplementary Table 9 ) suggested robustly significant improvements in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ).",
       "context_window": "(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-10093",
@@ -3084,10 +3084,10 @@
       "sentence": "However, multi-faceted analysis of SF-36 scores (detailed in Tables 3 , 4 and Supplementary Table 9 ) suggested robustly significant improvements in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ).",
       "context_window": "15, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-pct-10121",
@@ -3102,10 +3102,10 @@
       "sentence": "However, multi-faceted analysis of SF-36 scores (detailed in Tables 3 , 4 and Supplementary Table 9 ) suggested robustly significant improvements in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ).",
       "context_window": "6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-10145",
@@ -3120,10 +3120,10 @@
       "sentence": "However, multi-faceted analysis of SF-36 scores (detailed in Tables 3 , 4 and Supplementary Table 9 ) suggested robustly significant improvements in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ).",
       "context_window": "2.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-10242",
@@ -3138,10 +3138,10 @@
       "sentence": "However, multi-faceted analysis of SF-36 scores (detailed in Tables 3 , 4 and Supplementary Table 9 ) suggested robustly significant improvements in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ).",
       "context_window": "d in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166;",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-10281",
@@ -3156,10 +3156,10 @@
       "sentence": "However, multi-faceted analysis of SF-36 scores (detailed in Tables 3 , 4 and Supplementary Table 9 ) suggested robustly significant improvements in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ).",
       "context_window": "genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-pct-10324",
@@ -3174,10 +3174,10 @@
       "sentence": "However, multi-faceted analysis of SF-36 scores (detailed in Tables 3 , 4 and Supplementary Table 9 ) suggested robustly significant improvements in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ).",
       "context_window": "57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-10348",
@@ -3192,10 +3192,10 @@
       "sentence": "However, multi-faceted analysis of SF-36 scores (detailed in Tables 3 , 4 and Supplementary Table 9 ) suggested robustly significant improvements in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ).",
       "context_window": "04, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-pct-10376",
@@ -3210,10 +3210,10 @@
       "sentence": "However, multi-faceted analysis of SF-36 scores (detailed in Tables 3 , 4 and Supplementary Table 9 ) suggested robustly significant improvements in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ).",
       "context_window": "5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ). Similarly, SF-3",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-10400",
@@ -3228,10 +3228,10 @@
       "sentence": "However, multi-faceted analysis of SF-36 scores (detailed in Tables 3 , 4 and Supplementary Table 9 ) suggested robustly significant improvements in measures of pain for females over time at both 24 and 48 weeks ( F(4, 66) = 3.331, p = 0.015, \u03b7 p 2 = 0.168; 24w: md = 6.765 (95% CI = 1.315-12.215), p = 0.011; 48w: md = 8.071 (95% CI = 3.044-13.098), p < 0.001 Table 3 and Figure 2A ), and in measures of General Health for all genders in only the 5 mg group ( F(1.757, 57.994) = 6.582, p = 0.004, \u03b7 p 2 = 0.166; 24w: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ).",
       "context_window": "1.376), p = 0.033; 48w: md = 5.882 (95% CI = 1.350-10.415), p = 0.007; Figure 2B ). Similarly, SF-36 measures of Emotional Well-b",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-10505",
@@ -3246,10 +3246,10 @@
       "sentence": "Similarly, SF-36 measures of Emotional Well-being improved for all genders after 48 weeks for the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.987, p = 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: F(2, 58) = 4.265, p = 0.019, \u03b7 p 2 = 0.128; md = 4.267 (95% CI = 0.432-8.102), p = 0.025; Figure 2C , Table 4 and Supplementary Table 9 ).",
       "context_window": "ures of Emotional Well-being improved for all genders after 48 weeks for the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.98",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-10522",
@@ -3264,10 +3264,10 @@
       "sentence": "Similarly, SF-36 measures of Emotional Well-being improved for all genders after 48 weeks for the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.987, p = 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: F(2, 58) = 4.265, p = 0.019, \u03b7 p 2 = 0.128; md = 4.267 (95% CI = 0.432-8.102), p = 0.025; Figure 2C , Table 4 and Supplementary Table 9 ).",
       "context_window": "Well-being improved for all genders after 48 weeks for the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.987, p = 0.023,",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-10552",
@@ -3282,10 +3282,10 @@
       "sentence": "Similarly, SF-36 measures of Emotional Well-being improved for all genders after 48 weeks for the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.987, p = 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: F(2, 58) = 4.265, p = 0.019, \u03b7 p 2 = 0.128; md = 4.267 (95% CI = 0.432-8.102), p = 0.025; Figure 2C , Table 4 and Supplementary Table 9 ).",
       "context_window": "enders after 48 weeks for the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.987, p = 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-10576",
@@ -3300,10 +3300,10 @@
       "sentence": "Similarly, SF-36 measures of Emotional Well-being improved for all genders after 48 weeks for the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.987, p = 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: F(2, 58) = 4.265, p = 0.019, \u03b7 p 2 = 0.128; md = 4.267 (95% CI = 0.432-8.102), p = 0.025; Figure 2C , Table 4 and Supplementary Table 9 ).",
       "context_window": "r the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.987, p = 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95% CI = 0.056-10.297), p = 0.0",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-pct-10614",
@@ -3318,10 +3318,10 @@
       "sentence": "Similarly, SF-36 measures of Emotional Well-being improved for all genders after 48 weeks for the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.987, p = 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: F(2, 58) = 4.265, p = 0.019, \u03b7 p 2 = 0.128; md = 4.267 (95% CI = 0.432-8.102), p = 0.025; Figure 2C , Table 4 and Supplementary Table 9 ).",
       "context_window": "mg: F(2, 66) = 3.987, p = 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: F(2, 58) = 4.265, p",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-10638",
@@ -3336,10 +3336,10 @@
       "sentence": "Similarly, SF-36 measures of Emotional Well-being improved for all genders after 48 weeks for the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.987, p = 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: F(2, 58) = 4.265, p = 0.019, \u03b7 p 2 = 0.128; md = 4.267 (95% CI = 0.432-8.102), p = 0.025; Figure 2C , Table 4 and Supplementary Table 9 ).",
       "context_window": "= 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: F(2, 58) = 4.265, p = 0.019, \u03b7 p 2 = 0.128; md =",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-10676",
@@ -3354,10 +3354,10 @@
       "sentence": "Similarly, SF-36 measures of Emotional Well-being improved for all genders after 48 weeks for the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.987, p = 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: F(2, 58) = 4.265, p = 0.019, \u03b7 p 2 = 0.128; md = 4.267 (95% CI = 0.432-8.102), p = 0.025; Figure 2C , Table 4 and Supplementary Table 9 ).",
       "context_window": "% CI = 0.056-10.297), p = 0.047; placebo: F(2, 58) = 4.265, p = 0.019, \u03b7 p 2 = 0.128; md = 4.267 (95% CI = 0.432-8.102), p = 0.02",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-pct-10714",
@@ -3372,10 +3372,10 @@
       "sentence": "Similarly, SF-36 measures of Emotional Well-being improved for all genders after 48 weeks for the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.987, p = 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: F(2, 58) = 4.265, p = 0.019, \u03b7 p 2 = 0.128; md = 4.267 (95% CI = 0.432-8.102), p = 0.025; Figure 2C , Table 4 and Supplementary Table 9 ).",
       "context_window": "bo: F(2, 58) = 4.265, p = 0.019, \u03b7 p 2 = 0.128; md = 4.267 (95% CI = 0.432-8.102), p = 0.025; Figure 2C , Table 4 and Suppl",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-10737",
@@ -3390,10 +3390,10 @@
       "sentence": "Similarly, SF-36 measures of Emotional Well-being improved for all genders after 48 weeks for the 5 mg and placebo groups only (5 mg: F(2, 66) = 3.987, p = 0.023, \u03b7 p 2 = 0.108; md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: F(2, 58) = 4.265, p = 0.019, \u03b7 p 2 = 0.128; md = 4.267 (95% CI = 0.432-8.102), p = 0.025; Figure 2C , Table 4 and Supplementary Table 9 ).",
       "context_window": "= 0.019, \u03b7 p 2 = 0.128; md = 4.267 (95% CI = 0.432-8.102), p = 0.025; Figure 2C , Table 4 and Supplementary Table 9 ). No other",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-11024",
@@ -3588,7 +3588,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relat",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3606,7 +3606,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "rts were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3624,7 +3624,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "g at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: m",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3642,7 +3642,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "ining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3660,7 +3660,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "t thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) (",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3678,7 +3678,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "r (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), howe",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3696,7 +3696,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "2 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "general health",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3714,7 +3714,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3732,7 +3732,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "er, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3750,7 +3750,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placeb",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3768,7 +3768,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3786,7 +3786,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "n users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3804,7 +3804,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "ps after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3822,7 +3822,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "76 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference,",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3840,7 +3840,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "97), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01. Er",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3858,7 +3858,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "= 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01. Error bars represent standard error of the me",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3876,7 +3876,7 @@
       "sentence": "Additionally, improvements in measures of General Health reports were specific to the 5mg rapamycin group, increasing at 24 weeks and remaining relatively constant thereafter (24 weeks: md = 5.882 (95% CI = 0.388-11.376), p = 0.033; 48 weeks: md = 5.882 (95% CI = 1.350-10.415), p = 0.007) ( B ), however, improvements in Emotional Well-being were only seen for 5mg rapamycin users and placebo groups after 48 weeks (5mg: md = 5.176 (95% CI = 0.056-10.297), p = 0.047; placebo: md = 4.267 (95% CI = 0.432-8.102), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01.",
       "context_window": "), p = 0.025) ( C ). md = mean difference, * = p \u2264 0.05, ** p \u2264 0.01. Error bars represent standard error of the mean.",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "emotional well-being",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3948,7 +3948,7 @@
       "sentence": "Nonetheless, we saw strong improvements in the secondary outcome measure of lean tissue mass, and in self-reported pain symptoms for women taking 10 mg of compounded rapamycin (equivalent to ~3.33 mgs of generic Sirolimus).",
       "context_window": "e mass, and in self-reported pain symptoms for women taking 10 mg of compounded rapamycin (equivalent to ~3.33 mgs of generic",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "self-reported pain",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"

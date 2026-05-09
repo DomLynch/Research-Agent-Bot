@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme",
   "doi": "10.1038/s43856-025-00904-9",
-  "extracted_at": "2026-05-04T10:01:43+00:00",
+  "extracted_at": "2026-05-09T10:18:18+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 22,
@@ -43,9 +43,9 @@
       "context_window": "Scale Score of 0.5-1. All participants received rapamycin (1 mg/day) for eight weeks. The primary aim was to evaluate rapamycin",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-msd-912",
@@ -62,9 +62,9 @@
       "context_window": "rkers in the CSF and plasma. In ten participants (mean age 74 \u00b1 4 years, 60% female), we find that rapamycin is not detectabl",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-917",
@@ -80,9 +80,9 @@
       "context_window": "in the CSF and plasma. In ten participants (mean age 74 \u00b1 4 years, 60% female), we find that rapamycin is not detectable in t",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-926",
@@ -98,9 +98,9 @@
       "context_window": "SF and plasma. In ten participants (mean age 74 \u00b1 4 years, 60% female), we find that rapamycin is not detectable in the CS",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-1300",
@@ -133,10 +133,10 @@
       "sentence": "The most commonly reported side effects are mouth sores, acneiform rash, hypercholesterolemia, and hyperlipidemia, which occur in 5-20% of patients 7 , 19 .",
       "context_window": "hypercholesterolemia, and hyperlipidemia, which occur in 5-20% of patients 7 , 19 . However, most safety data have been co",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "hyperlipidemia",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-4440",
@@ -224,9 +224,9 @@
       "context_window": "onduct an eight-week open-label pilot trial with rapamycin (1 mg/day) in participants with a clinical diagnosis of mild cognitiv",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-5571",
@@ -242,9 +242,9 @@
       "context_window": "e impairment (MCI) or dementia of the Alzheimer\u2019s type. The 1 mg/day dose of rapamycin is selected based on our prior data in ol",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-msd-1900",
@@ -368,10 +368,10 @@
       "sentence": "Within 15 days of Baseline Visit 2, participants began the eight-week treatment regimen of 1 mg of rapamycin (Rapamune\u2122 (sirolimus), Pfizer) per day, administered in the morning after an overnight fast.",
       "context_window": "cognition and functional status (Baseline Visit 2). Within 15 days of Baseline Visit 2, participants began the eight-week trea",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-4004",
@@ -386,10 +386,10 @@
       "sentence": "Within 15 days of Baseline Visit 2, participants began the eight-week treatment regimen of 1 mg of rapamycin (Rapamune\u2122 (sirolimus), Pfizer) per day, administered in the morning after an overnight fast.",
       "context_window": "t 2, participants began the eight-week treatment regimen of 1 mg of rapamycin (Rapamune\u2122 (sirolimus), Pfizer) per day, admin",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-5354",
@@ -1169,9 +1169,9 @@
       "context_window": "nsion has been reported as an adverse event, occurring in 8-58% of treated individuals 55 . In our prior placebo-controlled",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-6279",
@@ -1187,9 +1187,9 @@
       "context_window": "apamycin use in transplant recipients, with an estimated 27-57% developing thrombocytopenia and/or anemia 56 , 57 . The mec",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-9793",

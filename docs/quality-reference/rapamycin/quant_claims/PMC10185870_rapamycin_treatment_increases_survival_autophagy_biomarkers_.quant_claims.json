@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10185870_rapamycin_treatment_increases_survival_autophagy_biomarkers_",
   "doi": "10.1002/prp2.1091",
-  "extracted_at": "2026-05-06T20:10:52+00:00",
+  "extracted_at": "2026-05-09T10:18:15+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 19,
@@ -440,10 +440,10 @@
       "sentence": "A total of 75 \u03bcg of protein from each sample were loaded and separated on 7.5% TGX Stain\u2010Free gel for klotho (Bio\u2010Rad Laboratories) and 12% TGX Stain\u2010Free gel for p62 and LC3B\u2010II.",
       "context_window": "\u03bcg of protein from each sample were loaded and separated on 7.5% TGX Stain\u2010Free gel for klotho (Bio\u2010Rad Laboratories) and 12",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10185870_rapamycin_treatment_increases_survival_autophagy_biomarkers_-pct-4928",
@@ -458,10 +458,10 @@
       "sentence": "A total of 75 \u03bcg of protein from each sample were loaded and separated on 7.5% TGX Stain\u2010Free gel for klotho (Bio\u2010Rad Laboratories) and 12% TGX Stain\u2010Free gel for p62 and LC3B\u2010II.",
       "context_window": "5% TGX Stain\u2010Free gel for klotho (Bio\u2010Rad Laboratories) and 12% TGX Stain\u2010Free gel for p62 and LC3B\u2010II. After separation, g",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10185870_rapamycin_treatment_increases_survival_autophagy_biomarkers_-pct-5322",
@@ -711,7 +711,7 @@
       "context_window": "control animals receiving injection vehicles. As displayed, 43% of the control animals died during the 12\u2010week evaluation p",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -747,7 +747,7 @@
       "context_window": "ated control group, decreasing to 4 surviving animals after 12 weeks. Eight mice were present in the rapamycin group, all of whi",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "vehicle",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -837,7 +837,7 @@
       "context_window": "eight is shown in (B). Results are expressed as mean \u00b1 SEM. n = 4 in control. n = 8 in rapamycin\u2010treated group. * p < 0.05 in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -855,7 +855,7 @@
       "context_window": "(B). Results are expressed as mean \u00b1 SEM. n = 4 in control. n = 8 in rapamycin\u2010treated group. * p < 0.05 in comparison with t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -873,7 +873,7 @@
       "context_window": "SEM. n = 4 in control. n = 8 in rapamycin\u2010treated group. * p < 0.05 in comparison with the control group. Figure 2 shows the e",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -909,9 +909,9 @@
       "context_window": "as mean \u00b1 SEM for serum from the test and control groups ( n = 4-8). Western blot data shown in Figure 3 depicts klotho pro",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC10185870_rapamycin_treatment_increases_survival_autophagy_biomarkers_-u-2982",
@@ -1070,10 +1070,10 @@
       "sentence": "The major findings include an observation of significantly elevated levels of LC3B\u2010II in adipose tissue and kidney from rapamycin\u2010treated mice (Figure 4A,B ); and a rapamycin treatment reduction in adipose tissue and kidney expression of p62 relative to that in the same tissues of vehicle\u2010treated control mice (Figure 4A,B ) ( p < 0.05).",
       "context_window": "me tissues of vehicle\u2010treated control mice (Figure 4A,B ) ( p < 0.05). Rapamycin treatment enhanced the level of LC3\u2010II and decr",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10185870_rapamycin_treatment_increases_survival_autophagy_biomarkers_-p-5379",
@@ -1088,7 +1088,7 @@
       "sentence": "Relative protein content of tissues were normalized to the total protein level. * p < 0.05 in comparison of p62 and LC3B\u2010II expression in selected tissues from rapamycin\u2010treated mice versus the control group.",
       "context_window": "nt of tissues were normalized to the total protein level. * p < 0.05 in comparison of p62 and LC3B\u2010II expression in selected tis",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"

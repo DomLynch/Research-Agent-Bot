@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC13097543_drug_repurposing_for_disease_modifying_effects_in_multiple_s",
   "doi": "10.1186/s40035-026-00551-7",
-  "extracted_at": "2026-05-04T10:31:45+00:00",
+  "extracted_at": "2026-05-09T10:18:20+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 8,
@@ -112,8 +112,8 @@
       "sentence": "Clinical, imaging, and biomarker outcome measures assessed in completed clinical trials for multiple system atrophy\n\nMRI: diffusion metrics (MD, FA), advanced microstructural parameters (kurtosis, axonal water fraction, global/regional atrophy fraction) in subset n = 15 (sirolimus 11, placebo 4)\n\nOCT: RNFL & macular GCC thickness in subset 10 (sirolimus 8, placebo 2)\n\nUMSARS, Unified Multiple System Atrophy Rating Scale; COMPASS-Select, Composite Autonomic Symptom Scale - Select; CGI, Clinical Global Impression; CGI-I, Clinical Global Impression-Improvement; EQ-5D, EuroQol 5-Dimension scale; BDI, Beck Depression Inventory; GDS, Geriatric Depression Scale; MSA-QoL, Multiple System Atrophy Quality of Life scale; MoCA, Montreal Cognitive Assessment; MMSE, Mini-Mental State Examination; SEADL, Schwab and England Activities of Daily Living; SMDS, Strasbourg Multiple System Atrophy Disability Scale; SARA, Scale for the Assessment and Rating of Ataxia; SCOPA-AUT, Scales for Outcomes in Parkinson\u2019s Disease-Autonomic; UPDRS, Unified Parkinson\u2019s Disease Rating Scale; UDRS, Unified Dystonia Rating Scale; H&Y, Hoehn and Yahr stage; HRV, Heart Rate Variability; VBM, Voxel-Based Morphometry; MD, Mean Diffusivity; FA, Fractional Anisotropy; MCP, Middle Cerebellar Peduncle; OCT, Optical Coherence Tomography; RNFL, Retinal Nerve Fiber Layer; GCC, Ganglion Cell Complex; NfL, Neurofilament Light chain; \u03b1Syn, alpha-synuclein; CoQ10, Coenzyme Q10; CSF, Cerebrospinal Fluid; N/A, not available\n\nAnother key consideration in evaluating therapeutic candidates for MSA is the pharmacokinetic feasibility of delivering the drug to the CNS.",
       "context_window": "water fraction, global/regional atrophy fraction) in subset n = 15 (sirolimus 11, placebo 4) OCT: RNFL & macular GCC thicknes",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "mTOR inhibition",
+      "arm": "sirolimus",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -130,10 +130,10 @@
       "sentence": "However, subsequent pharmacokinetic studies have demonstrated that sirolimus exhibits extremely limited CNS penetration, with brain concentrations reported to be less than 1% of plasma levels [ 104 ].",
       "context_window": "tration, with brain concentrations reported to be less than 1% of plasma levels [ 104 ]. Notably, this limitation is furth",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "sirolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13097543_drug_repurposing_for_disease_modifying_effects_in_multiple_s-pct-9802",

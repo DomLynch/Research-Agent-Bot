@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9679492_usnic_acid_extends_healthspan_and_improves_the_neurodegenera",
   "doi": "10.1016/j.isci.2022.105539",
-  "extracted_at": "2026-05-05T15:22:49+00:00",
+  "extracted_at": "2026-05-09T10:18:28+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 3,
@@ -184,7 +184,7 @@
       "sentence": "Figure 1 Usnic Acid extended the C. elegans lifespan and healthspan (A) Kaplan-Meier survival curves of N2 hermaphrodite worms exposed to increasing concentrations of UA from day 1 of adulthood (p < 0.05; log-rank test). (A) See Table S1 for lifespan data. (B) Quantification of \u201caging pigments\u201d by measuring lipofuscin fluorescence normalized to autoflourescence (n \u2265 20). (\u2217p < 0.05, unpaired t-test). (C) Locomotion as determined by the number of body bends per min (n \u2265 20). (\u2217p < 0.05, unpaired t-test). (D) The fertility is determined by counting the number of eggs per worm (n \u2265 10). (\u2217p < 0.05, unpaired t-test).",
       "context_window": "to increasing concentrations of UA from day 1 of adulthood (p < 0.05; log-rank test). (A) See Table S1 for lifespan data. (B) Qu",
       "claim_role": "unknown",
-      "endpoint": "lifespan",
+      "endpoint": "healthspan",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -256,7 +256,7 @@
       "sentence": "Usnic Acid extended the C. elegans lifespan and healthspan\n\n(A) Kaplan-Meier survival curves of N2 hermaphrodite worms exposed to increasing concentrations of UA from day 1 of adulthood (p < 0.05; log-rank test). (A) See Table S1 for lifespan data.\n\n(B) Quantification of \u201caging pigments\u201d by measuring lipofuscin fluorescence normalized to autoflourescence (n \u2265 20). (\u2217p < 0.05, unpaired t-test).\n\n(C) Locomotion as determined by the number of body bends per min (n \u2265 20). (\u2217p < 0.05, unpaired t-test).\n\n(D) The fertility is determined by counting the number of eggs per worm (n \u2265 10). (\u2217p < 0.05, unpaired t-test).",
       "context_window": "to increasing concentrations of UA from day 1 of adulthood (p < 0.05; log-rank test). (A) See Table S1 for lifespan data. (B) Q",
       "claim_role": "unknown",
-      "endpoint": "lifespan",
+      "endpoint": "healthspan",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -364,7 +364,7 @@
       "sentence": "Figure 2 Usnic Acid promoted lifespan through the mTOR signaling pathway (A) Survival of empty vector (EV) and let-363 RNAi worms treated with 2 \u03bcM UA and the untreated controls. (log-rank test). (B) Survival of animals treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (C) Survival of eat-2(ad1116) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (D) Survival of daf-2(e1370) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (E) Survival of skn-1(zu67) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (F) Survival of isp-1(qm150) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (A-F) See Table S1 for lifespan data.",
       "context_window": "-2(e1370) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (E) Survival of skn-1(zu67) treated with 2",
       "claim_role": "dose",
-      "endpoint": "lifespan",
+      "endpoint": "mTOR signaling",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -382,7 +382,7 @@
       "sentence": "Figure 2 Usnic Acid promoted lifespan through the mTOR signaling pathway (A) Survival of empty vector (EV) and let-363 RNAi worms treated with 2 \u03bcM UA and the untreated controls. (log-rank test). (B) Survival of animals treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (C) Survival of eat-2(ad1116) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (D) Survival of daf-2(e1370) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (E) Survival of skn-1(zu67) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (F) Survival of isp-1(qm150) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (A-F) See Table S1 for lifespan data.",
       "context_window": "n-1(zu67) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (F) Survival of isp-1(qm150) treated with",
       "claim_role": "dose",
-      "endpoint": "lifespan",
+      "endpoint": "mTOR signaling",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -400,7 +400,7 @@
       "sentence": "Figure 2 Usnic Acid promoted lifespan through the mTOR signaling pathway (A) Survival of empty vector (EV) and let-363 RNAi worms treated with 2 \u03bcM UA and the untreated controls. (log-rank test). (B) Survival of animals treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (C) Survival of eat-2(ad1116) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (D) Survival of daf-2(e1370) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (E) Survival of skn-1(zu67) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (F) Survival of isp-1(qm150) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (A-F) See Table S1 for lifespan data.",
       "context_window": "-1(qm150) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (A-F) See Table S1 for lifespan data. Usn",
       "claim_role": "dose",
-      "endpoint": "lifespan",
+      "endpoint": "mTOR signaling",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -454,7 +454,7 @@
       "sentence": "Usnic Acid promoted lifespan through the mTOR signaling pathway\n\n(A) Survival of empty vector (EV) and let-363 RNAi worms treated with 2 \u03bcM UA and the untreated controls. (log-rank test).\n\n(B) Survival of animals treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(C) Survival of eat-2(ad1116) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(D) Survival of daf-2(e1370) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(E) Survival of skn-1(zu67) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(F) Survival of isp-1(qm150) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(A-F) See Table S1 for lifespan data.",
       "context_window": "-2(e1370) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (E) Survival of skn-1(zu67) treated with",
       "claim_role": "dose",
-      "endpoint": "lifespan",
+      "endpoint": "mTOR signaling",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -472,7 +472,7 @@
       "sentence": "Usnic Acid promoted lifespan through the mTOR signaling pathway\n\n(A) Survival of empty vector (EV) and let-363 RNAi worms treated with 2 \u03bcM UA and the untreated controls. (log-rank test).\n\n(B) Survival of animals treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(C) Survival of eat-2(ad1116) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(D) Survival of daf-2(e1370) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(E) Survival of skn-1(zu67) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(F) Survival of isp-1(qm150) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(A-F) See Table S1 for lifespan data.",
       "context_window": "n-1(zu67) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (F) Survival of isp-1(qm150) treated with",
       "claim_role": "dose",
-      "endpoint": "lifespan",
+      "endpoint": "mTOR signaling",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -490,7 +490,7 @@
       "sentence": "Usnic Acid promoted lifespan through the mTOR signaling pathway\n\n(A) Survival of empty vector (EV) and let-363 RNAi worms treated with 2 \u03bcM UA and the untreated controls. (log-rank test).\n\n(B) Survival of animals treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(C) Survival of eat-2(ad1116) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(D) Survival of daf-2(e1370) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(E) Survival of skn-1(zu67) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(F) Survival of isp-1(qm150) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test).\n\n(A-F) See Table S1 for lifespan data.",
       "context_window": "-1(qm150) treated with 2 \u03bcM UA and the untreated controls. (p < 0.05; log-rank test). (A-F) See Table S1 for lifespan data. Ne",
       "claim_role": "dose",
-      "endpoint": "lifespan",
+      "endpoint": "mTOR signaling",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"

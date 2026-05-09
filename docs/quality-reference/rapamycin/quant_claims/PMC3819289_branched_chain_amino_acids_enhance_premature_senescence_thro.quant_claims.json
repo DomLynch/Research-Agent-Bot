@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3819289_branched_chain_amino_acids_enhance_premature_senescence_thro",
   "doi": "10.1371/journal.pone.0080411",
-  "extracted_at": "2026-05-05T15:22:52+00:00",
+  "extracted_at": "2026-05-09T10:18:21+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 12,
@@ -201,10 +201,10 @@
       "sentence": "After treatment of HepG2 cells with 10 \u00b5M etoposide for 2 days, we observed the cells showing the arrest of proliferation and the enlargement of cell morphology (data not shown), which represent the typical features of senescent cells.",
       "context_window": "). After treatment of HepG2 cells with 10 \u00b5M etoposide for 2 days, we observed the cells showing the arrest of proliferation",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3819289_branched_chain_amino_acids_enhance_premature_senescence_thro-pct-942",
@@ -237,10 +237,10 @@
       "sentence": "In any case, U2OS cells treated with etoposide finally represented the features of senescent cells, including cell cycle arrest, enlarged morphology, and the SA-\u03b2-Gal activity within 7 days ( Figure 1B ).",
       "context_window": "rest, enlarged morphology, and the SA-\u03b2-Gal activity within 7 days ( Figure 1B ). Furthermore, another DNA damage-inducing dru",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3819289_branched_chain_amino_acids_enhance_premature_senescence_thro-pct-1860",
@@ -310,7 +310,7 @@
       "context_window": "with 100 nM rapamycin were treated with 10 \u00b5M etoposide for 2 days, and observed with microscope after SA-\u03b2-Gal staining assay",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -328,7 +328,7 @@
       "context_window": "treated with 10 \u00b5M etoposide (B) or 2 \u00b5M bleomycin (C) for 2 days. (D) U2OS cells cultured in RPMI-based medium with or witho",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -346,7 +346,7 @@
       "context_window": "rapamycin as indicated were treated with 2 \u00b5M etoposide for 7 days. For the assay of SA-\u03b2-Gal activity, cells stained with blu",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -382,9 +382,9 @@
       "context_window": "ithout 2 \u00b5M etoposide and 100 nM rapamycin as indicated for 7 days, and observed with microscope after SA-\u03b2-Gal staining assay",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3819289_branched_chain_amino_acids_enhance_premature_senescence_thro-u-11091",
@@ -418,7 +418,7 @@
       "context_window": "10 \u00b5M etoposide and 100 nM rapamycin as indicated for 1 or 2 days. Cell lysates were subjected to SDS-PAGE and immunoblotted",
       "claim_role": "dose",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -436,9 +436,9 @@
       "context_window": "thout 10 \u00b5M etoposide and 100 nM rapamycin as indicated for 2 days. Cell lysates were subjected to SDS-PAGE and immunoblotted",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

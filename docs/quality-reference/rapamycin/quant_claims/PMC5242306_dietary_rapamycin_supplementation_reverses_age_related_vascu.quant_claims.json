@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu",
   "doi": "10.1111/acel.12524",
-  "extracted_at": "2026-05-06T20:10:55+00:00",
+  "extracted_at": "2026-05-09T10:18:22+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 14,
@@ -116,10 +116,10 @@
       "sentence": "Although there were few other notable changes in animal characteristics after rapamycin treatment, we found that glucose tolerance improved in old mice, but was impaired in young mice, after rapamycin supplementation (both P < 0.05).",
       "context_window": "paired in young mice, after rapamycin supplementation (both P < 0.05). Aging increased mTOR activation in arteries evidenced by",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-733",
@@ -152,7 +152,7 @@
       "sentence": "Aging increased mTOR activation in arteries evidenced by elevated S6K phosphorylation ( P < 0.01), and this was reversed after rapamycin treatment in old mice ( P < 0.05).",
       "context_window": "d this was reversed after rapamycin treatment in old mice ( P < 0.05). Aging was also associated with impaired endothelium\u2010depen",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "high"
@@ -260,10 +260,10 @@
       "sentence": "While aging increased large artery stiffness evidenced by increased aortic pulse\u2010wave velocity (PWV) ( P < 0.01), rapamycin treatment reduced aortic PWV ( P < 0.05) and collagen content ( P < 0.05) in old mice.",
       "context_window": "s evidenced by increased aortic pulse\u2010wave velocity (PWV) ( P < 0.01), rapamycin treatment reduced aortic PWV ( P < 0.05) and co",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-1449",
@@ -278,10 +278,10 @@
       "sentence": "While aging increased large artery stiffness evidenced by increased aortic pulse\u2010wave velocity (PWV) ( P < 0.01), rapamycin treatment reduced aortic PWV ( P < 0.05) and collagen content ( P < 0.05) in old mice.",
       "context_window": "(PWV) ( P < 0.01), rapamycin treatment reduced aortic PWV ( P < 0.05) and collagen content ( P < 0.05) in old mice. Aortic adeno",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-1482",
@@ -296,10 +296,10 @@
       "sentence": "While aging increased large artery stiffness evidenced by increased aortic pulse\u2010wave velocity (PWV) ( P < 0.01), rapamycin treatment reduced aortic PWV ( P < 0.05) and collagen content ( P < 0.05) in old mice.",
       "context_window": "tment reduced aortic PWV ( P < 0.05) and collagen content ( P < 0.05) in old mice. Aortic adenosine monophosphate\u2010activated prot",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-1707",
@@ -314,7 +314,7 @@
       "sentence": "Aortic adenosine monophosphate\u2010activated protein kinase (AMPK) phosphorylation and expression of the cell cycle\u2010related proteins PTEN and p27kip were increased with rapamycin treatment in old mice (all P < 0.05).",
       "context_window": "ip were increased with rapamycin treatment in old mice (all P < 0.05). Lastly, aging resulted in augmentation of the arterial se",
       "claim_role": "effect",
-      "endpoint": "AMPK signaling",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "high"
@@ -332,7 +332,7 @@
       "sentence": "Lastly, aging resulted in augmentation of the arterial senescence marker, p19 ( P < 0.05), and this was ameliorated by rapamycin treatment ( P < 0.05).",
       "context_window": "ed in augmentation of the arterial senescence marker, p19 ( P < 0.05), and this was ameliorated by rapamycin treatment ( P < 0.0",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -350,7 +350,7 @@
       "sentence": "Lastly, aging resulted in augmentation of the arterial senescence marker, p19 ( P < 0.05), and this was ameliorated by rapamycin treatment ( P < 0.05).",
       "context_window": "< 0.05), and this was ameliorated by rapamycin treatment ( P < 0.05). These results demonstrate beneficial effects of rapamycin",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -387,10 +387,10 @@
       "sentence": "Percent of dry weight of the spleen was reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in young mice (young rap: 11.0 \u00b1 0.8%, P < 0.05), suggesting tissue congestion in these groups.",
       "context_window": "nt of dry weight of the spleen was reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-pct-937",
@@ -405,10 +405,10 @@
       "sentence": "Percent of dry weight of the spleen was reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in young mice (young rap: 11.0 \u00b1 0.8%, P < 0.05), suggesting tissue congestion in these groups.",
       "context_window": "ry weight of the spleen was reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-msd-951",
@@ -424,10 +424,10 @@
       "sentence": "Percent of dry weight of the spleen was reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in young mice (young rap: 11.0 \u00b1 0.8%, P < 0.05), suggesting tissue congestion in these groups.",
       "context_window": "he spleen was reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in young mice (young ra",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-pct-958",
@@ -442,10 +442,10 @@
       "sentence": "Percent of dry weight of the spleen was reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in young mice (young rap: 11.0 \u00b1 0.8%, P < 0.05), suggesting tissue congestion in these groups.",
       "context_window": "en was reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in young mice (young rap",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-964",
@@ -460,10 +460,10 @@
       "sentence": "Percent of dry weight of the spleen was reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in young mice (young rap: 11.0 \u00b1 0.8%, P < 0.05), suggesting tissue congestion in these groups.",
       "context_window": "reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in young mice (young rap: 11.0 \u00b1 0",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-msd-1024",
@@ -479,10 +479,10 @@
       "sentence": "Percent of dry weight of the spleen was reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in young mice (young rap: 11.0 \u00b1 0.8%, P < 0.05), suggesting tissue congestion in these groups.",
       "context_window": "P < 0.05) and rapamycin treatment in young mice (young rap: 11.0 \u00b1 0.8%, P < 0.05), suggesting tissue congestion in these groups.",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-pct-1031",
@@ -497,10 +497,10 @@
       "sentence": "Percent of dry weight of the spleen was reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in young mice (young rap: 11.0 \u00b1 0.8%, P < 0.05), suggesting tissue congestion in these groups.",
       "context_window": "5) and rapamycin treatment in young mice (young rap: 11.0 \u00b1 0.8%, P < 0.05), suggesting tissue congestion in these groups. H",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-1037",
@@ -515,10 +515,10 @@
       "sentence": "Percent of dry weight of the spleen was reduced by aging (young: 14.3 \u00b1 1.2% vs. old: 10.9 \u00b1 0.9%, P < 0.05) and rapamycin treatment in young mice (young rap: 11.0 \u00b1 0.8%, P < 0.05), suggesting tissue congestion in these groups.",
       "context_window": "rapamycin treatment in young mice (young rap: 11.0 \u00b1 0.8%, P < 0.05), suggesting tissue congestion in these groups. However, ra",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-msd-1173",
@@ -642,10 +642,10 @@
       "sentence": "Rapamycin treatment improved glucose tolerance, that is resulted in a reduction in the AUC glc ( P < 0.01) in old mice (Table 1 ).",
       "context_window": "tolerance, that is resulted in a reduction in the AUC glc ( P < 0.01) in old mice (Table 1 ). In contrast, rapamycin impaired gl",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-2129",
@@ -678,7 +678,7 @@
       "sentence": "Although total protein expression of mTOR target S6K, assessed by Western blotting, did not differ with aging or rapamycin treatment, phosphorylation of S6K, a marker of activation, was higher in aorta of old compared to young mice ( P < 0.01) (Fig.",
       "context_window": "vation, was higher in aorta of old compared to young mice ( P < 0.01) (Fig. 1 ). Dietary rapamycin treatment reduced S6K activat",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "high"
@@ -696,10 +696,10 @@
       "sentence": "Dietary rapamycin treatment reduced S6K activation relative to both young ( P < 0.05) and old untreated ( P < 0.01) mice (Fig.",
       "context_window": "n treatment reduced S6K activation relative to both young ( P < 0.05) and old untreated ( P < 0.01) mice (Fig. 1 ). Expression",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-2940",
@@ -714,10 +714,10 @@
       "sentence": "Dietary rapamycin treatment reduced S6K activation relative to both young ( P < 0.05) and old untreated ( P < 0.01) mice (Fig.",
       "context_window": "tion relative to both young ( P < 0.05) and old untreated ( P < 0.01) mice (Fig. 1 ). Expression and activation of the mammalia",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-n-3299",
@@ -750,7 +750,7 @@
       "sentence": "Data are means \u00b1 SEM, P \u2264 0.05\n\nTo determine the impact of aging and rapamycin treatment on endothelial function and NO bioavailability, carotid arteries were excised and cannulated in the stage of an inverted microscope and dose responses to acetylcholine (ACh), an endothelium\u2010dependent dilator (EDD), and sodium nitroprusside, an endothelium\u2010independent vasodilator, were performed.",
       "context_window": "d by one\u2010way ANOVA with LSD post hoc. Data are means \u00b1 SEM, P \u2264 0.05 To determine the impact of aging and rapamycin treatment o",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -786,10 +786,10 @@
       "sentence": "Dietary rapamycin treatment improved EDD ( P < 0.01) and NO bioavailability in old mice compared to untreated old mice and restored these measurements to those of young controls (Fig.",
       "context_window": "NAME (Fig. 2 A). Dietary rapamycin treatment improved EDD ( P < 0.01) and NO bioavailability in old mice compared to untreated o",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-4868",
@@ -1129,7 +1129,7 @@
       "context_window": "tas from young and old untreated and old Rap\u2010treated mice ( N = 6-9/group). (C) Abundance of nitrotyrosine (NT), a marker of",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "rap",
+      "arm": "RAP",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1147,7 +1147,7 @@
       "context_window": ", in aortas from young and old untreated and old Rap mice ( N = 5-6/group). (D) NADPH oxidase 4 (NOX4) expression in aortas f",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "rap",
+      "arm": "RAP",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1165,7 +1165,7 @@
       "context_window": "n in aortas from young and old untreated and old Rap mice ( N = 5\u20106/group). P = 0.1 vs. young, P = 0.07 vs. old. (E) Extracel",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "rap",
+      "arm": "RAP",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1183,7 +1183,7 @@
       "context_window": "young and old untreated and old Rap mice ( N = 5\u20106/group). P = 0.1 vs. young, P = 0.07 vs. old. (E) Extracellular superoxide d",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "rap",
+      "arm": "RAP",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1201,7 +1201,7 @@
       "context_window": "eated and old Rap mice ( N = 5\u20106/group). P = 0.1 vs. young, P = 0.07 vs. old. (E) Extracellular superoxide dismutase (ecSOD) exp",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "rap",
+      "arm": "RAP",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1219,7 +1219,7 @@
       "context_window": "n in aortas from young and old untreated and old Rap mice ( N = 5-6/group). (F) Blot images for NT, NOX4, ecSOD, and the asso",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "rap",
+      "arm": "RAP",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1272,7 +1272,7 @@
       "sentence": "3 C), markers of oxidative stress, were increased in the aorta with aging ( P < 0.05), and this was reversed after dietary rapamycin treatment ( P < 0.05).",
       "context_window": ", and this was reversed after dietary rapamycin treatment ( P < 0.05). The protein expression of the oxidant enzyme NOX4 tended",
       "claim_role": "effect",
-      "endpoint": "oxidative stress",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "high"
@@ -1346,10 +1346,10 @@
       "sentence": "12.1 \u00b1 8.1 AU, P < 0.05) and reduced after rapamycin treatment in aortas from old (0.5 \u00b1 0.2 AU, P < 0.05 vs. old), but not young (1.7 \u00b1 0.4 AU) mice.",
       "context_window": "form, NOX2, was increased with advancing age (1.0 \u00b1 0.4 vs. 12.1 \u00b1 8.1 AU, P < 0.05) and reduced after rapamycin treatment in aort",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-9728",
@@ -1364,10 +1364,10 @@
       "sentence": "12.1 \u00b1 8.1 AU, P < 0.05) and reduced after rapamycin treatment in aortas from old (0.5 \u00b1 0.2 AU, P < 0.05 vs. old), but not young (1.7 \u00b1 0.4 AU) mice.",
       "context_window": "increased with advancing age (1.0 \u00b1 0.4 vs. 12.1 \u00b1 8.1 AU, P < 0.05) and reduced after rapamycin treatment in aortas from old (",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-msd-9796",
@@ -1383,10 +1383,10 @@
       "sentence": "12.1 \u00b1 8.1 AU, P < 0.05) and reduced after rapamycin treatment in aortas from old (0.5 \u00b1 0.2 AU, P < 0.05 vs. old), but not young (1.7 \u00b1 0.4 AU) mice.",
       "context_window": ") and reduced after rapamycin treatment in aortas from old (0.5 \u00b1 0.2 AU, P < 0.05 vs. old), but not young (1.7 \u00b1 0.4 AU) mice. A",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-9810",
@@ -1401,10 +1401,10 @@
       "sentence": "12.1 \u00b1 8.1 AU, P < 0.05) and reduced after rapamycin treatment in aortas from old (0.5 \u00b1 0.2 AU, P < 0.05 vs. old), but not young (1.7 \u00b1 0.4 AU) mice.",
       "context_window": "after rapamycin treatment in aortas from old (0.5 \u00b1 0.2 AU, P < 0.05 vs. old), but not young (1.7 \u00b1 0.4 AU) mice. Although not d",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-msd-9844",
@@ -1420,10 +1420,10 @@
       "sentence": "12.1 \u00b1 8.1 AU, P < 0.05) and reduced after rapamycin treatment in aortas from old (0.5 \u00b1 0.2 AU, P < 0.05 vs. old), but not young (1.7 \u00b1 0.4 AU) mice.",
       "context_window": "s from old (0.5 \u00b1 0.2 AU, P < 0.05 vs. old), but not young (1.7 \u00b1 0.4 AU) mice. Although not different with aging, the expression",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-10092",
@@ -1456,10 +1456,10 @@
       "sentence": "Large elastic artery stiffness, assessed by in vivo aortic pulse\u2010wave velocity (PWV), was increased with aging ( P < 0.001) and was improved ( P < 0.05 vs. old), but not restored to young values ( P < 0.01 vs. young), in old mice after rapamycin treatment (Fig.",
       "context_window": "ortic pulse\u2010wave velocity (PWV), was increased with aging ( P < 0.001) and was improved ( P < 0.05 vs. old), but not restored to",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-10258",
@@ -1474,10 +1474,10 @@
       "sentence": "Large elastic artery stiffness, assessed by in vivo aortic pulse\u2010wave velocity (PWV), was increased with aging ( P < 0.001) and was improved ( P < 0.05 vs. old), but not restored to young values ( P < 0.01 vs. young), in old mice after rapamycin treatment (Fig.",
       "context_window": "), was increased with aging ( P < 0.001) and was improved ( P < 0.05 vs. old), but not restored to young values ( P < 0.01 vs. y",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-10312",
@@ -1492,10 +1492,10 @@
       "sentence": "Large elastic artery stiffness, assessed by in vivo aortic pulse\u2010wave velocity (PWV), was increased with aging ( P < 0.001) and was improved ( P < 0.05 vs. old), but not restored to young values ( P < 0.01 vs. young), in old mice after rapamycin treatment (Fig.",
       "context_window": "ved ( P < 0.05 vs. old), but not restored to young values ( P < 0.01 vs. young), in old mice after rapamycin treatment (Fig. 4 A",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-10518",
@@ -1510,10 +1510,10 @@
       "sentence": "The intima\u2010media area of the aorta was increased in old mice ( P < 0.05), but rapamycin treatment had no effect on intima\u2010media area in young or old mice (Fig.",
       "context_window": "intima\u2010media area of the aorta was increased in old mice ( P < 0.05), but rapamycin treatment had no effect on intima\u2010media are",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-11449",
@@ -1618,10 +1618,10 @@
       "sentence": "AGEs were reduced ( P < 0.05) in aortas of old, but not young mice after dietary rapamycin treatment (Fig.",
       "context_window": "pite there being no differences in PWV. AGEs were reduced ( P < 0.05) in aortas of old, but not young mice after dietary rapamyc",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu-p-12653",
@@ -1673,7 +1673,7 @@
       "context_window": "rent with aging, the cell cycle regulatory proteins, PTEN ( P < 0.05 old Rap vs. old) (Fig. 5 B) and p27kip ( P < 0.01 old Rap v",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "rap",
+      "arm": "RAP",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1691,7 +1691,7 @@
       "context_window": "s, PTEN ( P < 0.05 old Rap vs. old) (Fig. 5 B) and p27kip ( P < 0.01 old Rap vs. young and old) (Fig. 5 C) were increased in the",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "rap",
+      "arm": "RAP",
       "direction": "",
       "binding_confidence": "partial"
     },

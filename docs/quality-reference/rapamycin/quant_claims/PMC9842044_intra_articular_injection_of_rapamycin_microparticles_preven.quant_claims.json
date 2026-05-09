@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9842044_intra_articular_injection_of_rapamycin_microparticles_preven",
   "doi": "10.1002/btm2.10298",
-  "extracted_at": "2026-05-06T20:10:54+00:00",
+  "extracted_at": "2026-05-09T10:18:28+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 30,
@@ -114,7 +114,7 @@
       "sentence": "Rapamycin (or Sirolimus, 99.5% purity) was procured from Alfa Ae sar (J62473).",
       "context_window": "was purchased from Sigma (363170). Rapamycin (or Sirolimus, 99.5% purity) was procured from Alfa Ae sar (J62473). Insulin/tra",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -205,7 +205,7 @@
       "sentence": "Rapamycin microparticles induce autophagy in primary human chondrocytes. (a) Size distribution of 10-15 kDa poly(lactic\u2010co\u2010glycolic acid) (PLGA) particles measured by dynamic light scattering. (b) Zeta potential of 10-15 kDa PLGA particles. (c) In vitro release profiles of rapamycin from microparticles synthesized from different molecular weight PLGA polymers ( n = 3 per group at each time point).",
       "context_window": "synthesized from different molecular weight PLGA polymers ( n = 3 per group at each time point). Inset in (c) shows fluoresce",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -260,9 +260,9 @@
       "context_window": "ng PLA:PGA (85:15) could extend the release of the drug for 120 days (Figure 2c ). Thus, the particle platform was tunable and a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pla",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC9842044_intra_articular_injection_of_rapamycin_microparticles_preven-u-4550",
@@ -349,7 +349,7 @@
       "sentence": "HACs when exposed to 200 \u03bcM of oxidative stress agent (H 2 O 2 ), resulted in 30% of cells becoming senescent, while the cotreatment with 1 \u03bcM RMPs brought down the percentage of senescent cells to less than 10%, which was comparable to cells with no oxidative stress (Figure 3e ).",
       "context_window": "brought down the percentage of senescent cells to less than 10%, which was comparable to cells with no oxidative stress (Fi",
       "claim_role": "dose",
-      "endpoint": "oxidative stress",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"

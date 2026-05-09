@@ -1,7 +1,7 @@
 {
   "paper_id": "DOI_10_1101_2024_08_21_24312372_safety_and_efficacy_of_rapamycin_on_healthspan_metrics_after",
   "doi": "10.1101/2024.08.21.24312372",
-  "extracted_at": "2026-05-06T20:10:55+00:00",
+  "extracted_at": "2026-05-09T10:18:13+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 8,
@@ -111,7 +111,7 @@
       "sentence": "Visceral adiposity did not change significantly (\u03b7 p 2 =0.001, p =0.942), and changes in blood biomarkers remained within normal ranges.",
       "context_window": "ceral adiposity did not change significantly (\u03b7 p 2 =0.001, p =0.942), and changes in blood biomarkers remained within normal ra",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -129,10 +129,10 @@
       "sentence": "Lean tissue mass (\u03b5 2 =0.202, p =0.013) and self-reported pain (\u03b5 2 =0.168, p =0.015) improved significantly for women using 10mg rapamycin.",
       "context_window": "emained within normal ranges. Lean tissue mass (\u03b5 2 =0.202, p =0.013) and self-reported pain (\u03b5 2 =0.168, p =0.015) improved sig",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "DOI_10_1101_2024_08_21_24312372_safety_and_efficacy_of_rapamycin_on_healthspan_metrics_after-p-1123",
@@ -147,10 +147,10 @@
       "sentence": "Lean tissue mass (\u03b5 2 =0.202, p =0.013) and self-reported pain (\u03b5 2 =0.168, p =0.015) improved significantly for women using 10mg rapamycin.",
       "context_window": "(\u03b5 2 =0.202, p =0.013) and self-reported pain (\u03b5 2 =0.168, p =0.015) improved significantly for women using 10mg rapamycin. Tre",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "self-reported pain",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "DOI_10_1101_2024_08_21_24312372_safety_and_efficacy_of_rapamycin_on_healthspan_metrics_after-u-1172",
@@ -165,10 +165,10 @@
       "sentence": "Lean tissue mass (\u03b5 2 =0.202, p =0.013) and self-reported pain (\u03b5 2 =0.168, p =0.015) improved significantly for women using 10mg rapamycin.",
       "context_window": "2 =0.168, p =0.015) improved significantly for women using 10mg rapamycin. Trends of improvement in bone mineral density we",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "self-reported pain",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "DOI_10_1101_2024_08_21_24312372_safety_and_efficacy_of_rapamycin_on_healthspan_metrics_after-u-1263",
@@ -219,7 +219,7 @@
       "sentence": "Conclusions Low-dose, intermittent rapamycin administration over 48 weeks is relatively safe in healthy, normative-aging adults, and was associated with significant improvements in lean tissue mass and pain in women.",
       "context_window": "usions Low-dose, intermittent rapamycin administration over 48 weeks is relatively safe in healthy, normative-aging adults, and",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "lean tissue mass",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"

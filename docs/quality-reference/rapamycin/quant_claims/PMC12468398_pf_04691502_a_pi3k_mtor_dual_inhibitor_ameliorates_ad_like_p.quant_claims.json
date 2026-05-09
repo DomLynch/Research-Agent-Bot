@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12468398_pf_04691502_a_pi3k_mtor_dual_inhibitor_ameliorates_ad_like_p",
   "doi": "10.3390/cells14181474",
-  "extracted_at": "2026-05-05T15:22:47+00:00",
+  "extracted_at": "2026-05-09T10:18:18+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 24,
@@ -835,10 +835,10 @@
       "sentence": "We found that 12-week treatment with PF-04691502 changed the levels of LC3II and BECN1 ( Figure 4 A-C; one-way ANOVA, p < 0.001).",
       "context_window": "he levels of LC3II and BECN1 ( Figure 4 A-C; one-way ANOVA, p < 0.001). Bonferroni correction indicated that the levels of both p",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12468398_pf_04691502_a_pi3k_mtor_dual_inhibitor_ameliorates_ad_like_p-p-7343",
@@ -853,7 +853,7 @@
       "sentence": "Bonferroni correction indicated that the levels of both proteins were significantly higher in the APP/PS1 + PF-treated group compared to the APP/PS1 + Veh group (LC3II p < 0.01; BCN1 p < 0.001; Figure 4 A-C).",
       "context_window": "PF-treated group compared to the APP/PS1 + Veh group (LC3II p < 0.01; BCN1 p < 0.001; Figure 4 A-C). Conversely, in the WT group",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -871,7 +871,7 @@
       "sentence": "Bonferroni correction indicated that the levels of both proteins were significantly higher in the APP/PS1 + PF-treated group compared to the APP/PS1 + Veh group (LC3II p < 0.01; BCN1 p < 0.001; Figure 4 A-C).",
       "context_window": "p compared to the APP/PS1 + Veh group (LC3II p < 0.01; BCN1 p < 0.001; Figure 4 A-C). Conversely, in the WT groups, BCN1 levels r",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -889,10 +889,10 @@
       "sentence": "To further investigate the impact of PF-04691502 on autophagy, we assessed LAMP-2 expression levels and observed significant differences across the four experimental groups ( Figure 4 A,D; one-way ANOVA, p < 0.001).",
       "context_window": "the four experimental groups ( Figure 4 A,D; one-way ANOVA, p < 0.001). Post hoc analysis using the Bonferroni correction reveale",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12468398_pf_04691502_a_pi3k_mtor_dual_inhibitor_ameliorates_ad_like_p-p-8542",
@@ -926,7 +926,7 @@
       "context_window": "ere, we tested PF-04691502, a dual PI3K/mTOR inhibitor, for 12 weeks in a murine model of AD. During the MWM test, both WT and",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -961,10 +961,10 @@
       "sentence": "Our findings align with prior research indicating that rapamycin treatment decreases the accumulation of A\u03b2 and fibrillar aggregates of A\u03b2 by approximately 40-50% in 3xTg-AD mice over 16 months [ 58 ].",
       "context_window": "on of A\u03b2 and fibrillar aggregates of A\u03b2 by approximately 40-50% in 3xTg-AD mice over 16 months [ 58 ]. Similarly, Galvan\u2019s",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12468398_pf_04691502_a_pi3k_mtor_dual_inhibitor_ameliorates_ad_like_p-u-3267",
@@ -979,10 +979,10 @@
       "sentence": "Our findings align with prior research indicating that rapamycin treatment decreases the accumulation of A\u03b2 and fibrillar aggregates of A\u03b2 by approximately 40-50% in 3xTg-AD mice over 16 months [ 58 ].",
       "context_window": "gregates of A\u03b2 by approximately 40-50% in 3xTg-AD mice over 16 months [ 58 ]. Similarly, Galvan\u2019s team reported a reduction in A\u03b2",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12468398_pf_04691502_a_pi3k_mtor_dual_inhibitor_ameliorates_ad_like_p-u-5671",

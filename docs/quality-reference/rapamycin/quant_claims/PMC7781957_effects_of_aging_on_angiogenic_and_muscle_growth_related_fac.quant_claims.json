@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac",
   "doi": "10.4235/agmr.20.0077",
-  "extracted_at": "2026-05-05T15:22:44+00:00",
+  "extracted_at": "2026-05-09T10:18:25+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 11,
@@ -150,8 +150,8 @@
       "sentence": "The mammalian target of rapamycin (mTOR), p70S6K, and 4E-BP1 levels were significantly lower in the soleus muscles of old rats than in those of young rats (p<0.01).",
       "context_window": "the soleus muscles of old rats than in those of young rats (p<0.01). Similarly, insulin growth factor-1, Akt, mTOR, and p70S6K",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
-      "arm": "",
+      "endpoint": "S6K1 phosphorylation",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -168,7 +168,7 @@
       "sentence": "Similarly, insulin growth factor-1, Akt, mTOR, and p70S6K levels were significantly lower in EDL muscles of old rats than in those of young rats (p<0.01).",
       "context_window": "wer in EDL muscles of old rats than in those of young rats (p<0.01). Additionally, myonuclei/fiber, Pax7/fiber, and mean fiber",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1032,7 +1032,7 @@
       "sentence": "In the soleus muscle, IGF-1 and Akt levels did not differ significantly between groups, while phosphorylated mTOR, p70S6K, and 4E-BP1 levels were significantly lower in old rats than in young rats (all p=0.001).",
       "context_window": "ere significantly lower in old rats than in young rats (all p=0.001). In the EDL muscle, phosphorylated IGF-1, Akt, mTOR, and p",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1050,7 +1050,7 @@
       "sentence": "In the EDL muscle, phosphorylated IGF-1, Akt, mTOR, and p70S6K levels were significantly lower in old rats than in young rats (all p=0.001), while the phosphorylated 4E-BP1 level did not differ significantly between groups (p>0.05) ( Fig.",
       "context_window": "ere significantly lower in old rats than in young rats (all p=0.001), while the phosphorylated 4E-BP1 level did not differ sign",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1068,7 +1068,7 @@
       "sentence": "In the EDL muscle, phosphorylated IGF-1, Akt, mTOR, and p70S6K levels were significantly lower in old rats than in young rats (all p=0.001), while the phosphorylated 4E-BP1 level did not differ significantly between groups (p>0.05) ( Fig.",
       "context_window": "d 4E-BP1 level did not differ significantly between groups (p>0.05) ( Fig. D ). Immunofluorescence analysis revealed signific",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"

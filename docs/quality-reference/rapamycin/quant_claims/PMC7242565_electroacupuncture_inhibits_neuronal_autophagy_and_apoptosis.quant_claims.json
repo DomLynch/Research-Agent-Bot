@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7242565_electroacupuncture_inhibits_neuronal_autophagy_and_apoptosis",
   "doi": "10.3389/fncel.2020.00134",
-  "extracted_at": "2026-05-05T15:22:46+00:00",
+  "extracted_at": "2026-05-09T10:18:25+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 11,
@@ -367,7 +367,7 @@
       "sentence": "After blocking in a 5% bovine serum albumin solution for 1 h at 37\u00b0C, the membranes were incubated at 4\u00b0C overnight with primary antibodies against LC3 (1:500, #18725-1-AP, proteintech), P62 (1:1,000, #18420-1-AP, proteintech), LAMP-1 (1:1,000, #62562, Abcam), cleaved-caspase3 (1:500, #66470-2-lg, proteintech), Atg7 (1:1,000, #32345, Cell Signalling Technology, Danvers, MA, USA), PI3K (1:1,000, #4249, Cell Signalling Technology, Danvers, MA, USA), mTOR (1:1,000, #2972 Cell Signalling Technology, Danvers, MA, USA), Phospho-mTOR (1:1,000, #5536, Cell Signalling Technology, Danvers, MA, USA), AKT (1:1,000, #4691, Cell Signalling Technology, Danvers, MA, USA), Phospho-AKT (Thr308, #13038, Cell Signalling Technology, Danvers, MA, USA) and GAPDH (1:5,000, #10494-1-AP, proteintech).",
       "context_window": "DF membrane (Roche, Mannheim, Germany). After blocking in a 5% bovine serum albumin solution for 1 h at 37\u00b0C, the membrane",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -637,7 +637,7 @@
       "sentence": "As shown in Figure 2C , the level of P62 was significantly decreased in the MCAO/R group ( P < 0.01) compared with the sham group, but EA treatment reversed this change in the EA ( P < 0.01) and EA+NC groups ( P < 0.05) compared with the MCAO group, and the expression of P62 in the EA+D group was significantly decreased compared with the EA ( P < 0.01) and EA+NC groups ( P < 0.01).",
       "context_window": "el of P62 was significantly decreased in the MCAO/R group ( P < 0.01) compared with the sham group, but EA treatment reversed th",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -655,7 +655,7 @@
       "sentence": "As shown in Figure 2C , the level of P62 was significantly decreased in the MCAO/R group ( P < 0.01) compared with the sham group, but EA treatment reversed this change in the EA ( P < 0.01) and EA+NC groups ( P < 0.05) compared with the MCAO group, and the expression of P62 in the EA+D group was significantly decreased compared with the EA ( P < 0.01) and EA+NC groups ( P < 0.01).",
       "context_window": "am group, but EA treatment reversed this change in the EA ( P < 0.01) and EA+NC groups ( P < 0.05) compared with the MCAO group,",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -673,7 +673,7 @@
       "sentence": "As shown in Figure 2C , the level of P62 was significantly decreased in the MCAO/R group ( P < 0.01) compared with the sham group, but EA treatment reversed this change in the EA ( P < 0.01) and EA+NC groups ( P < 0.05) compared with the MCAO group, and the expression of P62 in the EA+D group was significantly decreased compared with the EA ( P < 0.01) and EA+NC groups ( P < 0.01).",
       "context_window": "versed this change in the EA ( P < 0.01) and EA+NC groups ( P < 0.05) compared with the MCAO group, and the expression of P62 in",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -691,7 +691,7 @@
       "sentence": "As shown in Figure 2C , the level of P62 was significantly decreased in the MCAO/R group ( P < 0.01) compared with the sham group, but EA treatment reversed this change in the EA ( P < 0.01) and EA+NC groups ( P < 0.05) compared with the MCAO group, and the expression of P62 in the EA+D group was significantly decreased compared with the EA ( P < 0.01) and EA+NC groups ( P < 0.01).",
       "context_window": "+D group was significantly decreased compared with the EA ( P < 0.01) and EA+NC groups ( P < 0.01). Also, as shown in Figure 2D",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -709,7 +709,7 @@
       "sentence": "As shown in Figure 2C , the level of P62 was significantly decreased in the MCAO/R group ( P < 0.01) compared with the sham group, but EA treatment reversed this change in the EA ( P < 0.01) and EA+NC groups ( P < 0.05) compared with the MCAO group, and the expression of P62 in the EA+D group was significantly decreased compared with the EA ( P < 0.01) and EA+NC groups ( P < 0.01).",
       "context_window": "creased compared with the EA ( P < 0.01) and EA+NC groups ( P < 0.01). Also, as shown in Figure 2D , compared with the sham grou",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -889,10 +889,10 @@
       "sentence": "Effect of electroacupuncture (EA) treatment on CCAS3 and autophagy-related proteins. (A) Western blot analysis of the expression levels of P62, LC3I, LC3II, LAMP-1, and CCAS3. (B) Bar diagram shows the difference of LC3II/I in the ipsilateral hippocampus of the rats ( n = 5/group). (C) Statistical analysis showing the expression of P62 in the ipsilateral hippocampus of the rats. (D) Statistical analysis showing the difference of LAMP-1 in the ipsilateral hippocampus of the rats. (E) Statistical analysis showing the expression of CCAS3 in the ipsilateral hippocampus of the rats.",
       "context_window": "nce of LC3II/I in the ipsilateral hippocampus of the rats ( n = 5/group). (C) Statistical analysis showing the expression of",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7242565_electroacupuncture_inhibits_neuronal_autophagy_and_apoptosis-p-3753",

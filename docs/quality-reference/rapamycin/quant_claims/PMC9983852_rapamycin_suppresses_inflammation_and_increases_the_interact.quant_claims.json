@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact",
   "doi": "10.1371/journal.pone.0281888",
-  "extracted_at": "2026-05-06T20:10:56+00:00",
+  "extracted_at": "2026-05-09T10:18:28+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 5,
@@ -257,7 +257,7 @@
       "sentence": "To confirm previous results that fatty liver can be induced by rapamycin [ 7 ], 12-week-old male mice were treated with rapamycin (80 \u03bcg/mouse/day) for 8 days.",
       "context_window": "male mice were treated with rapamycin (80 \u03bcg/mouse/day) for 8 days. Lipid accumulation can be directly reflected by the color",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "liver inflammation",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -455,7 +455,7 @@
       "sentence": "Lower expressions of pro-inflammatory genes in rapamycin-induced fatty liver. (Control group n = 4, rapamycin group n = 4).",
       "context_window": "tory genes in rapamycin-induced fatty liver. (Control group n = 4, rapamycin group n = 4). B. p65 protein level was not chang",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
+      "endpoint": "liver inflammation",
       "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -473,7 +473,7 @@
       "sentence": "Lower expressions of pro-inflammatory genes in rapamycin-induced fatty liver. (Control group n = 4, rapamycin group n = 4).",
       "context_window": "-induced fatty liver. (Control group n = 4, rapamycin group n = 4). B. p65 protein level was not changed in mouse primary hep",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
+      "endpoint": "liver inflammation",
       "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -671,7 +671,7 @@
       "sentence": "In rapamycin-induced fatty liver, the mRNAs of ATGL were downregulated and G0S2 was upregulated (Control group n = 7, rapamycin-treated group n = 8).",
       "context_window": "were downregulated and G0S2 was upregulated (Control group n = 7, rapamycin-treated group n = 8). B. In the adipose tissues",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "liver inflammation",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -689,7 +689,7 @@
       "sentence": "In rapamycin-induced fatty liver, the mRNAs of ATGL were downregulated and G0S2 was upregulated (Control group n = 7, rapamycin-treated group n = 8).",
       "context_window": "s upregulated (Control group n = 7, rapamycin-treated group n = 8). B. In the adipose tissues of rapamycin-treated mice, G0S2",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "liver inflammation",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -779,10 +779,10 @@
       "sentence": "Rapamycin treatment did not change G0S2 protein level in adipose tissue (Control group n = 3, rapamycin group n = 4).",
       "context_window": "change G0S2 protein level in adipose tissue (Control group n = 3, rapamycin group n = 4). E. The mRNAs of ER stress-associat",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact-n-11439",
@@ -797,10 +797,10 @@
       "sentence": "Rapamycin treatment did not change G0S2 protein level in adipose tissue (Control group n = 3, rapamycin group n = 4).",
       "context_window": "vel in adipose tissue (Control group n = 3, rapamycin group n = 4). E. The mRNAs of ER stress-associated genes were not chang",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact-n-11555",
@@ -815,7 +815,7 @@
       "sentence": "The mRNAs of ER stress-associated genes were not changed in rapamycin-induced fatty liver (Control group n = 7, rapamycin-treated group n = 8).",
       "context_window": "not changed in rapamycin-induced fatty liver (Control group n = 7, rapamycin-treated group n = 8). F. CHOP was upregulated in",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "liver inflammation",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -833,7 +833,7 @@
       "sentence": "The mRNAs of ER stress-associated genes were not changed in rapamycin-induced fatty liver (Control group n = 7, rapamycin-treated group n = 8).",
       "context_window": "d fatty liver (Control group n = 7, rapamycin-treated group n = 8). F. CHOP was upregulated in rapamycin-induced fatty liver",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "liver inflammation",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -851,7 +851,7 @@
       "sentence": "CHOP was upregulated in rapamycin-induced fatty liver (Control group n = 4, rapamycin group n = 4).",
       "context_window": "upregulated in rapamycin-induced fatty liver (Control group n = 4, rapamycin group n = 4). G. Eighteen weeks of rapamycin tre",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "liver inflammation",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -869,7 +869,7 @@
       "sentence": "CHOP was upregulated in rapamycin-induced fatty liver (Control group n = 4, rapamycin group n = 4).",
       "context_window": "n-induced fatty liver (Control group n = 4, rapamycin group n = 4). G. Eighteen weeks of rapamycin treatment did not increase",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "liver inflammation",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -887,7 +887,7 @@
       "sentence": "Eighteen weeks of rapamycin treatment did not increase liver fibrosis markers expression (Control group n = 7, rapamycin-treated group n = 8).",
       "context_window": "t increase liver fibrosis markers expression (Control group n = 7, rapamycin-treated group n = 8). H. Summary of the mechanis",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -905,7 +905,7 @@
       "sentence": "Eighteen weeks of rapamycin treatment did not increase liver fibrosis markers expression (Control group n = 7, rapamycin-treated group n = 8).",
       "context_window": "rs expression (Control group n = 7, rapamycin-treated group n = 8). H. Summary of the mechanisms that rapamycin suppresses in",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"

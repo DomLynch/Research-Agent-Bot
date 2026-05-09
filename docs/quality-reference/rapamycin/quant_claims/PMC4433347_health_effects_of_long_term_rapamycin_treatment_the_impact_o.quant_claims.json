@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC4433347_health_effects_of_long_term_rapamycin_treatment_the_impact_o",
   "doi": "10.1371/journal.pone.0126644",
-  "extracted_at": "2026-05-06T20:10:58+00:00",
+  "extracted_at": "2026-05-09T10:18:21+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 44,
@@ -276,7 +276,7 @@
       "context_window": "subset of male and female, control and rapamycin-fed mice (n = 15 per sex and treatment group), starting at 5 months of age u",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -294,7 +294,7 @@
       "context_window": "-fed mice (n = 15 per sex and treatment group), starting at 5 months of age until 21 months of age. Fat-free mass, fat mass and",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -312,7 +312,7 @@
       "context_window": "sex and treatment group), starting at 5 months of age until 21 months of age. Fat-free mass, fat mass and free water were measur",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -329,7 +329,7 @@
       "sentence": "Fat-free mass, fat mass and free water were measured in all animals monthly, starting at 12 months of age (after 8 months of rapamycin treatment), using the EchoMRI quantitative nuclear magnetic resonance system (EchoMRI 3-in-1 System, Houston, TX).",
       "context_window": "ree water were measured in all animals monthly, starting at 12 months of age (after 8 months of rapamycin treatment), using the E",
       "claim_role": "protocol",
-      "endpoint": "lean body mass",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -420,7 +420,7 @@
       "context_window": "se of Someya [ 40 ]. Briefly, cochleae from control (males, n = 13; females n = 18) and rapamycin-fed (males, n = 5; females n",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -438,7 +438,7 @@
       "context_window": "0 ]. Briefly, cochleae from control (males, n = 13; females n = 18) and rapamycin-fed (males, n = 5; females n = 12) animals w",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -456,7 +456,7 @@
       "context_window": "l (males, n = 13; females n = 18) and rapamycin-fed (males, n = 5; females n = 12) animals were excised from formalin-preserv",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -474,7 +474,7 @@
       "context_window": "3; females n = 18) and rapamycin-fed (males, n = 5; females n = 12) animals were excised from formalin-preserved mice, decalci",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -492,7 +492,7 @@
       "context_window": "s were excised from formalin-preserved mice, decalcified in 10% ethylenediamintetracetic acid. Paraffin-embedded sections w",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -618,7 +618,7 @@
       "context_window": "did not differ between control and rapamycin-fed animals at 21 months of age; however, mTOR transcripts in the liver were signifi",
       "claim_role": "protocol",
       "endpoint": "mTOR signaling",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -744,7 +744,7 @@
       "context_window": "ge. Sample sizes varied, depending on age, control females, n = 32-2; rapamycin females, n = 30-4; control males, n = 33-2; ra",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -762,7 +762,7 @@
       "context_window": "nding on age, control females, n = 32-2; rapamycin females, n = 30-4; control males, n = 33-2; rapamycin males, n = 36-3. A, B",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -780,7 +780,7 @@
       "context_window": "ales, n = 32-2; rapamycin females, n = 30-4; control males, n = 33-2; rapamycin males, n = 36-3. A, B: Total body mass. Highly",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -798,7 +798,7 @@
       "context_window": "emales, n = 30-4; control males, n = 33-2; rapamycin males, n = 36-3. A, B: Total body mass. Highly significant differences (p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -852,7 +852,7 @@
       "context_window": "cin-fed males did not differ in body mass or composition at 16 months of age, but lost mass with aging significantly differently",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -870,7 +870,7 @@
       "context_window": "ing significantly differently (Treatment X Age interaction, p < 0.001). Rapamycin-fed males began losing body mass about one mont",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -923,10 +923,10 @@
       "sentence": "In females, there was no significant effect of rapamycin treatment during the light (= inactive) phase of the 24 hour light:dark cycle ( Fig 3A ), but rapamycin-fed females exhibited higher total mass-specific metabolic rate during the dark (i.e., active) phase ( Fig 3C : Treatment effect, p = 0.003) and a higher mass-specific resting metabolic rate ( Fig 3E : Treatment effect, p = 0.01) irrespective of light:dark cycle.",
       "context_window": "the dark (i.e., active) phase ( Fig 3C : Treatment effect, p = 0.003) and a higher mass-specific resting metabolic rate ( Fig 3E",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4433347_health_effects_of_long_term_rapamycin_treatment_the_impact_o-p-5376",
@@ -941,10 +941,10 @@
       "sentence": "In females, there was no significant effect of rapamycin treatment during the light (= inactive) phase of the 24 hour light:dark cycle ( Fig 3A ), but rapamycin-fed females exhibited higher total mass-specific metabolic rate during the dark (i.e., active) phase ( Fig 3C : Treatment effect, p = 0.003) and a higher mass-specific resting metabolic rate ( Fig 3E : Treatment effect, p = 0.01) irrespective of light:dark cycle.",
       "context_window": "pecific resting metabolic rate ( Fig 3E : Treatment effect, p = 0.01) irrespective of light:dark cycle. P-values shown on indiv",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4433347_health_effects_of_long_term_rapamycin_treatment_the_impact_o-n-5581",
@@ -960,7 +960,7 @@
       "context_window": "ge. Sample sizes varied, depending on age, control females, n = 8-4; rapamycin females, n = 11-3; control males, n = 9-5; rap",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -978,7 +978,7 @@
       "context_window": "ending on age, control females, n = 8-4; rapamycin females, n = 11-3; control males, n = 9-5; rapamycin males, n = 16-2. A, B:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -996,7 +996,7 @@
       "context_window": "males, n = 8-4; rapamycin females, n = 11-3; control males, n = 9-5; rapamycin males, n = 16-2. A, B: Mass-specific metabolic",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1014,7 +1014,7 @@
       "context_window": "females, n = 11-3; control males, n = 9-5; rapamycin males, n = 16-2. A, B: Mass-specific metabolic rate during the light (= i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1122,7 +1122,7 @@
       "context_window": "ge. Sample sizes varied, depending on age, control females, n = 14-2; rapamycin females, n = 18-5; control males, n = 13-4; ra",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1140,7 +1140,7 @@
       "context_window": "nding on age, control females, n = 14-2; rapamycin females, n = 18-5; control males, n = 13-4; rapamycin males, n = 22-7. A, B",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1158,7 +1158,7 @@
       "context_window": "ales, n = 14-2; rapamycin females, n = 18-5; control males, n = 13-4; rapamycin males, n = 22-7. A, B: Spontaneous 24-hour act",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1176,7 +1176,7 @@
       "context_window": "emales, n = 18-5; control males, n = 13-4; rapamycin males, n = 22-7. A, B: Spontaneous 24-hour activity was greater in female",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1229,10 +1229,10 @@
       "sentence": "C, D: Total sleep Rapamycin treatment marginally increased total sleep in both sexes (p = 0.05) when taken together, but aging affected sleep patterns in the two sexes differently (age x sex, p << 0.001).",
       "context_window": "n treatment marginally increased total sleep in both sexes (p = 0.05) when taken together, but aging affected sleep patterns in",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4433347_health_effects_of_long_term_rapamycin_treatment_the_impact_o-p-8769",
@@ -1301,10 +1301,10 @@
       "sentence": "However, consistent with our OF results, rapamycin treatment reduced sleep fragmentation in males relative to controls (Treatment effect, p = 0.03).",
       "context_window": "gmentation in males relative to controls (Treatment effect, p = 0.03). Unlike our OF results, rapamycin treatment reduced sleep",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4433347_health_effects_of_long_term_rapamycin_treatment_the_impact_o-p-9403",
@@ -1319,10 +1319,10 @@
       "sentence": "Unlike our OF results, rapamycin treatment reduced sleep fragmentation marginally in females (Treatment effect, p = 0.06) compared to controls.",
       "context_window": "leep fragmentation marginally in females (Treatment effect, p = 0.06) compared to controls. Because this high-throughput sleep a",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4433347_health_effects_of_long_term_rapamycin_treatment_the_impact_o-p-9915",
@@ -1409,7 +1409,7 @@
       "sentence": "A, B: Grip strength declined significantly with age in all animals, regardless of treatment (p << 0.001); however rapamycin treatment affected males and females differently (treatment x sex, p = 0.003).",
       "context_window": "nt affected males and females differently (treatment x sex, p = 0.003). Rapamycin-fed females had greater grip strength than cont",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "high"
@@ -1428,7 +1428,7 @@
       "context_window": "er. Sample sizes varied, depending on age, control females, n = 17-7; rapamycin females, n = 27-4; control males, n = 22-4; ra",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1446,7 +1446,7 @@
       "context_window": "nding on age, control females, n = 17-7; rapamycin females, n = 27-4; control males, n = 22-4; rapamycin males, n = 31-3. C, D",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1464,7 +1464,7 @@
       "context_window": "ales, n = 17-7; rapamycin females, n = 27-4; control males, n = 22-4; rapamycin males, n = 31-3. C, D: Stride length increased",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1482,7 +1482,7 @@
       "context_window": "emales, n = 27-4; control males, n = 22-4; rapamycin males, n = 31-3. C, D: Stride length increased in males and females until",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1518,7 +1518,7 @@
       "context_window": "ex. Sample sizes varied, depending on age, control females, n = 15-6; rapamycin females, n = 21-5; control males, n = 19-4; ra",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1536,7 +1536,7 @@
       "context_window": "nding on age, control females, n = 15-6; rapamycin females, n = 21-5; control males, n = 19-4; rapamycin males, n = 26-9. E, F",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1554,7 +1554,7 @@
       "context_window": "ales, n = 15-6; rapamycin females, n = 21-5; control males, n = 19-4; rapamycin males, n = 26-9. E, F: Rotarod performance, me",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1572,7 +1572,7 @@
       "context_window": "emales, n = 21-5; control males, n = 19-4; rapamycin males, n = 26-9. E, F: Rotarod performance, measured as maximum latency t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1590,7 +1590,7 @@
       "context_window": "ss. Sample sizes varied, depending on age, control females, n = 11-6; rapamycin females, n = 19-6; control males, n = 13-7; ra",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1608,7 +1608,7 @@
       "context_window": "nding on age, control females, n = 11-6; rapamycin females, n = 19-6; control males, n = 13-7; rapamycin males, n = 21-8. Str",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1626,7 +1626,7 @@
       "context_window": "ales, n = 11-6; rapamycin females, n = 19-6; control males, n = 13-7; rapamycin males, n = 21-8. Stride length has previously",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1644,7 +1644,7 @@
       "context_window": "emales, n = 19-6; control males, n = 13-7; rapamycin males, n = 21-8. Stride length has previously been reported to decline w",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1679,7 +1679,7 @@
       "sentence": "However, rapamycin treatment had no effect on age-related changes in stride length in either sex (Treatment X Age effect, females: p = 0.88, males: p = 0.48).",
       "context_window": "ride length in either sex (Treatment X Age effect, females: p = 0.88, males: p = 0.48). Rotarod performance in mice is well kno",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1697,7 +1697,7 @@
       "sentence": "However, rapamycin treatment had no effect on age-related changes in stride length in either sex (Treatment X Age effect, females: p = 0.88, males: p = 0.48).",
       "context_window": "ther sex (Treatment X Age effect, females: p = 0.88, males: p = 0.48). Rotarod performance in mice is well known to be strongly",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1733,10 +1733,10 @@
       "sentence": "Rapamycin treatment had no effect on female performance (Treatment effect, p = 0.42), but had a marginally significant negative effect on male rotarod performance (Treatment effect, p = 0.06).",
       "context_window": "ment had no effect on female performance (Treatment effect, p = 0.42), but had a marginally significant negative effect on male",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4433347_health_effects_of_long_term_rapamycin_treatment_the_impact_o-p-12763",
@@ -1751,10 +1751,10 @@
       "sentence": "Rapamycin treatment had no effect on female performance (Treatment effect, p = 0.42), but had a marginally significant negative effect on male rotarod performance (Treatment effect, p = 0.06).",
       "context_window": "ative effect on male rotarod performance (Treatment effect, p = 0.06). If body mass was ignored, there was still no rapamycin ef",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4433347_health_effects_of_long_term_rapamycin_treatment_the_impact_o-p-12866",
@@ -1842,7 +1842,7 @@
       "context_window": ".63, females: p = 0.45). Median ages examined were 24.4 and 25.4 months for control and rapamycin-fed males, respectively, and 24.5",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1860,7 +1860,7 @@
       "context_window": "control and rapamycin-fed males, respectively, and 24.5 and 25.5 months form control and rapamycin-fed females. No statistical diff",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1895,7 +1895,7 @@
       "sentence": "Compared to our previous study, in which enteric rapamycin treatment was initiated at 19 months and continued throughout life (OF mice) [ 11 ], the YF mice in this study exhibited considerable differences in phenotype, and not just in the expected direction one might associate with earlier age and longer duration of rapamycin treatment ( Table 1 ).",
       "context_window": "tudy, in which enteric rapamycin treatment was initiated at 19 months and continued throughout life (OF mice) [ 11 ], the YF mice",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -2003,10 +2003,10 @@
       "sentence": "For instance, rapamycin treatment by injection in 22-24 month old male C57BL/6 mice improved several measures of health, including hematopoietic stem cell function [ 5 ] and 3 months of enteric rapamycin treatment in even older female C57BL/6 mice improved cardiac function and some metrics of behavioral, motor and skeletal phenotypes [ 1 ].",
       "context_window": "ments. For instance, rapamycin treatment by injection in 22-24 month old male C57BL/6 mice improved several measures of health,",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4433347_health_effects_of_long_term_rapamycin_treatment_the_impact_o-u-5750",
@@ -2021,10 +2021,10 @@
       "sentence": "For instance, rapamycin treatment by injection in 22-24 month old male C57BL/6 mice improved several measures of health, including hematopoietic stem cell function [ 5 ] and 3 months of enteric rapamycin treatment in even older female C57BL/6 mice improved cardiac function and some metrics of behavioral, motor and skeletal phenotypes [ 1 ].",
       "context_window": "ealth, including hematopoietic stem cell function [ 5 ] and 3 months of enteric rapamycin treatment in even older female C57BL/6",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4433347_health_effects_of_long_term_rapamycin_treatment_the_impact_o-u-5984",

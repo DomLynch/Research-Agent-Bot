@@ -1,7 +1,7 @@
 {
   "paper_id": "DOI_10_1101_2023_06_12_544619_late_life_rapamycin_treatment_enhances_cardiomyocyte_relaxat",
   "doi": "10.1101/2023.06.12.544619",
-  "extracted_at": "2026-05-06T20:10:57+00:00",
+  "extracted_at": "2026-05-09T10:18:12+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 2,
@@ -22,7 +22,7 @@
       "context_window": "omyocytes from old control mice exhibited prolonged time to 90% relaxation (RT 90 ) and time to 90% Ca 2+ transient decay (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -40,7 +40,7 @@
       "context_window": "bited prolonged time to 90% relaxation (RT 90 ) and time to 90% Ca 2+ transient decay (DT 90 ), indicating slower relaxatio",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -57,10 +57,10 @@
       "sentence": "Late-life rapamycin treatment for 10 weeks completely normalized RT 90 and partially normalized DT 90 , suggesting improved Ca 2+ handling contributes partially to the rapamycin-induced improved cardiomyocyte relaxation.",
       "context_window": "alcium reuptake with age. Late-life rapamycin treatment for 10 weeks completely normalized RT 90 and partially normalized DT 90",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se",
   "doi": "10.4161/onci.20297",
-  "extracted_at": "2026-05-05T15:22:49+00:00",
+  "extracted_at": "2026-05-09T10:18:21+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 30,
@@ -185,10 +185,10 @@
       "sentence": "LC3-II / \u03b2-actin in the presence of protease inhibitors was subtracted by LC3-II / \u03b2-actin without protease inhibitors. *p < 0.05. (B) Fluorescence microscopic detection of pEGFP-LC3 dot formation in BEAS-2B cells: BEAS-2B cells with stable expression of pEGFP-LC3 were treated with bafilomycin A (200 nM), CSE (1.0%), or both bafilomycin A and CSE for 24h.",
       "context_window": "ubtracted by LC3-II / \u03b2-actin without protease inhibitors. *p < 0.05. (B) Fluorescence microscopic detection of pEGFP-LC3 dot fo",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-pct-1683",
@@ -203,10 +203,10 @@
       "sentence": "LC3-II / \u03b2-actin in the presence of protease inhibitors was subtracted by LC3-II / \u03b2-actin without protease inhibitors. *p < 0.05. (B) Fluorescence microscopic detection of pEGFP-LC3 dot formation in BEAS-2B cells: BEAS-2B cells with stable expression of pEGFP-LC3 were treated with bafilomycin A (200 nM), CSE (1.0%), or both bafilomycin A and CSE for 24h.",
       "context_window": "of pEGFP-LC3 were treated with bafilomycin A (200 nM), CSE (1.0%), or both bafilomycin A and CSE for 24h. Photomicrographs a",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-p-1975",
@@ -257,7 +257,7 @@
       "sentence": "The lower panel is the relative increase of LC3-II after CSE exposure taken from densitometric analysis of WB. *p < 0.05.",
       "context_window": "fter CSE exposure taken from densitometric analysis of WB. *p < 0.05. To elucidate the regulatory role of autophagy in CSE-indu",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -275,7 +275,7 @@
       "sentence": "17 CSE (1.0%) significantly increased the percentage of senescent cells as measured by both an increase in phospho-Histone H2A.X (Ser139) staining of DNA damage and by SA-\u03b2-Gal staining, which were enhanced in the presence of 3MA, an autophagic sequestration blocker ( Fig.",
       "context_window": "of mTOR, effectively induced autophagy ( Fig. 2A ). 17 CSE (1.0%) significantly increased the percentage of senescent cells",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -365,10 +365,10 @@
       "sentence": "Open bar is no treatment and filled bar is CSE (1.0% for 48 h) treated in HBEC. *p < 0.05. (D) western blot (WB) using anti-p21 or \u03b2-actin in control treated (lane 1), CSE treated (lane 2), control treated in the presence of 3MA (1.0mM) (lane 3,4), CSE treated in the presence of 3MA (1mM) (lane 5,6), and CSE treated in the presence of torin1(lane 7,8) in HBEC.",
       "context_window": "xperiments. Open bar is no treatment and filled bar is CSE (1.0% for 48 h) treated in HBEC. *p < 0.05. (D) western blot (WB)",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-p-5503",
@@ -383,10 +383,10 @@
       "sentence": "Open bar is no treatment and filled bar is CSE (1.0% for 48 h) treated in HBEC. *p < 0.05. (D) western blot (WB) using anti-p21 or \u03b2-actin in control treated (lane 1), CSE treated (lane 2), control treated in the presence of 3MA (1.0mM) (lane 3,4), CSE treated in the presence of 3MA (1mM) (lane 5,6), and CSE treated in the presence of torin1(lane 7,8) in HBEC.",
       "context_window": "ent and filled bar is CSE (1.0% for 48 h) treated in HBEC. *p < 0.05. (D) western blot (WB) using anti-p21 or \u03b2-actin in control",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-p-6239",
@@ -419,10 +419,10 @@
       "sentence": "Open bar is no treatment and filled bar is CSE (1.0% for 48 h) treated and horizontal crosshatched bar is CSE (2.5% for 48 h) treated. *p < 0.05. (C) western blot (WB) using anti-p21 or \u03b2-actin in control or LC3B siRNA transfected HBEC.",
       "context_window": "xperiments. Open bar is no treatment and filled bar is CSE (1.0% for 48 h) treated and horizontal crosshatched bar is CSE (2",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-pct-8149",
@@ -437,10 +437,10 @@
       "sentence": "Open bar is no treatment and filled bar is CSE (1.0% for 48 h) treated and horizontal crosshatched bar is CSE (2.5% for 48 h) treated. *p < 0.05. (C) western blot (WB) using anti-p21 or \u03b2-actin in control or LC3B siRNA transfected HBEC.",
       "context_window": "% for 48 h) treated and horizontal crosshatched bar is CSE (2.5% for 48 h) treated. *p < 0.05. (C) western blot (WB) using a",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-p-8174",
@@ -455,10 +455,10 @@
       "sentence": "Open bar is no treatment and filled bar is CSE (1.0% for 48 h) treated and horizontal crosshatched bar is CSE (2.5% for 48 h) treated. *p < 0.05. (C) western blot (WB) using anti-p21 or \u03b2-actin in control or LC3B siRNA transfected HBEC.",
       "context_window": "orizontal crosshatched bar is CSE (2.5% for 48 h) treated. *p < 0.05. (C) western blot (WB) using anti-p21 or \u03b2-actin in control",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-pct-8324",
@@ -509,10 +509,10 @@
       "sentence": "Open bar is no treatment and filled bar is CSE (1.0% for 48 h) treated. *p < 0.05. (F) western blot (WB) using anti-p21 or \u03b2-actin in control or ATG5 siRNA transfected HBEC.",
       "context_window": "xperiments. Open bar is no treatment and filled bar is CSE (1.0% for 48 h) treated. *p < 0.05. (F) western blot (WB) using a",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-p-8930",
@@ -527,10 +527,10 @@
       "sentence": "Open bar is no treatment and filled bar is CSE (1.0% for 48 h) treated. *p < 0.05. (F) western blot (WB) using anti-p21 or \u03b2-actin in control or ATG5 siRNA transfected HBEC.",
       "context_window": "o treatment and filled bar is CSE (1.0% for 48 h) treated. *p < 0.05. (F) western blot (WB) using anti-p21 or \u03b2-actin in control",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-pct-9088",
@@ -563,7 +563,7 @@
       "sentence": "CSE (1.0%) induced accumulation of both ubiquitinated proteins and p62 in a time dependent manner, especially after 24 h incubation, which corresponds to a decline of autophagy activity ( Fig.",
       "context_window": "dicator for autophagic clearance during CSE treatment. CSE (1.0%) induced accumulation of both ubiquitinated proteins and p6",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -581,10 +581,10 @@
       "sentence": "Accumulations of ubiquitinated protein and p62 in response to CSE exposure in HBEC. (A) WB using anti-ubiquitin, anti-p62, or anti- \u03b2-actin of cell lysates from HBEC for indicated time points of control or CSE (1.0%) treatment.",
       "context_window": "ates from HBEC for indicated time points of control or CSE (1.0%) treatment. Shown is a representative experiment of 3 showi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-pct-10222",
@@ -599,10 +599,10 @@
       "sentence": "HBEC were exposed to CSE (1.0% for 48 h) in the absence (lane 1, 2) or presence of torin1 (250 nM) (lane 3, 4) and bafilomycin A (200 nM) (lane 5, 6). (C) WB using anti-ubiquitin, anti-p62, or anti- \u03b2-actin of cell lysates from control siRNA or LC3B siRNA transfected HBEC.",
       "context_window": "itin, anti-p62, or anti- \u03b2-actin. HBEC were exposed to CSE (1.0% for 48 h) in the absence (lane 1, 2) or presence of torin1",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-pct-10475",
@@ -617,10 +617,10 @@
       "sentence": "CSE (1.0% for 48 h) treatment was started 24 h post-siRNA transfection. (D) WB using anti-ubiquitin, anti-p62, or anti- \u03b2-actin of cell lysates from control siRNA or ATG5 siRNA transfected HBEC.",
       "context_window": "tes from control siRNA or LC3B siRNA transfected HBEC. CSE (1.0% for 48 h) treatment was started 24 h post-siRNA transfectio",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-pct-10670",
@@ -635,10 +635,10 @@
       "sentence": "CSE (1.0% for 48 h) treatment was started 24 h post-siRNA transfection. (E) RT-PCR (upper panel), using primers to p62 and \u03b2-actin, was performed from total RNA harvested from control siRNA (lane 1) and p62 siRNA (lane 2) transfected HBEC after 48 h incubation.",
       "context_window": "tes from control siRNA or ATG5 siRNA transfected HBEC. CSE (1.0% for 48 h) treatment was started 24 h post-siRNA transfectio",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-pct-11267",
@@ -689,10 +689,10 @@
       "sentence": "Open bar is no treatment and filled bar is CSE (1.0% for 48 h) treated HBEC. ns = not significant\n\nTo elucidate the involvement of p62 in ubiquitinated protein accumulation in the progression of cellular senescence, we employed p62 siRNA.",
       "context_window": "xperiments. Open bar is no treatment and filled bar is CSE (1.0% for 48 h) treated HBEC. ns = not significant To elucidate",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-pct-13347",
@@ -815,10 +815,10 @@
       "sentence": "Shown in panel is the average percentage (\u00b1 SEM) of Ki67 positive cells in HBEC isolated from non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (B) WB using anti-p21 and anti-\u03b2-actin of cell lysates from HBEC isolated from nonsmokers (lane 1, 2, 3), non-COPD smokers (lane 4, 5, 6), and COPD patients (lane 7, 8, 9).",
       "context_window": "M) of Ki67 positive cells in HBEC isolated from non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (B) WB usi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-n-17203",
@@ -833,10 +833,10 @@
       "sentence": "Shown in panel is the average percentage (\u00b1 SEM) of Ki67 positive cells in HBEC isolated from non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (B) WB using anti-p21 and anti-\u03b2-actin of cell lysates from HBEC isolated from nonsmokers (lane 1, 2, 3), non-COPD smokers (lane 4, 5, 6), and COPD patients (lane 7, 8, 9).",
       "context_window": "HBEC isolated from non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (B) WB using anti-p21 and anti-\u03b2-actin",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-n-17221",
@@ -851,10 +851,10 @@
       "sentence": "Shown in panel is the average percentage (\u00b1 SEM) of Ki67 positive cells in HBEC isolated from non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (B) WB using anti-p21 and anti-\u03b2-actin of cell lysates from HBEC isolated from nonsmokers (lane 1, 2, 3), non-COPD smokers (lane 4, 5, 6), and COPD patients (lane 7, 8, 9).",
       "context_window": "non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (B) WB using anti-p21 and anti-\u03b2-actin of cell lysates fr",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-n-17514",
@@ -995,10 +995,10 @@
       "sentence": "Presented cases are non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (E) WB using anti-ubiquitin, anti-p62, or anti- \u03b2-actin of lung homogenates from non-smoker (n = 3), smoker without COPD (Brinkman Index < 900)(n = 3), smoker with COPD (Brinkman Index \u2267900)(n = 3), and COPD (n = 3).",
       "context_window": "nsitometric analysis of WB. Presented cases are non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (E) WB usi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-n-18437",
@@ -1013,10 +1013,10 @@
       "sentence": "Presented cases are non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (E) WB using anti-ubiquitin, anti-p62, or anti- \u03b2-actin of lung homogenates from non-smoker (n = 3), smoker without COPD (Brinkman Index < 900)(n = 3), smoker with COPD (Brinkman Index \u2267900)(n = 3), and COPD (n = 3).",
       "context_window": "resented cases are non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (E) WB using anti-ubiquitin, anti-p62,",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-n-18455",
@@ -1031,10 +1031,10 @@
       "sentence": "Presented cases are non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (E) WB using anti-ubiquitin, anti-p62, or anti- \u03b2-actin of lung homogenates from non-smoker (n = 3), smoker without COPD (Brinkman Index < 900)(n = 3), smoker with COPD (Brinkman Index \u2267900)(n = 3), and COPD (n = 3).",
       "context_window": "non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (E) WB using anti-ubiquitin, anti-p62, or anti- \u03b2-actin o",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-n-18556",
@@ -1049,10 +1049,10 @@
       "sentence": "Presented cases are non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (E) WB using anti-ubiquitin, anti-p62, or anti- \u03b2-actin of lung homogenates from non-smoker (n = 3), smoker without COPD (Brinkman Index < 900)(n = 3), smoker with COPD (Brinkman Index \u2267900)(n = 3), and COPD (n = 3).",
       "context_window": "-p62, or anti- \u03b2-actin of lung homogenates from non-smoker (n = 3), smoker without COPD (Brinkman Index < 900)(n = 3), smoker",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-n-18607",
@@ -1067,10 +1067,10 @@
       "sentence": "Presented cases are non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (E) WB using anti-ubiquitin, anti-p62, or anti- \u03b2-actin of lung homogenates from non-smoker (n = 3), smoker without COPD (Brinkman Index < 900)(n = 3), smoker with COPD (Brinkman Index \u2267900)(n = 3), and COPD (n = 3).",
       "context_window": "-smoker (n = 3), smoker without COPD (Brinkman Index < 900)(n = 3), smoker with COPD (Brinkman Index \u2267900)(n = 3), and COPD (",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-n-18654",
@@ -1085,10 +1085,10 @@
       "sentence": "Presented cases are non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (E) WB using anti-ubiquitin, anti-p62, or anti- \u03b2-actin of lung homogenates from non-smoker (n = 3), smoker without COPD (Brinkman Index < 900)(n = 3), smoker with COPD (Brinkman Index \u2267900)(n = 3), and COPD (n = 3).",
       "context_window": "Index < 900)(n = 3), smoker with COPD (Brinkman Index \u2267900)(n = 3), and COPD (n = 3). The right panel is the average (\u00b1 SEM)",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3429567_insufficient_autophagy_promotes_bronchial_epithelial_cell_se-n-18672",
@@ -1103,10 +1103,10 @@
       "sentence": "Presented cases are non-smoker (n = 5), smoker without COPD (n = 5), and COPD (n = 5). (E) WB using anti-ubiquitin, anti-p62, or anti- \u03b2-actin of lung homogenates from non-smoker (n = 3), smoker without COPD (Brinkman Index < 900)(n = 3), smoker with COPD (Brinkman Index \u2267900)(n = 3), and COPD (n = 3).",
       "context_window": "), smoker with COPD (Brinkman Index \u2267900)(n = 3), and COPD (n = 3). The right panel is the average (\u00b1 SEM) taken from densito",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

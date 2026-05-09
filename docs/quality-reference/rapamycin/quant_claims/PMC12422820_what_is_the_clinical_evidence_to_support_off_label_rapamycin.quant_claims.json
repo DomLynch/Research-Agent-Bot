@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12422820_what_is_the_clinical_evidence_to_support_off_label_rapamycin",
   "doi": "10.18632/aging.206300",
-  "extracted_at": "2026-05-04T10:01:43+00:00",
+  "extracted_at": "2026-05-09T10:18:18+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 28,
@@ -77,10 +77,10 @@
       "sentence": "In a follow-up phase 2b and phase 3 analysis, 10 mg/day of RTB101 demonstrated a similar effect and was associated with a marked reduction in respiratory tract infection incidence [ 25 ].",
       "context_window": "this [ 25 ]. In a follow-up phase 2b and phase 3 analysis, 10 mg/day of RTB101 demonstrated a similar effect and was associated",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "respiratory infection rate",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12422820_what_is_the_clinical_evidence_to_support_off_label_rapamycin-n-4766",
@@ -96,7 +96,7 @@
       "context_window": "caveats apply in this trial. In the 2b phase, participants (n = 652) were initially randomized to RTB101 at 5mg/day, 10 mg/day,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "rticipants (n = 652) were initially randomized to RTB101 at 5mg/day, 10 mg/day, or placebo. Importantly, the incidence of respi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -132,7 +132,7 @@
       "context_window": "s (n = 652) were initially randomized to RTB101 at 5mg/day, 10 mg/day, or placebo. Importantly, the incidence of respiratory trac",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -149,7 +149,7 @@
       "sentence": "Importantly, the incidence of respiratory tract infections did not differ significantly between the 5 mg/day dose versus placebo.",
       "context_window": "y tract infections did not differ significantly between the 5 mg/day dose versus placebo. In part 2 of this trial, investigators",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "respiratory infection rate",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -167,7 +167,7 @@
       "sentence": "In part 2 of this trial, investigators instead randomized the remaining participants (473) to 10 mg/day, 20 mg/day, 10mg/day + everolimus 10 mg/day, or placebo, noting that only the 10 mg/day dose of RTB101 was sufficient to reduce the respiratory tract infection rate relative to control.",
       "context_window": "tors instead randomized the remaining participants (473) to 10 mg/day, 20 mg/day, 10mg/day + everolimus 10 mg/day, or placebo, no",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "respiratory infection rate",
       "arm": "placebo",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -185,7 +185,7 @@
       "sentence": "In part 2 of this trial, investigators instead randomized the remaining participants (473) to 10 mg/day, 20 mg/day, 10mg/day + everolimus 10 mg/day, or placebo, noting that only the 10 mg/day dose of RTB101 was sufficient to reduce the respiratory tract infection rate relative to control.",
       "context_window": "d randomized the remaining participants (473) to 10 mg/day, 20 mg/day, 10mg/day + everolimus 10 mg/day, or placebo, noting that o",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "respiratory infection rate",
       "arm": "placebo",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -203,7 +203,7 @@
       "sentence": "In part 2 of this trial, investigators instead randomized the remaining participants (473) to 10 mg/day, 20 mg/day, 10mg/day + everolimus 10 mg/day, or placebo, noting that only the 10 mg/day dose of RTB101 was sufficient to reduce the respiratory tract infection rate relative to control.",
       "context_window": "d the remaining participants (473) to 10 mg/day, 20 mg/day, 10mg/day + everolimus 10 mg/day, or placebo, noting that only the 10",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "respiratory infection rate",
       "arm": "placebo",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -221,7 +221,7 @@
       "sentence": "In part 2 of this trial, investigators instead randomized the remaining participants (473) to 10 mg/day, 20 mg/day, 10mg/day + everolimus 10 mg/day, or placebo, noting that only the 10 mg/day dose of RTB101 was sufficient to reduce the respiratory tract infection rate relative to control.",
       "context_window": "ipants (473) to 10 mg/day, 20 mg/day, 10mg/day + everolimus 10 mg/day, or placebo, noting that only the 10 mg/day dose of RTB101",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "respiratory infection rate",
       "arm": "placebo",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -239,7 +239,7 @@
       "sentence": "In part 2 of this trial, investigators instead randomized the remaining participants (473) to 10 mg/day, 20 mg/day, 10mg/day + everolimus 10 mg/day, or placebo, noting that only the 10 mg/day dose of RTB101 was sufficient to reduce the respiratory tract infection rate relative to control.",
       "context_window": "ay + everolimus 10 mg/day, or placebo, noting that only the 10 mg/day dose of RTB101 was sufficient to reduce the respiratory tra",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "respiratory infection rate",
       "arm": "placebo",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -258,9 +258,9 @@
       "context_window": "sis. For example, Gunderman et al. (2014) demonstrated that 16 mg of rapamune blunted post-exercise increases in protein synt",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "Rapamune",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12422820_what_is_the_clinical_evidence_to_support_off_label_rapamycin-u-9268",
@@ -276,9 +276,9 @@
       "context_window": "to evaluate its effect in 4 doses over 12-hour periods for 15 days [ 31 ]. Several days post-administration, significant reduc",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12422820_what_is_the_clinical_evidence_to_support_off_label_rapamycin-u-9833",
@@ -311,10 +311,10 @@
       "sentence": "One of the most detailed trials of low-dose rapamycin use in healthy participants comes from Kraig et al.\u2019s (2018) examination of 25 healthy older adults (aged 70-95 years), which evaluated the safety of 1 mg/day sirolimus for 8 weeks.",
       "context_window": "l.\u2019s (2018) examination of 25 healthy older adults (aged 70-95 years), which evaluated the safety of 1 mg/day sirolimus for 8 we",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12422820_what_is_the_clinical_evidence_to_support_off_label_rapamycin-u-10291",
@@ -329,10 +329,10 @@
       "sentence": "One of the most detailed trials of low-dose rapamycin use in healthy participants comes from Kraig et al.\u2019s (2018) examination of 25 healthy older adults (aged 70-95 years), which evaluated the safety of 1 mg/day sirolimus for 8 weeks.",
       "context_window": "er adults (aged 70-95 years), which evaluated the safety of 1 mg/day sirolimus for 8 weeks. A mean 7.2 ng/dL circulating level o",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12422820_what_is_the_clinical_evidence_to_support_off_label_rapamycin-u-10314",
@@ -347,10 +347,10 @@
       "sentence": "One of the most detailed trials of low-dose rapamycin use in healthy participants comes from Kraig et al.\u2019s (2018) examination of 25 healthy older adults (aged 70-95 years), which evaluated the safety of 1 mg/day sirolimus for 8 weeks.",
       "context_window": "ears), which evaluated the safety of 1 mg/day sirolimus for 8 weeks. A mean 7.2 ng/dL circulating level of sirolimus was achiev",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12422820_what_is_the_clinical_evidence_to_support_off_label_rapamycin-u-10580",
@@ -366,9 +366,9 @@
       "context_window": "a relatively short duration and (2) the use of continuous (1 mg/day) rather than intermittent rapamycin dosing schedules that m",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12422820_what_is_the_clinical_evidence_to_support_off_label_rapamycin-p-10968",
@@ -384,9 +384,9 @@
       "context_window": "ycerides and Hemoglobin A1C (HbA1C) and a near-significant (p=0.06) increase for very-low-density lipoprotein (VLDL) within ra",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12422820_what_is_the_clinical_evidence_to_support_off_label_rapamycin-u-675",
@@ -473,10 +473,10 @@
       "sentence": "These studies aim to evaluate potential structural changes, including gray matter metrics, over treatment periods.\n\n\u201cEvaluating Rapamycin Treatment in Alzheimer\u2019s Disease using Positron Emission Tomography\u201d (ERAP) or the ERAP trial is a six-month-long, single-arm, open-label, phase IIa biomarker-driven study which is testing rapamycin at a dose of 7 mg weekly and measuring changes in cerebral glucose metabolism [ 52 ].",
       "context_window": "marker-driven study which is testing rapamycin at a dose of 7 mg weekly and measuring changes in cerebral glucose metabolism",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12422820_what_is_the_clinical_evidence_to_support_off_label_rapamycin-u-1601",
@@ -492,9 +492,9 @@
       "context_window": "Cognitive Health\u201d (REACH) which aims to test the effect of 1 mg of daily rapamycin on various markers of AD disease burden",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12422820_what_is_the_clinical_evidence_to_support_off_label_rapamycin-u-5034",
@@ -510,7 +510,7 @@
       "context_window": "with other gerotherapeutics. While once weekly dosing of 5-7 mg, or 10-15 mg biweekly is commonly recommended to patients,",
       "claim_role": "dose",
       "endpoint": "healthspan",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -528,7 +528,7 @@
       "context_window": "erotherapeutics. While once weekly dosing of 5-7 mg, or 10-15 mg biweekly is commonly recommended to patients, there is stil",
       "claim_role": "dose",
       "endpoint": "healthspan",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -546,7 +546,7 @@
       "context_window": "apamycin is estimated to impart biological effects at about 5 ng/mL and achieve greater relative toxicity above 15 ng/mL (pk pa",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -564,7 +564,7 @@
       "context_window": "t about 5 ng/mL and achieve greater relative toxicity above 15 ng/mL (pk parameters: 60-80 hours to 0.5 max concentrations), whi",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -582,7 +582,7 @@
       "context_window": "concentrations), which suggests that rapamycin therapy (0.5-1 mg) daily or (5-7 mg) weekly could be sufficient to avoid side",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -600,7 +600,7 @@
       "context_window": "hich suggests that rapamycin therapy (0.5-1 mg) daily or (5-7 mg) weekly could be sufficient to avoid side effects and reduc",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

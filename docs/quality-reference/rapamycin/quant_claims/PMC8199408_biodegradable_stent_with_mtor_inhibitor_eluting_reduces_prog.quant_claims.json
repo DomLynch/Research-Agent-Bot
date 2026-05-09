@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8199408_biodegradable_stent_with_mtor_inhibitor_eluting_reduces_prog",
   "doi": "10.3390/ijms22115664",
-  "extracted_at": "2026-05-05T15:22:50+00:00",
+  "extracted_at": "2026-05-09T10:18:26+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 14,
@@ -166,10 +166,10 @@
       "sentence": "When cell confluence reached 80%, SV-HUC-1 cells were treated with different concentrations of rapamycin (0, 0.01, 0.1, 1, 10, 100 mM) with or without TGF-\u03b2 10 ng/mL cotreatment\n\nThe Mirage sirolimus-eluting bioresorbable microfiber stents were selected for this study due to their small strut size, built-in fluid dynamic feature, and predictable biodegradation time.",
       "context_window": "plastic tissue culture dishes. When cell confluence reached 80%, SV-HUC-1 cells were treated with different concentrations",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199408_biodegradable_stent_with_mtor_inhibitor_eluting_reduces_prog-u-651",
@@ -184,10 +184,10 @@
       "sentence": "When cell confluence reached 80%, SV-HUC-1 cells were treated with different concentrations of rapamycin (0, 0.01, 0.1, 1, 10, 100 mM) with or without TGF-\u03b2 10 ng/mL cotreatment\n\nThe Mirage sirolimus-eluting bioresorbable microfiber stents were selected for this study due to their small strut size, built-in fluid dynamic feature, and predictable biodegradation time.",
       "context_window": "pamycin (0, 0.01, 0.1, 1, 10, 100 mM) with or without TGF-\u03b2 10 ng/mL cotreatment The Mirage sirolimus-eluting bioresorbable mic",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199408_biodegradable_stent_with_mtor_inhibitor_eluting_reduces_prog-pct-903",
@@ -347,7 +347,7 @@
       "context_window": "ntly when rapamycin up to 0.1nM was added (0.97 + 0.06), as 41% decreased compared with control (1.66 + 0.39, double asteri",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -365,7 +365,7 @@
       "context_window": "\u03b1-SMA expression decreased with rapamycin (0.53 + 0.08), a 37% decrease compared with control (0.84 + 0.23, double asteris",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

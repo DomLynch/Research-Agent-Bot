@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC13092776_the_clinical_spectrum_and_neurodevelopmental_pathogenesis_of",
   "doi": "10.1002/ana.78159",
-  "extracted_at": "2026-05-04T10:31:45+00:00",
+  "extracted_at": "2026-05-09T10:18:20+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 30,
@@ -131,9 +131,9 @@
       "context_window": "ptn KO versus scrambled (scram) gRNA transfected cells (*** p < 0.001). (C) Western blot assay showing absent Kptn and increased",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13092776_the_clinical_spectrum_and_neurodevelopmental_pathogenesis_of-p-4741",
@@ -148,10 +148,10 @@
       "sentence": "Graphs show average normalized levels of phosphorylated S6 (PS6) relative to S6 and \u03b2\u2010Actin protein expression (** p < 0.05, *** p < 0.001).",
       "context_window": "S6 (PS6) relative to S6 and \u03b2\u2010Actin protein expression (** p < 0.05, *** p < 0.001). AAF = amino acid free media; KO = knockout",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13092776_the_clinical_spectrum_and_neurodevelopmental_pathogenesis_of-p-4755",
@@ -166,10 +166,10 @@
       "sentence": "Graphs show average normalized levels of phosphorylated S6 (PS6) relative to S6 and \u03b2\u2010Actin protein expression (** p < 0.05, *** p < 0.001).",
       "context_window": "tive to S6 and \u03b2\u2010Actin protein expression (** p < 0.05, *** p < 0.001). AAF = amino acid free media; KO = knockout; RT\u2010PCR = reve",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13092776_the_clinical_spectrum_and_neurodevelopmental_pathogenesis_of-u-6323",
@@ -634,8 +634,8 @@
       "sentence": "A 14\u2010year\u2010old girl (individual 14) with intellectual disability and drug\u2010resistant generalized tonic-clonic (GTC) seizures and focal impaired aware seizures (see Supplementary Tables S2 and S4 ) was trialed with sirolimus therapy (2-3 mg/day) as an adjunct to her regular medications (sodium valproate 375 mg t.i.d., zonisamide 150 mg b.i.d., and clonazepam prn) over a 6\u2010month period (4 months at 2 mg/day and 2 months at 3 mg/day).",
       "context_window": "ry Tables S2 and S4 ) was trialed with sirolimus therapy (2-3 mg/day) as an adjunct to her regular medications (sodium valproate",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "sirolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -652,8 +652,8 @@
       "sentence": "A 14\u2010year\u2010old girl (individual 14) with intellectual disability and drug\u2010resistant generalized tonic-clonic (GTC) seizures and focal impaired aware seizures (see Supplementary Tables S2 and S4 ) was trialed with sirolimus therapy (2-3 mg/day) as an adjunct to her regular medications (sodium valproate 375 mg t.i.d., zonisamide 150 mg b.i.d., and clonazepam prn) over a 6\u2010month period (4 months at 2 mg/day and 2 months at 3 mg/day).",
       "context_window": "as an adjunct to her regular medications (sodium valproate 375 mg t.i.d., zonisamide 150 mg b.i.d., and clonazepam prn) over",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "sirolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -670,8 +670,8 @@
       "sentence": "A 14\u2010year\u2010old girl (individual 14) with intellectual disability and drug\u2010resistant generalized tonic-clonic (GTC) seizures and focal impaired aware seizures (see Supplementary Tables S2 and S4 ) was trialed with sirolimus therapy (2-3 mg/day) as an adjunct to her regular medications (sodium valproate 375 mg t.i.d., zonisamide 150 mg b.i.d., and clonazepam prn) over a 6\u2010month period (4 months at 2 mg/day and 2 months at 3 mg/day).",
       "context_window": "lar medications (sodium valproate 375 mg t.i.d., zonisamide 150 mg b.i.d., and clonazepam prn) over a 6\u2010month period (4 months",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "sirolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -688,8 +688,8 @@
       "sentence": "A 14\u2010year\u2010old girl (individual 14) with intellectual disability and drug\u2010resistant generalized tonic-clonic (GTC) seizures and focal impaired aware seizures (see Supplementary Tables S2 and S4 ) was trialed with sirolimus therapy (2-3 mg/day) as an adjunct to her regular medications (sodium valproate 375 mg t.i.d., zonisamide 150 mg b.i.d., and clonazepam prn) over a 6\u2010month period (4 months at 2 mg/day and 2 months at 3 mg/day).",
       "context_window": "e 150 mg b.i.d., and clonazepam prn) over a 6\u2010month period (4 months at 2 mg/day and 2 months at 3 mg/day). Despite adequate ser",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "sirolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -706,8 +706,8 @@
       "sentence": "A 14\u2010year\u2010old girl (individual 14) with intellectual disability and drug\u2010resistant generalized tonic-clonic (GTC) seizures and focal impaired aware seizures (see Supplementary Tables S2 and S4 ) was trialed with sirolimus therapy (2-3 mg/day) as an adjunct to her regular medications (sodium valproate 375 mg t.i.d., zonisamide 150 mg b.i.d., and clonazepam prn) over a 6\u2010month period (4 months at 2 mg/day and 2 months at 3 mg/day).",
       "context_window": ".d., and clonazepam prn) over a 6\u2010month period (4 months at 2 mg/day and 2 months at 3 mg/day). Despite adequate serum sirolimus",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "sirolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -724,8 +724,8 @@
       "sentence": "A 14\u2010year\u2010old girl (individual 14) with intellectual disability and drug\u2010resistant generalized tonic-clonic (GTC) seizures and focal impaired aware seizures (see Supplementary Tables S2 and S4 ) was trialed with sirolimus therapy (2-3 mg/day) as an adjunct to her regular medications (sodium valproate 375 mg t.i.d., zonisamide 150 mg b.i.d., and clonazepam prn) over a 6\u2010month period (4 months at 2 mg/day and 2 months at 3 mg/day).",
       "context_window": "azepam prn) over a 6\u2010month period (4 months at 2 mg/day and 2 months at 3 mg/day). Despite adequate serum sirolimus levels, no s",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "sirolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -742,8 +742,8 @@
       "sentence": "A 14\u2010year\u2010old girl (individual 14) with intellectual disability and drug\u2010resistant generalized tonic-clonic (GTC) seizures and focal impaired aware seizures (see Supplementary Tables S2 and S4 ) was trialed with sirolimus therapy (2-3 mg/day) as an adjunct to her regular medications (sodium valproate 375 mg t.i.d., zonisamide 150 mg b.i.d., and clonazepam prn) over a 6\u2010month period (4 months at 2 mg/day and 2 months at 3 mg/day).",
       "context_window": "over a 6\u2010month period (4 months at 2 mg/day and 2 months at 3 mg/day). Despite adequate serum sirolimus levels, no significant c",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "sirolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -760,10 +760,10 @@
       "sentence": "The treatment trial was stopped after 6 months and seizure frequency and hyperlipidemia returned to baseline.",
       "context_window": "m cholesterol levels. The treatment trial was stopped after 6 months and seizure frequency and hyperlipidemia returned to baseli",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "hyperlipidemia",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13092776_the_clinical_spectrum_and_neurodevelopmental_pathogenesis_of-u-12339",
@@ -778,10 +778,10 @@
       "sentence": "Regular medication eslicarbazepine (400 mg q.d.) was tapered and stopped, the sulthiame dose was reduced and sirolimus was added at 2 mg/day over a 3 to 4 week period.",
       "context_window": "ary Tables S2 and S4 ). Regular medication eslicarbazepine (400 mg q.d.) was tapered and stopped, the sulthiame dose was reduc",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "sirolimus",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13092776_the_clinical_spectrum_and_neurodevelopmental_pathogenesis_of-u-12435",
@@ -796,10 +796,10 @@
       "sentence": "Regular medication eslicarbazepine (400 mg q.d.) was tapered and stopped, the sulthiame dose was reduced and sirolimus was added at 2 mg/day over a 3 to 4 week period.",
       "context_window": ", the sulthiame dose was reduced and sirolimus was added at 2 mg/day over a 3 to 4 week period. There were increased numbers of",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "sirolimus",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13092776_the_clinical_spectrum_and_neurodevelopmental_pathogenesis_of-u-12456",
@@ -814,10 +814,10 @@
       "sentence": "Regular medication eslicarbazepine (400 mg q.d.) was tapered and stopped, the sulthiame dose was reduced and sirolimus was added at 2 mg/day over a 3 to 4 week period.",
       "context_window": "was reduced and sirolimus was added at 2 mg/day over a 3 to 4 week period. There were increased numbers of nocturnal and dayti",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "mTOR inhibition",
+      "arm": "sirolimus",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13092776_the_clinical_spectrum_and_neurodevelopmental_pathogenesis_of-p-13699",
@@ -869,7 +869,7 @@
       "context_window": "www.annalsofneurology.org ] Previously, we showed a 7.9 to 14.4% increase in total brain area and an increase in cortical la",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -887,7 +887,7 @@
       "context_window": "nd an increase in cortical laminar area in Kptn -/- mice at 16 weeks post\u2010natal (P) age. 14 At P3 and P10, Kptn-/- and Kptn+/- b",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -923,7 +923,7 @@
       "context_window": "mportantly, treatment of mice with rapamycin once daily for 5 days from P30 to P35 reduced S6 phosphorylation across the corte",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -941,9 +941,9 @@
       "context_window": "layers and the dentate gyrus ( arrow ). Daily rapamycin for 5 days (i.p. 5 mg/kg, P30-P35) resulted in a significant reduction",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13092776_the_clinical_spectrum_and_neurodevelopmental_pathogenesis_of-u-18271",
@@ -958,10 +958,10 @@
       "sentence": "5 mg/kg, P30-P35) resulted in a significant reduction of PS6 levels within the cortex, hippocampal subfields, and dentate gyrus in all genotypes.",
       "context_window": "e dentate gyrus ( arrow ). Daily rapamycin for 5 days (i.p. 5 mg/kg, P30-P35) resulted in a significant reduction of PS6 lev",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13092776_the_clinical_spectrum_and_neurodevelopmental_pathogenesis_of-p-18494",
@@ -976,7 +976,7 @@
       "sentence": "Graph (right) shows the average number of PS6\u2010labeled cells across groups (* p < 0.05; KO = red ; Het = blue ; and WT = grey ) and the reduction in PS6 labeled cells following rapamycin.",
       "context_window": "ws the average number of PS6\u2010labeled cells across groups (* p < 0.05; KO = red ; Het = blue ; and WT = grey ) and the reduction",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "pooled",
       "direction": "",
       "binding_confidence": "partial"

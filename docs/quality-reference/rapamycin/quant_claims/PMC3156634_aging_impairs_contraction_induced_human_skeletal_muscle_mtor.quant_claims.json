@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3156634_aging_impairs_contraction_induced_human_skeletal_muscle_mtor",
   "doi": "10.1186/2044-5040-1-11",
-  "extracted_at": "2026-05-05T15:22:49+00:00",
+  "extracted_at": "2026-05-09T10:18:20+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 4,
@@ -98,9 +98,9 @@
       "context_window": "reased phosphorylation was seen only in the younger group ( P < 0.05) for several key signaling proteins after exercise, includi",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3156634_aging_impairs_contraction_induced_human_skeletal_muscle_mtor-p-1300",
@@ -116,9 +116,9 @@
       "context_window": "kinase (ERK)1/2, with no changes seen in the older group ( P > 0.05). After exercise, MPS increased from baseline only in the y",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3156634_aging_impairs_contraction_induced_human_skeletal_muscle_mtor-p-1383",
@@ -1071,7 +1071,7 @@
       "sentence": "S6K1 phosphorylation did not change in the older group ( P > 0.05) (Figure 2C ), and at 6 and 24 hours after exercise, phosphorylation of S6K1 in the older group was lower than that of the younger group ( P < 0.05) (Figure 2C ).",
       "context_window": "). S6K1 phosphorylation did not change in the older group ( P > 0.05) (Figure 2C ), and at 6 and 24 hours after exercise, phosph",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1125,7 +1125,7 @@
       "sentence": "We observed no changes in phosphorylation in the older group ( P > 0.05) (Figure 2D ); however, at 6 and 24 hours after exercise, 4E-BP1 phosphorylation was significantly lower in the older than in the younger group ( P < 0.05) (Figure 2D ).",
       "context_window": "observed no changes in phosphorylation in the older group ( P > 0.05) (Figure 2D ); however, at 6 and 24 hours after exercise, 4",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "4E-BP1 phosphorylation",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1143,7 +1143,7 @@
       "sentence": "We observed no changes in phosphorylation in the older group ( P > 0.05) (Figure 2D ); however, at 6 and 24 hours after exercise, 4E-BP1 phosphorylation was significantly lower in the older than in the younger group ( P < 0.05) (Figure 2D ).",
       "context_window": "ignificantly lower in the older than in the younger group ( P < 0.05) (Figure 2D ). The phosphorylation of ERK1/2 (Thr202/Tyr20",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "4E-BP1 phosphorylation",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1197,7 +1197,7 @@
       "sentence": "Phosphorylation of ribosomal protein (rp)S6 (Ser235/236) was increased at 3, 6 and 24 hours after exercise in the younger group ( P < 0.05) (Figure 3B ). rpS6 phosphorylation increased from baseline at 3 and 6 hours after exercise in the older group ( P < 0.05) (Figure 3B ).",
       "context_window": "at 3, 6 and 24 hours after exercise in the younger group ( P < 0.05) (Figure 3B ). rpS6 phosphorylation increased from baseline",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1215,7 +1215,7 @@
       "sentence": "Phosphorylation of ribosomal protein (rp)S6 (Ser235/236) was increased at 3, 6 and 24 hours after exercise in the younger group ( P < 0.05) (Figure 3B ). rpS6 phosphorylation increased from baseline at 3 and 6 hours after exercise in the older group ( P < 0.05) (Figure 3B ).",
       "context_window": "seline at 3 and 6 hours after exercise in the older group ( P < 0.05) (Figure 3B ). Although there were no significant differenc",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1233,7 +1233,7 @@
       "sentence": "Although there were no significant differences between the groups, rpS6 phosphorylation was greater in the younger group, and this difference approached statistical significance ( P = 0.08) (Figure 3B ).",
       "context_window": ", and this difference approached statistical significance ( P = 0.08) (Figure 3B ). Extracellular signal-regulated kinase (ERK)",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1269,7 +1269,7 @@
       "sentence": "Total protein content of Akt, mTOR, S6K1, 4E-BP1, ERK1/2 and rpS6 did not change during the 24 hours of post-exercise recovery ( P > 0.05) (Figure 4 ).",
       "context_window": "not change during the 24 hours of post-exercise recovery ( P > 0.05) (Figure 4 ). Total protein content . Representative immun",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1611,7 +1611,7 @@
       "sentence": "The phosphorylation of rpS6 was also significantly increased in younger subjects at all post-exercise time points, and phosphorylation of rpS6 tended to be greater in younger than in older subjects ( P = 0.08).",
       "context_window": "S6 tended to be greater in younger than in older subjects ( P = 0.08). These data indicate that activation of both the mTORC1 an",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"

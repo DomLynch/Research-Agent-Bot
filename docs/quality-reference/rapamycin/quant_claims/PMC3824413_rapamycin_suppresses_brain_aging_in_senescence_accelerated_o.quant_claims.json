@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3824413_rapamycin_suppresses_brain_aging_in_senescence_accelerated_o",
   "doi": "10.18632/aging.100573",
-  "extracted_at": "2026-05-06T20:10:54+00:00",
+  "extracted_at": "2026-05-09T10:18:21+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 45,
@@ -42,10 +42,10 @@
       "sentence": "Here we show that rapamycin treatment (0.1 or 0.5 mg/kg as a food mixture daily from the age of 1.5 to 3.5 months) decreased anxiety and improved locomotor and exploratory behavior in OXYS rats.",
       "context_window": "by 3 months. Here we show that rapamycin treatment (0.1 or 0.5 mg/kg as a food mixture daily from the age of 1.5 to 3.5 month",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3824413_rapamycin_suppresses_brain_aging_in_senescence_accelerated_o-u-613",
@@ -60,10 +60,10 @@
       "sentence": "Here we show that rapamycin treatment (0.1 or 0.5 mg/kg as a food mixture daily from the age of 1.5 to 3.5 months) decreased anxiety and improved locomotor and exploratory behavior in OXYS rats.",
       "context_window": "or 0.5 mg/kg as a food mixture daily from the age of 1.5 to 3.5 months) decreased anxiety and improved locomotor and exploratory b",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3824413_rapamycin_suppresses_brain_aging_in_senescence_accelerated_o-u-1526",
@@ -205,7 +205,7 @@
       "context_window": "nd Wistar rats were randomly assigned to one of two groups (n =15): control diet or control diet supplemented with rapamycin",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -223,7 +223,7 @@
       "context_window": "apamune; Wyeth Pharmaceuticals Inc., Berkshire, UK), 0.1 or 0.5 mg/kg of body weight per day from the age of 1.5 to 3.5 months",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -241,7 +241,7 @@
       "context_window": "or 0.5 mg/kg of body weight per day from the age of 1.5 to 3.5 months. Body weight was measured weekly during the experiment for",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -890,7 +890,7 @@
       "sentence": "Rapamycin treatment did not affect these indexes in OXYS rats (p < 0.05).",
       "context_window": "amycin treatment did not affect these indexes in OXYS rats (p < 0.05). EPM performance in 3.5 month old control and rapamycin-t",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -909,7 +909,7 @@
       "context_window": "these indexes in OXYS rats (p < 0.05). EPM performance in 3.5 month old control and rapamycin-treated OXYS rats and control Wis",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1089,7 +1089,7 @@
       "context_window": "It was lower in control OXYS rats compared to Wistar rats (p < 0.003). The number of head dips was significantly increased in OX",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1179,7 +1179,7 @@
       "sentence": "Rapamycin treatment doubled the number of line-crossing in OXYS rats (mean \u00b1 SEM : control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig.",
       "context_window": "number of line-crossing in OXYS rats (mean \u00b1 SEM : control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013,",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1197,7 +1197,7 @@
       "sentence": "Rapamycin treatment doubled the number of line-crossing in OXYS rats (mean \u00b1 SEM : control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig.",
       "context_window": "f line-crossing in OXYS rats (mean \u00b1 SEM : control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig. 2A",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1216,7 +1216,7 @@
       "sentence": "Rapamycin treatment doubled the number of line-crossing in OXYS rats (mean \u00b1 SEM : control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig.",
       "context_window": "sing in OXYS rats (mean \u00b1 SEM : control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig. 2A ) and drama",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1234,7 +1234,7 @@
       "sentence": "Rapamycin treatment doubled the number of line-crossing in OXYS rats (mean \u00b1 SEM : control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig.",
       "context_window": "XYS rats (mean \u00b1 SEM : control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig. 2A ) and dramatically",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1252,7 +1252,7 @@
       "sentence": "Rapamycin treatment doubled the number of line-crossing in OXYS rats (mean \u00b1 SEM : control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig.",
       "context_window": "ean \u00b1 SEM : control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig. 2A ) and dramatically increased t",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1271,7 +1271,7 @@
       "sentence": "Rapamycin treatment doubled the number of line-crossing in OXYS rats (mean \u00b1 SEM : control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig.",
       "context_window": "control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig. 2A ) and dramatically increased the number o",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1289,7 +1289,7 @@
       "sentence": "Rapamycin treatment doubled the number of line-crossing in OXYS rats (mean \u00b1 SEM : control, 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig.",
       "context_window": ", 29\u00b17.5, 0.1 mg/kg, 60\u00b110.3, p=0.03 and 0.5 mg/kg, 59\u00b18.2, p=0.013, Fig. 2A ) and dramatically increased the number of rearing",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1308,7 +1308,7 @@
       "context_window": "ncreased the number of rearings. Open field performance in 3.5 month old control and rapamycin-treated OXYS rats and Wistar rats",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1669,7 +1669,7 @@
       "context_window": "es higher than in rapamycin-treated animals (F 1,10 =14.76, p<0.003). We next studied the effect of rapamycin on the \u03b2-amyloid",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1920,7 +1920,7 @@
       "sentence": "Rapamycin had no significant effect on S6 and pS6 levels (F 1,32= 0.28 , p<0.65 and F 1,32 =2.31, p<0.13accordingly).",
       "context_window": "no significant effect on S6 and pS6 levels (F 1,32= 0.28 , p<0.65 and F 1,32 =2.31, p<0.13accordingly). Unexpectedly, we foun",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -2028,7 +2028,7 @@
       "sentence": "Rapamycin treatment from the age of 1.5 months partially prevented the behavioral decline of OXYS rats.",
       "context_window": "rison with Wistar rats. Rapamycin treatment from the age of 1.5 months partially prevented the behavioral decline of OXYS rats. Th",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"

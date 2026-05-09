@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC2919254_the_choice_between_p53_induced_senescence_and_quiescence_is_",
   "doi": "10.18632/aging.100160",
-  "extracted_at": "2026-05-05T15:22:52+00:00",
+  "extracted_at": "2026-05-09T10:18:20+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 2,
@@ -111,7 +111,7 @@
       "sentence": "The potency of shTSC2 with different sequences varied and two other shTSC2 were less potent but still depleted TSC2 at some time points (Supplemental Figure 1 ) and partially decreased the proliferative potential in nutlin-3a-arrested cells (Supplemental Figure 1 ).\n\n( A ) HT-p21-9 cells were transduced with control lentivirus (pLKO) or lentivirus expressing shTSC2 (sequence # 10) and selected with puromycin for 5 days and then immunoblot was performed. ( B ) Schema: Testing the reversibility of nutlin-3a effects. ( C ) HT-p21-9 cells were transduced with control pLKO or shTSC2 and 5000 cells were plated in 24-well plates and, the next day, were treated with 10 uM nutlin-3a for 3 days.",
       "context_window": "sing shTSC2 (sequence # 10) and selected with puromycin for 5 days and then immunoblot was performed. ( B ) Schema: Testing th",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -129,7 +129,7 @@
       "sentence": "The potency of shTSC2 with different sequences varied and two other shTSC2 were less potent but still depleted TSC2 at some time points (Supplemental Figure 1 ) and partially decreased the proliferative potential in nutlin-3a-arrested cells (Supplemental Figure 1 ).\n\n( A ) HT-p21-9 cells were transduced with control lentivirus (pLKO) or lentivirus expressing shTSC2 (sequence # 10) and selected with puromycin for 5 days and then immunoblot was performed. ( B ) Schema: Testing the reversibility of nutlin-3a effects. ( C ) HT-p21-9 cells were transduced with control pLKO or shTSC2 and 5000 cells were plated in 24-well plates and, the next day, were treated with 10 uM nutlin-3a for 3 days.",
       "context_window": "es and, the next day, were treated with 10 uM nutlin-3a for 3 days. Then nutlin-3a was washed out and the cells were cultivate",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -165,10 +165,10 @@
       "sentence": "Bars 50 um. ( D ) HT-p21-9 cells were transduced with control pLKO or shTSC2 (and selected for 4 days with puromycin).",
       "context_window": "re transduced with control pLKO or shTSC2 (and selected for 4 days with puromycin). Then 1000 cells were plated per 60-mm dish",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2919254_the_choice_between_p53_induced_senescence_and_quiescence_is_-u-1803",
@@ -292,7 +292,7 @@
       "context_window": "ncubated with 10 uM nutlin (N) and 500 nM rapamycin (R) for 1 day and immunoblot was performed. ( B ) Mel-10 and Mel-9 cells",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -310,7 +310,7 @@
       "context_window": "s were incubated with 10 uM nutlin and 500 nM rapamycin for 4 days, then drugs were washed out and cells were incubated for ad",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -328,7 +328,7 @@
       "context_window": "ugs were washed out and cells were incubated for additional 4 days and stained for beta-Gal. Bars 50 um. To establish a causa",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -346,9 +346,9 @@
       "context_window": "h 2.5 and 10 uM nutlin with or without 500 nM rapamycin for 1 day and then immunoblot was performed. ( B ) Beta-Gal staining.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2919254_the_choice_between_p53_induced_senescence_and_quiescence_is_-u-4942",
@@ -364,9 +364,9 @@
       "context_window": "e incubated with 10 M nutlin alone and 500 nM rapamycin for 4 days, then drugs were washed out and cells were incubated for ad",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2919254_the_choice_between_p53_induced_senescence_and_quiescence_is_-u-5017",
@@ -382,9 +382,9 @@
       "context_window": "ugs were washed out and cells were incubated for additional 3 days and stained for beta-Gal. Bars 50 um. Next, we extended th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2919254_the_choice_between_p53_induced_senescence_and_quiescence_is_-u-5696",
@@ -400,9 +400,9 @@
       "context_window": "bated with 10 nutlin-3a with or without 10 nM rapamycin for 1 day and immunoblot using rabbit anti-phospho-S6 (Ser240/244) an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2919254_the_choice_between_p53_induced_senescence_and_quiescence_is_-u-5912",
@@ -418,9 +418,9 @@
       "context_window": "ubated with 10 uM nutlin alone or with 500 nM rapamycin for 4 days, then drugs were washed out and cells were incubated for ad",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2919254_the_choice_between_p53_induced_senescence_and_quiescence_is_-u-5987",
@@ -436,9 +436,9 @@
       "context_window": "ugs were washed out and cells were incubated for additional 4 days and stained for beta-Gal. Bars 50 um .",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

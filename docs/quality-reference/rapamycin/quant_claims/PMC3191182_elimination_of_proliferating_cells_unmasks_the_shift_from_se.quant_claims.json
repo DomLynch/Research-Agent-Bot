@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3191182_elimination_of_proliferating_cells_unmasks_the_shift_from_se",
   "doi": "10.1371/journal.pone.0026126",
-  "extracted_at": "2026-05-06T20:10:53+00:00",
+  "extracted_at": "2026-05-09T10:18:21+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 18,
@@ -21,10 +21,10 @@
       "sentence": "IPTG-induced p21 rapidly arrests cells, which become senescent in 3-4 days.",
       "context_window": "uced p21 rapidly arrests cells, which become senescent in 3-4 days. By increasing the concentration of IPTG, one can increase",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3191182_elimination_of_proliferating_cells_unmasks_the_shift_from_se-pct-467",
@@ -237,10 +237,10 @@
       "sentence": "MCF7 cells were seeded in on-slide chambers at 500 cells/well with 5 \u00b5M Nutlin-3a After 4 days cells were fixed and stained for pS6; nuclei were visualized by counterstaining with Hoechst 33258 (DAPI).",
       "context_window": "-slide chambers at 500 cells/well with 5 \u00b5M Nutlin-3a After 4 days cells were fixed and stained for pS6; nuclei were visualize",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3191182_elimination_of_proliferating_cells_unmasks_the_shift_from_se-u-2428",
@@ -435,10 +435,10 @@
       "sentence": "HT1080-p21-9 cells were plated in 60 mm dishes at 5000 per dish with 2 ug/ml IPTG with or without 10 uM nutlin-3a as indicated.",
       "context_window": "ve potential ( Fig. 5 ). HT1080-p21-9 cells were plated in 60 mm dishes at 5000 per dish with 2 ug/ml IPTG with or without 1",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3191182_elimination_of_proliferating_cells_unmasks_the_shift_from_se-u-6329",
@@ -472,9 +472,9 @@
       "context_window": "hes on the right were treated with 200 nM nocodazole. After 3 days, cells were washed and incubated in drug-free medium for 4",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC3191182_elimination_of_proliferating_cells_unmasks_the_shift_from_se-u-6463",
@@ -490,9 +490,9 @@
       "context_window": "ys, cells were washed and incubated in drug-free medium for 4 days in control (to avoid overgrowth) and for 7 days for all oth",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC3191182_elimination_of_proliferating_cells_unmasks_the_shift_from_se-u-6511",
@@ -508,9 +508,9 @@
       "context_window": "medium for 4 days in control (to avoid overgrowth) and for 7 days for all other conditions. Then colonies were stained with c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     }
   ]
 }

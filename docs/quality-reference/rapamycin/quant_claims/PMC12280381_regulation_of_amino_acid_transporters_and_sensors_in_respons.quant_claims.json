@@ -1,15 +1,33 @@
 {
   "paper_id": "PMC12280381_regulation_of_amino_acid_transporters_and_sensors_in_respons",
   "doi": "10.1007/s12603-019-1171-4",
-  "extracted_at": "2026-05-05T15:22:51+00:00",
+  "extracted_at": "2026-05-09T10:18:18+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 8,
+    "unit_value": 13,
     "percentage": 12,
     "p_value": 60,
     "mean_sd": 4
   },
   "claims": [
+    {
+      "claim_id": "PMC12280381_regulation_of_amino_acid_transporters_and_sensors_in_respons-u-653",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "abstract",
+      "source_offset": 653,
+      "sentence": "This study investigated whether the consumption of a diet containing either the current recommended daily allowance (RDA) of protein intake (0.8 g/kg/d) or twice the RDA (2RDA) for ten weeks affected the expression of targets associated with AA transport, sensing and mTORC1 regulation in 26 older men (70-81 years).",
+      "context_window": "urrent recommended daily allowance (RDA) of protein intake (0.8 g/kg/d) or twice the RDA (2RDA) for ten weeks affected the express",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
     {
       "claim_id": "PMC12280381_regulation_of_amino_acid_transporters_and_sensors_in_respons-u-818",
       "claim_type": "unit_value",
@@ -29,6 +47,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC12280381_regulation_of_amino_acid_transporters_and_sensors_in_respons-u-638",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 638,
+      "sentence": "Currently 0.8 g/kg/d of protein is the recommended daily allowance (RDA) established by the World Health Organization (WHO) ( 14 ) and the United States Department of Agriculture (USDA) ( 15 ).",
+      "context_window": "insufficient dietary protein intake ( 12 , 13 ). Currently 0.8 g/kg/d of protein is the recommended daily allowance (RDA) establi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC12280381_regulation_of_amino_acid_transporters_and_sensors_in_respons-u-928",
       "claim_type": "unit_value",
       "raw_text": "70 years",
@@ -41,6 +77,24 @@
       "sentence": "For example, in Australia and New Zealand, older men (age >70 years) are recommended to consume a diet containing 1.07 g protein/kg/d ( 16 ).",
       "context_window": "For example, in Australia and New Zealand, older men (age >70 years) are recommended to consume a diet containing 1.07 g protei",
       "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12280381_regulation_of_amino_acid_transporters_and_sensors_in_respons-u-1146",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 1146,
+      "sentence": "We and others have demonstrated the importance of protein intake for both skeletal muscle mass and function with levels twice the RDA (1.6 g/kg/d) in older individuals ( 7 , 17 ).",
+      "context_window": "keletal muscle mass and function with levels twice the RDA (1.6 g/kg/d) in older individuals ( 7 , 17 ). However, these data do no",
+      "claim_role": "background",
       "endpoint": "",
       "arm": "",
       "direction": "",
@@ -78,6 +132,42 @@
       "context_window": "dy ( 7 ), were non-smokers who had a BMI ranging from 18 to 35 kg/m2 and did not take any dietary supplements for at least one m",
       "claim_role": "unknown",
       "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12280381_regulation_of_amino_acid_transporters_and_sensors_in_respons-u-591",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 591,
+      "sentence": "Participants habitually consumed on average more protein (~1.1-1.2 g/kg/d) than the elderly New Zealand males (> 70 y) (~1.0 g/kg/d) ( 16 ).",
+      "context_window": "ticipants habitually consumed on average more protein (~1.1-1.2 g/kg/d) than the elderly New Zealand males (> 70 y) (~1.0 g/kg/d)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12280381_regulation_of_amino_acid_transporters_and_sensors_in_respons-u-649",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/d",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 649,
+      "sentence": "Participants habitually consumed on average more protein (~1.1-1.2 g/kg/d) than the elderly New Zealand males (> 70 y) (~1.0 g/kg/d) ( 16 ).",
+      "context_window": "1-1.2 g/kg/d) than the elderly New Zealand males (> 70 y) (~1.0 g/kg/d) ( 16 ). Fourteen men randomly assigned to the RDA group we",
+      "claim_role": "unknown",
+      "endpoint": "",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -311,7 +401,7 @@
       "sentence": "Based on the variability we have previously reported in similar participants ( 55 , 56 ), the present study was powered to detect 35% difference in p70S6K1 phosphorylation and 30% difference in LAT1 mRNA expression with 80% power.",
       "context_window": "ipants ( 55 , 56 ), the present study was powered to detect 35% difference in p70S6K1 phosphorylation and 30% difference in",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -329,7 +419,7 @@
       "sentence": "Based on the variability we have previously reported in similar participants ( 55 , 56 ), the present study was powered to detect 35% difference in p70S6K1 phosphorylation and 30% difference in LAT1 mRNA expression with 80% power.",
       "context_window": "red to detect 35% difference in p70S6K1 phosphorylation and 30% difference in LAT1 mRNA expression with 80% power. Normalit",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -347,7 +437,7 @@
       "sentence": "Based on the variability we have previously reported in similar participants ( 55 , 56 ), the present study was powered to detect 35% difference in p70S6K1 phosphorylation and 30% difference in LAT1 mRNA expression with 80% power.",
       "context_window": "phorylation and 30% difference in LAT1 mRNA expression with 80% power. Normality was determined using Shapiro-Wilk analysis",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1229,7 +1319,7 @@
       "sentence": "Rag Proteins and GATOR2\n\nPhosphorylation of p70S6K1 Thr421/Ser424 , eIF4E Ser209 and PRAS40 Thr246 did not change following the intervention in either groups (p=0.40, 0.99 and 0.21, respectively) and did not differ between groups (p=0.23, 0.73 and 0.59, respectively).",
       "context_window": "did not change following the intervention in either groups (p=0.40, 0.99 and 0.21, respectively) and did not differ between gr",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1247,7 +1337,7 @@
       "sentence": "Rag Proteins and GATOR2\n\nPhosphorylation of p70S6K1 Thr421/Ser424 , eIF4E Ser209 and PRAS40 Thr246 did not change following the intervention in either groups (p=0.40, 0.99 and 0.21, respectively) and did not differ between groups (p=0.23, 0.73 and 0.59, respectively).",
       "context_window": "and 0.21, respectively) and did not differ between groups (p=0.23, 0.73 and 0.59, respectively). Similarly, total p70S6K1, eI",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1265,7 +1355,7 @@
       "sentence": "Similarly, total p70S6K1, eIF4E and PRAS40 did not change over time (p=0.46, 0.19 and 0.73) or differ between groups (p=0.47, 0.87 and 0.28, respectively) ( Figure 3A-B ).",
       "context_window": ", total p70S6K1, eIF4E and PRAS40 did not change over time (p=0.46, 0.19 and 0.73) or differ between groups (p=0.47, 0.87 and",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1283,7 +1373,7 @@
       "sentence": "Similarly, total p70S6K1, eIF4E and PRAS40 did not change over time (p=0.46, 0.19 and 0.73) or differ between groups (p=0.47, 0.87 and 0.28, respectively) ( Figure 3A-B ).",
       "context_window": "over time (p=0.46, 0.19 and 0.73) or differ between groups (p=0.47, 0.87 and 0.28, respectively) ( Figure 3A-B ). Phosphorylat",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1301,7 +1391,7 @@
       "sentence": "Phosphorylation of RPS6 Ser235/236 showed a tendency to be different between groups (time \u00d7 group p=0.07); this was lower in the 2RDA group than the RDA group (p=0.01).",
       "context_window": "wed a tendency to be different between groups (time \u00d7 group p=0.07); this was lower in the 2RDA group than the RDA group (p=0.",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1319,7 +1409,7 @@
       "sentence": "Phosphorylation of RPS6 Ser235/236 showed a tendency to be different between groups (time \u00d7 group p=0.07); this was lower in the 2RDA group than the RDA group (p=0.01).",
       "context_window": "0.07); this was lower in the 2RDA group than the RDA group (p=0.01). The protein expression of RPS6 was different between grou",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1337,7 +1427,7 @@
       "sentence": "The protein expression of RPS6 was different between groups (time \u00d7 group p=0.03); it increased in the 2RDA group (p=0.02), but not the RDA group (p=0.49).",
       "context_window": "pression of RPS6 was different between groups (time \u00d7 group p=0.03); it increased in the 2RDA group (p=0.02), but not the RDA",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1355,7 +1445,7 @@
       "sentence": "The protein expression of RPS6 was different between groups (time \u00d7 group p=0.03); it increased in the 2RDA group (p=0.02), but not the RDA group (p=0.49).",
       "context_window": "oups (time \u00d7 group p=0.03); it increased in the 2RDA group (p=0.02), but not the RDA group (p=0.49). Total RPS6 was also great",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1373,7 +1463,7 @@
       "sentence": "The protein expression of RPS6 was different between groups (time \u00d7 group p=0.03); it increased in the 2RDA group (p=0.02), but not the RDA group (p=0.49).",
       "context_window": "ncreased in the 2RDA group (p=0.02), but not the RDA group (p=0.49). Total RPS6 was also greater in the 2RDA group compared to",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1391,7 +1481,7 @@
       "sentence": "Total RPS6 was also greater in the 2RDA group compared to the RDA group (p=0.01; Figure 4 ).",
       "context_window": "s also greater in the 2RDA group compared to the RDA group (p=0.01; Figure 4 ). Before the intervention, total RNA per mg of t",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"

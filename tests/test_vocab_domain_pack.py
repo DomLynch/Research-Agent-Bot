@@ -237,6 +237,17 @@ def test_rapamycin_endpoint_binds_p_value_to_preceding_parenthetical_endpoint() 
     ) == "self-reported pain"
 
 
+def test_runner_uses_active_rapamycin_vocab_for_outcome_and_polarity() -> None:
+    os.environ["TOPIC_DOMAIN"] = "rapamycin"
+    import run_v06_synthesis as runner
+
+    runner._set_topic("rapamycin")
+    assert runner._outcome_class_for_endpoint("autophagy") == "longevity"
+    assert runner._outcome_class_for_endpoint("lean tissue mass") == "muscle_function"
+    assert runner._polarity_for_endpoint("respiratory infection rate") == -1
+    assert runner._polarity_for_endpoint("influenza vaccine response") == 1
+
+
 def test_metformin_arm_unchanged_after_per_domain_refactor() -> None:
     """Default (metformin) ARM_VOCAB must keep working — backward
     compat after the per-domain split."""

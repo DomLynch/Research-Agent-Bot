@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10086534_age_related_changes_to_adipose_tissue_and_peripheral_neuropa",
   "doi": "10.1111/acel.13784",
-  "extracted_at": "2026-05-06T20:10:54+00:00",
+  "extracted_at": "2026-05-09T10:18:15+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 111,
@@ -77,7 +77,7 @@
       "sentence": "For these reasons, we utilized the 42 ppm encapsulated rapamycin treatment in male and female HET3 mice (previously shown to increase the life span of both sexes by 23%-26% [Miller et al., 2014 ]) for a chronic 8\u2010month intervention commenced at two different ages (creating early\u2010 and late\u2010intervention groups) to investigate whether rapamycin treatment would attenuate or accelerate age\u2010related neuropathy in scWAT and other peripheral tissues such as skin and muscle.",
       "context_window": "previously shown to increase the life span of both sexes by 23%-26% [Miller et al., 2014 ]) for a chronic 8\u2010month intervent",
       "claim_role": "background",
-      "endpoint": "lifespan",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -95,7 +95,7 @@
       "sentence": "For these reasons, we utilized the 42 ppm encapsulated rapamycin treatment in male and female HET3 mice (previously shown to increase the life span of both sexes by 23%-26% [Miller et al., 2014 ]) for a chronic 8\u2010month intervention commenced at two different ages (creating early\u2010 and late\u2010intervention groups) to investigate whether rapamycin treatment would attenuate or accelerate age\u2010related neuropathy in scWAT and other peripheral tissues such as skin and muscle.",
       "context_window": "iously shown to increase the life span of both sexes by 23%-26% [Miller et al., 2014 ]) for a chronic 8\u2010month intervention",
       "claim_role": "background",
-      "endpoint": "lifespan",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -131,7 +131,7 @@
       "sentence": "Mice that started rapamycin treatment at ~30 weeks of age served as the early\u2010intervention group, and mice that started treatment at ~72 weeks of age served as the late\u2010intervention group.",
       "context_window": "one of two ages. Mice that started rapamycin treatment at ~30 weeks of age served as the early\u2010intervention group, and mice tha",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -149,7 +149,7 @@
       "sentence": "Mice that started rapamycin treatment at ~30 weeks of age served as the early\u2010intervention group, and mice that started treatment at ~72 weeks of age served as the late\u2010intervention group.",
       "context_window": "rly\u2010intervention group, and mice that started treatment at ~72 weeks of age served as the late\u2010intervention group. Manual von F",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1301,7 +1301,7 @@
       "sentence": "By contrast, visceral adiposity continuously decreased with age in both sexes (Figure 1h ), and females had higher visceral adiposity than males at 13 weeks ( p = 0.0183) and 30 weeks ( p = 0.0002; Figure 1i ).",
       "context_window": "), and females had higher visceral adiposity than males at 13 weeks ( p = 0.0183) and 30 weeks ( p = 0.0002; Figure 1i ). Taken",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1319,7 +1319,7 @@
       "sentence": "By contrast, visceral adiposity continuously decreased with age in both sexes (Figure 1h ), and females had higher visceral adiposity than males at 13 weeks ( p = 0.0183) and 30 weeks ( p = 0.0002; Figure 1i ).",
       "context_window": "ales had higher visceral adiposity than males at 13 weeks ( p = 0.0183) and 30 weeks ( p = 0.0002; Figure 1i ). Taken together, th",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1337,7 +1337,7 @@
       "sentence": "By contrast, visceral adiposity continuously decreased with age in both sexes (Figure 1h ), and females had higher visceral adiposity than males at 13 weeks ( p = 0.0183) and 30 weeks ( p = 0.0002; Figure 1i ).",
       "context_window": "visceral adiposity than males at 13 weeks ( p = 0.0183) and 30 weeks ( p = 0.0002; Figure 1i ). Taken together, the genetically",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1355,7 +1355,7 @@
       "sentence": "By contrast, visceral adiposity continuously decreased with age in both sexes (Figure 1h ), and females had higher visceral adiposity than males at 13 weeks ( p = 0.0183) and 30 weeks ( p = 0.0002; Figure 1i ).",
       "context_window": "iposity than males at 13 weeks ( p = 0.0183) and 30 weeks ( p = 0.0002; Figure 1i ). Taken together, the genetically diverse HET3",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "visceral adiposity",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -3839,7 +3839,7 @@
       "sentence": "The starting ages for the early\u2010 and late\u2010intervention groups were chosen to resemble the studies conducted by the ITP in which rapamycin treatment was started at either 270 days (38.6 weeks) or 600 days (85.7 weeks) of age, whereby both treatment paradigms provided an overall increase in life span (Harrison et al., 2009 ).",
       "context_window": "the ITP in which rapamycin treatment was started at either 270 days (38.6 weeks) or 600 days (85.7 weeks) of age, whereby both",
       "claim_role": "unknown",
-      "endpoint": "lifespan",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -3857,7 +3857,7 @@
       "sentence": "The starting ages for the early\u2010 and late\u2010intervention groups were chosen to resemble the studies conducted by the ITP in which rapamycin treatment was started at either 270 days (38.6 weeks) or 600 days (85.7 weeks) of age, whereby both treatment paradigms provided an overall increase in life span (Harrison et al., 2009 ).",
       "context_window": "n which rapamycin treatment was started at either 270 days (38.6 weeks) or 600 days (85.7 weeks) of age, whereby both treatment pa",
       "claim_role": "protocol",
-      "endpoint": "lifespan",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -3875,7 +3875,7 @@
       "sentence": "The starting ages for the early\u2010 and late\u2010intervention groups were chosen to resemble the studies conducted by the ITP in which rapamycin treatment was started at either 270 days (38.6 weeks) or 600 days (85.7 weeks) of age, whereby both treatment paradigms provided an overall increase in life span (Harrison et al., 2009 ).",
       "context_window": "in treatment was started at either 270 days (38.6 weeks) or 600 days (85.7 weeks) of age, whereby both treatment paradigms provi",
       "claim_role": "unknown",
-      "endpoint": "lifespan",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -3893,7 +3893,7 @@
       "sentence": "The starting ages for the early\u2010 and late\u2010intervention groups were chosen to resemble the studies conducted by the ITP in which rapamycin treatment was started at either 270 days (38.6 weeks) or 600 days (85.7 weeks) of age, whereby both treatment paradigms provided an overall increase in life span (Harrison et al., 2009 ).",
       "context_window": "nt was started at either 270 days (38.6 weeks) or 600 days (85.7 weeks) of age, whereby both treatment paradigms provided an overa",
       "claim_role": "protocol",
-      "endpoint": "lifespan",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -4001,7 +4001,7 @@
       "sentence": "All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. a = male\u2010veh:male\u2010rapa; b = female\u2010veh:female\u2010rapa; c = male\u2010veh:female\u2010veh; d = male\u2010rapa:female\u2010rapa\n\nA von Frey test was used to gauge the level of peripheral neuropathy in the hind paws of HET3 mice following rapamycin treatment.",
       "context_window": "ney nonparametric test (p-s). All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. a",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4019,7 +4019,7 @@
       "sentence": "All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. a = male\u2010veh:male\u2010rapa; b = female\u2010veh:female\u2010rapa; c = male\u2010veh:female\u2010veh; d = male\u2010rapa:female\u2010rapa\n\nA von Frey test was used to gauge the level of peripheral neuropathy in the hind paws of HET3 mice following rapamycin treatment.",
       "context_window": "etric test (p-s). All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. a = male\u2010veh:",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4037,7 +4037,7 @@
       "sentence": "All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. a = male\u2010veh:male\u2010rapa; b = female\u2010veh:female\u2010rapa; c = male\u2010veh:female\u2010veh; d = male\u2010rapa:female\u2010rapa\n\nA von Frey test was used to gauge the level of peripheral neuropathy in the hind paws of HET3 mice following rapamycin treatment.",
       "context_window": "-s). All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. a = male\u2010veh:male\u2010rapa; b",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4055,7 +4055,7 @@
       "sentence": "All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. a = male\u2010veh:male\u2010rapa; b = female\u2010veh:female\u2010rapa; c = male\u2010veh:female\u2010veh; d = male\u2010rapa:female\u2010rapa\n\nA von Frey test was used to gauge the level of peripheral neuropathy in the hind paws of HET3 mice following rapamycin treatment.",
       "context_window": "bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. a = male\u2010veh:male\u2010rapa; b = female\u2010veh:fe",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4073,7 +4073,7 @@
       "sentence": "All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. a = male\u2010veh:male\u2010rapa; b = female\u2010veh:female\u2010rapa; c = male\u2010veh:female\u2010veh; d = male\u2010rapa:female\u2010rapa\n\nA von Frey test was used to gauge the level of peripheral neuropathy in the hind paws of HET3 mice following rapamycin treatment.",
       "context_window": "n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. a = male\u2010veh:male\u2010rapa; b = female\u2010veh:female\u2010rapa; c = ma",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4163,7 +4163,7 @@
       "sentence": "Males demonstrated a significant increase in thick collagen fibers (orange + red) following rapamycin treatment (Veh, 57%:43%; Rapa, 25%:75%; p = 0.0007) (Figure 8e ) that was more pronounced than females following rapamycin treatment ( p = 0.0058) (Figure 8e ).",
       "context_window": "n fibers (orange + red) following rapamycin treatment (Veh, 57%:43%; Rapa, 25%:75%; p = 0.0007) (Figure 8e ) that was more",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -4181,7 +4181,7 @@
       "sentence": "Males demonstrated a significant increase in thick collagen fibers (orange + red) following rapamycin treatment (Veh, 57%:43%; Rapa, 25%:75%; p = 0.0007) (Figure 8e ) that was more pronounced than females following rapamycin treatment ( p = 0.0058) (Figure 8e ).",
       "context_window": "bers (orange + red) following rapamycin treatment (Veh, 57%:43%; Rapa, 25%:75%; p = 0.0007) (Figure 8e ) that was more pron",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -4199,7 +4199,7 @@
       "sentence": "Males demonstrated a significant increase in thick collagen fibers (orange + red) following rapamycin treatment (Veh, 57%:43%; Rapa, 25%:75%; p = 0.0007) (Figure 8e ) that was more pronounced than females following rapamycin treatment ( p = 0.0058) (Figure 8e ).",
       "context_window": "e + red) following rapamycin treatment (Veh, 57%:43%; Rapa, 25%:75%; p = 0.0007) (Figure 8e ) that was more pronounced than",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -4217,7 +4217,7 @@
       "sentence": "Males demonstrated a significant increase in thick collagen fibers (orange + red) following rapamycin treatment (Veh, 57%:43%; Rapa, 25%:75%; p = 0.0007) (Figure 8e ) that was more pronounced than females following rapamycin treatment ( p = 0.0058) (Figure 8e ).",
       "context_window": "red) following rapamycin treatment (Veh, 57%:43%; Rapa, 25%:75%; p = 0.0007) (Figure 8e ) that was more pronounced than fem",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -4235,7 +4235,7 @@
       "sentence": "Males demonstrated a significant increase in thick collagen fibers (orange + red) following rapamycin treatment (Veh, 57%:43%; Rapa, 25%:75%; p = 0.0007) (Figure 8e ) that was more pronounced than females following rapamycin treatment ( p = 0.0058) (Figure 8e ).",
       "context_window": "following rapamycin treatment (Veh, 57%:43%; Rapa, 25%:75%; p = 0.0007) (Figure 8e ) that was more pronounced than females followi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -4253,7 +4253,7 @@
       "sentence": "Males demonstrated a significant increase in thick collagen fibers (orange + red) following rapamycin treatment (Veh, 57%:43%; Rapa, 25%:75%; p = 0.0007) (Figure 8e ) that was more pronounced than females following rapamycin treatment ( p = 0.0058) (Figure 8e ).",
       "context_window": "ore pronounced than females following rapamycin treatment ( p = 0.0058) (Figure 8e ). Of note, males treated with rapamycin in the",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -4289,7 +4289,7 @@
       "sentence": "All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001\n\nMice (116-120 weeks old) that had been given rapamycin in the late\u2010intervention group were less susceptible to the fibrosis\u2010inducing effects of rapamycin treatment.",
       "context_window": "r multiple comparisons (e,k). All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 M",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4307,7 +4307,7 @@
       "sentence": "All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001\n\nMice (116-120 weeks old) that had been given rapamycin in the late\u2010intervention group were less susceptible to the fibrosis\u2010inducing effects of rapamycin treatment.",
       "context_window": "omparisons (e,k). All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 Mice (116-120",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4325,7 +4325,7 @@
       "sentence": "All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001\n\nMice (116-120 weeks old) that had been given rapamycin in the late\u2010intervention group were less susceptible to the fibrosis\u2010inducing effects of rapamycin treatment.",
       "context_window": ",k). All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 Mice (116-120 weeks old) t",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4343,7 +4343,7 @@
       "sentence": "All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001\n\nMice (116-120 weeks old) that had been given rapamycin in the late\u2010intervention group were less susceptible to the fibrosis\u2010inducing effects of rapamycin treatment.",
       "context_window": "bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 Mice (116-120 weeks old) that had been gi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4361,7 +4361,7 @@
       "sentence": "All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001\n\nMice (116-120 weeks old) that had been given rapamycin in the late\u2010intervention group were less susceptible to the fibrosis\u2010inducing effects of rapamycin treatment.",
       "context_window": "n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 Mice (116-120 weeks old) that had been given rapamycin in",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4379,7 +4379,7 @@
       "sentence": "All error bars are SEMs. n.s. p > 0.05, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001\n\nMice (116-120 weeks old) that had been given rapamycin in the late\u2010intervention group were less susceptible to the fibrosis\u2010inducing effects of rapamycin treatment.",
       "context_window": ".05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 Mice (116-120 weeks old) that had been given rapamycin in the late\u2010intervention",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4613,7 +4613,7 @@
       "sentence": "Here, we provide evidence that a chronic diet\u2010fed rapamycin intervention started late in life (~72 weeks) caused less adipose tissue inflammation and fibrosis than an intervention started early in life (~30 weeks), while both interventions increase life span (Harrison et al., 2009 ), indicating that this may be a preferable treatment approach in order to promote healthy life span.",
       "context_window": "n and fibrosis than an intervention started early in life (~30 weeks), while both interventions increase life span (Harrison et",
       "claim_role": "unknown",
-      "endpoint": "lifespan",
+      "endpoint": "inflammation",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"

@@ -897,6 +897,35 @@ def _pack_endpoint_polarity(endpoint: str) -> int:
     return 0
 
 
+def _active_domain_vocab():
+    topic = _get_active_topic()
+    if not topic:
+        return None
+    try:
+        from vocab import load_domain
+        return load_domain(topic)
+    except (ImportError, AttributeError, ValueError):
+        return None
+
+
+def _domain_outcome_class(endpoint: str) -> str:
+    vocab = _active_domain_vocab()
+    mapping = getattr(vocab, "ENDPOINT_TO_OUTCOME_CLASS", {}) if vocab else {}
+    if isinstance(mapping, dict):
+        return str(mapping.get(endpoint) or "")
+    return ""
+
+
+def _domain_endpoint_polarity(endpoint: str) -> int:
+    vocab = _active_domain_vocab()
+    mapping = getattr(vocab, "ENDPOINT_POLARITY", {}) if vocab else {}
+    if isinstance(mapping, dict):
+        raw = mapping.get(endpoint)
+        if raw in (-1, 0, 1):
+            return int(raw)
+    return 0
+
+
 def _infer_outcome_class(endpoint: str) -> str:
     key = _endpoint_key(endpoint)
     label = endpoint.strip().lower()
@@ -923,11 +952,19 @@ def _infer_outcome_class(endpoint: str) -> str:
 
 
 def _outcome_class_for_endpoint(endpoint: str) -> str:
-    return _ENDPOINT_TO_OUTCOME_CLASS.get(endpoint) or _infer_outcome_class(endpoint)
+    return (
+        _ENDPOINT_TO_OUTCOME_CLASS.get(endpoint)
+        or _domain_outcome_class(endpoint)
+        or _infer_outcome_class(endpoint)
+    )
 
 
 def _polarity_for_endpoint(endpoint: str) -> int:
-    return _ENDPOINT_POLARITY.get(endpoint, 0) or _pack_endpoint_polarity(endpoint)
+    return (
+        _ENDPOINT_POLARITY.get(endpoint, 0)
+        or _domain_endpoint_polarity(endpoint)
+        or _pack_endpoint_polarity(endpoint)
+    )
 
 
 def _mentions_any_synonym(text: str, synonyms) -> bool:

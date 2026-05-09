@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7870298_rapamycin_treatment_of_tendon_stem_progenitor_cells_reduces_",
   "doi": "10.1155/2021/6638249",
-  "extracted_at": "2026-05-06T20:10:57+00:00",
+  "extracted_at": "2026-05-09T10:18:25+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 12,
@@ -184,7 +184,7 @@
       "context_window": "h 10 \u03bc g/ml or 50 \u03bc g/ml bleomycin (Millipore) at 37\u00b0C with 5% CO 2 for 5 days, and growth media with reduced FBS (10%) we",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -202,7 +202,7 @@
       "context_window": "or 50 \u03bc g/ml bleomycin (Millipore) at 37\u00b0C with 5% CO 2 for 5 days, and growth media with reduced FBS (10%) were used as contr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -220,7 +220,7 @@
       "context_window": "with 5% CO 2 for 5 days, and growth media with reduced FBS (10%) were used as control. For the rapamycin treatment, cells w",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -237,7 +237,7 @@
       "sentence": "For the rapamycin treatment, cells were treated with different concentrations of rapamycin (0.1 nM, 1 nM, 10 nM, 25 nM, 50 nM, and 100 nM, Sigma) at 37\u00b0C with 5% CO 2 for 3 days, and DMSO was used as control.",
       "context_window": "1 nM, 10 nM, 25 nM, 50 nM, and 100 nM, Sigma) at 37\u00b0C with 5% CO 2 for 3 days, and DMSO was used as control. For the bleo",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -255,7 +255,7 @@
       "sentence": "For the rapamycin treatment, cells were treated with different concentrations of rapamycin (0.1 nM, 1 nM, 10 nM, 25 nM, 50 nM, and 100 nM, Sigma) at 37\u00b0C with 5% CO 2 for 3 days, and DMSO was used as control.",
       "context_window": ", 25 nM, 50 nM, and 100 nM, Sigma) at 37\u00b0C with 5% CO 2 for 3 days, and DMSO was used as control. For the bleomycin and rapamy",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -273,7 +273,7 @@
       "sentence": "For the bleomycin and rapamycin treatment, cells were treated with 50 \u03bc g/ml bleomycin and 25 nM rapamycin at 37\u00b0C with 5% CO 2 for 5 days, with DMSO as control.\n\n\u03b2 -Galactosidase-positive cells were detected by the Senescent Cells Histochemical Staining Kit (Sigma-Aldrich).",
       "context_window": "d with 50 \u03bc g/ml bleomycin and 25 nM rapamycin at 37\u00b0C with 5% CO 2 for 5 days, with DMSO as control. \u03b2 -Galactosidase-po",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "mTOR inhibition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -291,7 +291,7 @@
       "sentence": "For the bleomycin and rapamycin treatment, cells were treated with 50 \u03bc g/ml bleomycin and 25 nM rapamycin at 37\u00b0C with 5% CO 2 for 5 days, with DMSO as control.\n\n\u03b2 -Galactosidase-positive cells were detected by the Senescent Cells Histochemical Staining Kit (Sigma-Aldrich).",
       "context_window": "g/ml bleomycin and 25 nM rapamycin at 37\u00b0C with 5% CO 2 for 5 days, with DMSO as control. \u03b2 -Galactosidase-positive cells wer",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -327,10 +327,10 @@
       "sentence": "The blots were blocked using 5% nonfat dry milk (Bio-Rad) at room temperature for 1 h with gently shaking and then incubated for overnight with primary antibodies against LC3A/B (Cell Signaling, 1 : 1000), SQSTM1/p62 (Cell Signaling, 1 : 1000), p-S6 (Cell Signaling, 1 : 1000), S6 (Cell Signaling, 1 : 1000), p53 (Cell Signaling, 1 : 1000), p21 (Abcam, 1 : 1000), HMGB1 (Abcam, 1 : 1000), Histone H3 (Cell Signaling, 1 : 2000), and \u03b2 -actin (Abcam, 1 : 10000).",
       "context_window": "onto PVDF membranes (Bio-Rad). The blots were blocked using 5% nonfat dry milk (Bio-Rad) at room temperature for 1 h with",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "autophagy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7870298_rapamycin_treatment_of_tendon_stem_progenitor_cells_reduces_-pct-4998",
@@ -435,10 +435,10 @@
       "sentence": "When rat PTSCs were treated with various concentrations of bleomycin for 5 days, they started to exhibit a typical morphology for cellular senescence, indicated by the change of cell shape into a distinct, enlarged, and flat phenotype ( Figure 1(a) ).",
       "context_window": "s were treated with various concentrations of bleomycin for 5 days, they started to exhibit a typical morphology for cellular",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "cellular senescence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7870298_rapamycin_treatment_of_tendon_stem_progenitor_cells_reduces_-pct-448",

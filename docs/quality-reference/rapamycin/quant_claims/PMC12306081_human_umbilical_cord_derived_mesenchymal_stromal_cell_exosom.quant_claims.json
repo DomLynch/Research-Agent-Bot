@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12306081_human_umbilical_cord_derived_mesenchymal_stromal_cell_exosom",
   "doi": "10.1186/s13287-025-04477-1",
-  "extracted_at": "2026-05-05T15:22:52+00:00",
+  "extracted_at": "2026-05-09T10:18:18+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 25,
@@ -512,7 +512,7 @@
       "sentence": "Quantitative data of SA-\u03b2-gal + staining with Ki67 and pRPS6 antibodies revealed that hucMSC-Exos yielded the same result on C2C12 senescence (decreased \u03b2-gal + Ki67 - pRPS6 + cells by - 38.5%, p = 0.0017) in response to 150 ng/mL DXR (Fig.",
       "context_window": "C12 senescence (decreased \u03b2-gal + Ki67 - pRPS6 + cells by - 38.5%, p = 0.0017) in response to 150 ng/mL DXR (Fig. 2 d, e). As",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -530,7 +530,7 @@
       "sentence": "Quantitative data of SA-\u03b2-gal + staining with Ki67 and pRPS6 antibodies revealed that hucMSC-Exos yielded the same result on C2C12 senescence (decreased \u03b2-gal + Ki67 - pRPS6 + cells by - 38.5%, p = 0.0017) in response to 150 ng/mL DXR (Fig.",
       "context_window": "escence (decreased \u03b2-gal + Ki67 - pRPS6 + cells by - 38.5%, p = 0.0017) in response to 150 ng/mL DXR (Fig. 2 d, e). As anticipated",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -548,7 +548,7 @@
       "sentence": "Quantitative data of SA-\u03b2-gal + staining with Ki67 and pRPS6 antibodies revealed that hucMSC-Exos yielded the same result on C2C12 senescence (decreased \u03b2-gal + Ki67 - pRPS6 + cells by - 38.5%, p = 0.0017) in response to 150 ng/mL DXR (Fig.",
       "context_window": "Ki67 - pRPS6 + cells by - 38.5%, p = 0.0017) in response to 150 ng/mL DXR (Fig. 2 d, e). As anticipated, it also facilitated C2C1",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -602,10 +602,10 @@
       "sentence": "Representative images and quantitative data show the viability and apoptosis in the experimental groups. d, e C2C12 cells were also cultured for 24 h in serum-free DMEM supplemented with 200 ng/ml of doxorubicin (DXR) or with 20 \u03bcM of DXR plus 20 ng/mL of exosomes, respectively, and then were subjected to SA-\u03b2-gal, pRPS6, and Ki67 staining to assess senescence.",
       "context_window": "th 200 ng/ml of doxorubicin (DXR) or with 20 \u03bcM of DXR plus 20 ng/mL of exosomes, respectively, and then were subjected to SA-\u03b2-",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "S6K1 phosphorylation",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12306081_human_umbilical_cord_derived_mesenchymal_stromal_cell_exosom-n-2989",
@@ -818,7 +818,7 @@
       "sentence": "We observed that hucMSC-Exos treatment significantly improved grip strength (+ 21.3%, p = 0.013) and endurance (+ 17.3%, p = 0.02) at 36-weeks post-treatment, whereas it had no effect on either parameter at the early time points (28 and 32 weeks) or on body weight throughout the follow-up period (Fig.",
       "context_window": "effect on either parameter at the early time points (28 and 32 weeks) or on body weight throughout the follow-up period (Fig. 6",
       "claim_role": "effect",
-      "endpoint": "body weight",
+      "endpoint": "muscle strength",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
