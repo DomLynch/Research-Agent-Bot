@@ -81,6 +81,7 @@ import effect_direction as _direction  # noqa: E402
 import table_renderer as _tables  # noqa: E402
 import background_literature as _bglit  # noqa: E402
 import granite_arbitrator as _granite  # noqa: E402
+import paper_quality_runtime as _paper_quality  # noqa: E402
 
 # Workstream A (autonomous): topic-parameterized pipeline.
 # Module-level corpus paths + active topic — populated by
@@ -2147,6 +2148,36 @@ async def _run(
             f"Rendered Methods contains blocked phrases: {blocked_in_rendered}"
         )
     full_paper_md = _run_mode.replace_methods_in_paper(full_paper_md, methods_md)
+    # Phase 4/5/7 live paper-quality wiring. These sections are derived
+    # from accepted receipts, quant_claim sidecars, and the deterministic
+    # tension matrix. They add no unsupported claims; invalid meta-analysis
+    # pools fail closed into an eligibility statement.
+    quality_artifact = _paper_quality.write_quality_methods(
+        out_dir, manifest_receipts, PARSED_DIR,
+    )
+    meta_artifact = _paper_quality.write_meta_analysis(
+        out_dir, manifest_receipts, QUANT_DIR,
+    )
+    tension_artifact = _paper_quality.write_tension_plans(
+        out_dir, writer_matrix,
+    )
+    full_paper_md = _paper_quality.insert_before_heading(
+        full_paper_md,
+        "## Results",
+        _paper_quality.render_quality_section_for_paper(
+            quality_artifact["bundle"],
+        ),
+    )
+    full_paper_md = _paper_quality.insert_before_heading(
+        full_paper_md,
+        "## Cross-Domain Synthesis",
+        _paper_quality.render_meta_analysis_section(meta_artifact),
+    )
+    full_paper_md = _paper_quality.insert_before_heading(
+        full_paper_md,
+        "## Discussion",
+        _paper_quality.render_tension_section(tension_artifact),
+    )
     _ACTIVE_MANIFEST = {
         "topic": _ACTIVE_TOPIC,
         "n_receipts": len(receipts),
@@ -2156,6 +2187,9 @@ async def _run(
         "receipts": manifest_receipts,
         "receipt_funnel": receipt_funnel,
         "field_engagement_path": "field_engagement.json",
+        "quality_methods_path": "quality_methods.json",
+        "meta_analysis_path": "meta_analysis_results.json",
+        "tension_elaboration_path": "tension_elaboration_plans.json",
     }
     full_paper_md = _restore_rendered_section_contract(
         full_paper_md, sections,
@@ -2189,6 +2223,18 @@ async def _run(
         "receipts": manifest_receipts,
         "receipt_funnel": receipt_funnel,
         "field_engagement_path": "field_engagement.json",
+        "quality_methods_path": "quality_methods.json",
+        "meta_analysis_path": "meta_analysis_results.json",
+        "tension_elaboration_path": "tension_elaboration_plans.json",
+        "quality_methods": quality_artifact["summary"],
+        "meta_analysis": {
+            "pools": len(meta_artifact.get("pools", ())),
+            "candidate_groups": int(meta_artifact.get("candidate_groups", 0)),
+        },
+        "tension_elaboration": {
+            "plans": len(tension_artifact.get("plans", ())),
+            "candidate_tensions": int(tension_artifact.get("candidate_tensions", 0)),
+        },
         "section_words": section_words,
         "total_words": word_count,
         "claim_strength_repairs": len(repair_log),
@@ -2209,7 +2255,7 @@ async def _run(
     final_paper_md = await _run_post_paper_pipeline(
         paper_path=paper_path, manifest=manifest, out_dir=out_dir,
         citation_registry=citation_registry, sections=sections,
-        methods_md=methods_md,
+        methods_md=methods_md, quality_bundle=quality_artifact["bundle"],
     )
     word_count = len(final_paper_md.split())
 
@@ -2230,6 +2276,7 @@ async def _run_post_paper_pipeline(
     citation_registry: dict | None = None,
     sections: tuple[SynthesisSection, ...] = (),
     methods_md: str = "",
+    quality_bundle: Any | None = None,
 ) -> str:
     """Layer 1 deterministic audit + auto-fix → final-layer LLM review
     (Gemini Exacto → Mistral fallback) → auto-apply patches → final audit.
@@ -2740,6 +2787,74 @@ async def _run_post_paper_pipeline(
             f"[pipeline] Stage 5b — appendix splice skipped: {_e}",
             file=sys.stderr,
         )
+
+    # Stage 5c: paper-quality pre-submit gate. This is the live integration
+    # point for Phase 6 and Phase 8: deterministic template-language repair,
+    # template gate artifact, final gate artifact, and publication score.
+    # The gate runs after appendix insertion because the submitted manuscript
+    # is what should be judged.
+    try:
+        paper_md, template_repair_log = _paper_quality.apply_template_repairs(
+            paper_md,
+        )
+        if template_repair_log:
+            paper_path.with_suffix(".template_repair_log.json").write_text(
+                json.dumps(template_repair_log, indent=2)
+            )
+            paper_path.write_text(paper_md)
+            audit_report = _audit_v06.audit(paper_md)
+            audit_path.write_text(json.dumps(audit_report, indent=2))
+            audit_md = _audit_v06._format_summary(audit_report)
+            paper_path.with_suffix(".audit.md").write_text(audit_md)
+        from agent.journal_surface_gate import evaluate_journal_surface
+        surface_report = evaluate_journal_surface(paper_md)
+        surface_payload = {
+            "passed": surface_report.passed,
+            "issues": [dataclasses.asdict(i) for i in surface_report.issues],
+        }
+        paper_path.with_suffix(".journal_surface.json").write_text(
+            json.dumps(surface_payload, indent=2)
+        )
+        receipt_ids = {
+            str(r.get("paper_id") or r.get("receipt_id") or "")
+            for r in manifest.get("receipts", [])
+        }
+        citation_registry_complete = bool(
+            citation_registry
+            and all(rid in citation_registry for rid in receipt_ids if rid)
+        )
+        reviewer_patches = {"unresolved_p1_count": grok_unresolved_p1}
+        if quality_bundle is None:
+            raise RuntimeError("quality_methods_bundle_missing")
+        gate_artifacts = _paper_quality.write_final_quality_gates(
+            out_dir=out_dir,
+            paper_text=paper_md,
+            manifest=manifest,
+            audit=audit_report,
+            journal_surface=surface_payload,
+            reviewer_patches=reviewer_patches,
+            quality_bundle=quality_bundle,
+            citation_registry_complete=citation_registry_complete,
+        )
+        if (
+            not gate_artifacts["gate"].passed
+            or gate_artifacts["score"].verdict != "accept"
+        ):
+            raise RuntimeError(
+                "pre_submit_gate_failed: "
+                f"{gate_artifacts['gate'].summary}; "
+                f"{gate_artifacts['score'].summary}"
+            )
+        print(
+            "[pipeline] Stage 5c — pre-submit quality gate passed",
+            file=sys.stderr,
+        )
+    except Exception as _e:
+        print(
+            f"[pipeline] Stage 5c — pre-submit quality gate failed: {_e}",
+            file=sys.stderr,
+        )
+        raise
 
     # Stage 6 (Fix #23): no-regression gate. If runs/_baseline.txt
     # names a baseline run dir, compare the new run's six dimensions
