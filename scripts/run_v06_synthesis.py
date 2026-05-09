@@ -2741,6 +2741,37 @@ async def _run_post_paper_pipeline(
             file=sys.stderr,
         )
 
+    # Stage 5c (Fix #56): Phase 3-8 paper-quality runtime adapter.
+    # Glue-only: writes the eight Phase 3-8 sidecars (RoB, GRADE,
+    # quality_methods, meta_analysis_results, template_language_gate,
+    # tension_elaboration_plans, publication_score, pre_submit_gate)
+    # by invoking the existing agent/* + scripts/* primitives. No new
+    # logic, no LLM calls. Default rob_method_status="automated_screening"
+    # → final gate emits formal_sr_methods=PARTIAL. Promote to FULL only
+    # when source-text Cochrane signaling is wired (set via env var).
+    try:
+        from scripts.paper_quality_runtime import run_phases as _run_paper_quality_phases  # type: ignore[import-not-found]
+        _rob_status = os.environ.get(
+            "ROB_METHOD_STATUS", "automated_screening",
+        )
+        if _rob_status not in ("automated_screening", "source_text_full_cochrane"):
+            _rob_status = "automated_screening"
+        _verdict = _run_paper_quality_phases(
+            paper_path.parent, rob_method_status=_rob_status,  # type: ignore[arg-type]
+        )
+        _r = _verdict["result"]
+        print(
+            f"[pipeline] Stage 5c — paper_quality_gate={_r['paper_quality_gate']} "
+            f"| formal_sr_methods={_r['formal_sr_methods']} "
+            f"(failures={len(_r['failures'])}, warnings={len(_r['warnings'])})",
+            file=sys.stderr,
+        )
+    except Exception as _e:  # pragma: no cover — best-effort
+        print(
+            f"[pipeline] Stage 5c — paper-quality adapter skipped: {_e}",
+            file=sys.stderr,
+        )
+
     # Stage 6 (Fix #23): no-regression gate. If runs/_baseline.txt
     # names a baseline run dir, compare the new run's six dimensions
     # (P1, numeric trace, consistency, leakage, word count, orphan
