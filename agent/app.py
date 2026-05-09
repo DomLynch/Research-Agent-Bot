@@ -7,8 +7,10 @@ through scripts and audited run bundles rather than a public interactive API.
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from urllib.parse import urlparse
 
 _LIVE_HTML = (
     "<!doctype html><html lang='en'><head><meta charset='utf-8'>"
@@ -29,8 +31,38 @@ _PAUSE_HTML = _LIVE_HTML  # Back-compat for older tests/imports.
 
 class _LiveHandler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
-        body = _LIVE_HTML.encode("utf-8")
-        self.send_response(200)
+        path = urlparse(self.path).path
+        if path in {"/", "/status"}:
+            self._send_html(200, _LIVE_HTML)
+            return
+        if path == "/health":
+            self._send_json(
+                200,
+                {
+                    "status": "ok",
+                    "service": "research-agent-bot",
+                    "http_surface": "deploy-status-only",
+                    "synthesis_entrypoints": [
+                        "scripts/synthesize.py",
+                        "scripts/run_v06_synthesis.py",
+                    ],
+                },
+            )
+            return
+        self._send_json(
+            404,
+            {
+                "error": "not_found",
+                "detail": (
+                    "Research Agent Bot does not expose a public API here; "
+                    "synthesis runs through audited CLI bundles."
+                ),
+            },
+        )
+
+    def _send_html(self, status: int, html: str) -> None:
+        body = html.encode("utf-8")
+        self.send_response(status)
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
         self.end_headers()
@@ -38,6 +70,39 @@ class _LiveHandler(BaseHTTPRequestHandler):
             self.wfile.write(body)
         except BrokenPipeError:
             return
+
+    def _send_json(self, status: int, payload: dict[str, object]) -> None:
+        body = json.dumps(payload, sort_keys=True).encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        try:
+            self.wfile.write(body)
+        except BrokenPipeError:
+            return
+
+    def do_HEAD(self) -> None:
+        path = urlparse(self.path).path
+        if path in {"/", "/status"}:
+            body = _LIVE_HTML.encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            return
+        if path == "/health":
+            body = json.dumps({"status": "ok"}, sort_keys=True).encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            return
+        body = _LIVE_HTML.encode("utf-8")
+        self.send_response(404)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
 
     def log_message(self, format: str, *args: object) -> None:
         return  # suppress access logs
