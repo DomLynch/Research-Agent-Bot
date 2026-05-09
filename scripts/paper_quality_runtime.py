@@ -14,22 +14,17 @@ import dataclasses
 import json
 import math
 import re
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
 from agent.final_gate import evaluate_final_gate
 from agent.final_gate_mapper import build_gate_inputs
 from agent.forest_plot_svg import render_forest_plot_svg
-from agent.grade_schema import DowngradeAdjustment, GradeAssessment
 from agent.meta_analysis import EffectRow, pool_random_effects
 from agent.publication_scorer import ScoreInputs, score_publication
 from agent.quality_methods_bundle import build_quality_methods_bundle
-from agent.risk_of_bias_schema import (
-    DOMAINS_BY_TOOL,
-    DomainAssessment,
-    StudyAssessment,
-)
+from agent.risk_of_bias_schema import DOMAINS_BY_TOOL
 from agent.template_gate_adapter import evaluate_template_gate
 from agent.tension_elaboration import TensionRecord, select_top_tensions
 
@@ -296,6 +291,13 @@ def _weight(receipt: Any) -> float:
     return tier_weight + {"direct": 2.0, "indirect": 1.0, "mechanistic": 0.5}.get(direct, 0.0)
 
 
+def _tension_directness(value: str) -> str:
+    value = value.lower()
+    if value in {"direct", "indirect", "mechanistic"}:
+        return value
+    return "indirect"
+
+
 def write_tension_plans(out_dir: Path, matrix: Any) -> dict[str, Any]:
     by_id = {r.receipt_id: r for r in matrix.receipts}
     records = []
@@ -313,8 +315,8 @@ def write_tension_plans(out_dir: Path, matrix: Any) -> dict[str, Any]:
             severity=max(1, min(5, int(tension.severity))),
             weight_a=_weight(a),
             weight_b=_weight(b),
-            directness_a=str(a.directness),
-            directness_b=str(b.directness),
+            directness_a=_tension_directness(str(a.directness)),
+            directness_b=_tension_directness(str(b.directness)),
             numeric_anchors_a=tuple(getattr(a, "p_values", ()) or ()),
             numeric_anchors_b=tuple(getattr(b, "p_values", ()) or ()),
         ))
