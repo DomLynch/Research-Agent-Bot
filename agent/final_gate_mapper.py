@@ -21,7 +21,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from agent.final_gate import GateInputs
+from agent.final_gate import GateInputs, RobMethodStatus
 from agent.quality_methods_bundle import QualityMethodsBundle
 from agent.template_gate_adapter import TemplateGateReport
 
@@ -140,8 +140,14 @@ def build_gate_inputs(
     n_tensions: int,
     n_receipts: int,
     template_language_blocking: bool,
+    rob_method_status: RobMethodStatus = "automated_screening",
 ) -> GateInputs:
-    """Direct builder. Caller has already extracted typed values."""
+    """Direct builder. Caller has already extracted typed values.
+
+    `rob_method_status` defaults to "automated_screening" — the orchestrator
+    must explicitly pass "source_text_full_cochrane" to claim FULL formal
+    SR methods (Fix #56 honesty marker).
+    """
     return GateInputs(
         numeric_coverage=float(numeric_coverage),
         audit_gates_passed=bool(audit_gates_passed),
@@ -153,6 +159,7 @@ def build_gate_inputs(
         n_receipts=int(n_receipts),
         unresolved_reviewer_p1_count=int(unresolved_reviewer_p1_count),
         template_language_blocking=bool(template_language_blocking),
+        rob_method_status=rob_method_status,
     )
 
 

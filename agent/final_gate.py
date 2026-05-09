@@ -125,16 +125,24 @@ class GateInputs:
 class GateResult:
     """Verdict from the final gate.
 
-    passed   — False if any P1 failure; otherwise True.
-    failures — names of P1 gates that failed, in declaration order.
-    warnings — names of P2 thresholds that were tripped (informational).
-    summary  — single human-readable line summarising the verdict.
+    passed             — False if any P1 failure; otherwise True. Synonym:
+                         paper_quality_gate is "PASS" when passed=True.
+    failures           — names of P1 gates that failed, in declaration order.
+    warnings           — names of P2 thresholds that were tripped.
+    summary            — single human-readable line summarising the verdict.
+    paper_quality_gate — "PASS" / "FAIL" mirror of `passed`.
+    formal_sr_methods  — "PARTIAL" when RoB is automated screening (no
+                         source-text Cochrane signaling); "FULL" otherwise.
+                         Independent of paper_quality_gate — automated RoB
+                         can pass paper-quality but is honestly partial SR.
     """
 
     passed: bool
     failures: tuple[str, ...]
     warnings: tuple[str, ...]
     summary: str
+    paper_quality_gate: Literal["PASS", "FAIL"]
+    formal_sr_methods: FormalSrMethodsStatus
 
 
 def _check_p1(inputs: GateInputs, thresholds: GateThresholds) -> list[str]:
@@ -206,9 +214,18 @@ def evaluate_final_gate(
         )
     else:
         summary = f"FAIL — {len(failures)} blocker(s): " + "; ".join(failures)
+    formal_sr_methods: FormalSrMethodsStatus = (
+        "FULL"
+        if inputs.rob_method_status == "source_text_full_cochrane"
+        else "PARTIAL"
+    )
+    if formal_sr_methods == "PARTIAL":
+        summary += " | formal_sr_methods=PARTIAL (automated-screening RoB)"
     return GateResult(
         passed=passed,
         failures=tuple(failures),
         warnings=tuple(warnings),
         summary=summary,
+        paper_quality_gate="PASS" if passed else "FAIL",
+        formal_sr_methods=formal_sr_methods,
     )
