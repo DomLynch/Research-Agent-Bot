@@ -35,9 +35,13 @@ asyncio_mode = "strict"
 
 [tool.mypy]
 python_version = "3.11"
-mypy_path = [".", "scripts"]
+mypy_path = ["."]
 ignore_missing_imports = true
+# Scope mypy to release runtime only: agent/ + tests/.
+# scripts/ imports siblings as top-level modules which creates dual-module
+# naming conflicts. Exclude scripts/, legacy, archived, and run artifacts.
 exclude = [
+  "scripts/",
   "tests_legacy/",
   "agent_legacy/",
   "agent_archived/",

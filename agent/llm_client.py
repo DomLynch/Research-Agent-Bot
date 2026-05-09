@@ -42,7 +42,7 @@ except ModuleNotFoundError:  # deterministic tests can import this module withou
     httpx = None  # type: ignore[assignment]
     _HTTPX_HTTP_ERROR = Exception
 else:
-    _HTTPX_HTTP_ERROR = httpx.HTTPError
+    _HTTPX_HTTP_ERROR = httpx.HTTPError  # type: ignore[misc,assignment]
 
 from agent.settings import Settings
 

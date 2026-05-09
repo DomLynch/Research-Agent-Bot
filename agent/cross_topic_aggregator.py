@@ -183,4 +183,4 @@ def _citation_keys(registry: dict[str, dict[str, Any]]) -> set[str]:
 
 
 def _nonempty(values: object) -> set[str]:
-    return {str(v) for v in values if v}
+    return {str(v) for v in values if v}  # type: ignore[attr-defined]

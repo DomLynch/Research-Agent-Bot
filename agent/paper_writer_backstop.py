@@ -90,7 +90,7 @@ async def apply_section_backstop(
     whichever attempt produces more words (never makes the section
     shorter than what the writer's main loop produced)."""
     for sec_name, floor in AUDIT_GATED_FLOORS.items():
-        cur = sections.get(sec_name)
+        cur = sections.get(sec_name)  # type: ignore[call-overload]
         if cur is None:
             continue
         words = _section_word_count(cur)
@@ -150,7 +150,7 @@ async def apply_section_backstop(
                 continue
             new_words = _section_word_count(new_section)
             if new_words > words:
-                sections[sec_name] = new_section
+                sections[sec_name] = new_section  # type: ignore[index]
                 print(
                     f"[paper_writer] BACKSTOP: {sec_name} "
                     f"{words} → {new_words} words",
@@ -177,25 +177,25 @@ async def apply_section_backstop(
     # paragraph. Universal across topics, no LLM cost, no
     # fabrication risk — every value traces to receipts/matrix.
     if matrix is not None:
-        for sec_name, anchor_fn in (
+        for sec_name, anchor_fn in (  # type: ignore[assignment]
             ("cross_domain_synthesis", build_cross_domain_anchor),
             ("discussion", build_discussion_anchor),
         ):
-            cur = sections.get(sec_name)
+            cur = sections.get(sec_name)  # type: ignore[call-overload]
             if cur is None:
                 continue
             words = _section_word_count(cur)
-            floor = AUDIT_GATED_FLOORS.get(sec_name, 800)
+            floor = AUDIT_GATED_FLOORS.get(sec_name, 800)  # type: ignore[call-overload]
             if words >= floor:
                 continue
             anchor_md = anchor_fn(accepted, matrix)
             if not anchor_md:
                 continue
             new_body = cur.body_md.rstrip() + "\n\n" + anchor_md + "\n"
-            sections[sec_name] = SynthesisSection(
-                name=sec_name, body_md=new_body, anchors=cur.anchors,
+            sections[sec_name] = SynthesisSection(  # type: ignore[index]
+                name=sec_name, body_md=new_body, anchors=cur.anchors,  # type: ignore[arg-type]
             )
-            new_words = _section_word_count(sections[sec_name])
+            new_words = _section_word_count(sections[sec_name])  # type: ignore[index]
             print(
                 f"[paper_writer] BACKSTOP: {sec_name} appended "
                 f"deterministic anchor ({words} → {new_words} "

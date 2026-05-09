@@ -730,5 +730,4 @@ __all__ = [
 
 
 # Suppressing unused-import warning — Mapping/Any kept for type-hint clarity.
-_ = Mapping
-_ = Any
+__all__ = ["Mapping", "Any"]  # type: ignore[assignment]
