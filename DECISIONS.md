@@ -1,5 +1,33 @@
 # DECISION JOURNAL
 
+## 2026-05-09 — LOC budget raise for final-gate and effect-normalizer primitives
+**Decision:** Raise `agent/` cloc ceiling from 19,300 to 19,750.
+**Why:** Claude's latest implementation added two runtime primitives that are
+load-bearing for Phases 5 and 8: `agent/effect_normalizer.py` normalizes raw
+study reports into poolable `EffectRow`s, and `agent/final_gate.py` aggregates
+audit, journal-surface, reviewer-P1, numeric, citation, RoB, GRADE, tension,
+corpus-depth, and template-language signals into a deterministic pre-cert gate.
+Measured runtime cloc is 19,543 after Codex's merge-review fixes, leaving about
+200 cloc of headroom rather than a broad bloat allowance.
+**Alternatives rejected:** Compressing the new modules would reduce clarity
+without removing behavior; moving them to `scripts/` would dodge the runtime
+budget while making ownership less explicit.
+**Revisit if:** These primitives are not wired into the next rapamycin
+WORLDCLASS run; unused paper-quality primitives should be deleted, not carried.
+
+## 2026-05-09 (Claude lane, isolated worktree) — Three planning-layer architectural choices
+**Decision:** Three coupled choices made while shipping Phases 3/4/5/6/7/8 deterministic primitives on the `claude/cranky-shaw-dd257f` branch:
+1. **Tension-hypothesis registry is data, not LLM.** `agent/tension_elaboration.py::HYPOTHESIS_REGISTRY` ships fixed (conflict_type → 2 hypotheses) plus a `DEFAULT_HYPOTHESES` fallback. Adding new conflict types is a tuple edit, not a code change.
+2. **Risk-of-bias design/tool pair is coupled, not configurable.** `agent/risk_of_bias_schema.py::StudyAssessment.__post_init__` rejects rct+syrcle / animal+rob2 / observational+rob2 etc. Coupling enforced via the `DEFAULT_TOOL_FOR_DESIGN` mapping; no soft-warn mode.
+3. **Phase-5 test file path renamed to avoid collision.** Pre-existing `tests/test_meta_analysis.py` covers Codex's `scripts/meta_analysis.py` scaffold (different API: outcome-string + dicts + `fail_closed` reasons). My tests for `agent/meta_analysis.py` (FE + DerSimonian-Laird, EffectRow/PoolResult dataclasses) ship at `tests/test_agent_meta_analysis.py`. Both surfaces preserved.
+**Why:** All three follow the AGENTS.md "LLM PROPOSES, CODE DISPOSES" rule. (1) Hypothesis prose is downstream rendering; the registry-as-data form keeps the planner audit-friendly and lets a future writer module pull verbatim or paraphrase under its own gate. (2) RoB tools are not interchangeable across designs (RoB 2 has no allocation-concealment domain because it's RCT-only; SYRCLE has no selective-reporting domain in the standard 7); soft-warn would let extractor mistakes ship into cert. (3) Stomping Codex's pre-existing tests would have erased their parallel Phase 5 work; the rename costs one extra path in the verification command and zero functional risk.
+**Alternatives rejected:**
+- Tension hypotheses as LLM-generated per call — rejected; introduces non-determinism into the planning layer that the writer module specifically isolates from. The whole point of Phase 7 being a "planning primitive" is that downstream prose generation has a deterministic anchor.
+- Soft-warn for incompatible design/tool pairs — rejected; AGENTS.md hard rule treats schema validation as a fail-closed gate. A "warning" would be a false safety net that lets the bug ship.
+- Overwrite Codex's `tests/test_meta_analysis.py` with mine — rejected; the file exists at HEAD, was committed by Codex's parallel lane (`83285bce Add evidence methods render scaffolds`), and tests their `scripts/meta_analysis.py`. Lossy and against the "no Codex collision" rule from the brief.
+- Merge both APIs into a single `meta_analysis` module — rejected; the two APIs are genuinely different (Codex's takes outcome+dicts and returns `fail_closed`/`reason`; mine takes EffectRow dataclasses and returns full PoolResult with Q/I²/τ²). One canonical module is correct *eventually*, but choosing now would pre-empt the merge negotiation.
+**Revisit if:** the writer module needs hypothesis prose with study-specific specificity (tension #6 in `docs/paper_quality/claude_parallel/cross_paper_tension_atlas.md` is a candidate); at that point the registry can grow to per-(conflict_type × outcome_class) hypothesis pairs without changing the API. Or if Codex's `scripts/meta_analysis.py` is renamed/deleted, in which case my `agent/meta_analysis.py` becomes the canonical pooler and `tests/test_agent_meta_analysis.py` should move to `tests/test_meta_analysis.py`.
+
 ## 2026-05-09 — Raise LOC ceiling to 18,500 for generated packs and cross-topic V1
 **Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 17,200 → 18,500. Per-file 600 LOC unchanged.
 **Why:** The measured runtime gate is now 17,995 cloc after two shipped, load-bearing slices: generated topic-pack V1 and cross-topic meta-synthesis V1. The runtime additions are bounded and auditable: `agent/topic_pack_generator.py` + `agent/topic_pack_store.py` for immutable generated-pack records, and `agent/cross_topic_aggregator.py` + `agent/convergence_detector.py` + `agent/contradiction_detector.py` + `agent/meta_writer.py` for read-only comparison of already-certified topic runs. The raw `agent/**/*.py` footprint is 22,081 lines, so the budget tracks cloc-style executable/documented runtime code while preserving the 600-line per-file hard cap.
@@ -552,3 +580,17 @@ The final hardening moves fix the actual failure modes, not the score display.
 - chase broader PDF parsing before fixing excerpt/numeric grounding — rejected; the benchmark showed the immediate leverage was in what the drafter says from the evidence already in hand.
 
 **Revisit if:** `glp1_cv_mace`, `creatine_cognition`, or `senolytics` remain regressed after adding a validator-driven rewrite loop for medium-severity `missing_numeric` findings.
+
+---
+
+## 2026-05-09 — LOC budget raise for executable world-class paper primitives
+**Decision:** Raise `agent/` cloc ceiling from 18,500 to 19,300.
+**Why:** Phase 3-7 work moved from docs into executable, tested primitives:
+template-language gating, RoB/GRADE schemas, named-framework engagement,
+fixed/random-effects meta-analysis, and deterministic tension planning.
+These are load-bearing for publication-grade papers and stay stdlib-only.
+**Alternatives rejected:** Compressing working modules to chase the old ceiling
+would hide complexity rather than remove it; moving runtime primitives to
+`scripts/` would make ownership worse.
+**Revisit if:** These primitives are not wired into a successful rapamycin
+WORLDCLASS run; then delete or archive unused pieces.

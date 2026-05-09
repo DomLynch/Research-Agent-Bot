@@ -271,6 +271,8 @@ SectionName = Literal[
     "results",              # ~3000-5000; ANCHORED — multi-paragraph by outcome class
     "cross_domain_synthesis",  # ~800-1500; ANCHORED — integrates outcomes with
                             # cross-outcome tensions
+    "novel_framework",      # DETERMINISTIC — corpus-structure organizing frame
+    "framework_engagement", # DETERMINISTIC — named field-framework engagement
     "discussion",           # ~2000-3000; SCOPED — evidence-says vs interpretation
     "limitations_full",     # ~500-1000; ANCHORED — includes quarantine rationale
     "conclusion",           # ~300-500; SCOPED — hedged summary

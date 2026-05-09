@@ -2,14 +2,14 @@
   "paper_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a",
   "doi": "10.3354/ab00673",
   "extracted_at": "2026-05-09T10:18:14+00:00",
-  "extractor_version": "0.6.0",
+  "extractor_version": "0.6.0+llm_rescue_v1",
   "claims_count_by_type": {
-    "percentage": 3,
-    "p_value": 3
+    "p_value": 3,
+    "percentage": 3
   },
   "claims": [
     {
-      "claim_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a-pct-500",
+      "claim_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a-llmrescue-9f679da8432d",
       "claim_type": "percentage",
       "raw_text": "22%",
       "numeric_values": [
@@ -19,15 +19,17 @@
       "source_section": "abstract",
       "source_offset": 500,
       "sentence": "We found that 2 and 4 \u00b5M rapamycin extended B. calyciflorus life span by 15 and 22%, respectively compared with controls (p < 0.05).",
-      "context_window": "4 \u00b5M rapamycin extended B. calyciflorus life span by 15 and 22%, respectively compared with controls (p < 0.05). The reprod",
-      "claim_role": "unknown",
+      "context_window": "4 \u00b5M rapamycin extended B. calyciflorus life span by 15 and 22%, respectively compared with controls (p < 0.05).",
+      "claim_role": "effect",
       "endpoint": "lifespan",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high",
+      "rescue_method": "deterministic_partial_repair_v1",
+      "rescue_model": "deterministic_partial_repair_v1"
     },
     {
-      "claim_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a-p-542",
+      "claim_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a-llmrescue-4ec355ca3650",
       "claim_type": "p_value",
       "raw_text": "p < 0.05",
       "numeric_values": [
@@ -37,12 +39,14 @@
       "source_section": "abstract",
       "source_offset": 542,
       "sentence": "We found that 2 and 4 \u00b5M rapamycin extended B. calyciflorus life span by 15 and 22%, respectively compared with controls (p < 0.05).",
-      "context_window": "fe span by 15 and 22%, respectively compared with controls (p < 0.05). The reproductive peak was significantly delayed by rapamy",
-      "claim_role": "unknown",
+      "context_window": "fe span by 15 and 22%, respectively compared with controls (p < 0.05).",
+      "claim_role": "effect",
       "endpoint": "lifespan",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high",
+      "rescue_method": "deterministic_partial_repair_v1",
+      "rescue_model": "deterministic_partial_repair_v1"
     },
     {
       "claim_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a-p-629",
@@ -116,5 +120,6 @@
       "direction": "",
       "binding_confidence": "none"
     }
-  ]
+  ],
+  "rescued_at": "2026-05-09T12:19:26+00:00"
 }

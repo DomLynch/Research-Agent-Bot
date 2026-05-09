@@ -144,6 +144,18 @@ def test_conclusion_fallback_prose_blocks_journal_surface():
     assert report.issues[0].code == "placeholder_prose"
 
 
+def test_bounded_conclusion_backfill_blocks_journal_surface():
+    paper = (
+        "## Conclusion\n\n"
+        "The synthesis supports a bounded conclusion: the topic has enough "
+        "receipt-traced evidence to justify structured interpretation, but "
+        "the evidence should be read through its tiered profile.\n"
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert report.issues[0].code == "placeholder_prose"
+
+
 def test_validation_contract_meta_prose_blocks_journal_surface():
     paper = (
         "## Discussion\n\n"

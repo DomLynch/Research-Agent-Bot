@@ -27,11 +27,13 @@ adds `build_judge_chain` and `build_write_chain` when SPAR / writer land.
 """
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
+import os
 import re
 from collections.abc import Mapping, Sequence
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Any
 
 try:
@@ -50,6 +52,7 @@ __all__ = [
     "CallSpec",
     "CostLedger",
     "chat_json",
+    "configured_attempts_for_url",
     "extract_json",
     "build_extract_chain",
     "build_judge_chain",
@@ -59,6 +62,7 @@ logger = logging.getLogger(__name__)
 
 _THINK_RE = re.compile(r"<think>.*?</think>\s*", re.DOTALL)
 _FENCE_RE = re.compile(r"```(?:json)?\s*\n?(.*?)\n?\s*```", re.DOTALL)
+_RETRYABLE_HTTP_STATUS = {408, 409, 425, 429, 500, 502, 503, 504}
 
 
 # Pricing table — USD per 1K tokens (input, output). Models not listed
@@ -89,6 +93,7 @@ class CallSpec:
     api_key: str
     model: str
     timeout_sec: float = 60.0
+    max_attempts: int = 1
 
 
 @dataclass(frozen=True, slots=True)
@@ -100,6 +105,7 @@ class LLMResponse:
     input_tokens: int
     output_tokens: int
     estimated_cost_usd: float
+    attempts: tuple[Mapping[str, Any], ...] = ()
 
 
 @dataclass(slots=True)
@@ -130,6 +136,7 @@ class CostLedger:
                     "input_tokens": c.input_tokens,
                     "output_tokens": c.output_tokens,
                     "cost_usd": round(c.estimated_cost_usd, 6),
+                    "attempts": list(c.attempts),
                 }
                 for c in self.calls
             ],
@@ -173,6 +180,67 @@ def _estimate_cost(model: str, input_tok: int, output_tok: int) -> float:
     return input_tok / 1000 * in_price + output_tok / 1000 * out_price
 
 
+def _env_int(name: str, default: int) -> int:
+    try:
+        return int(os.environ.get(name, str(default)))
+    except ValueError:
+        return default
+
+
+def _configured_attempts(base_url: str) -> int:
+    default = _env_int("LLM_CALL_ATTEMPTS", 2)
+    if "openrouter" in base_url.lower():
+        return max(1, _env_int("OPENROUTER_CALL_ATTEMPTS", default))
+    return max(1, default)
+
+
+def configured_attempts_for_url(base_url: str) -> int:
+    """Configured retry attempts for an OpenAI-compatible base URL."""
+    return _configured_attempts(base_url)
+
+
+def _request_headers(spec: CallSpec) -> dict[str, str]:
+    headers = {
+        "Authorization": f"Bearer {spec.api_key}",
+        "Content-Type": "application/json",
+    }
+    if "openrouter" in spec.base_url.lower():
+        referer = os.environ.get("OPENROUTER_HTTP_REFERER", "").strip()
+        if referer:
+            headers["HTTP-Referer"] = referer
+        headers["X-Title"] = os.environ.get(
+            "OPENROUTER_X_TITLE", "Research Agent Bot",
+        )
+    return headers
+
+
+def _err_summary(exc: BaseException) -> str:
+    text = str(exc).strip()
+    if len(text) > 220:
+        text = text[:217] + "..."
+    return f"{type(exc).__name__}: {text}" if text else type(exc).__name__
+
+
+def _is_retryable_error(exc: BaseException) -> bool:
+    if httpx is not None:
+        if isinstance(exc, httpx.HTTPStatusError):
+            return exc.response.status_code in _RETRYABLE_HTTP_STATUS
+        if isinstance(
+            exc,
+            (
+                httpx.TimeoutException,
+                httpx.NetworkError,
+                httpx.RemoteProtocolError,
+                httpx.PoolTimeout,
+            ),
+        ):
+            return True
+    # Some OpenRouter models occasionally return non-JSON despite
+    # response_format=json_object. One retry often recovers; schema checks
+    # still own correctness after parsing.
+    return isinstance(exc, (ValueError, KeyError, json.JSONDecodeError))
+
+
 async def _call_one(
     *,
     client: httpx.AsyncClient,
@@ -201,13 +269,10 @@ async def _call_one(
         # this exactly, others approximately). MiMo + OpenRouter both
         # support the field. Day 9.4 ships zero-variance receipts.
         payload["seed"] = int(seed)
-    headers = {
-        "Authorization": f"Bearer {spec.api_key}",
-        "Content-Type": "application/json",
-    }
     url = spec.base_url.rstrip("/") + "/chat/completions"
     response = await client.post(
-        url, json=payload, headers=headers, timeout=spec.timeout_sec,
+        url, json=payload, headers=_request_headers(spec),
+        timeout=spec.timeout_sec,
     )
     response.raise_for_status()
     body = response.json()
@@ -263,31 +328,69 @@ async def chat_json(
     own_client = client is None
     c = client or httpx.AsyncClient()
     errors: list[tuple[str, str]] = []
+    attempts: list[dict[str, Any]] = []
     try:
         for spec in chain:
             if not spec.api_key:
                 errors.append((spec.model, "missing api_key"))
+                attempts.append({
+                    "model": spec.model,
+                    "attempt": 0,
+                    "ok": False,
+                    "error_type": "MissingApiKey",
+                    "error": "missing api_key",
+                    "retryable": False,
+                })
                 continue
-            try:
-                resp = await _call_one(
-                    client=c,
-                    spec=spec,
-                    messages=messages,
-                    enforce_json=enforce_json,
-                    temperature=temperature,
-                    max_tokens=max_tokens,
-                    seed=seed,
-                )
-            except (_HTTPX_HTTP_ERROR, ValueError, KeyError, LLMError) as exc:
-                errors.append((spec.model, f"{type(exc).__name__}: {exc}"))
-                logger.warning(
-                    "llm_client: %s failed (%s); trying next in chain",
-                    spec.model, type(exc).__name__,
-                )
-                continue
-            if ledger is not None:
-                ledger.add(resp)
-            return resp
+            max_attempts = max(1, spec.max_attempts)
+            for attempt in range(1, max_attempts + 1):
+                try:
+                    resp = await _call_one(
+                        client=c,
+                        spec=spec,
+                        messages=messages,
+                        enforce_json=enforce_json,
+                        temperature=temperature,
+                        max_tokens=max_tokens,
+                        seed=seed,
+                    )
+                except (_HTTPX_HTTP_ERROR, ValueError, KeyError, LLMError) as exc:
+                    retryable = _is_retryable_error(exc)
+                    summary = _err_summary(exc)
+                    errors.append((spec.model, summary))
+                    attempts.append({
+                        "model": spec.model,
+                        "attempt": attempt,
+                        "ok": False,
+                        "error_type": type(exc).__name__,
+                        "error": summary,
+                        "retryable": retryable,
+                    })
+                    if retryable and attempt < max_attempts:
+                        logger.warning(
+                            "llm_client: %s attempt %s/%s failed (%s); retrying",
+                            spec.model, attempt, max_attempts, type(exc).__name__,
+                        )
+                        await asyncio.sleep(min(2.0, 0.25 * attempt))
+                        continue
+                    logger.warning(
+                        "llm_client: %s failed after %s/%s attempt(s) (%s); "
+                        "trying next in chain",
+                        spec.model, attempt, max_attempts, type(exc).__name__,
+                    )
+                    break
+                attempts.append({
+                    "model": spec.model,
+                    "attempt": attempt,
+                    "ok": True,
+                    "error_type": None,
+                    "error": None,
+                    "retryable": None,
+                })
+                resp = replace(resp, attempts=tuple(attempts))
+                if ledger is not None:
+                    ledger.add(resp)
+                return resp
         raise LLMError(
             "every spec in chain failed: "
             + "; ".join(f"{m}: {e}" for m, e in errors)
@@ -313,12 +416,14 @@ def build_extract_chain(settings: Settings) -> tuple[CallSpec, ...]:
             api_key=settings.mimo_api_key,
             model=settings.mimo_model,
             timeout_sec=settings.mimo_timeout_sec,
+            max_attempts=_configured_attempts(settings.mimo_base_url),
         ),
         CallSpec(
             base_url=settings.openrouter_base_url,
             api_key=settings.openrouter_api_key,
             model=settings.fallback_model,
             timeout_sec=settings.mimo_timeout_sec,
+            max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
     )
 
@@ -336,17 +441,20 @@ def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
             api_key=settings.openrouter_api_key,
             model=settings.judge_model,
             timeout_sec=settings.mimo_timeout_sec,
+            max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
         CallSpec(
             base_url=settings.mimo_base_url,
             api_key=settings.mimo_api_key,
             model=settings.mimo_model,
             timeout_sec=settings.mimo_timeout_sec,
+            max_attempts=_configured_attempts(settings.mimo_base_url),
         ),
         CallSpec(
             base_url=settings.openrouter_base_url,
             api_key=settings.openrouter_api_key,
             model=settings.fallback_model,
             timeout_sec=settings.mimo_timeout_sec,
+            max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
     )

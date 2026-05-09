@@ -39,14 +39,10 @@ import re
 from collections import Counter
 from typing import Any
 
+from agent.selection_flow import render_selection_flow_lines
 
-__all__ = [
-    "build_search_provenance_appendix",
-    "build_ai_use_disclosure",
-    "build_human_accountability_template",
-    "build_data_code_availability",
-    "compose_appendix",
-]
+
+__all__ = ["build_search_provenance_appendix", "build_ai_use_disclosure", "build_human_accountability_template", "build_data_code_availability", "compose_appendix"]
 
 
 # Databases the retrieval layer can query. Source of truth:
@@ -106,6 +102,7 @@ def build_search_provenance_appendix(
     n_receipts = manifest.get("n_receipts", len(receipts))
     n_claims = manifest.get("n_high_confidence_claims_total", 0)
     n_tensions = manifest.get("n_non_orthogonal_tensions", 0)
+    receipt_funnel = manifest.get("receipt_funnel") or {}
 
     tier_counts = Counter(
         r.get("evidence_tier", "?") for r in receipts
@@ -160,6 +157,9 @@ def build_search_provenance_appendix(
         f"the receipt builder disposed via the receipt-summary "
         f"density gate.",
         "",
+    ]
+    lines.extend(render_selection_flow_lines(receipt_funnel))
+    lines += [
         "### Per-receipt summary",
         "",
         f"- Total receipts contributing to synthesis: **{n_receipts}**",
@@ -233,7 +233,6 @@ def build_search_provenance_appendix(
         "toward formal systematic-review compliance.",
     ]
     return "\n".join(lines) + "\n"
-
 
 def _verdict_phrase(verdict: str) -> str:
     """Conditional certification phrase. Verdict-honest by construction:

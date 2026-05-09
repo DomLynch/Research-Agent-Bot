@@ -2,13 +2,13 @@
   "paper_id": "PMC3824413_rapamycin_suppresses_brain_aging_in_senescence_accelerated_o",
   "doi": "10.18632/aging.100573",
   "extracted_at": "2026-05-09T10:47:42+00:00",
-  "extractor_version": "0.6.0",
+  "extractor_version": "0.6.0+llm_rescue_v1",
   "claims_count_by_type": {
-    "unit_value": 45,
-    "sample_size": 6,
-    "percentage": 11,
+    "mean_sd": 6,
     "p_value": 44,
-    "mean_sd": 6
+    "percentage": 11,
+    "sample_size": 6,
+    "unit_value": 45
   },
   "claims": [
     {
@@ -1908,7 +1908,7 @@
       "binding_confidence": "partial"
     },
     {
-      "claim_id": "PMC3824413_rapamycin_suppresses_brain_aging_in_senescence_accelerated_o-p-6284",
+      "claim_id": "PMC3824413_rapamycin_suppresses_brain_aging_in_senescence_accelerated_o-llmrescue-222c4b9af69f",
       "claim_type": "p_value",
       "raw_text": "p<0.65",
       "numeric_values": [
@@ -1916,14 +1916,16 @@
       ],
       "units": "",
       "source_section": "results",
-      "source_offset": 6284,
+      "source_offset": 6271,
       "sentence": "Rapamycin had no significant effect on S6 and pS6 levels (F 1,32= 0.28 , p<0.65 and F 1,32 =2.31, p<0.13accordingly).",
-      "context_window": "no significant effect on S6 and pS6 levels (F 1,32= 0.28 , p<0.65 and F 1,32 =2.31, p<0.13accordingly). Unexpectedly, we foun",
-      "claim_role": "unknown",
+      "context_window": " no significant effect on S6 and pS6 levels (F 1,32= 0.28 , p<0.65 and F 1,32 =2.31, p<0.13accordingly).",
+      "claim_role": "effect",
       "endpoint": "S6K1 phosphorylation",
       "arm": "rapamycin",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high",
+      "rescue_method": "deterministic_partial_repair_v1",
+      "rescue_model": "deterministic_partial_repair_v1"
     },
     {
       "claim_id": "PMC3824413_rapamycin_suppresses_brain_aging_in_senescence_accelerated_o-u-6895",
@@ -2033,5 +2035,6 @@
       "direction": "decrease",
       "binding_confidence": "partial"
     }
-  ]
+  ],
+  "rescued_at": "2026-05-09T12:19:26+00:00"
 }

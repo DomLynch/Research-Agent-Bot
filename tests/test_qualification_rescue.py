@@ -143,6 +143,133 @@ def test_validate_claim_rejects_number_belonging_to_prior_comparator() -> None:
     assert reason == "arm_does_not_precede_raw_text"
 
 
+def test_validate_claim_accepts_preceding_arm_context_for_survival() -> None:
+    prior = (
+        "Rapamycin was administered in food to genetically heterogeneous mice "
+        "and produced significant increases in life span."
+    )
+    sentence = "Median survival was extended by an average of 10% in males."
+    claim, reason = rescue._validate_claim(
+        raw={
+            "claim_type": "percentage",
+            "raw_text": "10%",
+            "source_sentence": sentence,
+            "source_section": "abstract",
+            "source_context": prior,
+            "endpoint": "lifespan",
+            "arm": "rapamycin",
+            "direction": "increase",
+        },
+        paper_id="P1",
+        sections={"abstract": f"{prior} {sentence}"},
+        endpoint_map={"lifespan": "longevity"},
+        endpoint_patterns={"lifespan": re.compile(r"median\s+survival", re.IGNORECASE)},
+        allowed_arms={"rapamycin"},
+        model="deterministic",
+    )
+    assert reason == "accepted"
+    assert claim is not None
+    assert claim["arm"] == "rapamycin"
+
+
+def test_validate_claim_rejects_context_arm_without_carry_forward_cue() -> None:
+    prior = "Rapamycin was administered in food."
+    sentence = "Female mice weighed 10% less than controls."
+    claim, reason = rescue._validate_claim(
+        raw={
+            "claim_type": "percentage",
+            "raw_text": "10%",
+            "source_sentence": sentence,
+            "source_section": "abstract",
+            "source_context": prior,
+            "endpoint": "body weight",
+            "arm": "rapamycin",
+            "direction": "decrease",
+        },
+        paper_id="P1",
+        sections={"abstract": f"{prior} {sentence}"},
+        endpoint_map={"body weight": "cardiometabolic"},
+        endpoint_patterns={"body weight": re.compile(r"weigh", re.IGNORECASE)},
+        allowed_arms={"rapamycin"},
+        model="deterministic",
+    )
+    assert claim is None
+    assert reason == "arm_not_in_sentence"
+
+
+def test_repair_existing_partials_promotes_contextual_survival_claim(tmp_path) -> None:
+    prior = (
+        "Rapamycin was administered in food to genetically heterogeneous mice "
+        "from the age of 9 months and produced significant increases in life span."
+    )
+    sentence = "Median survival was extended by an average of 10% in males."
+    parsed = tmp_path / "P1.paper_sections.json"
+    parsed.write_text(json.dumps({
+        "paper_id": "P1",
+        "sections": {"abstract": f"{prior} {sentence}"},
+    }))
+    quant = tmp_path / "P1.quant_claims.json"
+    quant.write_text(json.dumps({
+        "paper_id": "P1",
+        "claims": [{
+            "claim_type": "percentage",
+            "raw_text": "10%",
+            "sentence": sentence,
+            "source_section": "abstract",
+            "claim_role": "unknown",
+            "endpoint": "",
+            "arm": "",
+            "direction": "increase",
+            "binding_confidence": "partial",
+        }],
+    }))
+    paper = rescue.CandidatePaper("P1", parsed, quant, "", "")
+    row = rescue._repair_existing_partials(
+        paper,
+        endpoint_map={"lifespan": "longevity"},
+        endpoint_patterns={"lifespan": re.compile(r"median\s+survival", re.IGNORECASE)},
+        arms={"rapamycin"},
+        max_chars=1000,
+    )
+    assert row["accepted"] == 1
+    claim = row["claims"][0]
+    assert claim["binding_confidence"] == "high"
+    assert claim["endpoint"] == "lifespan"
+    assert claim["rescue_method"] == "deterministic_partial_repair_v1"
+
+
+def test_repair_existing_partials_rejects_discussion_background(tmp_path) -> None:
+    sentence = "Rapamycin extends lifespan by 10% or more in mice."
+    parsed = tmp_path / "P1.paper_sections.json"
+    parsed.write_text(json.dumps({
+        "paper_id": "P1",
+        "sections": {"discussion": sentence},
+    }))
+    quant = tmp_path / "P1.quant_claims.json"
+    quant.write_text(json.dumps({
+        "paper_id": "P1",
+        "claims": [{
+            "claim_type": "percentage",
+            "raw_text": "10%",
+            "sentence": sentence,
+            "source_section": "discussion",
+            "endpoint": "lifespan",
+            "arm": "rapamycin",
+            "direction": "increase",
+            "binding_confidence": "partial",
+        }],
+    }))
+    row = rescue._repair_existing_partials(
+        rescue.CandidatePaper("P1", parsed, quant, "", ""),
+        endpoint_map={"lifespan": "longevity"},
+        endpoint_patterns={"lifespan": re.compile(r"lifespan", re.IGNORECASE)},
+        arms={"rapamycin"},
+        max_chars=1000,
+    )
+    assert row["accepted"] == 0
+    assert row["rejected"] == {"source_section_not_allowed": 1}
+
+
 def test_validate_claim_rejects_endpoint_without_source_support() -> None:
     sentence = (
         "RAD001 treatment counter-regulated expression of 37% of the "

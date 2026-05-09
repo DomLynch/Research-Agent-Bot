@@ -8,6 +8,8 @@ import sys
 from pathlib import Path
 from unittest.mock import AsyncMock, MagicMock
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import grok_reviewer  # noqa: E402
 
@@ -113,15 +115,43 @@ def test_low_patch_short_paper_does_not_escalate_to_grok() -> None:
     assert client.post.call_count == 1
 
 
-def test_mistral_fallback_when_primary_fails() -> None:
+def test_primary_retry_recovers_before_mistral() -> None:
+    """A transient primary parse miss should retry the primary before fallback."""
+    client = MagicMock()
+    client.post = AsyncMock(side_effect=[
+        ValueError("invalid primary JSON"),
+        _mock_chat_response(
+            "google/gemini-3.1-flash-lite:exacto", {"patches": []},
+        ),
+    ])
+    parsed, model_used, cost = asyncio.run(
+        grok_reviewer._call_with_fallback(
+            "sys", "user", "google/gemini-3.1-flash-lite:exacto",
+            "mistralai/mistral-small-2603",
+            "test-key", "https://openrouter.ai/api/v1", client,
+        )
+    )
+    assert model_used == "google/gemini-3.1-flash-lite:exacto"
+    assert client.post.call_count == 2
+    assert parsed["patches"] == []
+    assert [a["ok"] for a in parsed["_review_attempts"]] == [False, True]
+    assert cost > 0
+
+
+def test_mistral_fallback_when_primary_fails(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     """When primary throws (HTTP error / parse failure), Mistral is the
-    next call. Pipeline never silently skips final-layer review."""
+    next model after primary retries are exhausted."""
+    monkeypatch.setattr(grok_reviewer, "_PRIMARY_ATTEMPTS", 2)
     client = MagicMock()
     grok_failure = ValueError("invalid primary JSON")
     mistral_success = _mock_chat_response(
         "mistralai/mistral-small-2603", {"patches": []},
     )
-    client.post = AsyncMock(side_effect=[grok_failure, mistral_success])
+    client.post = AsyncMock(side_effect=[
+        grok_failure, grok_failure, mistral_success,
+    ])
     parsed, model_used, cost = asyncio.run(
         grok_reviewer._call_with_fallback(
             "sys", "user", "google/gemini-3.1-flash-lite:exacto",
@@ -130,9 +160,32 @@ def test_mistral_fallback_when_primary_fails() -> None:
         )
     )
     assert model_used == "mistralai/mistral-small-2603"
-    assert client.post.call_count == 2
+    assert client.post.call_count == 3
     # Mistral pricing (0.20/0.60 per Mtok), still > 0
     assert cost > 0
+
+
+def test_reviewer_extracts_json_from_prose_or_fence() -> None:
+    """Gemini/OpenRouter may wrap JSON despite response_format=json_object."""
+    response = MagicMock()
+    response.raise_for_status = MagicMock()
+    response.json = MagicMock(return_value={
+        "choices": [
+            {"message": {"content": "Here:\n```json\n{\"patches\": []}\n```"}}
+        ],
+        "usage": {"prompt_tokens": 100, "completion_tokens": 200},
+    })
+    client = MagicMock()
+    client.post = AsyncMock(return_value=response)
+    parsed, model_used, _cost = asyncio.run(
+        grok_reviewer._call_with_fallback(
+            "sys", "user", "google/gemini-3.1-flash-lite:exacto",
+            "mistralai/mistral-small-2603",
+            "test-key", "https://openrouter.ai/api/v1", client,
+        )
+    )
+    assert model_used == "google/gemini-3.1-flash-lite:exacto"
+    assert parsed["patches"] == []
 
 
 def test_both_failures_raises() -> None:

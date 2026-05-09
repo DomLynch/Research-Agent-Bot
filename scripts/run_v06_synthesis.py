@@ -44,7 +44,9 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
-from agent.llm_client import CallSpec, CostLedger  # noqa: E402
+from agent.llm_client import (  # noqa: E402
+    CallSpec, CostLedger, configured_attempts_for_url,
+)
 from agent.paper_writer import render_full_paper  # noqa: E402
 from agent.paper_writer_helpers import (  # noqa: E402
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
@@ -1298,6 +1300,20 @@ def _load_active_paper_ids() -> set[str] | None:
     return {str(x) for x in ids if str(x).strip()} or None
 
 
+def _strict_clinical_receipt_scope() -> bool:
+    """Clinical-brief packs disable inferential bridge and should not
+    promote adjacent/mechanistic receipts from a reused broad corpus."""
+    pack = _get_topic_pack()
+    inference = getattr(pack, "inference", None)
+    return bool(pack and inference is not None and not inference.allow)
+
+
+def _receipt_scope_classes() -> set[str]:
+    if _strict_clinical_receipt_scope():
+        return {"core_on_thesis"}
+    return {"core_on_thesis", "adjacent_clinical", "background_mechanism"}
+
+
 def _load_classified_receipt_candidate_ids() -> set[str]:
     """Core, adjacent, and background-mechanism papers can carry
     load-bearing evidence in CLIN/INF/MECH papers. Off-thesis and
@@ -1309,7 +1325,7 @@ def _load_classified_receipt_candidate_ids() -> set[str]:
         rows = json.loads(path.read_text())
     except json.JSONDecodeError:
         return set()
-    keep = {"core_on_thesis", "adjacent_clinical", "background_mechanism"}
+    keep = _receipt_scope_classes()
     return {
         str(r.get("paper_id"))
         for r in rows
@@ -1430,6 +1446,8 @@ def render_receipt_funnel_markdown(report: dict[str, Any]) -> str:
 def _load_receipt_candidate_paper_ids() -> set[str] | None:
     active = _load_active_paper_ids()
     classified = _load_classified_receipt_candidate_ids()
+    if _strict_clinical_receipt_scope() and classified:
+        return classified if active is None else active & classified
     if active is None and not classified:
         return None
     return (active or set()) | classified
@@ -1844,6 +1862,7 @@ def _build_call_chain() -> list[CallSpec]:
             api_key=settings.mimo_api_key,
             model=settings.mimo_model,
             timeout_sec=settings.mimo_timeout_sec,
+            max_attempts=configured_attempts_for_url(settings.mimo_base_url),
         ))
     if settings.openrouter_api_key:
         for openrouter_model in (settings.fallback_model, settings.judge_model):
@@ -1852,6 +1871,9 @@ def _build_call_chain() -> list[CallSpec]:
                 api_key=settings.openrouter_api_key,
                 model=openrouter_model,
                 timeout_sec=settings.mimo_timeout_sec,
+                max_attempts=configured_attempts_for_url(
+                    settings.openrouter_base_url,
+                ),
             ))
     return chain
 
@@ -2107,6 +2129,7 @@ async def _run(
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),
         "thesis": thesis.text,
         "receipts": manifest_receipts,
+        "receipt_funnel": receipt_funnel,
     }
     full_paper_md = _restore_rendered_section_contract(
         full_paper_md, sections,
@@ -2138,6 +2161,7 @@ async def _run(
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),
         "thesis": thesis.text,
         "receipts": manifest_receipts,
+        "receipt_funnel": receipt_funnel,
         "section_words": section_words,
         "total_words": word_count,
         "claim_strength_repairs": len(repair_log),

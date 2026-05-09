@@ -42,6 +42,7 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
+from agent.llm_client import extract_json  # noqa: E402
 from agent.settings import load_settings  # noqa: E402  loads .env
 
 __all__ = ["TypedPatch", "review_with_grok", "main"]
@@ -290,6 +291,10 @@ _PRICING_PER_MTOK: dict[str, tuple[float, float]] = {
     "mistralai/mistral-small-2603": (0.15, 0.60),
 }
 
+_PRIMARY_ATTEMPTS = int(os.environ.get("FINAL_LAYER_PRIMARY_ATTEMPTS", "3"))
+_FALLBACK_ATTEMPTS = int(os.environ.get("FINAL_LAYER_FALLBACK_ATTEMPTS", "1"))
+_RETRYABLE_HTTP_STATUS = {408, 409, 425, 429, 500, 502, 503, 504}
+
 
 async def _call_one(
     system: str, user: str, model: str, api_key: str,
@@ -318,6 +323,9 @@ async def _call_one(
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
     }
+    if os.environ.get("OPENROUTER_HTTP_REFERER"):
+        headers["HTTP-Referer"] = os.environ["OPENROUTER_HTTP_REFERER"]
+    headers["X-Title"] = os.environ.get("OPENROUTER_X_TITLE", "Research Agent Bot")
     r = await client.post(url, json=payload, headers=headers, timeout=300.0)
     r.raise_for_status()
     body = r.json()
@@ -327,18 +335,50 @@ async def _call_one(
     # the JSON parser report "Expecting value" cleanly so the
     # fallback chain in _call_with_fallback kicks in.
     text = body["choices"][0]["message"].get("content") or "{}"
-    # Strip JSON fences if present
-    text = re.sub(r"^```(?:json)?\s*", "", text.strip())
-    text = re.sub(r"\s*```$", "", text)
+    parsed = extract_json(text)
     usage = body.get("usage") or {}
     in_tok = int(usage.get("prompt_tokens", 0))
     out_tok = int(usage.get("completion_tokens", 0))
-    return json.loads(text), in_tok, out_tok
+    return parsed, in_tok, out_tok
 
 
 def _estimate_cost(model: str, in_tok: int, out_tok: int) -> float:
     in_per, out_per = _PRICING_PER_MTOK.get(model, (0.0, 0.0))
     return (in_tok / 1_000_000.0) * in_per + (out_tok / 1_000_000.0) * out_per
+
+
+def _attempt_count(model: str, primary_model: str) -> int:
+    if model == primary_model:
+        return max(1, _PRIMARY_ATTEMPTS)
+    return max(1, _FALLBACK_ATTEMPTS)
+
+
+def _err_summary(exc: BaseException) -> str:
+    text = str(exc).strip()
+    if len(text) > 220:
+        text = text[:217] + "..."
+    return f"{type(exc).__name__}: {text}" if text else type(exc).__name__
+
+
+def _is_retryable_error(exc: BaseException) -> bool:
+    try:
+        import httpx
+    except ModuleNotFoundError:
+        httpx = None  # type: ignore[assignment]
+    if httpx is not None:
+        if isinstance(exc, httpx.HTTPStatusError):
+            return exc.response.status_code in _RETRYABLE_HTTP_STATUS
+        if isinstance(
+            exc,
+            (
+                httpx.TimeoutException,
+                httpx.NetworkError,
+                httpx.RemoteProtocolError,
+                httpx.PoolTimeout,
+            ),
+        ):
+            return True
+    return isinstance(exc, (ValueError, KeyError, json.JSONDecodeError))
 
 
 async def _call_with_fallback(
@@ -353,23 +393,60 @@ async def _call_with_fallback(
         transport_errors: tuple[type[BaseException], ...] = (httpx.HTTPError,)
     except ModuleNotFoundError:
         transport_errors = ()
+    attempts: list[dict[str, Any]] = []
     for model in (primary_model, fallback_model):
-        try:
-            parsed, in_tok, out_tok = await _call_one(
-                system, user, model, api_key, base_url, client,
-            )
-            cost = _estimate_cost(model, in_tok, out_tok)
-            return parsed, model, cost
-        except (*transport_errors, ValueError, KeyError, json.JSONDecodeError) as exc:
-            print(
-                f"final_layer_reviewer: {model} failed "
-                f"({type(exc).__name__}); "
-                f"trying fallback",
-                file=sys.stderr,
-            )
-            continue
+        max_attempts = _attempt_count(model, primary_model)
+        for attempt in range(1, max_attempts + 1):
+            try:
+                parsed, in_tok, out_tok = await _call_one(
+                    system, user, model, api_key, base_url, client,
+                )
+                cost = _estimate_cost(model, in_tok, out_tok)
+                attempts.append({
+                    "model": model,
+                    "attempt": attempt,
+                    "ok": True,
+                    "error_type": None,
+                    "error": None,
+                })
+                parsed["_review_attempts"] = attempts
+                return parsed, model, cost
+            except (
+                *transport_errors, ValueError, KeyError, json.JSONDecodeError
+            ) as exc:
+                retryable = _is_retryable_error(exc)
+                attempts.append({
+                    "model": model,
+                    "attempt": attempt,
+                    "ok": False,
+                    "error_type": type(exc).__name__,
+                    "error": _err_summary(exc),
+                    "retryable": retryable,
+                })
+                if retryable and attempt < max_attempts:
+                    print(
+                        f"final_layer_reviewer: {model} attempt "
+                        f"{attempt}/{max_attempts} failed "
+                        f"({type(exc).__name__}); retrying same model",
+                        file=sys.stderr,
+                    )
+                    await asyncio.sleep(min(2.0, 0.25 * attempt))
+                    continue
+                next_label = (
+                    "trying fallback"
+                    if model == primary_model and fallback_model else
+                    "no fallback remaining"
+                )
+                print(
+                    f"final_layer_reviewer: {model} failed after "
+                    f"{attempt}/{max_attempts} attempt(s) "
+                    f"({type(exc).__name__}); {next_label}",
+                    file=sys.stderr,
+                )
+                break
     raise RuntimeError(
-        f"both {primary_model} and {fallback_model} failed for review call"
+        f"both {primary_model} and {fallback_model} failed for review call; "
+        f"attempts={attempts}"
     )
 
 

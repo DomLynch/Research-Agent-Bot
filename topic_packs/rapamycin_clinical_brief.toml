@@ -1,0 +1,188 @@
+# Rapamycin Clinical Brief topic pack — Elicit benchmark variant
+#
+# ISOLATED from main rapamycin.toml — created 2026-05-09 for head-to-head
+# comparison vs Elicit Free tier output on the query:
+#   "Rapamycin (sirolimus) as a geroprotector in healthy older adults
+#    aged 60+, including effects on cardiometabolic health, immune
+#    function, muscle function, and frailty. Include intermittent vs
+#    continuous dosing, mTORC1 vs mTORC2 effects, and clinical RCT
+#    evidence in non-transplant populations."
+#
+# Differences from rapamycin.toml:
+#   - Narrower scope_terms (older adults focus)
+#   - Tighter evidence_types (RCT/systematic review only — no observational)
+#   - [retrieval.background] REMOVED (no mechanism/preclinical pool)
+#   - [inference] disabled (no D1 bridge in clinical brief)
+#   - Tighter species filter (humans only, no rodent mechanism rescue)
+#
+# Corpus directory: docs/quality-reference/rapamycin_clinical_brief/
+# (symlinked to rapamycin/ for shared extracted quant_claims)
+#
+# DO NOT EDIT rapamycin.toml — this is a sibling variant for benchmarking.
+
+topic   = "rapamycin_clinical_brief"
+class_  = "mtor_inhibitor"
+
+aliases = [
+  "rapamycin",
+  "sirolimus",
+  "Rapamune",
+  "mTOR inhibitor",
+  "mTORC1 inhibitor",
+]
+
+expected_evidence_slots = [
+  "human_rcts",
+  "human_observational",
+  "safety_tolerability",
+  "dosing_regimen",
+  "cardiometabolic_outcomes",
+  "immune_outcomes",
+  "muscle_function",
+  "frailty",
+]
+
+special_rules = [
+  "exclusively focus on healthy older adults aged 60+",
+  "non-transplant populations only",
+  "exclude oncology, transplant rejection, organ-specific indications",
+  "intermittent dosing is the geroprotective regimen",
+  "PEARL, RAPA-EX-01, Mannick 2018 are the canonical RCTs",
+]
+
+forbidden_verbs_for_protocol_role = [
+  "found",
+  "showed",
+  "improved",
+  "reduced",
+  "demonstrated",
+  "established",
+  "proved",
+]
+
+forbidden_verbs_for_results_role_with_protocol_keywords = [
+  "planned",
+  "will assess",
+  "pending",
+  "ongoing",
+  "awaiting",
+]
+
+active_arm_synonyms = [
+  "rapamycin",
+  "sirolimus",
+  "Rapamune",
+  "RAP",
+  "RAPA",
+  "eRAPA",
+  "Rapa",
+  "RPM",
+]
+
+placebo_arm_synonyms = [
+  "placebo",
+  "control",
+  "PLA",
+  "vehicle",
+]
+
+corpus_search_queries = [
+  "rapamycin AND older adults AND randomized controlled trial",
+  "sirolimus AND elderly AND clinical trial",
+  "rapamycin AND geroprotector AND human",
+  "sirolimus AND healthspan AND RCT",
+  "rapamycin AND (PEARL OR Mannick OR Konopka)",
+]
+
+canonical_rct_paper_ids = [
+  "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte",
+  "PMC13082878_exercise_and_weekly_sirolimus_rapamycin_in_older_adults_rapa",
+]
+
+# --- Calibrated retrieval: NARROW clinical scope ---
+
+[retrieval]
+topic_terms    = [
+  "rapamycin", "sirolimus", "Rapamune", "mTOR inhibitor",
+  "mTORC1 inhibitor", "RAD001",
+]
+scope_terms    = [
+  "older adults", "elderly", "geriatric", "65 years", "70 years",
+  "community-dwelling", "healthy aging", "healthspan",
+  "geroprotector", "anti-aging",
+]
+evidence_types = [
+  "randomized controlled trial", "clinical trial", "RCT",
+  "systematic review", "meta-analysis",
+]
+exclude_terms  = [
+  "transplant rejection", "allograft survival", "oncology only",
+  "kidney transplant only", "tumor regression", "neoplasm therapy",
+  "transplant", "graft", "GVHD", "leukemia", "myeloma",
+  "hepatocellular carcinoma", "lymphatic malformation",
+  "tuberous sclerosis", "vitiligo",
+  "in vitro only", "yeast", "drosophila", "c. elegans",
+  "pediatric only", "young adult only",
+  "mouse only", "rat only", "rodent only",
+]
+date_from      = 2010
+languages      = ["English"]
+species        = ["humans"]
+
+# NOTE: [retrieval.background] block intentionally OMITTED.
+# Clinical-brief mode does not include preclinical/mechanism papers.
+
+# Inferential bridge DISABLED for clinical-brief mode.
+# A direct clinical evidence summary should not propose D1 cross-species
+# inferences — that's Mode B (geroscience synthesis) territory.
+[inference]
+allow = false
+accepted_mechanism_tiers = []
+canon_references = []
+max_inferences_per_paper = 0
+
+
+# --- Canonical trials (clinical-RCT focus) ---
+
+[[canonical_trials]]
+id            = "NCT04488601"
+name          = "PEARL"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT01649960"
+name          = "RAP-CAD"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT04629495"
+name          = "RAP-AD"
+expected_role = "registered_pending"
+design        = "rct"
+
+
+[known_role_overrides.NCT04488601]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT01649960]
+role   = "published_results"
+design = "rct"
+tier   = "A2"
+
+[known_role_overrides.NCT04629495]
+role   = "registered_pending"
+design = "rct"
+tier   = "A1"
+
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+cardiometabolic = "lower_is_better"
+muscle_function = "higher_is_better"
+frailty = "lower_is_better"
+longevity = "higher_is_better"
+immunosenescence = "lower_is_better"

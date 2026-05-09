@@ -24,6 +24,10 @@ sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 from agent.topic_pack import load_topic_pack  # noqa: E402
+from qualification_partial_repair import (  # noqa: E402
+    context_arm_supports,
+    propose_partial_repairs,
+)
 from vocab import load_domain  # noqa: E402
 
 ALLOWED_CLAIM_TYPES = {
@@ -54,7 +58,13 @@ class CandidatePaper:
 
 
 def _norm(text: str) -> str:
-    return " ".join((text or "").replace("\xa0", " ").split())
+    return " ".join(
+        (text or "")
+        .replace("\xa0", " ")
+        .replace("\u2212", "-")
+        .replace("\u2013", "-")
+        .split()
+    )
 
 
 def _numbers(raw: str) -> tuple[float, ...]:
@@ -161,8 +171,9 @@ def _validate_claim(
     if arm.lower() not in allowed_arms:
         return None, "unknown_arm"
     if arm.lower() not in sentence.lower():
-        return None, "arm_not_in_sentence"
-    if not _arm_precedes_raw(sentence, arm, raw_text):
+        if not context_arm_supports(sentence, str(raw.get("source_context") or ""), arm):
+            return None, "arm_not_in_sentence"
+    elif not _arm_precedes_raw(sentence, arm, raw_text):
         return None, "arm_does_not_precede_raw_text"
     if direction not in ALLOWED_DIRECTIONS:
         return None, "bad_direction"
@@ -348,6 +359,42 @@ async def _rescue_one(
     }
 
 
+def _repair_existing_partials(
+    paper: CandidatePaper,
+    *,
+    endpoint_map: dict[str, str],
+    endpoint_patterns: dict[str, re.Pattern[str]],
+    arms: set[str],
+    max_chars: int,
+) -> dict[str, Any]:
+    parsed = json.loads(paper.parsed_path.read_text())
+    data = json.loads(paper.quant_path.read_text())
+    sections = _section_texts(parsed, max_chars)
+    proposals, rejected = propose_partial_repairs(
+        paper, parsed=parsed, quant_data=data, endpoint_map=endpoint_map,
+        endpoint_patterns=endpoint_patterns, arms=arms, max_chars=max_chars,
+    )
+    accepted: list[dict[str, Any]] = []
+    for raw in proposals:
+        claim, reason = _validate_claim(
+            raw=raw, paper_id=paper.paper_id, sections=sections,
+            endpoint_map=endpoint_map, endpoint_patterns=endpoint_patterns,
+            allowed_arms=arms, model="deterministic_partial_repair_v1",
+        )
+        if claim is None:
+            rejected[reason] += 1
+            continue
+        claim["rescue_method"] = "deterministic_partial_repair_v1"
+        accepted.append(claim)
+    return {
+        "paper_id": paper.paper_id,
+        "model": "deterministic_partial_repair_v1",
+        "accepted": len(accepted),
+        "rejected": dict(rejected),
+        "claims": accepted,
+    }
+
+
 def _apply_claims(paper: CandidatePaper, claims: list[dict[str, Any]]) -> None:
     data = json.loads(paper.quant_path.read_text())
     existing = data.get("claims") or []
@@ -403,6 +450,40 @@ async def _main_async(args: argparse.Namespace) -> int:
     ledger = CostLedger()
     chain = _chain()
     sem = asyncio.Semaphore(args.concurrency)
+    if args.repair_partials:
+        results = [
+            _repair_existing_partials(
+                p, endpoint_map=endpoint_map,
+                endpoint_patterns=endpoint_patterns, arms=arms,
+                max_chars=args.max_chars,
+            )
+            for p in candidates
+        ]
+        by_id = {p.paper_id: p for p in candidates}
+        if args.apply:
+            for row in results:
+                claims = row.get("claims") or []
+                if claims:
+                    _apply_claims(by_id[row["paper_id"]], claims)
+        report = {
+            "topic": topic,
+            "mode": "repair_partials",
+            "apply": bool(args.apply),
+            "candidates": len(candidates),
+            "papers_rescued": sum(1 for r in results if int(r.get("accepted") or 0) > 0),
+            "claims_accepted": sum(int(r.get("accepted") or 0) for r in results),
+            "cost_log": ledger.to_dict(),
+            "results": results,
+        }
+        args.report.write_text(json.dumps(report, indent=2) + "\n")
+        print(json.dumps({
+            "candidates": report["candidates"],
+            "papers_rescued": report["papers_rescued"],
+            "claims_accepted": report["claims_accepted"],
+            "cost_usd": report["cost_log"]["total_usd"],
+            "report": str(args.report),
+        }, indent=2))
+        return 0
 
     async def guarded(p: CandidatePaper) -> dict[str, Any]:
         async with sem:
@@ -471,6 +552,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--concurrency", type=int, default=3)
     parser.add_argument("--max-chars", type=int, default=9000)
     parser.add_argument("--paper-timeout", type=float, default=120.0)
+    parser.add_argument("--repair-partials", action="store_true")
     args = parser.parse_args(argv)
     return asyncio.run(_main_async(args))
 

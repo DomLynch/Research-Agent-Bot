@@ -326,6 +326,13 @@ def test_inference_spec_loads_from_topic_pack() -> None:
     assert pack.inference.max_inferences_per_paper == 5
 
 
-def test_inference_defaults_on_for_all_topic_packs() -> None:
+def test_inference_defaults_on_for_standard_topic_packs() -> None:
     for path in sorted(METFORMIN_PATH.parent.glob("*.toml")):
+        if path.stem.endswith("_clinical_brief"):
+            continue
         assert load_topic_pack(path).inference.allow is True, path.name
+
+
+def test_clinical_brief_topic_packs_disable_inference() -> None:
+    for path in sorted(METFORMIN_PATH.parent.glob("*_clinical_brief.toml")):
+        assert load_topic_pack(path).inference.allow is False, path.name

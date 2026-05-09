@@ -26,6 +26,20 @@ def _fake_manifest() -> dict:
         "total_cost_usd": 0.022104,
         "extractor_version": "v0.6.0",
         "claim_strength_repairs": 8,
+        "receipt_funnel": {
+            "quant_claim_files": 287,
+            "active_paper_ids": 136,
+            "classified_receipt_candidates": 40,
+            "receipt_candidate_union": 40,
+            "counts": {
+                "accepted_high_confidence": 40,
+                "candidate_no_claims": 49,
+                "candidate_partial_only": 26,
+                "candidate_partial_and_none_only": 57,
+                "candidate_none_only": 6,
+                "outside_active_or_classified_scope": 109,
+            },
+        },
         "receipts": [
             {
                 "receipt_id": "Walton_2019",
@@ -103,6 +117,14 @@ def test_search_provenance_reports_receipt_counts() -> None:
     assert "15" in md  # n_receipts
     assert "134" in md  # n_claims
     assert "42" in md  # n_tensions
+
+
+def test_search_provenance_renders_selection_flow_counts() -> None:
+    md = appx.build_search_provenance_appendix(_fake_manifest(), topic="metformin")
+    assert "Selection flow (PRISMA-style counts)" in md
+    assert "| Quant-claim files screened | 287 |" in md
+    assert "| Accepted high-confidence receipt papers | 40 |" in md
+    assert "not a PRISMA claim" in md
 
 
 def test_search_provenance_includes_tier_distribution() -> None:

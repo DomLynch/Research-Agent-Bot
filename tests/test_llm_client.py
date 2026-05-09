@@ -8,9 +8,87 @@ from __future__ import annotations
 
 import asyncio
 import json
+from typing import Any
 
-import httpx
 import pytest
+
+try:
+    import httpx
+except ModuleNotFoundError:
+    class _FakeHTTPStatusError(Exception):
+        def __init__(self, response: "_FakeResponse") -> None:
+            super().__init__(f"{response.status_code} response")
+            self.response = response
+
+    class _FakeRequest:
+        def __init__(
+            self,
+            url: str,
+            content: bytes,
+            headers: dict[str, str],
+        ) -> None:
+            self.url = url
+            self.content = content
+            self.headers = headers
+
+    class _FakeResponse:
+        def __init__(
+            self,
+            status_code: int,
+            *,
+            json: dict[str, Any] | None = None,
+            text: str = "",
+        ) -> None:
+            self.status_code = status_code
+            self._json = json
+            self.text = text
+
+        def json(self) -> dict[str, Any]:
+            return self._json or {}
+
+        def raise_for_status(self) -> None:
+            if self.status_code >= 400:
+                raise _FakeHTTPStatusError(self)
+
+    class _FakeMockTransport:
+        def __init__(self, handler: Any) -> None:
+            self.handler = handler
+
+    class _FakeAsyncClient:
+        def __init__(self, transport: _FakeMockTransport | None = None) -> None:
+            self.transport = transport
+
+        async def post(
+            self,
+            url: str,
+            *,
+            json: dict[str, Any],
+            headers: dict[str, str],
+            timeout: float,
+        ) -> _FakeResponse:
+            assert self.transport is not None
+            request = _FakeRequest(
+                url, content=__import__("json").dumps(json).encode(),
+                headers=headers,
+            )
+            return self.transport.handler(request)
+
+        async def aclose(self) -> None:
+            return None
+
+    class _FakeHttpx:
+        AsyncClient = _FakeAsyncClient
+        MockTransport = _FakeMockTransport
+        Request = _FakeRequest
+        Response = _FakeResponse
+        HTTPError = Exception
+        HTTPStatusError = _FakeHTTPStatusError
+        TimeoutException = TimeoutError
+        NetworkError = OSError
+        RemoteProtocolError = RuntimeError
+        PoolTimeout = TimeoutError
+
+    httpx = _FakeHttpx()
 
 from agent.llm_client import (
     CallSpec,
@@ -22,7 +100,10 @@ from agent.llm_client import (
     chat_json,
     extract_json,
 )
+import agent.llm_client as llm_client
 from agent.settings import Settings
+
+llm_client.httpx = httpx
 
 
 # --- extract_json ---------------------------------------------------------
@@ -122,12 +203,14 @@ def _spec(
     model: str = "test/model",
     api_key: str = "k",
     base_url: str = "https://api.example.com/v1",
+    max_attempts: int = 1,
 ) -> CallSpec:
     return CallSpec(
         base_url=base_url,
         api_key=api_key,
         model=model,
         timeout_sec=5.0,
+        max_attempts=max_attempts,
     )
 
 
@@ -189,6 +272,34 @@ def test_chat_json_falls_back_on_5xx() -> None:
     assert resp.parsed == {"y": 2}
     assert resp.model == "fallback"
     assert call_count["n"] == 2
+
+
+def test_chat_json_retries_retryable_status_before_fallback() -> None:
+    """Transient 5xx on a provider should retry the same model first."""
+    call_count = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        call_count["n"] += 1
+        if call_count["n"] == 1:
+            return httpx.Response(503, text="temporary overload")
+        return httpx.Response(200, json=_ok_body('{"recovered": true}'))
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec("primary", max_attempts=2), _spec("fallback")),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    assert resp.parsed == {"recovered": True}
+    assert resp.model == "primary"
+    assert call_count["n"] == 2
+    assert [a["ok"] for a in resp.attempts] == [False, True]
 
 
 def test_chat_json_skips_specs_without_api_key() -> None:
@@ -294,6 +405,33 @@ def test_chat_json_unparseable_response_falls_back() -> None:
     assert resp.model == "fallback"
 
 
+def test_chat_json_retries_unparseable_response_same_model() -> None:
+    """A one-off JSON formatting miss should not immediately burn fallback."""
+    call_count = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        call_count["n"] += 1
+        if call_count["n"] == 1:
+            return httpx.Response(200, json=_ok_body("prose without json"))
+        return httpx.Response(200, json=_ok_body('```json\n{"ok": true}\n```'))
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec("primary", max_attempts=2), _spec("fallback")),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    assert resp.parsed == {"ok": True}
+    assert resp.model == "primary"
+    assert call_count["n"] == 2
+
+
 def test_chat_json_estimates_cost_for_known_model() -> None:
     """A known-priced model produces a non-zero cost; unknown is 0."""
     def handler(request: httpx.Request) -> httpx.Response:
@@ -384,6 +522,35 @@ def test_chat_json_request_omits_response_format_when_not_enforce_json() -> None
 
     _run(go())
     assert "response_format" not in captured["payload"]
+
+
+def test_chat_json_openrouter_headers(monkeypatch: pytest.MonkeyPatch) -> None:
+    """OpenRouter requires app metadata headers for reliable routing."""
+    monkeypatch.setenv("OPENROUTER_HTTP_REFERER", "https://researka.org")
+    monkeypatch.setenv("OPENROUTER_X_TITLE", "Researka Research Agent")
+    captured: dict[str, str] = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured["referer"] = request.headers["HTTP-Referer"]
+        captured["title"] = request.headers["X-Title"]
+        return httpx.Response(200, json=_ok_body())
+
+    async def go() -> None:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec(base_url="https://openrouter.ai/api/v1"),),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    _run(go())
+    assert captured == {
+        "referer": "https://researka.org",
+        "title": "Researka Research Agent",
+    }
 
 
 # --- Day 9.4: seed forwarding for zero-variance --------------------------
@@ -520,6 +687,14 @@ def test_build_extract_chain_uses_settings_timeout() -> None:
     chain = build_extract_chain(s)
     assert chain[0].timeout_sec == s.mimo_timeout_sec
     assert chain[1].timeout_sec == s.mimo_timeout_sec  # both share MiMo timeout
+
+
+def test_build_extract_chain_sets_retry_attempts(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv("LLM_CALL_ATTEMPTS", "3")
+    chain = build_extract_chain(_settings())
+    assert [s.max_attempts for s in chain] == [3, 3]
 
 
 # --- build_judge_chain (Day 5.3) -----------------------------------------

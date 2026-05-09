@@ -108,6 +108,44 @@ def test_structure_patch_is_flagged_only_with_grok_rationale() -> None:
     assert "rename section" in results[0].reason_for_decision
 
 
+def test_p3_structure_sentence_deletion_is_applied_after_audit_guard() -> None:
+    p = {
+        "id": "P-structure-cleanup",
+        "patch_type": "structure",
+        "severity": "P3",
+        "location": "Conclusion",
+        "before": " Prior narrative reviews have not adjudicated this pair.",
+        "after": "",
+        "reason": "remove hanging sentence",
+    }
+    paper = (
+        "## Conclusion\n\n"
+        "The boundary conditions remain unresolved."
+        " Prior narrative reviews have not adjudicated this pair.\n"
+    )
+    new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "applied"
+    assert "Prior narrative reviews" not in new_md
+    assert "post-apply audit clean" in results[0].reason_for_decision
+
+
+def test_structure_replacement_remains_flagged() -> None:
+    p = {
+        "id": "P-structure-rewrite",
+        "patch_type": "structure",
+        "severity": "P3",
+        "location": "Conclusion",
+        "before": "The boundary conditions remain unresolved.",
+        "after": "The conclusion is stronger.",
+        "reason": "rewrite conclusion",
+    }
+    paper = "## Conclusion\n\nThe boundary conditions remain unresolved.\n"
+    new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert "The boundary conditions remain unresolved." in new_md
+    assert results[0].decision == "flagged"
+    assert "structure replacements remain semantic" in results[0].reason_for_decision
+
+
 def test_numeric_patch_with_value_substitution_is_flagged() -> None:
     """Fix #39: numeric patches go through the smart-gate. A value
     substitution like `14%` → `32%` introduces a NEW numeric (32)

@@ -9,6 +9,12 @@ from __future__ import annotations
 import sys
 from dataclasses import dataclass
 from pathlib import Path
+from types import ModuleType, SimpleNamespace
+
+try:
+    import httpx  # noqa: F401
+except ModuleNotFoundError:
+    sys.modules["httpx"] = ModuleType("httpx")
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import run_v06_synthesis as orch  # noqa: E402
@@ -412,7 +418,27 @@ def test_receipt_candidates_include_background_mechanism(monkeypatch, tmp_path) 
         ' {"paper_id": "off", "classification": "off_thesis"}]',
     )
     monkeypatch.setattr(orch, "QUANT_DIR", quant_dir)
+    monkeypatch.setattr(orch, "_TOPIC_PACK", None)
     assert orch._load_receipt_candidate_paper_ids() == {"active", "bg"}
+
+
+def test_clinical_brief_receipt_candidates_core_only(
+    monkeypatch, tmp_path,
+) -> None:
+    quant_dir = tmp_path / "quant_claims"
+    quant_dir.mkdir()
+    (tmp_path / "_extract_report.json").write_text(
+        '{"active_paper_ids": ["core", "bg", "adjacent", "broad"]}',
+    )
+    (tmp_path / "corpus_classification.json").write_text(
+        '[{"paper_id": "core", "classification": "core_on_thesis"},'
+        ' {"paper_id": "bg", "classification": "background_mechanism"},'
+        ' {"paper_id": "adjacent", "classification": "adjacent_clinical"}]',
+    )
+    pack = SimpleNamespace(inference=SimpleNamespace(allow=False))
+    monkeypatch.setattr(orch, "QUANT_DIR", quant_dir)
+    monkeypatch.setattr(orch, "_TOPIC_PACK", pack)
+    assert orch._load_receipt_candidate_paper_ids() == {"core"}
 
 
 # ---------- Wave 7 / Slice 2: corpus_gaps + expansion_targets -------

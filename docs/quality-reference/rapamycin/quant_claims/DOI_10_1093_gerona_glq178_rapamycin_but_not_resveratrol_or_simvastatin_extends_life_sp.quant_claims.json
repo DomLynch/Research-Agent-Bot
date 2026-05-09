@@ -2,10 +2,10 @@
   "paper_id": "DOI_10_1093_gerona_glq178_rapamycin_but_not_resveratrol_or_simvastatin_extends_life_sp",
   "doi": "10.1093/gerona/glq178",
   "extracted_at": "2026-05-09T10:18:12+00:00",
-  "extractor_version": "0.6.0",
+  "extractor_version": "0.6.0+llm_rescue_v1",
   "claims_count_by_type": {
-    "unit_value": 1,
-    "percentage": 2
+    "percentage": 4,
+    "unit_value": 1
   },
   "claims": [
     {
@@ -61,6 +61,47 @@
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_gerona_glq178_rapamycin_but_not_resveratrol_or_simvastatin_extends_life_sp-llmrescue-bb2931f09d7b",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 247,
+      "sentence": "Median survival was extended by an average of 10% in males and 18% in females.",
+      "context_window": "Median survival was extended by an average of 10% in males and 18% in females.",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "rapamycin",
+      "direction": "increase",
+      "binding_confidence": "high",
+      "rescue_method": "deterministic_partial_repair_v1",
+      "rescue_model": "deterministic_partial_repair_v1"
+    },
+    {
+      "claim_id": "DOI_10_1093_gerona_glq178_rapamycin_but_not_resveratrol_or_simvastatin_extends_life_sp-llmrescue-9b89042cfbe2",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 264,
+      "sentence": "Median survival was extended by an average of 10% in males and 18% in females.",
+      "context_window": "ian survival was extended by an average of 10% in males and 18% in females.",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "rapamycin",
+      "direction": "increase",
+      "binding_confidence": "high",
+      "rescue_method": "deterministic_partial_repair_v1",
+      "rescue_model": "deterministic_partial_repair_v1"
     }
-  ]
+  ],
+  "rescued_at": "2026-05-09T12:19:26+00:00"
 }
