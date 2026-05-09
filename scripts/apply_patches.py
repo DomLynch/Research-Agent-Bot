@@ -98,6 +98,9 @@ _NUMERIC_RE = re.compile(
     r"\b(\d+\.?\d*\s*(?:%|m/s|kg|mg|months?|years?|weeks?))\b|"
     r"\b[Pp]\s*[<=>]\s*0?\.\d+",
 )
+_AUTHOR_YEAR_RE = re.compile(
+    r"\b([A-Z][a-zA-Z]+(?:\s+et\s+al\.?)?\s+\d{4})\b",
+)
 _CITED_ARTIFACT_RE = re.compile(
     r"_Cited:\s*`[^`\n]+`(?:\s*,\s*`[^`\n]+`)*_"
 )
@@ -145,6 +148,50 @@ def _removes_bridge_contract_tags(location: str, before: str, after: str) -> boo
         "[conservation:", "[testability:",
     )
     return any(tag in before and tag not in after for tag in required)
+
+
+def _looks_truncated_patch_field(after: str) -> bool:
+    """Detect reviewer patch fields likely clipped by grok_reviewer caps.
+
+    `grok_reviewer` caps `after` at 600 chars to prevent runaway JSON.
+    A non-empty replacement near that cap that ends mid-token is unsafe:
+    applying it can splice a broken sentence into the manuscript.
+    """
+    stripped = after.rstrip()
+    if len(stripped) < 590:
+        return False
+    return bool(stripped and re.search(r"[A-Za-z0-9]$", stripped))
+
+
+def _is_word_char(ch: str) -> bool:
+    return ch.isalnum() or ch == "_"
+
+
+def _has_unsafe_match_boundary(text: str, before: str) -> bool:
+    """Reject patches whose target starts or ends inside a word.
+
+    Grok can emit a clipped `before` span that still appears exactly once
+    in the manuscript. Applying it can leave fragments such as deleting
+    `metabol` from `metabolic`. Exact-match uniqueness is necessary but
+    not sufficient; the match must also be token-boundary aligned.
+    """
+    start = text.find(before)
+    if start < 0:
+        return False
+    end = start + len(before)
+    left_bad = (
+        start > 0
+        and before
+        and _is_word_char(text[start - 1])
+        and _is_word_char(before[0])
+    )
+    right_bad = (
+        end < len(text)
+        and before
+        and _is_word_char(before[-1])
+        and _is_word_char(text[end])
+    )
+    return left_bad or right_bad
 
 
 def _breaks_markdown_table_shape(location: str, before: str, after: str) -> bool:
@@ -369,6 +416,57 @@ def _is_safe_simplification(
     )
 
 
+def _is_safe_citation_attribution_patch(
+    before: str, after: str, receipt_ids: set[str],
+) -> tuple[bool, str]:
+    """Allow claim patches that only add traced Author-Year attribution.
+
+    Final-layer reviewers often convert an unsupported pronoun lead
+    ("This suggests...") into a sourced attribution ("Mannick 2014
+    suggests..."). That adds a year token, but it is not an invented
+    numeric when the Author-Year token traces to a receipt and the
+    non-citation wording is otherwise a subset of the original text.
+    """
+    cite_ok, cite_msg = _verify_citation_patch(
+        {"before": before, "after": after}, receipt_ids,
+    )
+    if not cite_ok:
+        return False, f"citation attribution verifier FAIL - {cite_msg}"
+    before_cites = set(_AUTHOR_YEAR_RE.findall(before))
+    after_cites = set(_AUTHOR_YEAR_RE.findall(after))
+    novel_cites = after_cites - before_cites
+    if not novel_cites:
+        return False, "citation attribution patch adds no novel citation"
+
+    def _strip_cites(s: str) -> str:
+        return _AUTHOR_YEAR_RE.sub("", s)
+
+    def _content_words(s: str) -> set[str]:
+        return set(re.findall(r"[a-z]+", s.lower()))
+
+    def _numbers(s: str) -> set[str]:
+        return set(re.findall(r"\d+\.?\d*", s))
+
+    before_core = _strip_cites(before)
+    after_core = _strip_cites(after)
+    new_numbers = _numbers(after_core) - _numbers(before_core)
+    if new_numbers:
+        return False, (
+            "citation attribution patch adds non-citation numeric(s): "
+            f"{sorted(new_numbers)}"
+        )
+    new_words = _content_words(after_core) - _content_words(before_core)
+    if new_words:
+        return False, (
+            "citation attribution patch adds non-citation word(s): "
+            f"{sorted(new_words)}"
+        )
+    return True, (
+        "safe citation attribution patch - "
+        f"novel citation(s) trace to receipts: {sorted(novel_cites)}"
+    )
+
+
 def _verify_numeric_patch(
     patch: dict, corpus_nums: set[str],
 ) -> tuple[bool, str]:
@@ -491,21 +589,20 @@ def apply_patches(
     can launder hallucinated numerics or
     fabricated citations into the published paper. The previous
     "trust Grok auto-apply" branch tried to honor "no humans in the
-    pipeline" but conflated it with "no deterministic verification" —
+    pipeline" but conflated it with "no deterministic verification" -
     the right reading is "replace human-review with deterministic
     proof," not "skip review entirely."
 
     Per-type gates:
-      - formatting           → auto-apply (typo / list / heading)
-      - citation             → auto-apply IF Author-Year traces to
+      - formatting           -> auto-apply (typo / list / heading)
+      - citation             -> auto-apply IF Author-Year traces to
                                manifest receipts; else flag-only
-      - numeric              → flag-only (Phase 6.4 same-claim
-                               binding deferred — global-corpus
-                               trace is too weak to gate auto-apply)
-      - claim / structure    → flag-only by contract (semantic
-                               judgment requires human or downstream
-                               adjudicator)
-      - unknown              → flag-only (fail-closed)
+      - numeric              -> auto-apply only when the smart gate proves
+                               non-additive simplification
+      - claim                -> auto-apply only for safe deletion,
+                               neutralization, or traced attribution
+      - structure            -> flag-only by contract
+      - unknown              -> flag-only (fail-closed)
 
     Every flagged patch keeps Grok's rationale + the deterministic
     verifier's verdict in `reason_for_decision` so a retroactive
@@ -561,6 +658,19 @@ def apply_patches(
                 reason_for_decision=(
                     f"empty 'before' field. Grok rationale: "
                     f"{proposer_reason!r}"
+                ),
+                before=before, after=after,
+            ))
+            continue
+
+        if after and _looks_truncated_patch_field(after):
+            results.append(PatchResult(
+                patch_id=pid, patch_type=ptype, severity=sev,
+                decision="rejected",
+                reason_for_decision=(
+                    "truncated patch contract: replacement appears "
+                    "clipped near the reviewer field cap and ends mid-token. "
+                    f"Grok rationale: {proposer_reason!r}"
                 ),
                 before=before, after=after,
             ))
@@ -631,10 +741,17 @@ def apply_patches(
                 if neutral_ok:
                     simp_ok, simp_msg = neutral_ok, neutral_msg
                 else:
-                    simp_msg = (
-                        f"{simp_msg}; neutral rephrase FAIL "
-                        f"({neutral_msg})"
+                    cite_ok, cite_msg = _is_safe_citation_attribution_patch(
+                        before, after, receipt_ids,
                     )
+                    if cite_ok:
+                        simp_ok, simp_msg = cite_ok, cite_msg
+                    else:
+                        simp_msg = (
+                            f"{simp_msg}; neutral rephrase FAIL "
+                            f"({neutral_msg}); citation attribution FAIL "
+                            f"({cite_msg})"
+                        )
             ok = simp_ok
             gate_reason = (
                 f"claim smart-gate: simplification "
@@ -697,6 +814,19 @@ def apply_patches(
                 reason_for_decision=(
                     f"'before' appears {n_occurrences}x; ambiguous "
                     f"replacement target. {full_reason}"
+                ),
+                before=before, after=after,
+            ))
+            continue
+
+        if _has_unsafe_match_boundary(new_md, before):
+            results.append(PatchResult(
+                patch_id=pid, patch_type=ptype, severity=sev,
+                decision="rejected",
+                reason_for_decision=(
+                    "truncated patch contract: 'before' span starts "
+                    "or ends inside a token. "
+                    f"{full_reason}"
                 ),
                 before=before, after=after,
             ))

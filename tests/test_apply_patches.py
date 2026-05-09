@@ -18,6 +18,8 @@ def _manifest() -> dict:
                 "receipt_id": "PMC6400206_importance_of_physical_evaluation",
                 "citation_token": "Fukuoka 2019",
             },
+            {"receipt_id": "PMID25540326_mannick", "citation_token": "Mannick 2014"},
+            {"receipt_id": "Lamming_2012_mtor", "citation_token": "Lamming 2012"},
         ],
     }
 
@@ -153,7 +155,74 @@ def test_claim_patch_allows_neutral_evidence_rephrase() -> None:
     new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
     assert results[0].decision == "applied"
     assert "examined transient rapamycin treatment" in new_md
+
+
+def test_claim_patch_allows_traced_citation_attribution() -> None:
+    p = {
+        "id": "P-cite-claim", "patch_type": "claim", "severity": "P1",
+        "location": "Discussion",
+        "before": "This suggests a potential benefit for immune resilience.",
+        "after": "Mannick 2014 suggests a potential benefit for immune resilience.",
+        "reason": "attribute immune claim",
+    }
+    paper = "## Discussion\n\n" + p["before"] + "\n"
+    new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "applied"
+    assert "Mannick 2014 suggests" in new_md
+    assert "citation attribution" in results[0].reason_for_decision
+
+
+def test_claim_patch_rejects_untraced_citation_attribution() -> None:
+    p = {
+        "id": "P-cite-claim", "patch_type": "claim", "severity": "P1",
+        "location": "Discussion",
+        "before": "This suggests a potential benefit for immune resilience.",
+        "after": "Smith 2020 suggests a potential benefit for immune resilience.",
+        "reason": "attribute immune claim",
+    }
+    paper = "## Discussion\n\n" + p["before"] + "\n"
+    new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "flagged"
+    assert "Smith 2020" not in new_md
+
+
+def test_truncated_long_patch_is_rejected() -> None:
+    before = "No trial measured patient-reported outcomes."
+    after = "No trial measured patient-reported outcomes. " + ("word " * 115) + "funct"
+    assert len(after) >= 590
+    p = {
+        "id": "P-trunc", "patch_type": "formatting", "severity": "P3",
+        "location": "Limitations",
+        "before": before,
+        "after": after,
+        "reason": "merge duplicated limitations",
+    }
+    paper = "## Limitations\n\n" + before + "\n"
+    new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "rejected"
+    assert "funct" not in new_md
+    assert "truncated patch contract" in results[0].reason_for_decision
     assert "can increase lifespan" not in new_md
+
+
+def test_patch_rejects_before_span_ending_inside_word() -> None:
+    before = "This mechanistic explanation concerns metabol"
+    p = {
+        "id": "P-midword", "patch_type": "claim", "severity": "P2",
+        "location": "Discussion",
+        "before": before,
+        "after": "",
+        "reason": "delete unsupported mechanistic explanation",
+    }
+    paper = (
+        "## Discussion\n\n"
+        "This mechanistic explanation concerns metabolic homeostasis.\n"
+    )
+    new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "rejected"
+    assert "inside a token" in results[0].reason_for_decision
+    assert "metabolic homeostasis" in new_md
+    assert ". ic homeostasis" not in new_md
 
 
 def test_formatting_patch_cannot_remove_bridge_contract_tags() -> None:

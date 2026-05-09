@@ -189,6 +189,61 @@ def test_build_receipts_filters_to_active_extract_report(
     assert [r.receipt_id for r in receipts] == ["active_paper"]
 
 
+def test_receipt_funnel_reports_drop_reasons(monkeypatch, tmp_path) -> None:
+    import json as _json
+    qdir = tmp_path / "quant_claims"
+    qdir.mkdir()
+
+    def write_claims(pid: str, confidences: list[str]) -> None:
+        (qdir / f"{pid}.quant_claims.json").write_text(_json.dumps({
+            "paper_id": pid,
+            "claims": [
+                {
+                    "binding_confidence": conf,
+                    "claim_type": "p_value",
+                    "raw_text": "p < 0.05",
+                    "endpoint": "muscle_function",
+                    "arm": "topic",
+                    "direction": "positive",
+                }
+                for conf in confidences
+            ],
+        }))
+
+    write_claims("active_high", ["high"])
+    write_claims("active_partial", ["partial"])
+    write_claims("active_mixed_low", ["partial", "none"])
+    write_claims("outside_high", ["high"])
+    write_claims("active_none", ["none"])
+    write_claims("active_empty", [])
+    (tmp_path / "_extract_report.json").write_text(_json.dumps({
+        "active_paper_ids": [
+            "active_high", "active_partial", "active_mixed_low",
+            "active_none", "active_empty",
+        ],
+    }))
+    (tmp_path / "corpus_classification.json").write_text("[]")
+
+    monkeypatch.setattr(orch, "QUANT_DIR", qdir)
+    report = orch.build_receipt_funnel_report(topic="test_topic")
+    assert report["counts"] == {
+        "accepted_high_confidence": 1,
+        "candidate_no_claims": 1,
+        "candidate_none_only": 1,
+        "candidate_partial_and_none_only": 1,
+        "candidate_partial_only": 1,
+        "outside_active_or_classified_scope": 1,
+    }
+    assert report["claim_binding_confidence_totals"] == {
+        "high": 2,
+        "none": 2,
+        "partial": 2,
+    }
+    md = orch.render_receipt_funnel_markdown(report)
+    assert "`candidate_partial_only`" in md
+    assert "`outside_high`" in md
+
+
 def test_receipt_thesis_uses_source_sentence_not_arm_paraphrase() -> None:
     claim = {
         "binding_confidence": "high",

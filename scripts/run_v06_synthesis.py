@@ -1282,6 +1282,114 @@ def _load_classified_receipt_candidate_ids() -> set[str]:
     }
 
 
+def _claim_confidence_counts(claims: list[Any]) -> Counter[str]:
+    counts: Counter[str] = Counter()
+    for claim in claims:
+        if isinstance(claim, dict):
+            counts[str(claim.get("binding_confidence") or "missing")] += 1
+    return counts
+
+
+def build_receipt_funnel_report(topic: str) -> dict[str, Any]:
+    """Diagnose why quant_claims files do or do not become receipts.
+
+    Receipt admission is intentionally strict: a paper must be in the
+    active/classified candidate set and carry at least one high-confidence
+    effect claim. This report makes that gate auditable so corpus expansion
+    work can target the real bottleneck instead of guessing.
+    """
+    active = _load_active_paper_ids()
+    classified = _load_classified_receipt_candidate_ids()
+    candidates = _load_receipt_candidate_paper_ids()
+    counts: Counter[str] = Counter()
+    examples: dict[str, list[str]] = defaultdict(list)
+    confidence_totals: Counter[str] = Counter()
+
+    for path in sorted(QUANT_DIR.glob("*.quant_claims.json")):
+        try:
+            data = json.loads(path.read_text())
+        except (OSError, json.JSONDecodeError):
+            counts["unreadable_quant_claims"] += 1
+            continue
+        pid = str(
+            data.get("paper_id")
+            or path.stem.replace(".quant_claims", "")
+        )
+        claims = data.get("claims") or []
+        if not isinstance(claims, list):
+            claims = []
+        conf_counts = _claim_confidence_counts(claims)
+        confidence_totals.update(conf_counts)
+
+        if candidates is not None and pid not in candidates:
+            reason = "outside_active_or_classified_scope"
+        elif not claims:
+            reason = "candidate_no_claims"
+        elif conf_counts.get("high", 0):
+            reason = "accepted_high_confidence"
+        elif conf_counts.get("partial", 0) and conf_counts.get("none", 0):
+            reason = "candidate_partial_and_none_only"
+        elif conf_counts.get("partial", 0):
+            reason = "candidate_partial_only"
+        elif conf_counts.get("none", 0):
+            reason = "candidate_none_only"
+        else:
+            reason = "candidate_no_binding_confidence"
+
+        counts[reason] += 1
+        if len(examples[reason]) < 8:
+            examples[reason].append(pid)
+
+    return {
+        "topic": topic,
+        "quant_claim_files": sum(counts.values()),
+        "active_paper_ids": None if active is None else len(active),
+        "classified_receipt_candidates": len(classified),
+        "receipt_candidate_union": None if candidates is None else len(candidates),
+        "counts": dict(sorted(counts.items())),
+        "claim_binding_confidence_totals": dict(
+            sorted(confidence_totals.items()),
+        ),
+        "examples": dict(sorted(examples.items())),
+    }
+
+
+def render_receipt_funnel_markdown(report: dict[str, Any]) -> str:
+    lines = [
+        f"# Receipt Funnel - {report['topic']}",
+        "",
+        "| Metric | Value |",
+        "|---|---:|",
+        f"| Quant-claim files | {report['quant_claim_files']} |",
+        f"| Active paper IDs | {report['active_paper_ids']} |",
+        f"| Classified receipt candidates | "
+        f"{report['classified_receipt_candidates']} |",
+        f"| Candidate union | {report['receipt_candidate_union']} |",
+        "",
+        "## Admission Counts",
+        "",
+        "| Gate result | Papers |",
+        "|---|---:|",
+    ]
+    for key, value in report["counts"].items():
+        lines.append(f"| `{key}` | {value} |")
+    lines += [
+        "",
+        "## Claim Binding Confidence Totals",
+        "",
+        "| Binding confidence | Claims |",
+        "|---|---:|",
+    ]
+    for key, value in report["claim_binding_confidence_totals"].items():
+        lines.append(f"| `{key}` | {value} |")
+    lines += ["", "## Examples", ""]
+    for key, values in report["examples"].items():
+        lines.append(f"### `{key}`")
+        lines.extend(f"- `{v}`" for v in values)
+        lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def _load_receipt_candidate_paper_ids() -> set[str] | None:
     active = _load_active_paper_ids()
     classified = _load_classified_receipt_candidate_ids()
@@ -1738,6 +1846,24 @@ async def _run(
 
     print(
         f"Loading v0.6.0 quant_claims (topic={topic!r})...",
+        file=sys.stderr,
+    )
+    receipt_funnel = build_receipt_funnel_report(topic)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "receipt_funnel.json").write_text(
+        json.dumps(receipt_funnel, indent=2),
+    )
+    (out_dir / "receipt_funnel.md").write_text(
+        render_receipt_funnel_markdown(receipt_funnel),
+    )
+    funnel_counts = receipt_funnel.get("counts", {})
+    print(
+        "  Receipt funnel: "
+        f"accepted={funnel_counts.get('accepted_high_confidence', 0)} "
+        f"outside_scope={funnel_counts.get('outside_active_or_classified_scope', 0)} "
+        f"partial_only={funnel_counts.get('candidate_partial_only', 0)} "
+        f"partial_none_only={funnel_counts.get('candidate_partial_and_none_only', 0)} "
+        f"none_only={funnel_counts.get('candidate_none_only', 0)}",
         file=sys.stderr,
     )
     receipts = build_receipts_from_quant_claims(topic=topic)
@@ -2880,6 +3006,8 @@ async def _agent_repair_loop(
             # Only strip if the BEFORE appears exactly once (avoid
             # accidental over-strip).
             if paper_md.count(r.before) != 1:
+                continue
+            if _patch_applier._has_unsafe_match_boundary(paper_md, r.before):
                 continue
             paper_md = paper_md.replace(r.before, "", 1)
             # Tag the result as auto-stripped
