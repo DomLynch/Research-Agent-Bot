@@ -98,7 +98,7 @@ class _LiveHandler(BaseHTTPRequestHandler):
             self.send_header("Content-Length", str(len(body)))
             self.end_headers()
             return
-        body = _LIVE_HTML.encode("utf-8")
+        body = json.dumps({"error": "not_found"}, sort_keys=True).encode("utf-8")
         self.send_response(404)
         self.send_header("Content-Type", "application/json")
         self.send_header("Content-Length", str(len(body)))
