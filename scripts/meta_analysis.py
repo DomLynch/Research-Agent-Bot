@@ -1,7 +1,8 @@
 """Deterministic meta-analysis scaffold.
 
 Fixed-effect inverse-variance pooling only. Fails closed unless at least
-two compatible, non-high-RoB numeric effect sizes are present.
+THREE compatible, non-high-RoB numeric effect sizes are present (Fix #56:
+raised from 2 to 3 — pooling two studies is misleading scaffold output).
 """
 from __future__ import annotations
 

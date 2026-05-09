@@ -2,7 +2,8 @@
 from __future__ import annotations
 
 __all__ = (
-    "NUMERIC_DISCIPLINE_RULE", "ABSTRACT_SYSTEM_PROMPT_TEMPLATE",
+    "NUMERIC_DISCIPLINE_RULE", "TEMPLATE_LANGUAGE_DISCIPLINE_RULE",
+    "ABSTRACT_SYSTEM_PROMPT_TEMPLATE",
     "INTRODUCTION_SYSTEM_PROMPT_TEMPLATE", "BACKGROUND_SYSTEM_PROMPT_TEMPLATE",
     "RESULTS_SYSTEM_PROMPT_TEMPLATE", "CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE",
     "DISCUSSION_SYSTEM_PROMPT_TEMPLATE", "LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE",
@@ -44,6 +45,36 @@ ACTIVE NUMERIC TARGET: ≥8 reportable numerics per 1000 body words.
 Reportable = percentages, p-values, HR/OR/RR, n=..., dose, follow-up, CI.
 Every Results / Discussion / Background paragraph should ground at least one
 receipt-traced quantitative claim when the receipts support it.
+================================================================
+
+"""
+
+
+# Fix #56: aligned with scripts/template_language_gate.py denylist.
+# The post-render gate ship-blocks on these phrases; this rule pushes
+# the writer to avoid them at generation time.
+TEMPLATE_LANGUAGE_DISCIPLINE_RULE = """\
+================================================================
+TEMPLATE-LANGUAGE DISCIPLINE (ship-blocking — gate fails the paper)
+================================================================
+NEVER open a paragraph or sentence with these AI-summary tells:
+  "In summary,"   "In conclusion,"   "Taken together,"
+  "This synthesis suggests"   "This review suggests"
+Lead with the specific finding instead.
+
+NEVER use these unsupported-authority phrases (P1 ship-block):
+  "It is clear that"   "Undeniably"   "Undoubtedly"
+  "Proves that"   "Clearly demonstrates"   "Definitively shows"
+Use hedged "indicates", "suggests", "demonstrates" + citation.
+
+NEVER use these generic-research cliches:
+  "Further research is needed"   "More studies are needed"
+  "Additional research is warranted"
+Replace with concrete trial-design recommendations (population, n,
+endpoint, duration).
+
+VAGUE LIMITATIONS must be specific. "Evidence base is limited" must
+be paired with what is limited (n, duration, endpoint, population).
 ================================================================
 
 """
@@ -245,7 +276,7 @@ CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE = """You write the CROSS-DOMAIN
 SYNTHESIS section. Its job: surface tensions BETWEEN outcome classes
 that single-outcome subsections miss.
 
-**HARD MINIMUM: 900-1,300 words across 4-6 paragraphs of 6-9
+**HARD MINIMUM: 950-1,300 words across 4-6 paragraphs of 6-9
 sentences each.** Fix #45 reverses the over-compression. The
 Cross-Domain Synthesis is the paper's intellectual core — explicit
 adjudication of cross-outcome tensions. 525 words is too thin to
@@ -260,7 +291,7 @@ Each paragraph adjudicates ONE load-bearing cross-domain tension:
 Do NOT just restate Table 3's pair list — interpret it. Do NOT add
 new numerics or citations beyond the provided receipts. If unsure,
 hedge rather than invent. Compress only repetition. NEVER compress
-away reasoning. Hard floor: 900 words.
+away reasoning. Hard floor: 950 words.
 
 Output ONE JSON object with this exact shape:
 
@@ -494,36 +525,23 @@ sarcopenia" or any other unhedged clinical claim. Use:
 Output JSON only. No prose outside the JSON."""
 
 
-# Fix #17: prepend NUMERIC_DISCIPLINE_RULE to every section system
-# prompt. Done after definition so the constants exist when we
-# rebind. The rule lives at the TOP of each prompt where the model's
-# attention is strongest. Mutating the bound names is the smallest
-# possible diff vs editing each individual prompt string in-place.
-ABSTRACT_SYSTEM_PROMPT_TEMPLATE = (
-    NUMERIC_DISCIPLINE_RULE + ABSTRACT_SYSTEM_PROMPT_TEMPLATE
-)
-INTRODUCTION_SYSTEM_PROMPT_TEMPLATE = (
-    NUMERIC_DISCIPLINE_RULE + INTRODUCTION_SYSTEM_PROMPT_TEMPLATE
-)
-BACKGROUND_SYSTEM_PROMPT_TEMPLATE = (
-    NUMERIC_DISCIPLINE_RULE + BACKGROUND_SYSTEM_PROMPT_TEMPLATE
-)
-RESULTS_SYSTEM_PROMPT_TEMPLATE = (
-    NUMERIC_DISCIPLINE_RULE + RESULTS_SYSTEM_PROMPT_TEMPLATE
-)
+# Fix #17 + #56: prepend shared discipline rules to every section
+# system prompt. Done after definition so the constants exist when we
+# rebind. The rules live at the TOP of each prompt where the model's
+# attention is strongest.
+_HEAD = NUMERIC_DISCIPLINE_RULE + TEMPLATE_LANGUAGE_DISCIPLINE_RULE
+ABSTRACT_SYSTEM_PROMPT_TEMPLATE = _HEAD + ABSTRACT_SYSTEM_PROMPT_TEMPLATE
+INTRODUCTION_SYSTEM_PROMPT_TEMPLATE = _HEAD + INTRODUCTION_SYSTEM_PROMPT_TEMPLATE
+BACKGROUND_SYSTEM_PROMPT_TEMPLATE = _HEAD + BACKGROUND_SYSTEM_PROMPT_TEMPLATE
+RESULTS_SYSTEM_PROMPT_TEMPLATE = _HEAD + RESULTS_SYSTEM_PROMPT_TEMPLATE
 CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE = (
-    NUMERIC_DISCIPLINE_RULE
-    + CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE
+    _HEAD + CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE
 )
-DISCUSSION_SYSTEM_PROMPT_TEMPLATE = (
-    NUMERIC_DISCIPLINE_RULE + DISCUSSION_SYSTEM_PROMPT_TEMPLATE
-)
+DISCUSSION_SYSTEM_PROMPT_TEMPLATE = _HEAD + DISCUSSION_SYSTEM_PROMPT_TEMPLATE
 LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE = (
-    NUMERIC_DISCIPLINE_RULE + LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE
+    _HEAD + LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE
 )
-CONCLUSION_SYSTEM_PROMPT_TEMPLATE = (
-    NUMERIC_DISCIPLINE_RULE + CONCLUSION_SYSTEM_PROMPT_TEMPLATE
-)
+CONCLUSION_SYSTEM_PROMPT_TEMPLATE = _HEAD + CONCLUSION_SYSTEM_PROMPT_TEMPLATE
 
 
 # --- Topic-aware formatter (Refactor 2026-05-04) --------------------
