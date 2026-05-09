@@ -44,7 +44,9 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
-from agent.llm_client import CallSpec, CostLedger  # noqa: E402
+from agent.llm_client import (  # noqa: E402
+    CallSpec, CostLedger, configured_attempts_for_url,
+)
 from agent.paper_writer import render_full_paper  # noqa: E402
 from agent.paper_writer_helpers import (  # noqa: E402
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
@@ -1860,6 +1862,7 @@ def _build_call_chain() -> list[CallSpec]:
             api_key=settings.mimo_api_key,
             model=settings.mimo_model,
             timeout_sec=settings.mimo_timeout_sec,
+            max_attempts=configured_attempts_for_url(settings.mimo_base_url),
         ))
     if settings.openrouter_api_key:
         for openrouter_model in (settings.fallback_model, settings.judge_model):
@@ -1868,6 +1871,9 @@ def _build_call_chain() -> list[CallSpec]:
                 api_key=settings.openrouter_api_key,
                 model=openrouter_model,
                 timeout_sec=settings.mimo_timeout_sec,
+                max_attempts=configured_attempts_for_url(
+                    settings.openrouter_base_url,
+                ),
             ))
     return chain
 

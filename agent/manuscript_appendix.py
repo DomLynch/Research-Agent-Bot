@@ -106,6 +106,7 @@ def build_search_provenance_appendix(
     n_receipts = manifest.get("n_receipts", len(receipts))
     n_claims = manifest.get("n_high_confidence_claims_total", 0)
     n_tensions = manifest.get("n_non_orthogonal_tensions", 0)
+    receipt_funnel = manifest.get("receipt_funnel") or {}
 
     tier_counts = Counter(
         r.get("evidence_tier", "?") for r in receipts
@@ -160,6 +161,9 @@ def build_search_provenance_appendix(
         f"the receipt builder disposed via the receipt-summary "
         f"density gate.",
         "",
+    ]
+    lines.extend(_selection_flow_lines(receipt_funnel))
+    lines += [
         "### Per-receipt summary",
         "",
         f"- Total receipts contributing to synthesis: **{n_receipts}**",
@@ -233,6 +237,52 @@ def build_search_provenance_appendix(
         "toward formal systematic-review compliance.",
     ]
     return "\n".join(lines) + "\n"
+
+
+def _selection_flow_lines(receipt_funnel: Any) -> list[str]:
+    if not isinstance(receipt_funnel, dict):
+        return []
+    counts = receipt_funnel.get("counts") or {}
+    if not isinstance(counts, dict):
+        counts = {}
+
+    def fmt(value: Any) -> str:
+        return "not recorded" if value is None else str(value)
+
+    rows = [
+        ("Quant-claim files screened", receipt_funnel.get("quant_claim_files")),
+        ("Active candidate IDs", receipt_funnel.get("active_paper_ids")),
+        (
+            "Classified eligible candidates",
+            receipt_funnel.get("classified_receipt_candidates"),
+        ),
+        ("Receipt candidate union", receipt_funnel.get("receipt_candidate_union")),
+        (
+            "Accepted high-confidence receipt papers",
+            counts.get("accepted_high_confidence"),
+        ),
+        (
+            "Excluded outside active/classified scope",
+            counts.get("outside_active_or_classified_scope"),
+        ),
+        ("Candidate papers with no extracted claims", counts.get("candidate_no_claims")),
+        ("Candidate papers with partial-only bindings", counts.get("candidate_partial_only")),
+        (
+            "Candidate papers with partial+none bindings",
+            counts.get("candidate_partial_and_none_only"),
+        ),
+        ("Candidate papers with none-only bindings", counts.get("candidate_none_only")),
+    ]
+    lines = [
+        "### Selection flow (PRISMA-style counts)",
+        "",
+        "These are audit counts, not a PRISMA claim.",
+        "",
+        "| Stage | n |",
+        "|---|---:|",
+    ]
+    lines.extend(f"| {label} | {fmt(value)} |" for label, value in rows)
+    return lines + [""]
 
 
 def _verdict_phrase(verdict: str) -> str:
