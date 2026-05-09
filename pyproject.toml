@@ -37,3 +37,9 @@ asyncio_mode = "strict"
 # Only ship the V1 runtime. agent_legacy/ stays on disk for git archaeology
 # and is reachable via pythonpath = ["."], but must never be installed.
 include = ["agent", "agent.*"]
+
+[tool.mypy]
+# tests_legacy/ contains pre-V1 archaeology kept on disk for git history.
+# It mirrors test_evidence_cards.py from the live suite under the same
+# module name; mypy raises Duplicate-module without an explicit exclude.
+exclude = ["^tests_legacy/", "^agent_legacy/"]
