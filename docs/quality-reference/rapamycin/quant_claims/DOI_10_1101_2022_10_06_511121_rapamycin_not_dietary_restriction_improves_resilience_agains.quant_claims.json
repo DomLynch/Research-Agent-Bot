@@ -1,11 +1,12 @@
 {
   "paper_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains",
   "doi": "10.1101/2022.10.06.511121",
-  "extracted_at": "2026-05-09T10:18:12+00:00",
-  "extractor_version": "0.6.0",
+  "extracted_at": "2026-05-09T10:47:34+00:00",
+  "extractor_version": "0.6.0+llm_rescue_v1",
   "claims_count_by_type": {
-    "sample_size": 3,
-    "p_value": 3
+    "confidence_interval": 1,
+    "p_value": 5,
+    "sample_size": 3
   },
   "claims": [
     {
@@ -21,7 +22,7 @@
       "sentence": "We reanalysed published post-infection short-term survival data of mice (n=1223 from 23 studies comprising 46 effect sizes involving DR (n=17) and rapamycin treatment (n=29) and analysed these results using meta-analysis.",
       "context_window": "published post-infection short-term survival data of mice (n=1223 from 23 studies comprising 46 effect sizes involving DR (n=",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -39,7 +40,7 @@
       "sentence": "We reanalysed published post-infection short-term survival data of mice (n=1223 from 23 studies comprising 46 effect sizes involving DR (n=17) and rapamycin treatment (n=29) and analysed these results using meta-analysis.",
       "context_window": "23 from 23 studies comprising 46 effect sizes involving DR (n=17) and rapamycin treatment (n=29) and analysed these results",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -57,7 +58,7 @@
       "sentence": "We reanalysed published post-infection short-term survival data of mice (n=1223 from 23 studies comprising 46 effect sizes involving DR (n=17) and rapamycin treatment (n=29) and analysed these results using meta-analysis.",
       "context_window": "6 effect sizes involving DR (n=17) and rapamycin treatment (n=29) and analysed these results using meta-analysis. Rapamycin",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -75,10 +76,10 @@
       "sentence": "Rapamycin treatment significantly increased post infection survival rate (lnHR=-0.72; CI=-1.17, -0.28; p=0.0015).",
       "context_window": "post infection survival rate (lnHR=-0.72; CI=-1.17, -0.28; p=0.0015). In contrast, DR reduced post-infection survival (lnHR=0.8",
       "claim_role": "effect",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-p-986",
@@ -111,10 +112,72 @@
       "sentence": "Importantly, the overall effect size of rapamycin treatment was significantly lower (P<0.001) than the estimate from DR studies, suggesting opposite effects on immune function.",
       "context_window": "effect size of rapamycin treatment was significantly lower (P<0.001) than the estimate from DR studies, suggesting opposite eff",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-llmrescue-ed8c58b8b518",
+      "claim_type": "p_value",
+      "raw_text": "p=0.0015",
+      "numeric_values": [
+        0.0015
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 900,
+      "sentence": "Rapamycin treatment significantly increased post infection survival rate (lnHR=-0.72; CI=-1.17, -0.28; p=0.0015).",
+      "context_window": " post infection survival rate (lnHR=-0.72; CI=-1.17, -0.28; p=0.0015).",
+      "claim_role": "effect",
+      "endpoint": "respiratory infection rate",
+      "arm": "rapamycin",
+      "direction": "increase",
+      "binding_confidence": "high",
+      "rescue_method": "llm_qualification_rescue_v1",
+      "rescue_model": "deepseek/deepseek-v4-pro"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-llmrescue-59368bac0063",
+      "claim_type": "confidence_interval",
+      "raw_text": "CI=-1.17, -0.28",
+      "numeric_values": [
+        -1.17,
+        -0.28
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 883,
+      "sentence": "Rapamycin treatment significantly increased post infection survival rate (lnHR=-0.72; CI=-1.17, -0.28; p=0.0015).",
+      "context_window": "icantly increased post infection survival rate (lnHR=-0.72; CI=-1.17, -0.28; p=0.0015).",
+      "claim_role": "effect",
+      "endpoint": "respiratory infection rate",
+      "arm": "rapamycin",
+      "direction": "increase",
+      "binding_confidence": "high",
+      "rescue_method": "llm_qualification_rescue_v1",
+      "rescue_model": "deepseek/deepseek-v4-pro"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-llmrescue-5d6ef18d9d44",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1080,
+      "sentence": "Importantly, the overall effect size of rapamycin treatment was significantly lower (P<0.001) than the estimate from DR studies, suggesting opposite effects on immune function.",
+      "context_window": "effect size of rapamycin treatment was significantly lower (P<0.001) than the estimate from DR studies, suggesting opposite eff",
+      "claim_role": "effect",
+      "endpoint": "respiratory infection rate",
+      "arm": "rapamycin",
+      "direction": "increase",
+      "binding_confidence": "high",
+      "rescue_method": "llm_qualification_rescue_v1",
+      "rescue_model": "deepseek/deepseek-v4-pro"
     }
-  ]
+  ],
+  "rescued_at": "2026-05-09T10:52:17+00:00"
 }

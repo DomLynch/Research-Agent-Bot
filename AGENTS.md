@@ -10,12 +10,14 @@ Researka/public reader/provenance is downstream. This repo's job is the research
 agent and paper engine.
 
 ## Current State - 2026-05-09
-- MacBook, GitHub `main`, VPS `/opt`, and VPS `/root` are synced at `32f8b9e9`
-  before the current cleanup branch.
+- MacBook, GitHub `main`, VPS `/opt`, and VPS `/root` are synced at `05b962f5`
+  before the current qualification-rescue branch.
 - Service: `research-agent-bot.service`.
 - Live endpoint: deploy-safe paused dashboard, HTTP 503 by design.
 - Basket: 18 full AAA/L5+ primary topics plus 1 scoped topic in cross-topic V1.
-- Flagship: rapamycin AAA/L6 reproducibly journal-ready.
+- Flagship: rapamycin AAA/L6 reproducibly journal-ready baseline; current
+  paper-quality sprint has lifted runner-admitted receipts from 16 to 34 via
+  source-validated vocabulary and qualification fixes.
 - Generated topic-pack V1 shipped but full generated-pack synthesis remains gated.
 - Cross-topic meta-synthesis V1 shipped; auto-selection must use only fully
   certified 14/14 runs.
@@ -52,7 +54,8 @@ LLM PROPOSES. CODE DISPOSES.
 
 ## Active Critical Path
 1. Keep repo clean, synced, and reproducible.
-2. Clear release-green blockers: cross-topic run selection, LOC budget, state docs.
+2. Keep release-green blockers closed: cross-topic run selection, LOC budget,
+   state docs, full tests, and deploy sync.
 3. Make the rapamycin paper genuinely candidate-publication-ready.
 4. Preserve trust-spine gates while improving corpus depth, RoB/GRADE,
    meta-analysis, field engagement, cross-paper tension prose, and voice.

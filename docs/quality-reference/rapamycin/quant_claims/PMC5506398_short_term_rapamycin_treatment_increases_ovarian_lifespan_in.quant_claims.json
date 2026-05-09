@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in",
   "doi": "10.1111/acel.12617",
-  "extracted_at": "2026-05-09T10:18:23+00:00",
+  "extracted_at": "2026-05-09T10:47:43+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 92,
@@ -77,10 +77,10 @@
       "sentence": "Results showed disturbances in ovarian function during and shortly after treatment; however, all the treated animals returned to normal fertility 2 months later.",
       "context_window": "wever, all the treated animals returned to normal fertility 2 months later. Following natural mating, we observed prolongation o",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ovarian reserve",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-905",
@@ -95,7 +95,7 @@
       "sentence": "Following natural mating, we observed prolongation of ovarian lifespan in both mouse models, with the most prominent effect occurring in mice older than 12 months.",
       "context_window": "with the most prominent effect occurring in mice older than 12 months. The effects of transient rapamycin treatment on ovarian li",
       "claim_role": "unknown",
-      "endpoint": "lifespan",
+      "endpoint": "ovarian reserve",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -149,7 +149,7 @@
       "sentence": "Menopause, at approximately 50 years of age, is considered to constitute the end of the ovarian lifespan (Broekmans et al ., 2009 ).",
       "context_window": "nd rapidly (Li et al ., 2012 ). Menopause, at approximately 50 years of age, is considered to constitute the end of the ovarian",
       "claim_role": "protocol",
-      "endpoint": "lifespan",
+      "endpoint": "ovarian reserve",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -167,10 +167,10 @@
       "sentence": "A recent study encompassing 10 weeks of Rapa treatment in rats revealed the possibility of delaying ovarian aging by suppressing primordial follicle activation and follicular development by modulating sirtuin signaling (Zhang et al ., 2013 ).",
       "context_window": "POF) (Adhikari et al ., 2013 ). A recent study encompassing 10 weeks of Rapa treatment in rats revealed the possibility of delay",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ovarian reserve",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-pct-5190",
@@ -186,9 +186,9 @@
       "context_window": "not lifelong, treatment increases life expectancy by up to 60%, and improved health span in middle\u2010aged mice (Bitto et al",
       "claim_role": "effect",
       "endpoint": "healthspan",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-5332",
@@ -204,9 +204,9 @@
       "context_window": "e, in the present study, we shortened the Rapa treatment to 2 weeks and applied it to adult female mice at two different ages (",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-5399",
@@ -222,9 +222,9 @@
       "context_window": "and applied it to adult female mice at two different ages (8 weeks and 8 months). The two ages represent humans at ages 20-30",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-5411",
@@ -240,9 +240,9 @@
       "context_window": "it to adult female mice at two different ages (8 weeks and 8 months). The two ages represent humans at ages 20-30 and 38-47, re",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-5695",
@@ -257,7 +257,7 @@
       "sentence": "However, follicular development and ovulation were restored to normal 2 months later, and ovarian lifespan was prolonged in both models.",
       "context_window": "ollicular development and ovulation were restored to normal 2 months later, and ovarian lifespan was prolonged in both models. O",
       "claim_role": "background",
-      "endpoint": "lifespan",
+      "endpoint": "ovarian reserve",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -276,9 +276,9 @@
       "context_window": "hort\u2010term treatment model with daily injections of Rapa for 2 weeks. In the 8\u2010weeks mouse model, treatment was started at 8 wee",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-167",
@@ -510,9 +510,9 @@
       "context_window": "2 as measured by RIA. Serum was collected immediately after 2 weeks of Rapa injection ( n = 5-9 per group). (C) Comparison of b",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-n-2363",
@@ -528,9 +528,9 @@
       "context_window": "was collected immediately after 2 weeks of Rapa injection ( n = 5-9 per group). (C) Comparison of body and ovarian weights an",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-n-3298",
@@ -600,9 +600,9 @@
       "context_window": "llicles nearly doubled in the ovaries of Rapa\u2010treated mice (74.8% vs. 34.6% in control mice), which was accompanied by a sign",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-pct-4185",
@@ -635,7 +635,7 @@
       "sentence": "The recovery of ovarian function took place slowly, but 2 months later, all treated mice exhibited regular estrous cycles, with normal levels of p\u2010rpS6, ovarian weight and morphology, and serum hormone levels compared to control mice (Fig.",
       "context_window": "ps. The recovery of ovarian function took place slowly, but 2 months later, all treated mice exhibited regular estrous cycles, w",
       "claim_role": "unknown",
-      "endpoint": "S6K1 phosphorylation",
+      "endpoint": "ovarian reserve",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -743,7 +743,7 @@
       "sentence": "The prolongation of ovarian lifespan in treated mice was most marked after 12 months of age (Fig.",
       "context_window": "n of ovarian lifespan in treated mice was most marked after 12 months of age (Fig. 4 A,B). At the end of the mating trials, the f",
       "claim_role": "protocol",
-      "endpoint": "lifespan",
+      "endpoint": "ovarian reserve",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -779,8 +779,8 @@
       "sentence": "These results suggest that short\u2010term Rapa treatment started at younger age (8 weeks) prolongs ovarian lifespan in mice.",
       "context_window": "gest that short\u2010term Rapa treatment started at younger age (8 weeks) prolongs ovarian lifespan in mice. Fertility rebound and",
       "claim_role": "protocol",
-      "endpoint": "lifespan",
-      "arm": "",
+      "endpoint": "ovarian reserve",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -798,7 +798,7 @@
       "context_window": "e axis in aging females. Natural mating trials were started 2 months after cessation of Rapa treatment. (A, B) Prolongation of f",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -816,7 +816,7 @@
       "context_window": "gation of fertility in aging females after Rapa treatment ( n = 24 for the control group, n = 23 for the Rapa\u2010treated group).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -834,7 +834,7 @@
       "context_window": "emales after Rapa treatment ( n = 24 for the control group, n = 23 for the Rapa\u2010treated group). (A) Comparison of the cumulati",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -888,9 +888,9 @@
       "context_window": "ating weeks 0-16 W are equivalent to mouse ages from 4.5 to 8 months; 16-32 weeks, 8-12 months; and 32-48 weeks, 12-16 months. *",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-8091",
@@ -906,9 +906,9 @@
       "context_window": "-16 W are equivalent to mouse ages from 4.5 to 8 months; 16-32 weeks, 8-12 months; and 32-48 weeks, 12-16 months. ** P < 0.01, c",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-8103",
@@ -924,9 +924,9 @@
       "context_window": "uivalent to mouse ages from 4.5 to 8 months; 16-32 weeks, 8-12 months; and 32-48 weeks, 12-16 months. ** P < 0.01, compared with",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-8121",
@@ -942,9 +942,9 @@
       "context_window": "ages from 4.5 to 8 months; 16-32 weeks, 8-12 months; and 32-48 weeks, 12-16 months. ** P < 0.01, compared with controls. (C) Mor",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-8134",
@@ -960,9 +960,9 @@
       "context_window": "to 8 months; 16-32 weeks, 8-12 months; and 32-48 weeks, 12-16 months. ** P < 0.01, compared with controls. (C) Morphology of ova",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-p-8148",
@@ -978,9 +978,9 @@
       "context_window": "16-32 weeks, 8-12 months; and 32-48 weeks, 12-16 months. ** P < 0.01, compared with controls. (C) Morphology of ovaries from gro",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-8283",
@@ -996,9 +996,9 @@
       "context_window": "h or without Rapa treatment was analyzed by H&E staining at 16 months of age. *, remaining follicles; CL, corpus luteum. (D) Foll",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-n-8401",
@@ -1014,9 +1014,9 @@
       "context_window": "m. (D) Follicle numbers at different developmental stages ( n = 3 per group). PMF, primordial follicle; P, primary follicle;",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-p-8619",
@@ -1086,9 +1086,9 @@
       "context_window": "pa treatment on oocyte quality after withdrawal of Rapa for 2 months (Age: 4.5 months), 6 months (Age: 8 months), 10 months (Age",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-10626",
@@ -1104,9 +1104,9 @@
       "context_window": "oocyte quality after withdrawal of Rapa for 2 months (Age: 4.5 months), 6 months (Age: 8 months), 10 months (Age: 12 months) and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-10639",
@@ -1122,9 +1122,9 @@
       "context_window": "ty after withdrawal of Rapa for 2 months (Age: 4.5 months), 6 months (Age: 8 months), 10 months (Age: 12 months) and 13 months (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-10654",
@@ -1140,9 +1140,9 @@
       "context_window": "awal of Rapa for 2 months (Age: 4.5 months), 6 months (Age: 8 months), 10 months (Age: 12 months) and 13 months (Age: 15 months)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-10665",
@@ -1158,9 +1158,9 @@
       "context_window": "a for 2 months (Age: 4.5 months), 6 months (Age: 8 months), 10 months (Age: 12 months) and 13 months (Age: 15 months). These time",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-10681",
@@ -1176,9 +1176,9 @@
       "context_window": "Age: 4.5 months), 6 months (Age: 8 months), 10 months (Age: 12 months) and 13 months (Age: 15 months). These time points are sele",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-10696",
@@ -1194,9 +1194,9 @@
       "context_window": "), 6 months (Age: 8 months), 10 months (Age: 12 months) and 13 months (Age: 15 months). These time points are selected because mi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-10712",
@@ -1212,9 +1212,9 @@
       "context_window": ": 8 months), 10 months (Age: 12 months) and 13 months (Age: 15 months). These time points are selected because mice at the above",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-10880",
@@ -1248,7 +1248,7 @@
       "context_window": "were markedly decreased in Rapa\u2010treated mice (Fig. 5 A). At 15 months of age, no oocytes were retrieved from control females, whe",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1266,7 +1266,7 @@
       "context_window": "hough the percentage of abnormal oocytes increased to about 60% (Fig. 5 B, a and b). Morphologically healthy oocytes were t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1284,7 +1284,7 @@
       "context_window": "eated mice and such difference even occurred as early as at 4.5 months of age (Fig. 5 D). The results suggest that Rapa treatment",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1482,9 +1482,9 @@
       "context_window": "d group). As no ovulations were observed in control mice at 15 months of age, the percentage of abnormalities was designated as 1",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-pct-13087",
@@ -1500,9 +1500,9 @@
       "context_window": "s of age, the percentage of abnormalities was designated as 100%. *P<0.05 compared with controls. (B) Morphology of oocytes",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-p-13094",
@@ -1518,9 +1518,9 @@
       "context_window": "e, the percentage of abnormalities was designated as 100%. *P<0.05 compared with controls. (B) Morphology of oocytes obtained",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-13193",
@@ -1536,9 +1536,9 @@
       "context_window": "hology of oocytes obtained from Rapa\u2010treated female mice at 15 months: a) oocytes with normal morphology. Some showed abnormal po",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-13583",
@@ -1662,7 +1662,7 @@
       "context_window": "e in oocyte mitochondrial activity in Rapa\u2010treated mice. ** P < 0.01 compared with controls. Although our short\u2010term protocol a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1679,8 +1679,8 @@
       "sentence": "To avoid any disturbances of young adult mouse fertility due to Rapa treatment, we next commenced treatment at 8 months of age to assess whether the prolongation of ovarian lifespan still occurred in a \u2018middle\u2010age\u2019 model.",
       "context_window": "ility due to Rapa treatment, we next commenced treatment at 8 months of age to assess whether the prolongation of ovarian lifesp",
       "claim_role": "protocol",
-      "endpoint": "lifespan",
-      "arm": "",
+      "endpoint": "ovarian reserve",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1697,10 +1697,10 @@
       "sentence": "Rapa had similar effects on ovarian function in the middle\u2010aged (8 months) mouse model.",
       "context_window": "had similar effects on ovarian function in the middle\u2010aged (8 months) mouse model. Female mice at 8 months of age were treated w",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ovarian reserve",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-15240",
@@ -1716,7 +1716,7 @@
       "context_window": "n in the middle\u2010aged (8 months) mouse model. Female mice at 8 months of age were treated with or without Rapa for 2 weeks, and o",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1734,7 +1734,7 @@
       "context_window": "ce at 8 months of age were treated with or without Rapa for 2 weeks, and ovaries were collected immediately after the injection",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1752,7 +1752,7 @@
       "context_window": "eights, and organ index of ovaries between the two groups ( n = 5 per group). (B) Serum levels of P4, FSH, and E2 examined by",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1770,7 +1770,7 @@
       "context_window": "oup). (B) Serum levels of P4, FSH, and E2 examined by RIA ( n = 5-7, per group). (C) Morphology of ovaries analyzed by H&E st",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1823,10 +1823,10 @@
       "sentence": "Natural mating trials were then undertaken 2 months later when the treated animals showed a return of normal ovarian function.",
       "context_window": "control group. Natural mating trials were then undertaken 2 months later when the treated animals showed a return of normal ov",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ovarian reserve",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-16433",
@@ -1878,7 +1878,7 @@
       "context_window": "mice was quickly recovered and the advantage appeared after 12 weeks of mating. To better reflect the difference between control",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1896,9 +1896,9 @@
       "context_window": "ce between control and Rapa\u2010treated mice, the mating weeks (24 weeks) were divided into two stages according to the mouse age an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-16923",
@@ -1914,7 +1914,7 @@
       "context_window": "ndently. Our data showed that in the first mating period (0-12 weeks), when mice were at 11-13 months of age, there was no diffe",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1932,7 +1932,7 @@
       "context_window": "the first mating period (0-12 weeks), when mice were at 11-13 months of age, there was no difference on pups delivered per femal",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1950,9 +1950,9 @@
       "context_window": "nd Rapa\u2010treated mice, respectively. In the second stage (12-24 weeks) of mating, the control mice suffered a rapid loss of their",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-17445",
@@ -1968,7 +1968,7 @@
       "context_window": "se (Fig. 7 B). As expected, after ovaries were collected at 16 months of age for histology, greater follicle numbers were preserv",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1986,9 +1986,9 @@
       "context_window": "the 8\u2010months animal model. Natural mating trials were begun 2 months after cessation of Rapa treatment. The mating trials lasted",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-18276",
@@ -2094,7 +2094,7 @@
       "context_window": "ology of ovaries by H&E staining. Ovaries were collected at 16 months of age after ending the mating trials. a), c) control ovary",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2112,7 +2112,7 @@
       "context_window": "um. (D) Follicle counts at different developmental stages ( n = 3, per group). (E) Real\u2010time PCR of ovarian mRNAs in control",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2184,9 +2184,9 @@
       "context_window": "hat is that the female rats gradually lost fertility during 10 weeks of Rapa treatment (Zhang et al ., 2013 ). Moreover, whether",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in-u-3018",
@@ -2255,8 +2255,8 @@
       "sentence": "We found that Rapa improved ovarian function in aged female mice (older than 12 months of age), with higher pregnancy rates and with more healthy offspring born to both models.",
       "context_window": "a improved ovarian function in aged female mice (older than 12 months of age), with higher pregnancy rates and with more healthy",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ovarian reserve",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2291,8 +2291,8 @@
       "sentence": "As our \u2018middle\u2010age model (8 months)\u2019 also worked well in extending ovarian lifespan, we propose a new application of Rapa in regulating ovarian function for women before reproductive aging occurs, that is, during the premenopause.",
       "context_window": "begins at a mean age of 31 years. As our \u2018middle\u2010age model (8 months)\u2019 also worked well in extending ovarian lifespan, we propos",
       "claim_role": "duration",
-      "endpoint": "lifespan",
-      "arm": "",
+      "endpoint": "ovarian reserve",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2309,8 +2309,8 @@
       "sentence": "Moreover, at the end of our experiment (at 16 months of age), more follicles at different stages were observed in the ovaries of Rapa\u2010treated mice, indicating to us that the ability of Rapa to sustain reproductive functions in aged animals is mediated, at least in part, by maintenance of the ovarian follicle reserve.",
       "context_window": "e control group. Moreover, at the end of our experiment (at 16 months of age), more follicles at different stages were observed i",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ovarian reserve",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2328,7 +2328,7 @@
       "context_window": ", IL\u20101 \u03b2 , and IL\u20106 mRNAs were expressed at lower levels by 2 months after Rapa treatment, no differences were observed at 4 mon",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2346,7 +2346,7 @@
       "context_window": "onths after Rapa treatment, no differences were observed at 4 months (data not shown). The effects of short\u2010term Rapa treatment",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

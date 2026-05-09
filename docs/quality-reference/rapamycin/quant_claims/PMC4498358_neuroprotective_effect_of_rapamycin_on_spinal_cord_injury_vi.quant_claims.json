@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC4498358_neuroprotective_effect_of_rapamycin_on_spinal_cord_injury_vi",
   "doi": "10.4103/1673-5374.158360",
-  "extracted_at": "2026-05-09T10:18:21+00:00",
+  "extracted_at": "2026-05-09T10:47:42+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 26,
@@ -295,10 +295,10 @@
       "sentence": "Briefly, three independent examiners were blinded to assess BBB scores before operation and at 1, 3, 7, 14, 21 and 28 days after SCI.",
       "context_window": "sess BBB scores before operation and at 1, 3, 7, 14, 21 and 28 days after SCI. The BBB scores ranged from 0 to 21 points. The m",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "motor neuron count",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4498358_neuroprotective_effect_of_rapamycin_on_spinal_cord_injury_vi-pct-2590",
@@ -745,7 +745,7 @@
       "sentence": "As shown in Figure 1 , the BBB scores of rats were 21 points before the operation in all three groups and decreased to 0 point at 1 day after SCI.",
       "context_window": "e operation in all three groups and decreased to 0 point at 1 day after SCI. However, the tendency of BBB scores of rats show",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "motor neuron count",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -763,7 +763,7 @@
       "sentence": "However, the tendency of BBB scores of rats showed no significant difference from 1 to 14 days after SCI in the rapamycin and saline groups ( P > 0.05).",
       "context_window": "B scores of rats showed no significant difference from 1 to 14 days after SCI in the rapamycin and saline groups ( P > 0.05). A",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "motor neuron count",
       "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -781,7 +781,7 @@
       "sentence": "However, the tendency of BBB scores of rats showed no significant difference from 1 to 14 days after SCI in the rapamycin and saline groups ( P > 0.05).",
       "context_window": "1 to 14 days after SCI in the rapamycin and saline groups ( P > 0.05). At 14, 21, and 28 days post-operation, the BBB scores of",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "motor neuron count",
       "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -799,7 +799,7 @@
       "sentence": "At 14, 21, and 28 days post-operation, the BBB scores of rats in the rapamycin group were obviously higher than those of rats in the saline group ( P < 0.05).",
       "context_window": "the rapamycin and saline groups ( P > 0.05). At 14, 21, and 28 days post-operation, the BBB scores of rats in the rapamycin gro",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "motor neuron count",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -817,7 +817,7 @@
       "sentence": "At 14, 21, and 28 days post-operation, the BBB scores of rats in the rapamycin group were obviously higher than those of rats in the saline group ( P < 0.05).",
       "context_window": "e obviously higher than those of rats in the saline group ( P < 0.05). These results indicate that the rats\u2019 locomotion function",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "motor neuron count",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -853,10 +853,10 @@
       "sentence": "At the same time, the quantities of motor neurons in the anterior horns were elevated ( P < 0.01) and the morphology of neurons from rats in the rapamycin group was perfected compared with that of neurons from rats in the saline group ( Figure 2 ).",
       "context_window": "ties of motor neurons in the anterior horns were elevated ( P < 0.01) and the morphology of neurons from rats in the rapamycin g",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "motor neuron count",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4498358_neuroprotective_effect_of_rapamycin_on_spinal_cord_injury_vi-n-1839",
@@ -1357,10 +1357,10 @@
       "sentence": "In the current study, the recovery of locomotor function was reflected in the BBB scores of rats, and the results revealed that rapamycin obviously improved locomotor neurological function at 14 days post-injury.",
       "context_window": "mycin obviously improved locomotor neurological function at 14 days post-injury. Nissl staining indicated that rapamycin also r",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "motor neuron count",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12422820_what_is_the_clinical_evidence_to_support_off_label_rapamycin",
   "doi": "10.18632/aging.206300",
-  "extracted_at": "2026-05-09T10:18:18+00:00",
+  "extracted_at": "2026-05-09T10:47:39+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 28,
@@ -23,7 +23,7 @@
       "sentence": "The results of this analysis suggested that low-dose everolimus therapy (0.5 mg/day and 5 mg weekly) induced a 20% increase in immune titers, while circulating T-cell inhibiting PD-1 positive CD4 and CD8 counts declined relative to placebo, a finding which is associated with enhanced T-cell function, or a more youthful immune phenotype [ 23 , 43 ].",
       "context_window": "f this analysis suggested that low-dose everolimus therapy (0.5 mg/day and 5 mg weekly) induced a 20% increase in immune titers, w",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -41,7 +41,7 @@
       "sentence": "The results of this analysis suggested that low-dose everolimus therapy (0.5 mg/day and 5 mg weekly) induced a 20% increase in immune titers, while circulating T-cell inhibiting PD-1 positive CD4 and CD8 counts declined relative to placebo, a finding which is associated with enhanced T-cell function, or a more youthful immune phenotype [ 23 , 43 ].",
       "context_window": "suggested that low-dose everolimus therapy (0.5 mg/day and 5 mg weekly) induced a 20% increase in immune titers, while circ",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -59,7 +59,7 @@
       "sentence": "The results of this analysis suggested that low-dose everolimus therapy (0.5 mg/day and 5 mg weekly) induced a 20% increase in immune titers, while circulating T-cell inhibiting PD-1 positive CD4 and CD8 counts declined relative to placebo, a finding which is associated with enhanced T-cell function, or a more youthful immune phenotype [ 23 , 43 ].",
       "context_window": "e everolimus therapy (0.5 mg/day and 5 mg weekly) induced a 20% increase in immune titers, while circulating T-cell inhibit",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -311,7 +311,7 @@
       "sentence": "One of the most detailed trials of low-dose rapamycin use in healthy participants comes from Kraig et al.\u2019s (2018) examination of 25 healthy older adults (aged 70-95 years), which evaluated the safety of 1 mg/day sirolimus for 8 weeks.",
       "context_window": "l.\u2019s (2018) examination of 25 healthy older adults (aged 70-95 years), which evaluated the safety of 1 mg/day sirolimus for 8 we",
       "claim_role": "dose",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -329,7 +329,7 @@
       "sentence": "One of the most detailed trials of low-dose rapamycin use in healthy participants comes from Kraig et al.\u2019s (2018) examination of 25 healthy older adults (aged 70-95 years), which evaluated the safety of 1 mg/day sirolimus for 8 weeks.",
       "context_window": "er adults (aged 70-95 years), which evaluated the safety of 1 mg/day sirolimus for 8 weeks. A mean 7.2 ng/dL circulating level o",
       "claim_role": "dose",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -347,7 +347,7 @@
       "sentence": "One of the most detailed trials of low-dose rapamycin use in healthy participants comes from Kraig et al.\u2019s (2018) examination of 25 healthy older adults (aged 70-95 years), which evaluated the safety of 1 mg/day sirolimus for 8 weeks.",
       "context_window": "ears), which evaluated the safety of 1 mg/day sirolimus for 8 weeks. A mean 7.2 ng/dL circulating level of sirolimus was achiev",
       "claim_role": "dose",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -473,7 +473,7 @@
       "sentence": "These studies aim to evaluate potential structural changes, including gray matter metrics, over treatment periods.\n\n\u201cEvaluating Rapamycin Treatment in Alzheimer\u2019s Disease using Positron Emission Tomography\u201d (ERAP) or the ERAP trial is a six-month-long, single-arm, open-label, phase IIa biomarker-driven study which is testing rapamycin at a dose of 7 mg weekly and measuring changes in cerebral glucose metabolism [ 52 ].",
       "context_window": "marker-driven study which is testing rapamycin at a dose of 7 mg weekly and measuring changes in cerebral glucose metabolism",
       "claim_role": "duration",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"

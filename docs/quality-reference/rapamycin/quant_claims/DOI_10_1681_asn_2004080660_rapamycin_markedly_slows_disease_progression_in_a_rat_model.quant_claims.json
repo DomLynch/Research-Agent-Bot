@@ -1,7 +1,7 @@
 {
   "paper_id": "DOI_10_1681_asn_2004080660_rapamycin_markedly_slows_disease_progression_in_a_rat_model",
   "doi": "10.1681/asn.2004080660",
-  "extracted_at": "2026-05-09T10:18:14+00:00",
+  "extracted_at": "2026-05-09T10:47:35+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 1,
@@ -39,10 +39,10 @@
       "sentence": "Rapamycin reduced the kidney enlargement by 65%.",
       "context_window": "with +/+ rats. Rapamycin reduced the kidney enlargement by 65%. Rapamycin significantly reduced the cyst volume density in",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "renal function",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "DOI_10_1681_asn_2004080660_rapamycin_markedly_slows_disease_progression_in_a_rat_model-pct-746",
@@ -57,10 +57,10 @@
       "sentence": "Rapamycin significantly reduced the cyst volume density in Cy/+ rats by >40%.",
       "context_window": "nificantly reduced the cyst volume density in Cy/+ rats by >40%. Blood urea nitrogen was 59% increased in vehicle-treated C",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "renal function",
       "arm": "rapamycin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "DOI_10_1681_asn_2004080660_rapamycin_markedly_slows_disease_progression_in_a_rat_model-pct-775",
@@ -75,7 +75,7 @@
       "sentence": "Blood urea nitrogen was 59% increased in vehicle-treated Cy/+ rats compared with +/+ rats.",
       "context_window": "olume density in Cy/+ rats by >40%. Blood urea nitrogen was 59% increased in vehicle-treated Cy/+ rats compared with +/+ ra",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "renal function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"

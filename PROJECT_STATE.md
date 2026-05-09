@@ -14,12 +14,12 @@ from a certified AAA/L6 artifact to candidate-publication quality.
 
 ## Current Truth - 2026-05-09
 ```text
-Pre-cleanup deployed commit: 32f8b9e9
+Current deployed baseline before qualification-rescue branch: 05b962f5
 Local/GitHub/VPS state before this branch: synced and clean
 Service: research-agent-bot.service active
 Endpoint: HTTP 503 safe paused dashboard
-Focused cross-topic tests at handover: 11 passed
-Known blocker at handover: full pytest failed LOC budget, 17,995 > 17,200
+Full pytest at current branch validation: 2369 passed, 5 warnings
+Ruff: clean
 ```
 
 ## System Boundary
@@ -58,9 +58,10 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
    branch fixes auto-selection to require explicit cert track and 14/14 audit.
 3. Cross-topic labels remain coarse; V2 detector work is not part of this paper
    sprint unless it directly improves rapamycin.
-4. Rapamycin has certification strength but likely lacks publication-grade
+4. Rapamycin has certification strength and now 34 runner-admitted receipts
+   after source-validated qualification rescue; it still lacks publication-grade
    corpus depth, formal RoB/GRADE, quantitative pooling, named framework
-   engagement, and senior-researcher prose.
+   engagement, and final senior-researcher prose gates.
 5. DeepSeek reviewer recall is not proven Grok-equivalent; fallback guard remains
    required for production-critical paper runs.
 
@@ -68,12 +69,11 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
 
 Priority order:
-1. Fix cross-topic run-selection correctness.
-2. Document and pass LOC budget.
-3. Refresh stale project state docs.
-4. Run full pytest, ruff, meta-synthesis, and tri-sync checks.
-5. Start rapamycin world-class paper sprint: diagnostic gap analysis and corpus
-   bottleneck first, then highest-impact implementation slice.
+1. Keep release-green state clean and deployed.
+2. Continue rapamycin corpus qualification from 34 runner-admitted receipts
+   toward the >=40 minimum / 50+ target.
+3. Only then activate RoB/GRADE, meta-analysis, field engagement, tension
+   elaboration, and template-language gates on the richer corpus.
 
 ## Verification Commands
 ```bash

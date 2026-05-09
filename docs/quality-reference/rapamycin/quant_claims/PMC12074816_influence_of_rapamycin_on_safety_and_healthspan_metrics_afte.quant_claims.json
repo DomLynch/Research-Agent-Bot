@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte",
   "doi": "10.18632/aging.206235",
-  "extracted_at": "2026-05-09T10:18:18+00:00",
+  "extracted_at": "2026-05-09T10:47:38+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 104,
@@ -348,7 +348,7 @@
       "sentence": "Participants were excluded from the study if they had anemia, neutropenia, or thrombocytopenia, were premenopausal, were scheduled to undergo major surgery in next 12 months, were undergoing or were scheduled to undergo chemotherapy, were scheduled for immunosuppressant therapy for an organ transplant, had impaired wound healing or history of chronic open wound, untreated dyslipidemia, impaired hepatic function, chronic infections requiring ongoing treatment or monitoring (e.g., human immunodeficiency virus/acquired immunodeficiency syndrome, chronic Lyme disease), allergy to rapamycin, clinically-relevant primary or secondary immune dysfunction or deficiency, chronic oral corticosteroid or immunosuppressive medication use, fibromyalgia, chronic fatigue syndrome/myalgic encephalomyelitis, breast implant illness, congestive heart failure, impaired renal function, poorly controlled diabetes, type I or insulin-dependent type II diabetes, untreated or treated within the last five years for substance abuse disorder, and untreated or poorly controlled mental health disorder.",
       "context_window": "menopausal, were scheduled to undergo major surgery in next 12 months, were undergoing or were scheduled to undergo chemotherapy,",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "renal function",
       "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -492,7 +492,7 @@
       "sentence": "All assessments were performed for all randomization groups at baseline, after 24 weeks, and after 48 weeks of rapamycin treatment, and included comprehensive blood testing, DXA body composition scans, and established self-report surveys (SF36 and WOMAC scales).",
       "context_window": "e performed for all randomization groups at baseline, after 24 weeks, and after 48 weeks of rapamycin treatment, and included co",
       "claim_role": "duration",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -510,7 +510,7 @@
       "sentence": "All assessments were performed for all randomization groups at baseline, after 24 weeks, and after 48 weeks of rapamycin treatment, and included comprehensive blood testing, DXA body composition scans, and established self-report surveys (SF36 and WOMAC scales).",
       "context_window": "randomization groups at baseline, after 24 weeks, and after 48 weeks of rapamycin treatment, and included comprehensive blood te",
       "claim_role": "duration",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -2400,10 +2400,10 @@
       "sentence": "Specifically, RBCs increased for the 5 mg group but no others ( F(4, 198) = 2.677, p = 0.033, \u03b7 p 2 = 0.051, md = 0.109 (95% CI = -0.189-0.003), p = 0.042), and BUN levels increased only for males in the 10 mg treatment group ( F(4, 102) = 2.805, p = 0.030, \u03b7 p 2 = 0.099; md = 2.222 (95% CI = 0.161-4.238), p = 0.031).",
       "context_window": "e, and calcium levels. Specifically, RBCs increased for the 5 mg group but no others ( F(4, 198) = 2.677, p = 0.033, \u03b7 p 2 =",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "renal function",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-7591",
@@ -2418,10 +2418,10 @@
       "sentence": "Specifically, RBCs increased for the 5 mg group but no others ( F(4, 198) = 2.677, p = 0.033, \u03b7 p 2 = 0.051, md = 0.109 (95% CI = -0.189-0.003), p = 0.042), and BUN levels increased only for males in the 10 mg treatment group ( F(4, 102) = 2.805, p = 0.030, \u03b7 p 2 = 0.099; md = 2.222 (95% CI = 0.161-4.238), p = 0.031).",
       "context_window": "eased for the 5 mg group but no others ( F(4, 198) = 2.677, p = 0.033, \u03b7 p 2 = 0.051, md = 0.109 (95% CI = -0.189-0.003), p = 0.0",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "renal function",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-pct-7629",
@@ -2436,10 +2436,10 @@
       "sentence": "Specifically, RBCs increased for the 5 mg group but no others ( F(4, 198) = 2.677, p = 0.033, \u03b7 p 2 = 0.051, md = 0.109 (95% CI = -0.189-0.003), p = 0.042), and BUN levels increased only for males in the 10 mg treatment group ( F(4, 102) = 2.805, p = 0.030, \u03b7 p 2 = 0.099; md = 2.222 (95% CI = 0.161-4.238), p = 0.031).",
       "context_window": "( F(4, 198) = 2.677, p = 0.033, \u03b7 p 2 = 0.051, md = 0.109 (95% CI = -0.189-0.003), p = 0.042), and BUN levels increased on",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "renal function",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-7653",
@@ -2454,10 +2454,10 @@
       "sentence": "Specifically, RBCs increased for the 5 mg group but no others ( F(4, 198) = 2.677, p = 0.033, \u03b7 p 2 = 0.051, md = 0.109 (95% CI = -0.189-0.003), p = 0.042), and BUN levels increased only for males in the 10 mg treatment group ( F(4, 102) = 2.805, p = 0.030, \u03b7 p 2 = 0.099; md = 2.222 (95% CI = 0.161-4.238), p = 0.031).",
       "context_window": "= 0.033, \u03b7 p 2 = 0.051, md = 0.109 (95% CI = -0.189-0.003), p = 0.042), and BUN levels increased only for males in the 10 mg trea",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "renal function",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-7712",
@@ -2472,10 +2472,10 @@
       "sentence": "Specifically, RBCs increased for the 5 mg group but no others ( F(4, 198) = 2.677, p = 0.033, \u03b7 p 2 = 0.051, md = 0.109 (95% CI = -0.189-0.003), p = 0.042), and BUN levels increased only for males in the 10 mg treatment group ( F(4, 102) = 2.805, p = 0.030, \u03b7 p 2 = 0.099; md = 2.222 (95% CI = 0.161-4.238), p = 0.031).",
       "context_window": "p = 0.042), and BUN levels increased only for males in the 10 mg treatment group ( F(4, 102) = 2.805, p = 0.030, \u03b7 p 2 = 0.0",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "renal function",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-7755",
@@ -2490,10 +2490,10 @@
       "sentence": "Specifically, RBCs increased for the 5 mg group but no others ( F(4, 198) = 2.677, p = 0.033, \u03b7 p 2 = 0.051, md = 0.109 (95% CI = -0.189-0.003), p = 0.042), and BUN levels increased only for males in the 10 mg treatment group ( F(4, 102) = 2.805, p = 0.030, \u03b7 p 2 = 0.099; md = 2.222 (95% CI = 0.161-4.238), p = 0.031).",
       "context_window": "for males in the 10 mg treatment group ( F(4, 102) = 2.805, p = 0.030, \u03b7 p 2 = 0.099; md = 2.222 (95% CI = 0.161-4.238), p = 0.03",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "renal function",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-pct-7793",
@@ -2508,10 +2508,10 @@
       "sentence": "Specifically, RBCs increased for the 5 mg group but no others ( F(4, 198) = 2.677, p = 0.033, \u03b7 p 2 = 0.051, md = 0.109 (95% CI = -0.189-0.003), p = 0.042), and BUN levels increased only for males in the 10 mg treatment group ( F(4, 102) = 2.805, p = 0.030, \u03b7 p 2 = 0.099; md = 2.222 (95% CI = 0.161-4.238), p = 0.031).",
       "context_window": "( F(4, 102) = 2.805, p = 0.030, \u03b7 p 2 = 0.099; md = 2.222 (95% CI = 0.161-4.238), p = 0.031). Similarly, males in the 5 mg",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "renal function",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-7816",
@@ -2526,10 +2526,10 @@
       "sentence": "Specifically, RBCs increased for the 5 mg group but no others ( F(4, 198) = 2.677, p = 0.033, \u03b7 p 2 = 0.051, md = 0.109 (95% CI = -0.189-0.003), p = 0.042), and BUN levels increased only for males in the 10 mg treatment group ( F(4, 102) = 2.805, p = 0.030, \u03b7 p 2 = 0.099; md = 2.222 (95% CI = 0.161-4.238), p = 0.031).",
       "context_window": "= 0.030, \u03b7 p 2 = 0.099; md = 2.222 (95% CI = 0.161-4.238), p = 0.031). Similarly, males in the 5 mg cohort demonstrated small He",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "renal function",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-7852",
@@ -2778,7 +2778,7 @@
       "sentence": "In the interest of comprehensively evaluating rapamycin responses in our participants, we submitted a subset of samples for epigenetic aging analysis (TruAge from TruDiagnostic, n = 24, 9 female and 15 male) and gut microbiome analysis (Gut Health Test from Thorne, n = 81, 31 female and 50 male).",
       "context_window": "s for epigenetic aging analysis (TruAge from TruDiagnostic, n = 24, 9 female and 15 male) and gut microbiome analysis (Gut Hea",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "microbiome composition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -2796,7 +2796,7 @@
       "sentence": "In the interest of comprehensively evaluating rapamycin responses in our participants, we submitted a subset of samples for epigenetic aging analysis (TruAge from TruDiagnostic, n = 24, 9 female and 15 male) and gut microbiome analysis (Gut Health Test from Thorne, n = 81, 31 female and 50 male).",
       "context_window": ") and gut microbiome analysis (Gut Health Test from Thorne, n = 81, 31 female and 50 male). Within the epigenetic testing resu",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "microbiome composition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -2814,10 +2814,10 @@
       "sentence": "In the gut microbiome testing, simplified analysis suggested small but significant increases after 48 weeks in gut dysbiosis in males in the 10 mg treatment group ( F(1, 18) = 4.729, p = 0.045, \u03b7 p 2 = 0.228; md = 2.235 (95% CI = 0.056-4.414), p = 0.045), and trends of increased intestinal permeability in females in the 10 mg group ( F(1,4) = 6.641, p = 0.062, \u03b7 p 2 = 0.624; md = 3.020 (95% CI = -0.234-6.274), p = 0.062, Supplementary Table 7 ).",
       "context_window": "ed analysis suggested small but significant increases after 48 weeks in gut dysbiosis in males in the 10 mg treatment group ( F(",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "microbiome composition",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-9024",
@@ -2832,10 +2832,10 @@
       "sentence": "In the gut microbiome testing, simplified analysis suggested small but significant increases after 48 weeks in gut dysbiosis in males in the 10 mg treatment group ( F(1, 18) = 4.729, p = 0.045, \u03b7 p 2 = 0.228; md = 2.235 (95% CI = 0.056-4.414), p = 0.045), and trends of increased intestinal permeability in females in the 10 mg group ( F(1,4) = 6.641, p = 0.062, \u03b7 p 2 = 0.624; md = 3.020 (95% CI = -0.234-6.274), p = 0.062, Supplementary Table 7 ).",
       "context_window": "t increases after 48 weeks in gut dysbiosis in males in the 10 mg treatment group ( F(1, 18) = 4.729, p = 0.045, \u03b7 p 2 = 0.22",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "microbiome composition",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-9066",
@@ -2850,10 +2850,10 @@
       "sentence": "In the gut microbiome testing, simplified analysis suggested small but significant increases after 48 weeks in gut dysbiosis in males in the 10 mg treatment group ( F(1, 18) = 4.729, p = 0.045, \u03b7 p 2 = 0.228; md = 2.235 (95% CI = 0.056-4.414), p = 0.045), and trends of increased intestinal permeability in females in the 10 mg group ( F(1,4) = 6.641, p = 0.062, \u03b7 p 2 = 0.624; md = 3.020 (95% CI = -0.234-6.274), p = 0.062, Supplementary Table 7 ).",
       "context_window": "s in males in the 10 mg treatment group ( F(1, 18) = 4.729, p = 0.045, \u03b7 p 2 = 0.228; md = 2.235 (95% CI = 0.056-4.414), p = 0.04",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "microbiome composition",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-pct-9104",
@@ -2868,10 +2868,10 @@
       "sentence": "In the gut microbiome testing, simplified analysis suggested small but significant increases after 48 weeks in gut dysbiosis in males in the 10 mg treatment group ( F(1, 18) = 4.729, p = 0.045, \u03b7 p 2 = 0.228; md = 2.235 (95% CI = 0.056-4.414), p = 0.045), and trends of increased intestinal permeability in females in the 10 mg group ( F(1,4) = 6.641, p = 0.062, \u03b7 p 2 = 0.624; md = 3.020 (95% CI = -0.234-6.274), p = 0.062, Supplementary Table 7 ).",
       "context_window": "p ( F(1, 18) = 4.729, p = 0.045, \u03b7 p 2 = 0.228; md = 2.235 (95% CI = 0.056-4.414), p = 0.045), and trends of increased inte",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "microbiome composition",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-9127",
@@ -2886,10 +2886,10 @@
       "sentence": "In the gut microbiome testing, simplified analysis suggested small but significant increases after 48 weeks in gut dysbiosis in males in the 10 mg treatment group ( F(1, 18) = 4.729, p = 0.045, \u03b7 p 2 = 0.228; md = 2.235 (95% CI = 0.056-4.414), p = 0.045), and trends of increased intestinal permeability in females in the 10 mg group ( F(1,4) = 6.641, p = 0.062, \u03b7 p 2 = 0.624; md = 3.020 (95% CI = -0.234-6.274), p = 0.062, Supplementary Table 7 ).",
       "context_window": "= 0.045, \u03b7 p 2 = 0.228; md = 2.235 (95% CI = 0.056-4.414), p = 0.045), and trends of increased intestinal permeability in female",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "microbiome composition",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-9205",
@@ -2904,10 +2904,10 @@
       "sentence": "In the gut microbiome testing, simplified analysis suggested small but significant increases after 48 weeks in gut dysbiosis in males in the 10 mg treatment group ( F(1, 18) = 4.729, p = 0.045, \u03b7 p 2 = 0.228; md = 2.235 (95% CI = 0.056-4.414), p = 0.045), and trends of increased intestinal permeability in females in the 10 mg group ( F(1,4) = 6.641, p = 0.062, \u03b7 p 2 = 0.624; md = 3.020 (95% CI = -0.234-6.274), p = 0.062, Supplementary Table 7 ).",
       "context_window": "ends of increased intestinal permeability in females in the 10 mg group ( F(1,4) = 6.641, p = 0.062, \u03b7 p 2 = 0.624; md = 3.02",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "microbiome composition",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-9235",
@@ -2922,10 +2922,10 @@
       "sentence": "In the gut microbiome testing, simplified analysis suggested small but significant increases after 48 weeks in gut dysbiosis in males in the 10 mg treatment group ( F(1, 18) = 4.729, p = 0.045, \u03b7 p 2 = 0.228; md = 2.235 (95% CI = 0.056-4.414), p = 0.045), and trends of increased intestinal permeability in females in the 10 mg group ( F(1,4) = 6.641, p = 0.062, \u03b7 p 2 = 0.624; md = 3.020 (95% CI = -0.234-6.274), p = 0.062, Supplementary Table 7 ).",
       "context_window": "ermeability in females in the 10 mg group ( F(1,4) = 6.641, p = 0.062, \u03b7 p 2 = 0.624; md = 3.020 (95% CI = -0.234-6.274), p = 0.0",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "microbiome composition",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-pct-9273",
@@ -2940,10 +2940,10 @@
       "sentence": "In the gut microbiome testing, simplified analysis suggested small but significant increases after 48 weeks in gut dysbiosis in males in the 10 mg treatment group ( F(1, 18) = 4.729, p = 0.045, \u03b7 p 2 = 0.228; md = 2.235 (95% CI = 0.056-4.414), p = 0.045), and trends of increased intestinal permeability in females in the 10 mg group ( F(1,4) = 6.641, p = 0.062, \u03b7 p 2 = 0.624; md = 3.020 (95% CI = -0.234-6.274), p = 0.062, Supplementary Table 7 ).",
       "context_window": "oup ( F(1,4) = 6.641, p = 0.062, \u03b7 p 2 = 0.624; md = 3.020 (95% CI = -0.234-6.274), p = 0.062, Supplementary Table 7 ). In",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "microbiome composition",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-p-9297",
@@ -2958,10 +2958,10 @@
       "sentence": "In the gut microbiome testing, simplified analysis suggested small but significant increases after 48 weeks in gut dysbiosis in males in the 10 mg treatment group ( F(1, 18) = 4.729, p = 0.045, \u03b7 p 2 = 0.228; md = 2.235 (95% CI = 0.056-4.414), p = 0.045), and trends of increased intestinal permeability in females in the 10 mg group ( F(1,4) = 6.641, p = 0.062, \u03b7 p 2 = 0.624; md = 3.020 (95% CI = -0.234-6.274), p = 0.062, Supplementary Table 7 ).",
       "context_window": "= 0.062, \u03b7 p 2 = 0.624; md = 3.020 (95% CI = -0.234-6.274), p = 0.062, Supplementary Table 7 ). In addition to biological measur",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "microbiome composition",
       "arm": "treatment",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte-u-9634",

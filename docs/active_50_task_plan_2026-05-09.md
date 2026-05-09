@@ -26,8 +26,10 @@ horizon is rapamycin paper quality, not Researka platform engineering.
    in current branch.
 5. Run focused tests for cross-topic and LOC gates. Status: done in current branch.
 6. Run full pytest, ruff, diff check, and secret scan. Status: done in current
-   branch; full pytest `2351 passed`.
-7. Commit, push, sync VPS `/opt` and `/root`, verify service active and endpoint 503.
+   branch; latest full pytest `2369 passed`.
+7. Commit, push, sync VPS `/opt` and `/root`, verify service active and endpoint
+   503. Status: done through deployed baseline `05b962f5`; repeat after each
+   qualification-rescue checkpoint.
 
 ## Rapamycin World-Class Paper Sprint
 
@@ -41,13 +43,31 @@ horizon is rapamycin paper quality, not Researka platform engineering.
 
 ### Phase 2 - Corpus Depth
 14. Audit rapamycin retrieval funnel: retrieved, classified, extracted, receipts.
+    Status: done; retrieval is not the active bottleneck.
 15. Identify bottleneck: retrieval, classification, extraction, or receipt gating.
+    Status: done; bottleneck is qualification/binding, not topic-pack retrieval.
 16. Expand `topic_packs/rapamycin.toml` retrieval terms if bottleneck is retrieval.
+    Status: deferred; current candidate pool is already large enough.
 17. Add canonical/field anchor IDs only when source-backed and topic-pack suitable.
-18. Re-run rapamycin retrieval with target >=150 unique candidates.
-19. Re-run extraction with target >=60 successful extraction candidates.
-20. Re-run classification with target >=40 on-thesis receipts.
-21. If receipts stay <40, fix the actual bottleneck before moving on.
+    Status: deferred until qualification ceiling is reached.
+18. Re-run rapamycin retrieval with target >=150 unique candidates. Status:
+    satisfied by existing corpus candidate count.
+19. Re-run extraction with target >=60 successful extraction candidates. Status:
+    partially satisfied; quant artifacts exist for 287 files.
+20. Re-run classification with target >=40 on-thesis receipts. Status:
+    in progress; runner-admitted receipts are now 34, up from the 16 ceiling.
+21. If receipts stay <40, fix the actual bottleneck before moving on. Status:
+    in progress via `scripts/qualification_rescue.py`; current result is valid
+    but still below the >=40 minimum / 50+ target.
+21a. Add source-validated LLM qualification rescue for empty/partial candidates.
+     Status: done; LLM proposes, code validates exact sentence/raw numeric
+     surface/endpoint/arm/direction before artifact mutation.
+21b. Harden rapamycin domain vocabulary for rescued endpoint and arm terms.
+     Status: done; includes RAPA/eRapa/RPM aliases and high-signal endpoints.
+21c. Re-run runner dry-run after rescue. Status: done; accepted=34,
+     outside_scope=133, partial_only=22, partial_none_only=43, none_only=6.
+21d. Continue qualification only where exact source text supports high-confidence
+     claims; do not inflate receipts from narrative-only or protocol numerics.
 
 ### Phase 3 - Field Engagement And Novel Framework
 22. Extract named frameworks from Mannick, Lamming, Kennedy, Kaeberlein, Selman.

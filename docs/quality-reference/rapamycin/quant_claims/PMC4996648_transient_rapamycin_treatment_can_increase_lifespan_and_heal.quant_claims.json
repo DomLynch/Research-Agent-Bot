@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal",
   "doi": "10.7554/eLife.16351",
-  "extracted_at": "2026-05-09T10:18:22+00:00",
+  "extracted_at": "2026-05-09T10:47:43+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 139,
@@ -23,7 +23,7 @@
       "sentence": "Here we show that 3 months of rapamycin treatment is sufficient to increase life expectancy by up to 60% and improve measures of healthspan in middle-aged mice.",
       "context_window": "f action in the context of healthy aging. Here we show that 3 months of rapamycin treatment is sufficient to increase life expec",
       "claim_role": "protocol",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "healthspan",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -456,9 +456,9 @@
       "context_window": "the start point, sample size was as follows: eudragit males N= 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-5086",
@@ -474,9 +474,9 @@
       "context_window": "0, 20, 20, 19, 18, 18, 18, 18, 18, 18, 18; eudragit females N= 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 18, 18",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-5209",
@@ -492,9 +492,9 @@
       "context_window": "18, 18, 18, 18, 17, 17, 17, 17, 16, 16, 15, 15; eRapa males N= 19, 19, 19, 19, 19, 19, 19, 19, 19, 18, 18, 18, 18, 18, 17, 17",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-5330",
@@ -510,9 +510,9 @@
       "context_window": ", 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17; eRapa females N= 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 17, 17, 17",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-5582",
@@ -762,7 +762,7 @@
       "context_window": "an in mice when continuous treatment is initiated at either 9 months or 20 months of age ( Harrison et al., 2009 ; Miller et al.",
       "claim_role": "protocol",
       "endpoint": "lifespan",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -780,7 +780,7 @@
       "context_window": "hen continuous treatment is initiated at either 9 months or 20 months of age ( Harrison et al., 2009 ; Miller et al., 2011 ). Bec",
       "claim_role": "protocol",
       "endpoint": "lifespan",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2796,9 +2796,9 @@
       "context_window": "aining eRapa or the encapsulation control eudragit diet for 90 days starting at 20-21 months of age and then returned to a stan",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-25548",
@@ -2814,9 +2814,9 @@
       "context_window": "apsulation control eudragit diet for 90 days starting at 20-21 months of age and then returned to a standard chow diet. In contra",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-25659",
@@ -3300,7 +3300,7 @@
       "context_window": "sex-pooled mice treated with 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves",
       "claim_role": "dose",
       "endpoint": "lifespan",
-      "arm": "pooled",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3318,7 +3318,7 @@
       "context_window": "with 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves start at age=0 to represe",
       "claim_role": "dose",
       "endpoint": "lifespan",
-      "arm": "pooled",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3336,9 +3336,9 @@
       "context_window": "rom NIA. Gray box approximately indicates treatment period. N=38 vehicle injected, N=370 eRapa. ( B , C ) Sex-segregated sur",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-29082",
@@ -3354,9 +3354,9 @@
       "context_window": "ximately indicates treatment period. N=38 vehicle injected, N=370 eRapa. ( B , C ) Sex-segregated survival plots of male ( B",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-29205",
@@ -3372,9 +3372,9 @@
       "context_window": "B ) and female ( C ) mice fed 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-29229",
@@ -3390,9 +3390,9 @@
       "context_window": "e fed 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves start at age=0 to represe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-29458",
@@ -3408,9 +3408,9 @@
       "context_window": "A. Gray box approximately indicates treatment period. ( B ) N=20 eudragit males, N=19 126 ppm eRapa males. ( C ) N=18 eudrag",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-29479",
@@ -3426,9 +3426,9 @@
       "context_window": "tely indicates treatment period. ( B ) N=20 eudragit males, N=19 126 ppm eRapa males. ( C ) N=18 eudragit females, N=18 eRap",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-29511",
@@ -3444,9 +3444,9 @@
       "context_window": "( B ) N=20 eudragit males, N=19 126 ppm eRapa males. ( C ) N=18 eudragit females, N=18 eRapa females. DOI: http://dx.doi.or",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-29534",
@@ -3462,9 +3462,9 @@
       "context_window": "les, N=19 126 ppm eRapa males. ( C ) N=18 eudragit females, N=18 eRapa females. DOI: http://dx.doi.org/10.7554/eLife.16351.0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-29825",
@@ -3966,7 +3966,7 @@
       "context_window": "sex-pooled mice treated with 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves",
       "claim_role": "dose",
       "endpoint": "lifespan",
-      "arm": "pooled",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3984,7 +3984,7 @@
       "context_window": "with 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves start at age=0 to represe",
       "claim_role": "dose",
       "endpoint": "lifespan",
-      "arm": "pooled",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4002,9 +4002,9 @@
       "context_window": "rom NIA. Gray box approximately indicates treatment period. N=38 vehicle injected, N=370 eRapa. ( B , C ) Sex-segregated sur",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-32763",
@@ -4020,9 +4020,9 @@
       "context_window": "ximately indicates treatment period. N=38 vehicle injected, N=370 eRapa. ( B , C ) Sex-segregated survival plots of male ( B",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-32886",
@@ -4038,9 +4038,9 @@
       "context_window": "B ) and female ( C ) mice fed 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-32910",
@@ -4056,9 +4056,9 @@
       "context_window": "e fed 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves start at age=0 to represe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-33139",
@@ -4074,9 +4074,9 @@
       "context_window": "A. Gray box approximately indicates treatment period. ( B ) N=20 eudragit males, N=19 126 ppm eRapa males. ( C ) N=18 eudrag",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-33160",
@@ -4092,9 +4092,9 @@
       "context_window": "tely indicates treatment period. ( B ) N=20 eudragit males, N=19 126 ppm eRapa males. ( C ) N=18 eudragit females, N=18 eRap",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-33192",
@@ -4110,9 +4110,9 @@
       "context_window": "( B ) N=20 eudragit males, N=19 126 ppm eRapa males. ( C ) N=18 eudragit females, N=18 eRapa females. DOI: http://dx.doi.or",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-33215",
@@ -4128,9 +4128,9 @@
       "context_window": "les, N=19 126 ppm eRapa males. ( C ) N=18 eudragit females, N=18 eRapa females. DOI: http://dx.doi.org/10.7554/eLife.16351.0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-33366",
@@ -4182,9 +4182,9 @@
       "context_window": "rom NIA. Gray box approximately indicates treatment period. N=38 vehicle injected, N=370 eRapa. ( B , C ) Sex-segregated sur",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-33636",
@@ -4200,9 +4200,9 @@
       "context_window": "ximately indicates treatment period. N=38 vehicle injected, N=370 eRapa. ( B , C ) Sex-segregated survival plots of male ( B",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-33759",
@@ -4218,9 +4218,9 @@
       "context_window": "B ) and female ( C ) mice fed 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-33783",
@@ -4236,9 +4236,9 @@
       "context_window": "e fed 126 ppm eudragit or eRapa for 90 days starting around 600 days of age. Note: although the curves start at age=0 to represe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-34012",
@@ -4254,9 +4254,9 @@
       "context_window": "A. Gray box approximately indicates treatment period. ( B ) N=20 eudragit males, N=19 126 ppm eRapa males. ( C ) N=18 eudrag",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-34033",
@@ -4272,9 +4272,9 @@
       "context_window": "tely indicates treatment period. ( B ) N=20 eudragit males, N=19 126 ppm eRapa males. ( C ) N=18 eudragit females, N=18 eRap",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-34065",
@@ -4290,9 +4290,9 @@
       "context_window": "( B ) N=20 eudragit males, N=19 126 ppm eRapa males. ( C ) N=18 eudragit females, N=18 eRapa females. DOI: http://dx.doi.o",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-n-34088",
@@ -4308,9 +4308,9 @@
       "context_window": "les, N=19 126 ppm eRapa males. ( C ) N=18 eudragit females, N=18 eRapa females. DOI: http://dx.doi.org/10.7554/eLife.16351.",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-34381",
@@ -4595,7 +4595,7 @@
       "sentence": "Distance based permutation multivariate analysis of variance (MANOVA) ( Anderson, 2001 ) indicated that rapamycin treatment induced a significant change in the composition of fecal microbiome (p=0.018 for injection cohorts. p=0.015 for feeding cohorts.p=0.005 for pooled cohorts), even after accounting for delivery method and batch effects ( Figure 6-figure supplements 1 - 3 ).",
       "context_window": "significant change in the composition of fecal microbiome (p=0.018 for injection cohorts. p=0.015 for feeding cohorts.p=0.005",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "microbiome composition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4613,7 +4613,7 @@
       "sentence": "Distance based permutation multivariate analysis of variance (MANOVA) ( Anderson, 2001 ) indicated that rapamycin treatment induced a significant change in the composition of fecal microbiome (p=0.018 for injection cohorts. p=0.015 for feeding cohorts.p=0.005 for pooled cohorts), even after accounting for delivery method and batch effects ( Figure 6-figure supplements 1 - 3 ).",
       "context_window": "osition of fecal microbiome (p=0.018 for injection cohorts. p=0.015 for feeding cohorts.p=0.005 for pooled cohorts), even after",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "microbiome composition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -4631,7 +4631,7 @@
       "sentence": "Distance based permutation multivariate analysis of variance (MANOVA) ( Anderson, 2001 ) indicated that rapamycin treatment induced a significant change in the composition of fecal microbiome (p=0.018 for injection cohorts. p=0.015 for feeding cohorts.p=0.005 for pooled cohorts), even after accounting for delivery method and batch effects ( Figure 6-figure supplements 1 - 3 ).",
       "context_window": "(p=0.018 for injection cohorts. p=0.015 for feeding cohorts.p=0.005 for pooled cohorts), even after accounting for delivery met",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "microbiome composition",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -5837,7 +5837,7 @@
       "sentence": "The increase in SFB following rapamycin treatment was confirmed by real-time PCR of DNA from fecal samples obtained from both mice receiving injections or encapsulated rapamycin ( Figure 6B , Figure 6-figure supplement 2B ), as well as by semi-quantitative histological scoring of the small intestine in an independent cohort of mice obtained from the Harrison Lab at the Jackson Laboratory and injected with 8 mg/kg/day of for 3 months at the University of Washington ( Figure 6C,D , Figure 6-figure supplement 2C ).",
       "context_window": "he Harrison Lab at the Jackson Laboratory and injected with 8 mg/kg/day of for 3 months at the University of Washington ( Figure 6C",
       "claim_role": "dose",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -5855,7 +5855,7 @@
       "sentence": "The increase in SFB following rapamycin treatment was confirmed by real-time PCR of DNA from fecal samples obtained from both mice receiving injections or encapsulated rapamycin ( Figure 6B , Figure 6-figure supplement 2B ), as well as by semi-quantitative histological scoring of the small intestine in an independent cohort of mice obtained from the Harrison Lab at the Jackson Laboratory and injected with 8 mg/kg/day of for 3 months at the University of Washington ( Figure 6C,D , Figure 6-figure supplement 2C ).",
       "context_window": "the Jackson Laboratory and injected with 8 mg/kg/day of for 3 months at the University of Washington ( Figure 6C,D , Figure 6-fi",
       "claim_role": "dose",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -6269,10 +6269,10 @@
       "sentence": "This work extends prior evidence indicating that short-term rapamycin treatment can improve health in mice, including one experiment suggesting that 4 mg/kg rapamycin every other day for 6 weeks enhanced survival until around 30 months of age in a small cohort ( Chen et al., 2009 ), and studies reporting improvements in cardiac ( Dai et al., 2014 ; Flynn et al., 2013 ) and immune ( Chen et al., 2009 ) function following transient treatment with rapamycin.",
       "context_window": "ve health in mice, including one experiment suggesting that 4 mg/kg rapamycin every other day for 6 weeks enhanced survival",
       "claim_role": "effect",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal-u-501",
@@ -6287,7 +6287,7 @@
       "sentence": "This work extends prior evidence indicating that short-term rapamycin treatment can improve health in mice, including one experiment suggesting that 4 mg/kg rapamycin every other day for 6 weeks enhanced survival until around 30 months of age in a small cohort ( Chen et al., 2009 ), and studies reporting improvements in cardiac ( Dai et al., 2014 ; Flynn et al., 2013 ) and immune ( Chen et al., 2009 ) function following transient treatment with rapamycin.",
       "context_window": "iment suggesting that 4 mg/kg rapamycin every other day for 6 weeks enhanced survival until around 30 months of age in a small",
       "claim_role": "protocol",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -6305,7 +6305,7 @@
       "sentence": "This work extends prior evidence indicating that short-term rapamycin treatment can improve health in mice, including one experiment suggesting that 4 mg/kg rapamycin every other day for 6 weeks enhanced survival until around 30 months of age in a small cohort ( Chen et al., 2009 ), and studies reporting improvements in cardiac ( Dai et al., 2014 ; Flynn et al., 2013 ) and immune ( Chen et al., 2009 ) function following transient treatment with rapamycin.",
       "context_window": "every other day for 6 weeks enhanced survival until around 30 months of age in a small cohort ( Chen et al., 2009 ), and studies",
       "claim_role": "protocol",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"

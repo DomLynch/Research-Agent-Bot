@@ -1,14 +1,14 @@
 {
   "paper_id": "PMC6996961_rapamycin_persistently_improves_cardiac_function_in_aged_mal",
   "doi": "10.1111/acel.13086",
-  "extracted_at": "2026-05-09T10:18:25+00:00",
-  "extractor_version": "0.6.0",
+  "extracted_at": "2026-05-09T10:47:45+00:00",
+  "extractor_version": "0.6.0+llm_rescue_v1",
   "claims_count_by_type": {
-    "unit_value": 22,
-    "percentage": 11,
-    "p_value": 16,
     "mean_sd": 2,
-    "sample_size": 6
+    "p_value": 19,
+    "percentage": 13,
+    "sample_size": 6,
+    "unit_value": 22
   },
   "claims": [
     {
@@ -42,7 +42,7 @@
       "sentence": "The proteomic and metabolomic abundance changes that occur after 8 weeks of rapamycin treatment have varying persistence after 8 further weeks without the drug.",
       "context_window": "roteomic and metabolomic abundance changes that occur after 8 weeks of rapamycin treatment have varying persistence after 8 fur",
       "claim_role": "duration",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -114,7 +114,7 @@
       "sentence": "In both sexes, rapamycin treatment replicated our previous results showing a significant improvement in cardiac diastolic function, and this effect was persistent for 2 months after rapamycin was eliminated from the diet.",
       "context_window": "diac diastolic function, and this effect was persistent for 2 months after rapamycin was eliminated from the diet. By focusing o",
       "claim_role": "background",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -150,7 +150,7 @@
       "sentence": "After cessation of treatment, rapamycin\u2010induced improvement persisted for an additional 8 weeks, with cardiac performance maintained at levels near those of mice receiving 16\u2010week continuous rapamycin treatment (diastolic function, 82% persistent in females and 78% in males at 16 weeks).",
       "context_window": ", rapamycin\u2010induced improvement persisted for an additional 8 weeks, with cardiac performance maintained at levels near those o",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -168,7 +168,7 @@
       "sentence": "After cessation of treatment, rapamycin\u2010induced improvement persisted for an additional 8 weeks, with cardiac performance maintained at levels near those of mice receiving 16\u2010week continuous rapamycin treatment (diastolic function, 82% persistent in females and 78% in males at 16 weeks).",
       "context_window": "16\u2010week continuous rapamycin treatment (diastolic function, 82% persistent in females and 78% in males at 16 weeks). Rapam",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -186,7 +186,7 @@
       "sentence": "After cessation of treatment, rapamycin\u2010induced improvement persisted for an additional 8 weeks, with cardiac performance maintained at levels near those of mice receiving 16\u2010week continuous rapamycin treatment (diastolic function, 82% persistent in females and 78% in males at 16 weeks).",
       "context_window": "reatment (diastolic function, 82% persistent in females and 78% in males at 16 weeks). Rapamycin persistently improves dia",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -204,7 +204,7 @@
       "sentence": "After cessation of treatment, rapamycin\u2010induced improvement persisted for an additional 8 weeks, with cardiac performance maintained at levels near those of mice receiving 16\u2010week continuous rapamycin treatment (diastolic function, 82% persistent in females and 78% in males at 16 weeks).",
       "context_window": "lic function, 82% persistent in females and 78% in males at 16 weeks). Rapamycin persistently improves diastolic function and r",
       "claim_role": "protocol",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -223,7 +223,7 @@
       "context_window": "ystolic function parameters measured by echocardiography at 16 weeks. EF: ejection fraction; FS: fractional shortening. Black ba",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -240,7 +240,7 @@
       "sentence": "Black bars, %EF; white bars, %FS; C = control, P = persistence, R = rapa, Y = young. *significant by t test between old control and young groups, \u2020significant by t test between pers and young groups. (c) Heart mass in grams normalized to tibia length (mm) for all groups at 16 weeks. p \u2010values from Tukey's post hoc tests when sex\u2010specific one\u2010way ANOVA was significant. * versus young, # versus control, and versus rapa. (d) Body mass in grams for all groups over time. * p < .05, ** p < .01, *** p < .001\n\nOur previous work in 24\u2010 to 26\u2010month\u2010old female C57BL/6NIA mice showed no significant change in systolic functional measures (fractional shortening, FS and EF) during 10 weeks of rapamycin treatment (Dai et al., 2014 ).",
       "context_window": "in grams normalized to tibia length (mm) for all groups at 16 weeks. p \u2010values from Tukey's post hoc tests when sex\u2010specific on",
       "claim_role": "protocol",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -258,7 +258,7 @@
       "sentence": "Black bars, %EF; white bars, %FS; C = control, P = persistence, R = rapa, Y = young. *significant by t test between old control and young groups, \u2020significant by t test between pers and young groups. (c) Heart mass in grams normalized to tibia length (mm) for all groups at 16 weeks. p \u2010values from Tukey's post hoc tests when sex\u2010specific one\u2010way ANOVA was significant. * versus young, # versus control, and versus rapa. (d) Body mass in grams for all groups over time. * p < .05, ** p < .01, *** p < .001\n\nOur previous work in 24\u2010 to 26\u2010month\u2010old female C57BL/6NIA mice showed no significant change in systolic functional measures (fractional shortening, FS and EF) during 10 weeks of rapamycin treatment (Dai et al., 2014 ).",
       "context_window": "us rapa. (d) Body mass in grams for all groups over time. * p < .05, ** p < .01, *** p < .001 Our previous work in 24\u2010 to 26\u2010m",
       "claim_role": "duration",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -276,7 +276,7 @@
       "sentence": "Black bars, %EF; white bars, %FS; C = control, P = persistence, R = rapa, Y = young. *significant by t test between old control and young groups, \u2020significant by t test between pers and young groups. (c) Heart mass in grams normalized to tibia length (mm) for all groups at 16 weeks. p \u2010values from Tukey's post hoc tests when sex\u2010specific one\u2010way ANOVA was significant. * versus young, # versus control, and versus rapa. (d) Body mass in grams for all groups over time. * p < .05, ** p < .01, *** p < .001\n\nOur previous work in 24\u2010 to 26\u2010month\u2010old female C57BL/6NIA mice showed no significant change in systolic functional measures (fractional shortening, FS and EF) during 10 weeks of rapamycin treatment (Dai et al., 2014 ).",
       "context_window": "Body mass in grams for all groups over time. * p < .05, ** p < .01, *** p < .001 Our previous work in 24\u2010 to 26\u2010month\u2010old fem",
       "claim_role": "duration",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -294,7 +294,7 @@
       "sentence": "Black bars, %EF; white bars, %FS; C = control, P = persistence, R = rapa, Y = young. *significant by t test between old control and young groups, \u2020significant by t test between pers and young groups. (c) Heart mass in grams normalized to tibia length (mm) for all groups at 16 weeks. p \u2010values from Tukey's post hoc tests when sex\u2010specific one\u2010way ANOVA was significant. * versus young, # versus control, and versus rapa. (d) Body mass in grams for all groups over time. * p < .05, ** p < .01, *** p < .001\n\nOur previous work in 24\u2010 to 26\u2010month\u2010old female C57BL/6NIA mice showed no significant change in systolic functional measures (fractional shortening, FS and EF) during 10 weeks of rapamycin treatment (Dai et al., 2014 ).",
       "context_window": "grams for all groups over time. * p < .05, ** p < .01, *** p < .001 Our previous work in 24\u2010 to 26\u2010month\u2010old female C57BL/6NIA",
       "claim_role": "duration",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -312,7 +312,7 @@
       "sentence": "Black bars, %EF; white bars, %FS; C = control, P = persistence, R = rapa, Y = young. *significant by t test between old control and young groups, \u2020significant by t test between pers and young groups. (c) Heart mass in grams normalized to tibia length (mm) for all groups at 16 weeks. p \u2010values from Tukey's post hoc tests when sex\u2010specific one\u2010way ANOVA was significant. * versus young, # versus control, and versus rapa. (d) Body mass in grams for all groups over time. * p < .05, ** p < .01, *** p < .001\n\nOur previous work in 24\u2010 to 26\u2010month\u2010old female C57BL/6NIA mice showed no significant change in systolic functional measures (fractional shortening, FS and EF) during 10 weeks of rapamycin treatment (Dai et al., 2014 ).",
       "context_window": "nctional measures (fractional shortening, FS and EF) during 10 weeks of rapamycin treatment (Dai et al., 2014 ). Concordantly, t",
       "claim_role": "duration",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -366,7 +366,7 @@
       "sentence": "Female mice at 16 weeks showed a decrease in cardiac hypertrophy after rapamycin treatment, and this effect trended toward persistent ( p = .086) by t test.",
       "context_window": "ycin treatment, and this effect trended toward persistent ( p = .086) by t test. Males also showed a reduction in hypertrophy wi",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "muscle hypertrophy",
       "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -384,7 +384,7 @@
       "sentence": "Males also showed a reduction in hypertrophy with rapamycin treatment ( p = .012), and again, this difference approached significance in the persistence group ( p = .081) by t test.",
       "context_window": "howed a reduction in hypertrophy with rapamycin treatment ( p = .012), and again, this difference approached significance in the",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "muscle hypertrophy",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -402,7 +402,7 @@
       "sentence": "Males also showed a reduction in hypertrophy with rapamycin treatment ( p = .012), and again, this difference approached significance in the persistence group ( p = .081) by t test.",
       "context_window": "fference approached significance in the persistence group ( p = .081) by t test. Combining both sexes by scaling all data to the",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "muscle hypertrophy",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -512,7 +512,7 @@
       "sentence": "C: control; R: rapamycin; P: persistence; Y: young\n\nIn our previous work, we applied proteomics to detect many differences in protein abundances due to 10\u2010week rapamycin treatment beginning at 24 months in female C57BL/6NIA mice (Dai et al., 2014 ).",
       "context_window": "abundances due to 10\u2010week rapamycin treatment beginning at 24 months in female C57BL/6NIA mice (Dai et al., 2014 ). Thus, an imp",
       "claim_role": "protocol",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -530,7 +530,7 @@
       "sentence": "It can be seen that for all top six pathways but mitochondrial dysfunction, the median protein abundance in the female persistence groups is actually a larger change (120%-125% effect in the same direction) than in the continuous rapamycin treatment group, whereas the median mitochondrial dysfunction pathway persistence is ~86% persistent in females (Table S5 ).",
       "context_window": "the female persistence groups is actually a larger change (120%-125% effect in the same direction) than in the continuous r",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -548,7 +548,7 @@
       "sentence": "It can be seen that for all top six pathways but mitochondrial dysfunction, the median protein abundance in the female persistence groups is actually a larger change (120%-125% effect in the same direction) than in the continuous rapamycin treatment group, whereas the median mitochondrial dysfunction pathway persistence is ~86% persistent in females (Table S5 ).",
       "context_window": "female persistence groups is actually a larger change (120%-125% effect in the same direction) than in the continuous rapamy",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -566,7 +566,7 @@
       "sentence": "It can be seen that for all top six pathways but mitochondrial dysfunction, the median protein abundance in the female persistence groups is actually a larger change (120%-125% effect in the same direction) than in the continuous rapamycin treatment group, whereas the median mitochondrial dysfunction pathway persistence is ~86% persistent in females (Table S5 ).",
       "context_window": "he median mitochondrial dysfunction pathway persistence is ~86% persistent in females (Table S5 ). As predicted by the over",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -620,7 +620,7 @@
       "sentence": "C-untreated control, R-continuous rapamycin treatment, and P-persistence 8 weeks after cessation of 8\u2010week treatment.",
       "context_window": "ontrol, R-continuous rapamycin treatment, and P-persistence 8 weeks after cessation of 8\u2010week treatment. Protein names are show",
       "claim_role": "unknown",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -747,9 +747,9 @@
       "context_window": "echnical triplicates). N per group is 8 to 16. C-control at 16 weeks, P-persistence, R-rapa, Y-young. Stars indicate significanc",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6996961_rapamycin_persistently_improves_cardiac_function_in_aged_mal-p-13856",
@@ -1038,6 +1038,107 @@
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6996961_rapamycin_persistently_improves_cardiac_function_in_aged_mal-llmrescue-0eb823a01866",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1306,
+      "sentence": "After cessation of treatment, rapamycin\u2010induced improvement persisted for an additional 8 weeks, with cardiac performance maintained at levels near those of mice receiving 16\u2010week continuous rapamycin treatment (diastolic function, 82% persistent in females and 78% in males at 16 weeks).",
+      "context_window": "16\u2010week continuous rapamycin treatment (diastolic function, 82% persistent in females and 78% in males at 16 weeks).",
+      "claim_role": "effect",
+      "endpoint": "cardiac function",
+      "arm": "rapamycin",
+      "direction": "increase",
+      "binding_confidence": "high",
+      "rescue_method": "llm_qualification_rescue_v1",
+      "rescue_model": "deepseek/deepseek-v4-pro"
+    },
+    {
+      "claim_id": "PMC6996961_rapamycin_persistently_improves_cardiac_function_in_aged_mal-llmrescue-cb5dc9a4c052",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1336,
+      "sentence": "After cessation of treatment, rapamycin\u2010induced improvement persisted for an additional 8 weeks, with cardiac performance maintained at levels near those of mice receiving 16\u2010week continuous rapamycin treatment (diastolic function, 82% persistent in females and 78% in males at 16 weeks).",
+      "context_window": "reatment (diastolic function, 82% persistent in females and 78% in males at 16 weeks).",
+      "claim_role": "effect",
+      "endpoint": "cardiac function",
+      "arm": "rapamycin",
+      "direction": "increase",
+      "binding_confidence": "high",
+      "rescue_method": "llm_qualification_rescue_v1",
+      "rescue_model": "deepseek/deepseek-v4-pro"
+    },
+    {
+      "claim_id": "PMC6996961_rapamycin_persistently_improves_cardiac_function_in_aged_mal-llmrescue-bfaa0c1d63cf",
+      "claim_type": "p_value",
+      "raw_text": "p = .086",
+      "numeric_values": [
+        0.086
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3483,
+      "sentence": "Female mice at 16 weeks showed a decrease in cardiac hypertrophy after rapamycin treatment, and this effect trended toward persistent ( p = .086) by t test.",
+      "context_window": "ycin treatment, and this effect trended toward persistent ( p = .086) by t test.",
+      "claim_role": "effect",
+      "endpoint": "cardiac function",
+      "arm": "rapamycin",
+      "direction": "decrease",
+      "binding_confidence": "high",
+      "rescue_method": "llm_qualification_rescue_v1",
+      "rescue_model": "deepseek/deepseek-v4-pro"
+    },
+    {
+      "claim_id": "PMC6996961_rapamycin_persistently_improves_cardiac_function_in_aged_mal-llmrescue-b184b5e37636",
+      "claim_type": "p_value",
+      "raw_text": "p = .012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3576,
+      "sentence": "Males also showed a reduction in hypertrophy with rapamycin treatment ( p = .012), and again, this difference approached significance in the persistence group ( p = .081) by t test.",
+      "context_window": "howed a reduction in hypertrophy with rapamycin treatment ( p = .012), and again, this difference approached significance in the",
+      "claim_role": "effect",
+      "endpoint": "cardiac function",
+      "arm": "rapamycin",
+      "direction": "decrease",
+      "binding_confidence": "high",
+      "rescue_method": "llm_qualification_rescue_v1",
+      "rescue_model": "deepseek/deepseek-v4-pro"
+    },
+    {
+      "claim_id": "PMC6996961_rapamycin_persistently_improves_cardiac_function_in_aged_mal-llmrescue-25e89253af48",
+      "claim_type": "p_value",
+      "raw_text": "p = .081",
+      "numeric_values": [
+        0.081
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3665,
+      "sentence": "Males also showed a reduction in hypertrophy with rapamycin treatment ( p = .012), and again, this difference approached significance in the persistence group ( p = .081) by t test.",
+      "context_window": "fference approached significance in the persistence group ( p = .081) by t test.",
+      "claim_role": "effect",
+      "endpoint": "cardiac function",
+      "arm": "rapamycin",
+      "direction": "decrease",
+      "binding_confidence": "high",
+      "rescue_method": "llm_qualification_rescue_v1",
+      "rescue_model": "deepseek/deepseek-v4-pro"
     }
-  ]
+  ],
+  "rescued_at": "2026-05-09T11:02:57+00:00"
 }

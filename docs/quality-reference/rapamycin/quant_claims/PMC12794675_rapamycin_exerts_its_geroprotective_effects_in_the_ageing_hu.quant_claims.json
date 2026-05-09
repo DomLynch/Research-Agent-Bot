@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12794675_rapamycin_exerts_its_geroprotective_effects_in_the_ageing_hu",
   "doi": "10.1111/acel.70364",
-  "extracted_at": "2026-05-09T10:18:19+00:00",
+  "extracted_at": "2026-05-09T10:47:40+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 37,
@@ -582,10 +582,10 @@
       "sentence": "Where specified for individual experiments, CD4 + T cells were isolated by negative selection on a magnetic column using a kit (Miltenyi) and subsequently activated in wells of a 24\u2010well plate (pre\u2010coated with 1 \u03bcg/mL anti\u2010CD3 in PBS for 2 h at 37\u00b0C) with 1 \u03bcg/mL anti\u2010CD28 in the culture media, for 3 days (0.5-1 \u00d7 10 6 cells/mL).",
       "context_window": "h at 37\u00b0C) with 1 \u03bcg/mL anti\u2010CD28 in the culture media, for 3 days (0.5-1 \u00d7 10 6 cells/mL). After 3 days, cells were harvested",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12794675_rapamycin_exerts_its_geroprotective_effects_in_the_ageing_hu-u-5085",
@@ -924,7 +924,7 @@
       "sentence": "T cell DNA damage is associated with elevated mTORC1 activity. (a) DNA damage assay design. (b) Representative histograms of \u03b3H2AX levels by flow cytometry following 4\u2010h recovery in untreated, zeocin\u2010treated (200 \u03bcg/mL) and H 2 O 2 \u2010treated (25 \u03bcM) PBMCs gated on CD4 + T cells. (c, d) Proportion of \u03b3H2AX + of CD4 + (left) and CD8 + (right) T cells after (c) 4 h recovery from zeocin treatment, n = 6 healthy donors or (d) across different recovery times after zeocin treatment, from 4 independent experiments using PBMCs from 1 donor. (e) Heatmaps for levels of DDR signalling molecules expressed as fold change from untreated (UT) cells. (f) Representative gating of \u03b3H2AX + and \u03b3H2AX - cells based on untreated (grey), zeocin\u2010treated (red) cells, and fluorescence minus one (FMO, dotted grey) control. (g, h) Geometric mean fluorescence intensity (gMFI) of (g) p\u2010S6 and (h) p\u2010Akt in zeocin\u2010treated CD4 + or CD8 + T cells gated as either positive or negative for \u03b3H2AX, n = 6 healthy donors. p \u2010values are derived from a two\u2010way ANOVA with \u0160\u00edd\u00e1k's multiple comparisons test (d), and a Wilcoxon matched\u2010pairs signed rank test (c, g, h).",
       "context_window": "ight) T cells after (c) 4 h recovery from zeocin treatment, n = 6 healthy donors or (d) across different recovery times after",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -942,7 +942,7 @@
       "sentence": "T cell DNA damage is associated with elevated mTORC1 activity. (a) DNA damage assay design. (b) Representative histograms of \u03b3H2AX levels by flow cytometry following 4\u2010h recovery in untreated, zeocin\u2010treated (200 \u03bcg/mL) and H 2 O 2 \u2010treated (25 \u03bcM) PBMCs gated on CD4 + T cells. (c, d) Proportion of \u03b3H2AX + of CD4 + (left) and CD8 + (right) T cells after (c) 4 h recovery from zeocin treatment, n = 6 healthy donors or (d) across different recovery times after zeocin treatment, from 4 independent experiments using PBMCs from 1 donor. (e) Heatmaps for levels of DDR signalling molecules expressed as fold change from untreated (UT) cells. (f) Representative gating of \u03b3H2AX + and \u03b3H2AX - cells based on untreated (grey), zeocin\u2010treated (red) cells, and fluorescence minus one (FMO, dotted grey) control. (g, h) Geometric mean fluorescence intensity (gMFI) of (g) p\u2010S6 and (h) p\u2010Akt in zeocin\u2010treated CD4 + or CD8 + T cells gated as either positive or negative for \u03b3H2AX, n = 6 healthy donors. p \u2010values are derived from a two\u2010way ANOVA with \u0160\u00edd\u00e1k's multiple comparisons test (d), and a Wilcoxon matched\u2010pairs signed rank test (c, g, h).",
       "context_window": "8 + T cells gated as either positive or negative for \u03b3H2AX, n = 6 healthy donors. p \u2010values are derived from a two\u2010way ANOVA",
       "claim_role": "effect",
-      "endpoint": "mTOR signaling",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -960,7 +960,7 @@
       "sentence": "This increased \u03b3H2AX signal was associated with a large increase in the percentage of T cells staining positive for \u03b3H2AX, from ~10% untreated control cells to ~30% zeocin\u2010treated both CD4 + and CD8 + cells (Figure 1c ).",
       "context_window": "he percentage of T cells staining positive for \u03b3H2AX, from ~10% untreated control cells to ~30% zeocin\u2010treated both CD4 + a",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -978,7 +978,7 @@
       "sentence": "This increased \u03b3H2AX signal was associated with a large increase in the percentage of T cells staining positive for \u03b3H2AX, from ~10% untreated control cells to ~30% zeocin\u2010treated both CD4 + and CD8 + cells (Figure 1c ).",
       "context_window": "g positive for \u03b3H2AX, from ~10% untreated control cells to ~30% zeocin\u2010treated both CD4 + and CD8 + cells (Figure 1c ). We",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -996,7 +996,7 @@
       "sentence": "By contrast, in CD8 + cells, this reduction was only significant on rapamycin treatment (Figure 2b , right).\n\nmTOR inhibition reduces the DNA damage response in genotoxin\u2010exposed human T cells from healthy donors. (a) Experimental design. (b) Representative flow cytometry fluorescence histograms of \u03b3H2AX levels in CD4 + T cells with fluorescence minus one (FMO) control (left), with quantification of the proportion of \u03b3H2AX + cells across conditions in CD4 + and CD8 + T cells, n = 3 healthy donors. (c, d) Representative fluorescence histograms of p\u2010Chk1 (c) or p\u2010Chk2 (d) levels in CD4 + T cells, with quantification of fluorescence relative to average of DMSO untreated control in CD4 + and CD8 + T cells, n = 3 healthy donors. (e) Experimental design for (f). (f) Heatmaps of gMFI of p21 and p53 assessed by flow cytometry, in CD4 + and CD8 + T cells at 4 and 24 h recovery from zeocin, expressed as fold change from the DMSO untreated (UT) condition for each recovery time point. p \u2010values represent comparisons to the DMSO zeocin (ZEO) condition, n = 4 healthy donors. p \u2010values are determined from a two\u2010way ANOVA with \u0160\u00edd\u00e1k's (b-d) or Dunnett's (f) multiple comparisons test.",
       "context_window": "\u03b3H2AX + cells across conditions in CD4 + and CD8 + T cells, n = 3 healthy donors. (c, d) Representative fluorescence histogra",
       "claim_role": "unknown",
-      "endpoint": "cellular senescence",
+      "endpoint": "T-cell function",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1014,7 +1014,7 @@
       "sentence": "By contrast, in CD8 + cells, this reduction was only significant on rapamycin treatment (Figure 2b , right).\n\nmTOR inhibition reduces the DNA damage response in genotoxin\u2010exposed human T cells from healthy donors. (a) Experimental design. (b) Representative flow cytometry fluorescence histograms of \u03b3H2AX levels in CD4 + T cells with fluorescence minus one (FMO) control (left), with quantification of the proportion of \u03b3H2AX + cells across conditions in CD4 + and CD8 + T cells, n = 3 healthy donors. (c, d) Representative fluorescence histograms of p\u2010Chk1 (c) or p\u2010Chk2 (d) levels in CD4 + T cells, with quantification of fluorescence relative to average of DMSO untreated control in CD4 + and CD8 + T cells, n = 3 healthy donors. (e) Experimental design for (f). (f) Heatmaps of gMFI of p21 and p53 assessed by flow cytometry, in CD4 + and CD8 + T cells at 4 and 24 h recovery from zeocin, expressed as fold change from the DMSO untreated (UT) condition for each recovery time point. p \u2010values represent comparisons to the DMSO zeocin (ZEO) condition, n = 4 healthy donors. p \u2010values are determined from a two\u2010way ANOVA with \u0160\u00edd\u00e1k's (b-d) or Dunnett's (f) multiple comparisons test.",
       "context_window": "erage of DMSO untreated control in CD4 + and CD8 + T cells, n = 3 healthy donors. (e) Experimental design for (f). (f) Heatma",
       "claim_role": "unknown",
-      "endpoint": "cellular senescence",
+      "endpoint": "T-cell function",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1032,7 +1032,7 @@
       "sentence": "By contrast, in CD8 + cells, this reduction was only significant on rapamycin treatment (Figure 2b , right).\n\nmTOR inhibition reduces the DNA damage response in genotoxin\u2010exposed human T cells from healthy donors. (a) Experimental design. (b) Representative flow cytometry fluorescence histograms of \u03b3H2AX levels in CD4 + T cells with fluorescence minus one (FMO) control (left), with quantification of the proportion of \u03b3H2AX + cells across conditions in CD4 + and CD8 + T cells, n = 3 healthy donors. (c, d) Representative fluorescence histograms of p\u2010Chk1 (c) or p\u2010Chk2 (d) levels in CD4 + T cells, with quantification of fluorescence relative to average of DMSO untreated control in CD4 + and CD8 + T cells, n = 3 healthy donors. (e) Experimental design for (f). (f) Heatmaps of gMFI of p21 and p53 assessed by flow cytometry, in CD4 + and CD8 + T cells at 4 and 24 h recovery from zeocin, expressed as fold change from the DMSO untreated (UT) condition for each recovery time point. p \u2010values represent comparisons to the DMSO zeocin (ZEO) condition, n = 4 healthy donors. p \u2010values are determined from a two\u2010way ANOVA with \u0160\u00edd\u00e1k's (b-d) or Dunnett's (f) multiple comparisons test.",
       "context_window": "s represent comparisons to the DMSO zeocin (ZEO) condition, n = 4 healthy donors. p \u2010values are determined from a two\u2010way ANO",
       "claim_role": "unknown",
-      "endpoint": "cellular senescence",
+      "endpoint": "T-cell function",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1068,7 +1068,7 @@
       "sentence": "Each data point is represented as fold change in \u03b3H2AX + cells from DMSO \u2192 DMSO \u2192 DMSO untreated (UT) cells on a per\u2010donor basis. p \u2010values represent comparisons between the DMSO\u2192DMSO\u2192DMSO zeocin (ZEO) condition and all other zeocin treatment conditions that included rapamycin, n = 6 healthy donors. (d, e) Simple linear regression analyses from experiment in (a), of \u03b3H2AX and either p\u2010S6 (d) or p\u2010Akt (e) in zeocin\u2010treated CD4 + or CD8 + T cells.",
       "context_window": "other zeocin treatment conditions that included rapamycin, n = 6 healthy donors. (d, e) Simple linear regression analyses fr",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1104,7 +1104,7 @@
       "sentence": "Data are pooled from 6 independent experiments, n = 6 healthy donors. (f) Representative gating of p\u2010S6 high , p\u2010S6 low , p\u2010Akt high and p\u2010Akt low populations within \u03b3H2AX + (red) and \u03b3H2AX - (grey) zeocin\u2010treated CD4 + T cells, based on fluorescence minus one (FMO, dotted grey) controls. (g, h) Quantification of populations gated as in (f) across conditions in (a) for (g) p\u2010S6 and (h) p\u2010Akt levels, n = 6 healthy donors. p \u2010values are derived from a two\u2010way ANOVA with \u0160\u00edd\u00e1k's (b, c) multiple comparisons test.",
       "context_window": "indicated. Data are pooled from 6 independent experiments, n = 6 healthy donors. (f) Representative gating of p\u2010S6 high , p\u2010",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "pooled",
       "direction": "",
       "binding_confidence": "partial"
@@ -1122,7 +1122,7 @@
       "sentence": "Data are pooled from 6 independent experiments, n = 6 healthy donors. (f) Representative gating of p\u2010S6 high , p\u2010S6 low , p\u2010Akt high and p\u2010Akt low populations within \u03b3H2AX + (red) and \u03b3H2AX - (grey) zeocin\u2010treated CD4 + T cells, based on fluorescence minus one (FMO, dotted grey) controls. (g, h) Quantification of populations gated as in (f) across conditions in (a) for (g) p\u2010S6 and (h) p\u2010Akt levels, n = 6 healthy donors. p \u2010values are derived from a two\u2010way ANOVA with \u0160\u00edd\u00e1k's (b, c) multiple comparisons test.",
       "context_window": "across conditions in (a) for (g) p\u2010S6 and (h) p\u2010Akt levels, n = 6 healthy donors. p \u2010values are derived from a two\u2010way ANOVA",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "pooled",
       "direction": "",
       "binding_confidence": "partial"
@@ -1140,7 +1140,7 @@
       "sentence": "Zeocin treatment of both CD4 + and CD8 + T cells halved the proportion of cells in S\u2010phase (from 52% without zeocin to 26% with zeocin treatment) with a concomitant increase in the proportion of cells in G 2 /M phase (from 1.3% to 15%) (Figure S3b ), suggesting that DNA\u2010damaged cells proceed to G 2 but then activate cell cycle checkpoints to prevent cell division.",
       "context_window": "8 + T cells halved the proportion of cells in S\u2010phase (from 52% without zeocin to 26% with zeocin treatment) with a concomi",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1158,7 +1158,7 @@
       "sentence": "Zeocin treatment of both CD4 + and CD8 + T cells halved the proportion of cells in S\u2010phase (from 52% without zeocin to 26% with zeocin treatment) with a concomitant increase in the proportion of cells in G 2 /M phase (from 1.3% to 15%) (Figure S3b ), suggesting that DNA\u2010damaged cells proceed to G 2 but then activate cell cycle checkpoints to prevent cell division.",
       "context_window": "proportion of cells in S\u2010phase (from 52% without zeocin to 26% with zeocin treatment) with a concomitant increase in the p",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1176,7 +1176,7 @@
       "sentence": "Zeocin treatment of both CD4 + and CD8 + T cells halved the proportion of cells in S\u2010phase (from 52% without zeocin to 26% with zeocin treatment) with a concomitant increase in the proportion of cells in G 2 /M phase (from 1.3% to 15%) (Figure S3b ), suggesting that DNA\u2010damaged cells proceed to G 2 but then activate cell cycle checkpoints to prevent cell division.",
       "context_window": "t increase in the proportion of cells in G 2 /M phase (from 1.3% to 15%) (Figure S3b ), suggesting that DNA\u2010damaged cells pr",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1194,7 +1194,7 @@
       "sentence": "Zeocin treatment of both CD4 + and CD8 + T cells halved the proportion of cells in S\u2010phase (from 52% without zeocin to 26% with zeocin treatment) with a concomitant increase in the proportion of cells in G 2 /M phase (from 1.3% to 15%) (Figure S3b ), suggesting that DNA\u2010damaged cells proceed to G 2 but then activate cell cycle checkpoints to prevent cell division.",
       "context_window": "se in the proportion of cells in G 2 /M phase (from 1.3% to 15%) (Figure S3b ), suggesting that DNA\u2010damaged cells proceed t",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1230,7 +1230,7 @@
       "sentence": "Consistent with the increase in cells with major DNA lesions following zeocin exposure, we observed a decrease in the percentage of live CD4 + T cells at 4 h, leading to a severe reduction to only 20% live cells by 24 h recovery from zeocin in DMSO vehicle control cells.",
       "context_window": "CD4 + T cells at 4 h, leading to a severe reduction to only 20% live cells by 24 h recovery from zeocin in DMSO vehicle con",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1284,7 +1284,7 @@
       "sentence": "FSC = forward scatter. (c) Table summarising significantly increased markers (black dots) in age\u2010related immune subsets compared to early\u2010differentiated immune cell counterparts, as assessed with one\u2010way ANOVAs with Dunnett's multiple comparisons test between age\u2010related and early\u2010differentiated subsets for each cell type ( n = 8 healthy donors). (d) Proportion of CD8 + T cells positive for CD28, CD57 and KLRG1 in PBMCs from healthy younger donors (17-50 years old, n = 8) and older donors (56-69 years old, n = 9). p \u2010values are derived from unpaired t \u2010tests. (e) Geometric mean fluorescence intensity (gMFI) of p\u2010S6 in immune subsets in older donors ( n = 9) expressed as log 2 (fold change) from the mean value of cells of control donors ( n = 8), assessed by flow cytometry.",
       "context_window": "lated and early\u2010differentiated subsets for each cell type ( n = 8 healthy donors). (d) Proportion of CD8 + T cells positive f",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1302,7 +1302,7 @@
       "sentence": "FSC = forward scatter. (c) Table summarising significantly increased markers (black dots) in age\u2010related immune subsets compared to early\u2010differentiated immune cell counterparts, as assessed with one\u2010way ANOVAs with Dunnett's multiple comparisons test between age\u2010related and early\u2010differentiated subsets for each cell type ( n = 8 healthy donors). (d) Proportion of CD8 + T cells positive for CD28, CD57 and KLRG1 in PBMCs from healthy younger donors (17-50 years old, n = 8) and older donors (56-69 years old, n = 9). p \u2010values are derived from unpaired t \u2010tests. (e) Geometric mean fluorescence intensity (gMFI) of p\u2010S6 in immune subsets in older donors ( n = 9) expressed as log 2 (fold change) from the mean value of cells of control donors ( n = 8), assessed by flow cytometry.",
       "context_window": "28, CD57 and KLRG1 in PBMCs from healthy younger donors (17-50 years old, n = 8) and older donors (56-69 years old, n = 9). p \u2010v",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1320,7 +1320,7 @@
       "sentence": "FSC = forward scatter. (c) Table summarising significantly increased markers (black dots) in age\u2010related immune subsets compared to early\u2010differentiated immune cell counterparts, as assessed with one\u2010way ANOVAs with Dunnett's multiple comparisons test between age\u2010related and early\u2010differentiated subsets for each cell type ( n = 8 healthy donors). (d) Proportion of CD8 + T cells positive for CD28, CD57 and KLRG1 in PBMCs from healthy younger donors (17-50 years old, n = 8) and older donors (56-69 years old, n = 9). p \u2010values are derived from unpaired t \u2010tests. (e) Geometric mean fluorescence intensity (gMFI) of p\u2010S6 in immune subsets in older donors ( n = 9) expressed as log 2 (fold change) from the mean value of cells of control donors ( n = 8), assessed by flow cytometry.",
       "context_window": "LRG1 in PBMCs from healthy younger donors (17-50 years old, n = 8) and older donors (56-69 years old, n = 9). p \u2010values are d",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1338,7 +1338,7 @@
       "sentence": "FSC = forward scatter. (c) Table summarising significantly increased markers (black dots) in age\u2010related immune subsets compared to early\u2010differentiated immune cell counterparts, as assessed with one\u2010way ANOVAs with Dunnett's multiple comparisons test between age\u2010related and early\u2010differentiated subsets for each cell type ( n = 8 healthy donors). (d) Proportion of CD8 + T cells positive for CD28, CD57 and KLRG1 in PBMCs from healthy younger donors (17-50 years old, n = 8) and older donors (56-69 years old, n = 9). p \u2010values are derived from unpaired t \u2010tests. (e) Geometric mean fluorescence intensity (gMFI) of p\u2010S6 in immune subsets in older donors ( n = 9) expressed as log 2 (fold change) from the mean value of cells of control donors ( n = 8), assessed by flow cytometry.",
       "context_window": "ounger donors (17-50 years old, n = 8) and older donors (56-69 years old, n = 9). p \u2010values are derived from unpaired t \u2010tests.",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1356,7 +1356,7 @@
       "sentence": "FSC = forward scatter. (c) Table summarising significantly increased markers (black dots) in age\u2010related immune subsets compared to early\u2010differentiated immune cell counterparts, as assessed with one\u2010way ANOVAs with Dunnett's multiple comparisons test between age\u2010related and early\u2010differentiated subsets for each cell type ( n = 8 healthy donors). (d) Proportion of CD8 + T cells positive for CD28, CD57 and KLRG1 in PBMCs from healthy younger donors (17-50 years old, n = 8) and older donors (56-69 years old, n = 9). p \u2010values are derived from unpaired t \u2010tests. (e) Geometric mean fluorescence intensity (gMFI) of p\u2010S6 in immune subsets in older donors ( n = 9) expressed as log 2 (fold change) from the mean value of cells of control donors ( n = 8), assessed by flow cytometry.",
       "context_window": "(17-50 years old, n = 8) and older donors (56-69 years old, n = 9). p \u2010values are derived from unpaired t \u2010tests. (e) Geometr",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1374,7 +1374,7 @@
       "sentence": "FSC = forward scatter. (c) Table summarising significantly increased markers (black dots) in age\u2010related immune subsets compared to early\u2010differentiated immune cell counterparts, as assessed with one\u2010way ANOVAs with Dunnett's multiple comparisons test between age\u2010related and early\u2010differentiated subsets for each cell type ( n = 8 healthy donors). (d) Proportion of CD8 + T cells positive for CD28, CD57 and KLRG1 in PBMCs from healthy younger donors (17-50 years old, n = 8) and older donors (56-69 years old, n = 9). p \u2010values are derived from unpaired t \u2010tests. (e) Geometric mean fluorescence intensity (gMFI) of p\u2010S6 in immune subsets in older donors ( n = 9) expressed as log 2 (fold change) from the mean value of cells of control donors ( n = 8), assessed by flow cytometry.",
       "context_window": "ntensity (gMFI) of p\u2010S6 in immune subsets in older donors ( n = 9) expressed as log 2 (fold change) from the mean value of ce",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1392,7 +1392,7 @@
       "sentence": "FSC = forward scatter. (c) Table summarising significantly increased markers (black dots) in age\u2010related immune subsets compared to early\u2010differentiated immune cell counterparts, as assessed with one\u2010way ANOVAs with Dunnett's multiple comparisons test between age\u2010related and early\u2010differentiated subsets for each cell type ( n = 8 healthy donors). (d) Proportion of CD8 + T cells positive for CD28, CD57 and KLRG1 in PBMCs from healthy younger donors (17-50 years old, n = 8) and older donors (56-69 years old, n = 9). p \u2010values are derived from unpaired t \u2010tests. (e) Geometric mean fluorescence intensity (gMFI) of p\u2010S6 in immune subsets in older donors ( n = 9) expressed as log 2 (fold change) from the mean value of cells of control donors ( n = 8), assessed by flow cytometry.",
       "context_window": "ld change) from the mean value of cells of control donors ( n = 8), assessed by flow cytometry. We observed that senescence",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "T-cell function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1482,7 +1482,7 @@
       "sentence": "We therefore assessed whether rapamycin treatment impacts on immune cell DNA damage and senescence in vivo in humans, analysing PBMCs from older male volunteers who received either 1 mg/day rapamycin ( n = 4) or placebo ( n = 5) for 4 months (Figure 6a ).",
       "context_window": "lysing PBMCs from older male volunteers who received either 1 mg/day rapamycin ( n = 4) or placebo ( n = 5) for 4 months (Figure",
       "claim_role": "dose",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1500,7 +1500,7 @@
       "sentence": "We therefore assessed whether rapamycin treatment impacts on immune cell DNA damage and senescence in vivo in humans, analysing PBMCs from older male volunteers who received either 1 mg/day rapamycin ( n = 4) or placebo ( n = 5) for 4 months (Figure 6a ).",
       "context_window": "er male volunteers who received either 1 mg/day rapamycin ( n = 4) or placebo ( n = 5) for 4 months (Figure 6a ). We aimed to",
       "claim_role": "dose",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1518,7 +1518,7 @@
       "sentence": "We therefore assessed whether rapamycin treatment impacts on immune cell DNA damage and senescence in vivo in humans, analysing PBMCs from older male volunteers who received either 1 mg/day rapamycin ( n = 4) or placebo ( n = 5) for 4 months (Figure 6a ).",
       "context_window": "ho received either 1 mg/day rapamycin ( n = 4) or placebo ( n = 5) for 4 months (Figure 6a ). We aimed to assess whether feat",
       "claim_role": "duration",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1536,7 +1536,7 @@
       "sentence": "We therefore assessed whether rapamycin treatment impacts on immune cell DNA damage and senescence in vivo in humans, analysing PBMCs from older male volunteers who received either 1 mg/day rapamycin ( n = 4) or placebo ( n = 5) for 4 months (Figure 6a ).",
       "context_window": "either 1 mg/day rapamycin ( n = 4) or placebo ( n = 5) for 4 months (Figure 6a ). We aimed to assess whether features of immuno",
       "claim_role": "dose",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1663,7 +1663,7 @@
       "sentence": "To address concerns of immunosuppression by rapamycin, white blood cell counts were assessed at 8 weeks; there were no significant differences in leukocyte counts in the blood over the initial 8\u2010week treatment period in either rapamycin or placebo groups, suggesting that this low\u2010dose rapamycin treatment regimen was not immunosuppressive (Figure S7b ).",
       "context_window": "sion by rapamycin, white blood cell counts were assessed at 8 weeks; there were no significant differences in leukocyte counts",
       "claim_role": "protocol",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1717,7 +1717,7 @@
       "sentence": "Simple linear regression analyses in circulating CD4 + T cells revealed a strong and highly significant positive correlation between p\u2010S6 and \u03b3H2AX levels in both treatment groups ( R 2 = 0.5481 [placebo], 0.7758 [rapamycin], p < 0.0001 in both groups), indicating that mTOR activity and DNA damage are positively linked in vivo (Figure 6b,c ).",
       "context_window": "atment groups ( R 2 = 0.5481 [placebo], 0.7758 [rapamycin], p < 0.0001 in both groups), indicating that mTOR activity and DNA dama",
       "claim_role": "unknown",
-      "endpoint": "mTOR signaling",
+      "endpoint": "T-cell function",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -1753,7 +1753,7 @@
       "sentence": "Taken together, our findings of immune cell benefit on rapamycin treatment in vitro and from analysis of PBMCs from an in vivo study using low\u2010dose rapamycin lead us to conclude that rapamycin at 1 mg/day enhances the resilience of the ageing immune system to DNA damage.",
       "context_window": "ng low\u2010dose rapamycin lead us to conclude that rapamycin at 1 mg/day enhances the resilience of the ageing immune system to DNA",
       "claim_role": "dose",
-      "endpoint": "mTOR inhibition",
+      "endpoint": "",
       "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"

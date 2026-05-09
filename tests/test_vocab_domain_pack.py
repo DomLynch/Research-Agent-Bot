@@ -214,6 +214,10 @@ def test_rapamycin_arm_binds_alias_and_retrieval_terms_to_active_canon() -> None
     assert qe.match_arm(
         "mTOR inhibitor treatment enhanced vaccine response by 20%.",
     ).lower() in active
+    assert qe.match_arm(
+        "RAPA significantly reduced mTOR expression.",
+    ).lower() in active
+    assert qe.match_arm("Old mice were fed eRapa chow.").lower() in active
     assert qe.match_endpoint(
         "RAD001 enhanced the response to the influenza vaccine by about 20%.",
     ) == "vaccine response"
@@ -237,6 +241,23 @@ def test_rapamycin_endpoint_binds_p_value_to_preceding_parenthetical_endpoint() 
     ) == "self-reported pain"
 
 
+def test_rapamycin_vocab_covers_rescue_endpoint_terms() -> None:
+    os.environ["TOPIC_DOMAIN"] = "rapamycin"
+    qe = _reload_quant_endpoints()
+    assert qe.match_endpoint(
+        "Proteome half-lives significantly increased after rapamycin.",
+    ) == "proteome turnover"
+    assert qe.match_endpoint(
+        "Rapamycin reduced kidney enlargement by 65%.",
+    ) == "renal function"
+    assert qe.match_endpoint(
+        "Bacteroides increased after rapamycin treatment.",
+    ) == "microbiome composition"
+    assert qe.match_endpoint(
+        "RAPA significantly reduced CD4 T cell PD-1 expression.",
+    ) == "T-cell function"
+
+
 def test_runner_uses_active_rapamycin_vocab_for_outcome_and_polarity() -> None:
     os.environ["TOPIC_DOMAIN"] = "rapamycin"
     import run_v06_synthesis as runner
@@ -246,6 +267,14 @@ def test_runner_uses_active_rapamycin_vocab_for_outcome_and_polarity() -> None:
     assert runner._outcome_class_for_endpoint("lean tissue mass") == "muscle_function"
     assert runner._polarity_for_endpoint("respiratory infection rate") == -1
     assert runner._polarity_for_endpoint("influenza vaccine response") == 1
+    assert runner._claim_topic_effect({
+        "claim_type": "percentage",
+        "numeric_values": [12.0],
+        "endpoint": "lifespan",
+        "arm": "RAPA",
+        "direction": "increase",
+        "binding_confidence": "high",
+    }) == 1
 
 
 def test_metformin_arm_unchanged_after_per_domain_refactor() -> None:
