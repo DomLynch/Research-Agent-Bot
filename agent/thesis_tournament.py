@@ -58,7 +58,7 @@ _DIRECTNESS_RANK: Mapping[Directness, int] = {
     "direct": 0, "indirect": 1, "mechanistic": 2,
 }
 _TIER_RANK: Mapping[EvidenceTier, int] = {
-    "A1": 0, "A2": 1, "B": 2, "C": 3, "mixed": 4,
+    "A1": 0, "A2": 1, "B": 2, "C": 3, "mixed": 4,  # type: ignore[dict-item]
 }
 _CONFIDENCE_RANK: Mapping[Confidence, int] = {
     "high": 0, "moderate": 1, "low": 2,

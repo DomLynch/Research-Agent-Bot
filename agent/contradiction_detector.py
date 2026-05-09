@@ -63,6 +63,6 @@ def _dominant_effect(effects: dict[str, int]) -> str:
 
 def _unique_topics(topics: object) -> tuple[TopicRunSummary, ...]:
     out: dict[str, TopicRunSummary] = {}
-    for topic in topics:
+    for topic in topics:  # type: ignore[attr-defined]
         out.setdefault(topic.topic, topic)
     return tuple(out.values())
