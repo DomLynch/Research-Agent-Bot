@@ -44,15 +44,43 @@ def _install_httpx_test_stub_if_missing() -> None:
         pass
 
     import json as _json
-    from urllib.parse import urlencode
+    from urllib.parse import parse_qs, urlencode, urlsplit
 
     class HTTPError(Exception):
         pass
 
     class HTTPStatusError(HTTPError):
-        def __init__(self, message: str, *, response: "Response") -> None:
+        def __init__(
+            self,
+            message: str,
+            *,
+            request: "Request | None" = None,
+            response: "Response",
+        ) -> None:
             super().__init__(message)
+            self.request = request
             self.response = response
+
+    class Headers(dict):
+        def __init__(self, values: dict[str, str] | None = None) -> None:
+            super().__init__()
+            for key, value in (values or {}).items():
+                self[key] = value
+
+        def __setitem__(self, key: str, value: str) -> None:
+            super().__setitem__(key.lower(), value)
+
+        def __getitem__(self, key: str) -> str:
+            return super().__getitem__(key.lower())
+
+        def get(self, key: str, default: Any = None) -> Any:
+            return super().get(key.lower(), default)
+
+    class URL(str):
+        @property
+        def params(self) -> dict[str, str]:
+            raw = parse_qs(urlsplit(str(self)).query, keep_blank_values=True)
+            return {k: v[-1] if v else "" for k, v in raw.items()}
 
     class ConnectError(HTTPError):
         pass
@@ -82,8 +110,8 @@ def _install_httpx_test_stub_if_missing() -> None:
             content: bytes = b"",
         ) -> None:
             self.method = method
-            self.url = url
-            self.headers = headers or {}
+            self.url = URL(url)
+            self.headers = Headers(headers)
             self.content = content
 
     class Response:
@@ -95,10 +123,12 @@ def _install_httpx_test_stub_if_missing() -> None:
             text: str | None = None,
             content: bytes | None = None,
             headers: dict[str, str] | None = None,
+            request: Request | None = None,
         ) -> None:
             self.status_code = status_code
             self._json = json
-            self.headers = headers or {}
+            self.headers = Headers(headers)
+            self.request = request
             if content is not None:
                 self.content = content
                 self.text = content.decode("utf-8", errors="replace")
@@ -121,6 +151,7 @@ def _install_httpx_test_stub_if_missing() -> None:
             if self.status_code >= 400:
                 raise HTTPStatusError(
                     f"{self.status_code} error response",
+                    request=self.request,
                     response=self,
                 )
 
