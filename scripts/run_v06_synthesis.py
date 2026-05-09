@@ -1298,6 +1298,20 @@ def _load_active_paper_ids() -> set[str] | None:
     return {str(x) for x in ids if str(x).strip()} or None
 
 
+def _strict_clinical_receipt_scope() -> bool:
+    """Clinical-brief packs disable inferential bridge and should not
+    promote adjacent/mechanistic receipts from a reused broad corpus."""
+    pack = _get_topic_pack()
+    inference = getattr(pack, "inference", None)
+    return bool(pack and inference is not None and not inference.allow)
+
+
+def _receipt_scope_classes() -> set[str]:
+    if _strict_clinical_receipt_scope():
+        return {"core_on_thesis"}
+    return {"core_on_thesis", "adjacent_clinical", "background_mechanism"}
+
+
 def _load_classified_receipt_candidate_ids() -> set[str]:
     """Core, adjacent, and background-mechanism papers can carry
     load-bearing evidence in CLIN/INF/MECH papers. Off-thesis and
@@ -1309,7 +1323,7 @@ def _load_classified_receipt_candidate_ids() -> set[str]:
         rows = json.loads(path.read_text())
     except json.JSONDecodeError:
         return set()
-    keep = {"core_on_thesis", "adjacent_clinical", "background_mechanism"}
+    keep = _receipt_scope_classes()
     return {
         str(r.get("paper_id"))
         for r in rows
@@ -1430,6 +1444,8 @@ def render_receipt_funnel_markdown(report: dict[str, Any]) -> str:
 def _load_receipt_candidate_paper_ids() -> set[str] | None:
     active = _load_active_paper_ids()
     classified = _load_classified_receipt_candidate_ids()
+    if _strict_clinical_receipt_scope() and classified:
+        return classified if active is None else active & classified
     if active is None and not classified:
         return None
     return (active or set()) | classified
@@ -2107,6 +2123,7 @@ async def _run(
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),
         "thesis": thesis.text,
         "receipts": manifest_receipts,
+        "receipt_funnel": receipt_funnel,
     }
     full_paper_md = _restore_rendered_section_contract(
         full_paper_md, sections,
@@ -2138,6 +2155,7 @@ async def _run(
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),
         "thesis": thesis.text,
         "receipts": manifest_receipts,
+        "receipt_funnel": receipt_funnel,
         "section_words": section_words,
         "total_words": word_count,
         "claim_strength_repairs": len(repair_log),

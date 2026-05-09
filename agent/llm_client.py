@@ -52,6 +52,7 @@ __all__ = [
     "CallSpec",
     "CostLedger",
     "chat_json",
+    "configured_attempts_for_url",
     "extract_json",
     "build_extract_chain",
     "build_judge_chain",
@@ -191,6 +192,11 @@ def _configured_attempts(base_url: str) -> int:
     if "openrouter" in base_url.lower():
         return max(1, _env_int("OPENROUTER_CALL_ATTEMPTS", default))
     return max(1, default)
+
+
+def configured_attempts_for_url(base_url: str) -> int:
+    """Configured retry attempts for an OpenAI-compatible base URL."""
+    return _configured_attempts(base_url)
 
 
 def _request_headers(spec: CallSpec) -> dict[str, str]:
