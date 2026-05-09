@@ -73,10 +73,16 @@ def test_large_file_warning(tmp_path: Path) -> None:
     ]
 
 
-def test_sha_and_vps_503_acceptance(tmp_path: Path) -> None:
+def test_sha_and_vps_200_acceptance(tmp_path: Path) -> None:
     tri = {
         "local": {"head": "abc12345"},
-        "vps": [{"path": "/opt/research-agent-bot", "head": "abc12345", "dirty_count": 0, "service": "active", "http": "503"}],
+        "vps": [{
+            "path": "/opt/research-agent-bot",
+            "head": "abc12345",
+            "dirty_count": 0,
+            "service": "active",
+            "http": "200",
+        }],
     }
     report = deep.build_report(
         repo=tmp_path,
@@ -88,6 +94,28 @@ def test_sha_and_vps_503_acceptance(tmp_path: Path) -> None:
     assert report["verdict"] == "PASS"
     assert report["sha"]["vps_match"] is True
     assert report["osf_placement_warnings"] == []
+
+
+def test_vps_503_blocks_live_release(tmp_path: Path) -> None:
+    tri = {
+        "local": {"head": "abc12345"},
+        "vps": [{
+            "path": "/opt/research-agent-bot",
+            "head": "abc12345",
+            "dirty_count": 0,
+            "service": "active",
+            "http": "503",
+        }],
+    }
+    report = deep.build_report(
+        repo=tmp_path,
+        status_text="",
+        sha_text="local_full=abc123456789\norigin_full=abc123456789\n",
+        tri_sync=tri,
+        secret_roots=[],
+    )
+    assert report["verdict"] == "BLOCKED"
+    assert "VPS warning(s)" in report["blockers"]
 
 
 def test_sha_mismatch_blocks() -> None:

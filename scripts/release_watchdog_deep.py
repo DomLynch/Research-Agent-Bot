@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 DEFAULT_LARGE_BYTES = 5_000_000
-ACCEPTABLE_HTTP = {"200", "404", "503"}
+ACCEPTABLE_HTTP = {"200"}
 SKIP_SCAN_PARTS = {".git", ".venv", "__pycache__", "quality-reference"}
 SECRET_PATTERNS = {
     "osf_pat_assignment": re.compile(r"OSF_PAT\s*=\s*[A-Za-z0-9_-]{20,}"),
@@ -240,7 +240,7 @@ def build_report(
         "osf_placement_warnings": osf_placement,
         "sha": shas,
         "vps_warnings": vps,
-        "endpoint_semantics": "503 is acceptable for the paused dashboard stub.",
+        "endpoint_semantics": "200 required: deployed service must present live status.",
     }
 
 

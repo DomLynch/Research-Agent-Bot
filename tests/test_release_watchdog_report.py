@@ -14,8 +14,8 @@ def _tri() -> dict:
     return {
         "local": {"head": "abc12345", "origin_main": "abc12345", "ahead": 0, "behind": 0},
         "vps": [
-            {"path": "/opt/research-agent-bot", "head": "abc12345", "dirty_count": 0, "service": "active", "http": "503"},
-            {"path": "/root/Research-Agent-Bot", "head": "abc12345", "dirty_count": 0, "service": "active", "http": "503"},
+            {"path": "/opt/research-agent-bot", "head": "abc12345", "dirty_count": 0, "service": "active", "http": "200"},
+            {"path": "/root/Research-Agent-Bot", "head": "abc12345", "dirty_count": 0, "service": "active", "http": "200"},
         ],
     }
 

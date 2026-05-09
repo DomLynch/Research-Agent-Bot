@@ -110,7 +110,7 @@ def build_report(
     vps_ok = all(
         item.get("dirty_count") == 0
         and item.get("service") == "active"
-        and item.get("http") in {"503", "404", "200"}
+        and item.get("http") == "200"
         and not item.get("error")
         for item in vps
     )
@@ -134,7 +134,7 @@ def build_report(
         "local": local,
         "vps": vps,
         "tests": tests,
-        "endpoint_semantics": "503 is acceptable for the deploy-safe paused dashboard stub.",
+        "endpoint_semantics": "200 required: deployed service must present live status.",
     }
 
 
