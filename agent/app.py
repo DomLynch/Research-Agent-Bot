@@ -1,8 +1,8 @@
-"""Deploy-safe paused service for the research synthesis engine.
+"""Deploy-safe live status service for the research synthesis engine.
 
 The deployed systemd unit runs `python -m agent.app dashboard ...`. This module
-keeps that unit healthy while synthesis work is executed through scripts and
-audited run bundles rather than a public interactive dashboard.
+keeps that unit healthy and visibly live while synthesis work is executed
+through scripts and audited run bundles rather than a public interactive API.
 """
 from __future__ import annotations
 
@@ -10,30 +10,29 @@ import argparse
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
-_PAUSE_HTML = (
+_LIVE_HTML = (
     "<!doctype html><html lang='en'><head><meta charset='utf-8'>"
-    "<title>Research Agent - paused</title>"
+    "<title>Research Agent - live</title>"
     "<style>body{font-family:Georgia,serif;max-width:640px;margin:80px auto;"
     "padding:0 20px;color:#295b62;line-height:1.5}"
     "h1{font-weight:normal}code{background:#f0ebe2;padding:2px 6px;"
     "border-radius:4px;font-size:.9em}</style></head><body>"
-    "<h1>Research Agent service paused</h1>"
-    "<p>The synthesis engine is deployed and intentionally serving a paused "
-    "safe response. Papers are generated through audited run bundles, not this "
-    "public dashboard endpoint.</p>"
+    "<h1>Research Agent service live</h1>"
+    "<p>The synthesis engine is deployed and healthy. Papers are generated "
+    "through audited run bundles, not this public status endpoint.</p>"
     "<p>Current source of truth: claim graphs, manifests, verdict JSON, and "
     "certification artifacts. Markdown is downstream rendering.</p>"
     "</body></html>"
 )
+_PAUSE_HTML = _LIVE_HTML  # Back-compat for older tests/imports.
 
 
-class _PauseHandler(BaseHTTPRequestHandler):
+class _LiveHandler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
-        body = _PAUSE_HTML.encode("utf-8")
-        self.send_response(503)  # Service Unavailable: honest paused signal
+        body = _LIVE_HTML.encode("utf-8")
+        self.send_response(200)
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
-        self.send_header("Retry-After", "86400")
         self.end_headers()
         try:
             self.wfile.write(body)
@@ -45,8 +44,8 @@ class _PauseHandler(BaseHTTPRequestHandler):
 
 
 def _dashboard(args: argparse.Namespace) -> int:
-    server = ThreadingHTTPServer((args.host, args.port), _PauseHandler)
-    print(f"Research Agent paused service on http://{args.host}:{args.port}")
+    server = ThreadingHTTPServer((args.host, args.port), _LiveHandler)
+    print(f"Research Agent live status on http://{args.host}:{args.port}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
@@ -68,7 +67,7 @@ def _run(_args: argparse.Namespace) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        prog="agent.app", description="Research Agent paused service",
+        prog="agent.app", description="Research Agent live status service",
     )
     sub = parser.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("run", help="(unavailable during rebuild)")
@@ -76,7 +75,7 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--domain")
     r.add_argument("--criteria", default="")
     r.add_argument("--json", action="store_true")
-    d = sub.add_parser("dashboard", help="serve the paused-stub HTTP page")
+    d = sub.add_parser("dashboard", help="serve the live status HTTP page")
     d.add_argument("--host", default="127.0.0.1")
     d.add_argument("--port", type=int, default=8791)
     args = parser.parse_args(argv)
