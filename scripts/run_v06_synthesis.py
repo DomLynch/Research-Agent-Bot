@@ -2164,8 +2164,9 @@ async def _run(
     full_paper_md = _paper_quality.insert_before_heading(
         full_paper_md,
         "## Results",
-        "## Risk of Bias and GRADE\n\n"
-        + quality_artifact["bundle"].markdown.replace("# ", "### "),
+        _paper_quality.render_quality_section_for_paper(
+            quality_artifact["bundle"],
+        ),
     )
     full_paper_md = _paper_quality.insert_before_heading(
         full_paper_md,

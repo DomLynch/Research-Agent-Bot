@@ -188,6 +188,35 @@ def write_quality_methods(out_dir: Path, receipts: list[dict[str, Any]], parsed_
     return {"bundle": bundle, "summary": summary}
 
 
+def render_quality_section_for_paper(bundle: Any) -> str:
+    lines = [
+        "## Risk of Bias and GRADE",
+        "",
+        "Risk-of-bias and certainty judgments are generated as structured "
+        "sidecars from the accepted receipt set. The manuscript reports the "
+        "study-level overall rating and outcome-level certainty label; the "
+        "full domain table is preserved in `quality_methods.md`.",
+        "",
+        "### Risk-of-Bias Summary",
+        "",
+        "| Study | Tool | Overall rating |",
+        "| --- | --- | --- |",
+    ]
+    for study in bundle.rob_assessments:
+        lines.append(f"| {study.study_id} | {study.tool} | {study.overall_rating} |")
+    lines.extend([
+        "",
+        "### GRADE Certainty Summary",
+        "",
+        "| Outcome | Final certainty | Main downgrade reasons |",
+        "| --- | --- | --- |",
+    ])
+    for grade in bundle.grade_assessments:
+        reasons = ", ".join(grade.downgrade_reasons) or "none"
+        lines.append(f"| {grade.outcome} | {grade.final_certainty} | {reasons} |")
+    return "\n".join(lines).rstrip()
+
+
 _NUM = r"([-+]?[0-9]+(?:\.[0-9]+)?)"
 _CI = r"95%\s*(?:confidence interval|ci)\s*[=:]?\s*[\[\(]?\s*"
 _MD_RE = re.compile(
@@ -349,6 +378,7 @@ def render_tension_section(payload: dict[str, Any]) -> str:
 def apply_template_repairs(markdown: str) -> tuple[str, list[dict[str, str]]]:
     replacements = {
         "In conclusion,": "Taken together,",
+        "In summary,": "Taken together,",
         "Further research is needed": "The next decisive test is",
         "This synthesis suggests": "The accepted receipt graph supports",
     }

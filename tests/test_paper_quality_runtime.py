@@ -54,6 +54,9 @@ def test_quality_methods_payloads_cover_receipts_and_outcomes(tmp_path: Path) ->
     rob = json.loads((tmp_path / "risk_of_bias.json").read_text())
     assert {row["study_id"] for row in rob} == {"Study 1", "Study 2", "Study 3"}
     assert (tmp_path / "quality_methods.md").exists()
+    paper_md = pqr.render_quality_section_for_paper(artifact["bundle"])
+    assert "rob(-1)" not in paper_md
+    assert "Final certainty" in paper_md
 
 
 def _claim(text: str) -> dict:
@@ -102,6 +105,31 @@ def test_template_repairs_remove_blocking_phrase() -> None:
     repaired, log = pqr.apply_template_repairs("In conclusion, the evidence is mixed.")
     assert repaired.startswith("Taken together,")
     assert log == [{"before": "In conclusion,", "after": "Taken together,"}]
+
+
+def test_tension_directness_normalizes_review_records(tmp_path: Path) -> None:
+    class Receipt:
+        def __init__(self, rid: str, directness: str) -> None:
+            self.receipt_id = rid
+            self.evidence_tier = "B1"
+            self.directness = directness
+            self.p_values = ()
+
+    class Tension:
+        receipt_a_id = "A"
+        receipt_b_id = "B"
+        kind = "disagreement"
+        outcome_class = "immune"
+        severity = 4
+
+    class Matrix:
+        receipts = (Receipt("A", "review"), Receipt("B", "direct"))
+
+        def non_orthogonal(self):
+            return (Tension(),)
+
+    payload = pqr.write_tension_plans(tmp_path, Matrix())
+    assert payload["plans"][0]["paper_a"] == "A"
 
 
 def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
