@@ -39,14 +39,10 @@ import re
 from collections import Counter
 from typing import Any
 
+from agent.selection_flow import render_selection_flow_lines
 
-__all__ = [
-    "build_search_provenance_appendix",
-    "build_ai_use_disclosure",
-    "build_human_accountability_template",
-    "build_data_code_availability",
-    "compose_appendix",
-]
+
+__all__ = ["build_search_provenance_appendix", "build_ai_use_disclosure", "build_human_accountability_template", "build_data_code_availability", "compose_appendix"]
 
 
 # Databases the retrieval layer can query. Source of truth:
@@ -162,7 +158,7 @@ def build_search_provenance_appendix(
         f"density gate.",
         "",
     ]
-    lines.extend(_selection_flow_lines(receipt_funnel))
+    lines.extend(render_selection_flow_lines(receipt_funnel))
     lines += [
         "### Per-receipt summary",
         "",
@@ -237,53 +233,6 @@ def build_search_provenance_appendix(
         "toward formal systematic-review compliance.",
     ]
     return "\n".join(lines) + "\n"
-
-
-def _selection_flow_lines(receipt_funnel: Any) -> list[str]:
-    if not isinstance(receipt_funnel, dict):
-        return []
-    counts = receipt_funnel.get("counts") or {}
-    if not isinstance(counts, dict):
-        counts = {}
-
-    def fmt(value: Any) -> str:
-        return "not recorded" if value is None else str(value)
-
-    rows = [
-        ("Quant-claim files screened", receipt_funnel.get("quant_claim_files")),
-        ("Active candidate IDs", receipt_funnel.get("active_paper_ids")),
-        (
-            "Classified eligible candidates",
-            receipt_funnel.get("classified_receipt_candidates"),
-        ),
-        ("Receipt candidate union", receipt_funnel.get("receipt_candidate_union")),
-        (
-            "Accepted high-confidence receipt papers",
-            counts.get("accepted_high_confidence"),
-        ),
-        (
-            "Excluded outside active/classified scope",
-            counts.get("outside_active_or_classified_scope"),
-        ),
-        ("Candidate papers with no extracted claims", counts.get("candidate_no_claims")),
-        ("Candidate papers with partial-only bindings", counts.get("candidate_partial_only")),
-        (
-            "Candidate papers with partial+none bindings",
-            counts.get("candidate_partial_and_none_only"),
-        ),
-        ("Candidate papers with none-only bindings", counts.get("candidate_none_only")),
-    ]
-    lines = [
-        "### Selection flow (PRISMA-style counts)",
-        "",
-        "These are audit counts, not a PRISMA claim.",
-        "",
-        "| Stage | n |",
-        "|---|---:|",
-    ]
-    lines.extend(f"| {label} | {fmt(value)} |" for label, value in rows)
-    return lines + [""]
-
 
 def _verdict_phrase(verdict: str) -> str:
     """Conditional certification phrase. Verdict-honest by construction:
