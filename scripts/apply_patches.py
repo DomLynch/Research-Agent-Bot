@@ -10,7 +10,7 @@ patches per per-type gate rules:
   citation     → only if `after` references a real paper_id from
                  manifest.receipts; otherwise FLAG-ONLY
   claim        → FLAG-ONLY (always, no auto-apply)
-  structure    → FLAG-ONLY (always)
+  structure    → only P3 single-sentence deletions; otherwise FLAG-ONLY
 
 Every action — applied OR flagged-only — logged to
 <paper>.review_patch_log.json with before/after/reason/result.
@@ -609,7 +609,8 @@ def apply_patches(
                                non-additive simplification
       - claim                -> auto-apply only for safe deletion,
                                neutralization, or traced attribution
-      - structure            -> flag-only by contract
+      - structure            -> auto-apply only for P3 single-sentence
+                                deletions; otherwise flag-only
       - unknown              -> flag-only (fail-closed)
 
     Every flagged patch keeps Grok's rationale + the deterministic
@@ -766,10 +767,13 @@ def apply_patches(
                 f"{'pass' if simp_ok else 'FAIL'} — {simp_msg}"
             )
         else:  # structure (unknown handled above)
-            ok = False
+            struct_ok, struct_msg = _is_safe_structure_deletion(
+                before, after, sev,
+            )
+            ok = struct_ok
             gate_reason = (
-                f"{ptype} patches are flag-only by contract "
-                "(semantic judgment beyond deterministic verifiers)"
+                "structure deletion gate: "
+                f"{'pass' if struct_ok else 'FAIL'} — {struct_msg}"
             )
 
         full_reason = (
@@ -848,7 +852,7 @@ def apply_patches(
         # Skipped for non-claim/numeric patches (formatting/citation
         # already pass deterministic verifiers; no audit-regression
         # risk).
-        if ptype in ("claim", "numeric"):
+        if ptype in ("claim", "numeric", "structure"):
             tentative_md = _apply_text_patch(new_md, before, after)
             audit_safe, audit_msg = _post_apply_audit_safe(
                 pre_md=new_md, post_md=tentative_md, manifest=manifest,

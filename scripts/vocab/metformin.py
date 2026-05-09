@@ -43,7 +43,7 @@ ENDPOINT_VOCAB: tuple[tuple[str, str], ...] = (
                   r"|death\s+rate|risk\s+of\s+(?:diabetes-?related\s+events|major\s+events|"
                   r"cardiovascular\s+events|cancer-?related\s+events)"
                   r"|reduced\s+the\s+risk\s+of"),
-    ("lifespan", r"\blifespan\b|life\s+span"),
+    ("lifespan", r"\blifespan\b|life\s+span|\bmedian\s+survival\b|\bmaximum\s+life\s+span\b"),
     ("healthspan", r"\bhealthspan\b|health\s+span|disease-?free\s+years"),
     # Inflammation / biomarkers
     ("inflammation", r"\binflammat(?:ion|ory)\b|\bIL-?6\b|\bTNF-?[αα]?\b|\bCRP\b|\bhsCRP\b"),
